@@ -18,13 +18,32 @@ const getPackage = () => {
     .catch(error => { throw error; });
 };
 
+// Function to retrieve data of a datastore resource, accounting for data pagination
+const getDatastoreResource = async (resource) => {
+  const pageSize = 100;
+  let totalRecords = 0; // Variable to store total records count
+  let offset = 0; // Initialize offset to start from 0
+  const recentRecords = [];
 
-// Function to retrieve data of a datastore resource
-const getDatastoreResource = resource => {
-  return axios
-    .get(`${baseURL}datastore_search?id=${resource.id}`)
-    .then(response => response.data.result.records)
-    .catch(error => {throw error;});
+  try {
+    const initialResponse = await axios.get(`${baseURL}datastore_search?id=${resource.id}`);
+    totalRecords = initialResponse.data.result.total; // Update the total
+    console.log("Total records:", totalRecords); // Log totalValue here when it's available
+
+    offset = Math.max(totalRecords - 1000, 0); // Calculate the offset
+
+    // while loop to retrieve the most recently updated data only (1000 records / ~7 days)
+    while (offset < totalRecords) {
+      const response = await axios.get(`${baseURL}datastore_search?id=${resource.id}&offset=${offset}`);
+      const records = response.data.result.records;
+      recentRecords.push(...records);
+      offset += pageSize;
+    }
+  } catch (error) {
+    throw error;
+  }
+
+  return recentRecords;
 };
 
 getPackage().then(pkg => {

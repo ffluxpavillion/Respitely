@@ -1,14 +1,21 @@
-import React from 'react'
-import Header from "./components/Header/Header";
-import Hero from './components/Hero/Hero';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Header from '../src/components/Header/Header';
+import Hero from '../src/components/Hero/Hero';
 import SheltersCard from "./components/SheltersCard/SheltersCard";
 import SheltersMap from "./components/SheltersMap/SheltersMap";
 import Footer from "./components/Footer/Footer";
 
-function App() {
+
+export default function App() {
   return (
-    <div>App</div>
-  )
+    <BrowserRouter>
+      <Header />
+      {/* <Hero /> */}
+      <Routes>
+
+      </Routes>
+
+    </BrowserRouter>
+  );
 }
 
-export default App

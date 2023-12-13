@@ -10,7 +10,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <Header />
-      {/* <Hero /> */}
+      <Hero />
       <Routes>
 
       </Routes>

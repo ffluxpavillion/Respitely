@@ -90,3 +90,20 @@ html {
   margin: 0 auto;
   line-height: 1.625;
 }
+
+.content {
+  padding: 16px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  // z-index: 3;
+}
+
+
+.sticky + .content {
+  padding-top: 60rem;
+}
+

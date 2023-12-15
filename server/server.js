@@ -9,7 +9,7 @@ let { PORT, BACKEND_URL } = process.env;
 
 PORT = process.env.PORT || 8081;
 
-// app.use(cors({ origin: process.env.CORS_ORIGIN })); // CORS Middleware
+app.use(cors({ origin: process.env.CORS_ORIGIN })); // CORS Middleware
 app.use(express.json());
 
 // Routes

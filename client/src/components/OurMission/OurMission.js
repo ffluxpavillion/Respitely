@@ -3,19 +3,6 @@ import './OurMission.scss';
 import Logo from '../../assets/logo/SafeHavenTO.svg';
 
 export default function HeroPurpose() {
-  const [scrollPosition, setScrollPosition] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollPosition(window.scrollY);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
 
   return (
     <>
@@ -39,8 +26,6 @@ export default function HeroPurpose() {
             {/* <img className="mission__div-logo" src={Logo}></img> */}
           </div>
         </div>
-
-        <div class="mission__parallax"></div>
       </section>
     </>
   );

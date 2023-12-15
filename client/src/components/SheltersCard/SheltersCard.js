@@ -1,4 +1,31 @@
-export default function SheltersCard () {
+import './SheltersCard.scss'; // Assuming this is the correct path to your CSS file
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
+export default function FetchData() {
+    const [records, setRecords] = useState([]);
 
+    useEffect(() => {
+      axios.get('http://localhost:8080/shelters/')
+      .then(response => {
+        // console.log(response.data);
+        setRecords(response.data);
+       }) // Extracting records from the response
+        .catch(err => console.error(err));
+      }, []);
+
+  return (
+    <>
+      <section className="sheltersCard__section">
+        <ul>
+          {records.map(record => ( // Mapping over records
+            //Using _id as a key
+            <li key={record._id}>
+              {record.LOCATION_NAME} | {record.LOCATION_ADDRESS}
+            </li>
+          ))}
+        </ul>
+      </section>
+    </>
+  );
 }

@@ -18,7 +18,7 @@ export default function Hero2() {
 
   return (
     <>
-      <div class="parallax"></div>
+      <div className="parallax"></div>
     </>
 
   );

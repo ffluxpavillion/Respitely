@@ -27,7 +27,7 @@ export default function SheltersCard() {
     const fetchedData = JSON.parse(JSON.stringify(data));
     let filteredData;
     let tableData;
-    if (type === 'Bed') {
+    if (type === 'Beds') {
       // console.log(`Before filtering for ${type}:`, data); // troubleshooting data mutation
       filteredData = fetchedData
         .filter((record) => record.CAPACITY_TYPE === 'Bed Based Capacity')
@@ -62,45 +62,82 @@ export default function SheltersCard() {
 
   return (
     <>
-      <section className="sheltersCard__section">
+      <section className="sheltersCard">
         <div className="sheltersCard__div">
-          <h2 className="sheltersCard__div-h2">SORT BY:</h2>
+          <h1 className="sheltersCard__div-h2">SORT BY:</h1>
           <button
-            className="sheltersCard__FilterAll sheltersCard__button" onClick={() => filterAndSortData(records, 'All')}>
-            All
+            className="sheltersCard__Button button--All"
+            onClick={() => filterAndSortData(records, 'All')}>
+              <h3>All</h3>
           </button>
           <button
-            className="sheltersCard__FilterBeds sheltersCard__button" onClick={() => filterAndSortData(records, 'Bed')}>
-            Beds
+            className="sheltersCard__Button button--Beds"
+            onClick={() => filterAndSortData(records, 'Beds')}>
+            <h3>Beds</h3>
           </button>
           <button
-            className="sheltersCard__FilterRooms sheltersCard__button" onClick={() => filterAndSortData(records, 'Rooms')}>
-            Rooms
+            className="sheltersCard__Button button--Rooms"
+            onClick={() => filterAndSortData(records, 'Rooms')}>
+            <h3>Rooms</h3>
           </button>
         </div>
-        <ul>
-          {displayedRecords.map((record ) => (
-              //Using _id as a key
-              <li key={record._id}>
-                <br />
-                <ul>Organization Name: {record.ORGANIZATION_NAME}</ul>
-                <ul>Shelter Group: {record.SHELTER_GROUP}</ul>
-                <ul>Location Name: {record.LOCATION_NAME}</ul>
-                <ul>Location Address: {record.LOCATION_ADDRESS}</ul>
-                <ul>Type: {record.CAPACITY_TYPE}</ul>
-                {record.CAPACITY_TYPE === 'Bed Based Capacity' ? (<ul>Available Beds: {record.UNOCCUPIED_BEDS}</ul>) : ('')}
-                {record.CAPACITY_TYPE === 'Room Based Capacity' ? (<ul>Available Rooms: {record.UNOCCUPIED_ROOMS}</ul>) : ('')}
-                <ul>Last Updated: {record.OCCUPANCY_DATE}</ul>
-                <br />
-              </li>
-            )
-          )}
-        </ul>
+        <div className="scrollable-container">
+          <div className="shelterInfo__div">
+            <ul className="shelterInfo__div-ul">
+              {displayedRecords.map((record ) => (
+                  //Using _id as key
+                  <li className="shelterInfo__div-li" key={record._id}>
+                    <br />
+                    <ul className="shelterInfo__div-ul">
+                      <h3 className="shelterInfo__div-h3">Organization Name:</h3>
+                      <h3>{record.ORGANIZATION_NAME}</h3></ul>
+                    <ul className="shelterInfo__div-ul">
+                      <h3 className="shelterInfo__div-h3">Shelter Group:</h3>
+                      <h3>{record.SHELTER_GROUP}</h3>
+                    </ul>
+                    <ul className="shelterInfo__div-ul">
+                      <h3 className="shelterInfo__div-h3">Location Name:</h3>
+                      <h3>{record.LOCATION_NAME}</h3>
+                    </ul>
+                    <ul className="shelterInfo__div-ul">
+                      <h3 className="shelterInfo__div-h3">Location Address:</h3>
+                      <h3>{record.LOCATION_ADDRESS}</h3>
+                    </ul>
+                    <ul className="shelterInfo__div-ul">
+                      <h3 className="shelterInfo__div-h3">Location Postal Code:</h3>
+                      <h3>{record.LOCATION_POSTAL_CODE}</h3>
+                    </ul>
+                    <ul className="shelterInfo__div-ul">
+                      <h3 className="shelterInfo__div-h3">Type:</h3>
+                      <h3>{record.CAPACITY_TYPE}</h3>
+                    </ul>
+                    {record.CAPACITY_TYPE === 'Bed Based Capacity' ?
+                      (<ul className="shelterInfo__div-ul">
+                        <h3 className="shelterInfo__div-h3">Available Beds:</h3>
+                        <h3>{record.UNOCCUPIED_BEDS}</h3>
+                      </ul>) : ('')}
+                    {record.CAPACITY_TYPE === 'Room Based Capacity' ?
+                      (<ul className="shelterInfo__div-ul">
+                        <h3 className="shelterInfo__div-h3">Available Rooms:</h3>
+                        <h3>{record.UNOCCUPIED_ROOMS}</h3>
+                      </ul>) : ('')}
+                    <ul className="shelterInfo__div-ul">
+                      <h3 className="shelterInfo__div-h3">Last Updated:</h3>
+                      <h3>{record.OCCUPANCY_DATE}</h3>
+                    </ul>
+                    <br />
+                  </li>
+                )
+              )}
+            </ul>
+          </div>
         {loadCount < records.length && (
           <button onClick={loadMore} className="loadMoreButton">
             Load More
           </button>
         )}
+        </div>
+
       </section>
     </>
   );

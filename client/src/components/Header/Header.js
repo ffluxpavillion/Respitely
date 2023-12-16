@@ -51,7 +51,7 @@ export default function Header() {
             </li>
             <li>
               <a className="navbar__div-item" href="#">
-                Resrouces
+                Resources
               </a>
             </li>
             <li>

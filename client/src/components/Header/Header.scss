@@ -20,10 +20,11 @@ li {
 
 .navbar {
   overflow: hidden;
-  background-color: #8893b5e5;
+  background-color: white;
   height: fit-content;
   width: 100%;
-  // min-height: 5rem;
+  min-height: 6rem;
+  padding: 0.5rem;
 
   &__div {
     display: flex;

@@ -23,7 +23,12 @@ export default function HeroPurpose() {
               the resources available to them; to serve as a beacon of hope in
               addressing this pressing societal issue.{' '}
             </p>
-            {/* <img className="mission__div-logo" src={Logo}></img> */}
+
+            <p className="mission__div-text">
+             The homelessness crisis is riddled with multifaceted challenges, one such obstacle is the access to timely and accurate shelter information. There's a lack of centralized, up-to-date resources for individuals in need, causing difficulties in finding suitable shelters, especially during urgent situations.</p>
+
+             <p className="mission__div-text"> By seamlessly integrating modern design and functionality with an intuitive and reliable user experience (UX), such an application holds the potential to revolutionize the way individuals experiencing homelessness access vital information.  This platform aims to provide more than just basic information, but also a sense of security during times of intense vulnerability.</p>
+            <img className="mission__div-logo" src={Logo}></img>
           </div>
         </div>
       </section>

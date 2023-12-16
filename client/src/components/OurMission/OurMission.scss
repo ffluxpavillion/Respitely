@@ -25,11 +25,19 @@
     font-size: 22px;
     font-weight: 400;
     letter-spacing: 0.3px;
-  }
+    word-wrap:break-word;
+    text-align: justify;
+    text-justify: inter-word;
+    }
 
   &-logo {
-    height: 10vw;
-    width: 10vw;
+    height: 20vw;
+    width: 20vw;
     min-height: 2vw;
+    padding-left:48rem;
+    // padding-right:20rem;
+
+    padding-top:4rem;
+
   }
 }

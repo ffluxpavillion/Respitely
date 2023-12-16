@@ -1,0 +1,24 @@
+@use '../../partials/abstracts' as *;
+@use '../../partials/fonts' as *;
+@use '../../partials/global' as *;
+@use '../../partials/variables' as *;
+
+.parallax2 {
+  height:900px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  // backup images (url based)
+  // Nathan Phillips Square Image
+  // background-image: url("https://images.unsplash.com/photo-1653693271602-ece7f0660285?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+
+  // CN Tower Between Buildings Image
+  // background-image: url("https://images.unsplash.com/photo-1437326516294-01d0da392e11?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+
+  // Snowy TTC Image
+  // background-image: url("https://images.unsplash.com/photo-1517501778092-ff97cac9cc2c?q=80&w=3006&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+
+
+}

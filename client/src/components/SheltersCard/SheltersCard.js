@@ -9,6 +9,7 @@ export default function SheltersCard() {
   const [filterType, setFilterType] = useState('All'); // new state for filter type
 
   useEffect(() => {
+    const fetchData = async () => {
     axios
       .get('http://localhost:8080/shelters/')
       .then((response) => {
@@ -16,70 +17,69 @@ export default function SheltersCard() {
         filterAndSortData(response.data, 'All');
       })
       .catch((err) => console.error(err));
+    };
+
+    fetchData();
   }, []);
 
   // function to filter data based on CAPACITY_TYPE, and then sort based on OCCUPANCY_DATE
   const filterAndSortData = (data, type) => {
+    const fetchedData = JSON.parse(JSON.stringify(data));
     let filteredData;
-    if (type === 'Beds') {
-      filteredData = data.filter(
-        (record) => record.CAPACITY_TYPE === 'Bed Based Capacity'
-      );
-      filteredData.sort(
-        (a, b) =>
-          parseInt(b.UNOCCUPIED_BEDS, 10) - parseInt(a.UNOCCUPIED_BEDS, 10)
-      ); // sorting based on UNOCCUPIED_BEDS
+    let tableData;
+    if (type === 'Bed') {
+      // console.log(`Before filtering for ${type}:`, data); // troubleshooting data mutation
+      filteredData = fetchedData
+        .filter((record) => record.CAPACITY_TYPE === 'Bed Based Capacity')
+        .sort((a, b) => parseInt(b.UNOCCUPIED_BEDS, 10) - parseInt(a.UNOCCUPIED_BEDS, 10));
+      // console.log(`After filtering for ${type}:`, filteredData); // troubleshooting data mutation
     } else if (type === 'Rooms') {
-      filteredData = data.filter(
-        (record) => record.CAPACITY_TYPE === 'Room Based Capacity'
-      );
-      filteredData.sort((a, b) => b.UNOCCUPIED_ROOMS - a.UNOCCUPIED_ROOMS); // sorting based on UNOCCUPIED_ROOMS
+      // console.log(`Before filtering for ${type}:`, data); // troubleshooting data mutation
+      filteredData = fetchedData
+        .filter((record) => record.CAPACITY_TYPE === 'Room Based Capacity')
+        .sort((a, b) => parseInt(b.UNOCCUPIED_ROOMS, 10) - parseInt(a.UNOCCUPIED_ROOMS, 10));
+      // console.log(`After filtering for ${type}:`, filteredData); // troubleshooting data mutation
     } else {
-      filteredData = [...data]; // if type is 'All', then just copy the data
-      // sorting logic for 'All' --based on max of UNOCCUPIED_BEDS and UNOCCUPIED_ROOMS --sort in descending order
-      filteredData.sort((a, b) => {
-        const maxA = Math.max(
-          parseInt(a.UNOCCUPIED_BEDS || '0', 10),
-          parseInt(a.UNOCCUPIED_ROOMS || '0', 10)
-        );
-        const maxB = Math.max(
-          parseInt(b.UNOCCUPIED_BEDS || '0', 10),
-          parseInt(b.UNOCCUPIED_ROOMS || '0', 10)
-        );
+      // console.log(`Before filtering for ${type}:`, data); // troubleshooting data mutation
+      filteredData = fetchedData.sort((a, b) => {
+        const maxA = Math.max(parseInt(a.UNOCCUPIED_BEDS || '0', 10), parseInt(a.UNOCCUPIED_ROOMS || '0', 10));
+        const maxB = Math.max(parseInt(b.UNOCCUPIED_BEDS || '0', 10), parseInt(b.UNOCCUPIED_ROOMS || '0', 10));
         return maxB - maxA;
       });
+      // console.log(`After filtering for ${type}:`, filteredData); // troubleshooting data mutation
     }
-    // const sortedData = filteredData.sort((a, b) => new Date(b.OCCUPANCY_DATE) - new Date(a.OCCUPANCY_DATE)); // Sorting based on OCCUPANCY_DATE
 
-    setRecords(filteredData); // set newly sorted records
-    setDisplayedRecords(filteredData.slice(0, loadCount)); // initially load 10 records
+    setRecords(fetchedData); // set newly sorted records
+    setDisplayedRecords(filteredData.slice(0, loadCount)); // initially load 5 records
     setFilterType(type); // set filter state
   };
 
   // function to load more records
   const loadMore = () => {
-    setLoadCount(loadCount + 5); // load 10 more records
+    setLoadCount(loadCount + 5); // load 5 more records
     setDisplayedRecords(records.slice(0, loadCount + 5)); // set displayed records to the first 5 + 5 more
   };
 
   return (
     <>
       <section className="sheltersCard__section">
-        <div>
+        <div className="sheltersCard__div">
           <h2 className="sheltersCard__div-h2">SORT BY:</h2>
-          <button onClick={() => filterAndSortData(records, 'All')}>All</button>
-          <button onClick={() => filterAndSortData(records, 'Beds')}>
+          <button
+            className="sheltersCard__FilterAll sheltersCard__button" onClick={() => filterAndSortData(records, 'All')}>
+            All
+          </button>
+          <button
+            className="sheltersCard__FilterBeds sheltersCard__button" onClick={() => filterAndSortData(records, 'Bed')}>
             Beds
           </button>
-          <button onClick={() => filterAndSortData(records, 'Rooms')}>
+          <button
+            className="sheltersCard__FilterRooms sheltersCard__button" onClick={() => filterAndSortData(records, 'Rooms')}>
             Rooms
           </button>
         </div>
         <ul>
-          {displayedRecords.map(
-            (
-              record // Mapping over records
-            ) => (
+          {displayedRecords.map((record ) => (
               //Using _id as a key
               <li key={record._id}>
                 <br />
@@ -88,19 +88,10 @@ export default function SheltersCard() {
                 <ul>Location Name: {record.LOCATION_NAME}</ul>
                 <ul>Location Address: {record.LOCATION_ADDRESS}</ul>
                 <ul>Type: {record.CAPACITY_TYPE}</ul>
-                {record.CAPACITY_TYPE === 'Bed Based Capacity' ? (
-                  <ul>Available Beds: {record.UNOCCUPIED_BEDS}</ul>
-                ) : (
-                  ''
-                )}
-                {record.CAPACITY_TYPE === 'Room Based Capacity' ? (
-                  <ul>Available Rooms: {record.UNOCCUPIED_ROOMS}</ul>
-                ) : (
-                  ''
-                )}
+                {record.CAPACITY_TYPE === 'Bed Based Capacity' ? (<ul>Available Beds: {record.UNOCCUPIED_BEDS}</ul>) : ('')}
+                {record.CAPACITY_TYPE === 'Room Based Capacity' ? (<ul>Available Rooms: {record.UNOCCUPIED_ROOMS}</ul>) : ('')}
                 <ul>Last Updated: {record.OCCUPANCY_DATE}</ul>
                 <br />
-                {/* {record.LOCATION_NAME} | {record.LOCATION_ADDRESS} | {record.UNOCCUPIED_BEDS} */}
               </li>
             )
           )}

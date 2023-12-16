@@ -64,7 +64,7 @@ export default function SheltersCard() {
     <>
       <section className="sheltersCard">
         <div className="sheltersCard__div">
-          <h1 className="sheltersCard__div-h2">SORT BY:</h1>
+          <h1 className="sheltersCard__div-h2">Latest Shelter Occupancy in Toronto:</h1>
           <button
             className="sheltersCard__Button button--All"
             onClick={() => filterAndSortData(records, 'All')}>
@@ -89,53 +89,62 @@ export default function SheltersCard() {
                   <li className="shelterInfo__div-li" key={record._id}>
                     <br />
                     <ul className="shelterInfo__div-ul">
-                      <h3 className="shelterInfo__div-h3">Organization Name:</h3>
-                      <h3>{record.ORGANIZATION_NAME}</h3></ul>
+                      <h3 className="shelterInfo__div-h3">Organization Name: </h3>
+                      <p>{record.ORGANIZATION_NAME}</p></ul>
                     <ul className="shelterInfo__div-ul">
-                      <h3 className="shelterInfo__div-h3">Shelter Group:</h3>
-                      <h3>{record.SHELTER_GROUP}</h3>
+                      <h3 className="shelterInfo__div-h3">Shelter Group: </h3>
+                      <p>{record.SHELTER_GROUP}</p>
                     </ul>
                     <ul className="shelterInfo__div-ul">
-                      <h3 className="shelterInfo__div-h3">Location Name:</h3>
-                      <h3>{record.LOCATION_NAME}</h3>
+                      <h3 className="shelterInfo__div-h3">Location Name: </h3>
+                      <p>{record.LOCATION_NAME}</p>
                     </ul>
                     <ul className="shelterInfo__div-ul">
-                      <h3 className="shelterInfo__div-h3">Location Address:</h3>
-                      <h3>{record.LOCATION_ADDRESS}</h3>
+                      <h3 className="shelterInfo__div-h3">Location Address: </h3>
+                      <p>{record.LOCATION_ADDRESS}</p>
                     </ul>
                     <ul className="shelterInfo__div-ul">
-                      <h3 className="shelterInfo__div-h3">Location Postal Code:</h3>
-                      <h3>{record.LOCATION_POSTAL_CODE}</h3>
+                      <h3 className="shelterInfo__div-h3">Location Postal Code: </h3>
+                      <p>{record.LOCATION_POSTAL_CODE}</p>
                     </ul>
                     <ul className="shelterInfo__div-ul">
-                      <h3 className="shelterInfo__div-h3">Type:</h3>
-                      <h3>{record.CAPACITY_TYPE}</h3>
+                      <h3 className="shelterInfo__div-h3">Type: </h3>
+                      <p>{record.CAPACITY_TYPE}</p>
                     </ul>
                     {record.CAPACITY_TYPE === 'Bed Based Capacity' ?
                       (<ul className="shelterInfo__div-ul">
-                        <h3 className="shelterInfo__div-h3">Available Beds:</h3>
-                        <h3>{record.UNOCCUPIED_BEDS}</h3>
+                        <h3 className="shelterInfo__div-h3">Available Beds: </h3>
+                        <p>{record.UNOCCUPIED_BEDS}</p>
                       </ul>) : ('')}
                     {record.CAPACITY_TYPE === 'Room Based Capacity' ?
                       (<ul className="shelterInfo__div-ul">
-                        <h3 className="shelterInfo__div-h3">Available Rooms:</h3>
-                        <h3>{record.UNOCCUPIED_ROOMS}</h3>
+                        <h3 className="shelterInfo__div-h3">Available Rooms: </h3>
+                        <p>{record.UNOCCUPIED_ROOMS}</p>
                       </ul>) : ('')}
                     <ul className="shelterInfo__div-ul">
-                      <h3 className="shelterInfo__div-h3">Last Updated:</h3>
+                    <br />
+                      <h3 className="shelterInfo__div-h3">Last Updated: </h3>
                       <h3>{record.OCCUPANCY_DATE}</h3>
                     </ul>
                     <br />
+                    <div className="location__Container">
+                    <button className="location__Container--btn">
+                      <h3>Directions</h3>
+                      </button>
+                      <button className="location__Container--btn">
+                      <h3>Share</h3>
+                      </button>
+                    </div>
                   </li>
                 )
               )}
             </ul>
           </div>
-        {loadCount < records.length && (
-          <button onClick={loadMore} className="loadMoreButton">
-            Load More
-          </button>
-        )}
+          {loadCount < records.length && (
+            <button onClick={loadMore} className="loadMoreButton">
+              Load More
+            </button>
+          )}
         </div>
 
       </section>

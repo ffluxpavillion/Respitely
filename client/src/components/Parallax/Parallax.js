@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import './Parallax.scss';
+import ParallaxImage from '../../assets/images/SafeHavenTO_ttc-queen-station.jpg';
+
 
 export default function Hero2() {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -18,7 +20,7 @@ export default function Hero2() {
 
   return (
     <>
-      <div className="parallax"></div>
+      <div className="parallax" style={{ backgroundImage: `url(${ParallaxImage})` }}></div>
     </>
 
   );

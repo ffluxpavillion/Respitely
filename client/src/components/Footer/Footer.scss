@@ -2,3 +2,15 @@
 @use '../../partials/fonts' as *;
 @use '../../partials/global' as *;
 @use '../../partials/variables' as *;
+
+.footer {
+  background-color: #8893b5;
+  height:fit-content;
+}
+
+.copyright {
+  color: rgba(0, 0, 0, 0.297);
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.5rem;
+}

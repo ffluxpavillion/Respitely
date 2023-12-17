@@ -5,7 +5,6 @@ import OurMission from './components/OurMission/OurMission';
 import Parallax from './components/Parallax/Parallax';
 import Parallax2 from './components/Parallax2/Parallax2';
 import SheltersCard from './components/SheltersCard/SheltersCard';
-import SheltersMap from './components/SheltersMap/SheltersMap';
 import Footer from './components/Footer/Footer';
 
 export default function App() {
@@ -16,7 +15,6 @@ export default function App() {
         <OurMission />
         <Parallax />
         <SheltersCard />
-        {/* <SheltersMap /> */}
         <Parallax2 />
         <Footer />
         <Routes>

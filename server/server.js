@@ -20,6 +20,10 @@ app.get('/', (req, res) => {
   res.send('Welcome to the SafeHavenTO Server!');
 });
 
+app.get('/api/maps-key', (req, res) => {
+  res.json({ key: process.env.GOOGLE_MAPS_API_KEY });
+});
+
 app.use((req, res) => {
   res.send('This is not a valid route. Try <b>/shelters</b> instead.');
 });

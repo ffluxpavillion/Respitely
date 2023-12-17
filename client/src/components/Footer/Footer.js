@@ -5,7 +5,7 @@ export default function Footer () {
 
   return (
     <>
-      <footer classname="footer">
+      <footer className="footer">
             <div className="hero" style={{ backgroundImage: `url(${FooterImage})` }} />
           <p className="copyright">&copy; 2023 SafeHavenTO. All rights reserved.</p>
       </footer>

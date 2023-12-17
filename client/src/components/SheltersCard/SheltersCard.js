@@ -1,6 +1,7 @@
-import './SheltersCard.scss'; // Assuming this is the correct path to your CSS file
+import './SheltersCard.scss';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import SheltersMap from '../SheltersMap/SheltersMap';
 
 export default function SheltersCard() {
   const [records, setRecords] = useState([]);
@@ -62,89 +63,92 @@ export default function SheltersCard() {
 
   return (
     <>
-      <section className="sheltersCard">
+      <section className="sheltersCard__section">
         <div className="sheltersCard__div">
           <h1 className="sheltersCard__div-h2">Latest Shelter Occupancy in Toronto:</h1>
           <button
-            className="sheltersCard__Button button--All"
+            className="sheltersCard__Btn btn--All"
             onClick={() => filterAndSortData(records, 'All')}>
               <h3>All</h3>
           </button>
           <button
-            className="sheltersCard__Button button--Beds"
+            className="sheltersCard__Btn btn--Beds"
             onClick={() => filterAndSortData(records, 'Beds')}>
             <h3>Beds</h3>
           </button>
           <button
-            className="sheltersCard__Button button--Rooms"
+            className="sheltersCard__Btn btn--Rooms"
             onClick={() => filterAndSortData(records, 'Rooms')}>
             <h3>Rooms</h3>
           </button>
         </div>
-        <div className="scrollable-container">
-          <div className="shelterInfo__div">
-            <ul className="shelterInfo__div-ul">
-              {displayedRecords.map((record ) => (
-                  //Using _id as key
-                  <li className="shelterInfo__div-li" key={record._id}>
-                    <br />
-                    <ul className="shelterInfo__div-ul">
-                      <h3 className="shelterInfo__div-h3">Organization Name: </h3>
-                      <p>{record.ORGANIZATION_NAME}</p></ul>
-                    <ul className="shelterInfo__div-ul">
-                      <h3 className="shelterInfo__div-h3">Shelter Group: </h3>
-                      <p>{record.SHELTER_GROUP}</p>
-                    </ul>
-                    <ul className="shelterInfo__div-ul">
-                      <h3 className="shelterInfo__div-h3">Location Name: </h3>
-                      <p>{record.LOCATION_NAME}</p>
-                    </ul>
-                    <ul className="shelterInfo__div-ul">
-                      <h3 className="shelterInfo__div-h3">Location Address: </h3>
-                      <p>{record.LOCATION_ADDRESS}</p>
-                    </ul>
-                    <ul className="shelterInfo__div-ul">
-                      <h3 className="shelterInfo__div-h3">Location Postal Code: </h3>
-                      <p>{record.LOCATION_POSTAL_CODE}</p>
-                    </ul>
-                    <ul className="shelterInfo__div-ul">
-                      <h3 className="shelterInfo__div-h3">Type: </h3>
-                      <p>{record.CAPACITY_TYPE}</p>
-                    </ul>
-                    {record.CAPACITY_TYPE === 'Bed Based Capacity' ?
-                      (<ul className="shelterInfo__div-ul">
-                        <h3 className="shelterInfo__div-h3">Available Beds: </h3>
-                        <p>{record.UNOCCUPIED_BEDS}</p>
-                      </ul>) : ('')}
-                    {record.CAPACITY_TYPE === 'Room Based Capacity' ?
-                      (<ul className="shelterInfo__div-ul">
-                        <h3 className="shelterInfo__div-h3">Available Rooms: </h3>
-                        <p>{record.UNOCCUPIED_ROOMS}</p>
-                      </ul>) : ('')}
-                    <ul className="shelterInfo__div-ul">
-                    <br />
-                      <h3 className="shelterInfo__div-h3">Last Updated: </h3>
-                      <h3>{record.OCCUPANCY_DATE}</h3>
-                    </ul>
-                    <br />
-                    <div className="location__Container">
-                    <button className="location__Container--btn">
-                      <h3>Directions</h3>
-                      </button>
-                      <button className="location__Container--btn">
-                      <h3>Share</h3>
-                      </button>
-                    </div>
-                  </li>
-                )
-              )}
-            </ul>
+        <div className="shelterInfo__Parent">
+          <div className="scrollable-container">
+            <div className="shelterInfo__div">
+              <ul className="shelterInfo__div-ul">
+                {displayedRecords.map((record ) => (
+                    //Using _id as key
+                    <li className="shelterInfo__div-li" key={record._id}>
+                      <br />
+                      <ul className="shelterInfo__div-ul">
+                        <h3 className="shelterInfo__div-h3">Organization Name: </h3>
+                        <p>{record.ORGANIZATION_NAME}</p></ul>
+                      <ul className="shelterInfo__div-ul">
+                        <h3 className="shelterInfo__div-h3">Shelter Group: </h3>
+                        <p>{record.SHELTER_GROUP}</p>
+                      </ul>
+                      <ul className="shelterInfo__div-ul">
+                        <h3 className="shelterInfo__div-h3">Location Name: </h3>
+                        <p>{record.LOCATION_NAME}</p>
+                      </ul>
+                      <ul className="shelterInfo__div-ul">
+                        <h3 className="shelterInfo__div-h3">Location Address: </h3>
+                        <p>{record.LOCATION_ADDRESS}</p>
+                      </ul>
+                      <ul className="shelterInfo__div-ul">
+                        <h3 className="shelterInfo__div-h3">Location Postal Code: </h3>
+                        <p>{record.LOCATION_POSTAL_CODE}</p>
+                      </ul>
+                      <ul className="shelterInfo__div-ul">
+                        <h3 className="shelterInfo__div-h3">Type: </h3>
+                        <p>{record.CAPACITY_TYPE}</p>
+                      </ul>
+                      {record.CAPACITY_TYPE === 'Bed Based Capacity' ?
+                        (<ul className="shelterInfo__div-ul">
+                          <h3 className="shelterInfo__div-h3">Available Beds: </h3>
+                          <p>{record.UNOCCUPIED_BEDS}</p>
+                        </ul>) : ('')}
+                      {record.CAPACITY_TYPE === 'Room Based Capacity' ?
+                        (<ul className="shelterInfo__div-ul">
+                          <h3 className="shelterInfo__div-h3">Available Rooms: </h3>
+                          <p>{record.UNOCCUPIED_ROOMS}</p>
+                        </ul>) : ('')}
+                      <ul className="shelterInfo__div-ul">
+                      <br />
+                        <h3 className="shelterInfo__div-h3">Last Updated: </h3>
+                        <h3>{record.OCCUPANCY_DATE}</h3>
+                      </ul>
+                      <br />
+                      <div className="actions__div">
+                      <button className="btn--Directions">
+                        <h3>Directions</h3>
+                        </button>
+                        <button className="btn--Share">
+                        <h3>Share</h3>
+                        </button>
+                      </div>
+                    </li>
+                  )
+                )}
+              </ul>
+            </div>
+            {loadCount < records.length && (
+              <button onClick={loadMore} className="loadMoreBtn btn--LoadMore">
+                Load More
+              </button>
+            )}
           </div>
-          {loadCount < records.length && (
-            <button onClick={loadMore} className="loadMoreButton">
-              Load More
-            </button>
-          )}
+          <SheltersMap />
         </div>
 
       </section>

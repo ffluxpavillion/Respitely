@@ -3,55 +3,44 @@
 @use '../../partials/global' as *;
 @use '../../partials/variables' as *;
 
-
-
 h3 {
   display: inline;
-
 }
+
 .sheltersCard__section {
   height: 50rem;
   min-height:fit-content;
-  width: fit-content;
   padding: 5rem;
-}
-
-.sheltersCard {
   display: flex;
   flex-direction: column;
   align-items: left;
   background-color: white;
   border-radius: 30px;
   box-shadow: 0 4px 90px 0 rgba(0, 0, 0, 0.5);
-  padding: 20px;
   margin: 20px;
   background-color: #aaa0b009;
-  height: 60rem;
-
-
+  min-height: 90rem ;
 }
+
 .sheltersCard__div {
   padding-bottom: 1rem;
-
 
   &-h2 {
     padding-top: 3rem;
     padding-bottom: 3rem;
     font-size: 2.5rem;
     color: $pastel-blue2;
-
-
   }
-
 }
 
-.button {
+// ----------------- BUTTONS -----------------
+
+.btn {
 
   &--All,
   &--Beds,
   &--Rooms {
     letter-spacing: 2px;
-
     display: inline-block;
     outline: none;
     cursor: pointer;
@@ -69,27 +58,42 @@ h3 {
     text-align: center;
     padding: 16px 14px 18px;
     color: #616467;
-    box-shadow: inset 0 0 0 2px #616467;
+    box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.252);
     background-color: transparent;
     height: 48px;
+
     &:hover {
       background-color: #8080803a;
       border: 1px solid white;
       color: black;
-
     }
 
   }
-  &--Beds {
 
-  }
-  &--Rooms {
+  &--Directions,
+  &--Share {
+  margin-top: 1rem;
+  margin-right: 0.1rem;
+  width: 120px;
+  height: 3rem;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  background-color: #6c85ba;
+  color: #ffffff;
+  cursor: pointer;
+  border: 1px solid black;
+  letter-spacing: 1px;
+  box-shadow: inset 0 0 0 2px #616467;
+
 
   }
 }
 
 
-.sheltersCard__button {
+.sheltersCard__Btn {
   margin-top: 1rem;
   margin-right: 0.1rem;
   width: 120px;
@@ -125,9 +129,16 @@ h3 {
     outline: none;
   }
 }
+
+.shelterInfo__Parent {
+  display: flex;
+  justify-content: space-between;
+  height: 40rem;
+
+}
 .scrollable-container {
-  width: 50%;
-  height: 800px;
+  width: 49%;
+  height: 100%;
   overflow-y: auto;
   padding: 20px;
   box-sizing: border-box;
@@ -172,7 +183,7 @@ h3 {
 }
 }
 
-.loadMoreButton {
+.loadMoreBtn {
   display: inline-block;
     outline: none;
     cursor: pointer;
@@ -203,14 +214,14 @@ h3 {
     }
 }
 
-.location__Container{
+.actions__div{
   display: flex;
   justify-content: end;
   padding-bottom: 2rem;
 
 }
 
-.location__Container--btn {
+.location__Container--Btn {
   margin-top: 1rem;
   margin-right: 0.1rem;
   width: 120px;

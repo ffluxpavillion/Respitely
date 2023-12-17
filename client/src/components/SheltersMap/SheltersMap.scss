@@ -2,3 +2,23 @@
 @use '../../partials/fonts' as *;
 @use '../../partials/global' as *;
 @use '../../partials/variables' as *;
+
+.sheltersMap__Container{
+  height: 100%;
+  width: 50%;
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.5);
+
+}
+.container {
+  width: 50%;
+  height: 30rem;
+  overflow-y: auto;
+  padding: 20px;
+  display: inline;
+  box-sizing: border-box;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 hwb(0 0% 100% / 0.2);
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.176) 0px 16px 48px 0px;
+
+}

@@ -28,7 +28,7 @@ export default function SheltersMap () {
 
   return (
     <>
-        <div className="sheltersMap__Container" style={{ height: '50vw', width: '50%' }}>
+        <div className="sheltersMap__Container">
         {apiKey && <GoogleMapReact
           bootstrapURLKeys={{ key: apiKey }}
           defaultCenter={defaultProps.center}

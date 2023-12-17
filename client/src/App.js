@@ -16,10 +16,14 @@ export default function App() {
         <OurMission />
         <Parallax />
         <SheltersCard />
-        <SheltersMap />
+        {/* <SheltersMap /> */}
         <Parallax2 />
         <Footer />
-        <Routes></Routes>
+        <Routes>
+            {/* <Route path='/' exact element={<Map />} />
+          <Route path='/shelter/shelterId' exact element={<SheltersCard />} /> */}
+
+        </Routes>
       </BrowserRouter>
   );
 }

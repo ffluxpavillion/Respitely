@@ -40,14 +40,16 @@ h3 {
   &--Beds,
   &--Rooms {
     display: inline-block;
-    outline: none;
+    // outline: none;
     line-height: 1;
     min-width: 10rem;
     text-transform: uppercase;
     white-space: normal;
     text-align: center;
     padding: 1rem;
-    box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.252);
+    box-shadow: inset 0 0 0 2px #00000019;
+    border: 1px solid #6c85ba;
+
 
     &:hover {
       background-color: #8080803a;
@@ -78,10 +80,18 @@ h3 {
     background-color: #6c85ba;
     color: #ffffff;
     cursor: pointer;
-    border: 1px solid black;
+    border: 1px solid #6c85ba;
     letter-spacing: 1px;
-    box-shadow: inset 0 0 0 2px #616467;
+    box-shadow: inset 0 0 0 2px #00000019;
+
+
+    &:hover {
+      background-color: #8080803a;
+      border: 1px solid white;
+      color: black;
+    }
   }
+
 }
 
 .sheltersCard__Btn {

@@ -65,7 +65,8 @@ export default function SheltersCard() {
     <>
       <section className="sheltersCard__section">
         <div className="sheltersCard__div">
-          <h1 className="sheltersCard__div-h2">Latest Shelter Occupancy in Toronto:</h1>
+          <h1 className="sheltersCard__div-h2">Latest Shelter Occupancy in Toronto</h1>
+          <h2>Filter By:</h2>
           <button
             className="sheltersCard__Btn btn--All"
             onClick={() => filterAndSortData(records, 'All')}>
@@ -91,30 +92,43 @@ export default function SheltersCard() {
                     <li className="shelterInfo__div-li" key={record._id}>
                         <div className="shelterInfo__div-left">
                           <ul className="shelterInfo__div-left-inner">
-                            <h3 className="shelterInfo__div-h3">Organization Name: </h3>
-                              <p>{record.ORGANIZATION_NAME}</p>
-                                </ul>
-                          <ul className="shelterInfo__div-left-inner">
                             <h3 className="shelterInfo__div-h3">Shelter Group: </h3>
                               <p>{record.SHELTER_GROUP}</p>
                                 </ul>
                           <ul className="shelterInfo__div-left-inner">
-                            <h3 className="shelterInfo__div-h3">Location Name: </h3>
-                              <p>{record.LOCATION_NAME}</p>
+                            <h3 className="shelterInfo__div-h3">Address: </h3>
+                              <p>{record.LOCATION_ADDRESS}</p>
                                 </ul>
                           <ul className="shelterInfo__div-left-inner">
-                            <h3 className="shelterInfo__div-h3">Location Address: </h3>
-                              <p>{record.LOCATION_ADDRESS}</p>
+                            <h3 className="shelterInfo__div-h3">City: </h3>
+                              <p>{record.LOCATION_CITY}</p>
+                                </ul>
+                          <ul className="shelterInfo__div-left-inner">
+                            <h3 className="shelterInfo__div-h3">Postal Code: </h3>
+                            <br />
+                              <p>{record.LOCATION_POSTAL_CODE}</p>
+                                </ul>
+                          <ul className="shelterInfo__div-right-inner">
+                            <br />
+                              <h3 className="shelterInfo__div-h3">Last Updated: </h3>
+                              <br />
+                              <h3>{record.OCCUPANCY_DATE}</h3>
                                 </ul>
                         </div>
                         <div className="shelterInfo__div-right">
-                          <ul className="shelterInfo__div-right-inner">
-                            <h3 className="shelterInfo__div-h3">Location Postal Code: </h3>
-                              <p>{record.LOCATION_POSTAL_CODE}</p>
-                          </ul>
+                          <ul className="shelterInfo__div-left-inner">
+                              <h3 className="shelterInfo__div-h3">Sector: </h3>
+                                <p>{record.SECTOR}</p>
+                                  </ul>
                           <ul className="shelterInfo__div-right-inner">
                             <h3 className="shelterInfo__div-h3">Type: </h3>
                               <p>{record.CAPACITY_TYPE}</p>
+                                </ul>
+                          <ul className="shelterInfo__div-right-inner">
+                            <h3 className="shelterInfo__div-h3">Program Model: </h3>
+                              <p>{record.PROGRAM_MODEL}</p>
+                              <p>{record.OVERNIGHT_SERVICE_TYPE}</p>
+
                                 </ul>
 
                           { // if CAPACITY_TYPE is Bed Based Capacity, display UNOCCUPIED_BEDS
@@ -134,11 +148,6 @@ export default function SheltersCard() {
                             : ('')
                           }
 
-                          <ul className="shelterInfo__div-right-inner">
-                            <br />
-                              <h3 className="shelterInfo__div-h3">Last Updated: </h3>
-                              <h3>{record.OCCUPANCY_DATE}</h3>
-                                </ul>
                         </div>
 
                       <div className="actions__div">

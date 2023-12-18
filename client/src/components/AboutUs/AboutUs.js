@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import './OurMission.scss';
+import './AboutUs.scss';
 import Logo from '../../assets/logo/SafeHavenTO.svg';
 
-export default function HeroPurpose() {
+export default function AboutUs() {
 
   return (
     <>
       <section className="mission__section">
         <div className="mission__div">
           <div className="mission__div-inner">
-            <h2 className="mission__div-header">Our Mission</h2>
+            <h2 className="mission__div-header">About Us</h2>
             <br />
             <p className="mission__div-text">
               SafeHavenTO is a web app that aims to help individuals
@@ -29,7 +29,7 @@ export default function HeroPurpose() {
               By seamlessly integrating modern design and functionality with an intuitive and reliable user experience (UX), such an application holds the potential to revolutionize the way individuals experiencing homelessness access vital information.  This platform aims to provide more than just basic information, but also a sense of security during times of intense vulnerability.
             </p>
             <div className="mission__div-logo-container">
-              <img className="mission__div-logo" src={Logo}></img>
+            <img className="mission__div-logo" src={Logo}></img>
             </div>
           </div>
         </div>

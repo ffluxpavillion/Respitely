@@ -70,7 +70,7 @@ export default function SheltersCard() {
 
   return (
     <>
-      <section className="sheltersCard__section">
+      <section className="sheltersCard__section" id="shelters">
         <div className="sheltersCard__div">
           <h1 className="sheltersCard__div-h2">Latest Shelter Occupancy in Toronto</h1>
           <h2>Filter By:</h2>

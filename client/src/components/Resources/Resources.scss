@@ -1,0 +1,54 @@
+@use '../../partials/abstracts' as *;
+@use '../../partials/fonts' as *;
+@use '../../partials/global' as *;
+@use '../../partials/variables' as *;
+
+a:hover, a:visited, a:link, a:active
+{
+    text-decoration: none;
+    color: $pastel-blue2;
+
+
+}
+.resources__section {
+}
+
+.resources__div {
+  padding: 5rem;
+  display: flex;
+  justify-content: center;
+
+  &-header{
+    padding-top:6rem;
+    padding-left:11rem;
+    justify-content: end;
+    color: $pastel-blue2;
+      font-size: 2.5rem;
+      font-weight: 800;
+      padding-left: 1.5rem;
+      padding-top: 1rem;
+
+  }
+
+}
+
+.grid-container {
+  display: grid;
+    grid-template-rows: 200px 200px 200px;
+    grid-template-columns: 200px 200px 200px;
+    gap: 4rem;
+
+
+}
+
+.grid-item {
+  border: 1px solid rgba(0, 0, 0, 0.185);
+  padding: 1rem;
+  box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.5);
+  min-width: 12.5rem;
+  min-height: 12rem;
+  border-radius: 5px;
+  display: grid;
+  // place-items: center;
+
+}

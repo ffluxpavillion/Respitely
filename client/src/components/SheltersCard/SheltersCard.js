@@ -8,7 +8,14 @@ export default function SheltersCard() {
   const [displayedRecords, setDisplayedRecords] = useState([]);
   const [loadCount, setLoadCount] = useState(5); // Number of records to display initially, and load more each time
   const [filterType, setFilterType] = useState('All'); // new state for filter type
+  const [selectedButton, setSelectedButton] = useState(null);
 
+  // function to handle button click
+  const handleClick = (button) => {
+    setSelectedButton(button);
+  };
+
+  // fetch data from server
   useEffect(() => {
     const fetchData = async () => {
     axios
@@ -67,19 +74,28 @@ export default function SheltersCard() {
         <div className="sheltersCard__div">
           <h1 className="sheltersCard__div-h2">Latest Shelter Occupancy in Toronto</h1>
           <h2>Filter By:</h2>
-          <button
-            className="sheltersCard__Btn btn--All"
-            onClick={() => filterAndSortData(records, 'All')}>
-              <h3>All</h3>
+          <button className={`sheltersCard__Btn btn--All ${selectedButton === 'All' ? 'selected' : ''}`}
+            onClick={() => { // onClick, filter and sort data, and set selected button
+              filterAndSortData(records, 'All');
+              handleClick('All');
+            }}
+          >
+            <h3>All</h3>
           </button>
-          <button
-            className="sheltersCard__Btn btn--Beds"
-            onClick={() => filterAndSortData(records, 'Beds')}>
+          <button className={`sheltersCard__Btn btn--Beds ${selectedButton === 'Beds' ? 'selected' : ''}`}
+            onClick={() => { // onClick, filter and sort data, and set selected button
+              filterAndSortData(records, 'Beds');
+              handleClick('Beds');
+            }}
+          >
             <h3>Beds</h3>
           </button>
-          <button
-            className="sheltersCard__Btn btn--Rooms"
-            onClick={() => filterAndSortData(records, 'Rooms')}>
+          <button className={`sheltersCard__Btn btn--Rooms ${selectedButton === 'Rooms' ? 'selected' : ''}`}
+            onClick={() => { // onClick, filter and sort data, and set selected button
+              filterAndSortData(records, 'Rooms');
+              handleClick('Rooms');
+            }}
+          >
             <h3>Rooms</h3>
           </button>
         </div>

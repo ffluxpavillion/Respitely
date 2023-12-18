@@ -54,8 +54,12 @@ h3 {
       border: 1px solid white;
       color: black;
     }
+    &.selected {
+      background-color: #8080803a;
+      color: black;
 
-    
+    }
+
   }
 
   &--Directions,

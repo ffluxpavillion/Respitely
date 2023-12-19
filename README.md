@@ -8,12 +8,20 @@ The homelessness crisis is riddled with multifaceted challenges, one such obstac
 By seamlessly integrating modern design and functionality with an intuitive and reliable user experience (UX), such an application holds the potential to revolutionize the way individuals experiencing homelessness access vital information.  This platform aims to provide more than just basic information, but also a sense of security during times of intense vulnerability. 
 The mission of our platform is to help bridge the gap between those in need and the resources available to them; to serve as a beacon of hope in addressing this pressing societal issue.  While this platform will initially exist as an informational hub, it holds the potential to expand beyond this scope through various future implementations and features.
 
-# To Run:
-## Server:
-VSCode/terminal: run `nodemon server` in server folder
+## To Run:
+### Server:
+cd into server folder
 
-## Client:
-VSCode/terminal: run `npm start` in client folder
+VSCode/terminal: run `npm i` / `npm install`
+
+VSCode/terminal: run `nodemon server`
+
+### Client:
+cd into client folder
+
+VSCode/terminal: run `npm i` / `npm install`
+
+VSCode/terminal: run `npm start`
 
 # Screenshots:
 

@@ -15,6 +15,8 @@ VSCode/terminal: run `nodemon server` in server folder
 ## Client:
 VSCode/terminal: run `npm start` in client folder
 
+## Screenshots:
+
 <img src = "https://github.com/ffluxpavillion/SafeHavenTO/blob/master/client/src/assets/screenshots/SafeHavenTO_landing.png">
 <img src = "https://github.com/ffluxpavillion/SafeHavenTO/blob/master/client/src/assets/screenshots/SafeHavenTO_about-us.png?raw=true">
 <img src = "https://github.com/ffluxpavillion/SafeHavenTO/blob/master/client/src/assets/screenshots/SafeHavenTO_parallax.png">

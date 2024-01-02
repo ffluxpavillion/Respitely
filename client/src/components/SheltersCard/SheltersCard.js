@@ -1,28 +1,28 @@
 import './SheltersCard.scss';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 import SheltersMap from '../SheltersMap/SheltersMap';
 
-export default function SheltersCard() {
+export default function SheltersCard(record) {
+  const [loading, setLoading] = useState(true); // state to show/hide Loading Shelter Data message
   const [records, setRecords] = useState([]);
   const [displayedRecords, setDisplayedRecords] = useState([]);
   const [loadCount, setLoadCount] = useState(5); // Number of records to display initially, and load more each time
   const [filterType, setFilterType] = useState('All'); // new state for filter type
   const [selectedButton, setSelectedButton] = useState(null);
-
-  // function to handle button click
-  const handleClick = (button) => {
-    setSelectedButton(button);
-  };
+  const [showLoadMore, setShowLoadMore] = useState(false); // state to show/hide Load More button
 
   // fetch data from server
   useEffect(() => {
     const fetchData = async () => {
-    axios
+    await axios
       .get('http://localhost:8080/shelters/')
       .then((response) => {
-        // console.log(response.data);
+        // console.log(response.data[0].CAPACITY_ACTUAL_BED);
         filterAndSortData(response.data, 'All');
+        setTimeout(() => { // display Loading Shelter Data message for 1 second
+          setLoading(false);
+        }, 1000);
       })
       .catch((err) => console.error(err));
     };
@@ -30,11 +30,19 @@ export default function SheltersCard() {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    // Set a timeout to show the Load More button after 2 seconds
+    const timer = setTimeout(() => {
+      setShowLoadMore(true);
+    }, 2000);
+
+    return () => clearTimeout(timer);    // Clean up function to clear the timeout
+  }, []);
+
   // function to filter data based on CAPACITY_TYPE, and then sort based on OCCUPANCY_DATE
   const filterAndSortData = (data, type) => {
-    const fetchedData = JSON.parse(JSON.stringify(data));
+    const fetchedData = JSON.parse(JSON.stringify(data)); // deep copy data to avoid mutating state
     let filteredData;
-    let tableData;
     if (type === 'Beds') {
       // console.log(`Before filtering for ${type}:`, data); // troubleshooting data mutation
       filteredData = fetchedData
@@ -67,6 +75,12 @@ export default function SheltersCard() {
     setLoadCount(loadCount + 5); // load 5 more records
     setDisplayedRecords(records.slice(0, loadCount + 5)); // set displayed records to the first 5 + 5 more
   };
+
+  // function to handle button click
+  const handleClick = (button) => {
+    setSelectedButton(button);
+  };
+
 
   return (
     <>
@@ -103,7 +117,8 @@ export default function SheltersCard() {
           <div className="scrollable-container">
             <div className="shelterInfo__div">
               <ul className="shelterInfo__div-ul">
-                {displayedRecords.map((record ) => (
+                {loading ? <h1 className="loading-message">Loading Shelter Data...</h1> :
+                  displayedRecords && displayedRecords.map((record ) => ( // first, checks if displayedRecords data exists, then maps through the data
                     //Using _id as key
                     <li className="shelterInfo__div-li" key={record._id}>
                         <div className="shelterInfo__div-left">
@@ -113,7 +128,7 @@ export default function SheltersCard() {
                                 </ul>
                           <ul className="shelterInfo__div-left-inner">
                             <h3 className="shelterInfo__div-h3">Address: </h3>
-                              <p>{record.LOCATION_ADDRESS}</p>
+                              <p id='locationAddress'>{record.LOCATION_ADDRESS}</p>
                                 </ul>
                           <ul className="shelterInfo__div-left-inner">
                             <h3 className="shelterInfo__div-h3">City: </h3>
@@ -144,7 +159,6 @@ export default function SheltersCard() {
                             <h3 className="shelterInfo__div-h3">Program Model: </h3>
                               <p>{record.PROGRAM_MODEL}</p>
                               <p>{record.OVERNIGHT_SERVICE_TYPE}</p>
-
                                 </ul>
 
                           { // if CAPACITY_TYPE is Bed Based Capacity, display UNOCCUPIED_BEDS
@@ -180,7 +194,7 @@ export default function SheltersCard() {
               </ul>
             </div>
             { // if loadCount is less than records.length, display load more button
-              loadCount < records.length &&
+              loadCount < records.length && showLoadMore &&
               (
                 <button
                   onClick={loadMore}
@@ -190,7 +204,7 @@ export default function SheltersCard() {
               )
             }
           </div>
-          <SheltersMap />
+          <SheltersMap  />
         </div>
       </section>
     </>

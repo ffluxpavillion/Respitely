@@ -4,16 +4,17 @@
 @use '../../partials/variables' as *;
 
 // Marker animation
-@keyframes bounceDrop {
-  0% {
-    opacity: 0;
-    transform: translateY(-500px) scaleY(2);
-  }
-}
+// @keyframes slideIn {
+//   0% {
+//     opacity: 0;
+//     transform: translateY(-500px) scaleY(2);
+//   }
+// }
 
-.marker {
-  animation: bounceDrop 2.2s ease forwards;
-}
+// .marker {
+//   animation: slideIn 2.2s ease forwards;
+// }
+
 .sheltersMap__Container{
   height: 40vw;
   width: 50%;

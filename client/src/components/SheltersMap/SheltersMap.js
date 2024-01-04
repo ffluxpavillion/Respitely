@@ -1,12 +1,12 @@
 import './SheltersMap.scss';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Map, {
-  NavigationControl,
-  ScaleControl,
-  GeolocateControl,
-  Marker,
-  Source,
+  NavigationControl, // zoom in/out buttons
+  ScaleControl, // scale bar
+  GeolocateControl, // find my location button
+  Marker, // marker for locations
   Layer,
+  Popup
 } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import axios from 'axios';
@@ -67,7 +67,7 @@ export default function SheltersMap(props) {
           <NavigationControl />
           <ScaleControl />
           <GeolocateControl />
-
+x
           {locations.map(
             (location, index) =>
               location.coordinates && (
@@ -76,6 +76,8 @@ export default function SheltersMap(props) {
                   key={index}
                   latitude={location.coordinates[1]}
                   longitude={location.coordinates[0]}
+                  draggable={false}
+                  color="#6c85ba"
                 />
               )
           )}

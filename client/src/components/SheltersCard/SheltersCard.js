@@ -11,7 +11,7 @@ export default function SheltersCard() {
   const [filterType, setFilterType] = useState('All'); // new state for filter type
   const [selectedButton, setSelectedButton] = useState(null);
   const [showLoadMore, setShowLoadMore] = useState(false); // state to show/hide Load More button
-  // const [uniqueLocations, setUniqueLocations] = useState({}); // piece of state to store unique locations
+  // const [uniqueLocations, setUniqueLocations] = useState({}); // alt piece of state to store unique locations
 
   useEffect(() => {
     const fetchData = async () => {
@@ -24,7 +24,7 @@ export default function SheltersCard() {
           // setUniqueLocations(processedData); // Update the state
 
           filterAndSortData(response.data, 'All');
-          // display Loading Shelter Data message for 1 second
+          // setTimeout to display Loading Shelter Data message for 1 second
           setTimeout(() => {
             setLoading(false);
           }, 1000);
@@ -140,24 +140,18 @@ export default function SheltersCard() {
             Latest Shelter Occupancy in Toronto
           </h1>
           <h2>Filter By:</h2>
-          <button
-            className={`sheltersCard__Btn btn--All ${
-              selectedButton === 'All' ? 'selected' : ''
-            }`}
+          <button className={`sheltersCard__Btn btn--All ${selectedButton === 'All' ? 'selected' : ''}`}
+            // onClick, filter and sort data, and set selected button
             onClick={() => {
-              // onClick, filter and sort data, and set selected button
               filterAndSortData(records, 'All');
               handleClick('All');
             }}
           >
             <h3>All</h3>
           </button>
-          <button
-            className={`sheltersCard__Btn btn--Beds ${
-              selectedButton === 'Beds' ? 'selected' : ''
-            }`}
+          <button className={`sheltersCard__Btn btn--Beds ${selectedButton === 'Beds' ? 'selected' : ''}`}
+            // onClick, filter and sort data, and set selected button
             onClick={() => {
-              // onClick, filter and sort data, and set selected button
               filterAndSortData(records, 'Beds');
               handleClick('Beds');
             }}
@@ -184,11 +178,7 @@ export default function SheltersCard() {
                 {loading ? (
                   <h1 className="loading-message">Loading Shelter Data...</h1>
                 ) : (
-                  displayedRecords &&
-                  displayedRecords.map(
-                    (
-                      record // first, checks if displayedRecords data exists, then maps through the data
-                    ) => (
+                  displayedRecords && displayedRecords.map((record) => ( // first, checks if displayedRecords data exists, then maps through the data
                       //Using _id as key
                       <li className="shelterInfo__div-li" key={record._id}>
                         <div className="shelterInfo__div-left">
@@ -243,29 +233,27 @@ export default function SheltersCard() {
 
                           {
                             // if CAPACITY_TYPE is Bed Based Capacity, display UNOCCUPIED_BEDS
-                            record.CAPACITY_TYPE === 'Bed Based Capacity' ? (
+                            record.CAPACITY_TYPE === 'Bed Based Capacity' ?
+                            (
                               <ul className="shelterInfo__div-right-inner">
                                 <h3 className="shelterInfo__div-h3">
                                   Available Beds:{' '}
                                 </h3>
                                 <p>{record.UNOCCUPIED_BEDS}</p>
                               </ul>
-                            ) : (
-                              ''
-                            )
+                            ) : ('')
                           }
                           {
                             // if CAPACITY_TYPE is Room Based Capacity, display UNOCCUPIED_ROOMS
-                            record.CAPACITY_TYPE === 'Room Based Capacity' ? (
+                            record.CAPACITY_TYPE === 'Room Based Capacity' ?
+                            (
                               <ul className="shelterInfo__div-right-inner">
                                 <h3 className="shelterInfo__div-h3">
                                   Available Rooms:{' '}
                                 </h3>
                                 <p>{record.UNOCCUPIED_ROOMS}</p>
                               </ul>
-                            ) : (
-                              ''
-                            )
+                            ) : ('')
                           }
                         </div>
 
@@ -285,7 +273,8 @@ export default function SheltersCard() {
             </div>
             {
               // if loadCount is less than records.length, display load more button
-              loadCount < records.length && showLoadMore && (
+              loadCount < records.length && showLoadMore &&
+              (
                 <button
                   onClick={loadMore}
                   className="loadMoreBtn btn--LoadMore"

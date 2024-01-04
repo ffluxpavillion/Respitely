@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/api/maps-key', (req, res) => {
-  res.json({ key: process.env.GOOGLE_MAPS_API_KEY });
+  res.json({key: process.env.REACT_APP_MAPBOX});
 });
 
 app.use((req, res) => {

@@ -48,7 +48,13 @@ li {
     padding: 14px;
     text-decoration: none;
     color: black;
-    font-size: larger;
+    font-size: 1.3rem;
+
+    &:hover {
+      border-bottom: 6px solid #5870a9;
+      transition: all 0.5s ease;
+
+    }
   }
 }
 
@@ -82,3 +88,20 @@ li {
 // p {
 //   padding-top: 10rem;
 // }
+
+#home {
+  border-bottom: 6px groove #5870a9;
+  transition: all 0.5s ease;
+
+}
+#aboutUs {
+  border-bottom: 6px solid #5870a9;
+  transition: all 0.5s ease;
+
+}
+
+#resources {
+  border-bottom: 6px solid #5870a9;
+  transition: all 0.5s ease;
+
+}

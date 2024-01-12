@@ -9,7 +9,7 @@ export default function SheltersCard() {
   const [displayedRecords, setDisplayedRecords] = useState([]);
   const [loadCount, setLoadCount] = useState(5); // Number of records to display initially, and load more each time
   const [filterType, setFilterType] = useState('All'); // new state for filter type
-  const [selectedButton, setSelectedButton] = useState(null);
+  const [selectedButton, setSelectedButton] = useState('All');
   const [showLoadMore, setShowLoadMore] = useState(false); // state to show/hide Load More button
   // const [uniqueLocations, setUniqueLocations] = useState({}); // alt piece of state to store unique locations
 
@@ -85,17 +85,11 @@ export default function SheltersCard() {
     if (type === 'Beds') {
       filteredData = fetchedData
         .filter((record) => record.CAPACITY_TYPE === 'Bed Based Capacity')
-        .sort(
-          (a, b) =>
-            parseInt(b.UNOCCUPIED_BEDS, 10) - parseInt(a.UNOCCUPIED_BEDS, 10)
-        );
+        .sort((a, b) => parseInt(b.UNOCCUPIED_BEDS, 10) - parseInt(a.UNOCCUPIED_BEDS, 10));
     } else if (type === 'Rooms') {
       filteredData = fetchedData
         .filter((record) => record.CAPACITY_TYPE === 'Room Based Capacity')
-        .sort(
-          (a, b) =>
-            parseInt(b.UNOCCUPIED_ROOMS, 10) - parseInt(a.UNOCCUPIED_ROOMS, 10)
-        );
+        .sort((a, b) =>parseInt(b.UNOCCUPIED_ROOMS, 10) - parseInt(a.UNOCCUPIED_ROOMS, 10));
     } else {
       filteredData = fetchedData.sort((a, b) => {
         const maxA = Math.max(
@@ -179,60 +173,51 @@ export default function SheltersCard() {
                   <h1 className="loading-message">Loading Shelter Data...</h1>
                 ) : (
                   displayedRecords && displayedRecords.map((record) => ( // first, checks if displayedRecords data exists, then maps through the data
-                      //Using _id as key
+                      // Using _id as key
                       <li className="shelterInfo__div-li" key={record._id}>
+
                         <div className="shelterInfo__div-left">
                           <ul className="shelterInfo__div-left-inner">
-                            <h3 className="shelterInfo__div-h3">
-                              Shelter Group:{' '}
-                            </h3>
-                            <p>{record.SHELTER_GROUP}</p>
+                            <h3 className="shelterInfo__div-h3">Shelter Group:{' '}</h3>
+                              <p>{record.SHELTER_GROUP}</p>
                           </ul>
                           <ul className="shelterInfo__div-left-inner">
                             <h3 className="shelterInfo__div-h3">Address: </h3>
-                            <p id="locationAddress">
-                              {record.LOCATION_ADDRESS}
-                            </p>
+                              <p>{record.LOCATION_ADDRESS}</p>
                           </ul>
                           <ul className="shelterInfo__div-left-inner">
                             <h3 className="shelterInfo__div-h3">City: </h3>
-                            <p>{record.LOCATION_CITY}</p>
+                              <p>{record.LOCATION_CITY}</p>
                           </ul>
                           <ul className="shelterInfo__div-left-inner">
-                            <h3 className="shelterInfo__div-h3">
-                              Postal Code:{' '}
-                            </h3>
+                            <h3 className="shelterInfo__div-h3">Postal Code:{' '}</h3>
                             <br />
-                            <p>{record.LOCATION_POSTAL_CODE}</p>
+                              <p>{record.LOCATION_POSTAL_CODE}</p>
                           </ul>
-                          <ul className="shelterInfo__div-right-inner">
+                          <ul className="shelterInfo__div-left-inner">
                             <br />
-                            <h3 className="shelterInfo__div-h3">
-                              Last Updated:{' '}
-                            </h3>
+                            <h3 className="shelterInfo__div-h3">Last Updated:{' '}</h3>
                             <br />
                             <h3>{record.OCCUPANCY_DATE}</h3>
                           </ul>
                         </div>
+
                         <div className="shelterInfo__div-right">
                           <ul className="shelterInfo__div-left-inner">
                             <h3 className="shelterInfo__div-h3">Sector: </h3>
-                            <p>{record.SECTOR}</p>
+                              <p>{record.SECTOR}</p>
                           </ul>
                           <ul className="shelterInfo__div-right-inner">
                             <h3 className="shelterInfo__div-h3">Type: </h3>
-                            <p>{record.CAPACITY_TYPE}</p>
+                              <p>{record.CAPACITY_TYPE}</p>
                           </ul>
                           <ul className="shelterInfo__div-right-inner">
-                            <h3 className="shelterInfo__div-h3">
-                              Program Model:{' '}
-                            </h3>
-                            <p>{record.PROGRAM_MODEL}</p>
-                            <p>{record.OVERNIGHT_SERVICE_TYPE}</p>
+                            <h3 className="shelterInfo__div-h3">Program Model:{' '}</h3>
+                              <p>{record.PROGRAM_MODEL}</p>
+                              <p>{record.OVERNIGHT_SERVICE_TYPE}</p>
                           </ul>
 
-                          {
-                            // if CAPACITY_TYPE is Bed Based Capacity, display UNOCCUPIED_BEDS
+                          { // if CAPACITY_TYPE is Bed Based Capacity, display UNOCCUPIED_BEDS
                             record.CAPACITY_TYPE === 'Bed Based Capacity' ?
                             (
                               <ul className="shelterInfo__div-right-inner">
@@ -243,8 +228,7 @@ export default function SheltersCard() {
                               </ul>
                             ) : ('')
                           }
-                          {
-                            // if CAPACITY_TYPE is Room Based Capacity, display UNOCCUPIED_ROOMS
+                          { // if CAPACITY_TYPE is Room Based Capacity, display UNOCCUPIED_ROOMS
                             record.CAPACITY_TYPE === 'Room Based Capacity' ?
                             (
                               <ul className="shelterInfo__div-right-inner">

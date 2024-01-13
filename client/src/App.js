@@ -7,6 +7,7 @@ import Parallax2 from './components/Parallax2/Parallax2';
 import SheltersCard from './components/SheltersCard/SheltersCard';
 import Resources from './components/Resources/Resources';
 import Footer from './components/Footer/Footer';
+import './App.scss';
 
 export default function App() {
   return (

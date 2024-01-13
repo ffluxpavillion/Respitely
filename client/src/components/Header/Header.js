@@ -5,33 +5,6 @@ import {HashLink as Link} from 'react-router-hash-link';
 
 export default function Header() {
 
-  // ------------------ Sticky Navbar ------------------
-
-  // const navbarRef = useRef(null); // Create a ref for the navbar
-
-  // useEffect(() => {
-  //   const navbar = navbarRef.current; // Get the navbar element
-  //   const sticky = navbar.offsetTop; // Get the offset position of the navbar
-
-  //   const handleScroll = () => {
-  //     if (window.scrollY >= sticky) {
-  //       //helps smooth transition
-  //       navbar.classList.add('sticky'); // Add the sticky class to the navbar
-  //     } else {
-  //       navbar.classList.remove('sticky'); // Remove the sticky class from the navbar
-  //     }
-  //   };
-
-  //   window.addEventListener('scroll', handleScroll); // Listen for scroll events
-
-  //   return () => {
-  //     window.removeEventListener('scroll', handleScroll); // Removes scroll event listener
-  //   };
-  // }, []); // Empty dependency array means this runs once on mount
-
-  // ------------------ Sticky Navbar ------------------
-
-
   return (
     <>
       <header className="header" id="home">

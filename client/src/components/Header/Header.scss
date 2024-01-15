@@ -3,8 +3,7 @@
 @use '../../partials/global' as *;
 @use '../../partials/variables' as *;
 
-body,
-html {
+body, html {
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
@@ -14,58 +13,329 @@ li {
   list-style: none;
 }
 
-.header {
-}
-
+// --------------- Navbar Section ---------------
 .navbar {
   overflow: hidden;
-  background-color: white;
+  // background-color: white;
   height: fit-content;
   min-height: 6rem;
-  padding: 0.5rem;
+
+
+  @include mobile {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    margin-bottom: -1000rem;
+    z-index: 1000; // Ensure it's above other elements
+    opacity: 96%;
+  }
+
+  @include tablet {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    margin-bottom: -1000rem;
+    z-index: 1000; // Ensure it's above other elements
+    opacity: 96%;
+  }
+      // enables corner nav on desktop
+      @include desktop {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    margin-bottom: -8.4rem;
+    z-index: 1000; // Ensure it's above other elements
+    opacity: 96%;
+  }
 
   &__div {
-    display: flex;
-    align-self: left;
-    justify-content: space-around;
-    align-items: center;
+
+    @include mobile {
+      display: flex;
+      align-self: left;
+      justify-content: end;
+    }
+
+    @include tablet {
+      display: flex;
+      align-self: left;
+      justify-content: end;
+    }
+
+    // enables menu on desktop
+    @include desktop {
+      display: flex;
+      align-self: left;
+      justify-content: end;
+    }
 
     &-logo {
       height: 5vw;
       width: 5vw;
       min-height: 2vw;
+      margin-left: 2rem;
+      margin-right: 1rem;
       display: inline;
+
+      // logo disabled (old nav)
+      @include mobile {
+        display: none;
+      }
+
+      // logo disabled (old nav)
+      @include tablet {
+        display: none;
+      }
+
+      // logo disabled (old nav)
+      @include desktop {
+        display: none;
+      }
+    }
+
+    &-ul {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+      width: 100%;
+      top: 6rem;
+      left: 0;
+      background-color: white;
+
+      @include mobile {
+        transform: translateY(-100%);
+        transition: transform 0.3s ease-in-out;
+      }
+
+      @include tablet {
+        transform: translateY(-100%);
+        transition: transform 0.3s ease-in-out;
+      }
+
+      // ENABLE for normal navbar on desktop
+      // @include desktop {
+      //   transform: none;
+      //   transition: transform 0.3s ease-in-out;
+      // }
+
+      // enables menu on desktop
+      @include desktop {
+        transform: translateY(-100%);
+        transition: transform 0.3s ease-in-out;
+      }
+    }
+
+    &-li {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+
+      text-align: center;
+      align-items: baseline;
+      padding: 14px;
+      text-decoration: none;
+      color: black;
+      font-size: 1.3rem;
+
+      @include mobile {
+        font-size: 1.34rem;
+        color:white;
+        padding: 1rem;
+        margin: 1rem;
+        width: 12rem;
+        border: 3px solid white;
+        text-transform: uppercase;
+        border-radius: 10px;
+      }
+
+      @include tablet {
+        font-size: 1.34rem;
+        color:white;
+        padding: 0.7rem;
+        margin: 1rem;
+        width: 12rem;
+        border: 3px solid white;
+        text-transform: uppercase;
+        border-radius: 10px;
+      }
+
+      // enables corner nav on desktop
+      @include desktop {
+        font-size: 1.5rem;
+        color:white;
+        padding: 1.6rem;
+        margin: 2rem;
+        width: 15rem;
+        border: 3px solid white;
+        text-transform: uppercase;
+        border-radius: 10px;
+
+        &:hover {
+          // border-bottom: 6px solid white;
+          -webkit-transition: all 0.3s ease-in-out;
+          background-color: white;
+          color: #cca6af;
+        }
+      }
     }
   }
 
-  &__div-item {
-    float: left;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    align-items: baseline;
-    padding: 14px;
-    text-decoration: none;
-    color: black;
-    font-size: 1.3rem;
+  &__burger-bar {
 
-    &:hover {
-      border-bottom: 6px solid #5870a9;
-      transition: all 0.5s ease;
+    @include mobile {
+      display: block;
+      padding: 0.56rem;
+      width: 2rem;
+      height: 2px;
+      margin: 5px auto;
+      background-color: #cca6af;
+      border: 2px solid white;
+      -webkit-transition: all 0.3s ease-in-out;
     }
+
+    @include tablet {
+      display: block;
+      padding: 0.56rem;
+      width: 2rem;
+      height: 3px;
+      margin: 5px auto;
+      background-color: #cca6af;
+      border: 2px solid white;
+      -webkit-transition: all 0.3s ease-in-out;
+    }
+
+    // enables corner nav on desktop
+    @include desktop {
+      display: block;
+      padding: 0.56rem;
+      width: 2rem;
+      height: 3px;
+      margin: 5px auto;
+      background-color: #cca6af;
+      border: 2px solid white;
+      -webkit-transition: all 0.3s ease-in-out;
+      // animation: pulse 2s infinite;
+    }
+
+    // enables old (classic) nav on desktop
+    // @include desktop{
+    //   display: none;
+    // }
   }
 }
 
-#home {
-  border-bottom: 6px groove #5870a9;
-  transition: all 0.5s ease;
+// --------------- BURGER MENU STYLING ---------------
+.menu {
+  @include mobile {
+    cursor: pointer;
+  }
+  @include tablet {
+    cursor: pointer;
+  }
+  // enables menu on desktop
+  @include desktop {
+    cursor: pointer;
+  }
 }
+
+  //--------------- BURGER MENU --OPEN/CLOSE ANIMATION ---------------
+
+  // enables new corner nav on all screens
+  @media screen {
+    .menu {
+      display: block;
+      padding: 1.5rem;
+    }
+    .menu.active .bar:nth-child(2) {
+      opacity: 0;
+    }
+    .menu.active .bar:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+      background-color: white;
+      // animation: none;
+    }
+    .menu.active .bar:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+      background-color: white;
+      // animation: none; // both anmations
+    }
+
+    .navMenu {
+      position: fixed;
+      left: -200%;
+      top: 100%;
+      flex-direction: column;
+      background-color: #cca6af;
+      width: 100%;
+      text-align: center;
+      justify-content: space-around;
+      -webkit-transition: all 0.6s ease-in-out;
+      height: 14.5rem;
+      // margin: 16px 0;
+      opacity: 0;
+      transition: opacity 100ms;
+    }
+
+    // enables the navMenu to fade in
+    .navMenu.active {
+      @include mobile {
+        left: 0%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        opacity: 1;
+        background-color: #cca6af;
+        transition: opacity 700ms;
+      }
+
+      @include tablet {
+        left: 0%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        opacity: 1;
+        background-color: #cca6af;
+        transition: opacity 700ms;
+      }
+
+      // enables the actual fullscreen component of the new nav on desktop
+      @include desktop {
+        left: 0%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        opacity: 1;
+        background-color: #cca6af;
+        transition: opacity 700ms;
+      }
+    }
+  }
+
+// AboutUs Section --SafeHavenTO header underline
 #aboutUs {
   border-bottom: 6px solid #5870a9;
-  transition: all 0.5s ease;
 }
 
+// Resources Section --end-to-end line
 #resources {
   border-bottom: 6px solid #5870a9;
-  transition: all 0.5s ease;
 }
+
+// alternate corner nav animation
+// @keyframes pulse {
+// 	0% {
+// 		transform: scale(0.90);
+// 		box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+// 	}
+
+// 	70% {
+// 		transform: scale(1);
+// 		box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+// 	}
+
+// 	100% {
+// 		transform: scale(0.90);
+// 		box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+// 	}
+// }

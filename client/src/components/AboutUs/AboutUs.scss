@@ -4,6 +4,20 @@
 @use '../../partials/variables' as *;
 
 .mission__section {
+
+  &__div {
+    display: flex;
+
+    &-h1 {
+      color: $pastel-blue2;
+      font-size: 2.5rem;
+      font-weight: 800;
+      padding-left: 1.5rem;
+      padding-top: 1rem;
+
+      @include mobile {}
+    }
+  }
 }
 
 .mission__div {

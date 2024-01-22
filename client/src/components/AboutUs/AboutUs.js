@@ -7,6 +7,9 @@ export default function AboutUs() {
   return (
     <>
       <section className="mission__section">
+        <div className="mission__section__div">
+          <h1 className="mission__section__div-h1" id="aboutUs">SafeHavenTO</h1>
+        </div>
         <div className="mission__div">
           <div className="mission__div-inner">
             <h2 className="mission__div-header">About Us</h2>

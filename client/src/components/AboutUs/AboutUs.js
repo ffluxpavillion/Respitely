@@ -15,10 +15,11 @@ export default function AboutUs() {
             <h2 className="mission__div-header">About Us</h2>
             <br />
             <p className="mission__div-text">
-              SafeHavenTO is a web app that aims to help individuals
-              experiencing homelessness by finding nearby shelters based on
-              their needs and the latest data from nearby shelters. This app
-              leverages the City of Toronto's Daily Shelter Occupancy Data API.
+              SafeHavenTO is a full-stack & responsive web application designed to help individuals
+              experiencing homelessness find nearby shelters based on
+              their individual needs, and the latest updates from locations around the city. This app
+              leverages JSON data provided by the City of Toronto's Daily Shelter Occupancy Data API,
+              via the city's Open Data Portal initiative.
             </p>
             <p className="mission__div-text">
               Our mission is to help bridge the gap between those in need and
@@ -26,10 +27,13 @@ export default function AboutUs() {
               addressing this pressing societal issue.
             </p>
             <p className="mission__div-text">
-             The homelessness crisis is riddled with multifaceted challenges, one such obstacle is the access to timely and accurate shelter information. There's a lack of centralized, up-to-date resources for individuals in need, causing difficulties in finding suitable shelters, especially during urgent situations.
+             The homelessness crisis is riddled with multifaceted challenges, one such obstacle is the access to timely and accurate shelter information. There is a lack of centralized, up-to-date resources for individuals in need, causing difficulties in finding suitable shelters, especially during urgent situations.
             </p>
             <p className="mission__div-text">
-              By seamlessly integrating modern design and functionality with an intuitive and reliable user experience (UX), such an application holds the potential to revolutionize the way individuals experiencing homelessness access vital information.  This platform aims to provide more than just basic information, but also a sense of security during times of intense vulnerability.
+              By seamlessly integrating modern design and functionality with an intuitive and reliable user experience (UX), such an application holds the potential to revolutionize the way individuals experiencing homelessness access vital information.
+            </p>
+            <p className="mission__div-text">
+              This platform aims to provide more than just basic information, but also a sense of security during times of intense vulnerability.
             </p>
             <div className="mission__div-logo-container">
               <img className="mission__div-logo" src={Logo}></img>

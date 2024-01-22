@@ -4,7 +4,6 @@
 @use '../../partials/variables' as *;
 
 .mission__section {
-
   &__div {
     display: flex;
 
@@ -14,14 +13,12 @@
       font-weight: 800;
       padding-left: 1.5rem;
       padding-top: 1rem;
-
-      @include mobile {}
     }
   }
 }
 
 .mission__div {
-  padding: 5rem;
+  padding: 3.8rem;
   display: flex;
   justify-content: center;
 
@@ -35,17 +32,21 @@
   }
 
   &-text {
-    width: 30em;
-    margin: 0 auto;
+    max-width: 36rem;
+    min-width: 14rem;
+    font-size: 1rem;
     line-height: 1.625;
-    padding: 1rem;
-    font-size: 1.2rem;
     font-weight: 400;
-    letter-spacing: 0.3px;
-    word-wrap:break-word;
+    hyphens: auto;
+    word-wrap: normal;
     text-align: justify;
-    text-justify: inter-word;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    @include desktop {
+      font-size: 1.1rem;
     }
+  }
 
     &-logo-container {
       display: flex;

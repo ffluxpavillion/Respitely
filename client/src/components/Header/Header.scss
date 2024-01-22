@@ -260,6 +260,11 @@ li {
     .menu {
       display: block;
       padding: 1.5rem;
+
+      @include mobile {
+        padding: 1rem;
+
+      }
     }
     .menu.active .bar:nth-child(2) {
       opacity: 0;

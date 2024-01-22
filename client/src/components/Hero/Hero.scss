@@ -16,4 +16,29 @@
   background-position: center;
   overflow: hidden;
   flex-wrap: wrap;
+  // border-radius: 31% 69% 23% 77% / 66% 18% 82% 34%;
+
+  @include mobile {
+    min-height: 100vh;
+    max-width: 110vw;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+  }
+
+  @include tablet {
+    min-height: 100vh;
+    max-width: 110vw;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+  }
+
+  @include desktop {
+    min-height: 100vh;
+    max-width: 110vw;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+  }
 }

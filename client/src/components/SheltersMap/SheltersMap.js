@@ -89,10 +89,9 @@ const handleMapLoad = () => { // Load the HeartMarker icon and attach event list
         const feature = e.features[0];
         setSelectedPlace(feature); // Store the entire feature
         setViewState({ // Update the view state to center on the clicked marker
-          ...viewState,
           longitude: feature.geometry.coordinates[0],
           latitude: feature.geometry.coordinates[1],
-          zoom: 12.8,
+          zoom:  map.getZoom() // centers on the clicked marker without changing current zoom level
         });
       }
     });
@@ -110,23 +109,20 @@ const handleMapLoad = () => { // Load the HeartMarker icon and attach event list
     const map = mapRef.current.getMap();
     const features = map.queryRenderedFeatures(e.point, { layers: ['location-markers'] }); // Query the map for features at the clicked point
 
-    if (features.length > 0) { // If a feature is clicked, store the entire feature and update the view state
+    if (features.length > 0) { // If a feature is clicked, store the entire feature and update the view state via force re-render
       const feature = features[0];
       setSelectedPlace(feature);
       setViewState({
         ...viewState,
         longitude: feature.geometry.coordinates[0],
         latitude: feature.geometry.coordinates[1],
-        zoom: 13,
-        transitionDuration: 1000,
       });
-      setRefreshKey(prevKey => prevKey + 1); // Force re-render by toggling the refresh key
+      setRefreshKey(prevKey => prevKey + 1); // Force re-render by toggling the refresh key --required to update the popups
     } else {
       setSelectedPlace(null); // Hide the popup if no feature is clicked
     }
   };
 
-// console.log('selectedPlace= ', selectedPlace);
   return (
     <>
       {apiKey && (

@@ -24,7 +24,7 @@ To use Mapbox, you'll need a Mapbox access token.
 #### Server:
 VSCode/terminal: run `npm i` in server folder
 
-VSCode/terminal: run `nodemon server` in server folder
+VSCode/terminal: run `npm run dev` in server folder
 
 #### Client:
 VSCode/terminal: run `npm i` in client folder

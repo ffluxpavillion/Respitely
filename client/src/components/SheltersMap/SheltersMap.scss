@@ -18,7 +18,7 @@
 .sheltersMap__Container{
   height: 40vw;
   width: 50%;
-  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: rgba(0, 0, 0, 0.176) 0px 16px 48px 0px;
 
 
 }
@@ -33,7 +33,6 @@
   box-shadow: 0 4px 8px 0 hwb(0 0% 100% / 0.2);
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.176) 0px 16px 48px 0px;
-
 }
 
 .marker-btn{
@@ -44,7 +43,6 @@
 	font: inherit;
 	cursor: pointer;
 	outline: inherit;
-
 }
 
 .popup {
@@ -97,8 +95,8 @@
 .mapboxgl-popup-anchor-bottom-left {
   margin-left: 1rem;
   margin-bottom: 1rem;
-
 }
+
 .mapboxgl-popup-content {
   background: #fff;
   border-radius: 1.75rem;
@@ -109,11 +107,15 @@
   position: relative;
   width: 20rem;
   animation: fadeIn 0.5s ease-out forwards;
-
 }
-.mapboxgl-popup-close-button{
 
+.mapboxgl-popup-close-button{
   font-size: 2rem;
+}
+
+.mapboxgl-map{
+  // box-shadow: rgba(0, 0, 0, 0.176) 0px 16px 48px 0px;
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.5);
 }
 
 @keyframes fadeIn {
@@ -126,6 +128,7 @@
     transform: translateY(0);
   }
 }
+
 @keyframes bounce {
   0%   { transform: translateY(0px); }
   50%  { transform: translateY(-35px); }

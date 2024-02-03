@@ -10,23 +10,32 @@ a:active {
   text-decoration: none;
   color: $pastel-blue2;
   width: fit-content;
+  max-height: 15rem;
 }
 
 a:active {
   transition: all 0.4s ease-in-out;
-  background-color: #cca6af;
+  background-color: #ffffff8e;
   color: white;
 }
-a:hover {
-  @include hover-effect(#dde2ed);
+
+.resources__section {
+  // background: url(../../assets/images/sssurf.svg) center / cover no-repeat fixed; // alt background (pattern)
+  // background: url(../../assets/images/sssurf3.svg) center / cover no-repeat fixed; // alt background (pattern)
+  background: linear-gradient(180deg,#aaa0b0 0%,#cca6af 65%) center / cover no-repeat fixed;
+  background-size: cover;
+  background-position: center;
 }
-// .resources__section {
-// }
 
 .resources__div {
   padding: 4rem;
   display: flex;
   justify-content: center;
+  height:900px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 
   @include mobile {
     padding: 4rem;
@@ -38,7 +47,7 @@ a:hover {
     padding-top: 6rem;
     padding-left: 11rem;
     justify-content: end;
-    color: $pastel-blue2;
+    color: white;
     font-size: 2.5rem;
     font-weight: 800;
     padding-left: 1.5rem;
@@ -62,14 +71,18 @@ a:hover {
 }
 
 .grid__item {
-  border: 1px solid rgba(0, 0, 0, 0.185);
+  border: 1px solid #0000002f;
   padding: 1rem;
   box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.5);
   width: 15rem;
   height: 15rem;
-  border-radius: 10px;
+  border-radius: 20px;
   display: grid;
   place-content: space-between;
+  backdrop-filter: blur(15px);
+  background-color: #ffffff73;
+  transform: scale(1);
+  transition:  border-radius 800ms ease, background-color 800ms ease, transform 800ms ease;
 
   @include mobile {
     padding: 0.5rem;
@@ -77,6 +90,15 @@ a:hover {
     height: 34vw;
     border-radius: 10px;
     place-content: center;
+  }
+
+  @include desktop{
+    &:hover {
+      // border: 2px solid #0000002f;
+      border-radius: 10px;
+      background-color: #ffffff8e;
+      transform: scale(1.05);
+    }
   }
 
   &-header {
@@ -89,17 +111,11 @@ a:hover {
     @include mobile {
       font-size: 3.3vw;
     }
-
-    &:hover {
-      @include hover-effect(#dde2ed);
-    }
   }
 
   &-text {
     font-size: 1rem;
-    font-weight: 400;
-    color: #5870a9;
-
+    color: #224;
     margin-top: 1rem;
     align-items: end;
     place-self: self-end;

@@ -11,10 +11,17 @@
 	padding: 0;
 }
 
-* h1,h2,h3,a {
+*h3,a {
 	font-family: 'Avenir Next Bold';
 	font-weight: 400;
 	font-style: normal;
 	margin: 0;
 	padding: 0;
+}
+
+*h1 {
+	font-family: 'DT Black';
+}
+*h2 {
+	font-family: 'Ostrich Sans Black';
 }

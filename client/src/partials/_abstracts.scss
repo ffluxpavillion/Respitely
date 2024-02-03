@@ -17,3 +17,14 @@
     @content;
   }
 }
+
+// ======================= Hover Effect =======================
+
+@mixin hover-effect($background-color, $border-radius: 10px) {
+  &:hover {
+    color: white;
+    background-color: $background-color;
+    border-radius: $border-radius;
+    transition: all 0.4s ease-in-out;
+  }
+}

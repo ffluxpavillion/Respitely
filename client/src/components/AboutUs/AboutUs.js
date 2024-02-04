@@ -7,12 +7,23 @@ export default function AboutUs() {
   return (
     <>
       <section className="mission__section">
-        <div className="mission__section__div">
-          <h1 className="mission__section__div-h1" id="aboutUs">SafeHavenTO</h1>
+      <br />
+
+        <div className="mission__section-div">
+
+          <h1 className="mission__section-div-h1" id='aboutUs' >safehaven•TO</h1>
         </div>
+        <br />
+        <br />
+        <br />
+        
+        {/* <h1 className="mission__section__div-h1" >modern problems</h1>
+        <h1 className="mission__section__div-h1" >require</h1>
+        <h1 className="mission__section__div-h1" >modern solutions</h1> */}
+
         <div className="mission__div">
           <div className="mission__div-inner">
-            <h2 className="mission__div-header">About Us</h2>
+            <h2 className="mission__div-h2">Mission Statement</h2>
             <br />
             <p className="mission__div-text">
               SafeHavenTO is a full-stack & responsive web application designed to help individuals

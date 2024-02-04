@@ -4,21 +4,31 @@
 @use '../../partials/variables' as *;
 
 .mission__section {
-  &__div {
+  background-color: white;
+  // background-color: black;
+  // background: linear-gradient(180deg, #aaa0b0 0%, #cca6af 95%,) center / cover no-repeat fixed; // alt background gradient (pink/purple)
+  // background: linear-gradient(180deg, #EDF1F4 0%, #C3CBDC 95%) center / cover no-repeat fixed; // alt background gradient (white/blue)
+  background-image: linear-gradient(315deg, #f1f2f6 0%, #c9c6c6 84%);
+
+  &-div {
     display: flex;
+    justify-content: center;
 
     &-h1 {
       color: $pastel-blue2;
-      font-size: 2.5rem;
-      font-weight: 800;
-      padding-left: 1.5rem;
-      padding-top: 1rem;
+      // color: white;
+      // color: lightgrey;
+      font-size: 11.5vw;;
+      padding-left: 1.05rem;
+      padding-bottom: 3vw;
+      margin-top: -0.5vw;
+      font-weight: 400;
+      letter-spacing: 0.5rem;
     }
   }
 }
 
 .mission__div {
-  padding: 3.8rem;
   display: flex;
   justify-content: center;
 
@@ -26,37 +36,59 @@
     width: auto;
   }
 
-  &-header {
+  &-h2 {
+    // color: $pastel-blue2;
+    color: white;
+    // color: #e1dadaba;
+    font-size: 3.2vw;
+    display: flex;
+    justify-content: center;
     width: auto;
     margin: 0 auto;
+    letter-spacing: 1.18vh;
+    margin: 2vw;
   }
 
   &-text {
-    max-width: 36rem;
+    max-width: 55rem;
     min-width: 14rem;
-    font-size: 1rem;
+    font-size: 1.05rem;
     line-height: 1.625;
     font-weight: 400;
     hyphens: auto;
     word-wrap: normal;
     text-align: justify;
     margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.6rem;
+    color: rgb(67, 67, 67);
+    font-family: 'Avenir Next';
+    padding-left:4rem;
+    padding-right:4rem;
+    line-height: 1.9em;
+    font-weight: 600;
 
+    @include mobile {
+      font-size: 1rem;
+    }
+    @include tablet {
+      font-size: 1.13rem;
+    }
     @include desktop {
-      font-size: 1.1rem;
+      font-size: 1.16rem;
     }
   }
 
     &-logo-container {
       display: flex;
       justify-content: center;
-      padding: 2rem;
+      padding-bottom: 1rem;
     }
 
   &-logo {
-    height: 20rem;
-    width: 20rem;
+    max-height: 35vh;
     min-height: 2vw;
+    max-width: 35vw;
+    margin: 4vw;
+
   }
 }

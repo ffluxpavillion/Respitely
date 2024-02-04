@@ -130,13 +130,15 @@ li {
       float: left;
       display: block;
       color: #f2f2f2;
-
       text-align: center;
       align-items: baseline;
       // padding: 14px;
       text-decoration: none;
       color: black;
       // font-size: 1.3rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
       @include mobile {
         font-size: 1.7rem;
@@ -157,7 +159,7 @@ li {
       }
 
       @include tablet {
-        font-size: 1.5rem;
+        font-size: 1.9rem;
         color:white;
         padding: 1.6rem;
         margin: 1rem;
@@ -176,15 +178,19 @@ li {
 
       // enables corner nav on desktop
       @include desktop {
-        font-size: 1.5rem;
+        font-size: 2.2rem;
         color:white;
         padding: 1.6rem;
         margin: 1rem;
-        width: 15rem;
+        width: 17rem;
+        height: 6rem;
         border: 3px solid white;
         text-transform: uppercase;
         border-radius: 0.62rem;
         transition: all 0.4s ease-in-out;
+        font-weight: 400;
+        // letter-spacing: 0.12rem;
+
 
         &:hover {
           transition: all 0.4s ease-in-out;

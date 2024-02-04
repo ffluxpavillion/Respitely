@@ -32,10 +32,10 @@ export default function Header() {
         <div className="navbar__div">
           {/* <img className="navbar__div-logo" src={Logo} alt="Logo"></img> */}
           <ul className={`navbar__div-ul navMenu ${menuOpen ? 'active' : ''}`}>
-            <li onClick={handleClick}><Link to='#home'><h1 className="navbar__div-li">Home</h1></Link></li>
-            <li onClick={handleClick}><Link to='#aboutUs'><h1 className="navbar__div-li">About Us</h1></Link></li>
-            <li onClick={handleClick}><Link to='#shelters'><h1 className="navbar__div-li">Shelters</h1></Link></li>
-            <li onClick={handleClick}><Link to='#resources'><h1 className="navbar__div-li">Resources</h1></Link></li>
+            <li onClick={handleClick}><Link to='#home'><h3 className="navbar__div-li">Home</h3></Link></li>
+            <li onClick={handleClick}><Link to='#aboutUs'><h3 className="navbar__div-li">About</h3></Link></li>
+            <li onClick={handleClick}><Link to='#shelters'><h3 className="navbar__div-li">Shelters</h3></Link></li>
+            <li onClick={handleClick}><Link to='#resources'><h3 className="navbar__div-li">Resources</h3></Link></li>
           </ul>
           <div className={`navbar__burger menu ${menuOpen ? 'active' : ''}`} onClick={toggleMenu}>
             <span className='navbar__burger-bar bar'></span>

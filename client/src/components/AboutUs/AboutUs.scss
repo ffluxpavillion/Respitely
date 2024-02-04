@@ -8,7 +8,8 @@
   // background-color: black;
   // background: linear-gradient(180deg, #aaa0b0 0%, #cca6af 95%,) center / cover no-repeat fixed; // alt background gradient (pink/purple)
   // background: linear-gradient(180deg, #EDF1F4 0%, #C3CBDC 95%) center / cover no-repeat fixed; // alt background gradient (white/blue)
-  background-image: linear-gradient(315deg, #f1f2f6 0%, #c9c6c6 84%);
+  // background-image: linear-gradient(315deg, #f1f2f6 0%, #c9c6c6 84%); // alt background gradient (beige/white)
+  background-image: linear-gradient(315deg, #f1f2f6 0%, #8693ab 74%);
 
   &-div {
     display: flex;
@@ -18,7 +19,7 @@
       color: $pastel-blue2;
       // color: white;
       // color: lightgrey;
-      font-size: 11.5vw;;
+      font-size: 9.7vw;
       padding-left: 1.05rem;
       padding-bottom: 3vw;
       margin-top: -0.5vw;
@@ -36,17 +37,25 @@
     width: auto;
   }
 
+  &-inner-container-1 {
+    justify-content: center;
+  }
+
+  &-inner-container-2 {
+    display: flex;
+    justify-content: center;
+  }
+
   &-h2 {
     // color: $pastel-blue2;
     color: white;
     // color: #e1dadaba;
-    font-size: 3.2vw;
+    font-size: 2.2vw;
     display: flex;
     justify-content: center;
     width: auto;
     margin: 0 auto;
-    letter-spacing: 1.18vh;
-    margin: 2vw;
+    letter-spacing: 1.18vw;
   }
 
   &-text {
@@ -55,40 +64,40 @@
     font-size: 1.05rem;
     line-height: 1.625;
     font-weight: 400;
-    hyphens: auto;
     word-wrap: normal;
     text-align: justify;
-    margin-top: 1rem;
     margin-bottom: 1.6rem;
     color: rgb(67, 67, 67);
     font-family: 'Avenir Next';
-    padding-left:4rem;
-    padding-right:4rem;
     line-height: 1.9em;
     font-weight: 600;
 
     @include mobile {
       font-size: 1rem;
+      padding: 1.5rem 4rem 0 4rem;
+      hyphens: auto;
+
     }
     @include tablet {
       font-size: 1.13rem;
+      padding: 2rem 4rem 0 4rem;
     }
     @include desktop {
       font-size: 1.16rem;
+      padding: 3rem 4rem 0 4rem;
     }
   }
 
-    &-logo-container {
-      display: flex;
-      justify-content: center;
-      padding-bottom: 1rem;
-    }
+  &-logo-container {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 1rem;
+  }
 
   &-logo {
     max-height: 35vh;
     min-height: 2vw;
     max-width: 35vw;
     margin: 4vw;
-
   }
 }

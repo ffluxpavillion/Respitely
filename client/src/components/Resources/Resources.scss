@@ -8,7 +8,7 @@ a:visited,
 a:link,
 a:active {
   text-decoration: none;
-  color: $pastel-blue2;
+  // color: $pastel-blue2;
   width: fit-content;
   max-height: 15rem;
 }
@@ -20,18 +20,67 @@ a:active {
 }
 
 .resources__section {
-  // background: url(../../assets/images/sssurf.svg) center / cover no-repeat fixed; // alt background (pattern)
-  // background: url(../../assets/images/sssurf3.svg) center / cover no-repeat fixed; // alt background (pattern)
-  background: linear-gradient(180deg,#aaa0b0 0%,#cca6af 65%) center / cover no-repeat fixed;
-  background-size: cover;
-  background-position: center;
+
+  // ALT --Repeating Pattern Gradient Background -- Light Grey / Light Purple -- Mountains
+  // background: url(../../assets/images/sssurf.svg) center / cover no-repeat fixed;
+  // background-attachment: fixed;
+
+  // ALT --Repeating Pattern Gradient Background -- Light Grey / Light Purple -- Waves
+  // background: url(../../assets/images/sssurf3.svg) center /cover no-repeat fixed;
+  // background-attachment: fixed;
+
+  // ALT --Radial Gradient Background -- Light Grey / White/Light Source Bottom
+  // background-image: linear-gradient(177deg, #c3cbdc 0%, #edf1f4 84%);
+  // background-attachment: fixed;
+
+  // ALT --Radial Gradient Background -- Light Grey / White/Light Source Right
+  // background-image: linear-gradient(315deg, #f3f4f7 0%, #c3cbdc 79%);
+  // background-attachment: fixed;
+
+  // ALT --Radial Gradient Background -- Steel Blue/Cream White/Light Source Right
+  // background-image: radial-gradient(circle at 100%, #d7d2cc 23%, #4c5b81 70%);
+  // background-attachment: fixed;
+
+
+  // ALT --Conical Gradient Background --Colourful Pastel
+  // background: conic-gradient(from 270deg at 50% 50%, #5870a9, #7d75ad, #9c7cae, #b583ac, #ca8daa, #da99a8, #e6a6a7, #eeb5a9);
+  // background-attachment: fixed;
+
+  // ALT --Conical Gradient Background --Colourful Vibrant
+  // background: conic-gradient(from 270deg at 90% 50%, #1f005c, #5b0060, #870160, #ac255e, #ca485c, #e16b5c, #f39060, #ffb56b);
+  // background-attachment: fixed;
+
+  // ALT --Radial Gradient Background -- Teal/Blue/Light Source Center
+  // background-image: radial-gradient(circle at 50%, #d7d2cc -40%, #304352 90%); // OPTION 1
+  // background-attachment: fixed;
+
+  // ALT --VERY COOL CHEESE GRATER FIXED BACKGROUND I ACCIDENTLY CREATED -- lol
+  // background:
+  //   conic-gradient(#BFBFBF 25%,#0000 0) 0 0/calc(2*67px) calc(67px/9.5) ,
+  //   conic-gradient(#BFBFBF 25%,#0000 0) 0 0/calc(67px/9.5) calc(2*67px) fixed,
+  //   repeating-conic-gradient(#0000 0 25%,#BFBFBF 0 50%) 67px 0 /calc(2*67px) calc(2*67px),
+  //   radial-gradient(50% 50%,#95979bef 98%,#BFBFBF) 0 0/67px 67px ;
+
+// ALT --Conical gradient background
+// background: conic-gradient(from 270deg at 50% 50%, #d1cdc8, #d6d2cd, #dbd7d1, #e0dbd6, #e5e0db, #eae5df, #efeae4, #f4efe9);
+// background: conic-gradient(from 270deg at 50% 8%, #d1cdc8, #cbc7c2, #c6c2bd, #c0bcb8, #bbb7b2, #b5b1ad, #afaba7, #aaa6a2);
+
+// CURRENT --Repeating Gradient -- Fixed Background
+  background-size: 100% 100%;
+  background-position: 0px 0px,0px 0px,0px 0px,0px 0px,0px 0px;
+  background-image:
+    radial-gradient(75% 75% at 50% 50%, #E8E8E89C 100%, #073AFF00 100%),
+    repeating-radial-gradient(75% 75% at 238% 218%, #00FFFF12 30%, #073AFF14 39%),
+    radial-gradient(99% 99% at 109% 2%, #00C9FFFF 0%, #073AFF00 100%),
+    radial-gradient(160% 154% at 711px -303px, #2000FFFF 0%, #152FD2FF 27%);
+    background-attachment: fixed;
 }
 
 .resources__div {
   padding: 4rem;
   display: flex;
   justify-content: center;
-  height:900px;
+  height:925px;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -44,14 +93,14 @@ a:active {
   }
 
   &-header {
-    padding-top: 6rem;
-    padding-left: 11rem;
+    padding-top: 1rem;
+    letter-spacing: 3px;
     justify-content: end;
     color: white;
-    font-size: 2.5rem;
+    font-size: 4vw;
     font-weight: 800;
     padding-left: 1.5rem;
-    padding-top: 1rem;
+    text-transform: uppercase;
   }
 }
 
@@ -61,6 +110,7 @@ a:active {
   gap: 3rem;
   width: 90%;
   justify-items: center;
+
 
   @include mobile {
     grid-template-columns: repeat(2, minmax(40px, 200px));
@@ -83,6 +133,8 @@ a:active {
   background-color: #ffffff73;
   transform: scale(1);
   transition:  border-radius 800ms ease, background-color 800ms ease, transform 800ms ease;
+  transition: background 0.4s ease-in-out, transform 0.4s ease-in-out, border-radius 0.4s ease-in-out;
+
 
   @include mobile {
     padding: 0.5rem;
@@ -94,9 +146,8 @@ a:active {
 
   @include desktop{
     &:hover {
-      // border: 2px solid #0000002f;
       border-radius: 10px;
-      background-color: #ffffff8e;
+      background-color: #ffffffa4;
       transform: scale(1.05);
     }
   }
@@ -104,7 +155,7 @@ a:active {
   &-header {
     font-size: 1.3rem;
     font-weight: 800;
-    color: $pastel-blue2;
+    color: #0a0d14d0;
     text-align: center;
     padding-top: 1rem;
 
@@ -115,10 +166,13 @@ a:active {
 
   &-text {
     font-size: 1rem;
-    color: #224;
-    margin-top: 1rem;
+    color: #414b62ba;
+    margin-top: 1.4rem;
     align-items: end;
     place-self: self-end;
+    letter-spacing: 0.2px;
+    word-wrap: normal;
+    line-height: 1.3em;
 
     @include mobile {
       display: none;

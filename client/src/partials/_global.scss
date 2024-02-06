@@ -2,26 +2,32 @@
 @use './fonts' as *;
 @use './variables' as *;
 
-
 * {
-	font-family: 'Avenir Next';
-	font-weight: 400;
-	font-style: normal;
-	margin: 0;
-	padding: 0;
-}
-
-*h3,a {
-	font-family: 'Avenir Next Bold';
-	font-weight: 400;
-	font-style: normal;
-	margin: 0;
-	padding: 0;
+  // font-family: 'Avenir Next ';
+  font-weight: 400;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
 }
 
 *h1 {
-	font-family: 'DT Black';
+  font-family: 'Ostrich Inline Regular';
 }
 *h2 {
-	font-family: 'Ostrich Sans Black';
+  font-family: 'Ostrich Inline Regular';
+
+}
+
+*h3,
+a {
+  font-family: 'League Spartan Black', 'League Spartan ExtraBold',
+    'Avenir Next Bold';
+  font-weight: 400;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+}
+
+*h4 {
+  font-family: 'Avenir Next Bold';
 }

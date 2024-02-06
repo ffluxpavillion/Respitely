@@ -1,5 +1,5 @@
 # SafeHavenTO
-For my capstone project, I created a user-friendly web app which leverages Daily Shelter Occupancy Data, an API provided by the City of Toronto's open data platform to assist individuals experiencing homelessness in finding nearby shelters based on their needs and real-time availability. The app has potential for expansion to other cities like Vancouver, and Montreal.
+I created a Full Stack & Responsive user-friendly web app which leverages Daily Shelter Occupancy Data, an API provided by the City of Toronto's open data initiative. This platform aims to help individuals experiencing homelessness in finding nearby shelters, based on their needs and real-time availability. In future implementations, my vision is to expand the app beyond Toronto to include other major metropolitan cities, and beyond.
 
 ##### All parallax images were sourced from https://unsplash.com/
 

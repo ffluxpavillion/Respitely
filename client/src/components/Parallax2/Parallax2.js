@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import './Parallax2.scss';
-import ParallaxImage2 from '../../assets/images/SafeHavenTO_public-art-display.jpg';
+import ParallaxImage2 from '../../assets/images/SafeHavenTO_graphic-art-skyline-3.png';
 
 
 export default function Parallax2() {

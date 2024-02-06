@@ -4,7 +4,8 @@
 @use '../../partials/variables' as *;
 
 .parallax2 {
-  height:900px;
+
+  height:1200px;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -19,6 +20,4 @@
 
   // Snowy TTC Image
   // background-image: url("https://images.unsplash.com/photo-1517501778092-ff97cac9cc2c?q=80&w=3006&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
-
-
 }

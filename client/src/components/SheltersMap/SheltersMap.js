@@ -3,6 +3,8 @@ import Map, { NavigationControl, ScaleControl, GeolocateControl, Popup, Source, 
 import axios from 'axios';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import HeartMarker from '../../assets/icons/SafeHavenTO_icon-marker.png'
+import OpenIcon from '../../assets/icons/SafeHavenTO_icon-open-in.svg'
+
 import './SheltersMap.scss';
 
 export default function SheltersMap(props) {
@@ -17,7 +19,7 @@ export default function SheltersMap(props) {
   const [viewState, setViewState] = useState({ // Initial view state
     longitude: -79.384293,
     latitude: 43.653908,
-    zoom: 12.1,
+    zoom: 11,
   });
 
   const mapRef = useRef(); // Reference to the map instance
@@ -123,6 +125,7 @@ const handleMapLoad = () => { // Load the HeartMarker icon and attach event list
     }
   };
 
+  console.log('selectedPlace.properties.LOCATION_ADDRESS= ', {selectedPlace})
   return (
     <>
       {apiKey && (
@@ -136,6 +139,7 @@ const handleMapLoad = () => { // Load the HeartMarker icon and attach event list
           mapStyle="mapbox://styles/mapbox/streets-v9"
           onClick={handleMapClick}
           onLoad={handleMapLoad}
+          cooperativeGestures // requires CMD + scroll to zoom --helps prevent accidental zooming
         >
         <NavigationControl position='bottom-right'/>
         <ScaleControl />
@@ -161,32 +165,41 @@ const handleMapLoad = () => { // Load the HeartMarker icon and attach event list
             latitude={selectedPlace.geometry.coordinates[1]}
             longitude={selectedPlace.geometry.coordinates[0]}
             draggable={false}
-            // anchor='top'
+            anchor='bottom'
             closeButton={true}
             onClose={() => setSelectedPlace(null)}
-            offset={30}
+            offset={20}
           >
             <div className='popup__div'>
               <div className='popup__div-top'>
-                <h2>
+                <h4 className='popup__div-header'>
                   {selectedPlace.properties.LOCATION_NAME || 'LOCATION NAME'}
-                </h2>
+                </h4>
               </div>
               <br />
-              <br />
               <div className='popup__div-bottom'>
-                <h3>Address:</h3>
-                <h4>{selectedPlace.properties.LOCATION_ADDRESS}</h4>
+                <h4 className='popup__div-subheader'>Address:</h4>
+                <h4 className='popup__div-text'>
+                  {selectedPlace.properties.LOCATION_ADDRESS}<br />
+                  {selectedPlace.properties.LOCATION_CITY}
+
+                </h4>
                 {selectedPlace.properties.CAPACITY_TYPE === 'Bed Based Capacity' ?
-                  (<h3 className="shelterInfo__div-h3">Available Beds:{selectedPlace.properties.UNOCCUPIED_BEDS}</h3>)
+                  (<h4 className='popup__div-subheader'>Available Beds: {selectedPlace.properties.UNOCCUPIED_BEDS}</h4>)
                   :
-                  (<h3 className="shelterInfo__div-h3">Available Rooms:{selectedPlace.properties.UNOCCUPIED_ROOMS}</h3>)
+                  (<h4 className='popup__div-subheader'>Available Rooms: {selectedPlace.properties.UNOCCUPIED_ROOMS}</h4>)
                 }
-                <button className="popup__btn-Directions"
-                // onClick={handleClickDirections}
+                <br />
+                <a
+                  href={`https://www.google.com/maps/place/${encodeURIComponent(selectedPlace.properties.LOCATION_ADDRESS)},+${encodeURIComponent(selectedPlace.properties.LOCATION_CITY)},+${encodeURIComponent(selectedPlace.properties.LOCATION_POSTAL_CODE)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn--Directions-anchor"
                 >
-                  <h3>Directions</h3>
-                </button>
+                  <button className="popup__btn-Directions">
+                    <h4> <img className='btn--Icon' src={OpenIcon} alt="Open Icon" />View in Google Maps</h4>
+                  </button>
+                </a>
               </div>
             </div>
           </Popup>

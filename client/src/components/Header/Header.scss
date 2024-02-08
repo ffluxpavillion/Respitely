@@ -3,7 +3,8 @@
 @use '../../partials/global' as *;
 @use '../../partials/variables' as *;
 
-body, html {
+body,
+html {
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
@@ -19,7 +20,6 @@ li {
   // background-color: white;
   height: fit-content;
   min-height: 6rem;
-
 
   @include mobile {
     position: fixed;
@@ -39,7 +39,8 @@ li {
     opacity: 96%;
   }
 
-  @include desktop {    // enables corner nav on desktop
+  @include desktop {
+    // enables corner nav on desktop
     position: fixed;
     top: 0;
     width: 100%;
@@ -49,7 +50,6 @@ li {
   }
 
   &__div {
-
     @include mobile {
       display: flex;
       align-self: left;
@@ -142,7 +142,7 @@ li {
 
       @include mobile {
         font-size: 1.7rem;
-        color:white;
+        color: white;
         padding: 1.6rem;
         margin: 1rem;
         width: 15rem;
@@ -160,7 +160,7 @@ li {
 
       @include tablet {
         font-size: 1.9rem;
-        color:white;
+        color: white;
         padding: 1.6rem;
         margin: 1rem;
         width: 15rem;
@@ -179,7 +179,7 @@ li {
       // enables corner nav on desktop
       @include desktop {
         font-size: 2rem;
-        color:white;
+        color: white;
         padding: 1.6rem;
         margin: 1rem;
         width: 17rem;
@@ -191,7 +191,6 @@ li {
         font-weight: 400;
         // letter-spacing: 0.12rem;
 
-
         &:hover {
           transition: all 0.4s ease-in-out;
           background-color: white;
@@ -202,16 +201,16 @@ li {
   }
 
   &__burger-bar {
-
     @include mobile {
       display: block;
       padding: 0.56rem;
-      width: 2.25rem;
-      height: 1.5rem;
+      width: 1.75rem;
+      height: 1.3rem;
       margin: 5px auto;
       background-color: #cca6af;
-      border: 2.5px solid white;
+      border: 2px solid white;
       -webkit-transition: all 0.3s ease-in-out;
+      animation: pulse 3s;
     }
 
     @include tablet {
@@ -223,6 +222,7 @@ li {
       background-color: #cca6af;
       border: 2.5px solid white;
       -webkit-transition: all 0.3s ease-in-out;
+      animation: pulse 3s;
     }
 
     // enables corner nav on desktop
@@ -235,6 +235,8 @@ li {
       background-color: #cca6af;
       border: 2px solid white;
       -webkit-transition: all 0.3s ease-in-out;
+
+      // transform: scale(1);
       // animation: pulse 2s infinite;
     }
 
@@ -259,83 +261,96 @@ li {
   }
 }
 
-  //--------------- BURGER MENU --OPEN/CLOSE ANIMATION ---------------
+//--------------- BURGER MENU --OPEN/CLOSE ANIMATION ---------------
 
-  // enables new corner nav on all screens
-  @media screen {
-    .menu {
-      display: block;
-      padding: 1.5rem;
+// enables new corner nav on all screens
+@media screen {
+  .menu {
+    display: block;
+    padding: 1.5rem;
 
-      @include mobile {
-        padding: 1rem;
-
-      }
-    }
-    .menu.active .bar:nth-child(2) {
-      opacity: 0;
-    }
-    .menu.active .bar:nth-child(1) {
-      transform: translateY(8px) rotate(45deg);
-      background-color: white;
-      // animation: none;
-    }
-    .menu.active .bar:nth-child(3) {
-      transform: translateY(-8px) rotate(-45deg);
-      background-color: white;
-      // animation: none; // both anmations
-    }
-
-    .navMenu {
-      position: fixed;
-      left: -200%;
-      top: 100%;
-      flex-direction: column;
-      background-color: #cca6af;
-      width: 100%;
-      text-align: center;
-      justify-content: space-around;
-      height: 14.5rem;
-      // margin: 16px 0;
-      opacity: 0;
-      -webkit-transition: all 0.6s ease-in-out;
-      transition: opacity 100ms
-    }
-
-    // enables the navMenu to fade in
-    .navMenu.active {
-      @include mobile {
-        left: 0%;
-        height: 100%;
-        justify-content: center;
-        align-items: center;
-        background-color: #cca6af;
-        opacity: 1;
-        transition: opacity 700ms;
-      }
-
-      @include tablet {
-        left: 0%;
-        height: 100%;
-        justify-content: center;
-        align-items: center;
-        background-color: #cca6af;
-        opacity: 1;
-        transition: opacity 700ms;
-      }
-
-      // enables the actual fullscreen component of the new nav on desktop
-      @include desktop {
-        left: 0%;
-        height: 100%;
-        justify-content: center;
-        align-items: center;
-        background-color: #cca6af;
-        opacity: 1;
-        transition: opacity 700ms;
-      }
+    @include mobile {
+      padding: 0.3rem;
     }
   }
+  .menu.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .menu.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+    background-color: white;
+  }
+  .menu.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+    background-color: white;
+  }
+
+  .bar:nth-child(2) {
+    animation: pulse-wave 2s;
+    animation-iteration-count: 5;
+    animation-delay: 0.25s;
+  }
+  .bar:nth-child(1) {
+    animation: pulse-wave 2s;
+    animation-iteration-count: 5;
+  }
+  .bar:nth-child(3) {
+    animation: pulse-wave 2s;
+    animation-iteration-count: 5;
+    animation-delay: 0.3s;
+
+    // animation-delay: 2s;
+  }
+  .navMenu {
+    position: fixed;
+    left: -200%;
+    top: 100%;
+    flex-direction: column;
+    background-color: #cca6af;
+    width: 100%;
+    text-align: center;
+    justify-content: space-around;
+    height: 14.5rem;
+    // margin: 16px 0;
+    opacity: 0;
+    -webkit-transition: all 0.6s ease-in-out;
+    transition: opacity 100ms;
+  }
+
+  // enables the navMenu to fade in
+  .navMenu.active {
+    @include mobile {
+      left: 0%;
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+      background-color: #cca6af;
+      opacity: 1;
+      transition: opacity 700ms;
+    }
+
+    @include tablet {
+      left: 0%;
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+      background-color: #cca6af;
+      opacity: 1;
+      transition: opacity 700ms;
+    }
+
+    // enables the actual fullscreen component of the new nav on desktop
+    @include desktop {
+      left: 0%;
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+      background-color: #cca6af;
+      opacity: 1;
+      transition: opacity 700ms;
+    }
+  }
+}
 
 // AboutUs Section --SafeHavenTO header underline
 #aboutUs {
@@ -348,19 +363,49 @@ li {
 }
 
 // alternate corner nav animation
-// @keyframes pulse {
-// 	0% {
-// 		transform: scale(0.90);
-// 		box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
-// 	}
+@keyframes pulse {
+  0% {
+    transform: scale(0.9);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+  }
 
-// 	70% {
-// 		transform: scale(1);
-// 		box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
-// 	}
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+  }
 
-// 	100% {
-// 		transform: scale(0.90);
-// 		box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
-// 	}
-// }
+  100% {
+    transform: scale(0.9);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+  }
+}
+
+@keyframes pulse2 {
+  0% {
+    transform: scale(0.9);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+  }
+
+  70% {
+    transform: scale(1.5);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+  }
+
+  100% {
+    transform: scale(0.9);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+  }
+}
+
+// Top right corner nav animation --pulse wave effect on load only --finite (5 times)
+@keyframes pulse-wave {
+  50% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.4);
+  }
+}

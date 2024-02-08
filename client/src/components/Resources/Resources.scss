@@ -19,6 +19,9 @@ a:active {
   color: white;
 }
 
+*{
+  transition: font-size 0.2s ease-in-out
+}
 .resources__section {
 
   // ALT --Repeating Pattern Gradient Background -- Light Grey / Light Purple -- Mountains
@@ -90,6 +93,7 @@ a:active {
     padding: 4rem;
     display: grid;
     place-items: center;
+    margin-top: -6rem;
   }
 
   &-header {
@@ -101,6 +105,14 @@ a:active {
     font-weight: 800;
     padding-left: 1.5rem;
     text-transform: uppercase;
+
+    @include mobile {
+      font-size: 6vw;
+    }
+
+    @include tablet {
+      font-size: 5vw;
+    }
   }
 }
 
@@ -115,6 +127,7 @@ a:active {
   @include mobile {
     grid-template-columns: repeat(2, minmax(40px, 200px));
     row-gap: 5vw;
+    padding:5rem;
     column-gap: 30vw;
     justify-content: center;
   }
@@ -135,11 +148,10 @@ a:active {
   transition:  border-radius 800ms ease, background-color 800ms ease, transform 800ms ease;
   transition: background 0.4s ease-in-out, transform 0.4s ease-in-out, border-radius 0.4s ease-in-out;
 
-
   @include mobile {
     padding: 0.5rem;
-    width: 34vw;
-    height: 34vw;
+    width: 27vw;
+    height: 27vw;
     border-radius: 10px;
     place-content: center;
   }
@@ -158,9 +170,11 @@ a:active {
     color: #0a0d14d0;
     text-align: center;
     padding-top: 1rem;
+    text-transform: uppercase;
+    text-shadow: -4px 2px 9px #acb0c7cf;
 
     @include mobile {
-      font-size: 3.3vw;
+      font-size: 3vw;
     }
   }
 
@@ -173,6 +187,7 @@ a:active {
     letter-spacing: 0.2px;
     word-wrap: normal;
     line-height: 1.3em;
+    text-shadow: 1px 9px 10px #acb0c7cf;
 
     @include mobile {
       display: none;

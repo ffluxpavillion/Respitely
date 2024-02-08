@@ -9,7 +9,10 @@
   // background: linear-gradient(180deg, #aaa0b0 0%, #cca6af 95%,) center / cover no-repeat fixed; // alt background gradient (pink/purple)
   // background: linear-gradient(180deg, #EDF1F4 0%, #C3CBDC 95%) center / cover no-repeat fixed; // alt background gradient (white/blue)
   // background-image: linear-gradient(315deg, #f1f2f6 0%, #c9c6c6 84%); // alt background gradient (beige/white)
-  background-image: linear-gradient(315deg, #f1f2f6 0%, #8693ab 74%);
+  background-image: linear-gradient(45deg, #f1f2f6 8%, #8693ab 84%);
+  // background-image: radial-gradient(circle at 48% -50%, #f1f2f6 0%, #8693ab 54%);
+  background-attachment: fixed;
+
 
   &-div {
     display: flex;
@@ -47,9 +50,7 @@
   }
 
   &-h2 {
-    // color: $pastel-blue2;
     color: white;
-    // color: #e1dadaba;
     font-size: 2.2vw;
     display: flex;
     justify-content: center;
@@ -71,17 +72,20 @@
     font-family: 'Avenir Next';
     line-height: 1.9em;
     font-weight: 600;
+    // text-shadow: 1px 0px 10px #999;
+    text-shadow: 1px 9px 10px #acb0c7cf;
 
     @include mobile {
       font-size: 1rem;
       padding: 1.5rem 4rem 0 4rem;
       hyphens: auto;
-
     }
+
     @include tablet {
       font-size: 1.13rem;
       padding: 2rem 4rem 0 4rem;
     }
+
     @include desktop {
       font-size: 1.16rem;
       padding: 3rem 4rem 0 4rem;

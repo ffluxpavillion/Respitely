@@ -129,13 +129,14 @@ const handleMapLoad = () => { // Load the HeartMarker icon and attach event list
   return (
     <>
       {apiKey && (
+
         <Map
           key={refreshKey} // This forces the map to re-render, which is necessary to update the markers
           ref={mapRef}
           {...viewState} // updates view state on marker click
           onMove={evt => setViewState(evt.viewState)} // updates view state on marker click
           mapboxAccessToken={apiKey}
-          style={{ width: '50%', minHeight: 'max-content' }}
+          style={{ width: '60%', minHeight: 'max-content' }}
           mapStyle="mapbox://styles/mapbox/streets-v9"
           onClick={handleMapClick}
           onLoad={handleMapLoad}

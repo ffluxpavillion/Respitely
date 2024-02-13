@@ -2,6 +2,10 @@ import './SheltersCard.scss';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import SheltersMap from '../SheltersMap/SheltersMap';
+import RouteIcon from '../../assets/icons/SafeHavenTO_icon-route.svg'
+import ShareIcon from '../../assets/icons/SafeHavenTO_icon-share.svg'
+import FilterButtons from '../FilterButtons/FilterButtons';
+import LoadMoreButton from '../LoadMoreButton/LoadMoreButton';
 
 export default function SheltersCard() {
   const [loading, setLoading] = useState(true); // state to show/hide Loading Shelter Data message
@@ -10,7 +14,6 @@ export default function SheltersCard() {
   const [loadCount, setLoadCount] = useState(5); // Number of records to display initially, and load more each time
   const [filterType, setFilterType] = useState('All'); // new state for filter type
   const [selectedButton, setSelectedButton] = useState('All');
-  const [showLoadMore, setShowLoadMore] = useState(false); // state to show/hide Load More button
   // const [uniqueLocations, setUniqueLocations] = useState({}); // alt piece of state to store unique locations
 
   useEffect(() => {
@@ -69,14 +72,9 @@ export default function SheltersCard() {
   //   };
   // console.log('uniqueLocations =', uniqueLocations);
 
-  useEffect(() => {
-    // Set a timeout to show the Load More button after 2 seconds
-    const timer = setTimeout(() => {
-      setShowLoadMore(true);
-    }, 2000);
 
-    return () => clearTimeout(timer); // Clean up function to clear the timeout
-  }, []);
+
+
 
   // function to filter data based on CAPACITY_TYPE, and then sort based on OCCUPANCY_DATE
   const filterAndSortData = (data, type) => {
@@ -128,151 +126,113 @@ export default function SheltersCard() {
 
   return (
     <>
-      <section className="sheltersCard__section" id="shelters">
-        <div className="sheltersCard__div">
-          <h1 className="sheltersCard__div-h2">
-            Latest Shelter Occupancy in Toronto
-          </h1>
-          <h2>Filter By:</h2>
-          <button className={`sheltersCard__Btn btn--All ${selectedButton === 'All' ? 'selected' : ''}`}
-            // onClick, filter and sort data, and set selected button
-            onClick={() => {
-              filterAndSortData(records, 'All');
-              handleClick('All');
-            }}
-          >
-            <h3>All</h3>
-          </button>
-          <button className={`sheltersCard__Btn btn--Beds ${selectedButton === 'Beds' ? 'selected' : ''}`}
-            // onClick, filter and sort data, and set selected button
-            onClick={() => {
-              filterAndSortData(records, 'Beds');
-              handleClick('Beds');
-            }}
-          >
-            <h3>Beds</h3>
-          </button>
-          <button
-            className={`sheltersCard__Btn btn--Rooms ${
-              selectedButton === 'Rooms' ? 'selected' : ''
-            }`}
-            onClick={() => {
-              // onClick, filter and sort data, and set selected button
-              filterAndSortData(records, 'Rooms');
-              handleClick('Rooms');
-            }}
-          >
-            <h3>Rooms</h3>
-          </button>
+      <section className="shelter-section" id="shelters">
+        <div className="shelter-section__upper">
+          <h3 className="shelter-section__header">Latest Shelter Occupancy in Toronto</h3>
+
+          <br />
+          <br />
+          <br />
+
+          <FilterButtons
+            selectedButton={selectedButton}
+            filterAndSortData={filterAndSortData}
+            handleClick={handleClick}
+            records={records}
+          ></FilterButtons>
+
         </div>
-        <div className="shelterInfo__Parent">
-          <div className="scrollable-container">
-            <div className="shelterInfo__div">
-              <ul className="shelterInfo__div-ul">
-                {loading ? (
-                  <h1 className="loading-message">Loading Shelter Data...</h1>
-                ) : (
-                  displayedRecords && displayedRecords.map((record) => ( // first, checks if displayedRecords data exists, then maps through the data
+        <div className="shelter-section__lower">
+          <div className="shelter-scrollable-container">
+            <div className="shelter-cards">
+              <ul className="shelter-list">
+                {displayedRecords && displayedRecords.map((record) => ( // first, checks if displayedRecords data exists, then maps through the data
                       // Using _id as key
-                      <li className="shelterInfo__div-li" key={record._id}>
+                      <li className="shelter-item" key={record._id}>
+                        <div className='shelter-item__content'>
+                          <div className="shelter-item__left">
+                            <ul className="shelter-item__left-inner">
+                              <h4 className='shelter-item__title'>{record.SHELTER_GROUP}</h4>
 
-                        <div className="shelterInfo__div-left">
-                          <ul className="shelterInfo__div-left-inner">
-                            <h3 className="shelterInfo__div-h3">Shelter Group:{' '}</h3>
-                              <p>{record.SHELTER_GROUP}</p>
-                          </ul>
-                          <ul className="shelterInfo__div-left-inner">
-                            <h3 className="shelterInfo__div-h3">Address: </h3>
-                              <p>{record.LOCATION_ADDRESS}</p>
-                          </ul>
-                          <ul className="shelterInfo__div-left-inner">
-                            <h3 className="shelterInfo__div-h3">City: </h3>
-                              <p>{record.LOCATION_CITY}</p>
-                          </ul>
-                          <ul className="shelterInfo__div-left-inner">
-                            <h3 className="shelterInfo__div-h3">Postal Code:{' '}</h3>
-                            <br />
-                              <p>{record.LOCATION_POSTAL_CODE}</p>
-                          </ul>
-                          <ul className="shelterInfo__div-left-inner">
-                            <br />
-                            <h3 className="shelterInfo__div-h3">Last Updated:{' '}</h3>
-                            <br />
-                            <h3>{record.OCCUPANCY_DATE}</h3>
-                          </ul>
-                        </div>
+                              <div className="shelter-item__details">
+                                <h4 className="shelter-item__availability">
+                                  {record.CAPACITY_TYPE === 'Bed Based Capacity' ? `Available Beds: ${record.UNOCCUPIED_BEDS}` : ''}
+                                  {record.CAPACITY_TYPE === 'Room Based Capacity' ? `Available Rooms: ${record.UNOCCUPIED_ROOMS}` : ''}
+                                  <br />
+                                  Last Updated: {record.OCCUPANCY_DATE}
+                                </h4>
+                              </div>
+                            </ul>
 
-                        <div className="shelterInfo__div-right">
-                          <ul className="shelterInfo__div-left-inner">
-                            <h3 className="shelterInfo__div-h3">Sector: </h3>
-                              <p>{record.SECTOR}</p>
-                          </ul>
-                          <ul className="shelterInfo__div-right-inner">
-                            <h3 className="shelterInfo__div-h3">Type: </h3>
-                              <p>{record.CAPACITY_TYPE}</p>
-                          </ul>
-                          <ul className="shelterInfo__div-right-inner">
-                            <h3 className="shelterInfo__div-h3">Program Model:{' '}</h3>
-                              <p>{record.PROGRAM_MODEL}</p>
-                              <p>{record.OVERNIGHT_SERVICE_TYPE}</p>
-                          </ul>
+                            <div className="shelter-item__actions">
+                            <a href={`https://www.google.com/maps/place/${encodeURIComponent(record.LOCATION_ADDRESS)},+${encodeURIComponent(record.LOCATION_CITY)},+${encodeURIComponent(record.LOCATION_POSTAL_CODE)}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              <button className="shelter-item__actions-btn">
+                                <img className='btn--Directions-Icon' src={RouteIcon} alt="Route Icon" />
+                                <h4 className='btn--Directions-Text'>Get Directions</h4>
+                              </button>
+                            </a>
+                              <button className="shelter-item__actions-btn">
+                                <img className='btn--Share-Icon' src={ShareIcon} alt="Share Icon" />
+                                <h4 className='btn--Share-Text'>Share</h4>
+                              </button>
 
-                          { // if CAPACITY_TYPE is Bed Based Capacity, display UNOCCUPIED_BEDS
-                            record.CAPACITY_TYPE === 'Bed Based Capacity' ?
-                            (
-                              <ul className="shelterInfo__div-right-inner">
-                                <h3 className="shelterInfo__div-h3">
-                                  Available Beds:{' '}
-                                </h3>
-                                <p>{record.UNOCCUPIED_BEDS}</p>
-                              </ul>
-                            ) : ('')
-                          }
-                          { // if CAPACITY_TYPE is Room Based Capacity, display UNOCCUPIED_ROOMS
-                            record.CAPACITY_TYPE === 'Room Based Capacity' ?
-                            (
-                              <ul className="shelterInfo__div-right-inner">
-                                <h3 className="shelterInfo__div-h3">
-                                  Available Rooms:{' '}
-                                </h3>
-                                <p>{record.UNOCCUPIED_ROOMS}</p>
-                              </ul>
-                            ) : ('')
-                          }
-                        </div>
+                            </div>
+                          </div>
 
-                        <div className="actions__div">
-                          <button className="btn--Directions">
-                            <h3>Directions</h3>
-                          </button>
-                          <button className="btn--Share">
-                            <h3>Share</h3>
-                          </button>
+                          <hr className='shelter-item__divider' />
+
+                          <div className="shelter-item__right">
+                            <ul className="shelter-item__right-inner">
+                              <h4 className="shelter-item__right-title">LOCATION ADDRESS </h4>
+                              <p className='shelter-item__right-text'>
+                                {record.LOCATION_ADDRESS}<br />
+                                {record.LOCATION_CITY} <br />
+                                {record.LOCATION_POSTAL_CODE}
+                              </p>
+                            </ul>
+
+                            <ul className="shelter-item__right-inner">
+                              <h4 className="shelter-item__right-title">SECTOR </h4>
+                              <p className='shelter-item__right-text'>{record.SECTOR}</p>
+                            </ul>
+
+                            <ul className="shelter-item__right-inner">
+                              <h4 className="shelter-item__right-title">CAPACITY TYPE </h4>
+                              <p className='shelter-item__right-text'>{record.CAPACITY_TYPE}</p>
+                            </ul>
+
+                            <ul className="shelter-item__right-inner">
+                              <h4 className="shelter-item__right-title">PROGRAM MODEL </h4>
+                              <p className='shelter-item__right-text'>{record.PROGRAM_MODEL}</p>
+                              <p className='shelter-item__right-text'>{record.OVERNIGHT_SERVICE_TYPE}</p>
+
+                            </ul>
+
+                          </div>
                         </div>
                       </li>
                     )
                   )
-                )}
+
+                }
               </ul>
+
+              <LoadMoreButton
+                loading={loading}
+                loadMore={loadMore}
+              ></LoadMoreButton>
+
             </div>
-            {
-              // if loadCount is less than records.length, display load more button
-              loadCount < records.length && showLoadMore &&
-              (
-                <button
-                  onClick={loadMore}
-                  className="loadMoreBtn btn--LoadMore"
-                >
-                  Load More
-                </button>
-              )
-            }
           </div>
           <SheltersMap
             locations={displayedRecords}
             records={records}
             filterType={filterType}
-          />
+          >
+          </SheltersMap>
         </div>
       </section>
     </>

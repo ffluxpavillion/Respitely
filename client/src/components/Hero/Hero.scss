@@ -3,8 +3,13 @@
 @use '../../partials/global' as *;
 @use '../../partials/variables' as *;
 
+body {
+  background-color: rgb(38, 38, 38);
+  height: 100%;
+  width: 100%;
+}
+
 .hero {
-  // position:static;
   display: flex;
   justify-content: space-evenly;
   align-self: flex-start;
@@ -16,7 +21,7 @@
   background-position: center;
   overflow: hidden;
   flex-wrap: wrap;
-  // border-radius: 31% 69% 23% 77% / 66% 18% 82% 34%;
+  animation: heroFadeIn 6s ease-out;
 
   @include mobile {
     min-height: 100vh;
@@ -40,5 +45,15 @@
     background-size: cover;
     background-position: center;
     overflow: hidden;
+  }
+}
+
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+
+    opacity: 1;
   }
 }

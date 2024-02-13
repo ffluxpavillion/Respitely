@@ -105,13 +105,11 @@ a:active {
     font-weight: 800;
     padding-left: 1.5rem;
     text-transform: uppercase;
+    font-size: 2.8vw;
+
 
     @include mobile {
-      font-size: 6vw;
-    }
-
-    @include tablet {
-      font-size: 5vw;
+      font-size: 4vw;
     }
   }
 }
@@ -165,7 +163,6 @@ a:active {
   }
 
   &-header {
-    font-size: 1.3rem;
     font-weight: 800;
     color: #0a0d14d0;
     text-align: center;
@@ -174,7 +171,15 @@ a:active {
     text-shadow: -4px 2px 9px #acb0c7cf;
 
     @include mobile {
-      font-size: 3vw;
+      font-size: 2.3vw;
+    }
+
+    @include tablet {
+      font-size: 1.55vw;
+    }
+
+    @include desktop {
+      font-size: 1.1vw;
     }
   }
 

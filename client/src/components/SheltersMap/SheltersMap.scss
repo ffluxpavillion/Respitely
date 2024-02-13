@@ -3,18 +3,6 @@
 @use '../../partials/global' as *;
 @use '../../partials/variables' as *;
 
-// Marker animation
-// @keyframes slideIn {
-//   0% {
-//     opacity: 0;
-//     transform: translateY(-500px) scaleY(2);
-//   }
-// }
-
-// .marker {
-//   animation: slideIn 2.2s ease forwards;
-// }
-
 .sheltersMap__Container {
   height: 40vw;
   width: 51%;

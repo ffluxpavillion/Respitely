@@ -34,11 +34,17 @@
   }
 }
 
+.button-container {
+  display: inline-flex;
+}
+
 .btn {
   &--All,
   &--Beds,
   &--Rooms {
     // outline: none;
+    padding:1rem;
+
     text-transform: uppercase;
     white-space: normal;
     text-align: center;
@@ -112,6 +118,7 @@
 
   &--Text {
     font-size: 1.4rem;
+
   }
 
   &--Filter-All {

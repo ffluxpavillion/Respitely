@@ -5,14 +5,17 @@ import RoomIcon from '../../assets/icons/SafeHavenTO_icon-room.svg'
 const FilterButtons = ({ selectedButton, filterAndSortData, handleClick, records }) => {
   return (
     <>
-      <button className={`sheltersCard__Btn btn--Beds ${selectedButton === 'Beds' ? 'selected' : ''}`}
-        onClick={() => {
-          filterAndSortData(records, 'Beds');
-          handleClick('Beds');
-        }}
-      >
-        <h3 className='btn--Text'> <img className='btn--Icon' src={BedIcon} alt="Bed Icon" />Beds</h3>
-      </button>
+      <div className='button-container'>
+        <button className={`sheltersCard__Btn btn--Beds ${selectedButton === 'Beds' ? 'selected' : ''}`}
+          onClick={() => {
+            filterAndSortData(records, 'Beds');
+            handleClick('Beds');
+          }}
+        >
+          <h3 className='btn--Text'> <img className='btn--Icon' src={BedIcon} alt="Bed Icon" />Beds</h3>
+        </button>
+      </div>
+      <div className='button-container'>
       <button
         className={`sheltersCard__Btn btn--Rooms ${selectedButton === 'Rooms' ? 'selected' : ''}`}
         onClick={() => {
@@ -22,6 +25,8 @@ const FilterButtons = ({ selectedButton, filterAndSortData, handleClick, records
       >
         <h3 className='btn--Text'><img className='btn--Icon' src={RoomIcon} alt="Room Icon" />Rooms</h3>
       </button>
+      </div>
+      <div className='button-container'>
       <button className={`sheltersCard__Btn btn--All ${selectedButton === 'All' ? 'selected' : ''}`}
         onClick={() => {
           filterAndSortData(records, 'All');
@@ -33,6 +38,7 @@ const FilterButtons = ({ selectedButton, filterAndSortData, handleClick, records
           <img className='btn--Icon btn--Filter-All' src={RoomIcon} alt="Room Icon" />
           All</h3>
       </button>
+      </div>
     </>
   );
 };

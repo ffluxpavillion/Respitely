@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Map, { NavigationControl, ScaleControl, GeolocateControl, Popup, Source, Layer } from 'react-map-gl';
 import axios from 'axios';
 import 'mapbox-gl/dist/mapbox-gl.css';
+// import HeartMarker from '../../assets/icons/SafeHavenTO_icon-marker.png'
 import HeartMarker from '../../assets/icons/SafeHavenTO_icon-marker.png'
 import OpenIcon from '../../assets/icons/SafeHavenTO_icon-open-in.svg'
 
@@ -22,6 +23,7 @@ export default function SheltersMap(props) {
     zoom: 11,
   });
 
+  const { goHere } = props;
   const mapRef = useRef(); // Reference to the map instance
 
   useEffect(() => { // Fetch and set maps key from server
@@ -123,9 +125,42 @@ const handleMapLoad = () => { // Load the HeartMarker icon and attach event list
     } else {
       setSelectedPlace(null); // Hide the popup if no feature is clicked
     }
+    // console.log('selectedPlace= ', selectedPlace)
   };
 
-  console.log('selectedPlace.properties.LOCATION_ADDRESS= ', {selectedPlace})
+  // console.log('selectedPlace.properties.LOCATION_ADDRESS= ', {selectedPlace})
+  // console.log('goHere= ', {goHere})
+  // console.log('selectedPlace= ', {selectedPlace})
+  // console.log('locations= ', {locations})
+
+
+  useEffect(() => { // Update the view state and selected place when goHere changes
+    if (goHere && locations.length > 0) {
+      const matchingLocation = locations.find(location => location.LOCATION_ID === goHere.LOCATION_ID); // Find the location that matches the goHere ID
+
+      if (matchingLocation && matchingLocation.coordinates) {
+        const [longitude, latitude] = matchingLocation.coordinates;
+
+        setViewState(prevViewState => ({ // Update the view state to center on the selected location
+          ...prevViewState,
+          longitude: longitude,
+          latitude: latitude,
+          zoom: 13,
+        }));
+
+        const selectedPlaceForPopup = { // Ensure the structure includes `geometry` for coordinates
+          geometry: {
+            coordinates: [longitude, latitude]
+          },
+          properties: { ...matchingLocation }
+        };
+
+        setSelectedPlace(selectedPlaceForPopup);
+      }
+    }
+}, [goHere, locations]);
+
+
   return (
     <>
       {apiKey && (
@@ -136,7 +171,7 @@ const handleMapLoad = () => { // Load the HeartMarker icon and attach event list
           {...viewState} // updates view state on marker click
           onMove={evt => setViewState(evt.viewState)} // updates view state on marker click
           mapboxAccessToken={apiKey}
-          style={{ width: '60%', minHeight: 'max-content' }}
+          style={{ width: '65%', minHeight: 'max-content' }}
           mapStyle="mapbox://styles/mapbox/streets-v9"
           onClick={handleMapClick}
           onLoad={handleMapLoad}
@@ -198,7 +233,7 @@ const handleMapLoad = () => { // Load the HeartMarker icon and attach event list
                   className="btn--Directions-anchor"
                 >
                   <button className="popup__btn-Directions">
-                    <h4> <img className='btn--Icon' src={OpenIcon} alt="Open Icon" />View in Google Maps</h4>
+                    <h4> <img className='btn--Icon' src={OpenIcon} alt="Open Icon" />Open in Google Maps</h4>
                   </button>
                 </a>
               </div>

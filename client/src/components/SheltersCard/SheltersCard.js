@@ -14,6 +14,8 @@ export default function SheltersCard() {
   const [loadCount, setLoadCount] = useState(5); // Number of records to display initially, and load more each time
   const [filterType, setFilterType] = useState('All'); // new state for filter type
   const [selectedButton, setSelectedButton] = useState('All');
+  const [goHere, setGoHere] = useState(null);
+
   // const [uniqueLocations, setUniqueLocations] = useState({}); // alt piece of state to store unique locations
 
   useEffect(() => {
@@ -118,11 +120,21 @@ export default function SheltersCard() {
     setSelectedButton(button);
   };
 
+  const handleCardClick = (record) => {
+    setGoHere(record);
+    // setViewState({
+    //   longitude: place.geometry.coordinates[0],
+    //   latitude: place.geometry.coordinates[1],
+    //   zoom: 10 // or any appropriate zoom level
+    // });
+  };
+
   // Console logs for debugging purposes
   // console.log('displayed records= ', displayedRecords.map(record => record.LOCATION_ADDRESS));
   // console.log('displayedRecords:', displayedRecords);
   // console.log('filtered data:', filteredData);
   // console.log('records = :', records);
+  // console.log('goHere= ', goHere)
 
   return (
     <>
@@ -146,6 +158,7 @@ export default function SheltersCard() {
           <div className="shelter-scrollable-container">
             <div className="shelter-cards">
               <ul className="shelter-list">
+              <div>
                 {displayedRecords && displayedRecords.map((record) => ( // first, checks if displayedRecords data exists, then maps through the data
                       // Using _id as key
                       <li className="shelter-item" key={record._id}>
@@ -174,9 +187,9 @@ export default function SheltersCard() {
                                 <h4 className='btn--Directions-Text'>Get Directions</h4>
                               </button>
                             </a>
-                              <button className="shelter-item__actions-btn">
+                              <button className="shelter-item__actions-btn" onClick={() => handleCardClick(record)}>
                                 <img className='btn--Share-Icon' src={ShareIcon} alt="Share Icon" />
-                                <h4 className='btn--Share-Text'>Share</h4>
+                                <h4 className='btn--Share-Text'>Go Here</h4>
                               </button>
 
                             </div>
@@ -218,6 +231,8 @@ export default function SheltersCard() {
                   )
 
                 }
+                </div>
+
               </ul>
 
               <LoadMoreButton
@@ -231,8 +246,8 @@ export default function SheltersCard() {
             locations={displayedRecords}
             records={records}
             filterType={filterType}
-          >
-          </SheltersMap>
+            goHere={goHere}
+          ></SheltersMap>
         </div>
       </section>
     </>

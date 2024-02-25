@@ -83,7 +83,7 @@ a:active {
   padding: 4rem;
   display: flex;
   justify-content: center;
-  height:925px;
+  min-height:925px;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -105,18 +105,18 @@ a:active {
     font-weight: 800;
     padding-left: 1.5rem;
     text-transform: uppercase;
-    font-size: 2.8vw;
+    font-size: 3rem;
 
 
     @include mobile {
-      font-size: 4vw;
+      font-size: 2rem;
     }
   }
 }
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  // grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 3rem;
   width: 90%;
   justify-items: center;
@@ -128,6 +128,14 @@ a:active {
     padding:5rem;
     column-gap: 30vw;
     justify-content: center;
+  }
+
+  @include tablet {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  @include desktop {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   }
 }
 
@@ -171,15 +179,15 @@ a:active {
     text-shadow: -4px 2px 9px #acb0c7cf;
 
     @include mobile {
-      font-size: 2.3vw;
+      font-size: 1rem;
     }
 
     @include tablet {
-      font-size: 1.55vw;
+      font-size: 1rem;
     }
 
     @include desktop {
-      font-size: 1.1vw;
+      font-size: 1rem;
     }
   }
 

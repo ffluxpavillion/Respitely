@@ -1,5 +1,5 @@
 # SafeHavenTO
-I created a Full Stack & Responsive user-friendly web app which leverages Daily Shelter Occupancy Data, an API provided by the City of Toronto's open data initiative. This platform aims to help individuals experiencing homelessness in finding nearby shelters, based on their needs and real-time availability. In future implementations, my vision is to expand the app beyond Toronto to include other major metropolitan cities, and beyond.
+An innovative web app that leverages data from the City of Toronto's [Daily Shelter & Overnight Service Occupancy & Capacity API](https://open.toronto.ca/dataset/daily-shelter-overnight-service-occupancy-capacity/) to offer invaluable and transformitive solutions. This platform aims to help individuals experiencing homelessness in finding nearby shelters, based on their needs and real-time availability. In future implementations, my vision is to expand the app beyond Toronto to include other major metropolitan cities, and beyond.
 
 ##### All parallax images were sourced from https://unsplash.com/
 

@@ -1,5 +1,19 @@
 # SafeHavenTO
-SafeHavenTO is full-stack & responsive web application designed to help those experiencing homelessness in finding nearby shelters based on their individual needs, and the latest updates from locations around the city.  This innovative platform was built using React, and leverages data from the City of Toronto's [Daily Shelter & Overnight Service Occupancy & Capacity API](https://open.toronto.ca/dataset/daily-shelter-overnight-service-occupancy-capacity/). By default, the data are fetched, sorted, and displayed by most recently updated to ensure users are provided with accurate and timely information; to further refine these results users can select the type of capacity they need (Beds, Rooms, or All) which will simulatneously update the results and map component. The app features a side-by-side interactive layout that combines an infinately scrollable container highlighting key shelter details, with a dynamic MapBox component for geolocated results visualization. Also included is a comprehensive resources section, detailing a range of services provided by the City of Toronto. Future implementations include account creation, with the ability to share, save and favourite specific shelters, enable notifications for change in occupancy, along with a more comprehensive resources section.  Plans for SafeHavenTO a little further down the road inlcude scaling up the application to expand beyond Toronto, and service other major metropolitan cities in Canada, and beyond.
+A full-stack & responsive web application, designed to help those experiencing homelessness in finding nearby shelters based on their individual needs and the latest updates from locations around the city.  
+
+This app was built using React & Express.js, and leverages data from the City of Toronto's [Daily Shelter & Overnight Service Occupancy & Capacity API](https://open.toronto.ca/dataset/daily-shelter-overnight-service-occupancy-capacity/). 
+
+#### Key Features
+1. By default, the data are fetched, sorted, and displayed by most recently updated to ensure users are provided with accurate and timely information; users can further refine these results by selecting the type of capacity they need (Beds, Rooms, or All), which updates the results and MapBox component simulatneously. 
+
+2. The app features a side-by-side interactive layout that combines an infinately scrollable container highlighting key shelter details, with a dynamic MapBox component for geolocated results visualization. 
+
+3. Also included is a comprehensive resources section, detailing a range of services provided by the City of Toronto.
+
+#### Next Steps
+Future implementations include account creation, with the ability to share, save and favourite specific shelters, enable notifications for change in occupancy, along with a more comprehensive resources section.  
+
+Long term plans for SafeHavenTO inlcude researching data availability to determine if the application can be scaled up beyond Toronto, to service other major cities in Canada, and beyond.
 
 ##### All parallax images were sourced from https://unsplash.com/
 

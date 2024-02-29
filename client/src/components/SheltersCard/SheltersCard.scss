@@ -4,7 +4,7 @@
 @use '../../partials/variables' as *;
 
 html {
-  // background-color: rgba(13, 21, 35, 0.977); // Alternate midnight blue background color --darkmode future implementation
+  min-width: -webkit-fit-content;
 }
 
 h3 {
@@ -39,6 +39,8 @@ h3 {
   background-color: white;
   border-radius: 30px;
   background-color: #aaa0b009;
+  min-width: -webkit-min-content;
+  box-shadow: 0 0px 14px -4px rgb(155 155 155);
 
   @include mobile {
     display: flex;
@@ -54,13 +56,11 @@ h3 {
   }
 
   @include tablet {
-    box-shadow: 0 4px 90px 0 rgba(0, 0, 0, 0.5);
     margin: 1.25rem;
     padding: 5rem 1rem 5rem 1rem;
   }
 
   @include desktop {
-    box-shadow: 0 4px 90px 0 rgba(0, 0, 0, 0.5);
     margin: 1.25rem;
     padding: 2rem;
   }
@@ -73,7 +73,14 @@ h3 {
 .shelter-section__header {
   padding-top: 3rem;
   padding-bottom: 3rem;
-  color: $pastel-blue2;
+  color: ghostwhite;
+  font-family: 'Junction Light', 'Junction Bold';
+  text-wrap: nowrap;
+  font-weight: 800;
+  border-radius: 10px;
+  padding: 1rem;
+  border-radius: 10px;
+  backdrop-filter: opacity(0.5);
 
   @include mobile {
     font-size: 3.1rem;
@@ -88,6 +95,19 @@ h3 {
   }
 }
 
+.shelter-section__subHeader {
+  font-family: 'Junction Light', 'Junction Bold';
+  font-weight: 800;
+  font-size: 1.4rem;
+  color: ghostwhite;
+  background-image: linear-gradient(170deg, #262729 9%, #313232 96%);
+  width: 100%;
+  padding: 1rem;
+  border-radius: 10px;
+  border: 1px solid ghostwhite;
+  display: flex;
+  align-items: baseline;
+}
 // ----------------- BUTTONS -----------------
 
 .shelter-item__actions-btn {
@@ -111,6 +131,7 @@ h3 {
   cursor: pointer;
   // padding: 1rem;
   transition: all 0.3s ease;
+  min-width: -webkit-fill-available;
 
   &:hover {
     border: 1px solid white;
@@ -122,7 +143,6 @@ h3 {
   @include mobile {
     // min-width: 11rem;
     min-width: 100%;
-
   }
 
   @include tablet {
@@ -131,12 +151,11 @@ h3 {
     //   height: 2.5rem;
     //   font-size: 0.9rem;
   }
-
 }
 .btn {
   &--Directions-Text,
   &--Share-Text {
-    font-size: 0.95vh;
+    font-size: 0.95rem;
   }
 
   &--Directions-Icon,
@@ -157,8 +176,7 @@ h3 {
   @include mobile {
     display: inline-flex;
     flex-direction: column;
-    height: 50vh;
-
+    height: 130vh;
   }
 
   @include tablet {
@@ -174,41 +192,55 @@ h3 {
 }
 
 .shelter-scrollable-container {
-  // background-color: black;
-  // background-color: #0d1523f9; // Alternate midnight blue background color --darkmode future implementation
-  // background-color: #c3cbdc;
-  // background-image: linear-gradient(307deg, #c3cbdc 23%, #edf1f4 66%);
   overflow: hidden visible;
   max-height: fit-content;
   overflow-y: auto;
   box-sizing: border-box;
   border-radius: 5px;
   // min-width: 37rem;// THIS ONE
-  // BACKGROUND: conic-gradient(from 957deg at 150% -55%, #5870a9, #7d75ad, #9c7cae, #b583ac, #ca8daa, #da99a8, #e6a6a7, #f88972bc);
-  // ALT --Conical Gradient Background --Colourful Pastel
-  // LEFT SHELTER DIV BACKGROUND ALT --BLUE / PEACH
-  //BACKGROUND: conic-gradient(from 242deg at 132% -20%, #5870a9, #7d75ad, #9c7cae, #b583ac, #ca8daa, #da99a8, #e6a6a7, #eeb5a9);
-  // BACKGROUND: conic-gradient(from 227deg at 191% -35%, #5870a9, #7d75ad, #9c7cae, #b583ac, #ca8daa, #da99a8, #e6a6a7, #eeb5a9);
-  // PEACH COLOR: #e3b4ab
+  // background-image: linear-gradient(307deg, #c3cbdc 23%, #edf1f4 66%); // SILVER WHITE GRADIENT DESIGN
+  // background: conic-gradient(from 242deg at 132% -20%, #5870a9, #7d75ad, #9c7cae, #b583ac, #ca8daa, #da99a8, #e6a6a7, #eeb5a9); // BLUE / PEACH DESIGN V1
+  // background: conic-gradient(from 227deg at 191% -35%, #5870a9, #7d75ad, #9c7cae, #b583ac, #ca8daa, #da99a8, #e6a6a7, #eeb5a9); // BLUE / PEACH DESIGN V2
+  // background: conic-gradient(from 780deg at 64% 68%, #5870a9 0%, #7d75ad 12%, #eeb5a9 8%, #b583ac 44%, #eeb5a9 48%, #5870a9 82%, #eeb5a9 98%, #5870a9 88%, #eeb5a9 100%); // EXPLOSION DESIGN
+  // background: conic-gradient(from 150deg at 49% 32%, #5870a9 0%, #7d75ad 8%, #9c7cae 23%, #b583ac 39%, #ca8daa 56%, #da99a8 73%, #e6a6a7 89%, #eeb5a9 100%); // ANGLED BOTTOM RIGHT DESIGN
+  // background: conic-gradient(from 180deg at 65% 30%, #5870a9 0%, #7d75ad 14%, #9c7cae 30%, #b583ac 46%, #ca8daa 62%, #da99a8 78%, #e6a6a7 92%, #eeb5a9 100%); // VERTICAL DIVIDER DESIGN
   background: conic-gradient(
-    from 227deg at 191% -120%,
-    #5870a9,
-    #7d75ad,
-    #9c7cae,
-    #b583ac,
-    #ca8daa,
-    #da99a8,
-    #e6a6a7,
-    #eeb5a9
+    from 270deg at 59.2% 48.5%,
+    #5870a9 0%,
+    #7d75ad 15%,
+    #9c7cae 30%,
+    #b583ac 45%,
+    #ca8daa 60%,
+    #da99a8 75%,
+    #e6a6a7 90%,
+    #eeb5a9 100%
   );
+  min-width: -webkit-min-content;
+  max-width: -webkit-fit-content;
+
+  &:hover {
+    transition: all 4s ease-in-out;
+
+    //   background: conic-gradient(
+    //   from 270deg at 59.2% 48.5%,
+    //   #5870a9 0%,
+    //   #7d75ad 15%,
+    //   #9c7cae 30%,
+    //   #b583ac 45%,
+    //   #ca8daa 60%,
+    //   #da99a8 75%,
+    //   #e6a6a7 90%,
+    //   #eeb5a9 100%
+    // );
+  }
 
   &::-webkit-scrollbar {
     display: none; //  hides the scrollbar
   }
 
   @include mobile {
-    min-width: 30rem; // THIS ONE
-
+    // min-width: 30rem; // THIS ONE
+    height: 100vh;
   }
 
   @include tablet {
@@ -216,11 +248,10 @@ h3 {
   }
 
   @include desktop {
-    // width: 60rem; // THIS ONE
-    width:min-content;
-    min-width: 42%;
-
-
+    min-width: 50rem; // THIS ONE
+    // width:min-content;
+    // min-width: 42%;
+    // width: -webkit-fit-content;
   }
 }
 
@@ -240,239 +271,251 @@ h3 {
   ); // Visual seperator (vertical)
   border-image-slice: 1; // Visual seperator (vertical)
   padding: 1rem;
-  background-color: rgba(53, 55, 59, 0.09);
+  background-color: rgba(53, 55, 59, 0.19);
   width: 100%;
   height: 100%;
   z-index: 9;
+  backdrop-filter: blur(5px);
+  transition: all 1s ease-in-out;
 
   &:hover {
-    // background-color: #80808016;
-    // border: 1px solid white;
-    // padding: 0.01rem;
-    transition: all 0.4s ease-in-out;
+    background-image: linear-gradient(
+      147deg,
+      #c3cbdc24 23%,
+      #80808016 10% #e0f2ff24 66%
+    );
+    border: 1px solid white;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    backdrop-filter: blur(25px);
+    transition: all 1s ease-in-out;
   }
 }
 
-  .shelter-item__content {
-    display: flex;
-    // line-height: 2rem;
-    justify-content: center;
-    align-items: baseline;
+.shelter-item__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    @include mobile {
-      line-height: 1.2rem;
-    }
+  @include mobile {
+    line-height: 1.2rem;
   }
+}
 
-  .shelter-item__left {
-    // DO NOT CHANGE
-    display: flex;
-    flex-direction: column;
+.shelter-item__left {
+  // DO NOT CHANGE
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  // min-width: 19rem;
+  padding: 1rem;
+  // DO NOT CHANGE
+  line-height: 2rem;
+  min-width: -webkit-min-content;
+  max-width: -webkit-fit-content;
+  @include mobile {
     width: 50%;
-    // min-width: 19rem;
-    padding: 1rem;
-    // DO NOT CHANGE
-    line-height: 2rem;
-
-
-    @include mobile {
-      width: 50%;
-    }
-
-    @include tablet {
-      width: 35%;
-      min-width: 15rem;
-    }
-
-    @include desktop {
-      // width: 38%;
-      width: 46%;
-
-      min-width: 15rem;
-
-    }
+    margin-left: 1rem;
   }
 
-  .shelter-item__left-inner {
-    padding-bottom: 1vw;
-
-    // @include mobile {
-    //   padding-bottom: 5vw;
-    // }
-
-    // @include tablet {
-    //   padding-bottom: 4.5vw;
-    // }
-
-    // @include desktop {
-    //   padding-bottom: 5vw;
-    // }
+  @include tablet {
+    width: 35%;
+    margin-left: 1rem;
   }
 
-  .shelter-item__title {
-    font-size: 1.9rem;
-    margin-bottom: 0.75rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    color: #ffffff;
+  @include desktop {
+    width: 46%;
+  }
+}
+
+.shelter-item__left-inner {
+  // padding-bottom: 1vw;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.shelter-item__title {
+  display: flex;
+  justify-content: center;
+
+  @include mobile {
     padding-bottom: 5vw;
+    line-height: 2rem;
+  }
+}
 
-    @include mobile {
-      padding-bottom: 5vw;
-      line-height: 2rem;
-    }
+.shelter-item__text {
+  flex-basis: min-content;
+  display: inline-flex;
+  padding: 1rem;
+  text-transform: uppercase;
+  color: rgb(255, 255, 255);
+  font-family: 'Bungee Shade', sans-serif;
+  background-image: linear-gradient(147deg, #c3cbdc24 23%, #e0f2ff24 66%);
+  backdrop-filter: blur(25px);
+  border-radius: 5px;
+
+  &:hover {
+    text-shadow: 0 2px 4px rgba(229, 228, 255, 0.9);
+    transition: all 1s ease-in-out;
   }
 
-  .shelter-item__details {
-    padding: 0.6rem;
-    background-image: linear-gradient(135deg, #6d5dfc 0%, #c792ec 100%);
-    border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-    margin-bottom: 2rem;
-
-    @include desktop {
-      min-width: fit-content;
-    }
+  @include mobile {
+    font-size: 3rem;
+    line-height: 3rem;
   }
-  .shelter-item__availability {
-    color: ghostwhite;
+  @include tablet {
+    font-size: 2.5rem;
+    line-height: 3rem;
+  }
+  @include desktop {
+    font-size: 3rem;
+    line-height: 4rem;
+  }
+}
+
+.shelter-item__details {
+  padding: 0.6rem;
+  background-image: linear-gradient(135deg, #6d5dfc 0%, #c792ec 100%);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  margin-bottom: 2rem;
+
+  @include desktop {
+    min-width: fit-content;
+  }
+}
+
+.shelter-item__availability {
+  color: ghostwhite;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  font-weight: normal;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 2.1rem;
+  min-width: max-content;
+
+  @include mobile {
     font-size: 0.8rem;
-    line-height: 1.6;
-    font-weight: normal;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    line-height: 2.1rem;
-    // padding-top: 0.5rem;
-    min-width: max-content;
-
-
-    @include mobile {
-      font-size: 0.8rem;
-    }
-
-    @include tablet {
-      font-size: 0.8rem;
-    }
   }
 
-  .shelter-item__actions {
-    display: block;
-
-    &-btn {
-      background-color: #5271b3;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      padding: 0.6rem 1.2rem;
-      margin-top: 1.2rem;
-      box-shadow: 0 3px 5px rgba(0, 0, 0, 0.12);
-
-      &:hover {
-        background-color: darken(#5271b3, 15%);
-        transform: translateY(-2px);
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
-        border: 1px solid #5271b3;
-      }
-    }
+  @include tablet {
+    font-size: 0.8rem;
   }
+}
 
-  .shelter-item__divider {
-    // border: 0;
-    // background-color: #bdd4e7;
-    // border-radius: 10px;
-    // width: 0.5rem;
-    // background-color: #7fcec5;
-    // background-image: linear-gradient(315deg, #7fcec5 0%, #14557b 74%);
-    // opacity: 0.5;
-    // background: #757f9a; // fallback for old browsers
-    // background: linear-gradient(to left, #d7dde8, #757f9a);
-  }
+.shelter-item__actions {
+  display: block;
 
-  .shelter-item__right {
-    // DO NOT CHANGE
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    padding: 1rem;
-    // DO NOT CHANGE
-    line-height: 1.6rem;
-
-
-    @include mobile {
-      // max-width: 31%;
-    }
-
-    @include tablet {
-      // min-width: 15rem;
-    }
-
-    @include desktop {
-
-    }
-  }
-
-  .shelter-item__right-inner {
-    padding-bottom: 2vh;
-    border-left: 5px solid #5271b3;
-    border-radius: 10px;
-    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.12);
-    background-color: rgba(255, 255, 255, 0.45);
-    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(15px);
-    padding: 0.6rem;
-    border-radius: 8px;
-    margin-top: 0.7rem;
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.08);
-
-    @include mobile {
-      font-size: 1.02rem;
-    }
-
-    @include tablet {
-      font-size: 1.1rem;
-    }
-
-    @include desktop {
-      font-size: 1rem;
-    }
-  }
-
-  .shelter-item__right-title {
+  &-btn {
+    background-color: #5271b3;
     color: white;
-    margin-bottom: 0.6rem;
-    font-weight: 600;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    border: none;
+    border-radius: 5px;
+    padding: 0.6rem 1.2rem;
+    margin-top: 1.2rem;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.12);
 
-    @include mobile {
-      font-size: 0.85rem;
-    }
-
-    @include tablet {
-      font-size: 0.85rem;
-    }
-
-    @include desktop {
-      font-size: 0.9rem;
+    &:hover {
+      background-color: darken(#5271b3, 15%);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+      border: 1px solid #5271b3;
     }
   }
+}
 
-  .shelter-item__right-text {
-    font-weight: 800;
-    color: #3c433f;
-    // font-size: 1rem;
-    max-width: fit-content;
-    text-shadow: -4px 2px 9px #acb0c7cf;
+.shelter-item__divider {
+  height: 100%;
+  align-self: center;
+}
 
-    @include mobile {
-      font-size: 0.85rem;
-    }
+.shelter-item__right {
+  // DO NOT CHANGE
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  // DO NOT CHANGE
+  line-height: 1.6rem;
 
-    @include tablet {
-      font-size: 0.85rem;
-    }
-
-    @include desktop {
-      font-size: 0.85rem;
-    }
+  @include mobile {
+    min-width: -webkit-fit-content;
+    margin-right: 1rem;
   }
+
+  @include tablet {
+    min-width: -webkit-fit-content;
+    margin-right: 1rem;
+  }
+
+  @include desktop {
+    min-width: -webkit-fit-content;
+  }
+}
+
+.shelter-item__right-inner {
+  padding-bottom: 2vh;
+  border-radius: 10px;
+  box-shadow: 1px -2px 10px rgba(0, 0, 0, 0.1);
+  padding: 0.6rem;
+  border-radius: 8px;
+  margin-top: 0.7rem;
+
+  @include mobile {
+    font-size: 1.02rem;
+  }
+
+  @include tablet {
+    font-size: 1.1rem;
+  }
+
+  @include desktop {
+    font-size: 1rem;
+  }
+}
+
+.shelter-item__right-title {
+  color: white;
+  margin-bottom: 0.6rem;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+  @include mobile {
+    font-size: 0.85rem;
+  }
+
+  @include tablet {
+    font-size: 0.85rem;
+  }
+
+  @include desktop {
+    font-size: 0.9rem;
+  }
+}
+
+.shelter-item__right-text {
+  font-weight: 600;
+  max-width: fit-content;
+  color: #2a445e;
+  color: ghostwhite;
+  margin-left: 0.7rem;
+  padding-left: 0.7rem;
+  border-left: #7e67f9 solid 2px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+
+  @include mobile {
+    font-size: 0.85rem;
+  }
+
+  @include tablet {
+    font-size: 0.85rem;
+  }
+
+  @include desktop {
+    font-size: 0.85rem;
+  }
+}

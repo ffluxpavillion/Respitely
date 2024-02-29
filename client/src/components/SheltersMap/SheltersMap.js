@@ -171,7 +171,7 @@ const handleMapLoad = () => { // Load the HeartMarker icon and attach event list
           {...viewState} // updates view state on marker click
           onMove={evt => setViewState(evt.viewState)} // updates view state on marker click
           mapboxAccessToken={apiKey}
-          style={{ width: '65%', minHeight: 'max-content' }}
+          style={{ width: '100%', Height: '100%' }}
           mapStyle="mapbox://styles/mapbox/streets-v9"
           onClick={handleMapClick}
           onLoad={handleMapLoad}

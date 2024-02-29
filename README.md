@@ -1,5 +1,19 @@
 # SafeHavenTO
-I created a Full Stack & Responsive user-friendly web app which leverages Daily Shelter Occupancy Data, an API provided by the City of Toronto's open data initiative. This platform aims to help individuals experiencing homelessness in finding nearby shelters, based on their needs and real-time availability. In future implementations, my vision is to expand the app beyond Toronto to include other major metropolitan cities, and beyond.
+A full-stack & responsive web application, designed to help those experiencing homelessness in finding nearby shelters based on their individual needs and the latest updates from locations around the city.  
+
+This app was built using React & Express.js, and leverages data from the City of Toronto's [Daily Shelter & Overnight Service Occupancy & Capacity API](https://open.toronto.ca/dataset/daily-shelter-overnight-service-occupancy-capacity/). 
+
+#### Key Features
+1. By default, the data are fetched, sorted, and displayed by most recently updated to ensure users are provided with accurate and timely information; users can further refine these results by selecting the type of capacity they need (Beds, Rooms, or All), which updates the results and MapBox component simulatneously. 
+
+2. The app features a side-by-side interactive layout that combines an infinately scrollable container highlighting key shelter details, with a dynamic MapBox component for geolocated results visualization. 
+
+3. Also included is a comprehensive resources section, detailing a range of services provided by the City of Toronto.
+
+#### Next Steps
+Future implementations include account creation, with the ability to share, save and favourite specific shelters, enable notifications for change in occupancy, along with a more comprehensive resources section.  
+
+Long term plans for SafeHavenTO inlcude researching data availability to determine if the application can be scaled up beyond Toronto, to service other major cities in Canada, and beyond.
 
 ##### All parallax images were sourced from https://unsplash.com/
 
@@ -9,7 +23,7 @@ I created a Full Stack & Responsive user-friendly web app which leverages Daily 
 The homelessness crisis is riddled with multifaceted challenges, one such obstacle is the access to timely and accurate shelter information. There's a lack of centralized, up-to-date resources for individuals in need, causing difficulties in finding suitable shelters, especially during urgent situations.  
 
 ## Solution
-By seamlessly integrating modern design and functionality with an intuitive and reliable user experience (UX), such an application holds the potential to revolutionize the way individuals experiencing homelessness access vital information.  This platform aims to provide more than just basic information, but also a sense of security during times of intense vulnerability. 
+By seamlessly integrating modern design and functionality with an intuitive and reliable user experience, such an application holds the potential to revolutionize the way individuals experiencing homelessness access vital information.  This platform aims to provide more than just basic information, but also a sense of security during times of intense vulnerability. 
 The mission of our platform is to help bridge the gap between those in need and the resources available to them; to serve as a beacon of hope in addressing this pressing societal issue.  While this platform will initially exist as an informational hub, it holds the potential to expand beyond this scope through various future implementations and features.
 
 ## To Run:

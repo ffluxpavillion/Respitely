@@ -3,15 +3,14 @@
 @use '../../partials/global' as *;
 @use '../../partials/variables' as *;
 
-
 .loading-message {
   animation:
-  fadeIn 4s,
-  pulsate 1.5s ease-in-out infinite;
+    fadeIn 4s,
+    pulsate 1.5s ease-in-out infinite;
   text-align: center;
   font-size: 1.5rem;
   margin-top: 5rem;
-  color:white;
+  color: white;
   display: flex;
   justify-content: center;
 }
@@ -21,17 +20,20 @@
   color: white;
   border: none;
   padding: 0.6rem 1.2rem;
-  margin-top: 1.2rem;
-  box-shadow: 0 3px 5px rgba(0,0,0,0.12);
-  width:100%;
+  margin-top: 5.2rem;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.12);
+  width: 100%;
   letter-spacing: 1px;
 
   &:hover {
     background-color: darken(#5271b3, 15%);
     // transform: translateY(-2px);
-    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
     border: 1px solid #5271b3;
     cursor: pointer;
+    // padding-top: 4rem;
+    margin-top: 3.2rem;
+    transition: all 0.4s ease-in-out;
   }
 
   &-text {

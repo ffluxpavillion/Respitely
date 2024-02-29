@@ -145,13 +145,14 @@ export default function SheltersCard() {
           <br />
           <br />
           <br />
-
+          <span className="shelter-section__subHeader">FILTER BY ➡
           <FilterButtons
             selectedButton={selectedButton}
             filterAndSortData={filterAndSortData}
             handleClick={handleClick}
             records={records}
           ></FilterButtons>
+          </span>
 
         </div>
         <div className="shelter-section__lower">
@@ -165,12 +166,17 @@ export default function SheltersCard() {
                         <div className='shelter-item__content'>
                           <div className="shelter-item__left">
                             <ul className="shelter-item__left-inner">
-                              <h4 className='shelter-item__title'>{record.SHELTER_GROUP}</h4>
+                              <div className='shelter-item__title'>
+                                <h6 className='shelter-item__text'>{record.SHELTER_GROUP}</h6>
+                              </div>
 
                               <div className="shelter-item__details">
                                 <h4 className="shelter-item__availability">
-                                  {record.CAPACITY_TYPE === 'Bed Based Capacity' ? `Available Beds: ${record.UNOCCUPIED_BEDS}` : ''}
-                                  {record.CAPACITY_TYPE === 'Room Based Capacity' ? `Available Rooms: ${record.UNOCCUPIED_ROOMS}` : ''}
+                                  {record.CAPACITY_TYPE === 'Bed Based Capacity'
+                                    ? `Available Beds: ${record.UNOCCUPIED_BEDS}`
+                                    : `Available Rooms: ${record.UNOCCUPIED_ROOMS}`
+                                  }
+                                  {/* {record.CAPACITY_TYPE === 'Room Based Capacity' ? `Available Rooms: ${record.UNOCCUPIED_ROOMS}` : ''} */}
                                   <br />
                                   Last Updated: {record.OCCUPANCY_DATE}
                                 </h4>

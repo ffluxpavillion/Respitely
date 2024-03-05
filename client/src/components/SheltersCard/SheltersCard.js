@@ -21,7 +21,8 @@ export default function SheltersCard() {
   useEffect(() => {
     const fetchData = async () => {
       axios
-        .get('http://localhost:8080/shelters/')
+        // .get('http://localhost:8080/shelters/') // for local development
+        .get(`${process.env.REACT_APP_BACKEND_URL}/shelters/`)
         .then((response) => {
           // // Process the data to create unique locations
           // const processedData = processData(response.data);

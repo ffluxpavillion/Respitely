@@ -9,6 +9,14 @@ let { PORT, BACKEND_URL } = process.env;
 
 PORT = process.env.PORT || 8081;
 
+// Ensure Express server is set up to serve React app's static files in production (Heroku Deployment)
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'));
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  });
+}
+
 app.use(cors({ origin: process.env.CORS_ORIGIN })); // CORS Middleware
 app.use(express.json()); // allows server to handle JSON data sent in req body
 

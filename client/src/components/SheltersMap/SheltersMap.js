@@ -28,7 +28,7 @@ export default function SheltersMap(props) {
 
   useEffect(() => { // Fetch and set maps key from server
     axios
-    .get('http://localhost:8080/api/maps-key') // for local development
+    // .get('http://localhost:8080/api/maps-key') // for local development
     .get(`${process.env.REACT_APP_BACKEND_URL}/api/maps-key/`)
     .then(response => {
       setApiKey(response.data.key);
@@ -43,7 +43,8 @@ export default function SheltersMap(props) {
           const fullAddress = `${location.LOCATION_ADDRESS} ${location.LOCATION_CITY} ${location.LOCATION_PROVINCE} ${location.LOCATION_POSTAL_CODE}`;
           const encodedAddress = encodeURIComponent(fullAddress); // encode address for URL
           try {
-            const response = await axios.get(
+            const response = await axios
+            .get(
               `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodedAddress}.json?access_token=${apiKey}`
             );
             const coordinates = response.data.features[0].geometry.coordinates;

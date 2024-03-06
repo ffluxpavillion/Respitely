@@ -42,6 +42,11 @@ app.get('/api/maps-key', (req, res) => {
   res.json({key: process.env.REACT_APP_MAPBOX});
 });
 
+// Catch-all route for testing
+app.get('*', (req, res) => {
+  res.status(404).send('404 Not Found');
+});
+
 app.use((req, res) => {
   res.send('This is not a valid route. Try <b>/shelters</b> instead.');
 });

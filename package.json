@@ -2,7 +2,7 @@
   "name": "SafeHavenTO",
   "version": "1.0.0",
   "scripts": {
-    "start": "node server/server.js",
+    "start": "node server",
     "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "engines": {

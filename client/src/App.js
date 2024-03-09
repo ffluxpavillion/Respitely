@@ -20,11 +20,6 @@ export default function App() {
         <Parallax2 />
         <Resources />
         <Footer />
-        <Routes>
-            {/* <Route path='/' exact element={<Map />} />
-          <Route path='/shelter/shelterId' exact element={<SheltersCard />} /> */}
-
-        </Routes>
       </BrowserRouter>
   );
 }

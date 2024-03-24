@@ -20,6 +20,8 @@ li {
   // background-color: white;
   height: fit-content;
   min-height: 6rem;
+  pointer-events: none;
+
 
   @include mobile {
     position: fixed;
@@ -78,6 +80,7 @@ li {
       top: 6rem;
       left: 0;
       background-color: white;
+      pointer-events: auto;
 
       @include mobile {
         transform: translateY(-100%);
@@ -171,6 +174,8 @@ li {
   }
 
   &__burger-bar {
+    pointer-events: auto;
+
     @include mobile {
       display: block;
       padding: 0.56rem;
@@ -258,7 +263,7 @@ li {
     // animation: pulse2 2s ease-out 9s forwards; //alternate pulse animation
     animation: pulse-wave 2s ease-out 9s;
     animation-iteration-count: 5;
-    animation-delay: 1.18s;
+    animation-delay: 1.2s;
   }
   .bar:nth-child(1) {
     // animation: pulse2 2s ease-out 9s forwards; //alternate pulse animation
@@ -270,7 +275,7 @@ li {
     // animation: pulse2 2s ease-out 9s forwards; //alternate pulse animation
     animation: pulse-wave 2s ease-out 9s;
     animation-iteration-count: 5;
-    animation-delay: 1.36s;
+    animation-delay: 1.4s;
   }
 
   .navMenu {

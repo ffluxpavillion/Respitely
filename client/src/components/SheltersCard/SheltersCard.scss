@@ -74,7 +74,7 @@ h3 {
   padding-top: 3rem;
   padding-bottom: 3rem;
   color: ghostwhite;
-  font-family: 'Junction Light', 'Junction Bold';
+  font-family: 'Junction Light', 'Junction Bold', "Toronto Subway", "Toronto Subway Bold";
   text-wrap: nowrap;
   font-weight: 800;
   border-radius: 10px;
@@ -106,7 +106,7 @@ h3 {
   border-radius: 10px;
   border: 1px solid ghostwhite;
   display: flex;
-  align-items: baseline;
+  align-items: center;
 }
 // ----------------- BUTTONS -----------------
 
@@ -155,7 +155,7 @@ h3 {
 .btn {
   &--Directions-Text,
   &--Share-Text {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
   }
 
   &--Directions-Icon,
@@ -248,7 +248,7 @@ h3 {
   }
 
   @include desktop {
-    min-width: 50rem; // THIS ONE
+    // min-width: 50rem; // THIS ONE
     // width:min-content;
     // min-width: 42%;
     // width: -webkit-fit-content;
@@ -284,17 +284,13 @@ h3 {
       #c3cbdc24 23%,
       #80808016 10% #e0f2ff24 66%
     );
-    border: 1px solid white;
-    padding-top: 6rem;
-    padding-bottom: 6rem;
-    backdrop-filter: blur(25px);
     transition: all 1s ease-in-out;
   }
 }
 
 .shelter-item__content {
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
 
   @include mobile {
@@ -351,9 +347,12 @@ h3 {
   padding: 1rem;
   text-transform: uppercase;
   color: rgb(255, 255, 255);
-  font-family: 'Bungee Shade', sans-serif;
-  background-image: linear-gradient(147deg, #c3cbdc24 23%, #e0f2ff24 66%);
-  backdrop-filter: blur(25px);
+  // font-family: 'Bungee Shade', sans-serif;
+  font-family: "Toronto Subway Bold";
+  // background-image: linear-gradient(147deg, #c3cbdc24 23%, #e0f2ff24 66%);
+  // backdrop-filter: blur(25px);
+  // backdrop-filter: invert(1);
+
   border-radius: 5px;
 
   &:hover {
@@ -371,7 +370,8 @@ h3 {
   }
   @include desktop {
     font-size: 3rem;
-    line-height: 4rem;
+    line-height: 3.25rem;
+    min-width: 22rem;
   }
 }
 
@@ -443,17 +443,22 @@ h3 {
   line-height: 1.6rem;
 
   @include mobile {
-    min-width: -webkit-fit-content;
+    // min-width: -webkit-fit-content;
+    width: 15rem;
+
     margin-right: 1rem;
   }
 
   @include tablet {
-    min-width: -webkit-fit-content;
+    // min-width: -webkit-fit-content;
+    width: 15rem;
+
     margin-right: 1rem;
   }
 
   @include desktop {
-    min-width: -webkit-fit-content;
+    // min-width: -webkit-fit-content;
+    width: 15rem;
   }
 }
 
@@ -464,6 +469,7 @@ h3 {
   padding: 0.6rem;
   border-radius: 8px;
   margin-top: 0.7rem;
+  backdrop-filter: invert(1);
 
   @include mobile {
     font-size: 1.02rem;

@@ -1,10 +1,7 @@
-const fs = require("fs");
-const router = require("express").Router();
+const router = require('express').Router();
 const dataController = require('../controllers/dataController');
-const express = require('express');
 
-
-
+// Define route to get shelters
 router.route('/').get(dataController.getShelters);
 
 module.exports = router;

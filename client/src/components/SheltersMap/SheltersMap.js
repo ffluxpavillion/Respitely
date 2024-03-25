@@ -28,12 +28,20 @@ export default function SheltersMap(props) {
 
   useEffect(() => { // Fetch and set maps key from server
     axios
-    // .get('http://localhost:8080/api/maps-key') // for local development
-    .get(`${process.env.REACT_APP_BACKEND_URL}/api/maps-key/`)
+    .get('http://localhost:8080/api/maps-key') // for local development
+    // .get(`${process.env.REACT_APP_BACKEND_URL}/api/maps-key`)
     .then(response => {
       setApiKey(response.data.key);
+    })
+    .catch(error => {
+      console.error('Error fetching maps key:', error);
     });
   }, []);
+
+  // console.log('apiKey:', apiKey);
+  // console.log('locations:', locations);
+  // console.log('geoJsonLocations:', geoJsonLocations);
+  // console.log('selectedPlace:', selectedPlace);
 
   useEffect(() => { // Fetch geocode for each location
     const fetchGeocode = async () => {
@@ -213,7 +221,7 @@ const handleMapLoad = () => { // Load the HeartMarker icon and attach event list
             <div className='popup__div'>
               <div className='popup__div-top'>
                 <h4 className='popup__div-header'>
-                  {selectedPlace.properties.LOCATION_NAME || 'LOCATION NAME'}
+                  {selectedPlace.properties.SHELTER_GROUP || 'LOCATION NAME'}
                 </h4>
               </div>
               <br />

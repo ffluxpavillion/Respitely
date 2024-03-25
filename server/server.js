@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
+const path = require('path');
+
 
 // setting up env
 
@@ -10,16 +12,21 @@ let { PORT, BACKEND_URL } = process.env;
 PORT = process.env.PORT || 8081;
 
 // Ensure Express server is set up to serve React app's static files in production (Heroku Deployment)
-const path = require('path');
 
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('client/build'));
+  app.use(express.static(path.join(__dirname, '../client/build')));
   app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+      res.sendFile(path.resolve(__dirname, '../client/build'));
   });
 }
 
-app.use(cors({ origin: process.env.CORS_ORIGIN })); // CORS Middleware
+
+if (process.env.NODE_ENV === 'development') {
+  app.use(cors());
+} else {
+  app.use(cors({ origin: process.env.CORS_ORIGIN }));
+}
+
 app.use(express.json()); // allows server to handle JSON data sent in req body
 
 // allows browser pre-flight check for JSON requests
@@ -30,8 +37,8 @@ app.options('*', (req, res) => {
   res.send(200);
 })
 
-// Routes
-const shelterRoutes = require('./routes/shelters'); // routes
+
+const shelterRoutes = require('./routes/shelters'); // Routes
 app.use('/shelters', shelterRoutes)
 
 app.get('/', (req, res) => {

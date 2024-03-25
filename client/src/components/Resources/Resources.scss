@@ -156,8 +156,8 @@ a:active {
 
   @include mobile {
     padding: 0.5rem;
-    width: 27vw;
-    height: 27vw;
+    width: 15rem;
+    height: 15rem;
     border-radius: 10px;
     place-content: center;
   }
@@ -176,7 +176,7 @@ a:active {
     text-align: center;
     padding-top: 1rem;
     text-transform: uppercase;
-    text-shadow: -4px 2px 9px #acb0c7cf;
+    // text-shadow: -4px 2px 9px #acb0c7cf;
 
     @include mobile {
       font-size: 1rem;
@@ -200,7 +200,7 @@ a:active {
     letter-spacing: 0.2px;
     word-wrap: normal;
     line-height: 1.3em;
-    text-shadow: 1px 9px 10px #acb0c7cf;
+    // text-shadow: 1px 9px 10px #acb0c7cf;
 
     @include mobile {
       display: none;

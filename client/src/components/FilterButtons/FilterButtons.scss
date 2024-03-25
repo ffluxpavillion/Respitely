@@ -4,7 +4,6 @@
 @use '../../partials/variables' as *;
 
 .sheltersCard__Btn {
-  margin-top: 1rem;
   margin-right: 0.1rem;
   width: 120px;
   height: 3rem;
@@ -79,8 +78,8 @@
 
     &.selected {
       // color:#486197;
-      margin-left: 1rem;
-      margin-right: 1rem;
+      // margin-left: 1rem;
+      // margin-right: 1rem;
       top: 9rem;
       border: 1px solid white;
       // background-color: rgba(128, 128, 128, 0.118);
@@ -122,10 +121,10 @@
 
   &--Text {
     font-size: 1.4rem;
-    padding: 1rem;
+    // padding: 1rem;
 
     // Underline animation:
-    padding-bottom: 10px;
+    // padding-bottom: 10px;
     color: white;
     position: relative;
     box-shadow: 0px -4px 15px rgba(0, 0, 0, 0.1);
@@ -153,6 +152,6 @@
   }
 
   &--Filter-All {
-    margin-left: -0.5rem;
+    margin-right: -0.5rem;
   }
 }

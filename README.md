@@ -48,8 +48,8 @@ VSCode/terminal: run `npm start` in client folder
 ## Screenshots:
 
 <img src = "https://github.com/ffluxpavillion/SafeHavenTO/blob/master/client/src/assets/screenshots/SafeHavenTO_landing.png">
-<img src = "https://github.com/ffluxpavillion/SafeHavenTO/blob/master/client/src/assets/screenshots/SafeHavenTO_about-us.png?raw=true">
-<img src = "https://github.com/ffluxpavillion/SafeHavenTO/blob/master/client/src/assets/screenshots/SafeHavenTO_parallax.png">
+<img src = "https://github.com/ffluxpavillion/SafeHavenTO/blob/master/client/src/assets/screenshots/SafeHavenTO-about-us.png">
+<img src = "https://github.com/ffluxpavillion/SafeHavenTO/blob/master/client/src/assets/screenshots/SafeHavenTO_parallax-1.png">
 <img src = "https://github.com/ffluxpavillion/SafeHavenTO/blob/master/client/src/assets/screenshots/SafeHavenTO_shelters-card.png">
 <img src = "https://github.com/ffluxpavillion/SafeHavenTO/blob/master/client/src/assets/screenshots/SafeHavenTO_parallax-2.png">
 <img src = "https://github.com/ffluxpavillion/SafeHavenTO/blob/master/client/src/assets/screenshots/SafeHavenTO_resources.png">

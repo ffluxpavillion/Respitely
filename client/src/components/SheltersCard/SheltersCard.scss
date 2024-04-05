@@ -40,7 +40,7 @@ h3 {
   border-radius: 30px;
   background-color: #aaa0b009;
   min-width: -webkit-min-content;
-  box-shadow: 0 0px 14px -4px rgb(155 155 155);
+  box-shadow: 0 0px 20px 5px rgb(25, 24, 24);
 
   @include mobile {
     display: flex;
@@ -52,12 +52,12 @@ h3 {
     margin: 3vw;
     background-color: #aaa0b009;
     min-height: fit-content;
-    padding: 5rem 1rem 5rem 1rem;
+    padding: 3rem 1rem 5rem 1rem;
   }
 
   @include tablet {
     margin: 1.25rem;
-    padding: 5rem 1rem 5rem 1rem;
+    padding: 3rem 1rem 5rem 1rem;
   }
 
   @include desktop {
@@ -87,18 +87,18 @@ h3 {
   }
 
   @include tablet {
-    font-size: 5.5vw;
+    font-size: 3rem;
   }
 
   @include desktop {
-    font-size: 3.2vw;
+    font-size: 3.4rem;
   }
 }
 
 .shelter-section__subHeader {
-  font-family: 'Junction Light', 'Junction Bold';
+  font-family: "Toronto Subway",'Junction Light', 'Junction Bold';
   font-weight: 800;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   color: ghostwhite;
   background-image: linear-gradient(170deg, #262729 9%, #313232 96%);
   width: 100%;
@@ -107,6 +107,40 @@ h3 {
   border: 1px solid ghostwhite;
   display: flex;
   align-items: center;
+  justify-content: center;
+}
+
+.subHeader__title {
+  width: max-content;
+}
+
+.subheader__divider {
+  height: 3rem;
+  margin-right: 1rem;
+  margin-left: 3rem;
+  display: flex;
+}
+
+.subheader__text {
+  font-family: "Toronto Subway Bold";
+  font-weight: 800;
+  width: 23rem;
+  display: flex;
+  text-align: center;
+  text-transform: uppercase;
+  font-variant-caps: all-petite-caps;
+
+  @include mobile {
+
+  }
+
+  @include tablet {
+    display: inline-block;
+  }
+
+  @include desktop {
+
+  }
 }
 // ----------------- BUTTONS -----------------
 
@@ -197,24 +231,24 @@ h3 {
   overflow-y: auto;
   box-sizing: border-box;
   border-radius: 5px;
-  // min-width: 37rem;// THIS ONE
   // background-image: linear-gradient(307deg, #c3cbdc 23%, #edf1f4 66%); // SILVER WHITE GRADIENT DESIGN
   // background: conic-gradient(from 242deg at 132% -20%, #5870a9, #7d75ad, #9c7cae, #b583ac, #ca8daa, #da99a8, #e6a6a7, #eeb5a9); // BLUE / PEACH DESIGN V1
   // background: conic-gradient(from 227deg at 191% -35%, #5870a9, #7d75ad, #9c7cae, #b583ac, #ca8daa, #da99a8, #e6a6a7, #eeb5a9); // BLUE / PEACH DESIGN V2
   // background: conic-gradient(from 780deg at 64% 68%, #5870a9 0%, #7d75ad 12%, #eeb5a9 8%, #b583ac 44%, #eeb5a9 48%, #5870a9 82%, #eeb5a9 98%, #5870a9 88%, #eeb5a9 100%); // EXPLOSION DESIGN
   // background: conic-gradient(from 150deg at 49% 32%, #5870a9 0%, #7d75ad 8%, #9c7cae 23%, #b583ac 39%, #ca8daa 56%, #da99a8 73%, #e6a6a7 89%, #eeb5a9 100%); // ANGLED BOTTOM RIGHT DESIGN
   // background: conic-gradient(from 180deg at 65% 30%, #5870a9 0%, #7d75ad 14%, #9c7cae 30%, #b583ac 46%, #ca8daa 62%, #da99a8 78%, #e6a6a7 92%, #eeb5a9 100%); // VERTICAL DIVIDER DESIGN
-  background: conic-gradient(
-    from 270deg at 59.2% 48.5%,
-    #5870a9 0%,
-    #7d75ad 15%,
-    #9c7cae 30%,
-    #b583ac 45%,
-    #ca8daa 60%,
-    #da99a8 75%,
-    #e6a6a7 90%,
-    #eeb5a9 100%
-  );
+  // background: conic-gradient(
+  //   from 270deg at 59.2% 48.5%,
+  //   #5870a9 0%,
+  //   #7d75ad 15%,
+  //   #9c7cae 30%,
+  //   #b583ac 45%,
+  //   #ca8daa 60%,
+  //   #da99a8 75%,
+  //   #e6a6a7 90%,
+  //   #eeb5a9 100%
+  // );
+  background: #1f1b1b;
   min-width: -webkit-min-content;
   max-width: -webkit-fit-content;
 
@@ -252,6 +286,8 @@ h3 {
     // width:min-content;
     // min-width: 42%;
     // width: -webkit-fit-content;
+    min-width: 40rem;// THIS ONE
+
   }
 }
 
@@ -361,17 +397,19 @@ h3 {
   }
 
   @include mobile {
-    font-size: 3rem;
+    font-size: 2.5rem;
     line-height: 3rem;
+    min-width: 23rem;
   }
   @include tablet {
     font-size: 2.5rem;
     line-height: 3rem;
+    min-width: 23rem;
   }
   @include desktop {
-    font-size: 3rem;
+    font-size: 2.5rem;
     line-height: 3.25rem;
-    min-width: 22rem;
+    min-width: 23rem;
   }
 }
 
@@ -445,20 +483,18 @@ h3 {
   @include mobile {
     // min-width: -webkit-fit-content;
     width: 15rem;
-
     margin-right: 1rem;
   }
 
   @include tablet {
     // min-width: -webkit-fit-content;
     width: 15rem;
-
     margin-right: 1rem;
   }
 
   @include desktop {
     // min-width: -webkit-fit-content;
-    width: 15rem;
+    width: 14rem;
   }
 }
 

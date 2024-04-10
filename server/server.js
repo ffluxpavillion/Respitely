@@ -2,32 +2,32 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const path = require('path');
+const dotenv = require('dotenv');
 
 
 // setting up env
-
-require('dotenv').config();
+require('dotenv').config();   // Load the root-level .env
+dotenv.config({ path: path.resolve(__dirname, './server/.env') });
 let { PORT, BACKEND_URL } = process.env;
 
 PORT = process.env.PORT || 8081;
 
-// Ensure Express server is set up to serve React app's static files in production (Heroku Deployment)
 
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '../client/build')));
-  app.get('*', (req, res) => {
-      res.sendFile(path.resolve(__dirname, '../client/build'));
-  });
-}
-
-
-if (process.env.NODE_ENV === 'development') {
+if (process.env.NODE_ENV === 'development') {   // Allow requests from any origin in development
   app.use(cors());
-} else {
-  app.use(cors({ origin: process.env.CORS_ORIGIN }));
+} else {   // In production, restrict requests to the specified origin
+  const corsOptions = {
+    origin: process.env.CORS_ORIGIN,
+    optionsSuccessStatus: 200,
+  };
+  app.use(cors(corsOptions));
 }
 
 app.use(express.json()); // allows server to handle JSON data sent in req body
+
+if (process.env.NODE_ENV === 'production') { // Serve static files from the React app
+  app.use(express.static(path.join(__dirname, '../client//build')));
+}
 
 // allows browser pre-flight check for JSON requests
 app.options('*', (req, res) => {
@@ -60,4 +60,5 @@ app.use((req, res) => {
 
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);
+  console.log('Press CTRL + C to stop server');
 });

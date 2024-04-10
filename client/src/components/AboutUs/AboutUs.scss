@@ -9,8 +9,18 @@
   // background: linear-gradient(180deg, #aaa0b0 0%, #cca6af 95%,) center / cover no-repeat fixed; // alt background gradient (pink/purple)
   // background: linear-gradient(180deg, #EDF1F4 0%, #C3CBDC 95%) center / cover no-repeat fixed; // alt background gradient (white/blue)
   // background-image: linear-gradient(315deg, #f1f2f6 0%, #c9c6c6 84%); // alt background gradient (beige/white)
-  background-image: linear-gradient(45deg, #f1f2f6 8%, #8693ab 84%);
+  // background-image: linear-gradient(45deg, #f1f2f6 8%, #8693ab 84%);
+  // background-image: linear-gradient(360deg, #0f0f0f 75%, #222222 76%, #000000ed 76%);
+  // background-image: linear-gradient(360deg, #0f0f0f 75%,  #0f0f0f 75%); // new dark background
+  background: #0f0f0f; // temp dark background
+  // background-image: radial-gradient(circle at 50% 39%, #0f0f0f 59%, #ffffff 43%); // spotlight styling effect -- for future implementation
+  // background-image: radial-gradient(circle at 50% 60%, #ffffff 55%, #161616 45%); // more refined spotlight styling effect -- for future implementation
+
+
+
   // background-image: radial-gradient(circle at 48% -50%, #f1f2f6 0%, #8693ab 54%);
+  // background-image: radial-gradient(circle at 50% 700%, #ffffff 90%, #0f0f0f 54%);
+
   background-attachment: fixed;
 
 
@@ -22,7 +32,7 @@
       color: $pastel-blue2;
       // color: white;
       // color: lightgrey;
-      font-size: 9.7vw;
+      font-size: 9.7rem;
       padding-left: 1.05rem;
       padding-bottom: 3vw;
       margin-top: -0.5vw;
@@ -68,13 +78,14 @@
     word-wrap: normal;
     text-align: justify;
     margin-bottom: 1.6rem;
-    color: rgb(67, 67, 67);
+    color: #ffffff;
+    // color: #0f0f0f; // spotlight styling effect -- for future implementation
     font-family: 'Avenir Next';
     line-height: 1.9em;
     font-weight: 600;
 
     @include mobile {
-      font-size: 1rem;
+      font-size: 1.5rem;
       padding: 1.5rem 4rem 0 4rem;
       hyphens: auto;
     }

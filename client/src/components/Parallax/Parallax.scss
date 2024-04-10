@@ -9,4 +9,18 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+
+  @include mobile {
+    height: 110rem;
+
+  }
+
+  @include tablet {
+    height: 100rem;
+
+  }
+
+  @include desktop {
+
+  }
 }

@@ -29,15 +29,6 @@ if (process.env.NODE_ENV === 'production') { // Serve static files from the Reac
   app.use(express.static(path.join(__dirname, '../client//build')));
 }
 
-// allows browser pre-flight check for JSON requests
-app.options('*', (req, res) => {
-  res.header('Access-Control-Allow-Origin', '*')
-  res.header('Access-Control-Allow-Methods', 'GET');
-  res.header('Access-Control-Allow-Headers', 'Authorization, Content-Length, X-Requested-Width');
-  res.send(200);
-})
-
-
 const shelterRoutes = require('./routes/shelters'); // Routes
 app.use('/shelters', shelterRoutes)
 

@@ -39,8 +39,7 @@ export default function SheltersMap(props) {
 
   useEffect(() => { // Fetch and set maps key from server
     axios
-    .get('http://localhost:8080/api/maps-key') // for local development
-    // .get(`${process.env.REACT_APP_BACKEND_URL}/api/maps-key`)
+    .get(`${process.env.REACT_APP_BACKEND_URL}/api/maps-key`)
     .then(response => {
       setApiKey(response.data.key);
     })

@@ -13,21 +13,24 @@ let { PORT, BACKEND_URL } = process.env;
 PORT = process.env.PORT || 8081;
 
 
-if (process.env.NODE_ENV === 'development') {   // Allow requests from any origin in development
-  app.use(cors());
-} else {   // In production, restrict requests to the specified origin
-  const corsOptions = {
-    origin: process.env.CORS_ORIGIN,
-    optionsSuccessStatus: 200,
-  };
-  app.use(cors(corsOptions));
-}
+// if (process.env.NODE_ENV === 'development') {   // Allow requests from any origin in development
+//   app.use(cors());
+// } else {   // In production, restrict requests to the specified origin
+//   const corsOptions = {
+//     origin: process.env.CORS_ORIGIN,
+//     optionsSuccessStatus: 200,
+//   };
+//   app.use(cors(corsOptions));
+// }
+app.use(cors());
 
 app.use(express.json()); // allows server to handle JSON data sent in req body
 
-if (process.env.NODE_ENV === 'production') { // Serve static files from the React app
+// if (process.env.NODE_ENV === 'production') { // Serve static files from the React app
+//   app.use(express.static(path.join(__dirname, '../client//build')));
+// }
+
   app.use(express.static(path.join(__dirname, '../client//build')));
-}
 
 const shelterRoutes = require('./routes/shelters'); // Routes
 app.use('/shelters', shelterRoutes)

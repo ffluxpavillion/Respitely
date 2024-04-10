@@ -8,7 +8,7 @@ const dotenv = require('dotenv');
 // setting up env
 require('dotenv').config();   // Load the root-level .env
 dotenv.config({ path: path.resolve(__dirname, './server/.env') });
-let { PORT, BACKEND_URL } = process.env;
+let { PORT } = process.env;
 
 PORT = process.env.PORT || 8081;
 app.use(cors());

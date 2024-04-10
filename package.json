@@ -2,7 +2,7 @@
   "name": "safehavento",
   "version": "1.0.0",
   "scripts": {
-    "build:fullstack": "cd client && npm install && npm run build && cd ../server && npm install"
+    "build:fullstack": "cd client && npm install && npm run build && cd ../server && npm install && node server"
   },
   "engines": {
     "node": "14.x"

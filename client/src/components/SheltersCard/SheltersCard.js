@@ -21,8 +21,7 @@ export default function SheltersCard() {
   useEffect(() => {
     const fetchData = async () => {
       axios
-        .get('http://localhost:8080/shelters/') // for local development
-        // .get(`${process.env.REACT_APP_BACKEND_URL}/shelters`)
+        .get(`${process.env.REACT_APP_BACKEND_URL}/shelters`)
         .then((response) => {
           // // Process the data to create unique locations
           // const processedData = processData(response.data);
@@ -108,13 +107,42 @@ export default function SheltersCard() {
     setRecords(fetchedData); // set newly sorted records
     setDisplayedRecords(filteredData.slice(0, loadCount)); // initially load 5 records
     setFilterType(type); // set filter state
+    setGoHere(null);
+
   };
 
   // function to load more records
   const loadMore = () => {
-    setLoadCount(loadCount + 5); // load 5 more records
-    setDisplayedRecords(records.slice(0, loadCount + 5)); // set displayed records to the first 5 + 5 more
+    const newLoadCount = loadCount + 5; // Calculate the new load count
+    setLoadCount(newLoadCount); // Update the load count state
+
+    // Re-apply the current filter and slicing based on the new load count
+    let newDisplayedRecords = [];
+    if (filterType === 'Beds') {
+      newDisplayedRecords = records
+        .filter((record) => record.CAPACITY_TYPE === 'Bed Based Capacity')
+        .sort((a, b) => parseInt(b.UNOCCUPIED_BEDS, 10) - parseInt(a.UNOCCUPIED_BEDS, 10))
+        .slice(0, newLoadCount);
+    } else if (filterType === 'Rooms') {
+      newDisplayedRecords = records
+        .filter((record) => record.CAPACITY_TYPE === 'Room Based Capacity')
+        .sort((a, b) => parseInt(b.UNOCCUPIED_ROOMS, 10) - parseInt(a.UNOCCUPIED_ROOMS, 10))
+        .slice(0, newLoadCount);
+    } else {
+      // Default to 'All', applying a sort based on occupancy (if needed) and slicing
+      newDisplayedRecords = records
+        .sort((a, b) => {
+          const maxA = Math.max(parseInt(a.UNOCCUPIED_BEDS || '0', 10), parseInt(a.UNOCCUPIED_ROOMS || '0', 10));
+          const maxB = Math.max(parseInt(b.UNOCCUPIED_BEDS || '0', 10), parseInt(b.UNOCCUPIED_ROOMS || '0', 10));
+          return maxB - maxA;
+        })
+        .slice(0, newLoadCount);
+    }
+
+    // Update the displayed records based on the newly applied filter and slice
+    setDisplayedRecords(newDisplayedRecords);
   };
+
 
   // function to handle button click
   const handleClick = (button) => {
@@ -123,11 +151,6 @@ export default function SheltersCard() {
 
   const handleCardClick = (record) => {
     setGoHere(record);
-    // setViewState({
-    //   longitude: place.geometry.coordinates[0],
-    //   latitude: place.geometry.coordinates[1],
-    //   zoom: 10 // or any appropriate zoom level
-    // });
   };
 
   // Console logs for debugging purposes
@@ -146,13 +169,18 @@ export default function SheltersCard() {
           <br />
           <br />
           <br />
-          <span className="shelter-section__subHeader">FILTER BY ➡
-          <FilterButtons
-            selectedButton={selectedButton}
-            filterAndSortData={filterAndSortData}
-            handleClick={handleClick}
-            records={records}
-          ></FilterButtons>
+          <span className="shelter-section__subHeader">
+            <p className="subHeader__title">FILTER BY ➡</p>
+            <FilterButtons
+              selectedButton={selectedButton}
+              filterAndSortData={filterAndSortData}
+              handleClick={handleClick}
+              records={records}
+            ></FilterButtons>
+            <br />
+            <hr className='subheader__divider'></hr>
+          <span className='subheader__text'>Results are automatically sorted by most recently updated, with highest occupancy</span>
+
           </span>
 
         </div>

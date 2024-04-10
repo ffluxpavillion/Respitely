@@ -1,9 +1,11 @@
 {
-  "name": "SafeHavenTO",
+  "name": "safehavento",
   "version": "1.0.0",
   "scripts": {
-    "start": "node server",
-    "heroku-postbuild": "cd client && npm install && npm run build"
+    "install:client": "cd client && npm install",
+    "build:client": "cd client && npm run build",
+    "install:server": "cd server && npm install",
+    "build": "npm run install:client && npm run build:client && npm run install:server"
   },
   "engines": {
     "node": "14.x"
@@ -13,5 +15,10 @@
     "axios": "^1.6.2",
     "cors": "^2.8.5",
     "dotenv": "^16.3.1"
-  }
+  },
+  "description": "A full-stack & responsive web application, designed to help those experiencing homelessness in finding nearby shelters based on their individual needs and the latest updates from locations around the city.",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }

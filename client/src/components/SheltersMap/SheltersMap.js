@@ -23,8 +23,19 @@ export default function SheltersMap(props) {
     zoom: 11,
   });
 
+  const DEFAULT_VIEW_STATE = {
+    longitude: -79.384293,
+    latitude: 43.653908,
+    zoom: 11,
+  };
+
   const { goHere } = props;
   const mapRef = useRef(); // Reference to the map instance
+
+  useEffect(() => {
+    setViewState(DEFAULT_VIEW_STATE);   // Reset the view state to the default
+    setSelectedPlace(null);   // to deselect any currently selected marker on the map
+  }, [props.filterType]);
 
   useEffect(() => { // Fetch and set maps key from server
     axios
@@ -216,7 +227,7 @@ const handleMapLoad = () => { // Load the HeartMarker icon and attach event list
             anchor='bottom'
             closeButton={true}
             onClose={() => setSelectedPlace(null)}
-            offset={20}
+            offset={[0, -20]}
           >
             <div className='popup__div'>
               <div className='popup__div-top'>

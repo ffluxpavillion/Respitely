@@ -77,6 +77,16 @@ a:active {
     radial-gradient(99% 99% at 109% 2%, #00C9FFFF 0%, #073AFF00 100%),
     radial-gradient(160% 154% at 711px -303px, #2000FFFF 0%, #152FD2FF 27%);
     background-attachment: fixed;
+
+    @include mobile {
+      height: 120rem;
+    }
+
+    @include tablet {
+    }
+
+    @include desktop {
+    }
 }
 
 .resources__div {
@@ -109,7 +119,7 @@ a:active {
 
 
     @include mobile {
-      font-size: 2rem;
+      font-size: 4rem;
     }
   }
 }
@@ -124,9 +134,9 @@ a:active {
 
   @include mobile {
     grid-template-columns: repeat(2, minmax(40px, 200px));
-    row-gap: 5vw;
+    row-gap: 12rem;
     padding:5rem;
-    column-gap: 30vw;
+    column-gap: 20rem;
     justify-content: center;
   }
 
@@ -156,8 +166,8 @@ a:active {
 
   @include mobile {
     padding: 0.5rem;
-    width: 15rem;
-    height: 15rem;
+    width: 22rem;
+    height: 22rem;
     border-radius: 10px;
     place-content: center;
   }
@@ -179,7 +189,7 @@ a:active {
     // text-shadow: -4px 2px 9px #acb0c7cf;
 
     @include mobile {
-      font-size: 1rem;
+      font-size: 1.7em;
     }
 
     @include tablet {

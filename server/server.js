@@ -12,7 +12,7 @@ let { PORT, BACKEND_URL } = process.env;
 
 PORT = process.env.PORT || 8081;
 app.use(cors());
-app.use(express.static(path.join(__dirname, '../client//build')));
+app.use(express.static(path.join(__dirname, '../client/build')));
 
 
 // if (process.env.NODE_ENV === 'development') {   // Allow requests from any origin in development

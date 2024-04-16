@@ -5,22 +5,25 @@
 
 .parallax2 {
   height:1200px;
-  background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 
   @include mobile {
-    height: 100rem;
+    height: 56rem;
+    background-attachment: fixed;
 
   }
 
   @include tablet {
-    height: 100rem;
+    height: 70rem;
+    background-attachment: fixed;
+
 
   }
 
   @include desktop {
+    background-attachment: fixed;
 
   }
 

@@ -11,25 +11,36 @@ dotenv.config({ path: path.resolve(__dirname, './server/.env') });
 let { PORT } = process.env;
 
 PORT = process.env.PORT || 8081;
-app.use(cors());
-app.use(express.static(path.join(__dirname, '../client/build')));
+
+// app.use(cors()); // OLD CORS
+
+// Enable CORS based on the environment
+if (process.env.NODE_ENV === 'development') { // Allow requests from any origin in development
+  app.use(cors());
+} else { // In production, restrict requests to the specified origin
+  const corsOptions = {
+      origin: process.env.CORS_ORIGIN,
+      optionsSuccessStatus: 200,
+  };
+  app.use(cors(corsOptions));
+}
 
 
-// if (process.env.NODE_ENV === 'development') {   // Allow requests from any origin in development
-//   app.use(cors());
-// } else {   // In production, restrict requests to the specified origin
-//   const corsOptions = {
-//     origin: process.env.CORS_ORIGIN,
-//     optionsSuccessStatus: 200,
-//   };
-//   app.use(cors(corsOptions));
-// }
+// Serve static files only in production
+if (process.env.NODE_ENV === 'production') { // Serve static files from the React app
+  app.use(express.static(path.join(__dirname, '../client/build')));
+}
+
 
 app.use(express.json()); // allows server to handle JSON data sent in req body
 
-// if (process.env.NODE_ENV === 'production') { // Serve static files from the React app
-//   app.use(express.static(path.join(__dirname, '../client//build')));
-// }
+// Middleware to set CORS headers for all responses
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*'); // Allow any domain
+  res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  res.setHeader('Access-Control-Allow-Methods', 'GET');
+  next();
+});
 
 const shelterRoutes = require('./routes/shelters'); // Routes
 app.use('/shelters', shelterRoutes)

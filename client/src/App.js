@@ -12,14 +12,14 @@ import './App.scss';
 export default function App() {
   return (
     <BrowserRouter>
-        <Header />
-        <Hero />
-        <AboutUs />
-        <Parallax />
-        <SheltersCard />
-        <Parallax2 />
-        <Resources />
-        <Footer />
-      </BrowserRouter>
+      <Header />
+      <Hero />
+      <AboutUs />
+      <Parallax />
+      <SheltersCard />
+      <Parallax2 />
+      <Resources />
+      <Footer />
+    </BrowserRouter>
   );
 }

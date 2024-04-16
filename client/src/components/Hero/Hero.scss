@@ -21,7 +21,7 @@ body {
   background-position: center;
   overflow: hidden;
   flex-wrap: wrap;
-  animation: heroFadeIn 6s ease-out;
+  // animation: heroFadeIn 6s ease-out;
 
   @include mobile {
     min-height: 100vh;

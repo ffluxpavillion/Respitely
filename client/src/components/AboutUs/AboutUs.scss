@@ -22,6 +22,7 @@
   // background-image: radial-gradient(circle at 50% 700%, #ffffff 90%, #0f0f0f 54%);
 
   background-attachment: fixed;
+  padding: 1rem;
 
 
   &-div {
@@ -32,12 +33,26 @@
       color: $pastel-blue2;
       // color: white;
       // color: lightgrey;
-      font-size: 9.7rem;
       padding-left: 1.05rem;
       padding-bottom: 3vw;
       margin-top: -0.5vw;
       font-weight: 400;
       letter-spacing: 0.5rem;
+    }
+
+    @include mobile {
+      font-size: 3rem;
+
+    }
+
+    @include tablet {
+      font-size: 4rem;
+
+    }
+
+    @include desktop {
+      font-size: 7.7rem;
+
     }
   }
 }
@@ -67,6 +82,18 @@
     width: auto;
     margin: 0 auto;
     letter-spacing: 1.18vw;
+
+    @include mobile {
+      font-size: 1.6rem;
+    }
+
+    @include tablet {
+      font-size: 3rem;
+
+    }
+
+    @include desktop {
+    }
   }
 
   &-text {
@@ -85,8 +112,8 @@
     font-weight: 600;
 
     @include mobile {
-      font-size: 1.5rem;
-      padding: 1.5rem 4rem 0 4rem;
+      font-size: 1rem;
+      padding-top: 2rem;
       hyphens: auto;
     }
 

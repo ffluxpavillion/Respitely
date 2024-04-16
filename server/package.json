@@ -4,8 +4,8 @@
   "description": "A server that fetches and sorts data from the City of Toronto's Daily Shelter Occupancy API and serves it to the client.",
   "main": "server.js",
   "scripts": {
-    "start": "node server",
-    "dev": "nodemon server"
+    "start": "NODE_ENV=production node server.js",
+    "dev": "NODE_ENV=development nodemon server.js"
   },
   "keywords": [],
   "author": "",

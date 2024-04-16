@@ -31,7 +31,7 @@ export default function Header() {
         <div className="navbar__div">
           <ul className={`navbar__div-ul navMenu ${menuOpen ? 'active' : ''}`}>
             <li onClick={handleClick}><Link to='#home'><h3 className="navbar__div-li">Home</h3></Link></li>
-            <li onClick={handleClick}><Link to='#aboutUs'><h3 className="navbar__div-li">About</h3></Link></li>
+            <li onClick={handleClick}><Link to='#aboutUs'><h3 className="navbar__div-li">About Us</h3></Link></li>
             <li onClick={handleClick}><Link to='#shelters'><h3 className="navbar__div-li">Shelters</h3></Link></li>
             <li onClick={handleClick}><Link to='#resources'><h3 className="navbar__div-li">Resources</h3></Link></li>
           </ul>

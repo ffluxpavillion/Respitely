@@ -67,6 +67,9 @@ h3 {
 
 .shelter-section__upper {
   padding-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
 }
 
 .shelter-section__header {
@@ -82,11 +85,11 @@ h3 {
   backdrop-filter: opacity(0.5);
 
   @include mobile {
-    font-size: 3.1rem;
+    font-size: 2.2rem; // CULPRIT #1 - FIXED
   }
 
   @include tablet {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 
   @include desktop {
@@ -104,9 +107,25 @@ h3 {
   padding: 1rem;
   border-radius: 10px;
   border: 1px solid ghostwhite;
-  display: flex;
   align-items: center;
   justify-content: center;
+
+
+  @include mobile {
+      // display: contents;      // CULPRIT #2 - fixed
+    // flex-direction: column;
+    text-align: center;
+
+  }
+
+  @include tablet {
+    text-align: center;
+
+  }
+
+  @include desktop {
+    display: flex;
+  }
 }
 
 .subHeader__title {
@@ -115,32 +134,58 @@ h3 {
 
 .subheader__divider {
   height: 3rem;
-  margin-right: 1rem;
-  margin-left: 3rem;
   display: flex;
+
+  @include mobile {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    height: 0rem;
+
+  }
+
+  @include tablet {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    height: 0rem;
+  }
+
+  @include desktop {
+    margin-right: 1rem;
+    margin-left: 3rem;
+
+  }
 }
 
 .subheader__text {
   font-family: "Toronto Subway Bold";
   font-weight: 800;
   width: 23rem;
-  display: flex;
   text-align: center;
   text-transform: uppercase;
   font-variant-caps: all-petite-caps;
 
+
   @include mobile {
+    display: inline-flex; // CULPRIT #3 - fixed
+    font-style: italic;
+
 
   }
 
   @include tablet {
-    display: inline-block;
+    display: inline;
+    font-style: italic;
+
   }
 
   @include desktop {
+  display: flex;
 
   }
 }
+
 // ----------------- BUTTONS -----------------
 
 .shelter-item__actions-btn {
@@ -185,6 +230,7 @@ h3 {
     //   font-size: 0.9rem;
   }
 }
+
 .btn {
   &--Directions-Text,
   &--Share-Text {
@@ -213,7 +259,9 @@ h3 {
   }
 
   @include tablet {
-    display: flex;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: space-between;
     height: 40rem;
     gap: 2rem;
@@ -307,7 +355,7 @@ h3 {
   border-image-slice: 1; // Visual seperator (vertical)
   padding: 1rem;
   background-color: rgba(53, 55, 59, 0.19);
-  width: 100%;
+  // width: 100%;
   height: 100%;
   z-index: 9;
   backdrop-filter: blur(5px);
@@ -331,7 +379,12 @@ h3 {
   @include mobile {
     line-height: 1.2rem;
     justify-content: space-around;
-    width: 63rem;
+    // width: 64rem; // CULPRIT #4 - change to  100% fix?
+
+  }
+  @include tablet {
+    justify-content: space-evenly;
+    width:100%;
 
 
   }
@@ -349,8 +402,7 @@ h3 {
   min-width: -webkit-min-content;
   max-width: -webkit-fit-content;
   @include mobile {
-    width: 50%;
-    margin-left: 1rem;
+    min-width: 23rem;
   }
 
   @include tablet {
@@ -400,8 +452,8 @@ h3 {
   }
 
   @include mobile {
-    font-size: 2.5rem;
-    line-height: 3rem;
+    font-size: 1.2rem; // CULPRIT #5 - fixed
+    // line-height: 3rem;
     min-width: 23rem;
     display: contents;
   }
@@ -439,7 +491,7 @@ h3 {
   justify-content: center;
   align-items: center;
   line-height: 2.1rem;
-  min-width: max-content;
+   // CURPRIT #6
 
   @include mobile {
     font-size: 0.8rem;
@@ -447,6 +499,11 @@ h3 {
 
   @include tablet {
     font-size: 0.8rem;
+    min-width: max-content;
+  }
+
+  @include desktop {
+    min-width: max-content;
   }
 }
 
@@ -482,23 +539,26 @@ h3 {
   flex-direction: column;
   padding: 1rem;
   // DO NOT CHANGE
-  line-height: 1.6rem;
 
   @include mobile {
     // min-width: -webkit-fit-content;
-    width: 15rem;
-    margin-right: 1rem;
+
+
   }
 
   @include tablet {
     // min-width: -webkit-fit-content;
     width: 15rem;
     margin-right: 1rem;
+    line-height: 1.6rem;
+
   }
 
   @include desktop {
     // min-width: -webkit-fit-content;
     width: 14rem;
+    line-height: 1.6rem;
+
   }
 }
 
@@ -509,7 +569,6 @@ h3 {
   padding: 0.6rem;
   border-radius: 8px;
   margin-top: 0.7rem;
-  backdrop-filter: invert(1);
 
   @include mobile {
     font-size: 1.02rem;
@@ -517,10 +576,14 @@ h3 {
 
   @include tablet {
     font-size: 1.1rem;
+    // backdrop-filter: invert(1);
+
   }
 
   @include desktop {
     font-size: 1rem;
+    backdrop-filter: invert(1);
+
   }
 }
 

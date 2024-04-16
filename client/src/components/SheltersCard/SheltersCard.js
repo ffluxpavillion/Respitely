@@ -177,7 +177,7 @@ export default function SheltersCard() {
               handleClick={handleClick}
               records={records}
             ></FilterButtons>
-            <br />
+            {/* <br /> */}
             <hr className='subheader__divider'></hr>
           <span className='subheader__text'>Results are automatically sorted by most recently updated, with highest occupancy</span>
 
@@ -202,8 +202,8 @@ export default function SheltersCard() {
                               <div className="shelter-item__details">
                                 <h4 className="shelter-item__availability">
                                   {record.CAPACITY_TYPE === 'Bed Based Capacity'
-                                    ? `Available Beds: ${record.UNOCCUPIED_BEDS}`
-                                    : `Available Rooms: ${record.UNOCCUPIED_ROOMS}`
+                                    ? `Available Beds: ${record.UNOCCUPIED_BEDS} / ${record.CAPACITY_ACTUAL_BED}`
+                                    : `Available Rooms: ${record.UNOCCUPIED_ROOMS} / ${record.CAPACITY_ACTUAL_ROOM}`
                                   }
                                   {/* {record.CAPACITY_TYPE === 'Room Based Capacity' ? `Available Rooms: ${record.UNOCCUPIED_ROOMS}` : ''} */}
                                   <br />

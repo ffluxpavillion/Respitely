@@ -47,7 +47,7 @@ export default function Resources() {
               </a>
               <a className="link" target='_blank' href="https://www.toronto.ca/community-people/housing-shelter/homeless-help/pet-services-in-homeless-shelters/">
                 <div className="grid__item">
-                  <h4 className="grid__item-header">Pet Services <br />for clients of <br />Homeless Services</h4>
+                  <h4 className="grid__item-header">Pet Services for clients of Homeless Services</h4>
                   <h4 className="grid__item-text">No-charge services for pets of people staying at shelter sites.</h4>
                 </div>
               </a>

@@ -15,8 +15,9 @@ a:active {
 
 a:active {
   transition: all 0.4s ease-in-out;
-  background-color: #ffffff8e;
-  color: white;
+  border-radius: 20px;
+  background-color: #000000e9;
+  transform: scale(1.05);
 }
 
 *{
@@ -71,15 +72,15 @@ a:active {
 // CURRENT --Repeating Gradient -- Fixed Background
   background-size: 100% 100%;
   background-position: 0px 0px,0px 0px,0px 0px,0px 0px,0px 0px;
-  background-image:
-    radial-gradient(75% 75% at 50% 50%, #E8E8E89C 100%, #073AFF00 100%),
-    repeating-radial-gradient(75% 75% at 238% 218%, #00FFFF12 30%, #073AFF14 39%),
-    radial-gradient(99% 99% at 109% 2%, #00C9FFFF 0%, #073AFF00 100%),
-    radial-gradient(160% 154% at 711px -303px, #2000FFFF 0%, #152FD2FF 27%);
-    background-attachment: fixed;
+  // background-image:
+  //   radial-gradient(75% 75% at 50% 50%, #E8E8E89C 100%, #073AFF00 100%),
+  //   repeating-radial-gradient(75% 75% at 238% 218%, #00FFFF12 30%, #073AFF14 39%),
+  //   radial-gradient(99% 99% at 109% 2%, #00C9FFFF 0%, #073AFF00 100%),
+  //   radial-gradient(160% 154% at 711px -303px, #2000FFFF 0%, #152FD2FF 27%);
+  //   background-attachment: fixed;
 
     @include mobile {
-      height: 120rem;
+      // height: 120rem;
     }
 
     @include tablet {
@@ -103,7 +104,7 @@ a:active {
     padding: 4rem;
     display: grid;
     place-items: center;
-    margin-top: -6rem;
+    // margin-top: -6rem;
   }
 
   &-header {
@@ -117,40 +118,40 @@ a:active {
     text-transform: uppercase;
     font-size: 3rem;
 
-
     @include mobile {
-      font-size: 4rem;
+      font-size: 3rem;
     }
   }
 }
 
 .grid-container {
   display: grid;
-  // grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 3rem;
   width: 90%;
   justify-items: center;
 
 
   @include mobile {
-    grid-template-columns: repeat(2, minmax(40px, 200px));
-    row-gap: 12rem;
-    padding:5rem;
-    column-gap: 20rem;
+    grid-template-columns: repeat(1, minmax(40px, 200px));
+    row-gap: 1.5rem;
+    // padding:5rem;
+    column-gap: 14rem;
     justify-content: center;
   }
 
   @include tablet {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    column-gap: 1rem;
+
   }
 
   @include desktop {
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
 }
 
 .grid__item {
-  border: 1px solid #0000002f;
+  border: 2px solid #0000002f;
   padding: 1rem;
   box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.5);
   width: 15rem;
@@ -159,61 +160,71 @@ a:active {
   display: grid;
   place-content: space-between;
   backdrop-filter: blur(15px);
-  background-color: #ffffff73;
-  transform: scale(1);
-  transition:  border-radius 800ms ease, background-color 800ms ease, transform 800ms ease;
-  transition: background 0.4s ease-in-out, transform 0.4s ease-in-out, border-radius 0.4s ease-in-out;
 
   @include mobile {
-    padding: 0.5rem;
-    width: 22rem;
-    height: 22rem;
+    padding: 3rem;
+    width: 36rem;
+    height: 5rem;
     border-radius: 10px;
     place-content: center;
   }
 
   @include desktop{
+    transform: scale(1);
+    transition:  border-radius 800ms ease, background-color 800ms ease, transform 800ms ease;
+    transition: background 0.4s ease-in-out, transform 0.4s ease-in-out, border-radius 0.4s ease-in-out;
+
     &:hover {
       border-radius: 10px;
-      background-color: #ffffffa4;
+      background-color: rgba(0, 0, 0, 0.449);
       transform: scale(1.05);
     }
   }
 
   &-header {
     font-weight: 800;
-    color: #0a0d14d0;
+    color: #ffffff;
     text-align: center;
     padding-top: 1rem;
     text-transform: uppercase;
-    // text-shadow: -4px 2px 9px #acb0c7cf;
+    font-size: 1.2rem;
+
 
     @include mobile {
-      font-size: 1.7em;
     }
 
     @include tablet {
-      font-size: 1rem;
     }
 
     @include desktop {
-      font-size: 1rem;
     }
   }
 
   &-text {
     font-size: 1rem;
-    color: #414b62ba;
+    color: #d9d9d9;
     margin-top: 1.4rem;
     align-items: end;
     place-self: self-end;
     letter-spacing: 0.2px;
     word-wrap: normal;
     line-height: 1.3em;
-    // text-shadow: 1px 9px 10px #acb0c7cf;
+    display: none;
 
     @include mobile {
-      display: none;
+    }
+
+    @include tablet {
+      display: contents;
+    }
+
+    @include desktop {
+      display: contents;
+      margin:10rem;
+
+      &:hover {
+        color: white;
+      }
     }
   }
 }

@@ -113,6 +113,7 @@ li {
       justify-content: center;
       align-items: center;
 
+
       @include mobile {
         font-size: 1.7rem;
         color: white;
@@ -178,11 +179,9 @@ li {
 
     @include mobile {
       display: block;
-      padding: 0.56rem;
-      width: 1.75rem;
-      height: 1.3rem;
-      margin: 5px auto;
-      background-color: #cca6af;
+      width: 2.25rem;
+      margin-right: 1.5rem ;
+      margin-bottom: 5px;
       border: 2px solid white;
       -webkit-transition: all 0.3s ease-in-out;
       animation: pulse 3s;
@@ -190,11 +189,8 @@ li {
 
     @include tablet {
       display: block;
-      padding: 0.56rem;
       width: 2.25rem;
-      height: 1.5rem;
       margin: 5px auto;
-      background-color: #cca6af;
       border: 2.5px solid white;
       -webkit-transition: all 0.3s ease-in-out;
       animation: pulse 3s;
@@ -203,11 +199,8 @@ li {
     // enables corner nav on desktop
     @include desktop {
       display: block;
-      padding: 0.56rem;
       width: 2.25rem;
-      height: 1.5rem;
       margin: 5px auto;
-      background-color: #cca6af;
       border: 2px solid white;
       -webkit-transition: all 0.3s ease-in-out;
     }
@@ -236,8 +229,8 @@ li {
     display: block;
     padding: 1.5rem;
     animation: navFadeIn 8s ease-out 6s forwards;
-    animation-delay: 4.18s;
-    opacity: 0;
+    // animation-delay: 4.18s;
+    // opacity: 0;
 
     @include mobile {
       padding: 0.3rem;
@@ -253,7 +246,7 @@ li {
     background-color: white;
   }
   .menu.active .bar:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
+    transform: translateY(-10px) rotate(-45deg);
     background-color: white;
   }
 
@@ -261,21 +254,22 @@ li {
 
   .bar:nth-child(2) {
     // animation: pulse2 2s ease-out 9s forwards; //alternate pulse animation
-    animation: pulse-wave 2s ease-out 9s;
-    animation-iteration-count: 5;
-    animation-delay: 1.2s;
+    // animation: pulse-wave 2s ease-out 9s;
+    // animation-iteration-count: 5;
+    // animation-delay: 1.22s;
   }
   .bar:nth-child(1) {
     // animation: pulse2 2s ease-out 9s forwards; //alternate pulse animation
-    animation: pulse-wave 2s ease-out 9s;
-    animation-iteration-count: 5;
-    animation-delay: 1s;
+    // animation: pulse-wave 2s ease-out 9s;
+    // animation-iteration-count: 5;
+    // animation-delay: 1s;
+    margin-top:1.5rem;
   }
   .bar:nth-child(3) {
     // animation: pulse2 2s ease-out 9s forwards; //alternate pulse animation
-    animation: pulse-wave 2s ease-out 9s;
-    animation-iteration-count: 5;
-    animation-delay: 1.4s;
+    // animation: pulse-wave 2s ease-out 9s;
+    // animation-iteration-count: 5;
+    // animation-delay: 1.44s;
   }
 
   .navMenu {
@@ -324,7 +318,7 @@ li {
       align-items: center;
       background-color: #cca6af;
       opacity: 1;
-      transition: opacity 700ms ease-in-out;
+      // transition: opacity 700ms ease-in-out;
       -webkit-transition: opacity 0.6s ease-in-out;
     }
   }
@@ -361,13 +355,21 @@ li {
 // Top right corner nav animation --pulse wave effect on load only --finite (5 times)
 @keyframes pulse-wave {
   0% {
-    transform: scale(1);
+    transform: scale(1.4);
+  }
+  25% {
+    // transform: scale(1.2);
+
   }
   50% {
-    transform: scale(1.2);
+    // transform: scale(1);
+  }
+  75% {
+    transform: scale(0.55);
+
   }
   100% {
-    transform: scale(1);
+    transform: scale(1.4);
   }
 }
 

@@ -53,7 +53,8 @@
     transition: all 1s ease-in-out;
 
     @include mobile {
-      min-width: 9rem;
+      // min-width: 5rem;
+      padding: 0.3rem;
     }
     @include tablet {
       min-width: 9rem;
@@ -130,6 +131,14 @@
     box-shadow: 0px -4px 15px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     min-width: inherit;
+
+    @include mobile {
+      font-size: 1rem;
+    }
+
+    @include tablet {
+      font-size: 1rem;
+    }
 
     &::after {
       content: '';

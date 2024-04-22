@@ -7,6 +7,7 @@
   height: 40vw;
   width: 30rem;
   box-shadow: rgba(0, 0, 0, 0.176) 0px 16px 48px 0px;
+  animation: fadeIn 0.5s ease-out forwards;
 }
 
 .container {
@@ -126,7 +127,7 @@
   background: #fff;
   // border-radius: 40px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-  padding: 1.7rem;
+  padding: 1rem 3.5rem 1.7rem 1.7rem;
   pointer-events: auto;
   position: relative;
   width: 20vw;
@@ -141,11 +142,16 @@
   min-width: -webkit-fit-content;
   min-width: -webkit-min-content;
   max-width: -webkit-fit-content;
+
+  @include mobile {
+    height: 15rem;
+  }
 }
 
 .mapboxgl-map {
   box-shadow: rgba(255, 255, 255, 0.176) 0px 16px 48px 0px;
   // box-shadow: 0 4px 10px 5px rgba(255, 255, 255, 0.5);
+  animation: fadeIn 2s ease-out forwards;
 }
 
 .mapboxgl-canvas {

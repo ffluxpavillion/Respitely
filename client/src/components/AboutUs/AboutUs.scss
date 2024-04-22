@@ -15,15 +15,15 @@
   background: #0f0f0f; // temp dark background
   // background-image: radial-gradient(circle at 50% 39%, #0f0f0f 59%, #ffffff 43%); // spotlight styling effect -- for future implementation
   // background-image: radial-gradient(circle at 50% 60%, #ffffff 55%, #161616 45%); // more refined spotlight styling effect -- for future implementation
-
-
-
   // background-image: radial-gradient(circle at 48% -50%, #f1f2f6 0%, #8693ab 54%);
   // background-image: radial-gradient(circle at 50% 700%, #ffffff 90%, #0f0f0f 54%);
 
   background-attachment: fixed;
   padding: 1rem;
 
+  @include mobile {
+    display: none;
+  }
 
   &-div {
     display: flex;
@@ -42,17 +42,14 @@
 
     @include mobile {
       font-size: 3rem;
-
     }
 
     @include tablet {
       font-size: 4rem;
-
     }
 
     @include desktop {
       font-size: 7.7rem;
-
     }
   }
 }
@@ -89,7 +86,6 @@
 
     @include tablet {
       font-size: 3rem;
-
     }
 
     @include desktop {
@@ -112,14 +108,15 @@
     font-weight: 600;
 
     @include mobile {
-      font-size: 1rem;
+      font-size: 2rem;
       padding-top: 2rem;
       hyphens: auto;
+      padding: 2rem 2rem 0 2rem;
     }
 
     @include tablet {
       font-size: 1.13rem;
-      padding: 2rem 4rem 0 4rem;
+      padding: 2rem 2rem 0 2rem;
     }
 
     @include desktop {

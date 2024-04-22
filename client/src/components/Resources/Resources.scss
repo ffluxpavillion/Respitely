@@ -20,11 +20,10 @@ a:active {
   transform: scale(1.05);
 }
 
-*{
-  transition: font-size 0.2s ease-in-out
+* {
+  transition: font-size 0.2s ease-in-out;
 }
 .resources__section {
-
   // ALT --Repeating Pattern Gradient Background -- Light Grey / Light Purple -- Mountains
   // background: url(../../assets/images/sssurf.svg) center / cover no-repeat fixed;
   // background-attachment: fixed;
@@ -45,7 +44,6 @@ a:active {
   // background-image: radial-gradient(circle at 100%, #d7d2cc 23%, #4c5b81 70%);
   // background-attachment: fixed;
 
-
   // ALT --Conical Gradient Background --Colourful Pastel
   // background: conic-gradient(from 270deg at 50% 50%, #5870a9, #7d75ad, #9c7cae, #b583ac, #ca8daa, #da99a8, #e6a6a7, #eeb5a9);
   // background-attachment: fixed;
@@ -65,13 +63,18 @@ a:active {
   //   repeating-conic-gradient(#0000 0 25%,#BFBFBF 0 50%) 67px 0 /calc(2*67px) calc(2*67px),
   //   radial-gradient(50% 50%,#95979bef 98%,#BFBFBF) 0 0/67px 67px ;
 
-// ALT --Conical gradient background
-// background: conic-gradient(from 270deg at 50% 50%, #d1cdc8, #d6d2cd, #dbd7d1, #e0dbd6, #e5e0db, #eae5df, #efeae4, #f4efe9);
-// background: conic-gradient(from 270deg at 50% 8%, #d1cdc8, #cbc7c2, #c6c2bd, #c0bcb8, #bbb7b2, #b5b1ad, #afaba7, #aaa6a2);
+  // ALT --Conical gradient background
+  // background: conic-gradient(from 270deg at 50% 50%, #d1cdc8, #d6d2cd, #dbd7d1, #e0dbd6, #e5e0db, #eae5df, #efeae4, #f4efe9);
+  // background: conic-gradient(from 270deg at 50% 8%, #d1cdc8, #cbc7c2, #c6c2bd, #c0bcb8, #bbb7b2, #b5b1ad, #afaba7, #aaa6a2);
 
-// CURRENT --Repeating Gradient -- Fixed Background
+  // CURRENT --Repeating Gradient -- Fixed Background
   background-size: 100% 100%;
-  background-position: 0px 0px,0px 0px,0px 0px,0px 0px,0px 0px;
+  background-position:
+    0px 0px,
+    0px 0px,
+    0px 0px,
+    0px 0px,
+    0px 0px;
   // background-image:
   //   radial-gradient(75% 75% at 50% 50%, #E8E8E89C 100%, #073AFF00 100%),
   //   repeating-radial-gradient(75% 75% at 238% 218%, #00FFFF12 30%, #073AFF14 39%),
@@ -79,22 +82,22 @@ a:active {
   //   radial-gradient(160% 154% at 711px -303px, #2000FFFF 0%, #152FD2FF 27%);
   //   background-attachment: fixed;
 
-    @include mobile {
-      // height: 120rem;
-    }
+  @include mobile {
+    // height: 120rem;
+  }
 
-    @include tablet {
-    }
+  @include tablet {
+  }
 
-    @include desktop {
-    }
+  @include desktop {
+  }
 }
 
 .resources__div {
   padding: 4rem;
   display: flex;
   justify-content: center;
-  min-height:925px;
+  min-height: 925px;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -129,7 +132,6 @@ a:active {
   width: 90%;
   justify-items: center;
 
-
   @include mobile {
     grid-template-columns: repeat(1, minmax(40px, 200px));
     row-gap: 1.5rem;
@@ -142,7 +144,6 @@ a:active {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 3rem;
     column-gap: 1rem;
-
   }
 
   @include desktop {
@@ -160,19 +161,26 @@ a:active {
   display: grid;
   place-content: space-between;
   backdrop-filter: blur(15px);
+  font: small-caption;
 
   @include mobile {
     padding: 3rem;
-    width: 36rem;
+    width: 22.5rem;
     height: 5rem;
     border-radius: 10px;
     place-content: center;
   }
 
-  @include desktop{
+  @include desktop {
     transform: scale(1);
-    transition:  border-radius 800ms ease, background-color 800ms ease, transform 800ms ease;
-    transition: background 0.4s ease-in-out, transform 0.4s ease-in-out, border-radius 0.4s ease-in-out;
+    transition:
+      border-radius 800ms ease,
+      background-color 800ms ease,
+      transform 800ms ease;
+    transition:
+      background 0.4s ease-in-out,
+      transform 0.4s ease-in-out,
+      border-radius 0.4s ease-in-out;
 
     &:hover {
       border-radius: 10px;
@@ -188,7 +196,6 @@ a:active {
     padding-top: 1rem;
     text-transform: uppercase;
     font-size: 1.2rem;
-
 
     @include mobile {
     }
@@ -220,7 +227,7 @@ a:active {
 
     @include desktop {
       display: contents;
-      margin:10rem;
+      margin: 10rem;
 
       &:hover {
         color: white;

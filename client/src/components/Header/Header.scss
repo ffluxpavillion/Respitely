@@ -15,7 +15,7 @@ li {
 }
 
 .header {
-  display: inline-flex;
+  display: flex;
   align-items: center;
 }
 // --------------- Navbar Section ---------------
@@ -219,8 +219,8 @@ li {
 @media screen {
   .menu {
     display: block;
-    margin: 1.5rem;
     animation: navFadeIn 4s ease-out 1s forwards;
+    padding-right: 1rem;
     opacity: 0;
 
     @include mobile {
@@ -317,13 +317,16 @@ li {
 }
 
 .mobile-nav-item {
+  @include mobile {
   display: none;
+  }
 }
 
 .mobile-static-header {
   font-size: 2.9rem;
   display: inline;
-  padding-left: 0.4rem;
+  // padding-left: 0.4rem;
+  padding-left: 1.3rem;
   color: white;
 }
 

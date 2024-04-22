@@ -213,14 +213,14 @@ export default function SheltersCard() {
           </span>
         </div>
         {isMobile ? (
-          <div className='shelter-scrollable-container'>
-            <span className='instructions-text'>
+          <div className='mobile__shelter-scrollable-container'>
+            <span className='mobile__instructions-text'>
               Tap a shelter to learn more ⟩⟩⟩
             </span>
             <ul className='shelter-list'>
               {displayedRecords.map((record) => (
                 <li
-                  className='shelter-item shelter-item__mobile'
+                  className='shelter-item mobile__shelter-item'
                   key={record._id}
                   onClick={() => handleCardClick(record)}
                 >
@@ -228,7 +228,7 @@ export default function SheltersCard() {
                     <h6 className='shelter-item__text'>
                       {record.SHELTER_GROUP} ⟩⟩⟩
                     </h6>
-                    <h4 className='shelter-item__availability mobile-availability'>
+                    <h4 className='shelter-item__availability mobile__shelter-item__availability'>
                       {record.CAPACITY_TYPE === 'Bed Based Capacity'
                         ? `Available Beds: ${record.UNOCCUPIED_BEDS}`
                         : `Available Rooms: ${record.UNOCCUPIED_ROOMS}`}

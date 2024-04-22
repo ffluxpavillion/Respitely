@@ -9,9 +9,8 @@
   background-size: cover;
 
   @include mobile {
-    height: 33rem;
-    // background-attachment: fixed;
-
+    // height: 33rem;
+    display: none;
   }
 
   @include tablet {
@@ -20,8 +19,7 @@
   }
 
   @include desktop {
-    height:900px;
+    height: 900px;
     background-attachment: fixed;
-
   }
 }

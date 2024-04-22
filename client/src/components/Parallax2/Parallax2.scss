@@ -4,27 +4,22 @@
 @use '../../partials/variables' as *;
 
 .parallax2 {
-  height:1200px;
+  height: 1200px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 
   @include mobile {
     height: 33rem;
-    // background-attachment: fixed;
-
   }
 
   @include tablet {
     height: 70rem;
     background-attachment: fixed;
-
-
   }
 
   @include desktop {
     background-attachment: fixed;
-
   }
 
   // backup images (url based)

@@ -50,22 +50,28 @@ export default function Header() {
           <ul className={`navbar__div-ul navMenu ${menuOpen ? 'active' : ''}`}>
             <li onClick={handleClick}>
               <Link to='#home'>
-                <h3 className='navbar__div-li'>Home</h3>
+                <h3 className='navbar__div-li nav-stairs__home'>Home</h3>
               </Link>
             </li>
             <li onClick={handleClick}>
               <Link to='#aboutUs'>
-                <h3 className='navbar__div-li mobile-nav-item'>About Us</h3>
+                <h3 className='navbar__div-li mobile-nav-item nav-stairs__about-us'>
+                  About Us
+                </h3>
               </Link>
             </li>
             <li onClick={handleClick}>
               <Link to='#shelters'>
-                <h3 className='navbar__div-li'>Shelters</h3>
+                <h3 className='navbar__div-li nav-stairs__shelters'>
+                  Shelters
+                </h3>
               </Link>
             </li>
             <li onClick={handleClick}>
               <Link to='#resources'>
-                <h3 className='navbar__div-li'>Resources</h3>
+                <h3 className='navbar__div-li nav-stairs__resources'>
+                  Resources
+                </h3>
               </Link>
             </li>
           </ul>

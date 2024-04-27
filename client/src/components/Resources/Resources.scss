@@ -81,7 +81,8 @@ a:active {
   //   radial-gradient(99% 99% at 109% 2%, #00C9FFFF 0%, #073AFF00 100%),
   //   radial-gradient(160% 154% at 711px -303px, #2000FFFF 0%, #152FD2FF 27%);
   //   background-attachment: fixed;
-
+  z-index: -2;
+  position: relative;
   @include mobile {
     // height: 120rem;
   }
@@ -162,6 +163,8 @@ a:active {
   place-content: space-between;
   backdrop-filter: blur(15px);
   font: small-caption;
+  z-index: -1;
+  position: relative;
 
   @include mobile {
     padding: 3rem;

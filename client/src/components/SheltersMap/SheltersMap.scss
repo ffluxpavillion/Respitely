@@ -145,6 +145,8 @@
 
   @include mobile {
     height: 15rem;
+    min-width: fit-content;
+
   }
 }
 

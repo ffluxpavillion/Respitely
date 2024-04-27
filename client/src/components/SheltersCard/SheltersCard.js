@@ -195,7 +195,7 @@ export default function SheltersCard() {
           <br />
           <span className='shelter-section__subHeader'>
             <div className='subHeader__upper'>
-              <p className='subHeader__title'>FILTER BY ➡</p>
+              <p className='subHeader__title'>FILTER BY →</p>
               <FilterButtons
                 selectedButton={selectedButton}
                 filterAndSortData={filterAndSortData}

@@ -40,6 +40,8 @@ h3 {
   background-color: #aaa0b009;
   min-width: -webkit-min-content;
   box-shadow: 0 0px 20px 5px rgb(25, 24, 24);
+  position: relative;
+  z-index: -1;
 
   @include mobile {
     display: flex;
@@ -91,6 +93,11 @@ h3 {
   @include mobile {
     // font-size: 2.2rem; // CULPRIT #1 - FIXED
     text-align: center;
+    text-align: center;
+    font-family: 'Toronto Subway Bold';
+    font-variant: all-small-caps;
+    font-size: 2.1rem;
+
   }
 
   @include tablet {
@@ -686,7 +693,7 @@ h3 {
 }
 
 .mobile__shelter-item__availability {
-  font-size: 0.9rem;
+  font-size: 1.4rem;
   padding: 0.6rem;
   background-image: linear-gradient(135deg, #6d5dfc 0%, #c792ec 100%);
   border-radius: 12px;
@@ -694,6 +701,8 @@ h3 {
   margin-bottom: 1rem;
   margin-top: 1rem;
   width: inherit;
+  font-family: 'Toronto Subway Bold';
+  font-variant: all-small-caps;
 }
 
 .shelter-detailed-view {
@@ -713,9 +722,7 @@ h3 {
   @include desktop {
     display: none;
   }
-  
 }
-
 
 .back-button {
   width: -webkit-fill-available;
@@ -723,6 +730,8 @@ h3 {
   font-family: 'Toronto Subway';
   font-weight: 400;
   font-size: 1.2rem;
+  z-index: 1002;
+  margin-top:7.5rem;
 }
 
 .mobile-header {
@@ -791,5 +800,3 @@ h3 {
     transform: translateY(0);
   }
 }
-
-

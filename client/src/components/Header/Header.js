@@ -5,9 +5,10 @@ import { HashLink as Link } from 'react-router-hash-link';
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768); // state to check if the screen is mobile size
+  const [lastScrollY, setLastScrollY] = useState(window.scrollY);
+  const [navBarVisible, setNavBarVisible] = useState(true);
 
   const toggleMenu = () => {
-    // toggles menu open and closed
     setMenuOpen(!menuOpen);
   };
 
@@ -25,7 +26,6 @@ export default function Header() {
     };
 
     document.addEventListener('keydown', closeOnEscape);
-
     return () => document.removeEventListener('keydown', closeOnEscape); // cleanup eventListener
   }, []);
 
@@ -41,10 +41,37 @@ export default function Header() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  return (
-    <header className='header' id='home'>
-      <h3 className='mobile-static-header'> SAFEHAVENTO</h3>
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
 
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      setNavBarVisible(currentScrollY < lastScrollY || currentScrollY <= 10); // Show when scrolling up or at the top of the page
+      lastScrollY = currentScrollY;
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return (
+    <header
+      className={`header ${
+        navBarVisible ? 'visible' : menuOpen ? 'visible' : 'hidden'
+      }`}
+      id='home'
+    >
+      <h3 className='mobile-static-header'> SAFEHAVENTO</h3>
+      <div
+        className={`navbar__burger menu  ${menuOpen ? 'active' : ''}`}
+        onClick={toggleMenu}
+      >
+        <div className='active-menu__fullscreen'>
+          <span className='navbar__burger-bar bar'></span>
+          <span className='navbar__burger-bar bar'></span>
+          <span className='navbar__burger-bar bar'></span>
+        </div>
+      </div>
       <nav className='navbar'>
         <div className='navbar__div'>
           <ul className={`navbar__div-ul navMenu ${menuOpen ? 'active' : ''}`}>
@@ -75,14 +102,6 @@ export default function Header() {
               </Link>
             </li>
           </ul>
-          <div
-            className={`navbar__burger menu ${menuOpen ? 'active' : ''}`}
-            onClick={toggleMenu}
-          >
-            <span className='navbar__burger-bar bar'></span>
-            <span className='navbar__burger-bar bar'></span>
-            <span className='navbar__burger-bar bar'></span>
-          </div>
         </div>
       </nav>
     </header>

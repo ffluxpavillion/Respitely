@@ -4,14 +4,126 @@
 @use '../../partials/variables' as *;
 
 .footer {
-  background-color: #8893b5;
+  // background-color: #8893b5;
   height:fit-content;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  z-index: -2;
+  position: relative;
+
+  @include mobile {
+    padding:2rem;
+    margin:1rem;
+
+  }
 }
 
-.copyright {
-  color: rgba(0, 0, 0, 0.297);
+.footer-brand {
+  font-size: 2rem;
+  display: flex;
+  justify-content: flex-start;
+  // padding-left: 0.4rem;
+  padding-left: 1.3rem;
+  color: white;
+
+}
+
+.footer-div__slogan-h2 {
+  color: white;
+  font-size: 2rem;
+  display: flex;
+  width: auto;
+  margin: 0 auto;
+  letter-spacing: 5px;
+  font-variant: all-petite-caps;
+  font-family: 'Toronto Subway Bold';
+  text-align: center;
+  place-content: center;
+
+
+
+  @include mobile {
+    font-size: 1.6rem;
+  }
+
+  @include tablet {
+    font-size: 3rem;
+  }
+
+  @include desktop {
+  }
+
+}
+
+.footer-div__logo {
+  width:15rem;
+  height:15rem;
+  margin: 1rem
+}
+
+.footer-left {
+  display: inline-flex;
+  flex-direction: column;
   text-align: center;
   padding: 1rem;
   font-size: 1rem;
   font-style: italic;
+  color: rgb(255 255 255 / 30%);
+  background-color: #262626;
+  justify-content: flex-start;
+  width: 33%;
+
+}
+
+.footer-middle {
+  display: inline-flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 1rem;
+  font-size: 1rem;
+  font-style: italic;
+  color: rgb(255 255 255 / 30%);
+  background-color: #262626;
+  align-items: center;
+  width: 33%;
+
+
+}
+
+
+
+.footer-right {
+  display: inline-flex;
+  flex-direction: column;
+  padding: 1rem;
+  width: 33%;
+  align-items: flex-end;
+
+  @include mobile {
+    display: none;
+  }
+
+}
+
+.footer-right__social-links {
+  text-decoration: none;
+  font-family: 'Toronto Subway Bold';
+  color: white;
+
+}
+
+
+.footer-bottom {
+  display: flex;
+  place-content: center;
+
+}
+
+.copyright-disclaimer {
+  display: flex;
+  text-align: center;
+  width: max-content;
+  font-variant: all-small-caps;
+
 }

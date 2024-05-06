@@ -1,0 +1,230 @@
+@use '../../partials/abstracts' as *;
+@use '../../partials/fonts' as *;
+@use '../../partials/global' as *;
+@use '../../partials/variables' as *;
+
+@keyframes homeFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes homeFadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(200%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+.home-section {
+  background-color: #0f0f0f;
+  background-attachment: fixed;
+  height: 100vh;
+  min-height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  padding: 1rem;
+  position: relative;
+  overflow: hidden; // Prevents any part of the headers sticking out of the section
+  z-index: -1;
+
+  @include mobile {
+    padding: 5rem;
+  }
+  @include tablet {
+    padding: 5rem;
+  }
+  @include desktop {
+    padding: 20rem 10rem 1rem 10rem;
+  }
+}
+
+.home-header__container {
+  display: flex;
+  align-items: center;
+}
+
+.home-header__text,
+.home-header__text-layer {
+  color: #ffffff;
+  // color: rgb(128 122 151);
+  // color: #353535;
+  font-variant-caps: all-petite-caps;
+  position: absolute; // Positioning both headers absolutely
+  // top: 50%; // Centering the text vertically
+  // left: 40%; // Centering the text horizontally
+  // transform: translate(-50%, -50%); // Ensures the centering accounts for the element's size
+  // width: 90%;
+  letter-spacing: 3px;
+  // opacity: 0;
+  // animation: homeFadeInLeft 1.5s ease-out 2s forwards;
+}
+
+.home-header__text-layer {
+  // left: 10.22rem; // Offset to the right
+  // margin-top:0.2rem;
+  color: white; // Making the front header white or another contrasting color for visibility
+  z-index: 1; // Ensures this header is on top
+}
+
+.home-header__line1 {
+  font-family: 'Toronto Subway';
+  opacity: 0;
+  animation: homeFadeIn 2s ease 0.75s forwards;
+  width: 35rem;
+
+  @include mobile {
+    font-size: 3rem;
+    line-height: 2.5rem;
+  }
+
+  @include tablet {
+    font-size: 3rem;
+    line-height: 2.5rem;
+  }
+
+  @include desktop {
+    font-size: 6.5rem;
+    line-height: 5.5rem;
+    width: fit-content;
+  }
+}
+
+.home-header__line2 {
+  opacity: 0;
+  animation: homeFadeIn 1.8s ease 3s forwards;
+
+  @include mobile {
+    font-size: 3.2rem;
+  }
+
+  @include tablet {
+    font-size: 3.2rem;
+  }
+
+  @include desktop {
+    font-size: 8rem;
+    letter-spacing: -1px;
+  }
+}
+
+.home-button__container {
+  height: 17rem;
+  width: auto;
+  display: flex;
+  font-variant-caps: all-small-caps;
+  padding-right: 2rem;
+}
+
+.header-actions__text {
+  color: white;
+  display: flex;
+  align-items: center;
+  padding-right: 1rem;
+  font-size: 1rem;
+}
+
+.center-con {
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  opacity: 0;
+  animation: navFadeIn 4s ease-out 4s forwards;
+}
+
+.round {
+  border: 2px solid #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  rotate: 90deg;
+  cursor: pointer;
+}
+
+#cta {
+  width: 100%;
+  cursor: pointer;
+  position: absolute;
+}
+
+#cta .arrow {
+  left: 30%;
+}
+
+.arrow {
+  position: absolute;
+  bottom: 0;
+  margin-left: 0px;
+  width: 12px;
+  height: 12px;
+  background-size: contain;
+  top: 12px;
+}
+
+.segunda {
+  margin-left: 8px;
+}
+
+.next {
+  background-image: url(data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+PHN0eWxlPi5zdDB7ZmlsbDojZmZmfTwvc3R5bGU+PHBhdGggY2xhc3M9InN0MCIgZD0iTTMxOS4xIDIxN2MyMC4yIDIwLjIgMTkuOSA1My4yLS42IDczLjdzLTUzLjUgMjAuOC03My43LjZsLTE5MC0xOTBjLTIwLjEtMjAuMi0xOS44LTUzLjIuNy03My43UzEwOSA2LjggMTI5LjEgMjdsMTkwIDE5MHoiLz48cGF0aCBjbGFzcz0ic3QwIiBkPSJNMzE5LjEgMjkwLjVjMjAuMi0yMC4yIDE5LjktNTMuMi0uNi03My43cy01My41LTIwLjgtNzMuNy0uNmwtMTkwIDE5MGMtMjAuMiAyMC4yLTE5LjkgNTMuMi42IDczLjdzNTMuNSAyMC44IDczLjcuNmwxOTAtMTkweiIvPjwvc3ZnPg==);
+}
+
+@keyframes bounceAlpha {
+  0% {
+    opacity: 1;
+    transform: translateX(0px) scale(1);
+  }
+  25% {
+    opacity: 0;
+    transform: translateX(10px) scale(0.9);
+  }
+  26% {
+    opacity: 0;
+    transform: translateX(-10px) scale(0.9);
+  }
+  55% {
+    opacity: 1;
+    transform: translateX(0px) scale(1);
+  }
+}
+
+.bounceAlpha {
+  animation-name: bounceAlpha;
+  animation-duration: 1.4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.arrow.primera.bounceAlpha {
+  animation-name: bounceAlpha;
+  animation-duration: 1.4s;
+  animation-delay: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.round .arrow {
+  animation-name: bounceAlpha;
+  animation-duration: 1.6s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.round .arrow.primera {
+  animation-name: bounceAlpha;
+  animation-duration: infinite 1.6s;
+  animation-delay: 0.2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}

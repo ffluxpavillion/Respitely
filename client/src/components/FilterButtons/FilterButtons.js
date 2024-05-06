@@ -1,44 +1,104 @@
 import './FilterButtons.scss';
-import BedIcon from '../../assets/icons/SafeHavenTO_icon-bed.svg'
-import RoomIcon from '../../assets/icons/SafeHavenTO_icon-room.svg'
+import { useEffect, useState } from 'react';
+import BedIcon from '../../assets/icons/SafeHavenTO_icon-bed.svg';
+import RoomIcon from '../../assets/icons/SafeHavenTO_icon-room.svg';
+import { Select } from 'antd';
 
-const FilterButtons = ({ selectedButton, filterAndSortData, handleClick, records }) => {
+const FilterButtons = ({
+  selectedButton,
+  filterAndSortData,
+  handleClick,
+  records,
+}) => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const [showDropdown, setShowDropdown] = useState(false);
+  const [selectedFilter, setSelectedFilter] = useState('All');
+
+  useEffect(() => {
+    // check if the screen is mobile size
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    window.addEventListener('resize', handleResize);
+    // Cleanup the event listener on component unmount
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const handleChange = (value) => {
+    setSelectedFilter(value);
+    filterAndSortData(records, value);
+  };
+
   return (
     <>
-      <div className='button-container'>
-        <button className={`sheltersCard__Btn btn--Beds ${selectedButton === 'Beds' ? 'selected' : ''}`}
-          onClick={() => {
-            filterAndSortData(records, 'Beds');
-            handleClick('Beds');
-          }}
-        >
-          <h3 className='btn--Text'> <img className='btn--Icon' src={BedIcon} alt="Bed Icon" />Beds</h3>
-        </button>
-      </div>
-      <div className='button-container'>
-      <button
-        className={`sheltersCard__Btn btn--Rooms ${selectedButton === 'Rooms' ? 'selected' : ''}`}
-        onClick={() => {
-          filterAndSortData(records, 'Rooms');
-          handleClick('Rooms');
-        }}
-      >
-        <h3 className='btn--Text'><img className='btn--Icon' src={RoomIcon} alt="Room Icon" />Rooms</h3>
-      </button>
-      </div>
-      <div className='button-container'>
-      <button className={`sheltersCard__Btn btn--All ${selectedButton === 'All' ? 'selected' : ''}`}
-        onClick={() => {
-          filterAndSortData(records, 'All');
-          handleClick('All');
-        }}
-      >
-        <h3 className='btn--Text'>
-          <img className='btn--Icon btn--Filter-All' src={BedIcon} alt="Bed Icon" />
-          <img className='btn--Icon btn--Filter-All' src={RoomIcon} alt="Room Icon" />
-          All</h3>
-      </button>
-      </div>
+      {isMobile ? ( // if mobile, show dropdown
+        <Select
+          defaultValue={selectedFilter}
+          style={{ width: 200 }}
+          onChange={handleChange}
+          options={[
+            { label: <span>ALL </span>, value: 'All' },
+            { label: <span>ROOMS</span>, value: 'Rooms' },
+            { label: <span>BEDS</span>, value: 'Beds' },
+          ]}
+        />
+      ) : (
+        <div className='button-container'>
+          <button
+            className={`filter-button btn--Beds btn ${
+              selectedButton === 'Beds' ? 'selected' : ''
+            }`}
+            onClick={() => {
+              filterAndSortData(records, 'Beds');
+              handleClick('Beds');
+            }}
+          >
+            <h3 className='button-text'>
+              <img className='button--icon' src={BedIcon} alt='Bed Icon' />
+              Beds
+            </h3>
+          </button>
+
+          <button
+            className={`filter-button btn--Rooms btn ${
+              selectedButton === 'Rooms' ? 'selected' : ''
+            }`}
+            onClick={() => {
+              filterAndSortData(records, 'Rooms');
+              handleClick('Rooms');
+            }}
+          >
+            <h3 className='button-text'>
+              <img className='button--icon' src={RoomIcon} alt='Room Icon' />
+              Rooms
+            </h3>
+          </button>
+
+          <button
+            className={`filter-button btn--All btn ${
+              selectedButton === 'All' ? 'selected' : ''
+            }`}
+            onClick={() => {
+              filterAndSortData(records, 'All');
+              handleClick('All');
+            }}
+          >
+            <h3 className='button-text'>
+              <img
+                className='button--icon btn--Filter-All'
+                src={BedIcon}
+                alt='Bed Icon'
+              />
+              <img
+                className='button--icon btn--Filter-All'
+                src={RoomIcon}
+                alt='Room Icon'
+              />
+              All
+            </h3>
+          </button>
+        </div>
+      )}
     </>
   );
 };

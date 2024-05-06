@@ -3,7 +3,7 @@
 @use '../../partials/global' as *;
 @use '../../partials/variables' as *;
 
-.sheltersCard__Btn {
+.filter-button {
   margin-right: 0.1rem;
   width: 120px;
   height: 3rem;
@@ -36,6 +36,7 @@
 .button-container {
   display: inline-flex;
   padding-left: 1rem;
+  align-items: center;
 
   @include mobile {
     padding-left: 0;
@@ -72,28 +73,15 @@
       background-color: ghostwhite;
     }
     &:not(.selected) {
-      // background-color: #8080803a;
       border: 1px solid white;
-      // color: #2f4066;
       background-image: linear-gradient(170deg, #5870a9 9%, #edf1f4 176%);
       background-color: #2b2b2b;
       display: contents;
-
-      @include mobile {
-        margin-left: 0.4rem;
-        margin-right: 0.4rem;
-      }
     }
 
     &.selected {
-      // color:#486197;
-      // margin-left: 1rem;
-      // margin-right: 1rem;
       top: 9rem;
       border: 1px solid white;
-      // background-color: rgba(128, 128, 128, 0.118);
-      // background-image: linear-gradient(180deg, #5870a9 9%, #edf1f4 156%);
-      // background-image: radial-gradient( #edf1f4 0%,#5870a9 90%);
       background-size: 100% 100%;
       background-position:
         0px 0px,
@@ -115,47 +103,25 @@
         radial-gradient(160% 154% at 711px -303px, #2000ffff 0%, #073affff 27%);
       border: 1px solid white;
       color: ghostwhite;
-      // width: -webkit-fit-content;
       width: max-content;
-      // padding: 1rem;
       padding: 0.3rem;
       transition: all 1s ease-in-out;
-
-      @include mobile {
-        margin-left: 0.4rem;
-        margin-right: 0.4rem;
-      }
     }
   }
 
-  &--Icon {
+  .button--icon {
     height: 1.2rem;
     color: white;
-    padding-right: 1rem;
+    margin-right: 0.4rem;
     display: inline;
   }
 
-  &--Text {
+  .button-text {
     font-size: 1.4rem;
-    // padding: 1rem;
-
-    // Underline animation:
-    // padding-bottom: 10px;
     color: white;
     position: relative;
-    box-shadow: 0px -4px 15px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     min-width: inherit;
-
-    @include mobile {
-      font-size: 1rem;
-      // padding: 1rem;
-      display: inline-flex;
-      letter-spacing: normal;
-      padding-right: 1.2rem;
-      padding-left: 1.2rem;
-
-    }
 
     @include tablet {
       font-size: 1rem;
@@ -165,7 +131,7 @@
       content: '';
       position: absolute;
       height: 2px;
-      width: 100%;
+      // width: 100%;
       left: 0;
       bottom: 0;
       opacity: 0;
@@ -183,7 +149,17 @@
   }
 
   &--Filter-All {
-    margin-right: -0.5rem;
     display: inline-flex;
   }
+}
+
+// ---------------- MOBILE FILTER BUTTONS ----------------
+
+.mobile-filter-button {
+  background-color: white;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  width: 40dvw;
+  display: flex;
+  flex-direction: column;
 }

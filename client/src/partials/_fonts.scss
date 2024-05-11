@@ -1,119 +1,171 @@
+// ----------------------- Avenir Next Fonts -----------------------
+
 @font-face {
-	font-family: 'Avenir Next';
-	src: url(../assets/fonts/AvenirNextLTPro-Regular.woff2) format('woff2');
-	font-weight: 400;
+  // Classic, Clean, Modern
+  font-family: 'Avenir Next';
+  src: url(../assets/fonts/AvenirNextLTPro-Regular.woff2) format('woff2');
+  font-weight: 400;
+  font-display: block;
 }
 
 @font-face {
-	font-family: 'Avenir Next Bold';
-	src: url(../assets/fonts/AvenirNextLTPro-Bold.woff2) format('woff2');
-	font-weight: 700;
-	font-size: larger;
+  // Classic, Clean, Modern, Bolder
+  font-family: 'Avenir Next Bold';
+  src: url(../assets/fonts/AvenirNextLTPro-Bold.woff2) format('woff2');
+  font-weight: 700;
+  font-display: block;
 }
 
-// League Spartan Fonts
+// ----------------------- League Spartan Fonts -----------------------
 
 @font-face {
-	font-family: 'League Spartan Black';
-	src: url(../assets/fonts/League_Spartan/LeagueSpartan-Black.woff2) format('woff2');
-}
-
-@font-face {
-	font-family: 'League Spartan ExtraLight';
-	src: url(../assets/fonts/League_Spartan/LeagueSpartan-ExtraLight.woff2) format('woff2');
-}
-
-@font-face {
-	font-family: 'League Spartan Light';
-	src: url(../assets/fonts/League_Spartan/LeagueSpartan-Light.woff2) format('woff2');
+  // Tall, Super Skinny, Lines
+  font-family: 'League Spartan ExtraLight';
+  src: url(../assets/fonts/League_Spartan/LeagueSpartan-ExtraLight.woff2)
+    format('woff2');
+  font-display: block;
 }
 
 @font-face {
-	font-family: 'League Spartan Medium';
-	src: url(../assets/fonts/League_Spartan/LeagueSpartan-Medium.woff2) format('woff2');
+  // Tall, Lightweight
+  font-family: 'League Spartan Light';
+  src: url(../assets/fonts/League_Spartan/LeagueSpartan-Light.woff2)
+    format('woff2');
+  font-display: block;
 }
 
 @font-face {
-	font-family: 'League Spartan Regular';
-	src: url(../assets/fonts/League_Spartan/LeagueSpartan-Regular.woff2) format('woff2');
+  // Normal
+  font-family: 'League Spartan Regular';
+  src: url(../assets/fonts/League_Spartan/LeagueSpartan-Regular.woff2)
+    format('woff2');
+  font-display: block;
 }
 
 @font-face {
-	font-family: 'League Spartan SemiBold';
-	src: url(../assets/fonts/League_Spartan/LeagueSpartan-SemiBold.woff2) format('woff2');
+  // Heavier
+  font-family: 'League Spartan Medium';
+  src: url(../assets/fonts/League_Spartan/LeagueSpartan-Medium.woff2)
+    format('woff2');
+  font-display: block;
 }
 
 @font-face {
-	font-family: 'League Spartan Bold';
-	src: url(../assets/fonts/League_Spartan/LeagueSpartan-Bold.woff2) format('woff2');
+  // Heavier+
+  font-family: 'League Spartan SemiBold';
+  src: url(../assets/fonts/League_Spartan/LeagueSpartan-SemiBold.woff2)
+    format('woff2');
+  font-display: block;
 }
 
 @font-face {
-	font-family: 'League Spartan ExtraBold';
-	src: url(../assets/fonts/League_Spartan/LeagueSpartan-ExtraBold.woff2) format('woff2');
-}
-
-// DT Getai Grotesk Display Fonts
-@font-face {
-	font-family: 'DT Black';
-	src: url(../assets/fonts/DTGetaiGroteskDisplay-Black.woff2) format('woff2');
-}
-
-// DT Getai Grotesk Display Fonts
-@font-face {
-	font-family: 'Junction Regular';
-	src: url(../assets/fonts/Junction-regular.woff2) format('woff2');
-}
-
-// DT Getai Grotesk Display Fonts
-@font-face {
-	font-family: 'Junction Light';
-	src: url(../assets/fonts/Junction-light.woff2) format('woff2');
-}
-
-// DT Getai Grotesk Display Fonts
-@font-face {
-	font-family: 'Junction Bold';
-	src: url(../assets/fonts/Junction-bold.woff2) format('woff2');
-}
-
-// Ostrich Fonts
-@font-face {
-	font-family: 'Ostrich Sans Bold';
-	src: url(../assets/fonts/OstrichSans-Bold.woff2) format('woff2');
+  // Heavier++
+  font-family: 'League Spartan Bold';
+  src: url(../assets/fonts/League_Spartan/LeagueSpartan-Bold.woff2)
+    format('woff2');
+  font-display: block;
 }
 
 @font-face {
-	font-family: 'Ostrich Heavy';
-	src: url(../assets/fonts/OstrichSans-Heavy.woff2) format('woff2');
+  // Heavier++
+  font-family: 'League Spartan ExtraBold';
+  src: url(../assets/fonts/League_Spartan/LeagueSpartan-ExtraBold.woff2)
+    format('woff2');
+  font-display: block;
 }
 
 @font-face {
-	font-family: 'Ostrich Light';
-	src: url(../assets/fonts/OstrichSans-Light.woff2) format('woff2');
+  // Dense, Short, Thick
+  font-family: 'League Spartan Black';
+  src: url(../assets/fonts/League_Spartan/LeagueSpartan-Black.woff2)
+    format('woff2');
+  font-display: block;
+}
+
+// ----------------------- DT Black Fonts -----------------------
+
+@font-face {
+  // Artsy, with Curvy Slivers in Characters
+  font-family: 'DT Black';
+  src: url(../assets/fonts/DTGetaiGroteskDisplay-Black.woff2) format('woff2');
+  font-display: block;
+}
+
+// ----------------------- Junction Fonts -----------------------
+
+@font-face {
+  // Tall, Skinny, Dense
+  font-family: 'Junction Light';
+  src: url(../assets/fonts/Junction-light.woff2) format('woff2');
+  font-display: block;
 }
 
 @font-face {
-	font-family: 'Ostrich Inline Italic';
-	src: url(../assets/fonts/OstrichSansInline-Italic.woff2) format('woff2');
+  // Tall, Dense
+  font-family: 'Junction Regular';
+  src: url(../assets/fonts/Junction-regular.woff2) format('woff2');
+  font-display: block;
 }
 
 @font-face {
-	font-family: 'Ostrich Inline Regular';
-	src: url(../assets/fonts/OstrichSansInline-Regular.woff2) format('woff2');
+  // Bold
+  font-family: 'Junction Bold';
+  src: url(../assets/fonts/Junction-bold.woff2) format('woff2');
+  font-display: block;
+}
+
+// ----------------------- Ostrich Fonts -----------------------
+
+@font-face {
+  // Tall, Super Skinny, Lines
+  font-family: 'Ostrich Light';
+  src: url(../assets/fonts/OstrichSans-Light.woff2) format('woff2');
+  font-display: block;
 }
 
 @font-face {
-	font-family: 'Bungee Shade';
-	src: url(../assets/fonts/Bungee-Shade.woff) format('woff');
+  // Tall, Bubly, Marker-like
+  font-family: 'Ostrich Heavy';
+  src: url(../assets/fonts/OstrichSans-Heavy.woff2) format('woff2');
+  font-display: block;
 }
 
 @font-face {
-	font-family: 'Toronto Subway';
-	src: url(../assets/fonts/torontosubwayregular-webfont.woff) format('woff');
+  // Tall, Skinny, Contrast Line in the Middle
+  font-family: 'Ostrich Inline Regular';
+  src: url(../assets/fonts/OstrichSansInline-Regular.woff2) format('woff2');
+  font-display: block;
 }
 
 @font-face {
-	font-family: 'Toronto Subway Bold';
-	src: url(../assets/fonts/torontosubwaybold-webfont.woff) format('woff');
+  // Italic, Tall, Skinny, Contrast Line in the Middle
+  font-family: 'Ostrich Inline Italic';
+  src: url(../assets/fonts/OstrichSansInline-Italic.woff2) format('woff2');
+  font-display: block;
+}
+
+@font-face {
+  // Tall, Skinny, Contrast Line in the Middle - Bolder
+  font-family: 'Ostrich Sans Bold';
+  src: url(../assets/fonts/OstrichSans-Bold.woff2) format('woff2');
+  font-display: block;
+}
+
+@font-face {
+  // Block-like, 3D, Line in the Middle
+  font-family: 'Bungee Shade';
+  src: url(../assets/fonts/Bungee-Shade.woff) format('woff');
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Toronto Subway';
+  src: url(../assets/fonts/torontosubwayregular-webfont.woff) format('woff');
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Toronto Subway Bold';
+  src: url(../assets/fonts/torontosubwaybold-webfont.woff) format('woff');
+  font-display: block;
 }

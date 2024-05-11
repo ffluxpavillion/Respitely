@@ -3,31 +3,31 @@
 @use './variables' as *;
 
 * {
-  // font-family: 'Avenir Next ';
-  font-weight: 400;
+  margin: 0;
+  padding: 0;
+}
+
+*p {
+  font-family: 'Avenir Next', 'League Spartan Regular', 'Verdana', 'Arial',
+    'system-ui';
   font-style: normal;
   margin: 0;
   padding: 0;
 }
 
-*h1 {
-  font-family: 'Ostrich Inline Regular';
-}
-*h2 {
-  font-family: 'Ostrich Inline Regular';
-
-}
-
+*h1,
+*h2,
 *h3,
-a {
-  font-family: 'League Spartan Black', 'League Spartan ExtraBold',
-    'Avenir Next Bold';
-  font-weight: 400;
+*h4,
+*h5,
+*h6 {
+  font-family: 'Avenir Next Bold', 'Verdana', 'Arial', 'system-ui';
   font-style: normal;
   margin: 0;
   padding: 0;
 }
 
-*h4 {
-  font-family: 'Avenir Next Bold';
+*a {
+  text-decoration: none;
+  color: inherit;
 }

@@ -24,9 +24,9 @@ export default function SheltersMap(props) {
   });
 
   const DEFAULT_VIEW_STATE = {
-    longitude: -79.384293,
-    latitude: 43.653908,
-    zoom: 11,
+    longitude: -79.409527,
+    latitude: 43.678122,
+    zoom: 10,
   };
 
   const { goHere } = props;
@@ -201,7 +201,7 @@ const handleMapLoad = () => { // Load the HeartMarker icon and attach event list
         >
         <NavigationControl position='bottom-right'/>
         <ScaleControl />
-        <GeolocateControl positionOptions={{ enableHighAccuracy: true }} trackUserLocation={true} />
+        <GeolocateControl positionOptions={{ enableHighAccuracy: true }} trackUserLocation={true} position='bottom-right'/>
 
         <Source id="locations" type="geojson" data={geoJsonLocations}>
           <Layer // Add the location markers
@@ -224,7 +224,7 @@ const handleMapLoad = () => { // Load the HeartMarker icon and attach event list
             longitude={selectedPlace.geometry.coordinates[0]}
             draggable={false}
             anchor='bottom'
-            closeButton={true}
+            closeButton={false}
             onClose={() => setSelectedPlace(null)}
             offset={[0, -20]}
           >
@@ -232,30 +232,30 @@ const handleMapLoad = () => { // Load the HeartMarker icon and attach event list
               <div className='popup__div-top'>
                 <h4 className='popup__div-header'>
                   {selectedPlace.properties.SHELTER_GROUP || 'LOCATION NAME'}
-                </h4>
+                </h4><br />
+                {selectedPlace.properties.CAPACITY_TYPE === 'Bed Based Capacity' ?
+                  (<p className='popup__div-subheader-1 '>Available Beds: <span className='popup-availability'>{selectedPlace.properties.UNOCCUPIED_BEDS}</span></p>)
+                  :
+                  (<p className='popup__div-subheader-1'>Available Rooms: <span className='popup-availability'>{selectedPlace.properties.UNOCCUPIED_ROOMS}</span></p>)
+                }
               </div>
               <br />
               <div className='popup__div-bottom'>
-                <h4 className='popup__div-subheader'>Address:</h4>
-                <h4 className='popup__div-text'>
+
+                <p className='popup__div-subheader-2'>Address:</p>
+                <p className='popup__div-text'>
                   {selectedPlace.properties.LOCATION_ADDRESS}<br />
                   {selectedPlace.properties.LOCATION_CITY}
+                </p>
 
-                </h4>
-                {selectedPlace.properties.CAPACITY_TYPE === 'Bed Based Capacity' ?
-                  (<h4 className='popup__div-subheader'>Available Beds: {selectedPlace.properties.UNOCCUPIED_BEDS}</h4>)
-                  :
-                  (<h4 className='popup__div-subheader'>Available Rooms: {selectedPlace.properties.UNOCCUPIED_ROOMS}</h4>)
-                }
-                <br />
                 <a
                   href={`https://www.google.com/maps/place/${encodeURIComponent(selectedPlace.properties.LOCATION_ADDRESS)},+${encodeURIComponent(selectedPlace.properties.LOCATION_CITY)},+${encodeURIComponent(selectedPlace.properties.LOCATION_POSTAL_CODE)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn--Directions-anchor"
                 >
-                  <button className="popup__btn-Directions">
-                    <h4> <img className='btn--Icon' src={OpenIcon} alt="Open Icon" />Open in Google Maps</h4>
+                  <button className="popup__button-directions">
+                    <p className='popup__button-directions-text'> <img className='directions-icon' src={OpenIcon} alt="Open Icon" />Get Directions</p>
                   </button>
                 </a>
               </div>

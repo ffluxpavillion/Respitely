@@ -12,14 +12,38 @@ export default function Footer() {
 
       <footer className='footer'>
         <div className='footer-left'>
-          <h3 className='footer-brand'> SAFEHAVENTO</h3>
+          <h3 className='footer-brand'>SAFEHAVENTO</h3>
+          {/* <p className='footer-paragraph'>
+            SafeHavenTO is a service that provides shelter occupancy information and additional resources for those in need residing in Toronto.
+          </p> */}
+          <div className='footer__list'>
+            <ul className='footer__list-ul'>
+              <li className='footer__list-li'>
+                <a href='#home' className='footer__list-a'>
+                  <h3 className='footer__item'>Home</h3>
+                </a>
+              </li>
+              <li className='footer__list-li'>
+                <a href='#aboutUs' className='footer__list-a'>
+                  <h3 className='footer__item'>About Us</h3>
+                </a>
+              </li>
+              <li className='footer__list-li'>
+                <a href='#shelters' className='footer__list-a'>
+                  <h3 className='footer__item'>Shelters</h3>
+                </a>
+              </li>
+              <li className='footer__list-li'>
+                <a href='#resources' className='footer__list-a'>
+                  <h3 className='footer__item'>Resources</h3>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
 
         <div className='footer-middle'>
           <div className='footer-div__logo-container'>
-            <h2 className='footer-div__slogan-h2'>Moderninzing </h2>
-            <h2 className='footer-div__slogan-h2'>Shelter Access</h2>
-            <h2 className='footer-div__slogan-h2'>in the Heart of Toronto</h2>
             <div className='mission__div-logo-container'>
               <img loading='lazy' className='footer-div__logo' src={Logo}></img>
             </div>

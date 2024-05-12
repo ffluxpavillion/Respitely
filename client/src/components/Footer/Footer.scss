@@ -19,6 +19,7 @@
   }
 }
 
+// ----------------- LEFT FOOTER -----------------
 .footer-brand {
   font-size: 2rem;
   display: flex;
@@ -30,6 +31,58 @@
   }
 }
 
+.footer__list {
+  display: grid;
+}
+
+.footer__item {
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  font-family: 'Toronto Subway';
+  padding: 1rem 3rem 0.5rem 0;
+  letter-spacing: 1.4px;
+  color: white;
+  text-transform: uppercase;
+  width: fit-content;
+  transition: all 0.4s ease-in-out;
+
+  @include mobile {
+    font-size: 1.39rem;
+
+    &:active {
+      transition: all 0.4s ease-in-out;
+      background-color: white;
+      color: #cca6af;
+      border-radius: 0 40px 0 50px;
+      width: 100%;
+    }
+  }
+
+  @include tablet {
+    font-size: 1.39rem;
+
+    &:active {
+      transition: all 0.4s ease-in-out;
+      background-color: white;
+      color: #cca6af;
+    }
+  }
+
+  @include desktop {
+    font-size: 1.39rem;
+    // padding: 0.5rem 1rem 0.6rem 30rem;
+
+    &:hover {
+      transition: all 0.5s ease;
+      text-decoration: underline;
+      text-shadow: 0 2px 1px rgba(229, 228, 255, 0.5);
+    }
+  }
+}
+
+// ----------------- MIDDLE FOOTER -----------------
 .footer-div__slogan-h2 {
   color: white;
   font-size: 2rem;
@@ -67,12 +120,12 @@
   text-align: center;
   padding: 1rem;
   font-size: 1rem;
-  font-style: italic;
   color: rgb(255 255 255 / 30%);
   background-color: #262626;
   justify-content: flex-start;
   width: 33%;
   background-color: black;
+  justify-content: space-between;
 }
 
 .footer-middle {
@@ -87,6 +140,11 @@
   align-items: center;
   width: 33%;
   background-color: black;
+  align-self: center;
+
+  @include mobile {
+    display: none;
+  }
 }
 
 .footer-right {
@@ -116,6 +174,13 @@
   display: flex;
   place-content: center;
   background-color: black;
+  z-index: -3;
+  position: relative;
+
+  @include mobile {
+    position: relative;
+    z-index: -2;
+  }
 }
 
 .copyright-disclaimer {
@@ -123,5 +188,5 @@
   text-align: center;
   width: max-content;
   font-variant: all-small-caps;
-  color: #545454;
+  color: #54545466;
 }

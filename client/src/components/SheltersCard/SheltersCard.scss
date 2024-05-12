@@ -4,7 +4,7 @@
 @use '../../partials/variables' as *;
 
 html {
-  min-width: -webkit-fit-content;
+  // min-width: -webkit-fit-content;
 }
 
 h3 {
@@ -38,7 +38,6 @@ h3 {
   align-items: left;
   background-color: white;
   background-color: #aaa0b009;
-  min-width: -webkit-min-content;
   box-shadow: 0 0px 20px 5px rgb(25, 24, 24);
   position: relative;
   z-index: -1;
@@ -55,13 +54,15 @@ h3 {
   }
 
   @include tablet {
-    padding: 2.5rem 3.5rem 2.5rem 3.5rem;
+    padding: 2.5rem 5rem 2.5rem 5rem;
+    min-width: -webkit-min-content;
   }
 
   @include desktop {
     margin: 1.25rem;
-    padding: 2.7rem;
+    padding: 2.5rem 3.5rem 2.5rem 3.5rem;
     border-radius: 10px;
+    min-width: -webkit-min-content; // THIS ONE THIS ONE
   }
 }
 
@@ -78,36 +79,43 @@ h3 {
 }
 
 .shelter-section__header {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
   color: ghostwhite;
   font-family: 'Junction Light', 'Junction Bold', 'Toronto Subway',
     'Toronto Subway Bold';
   text-wrap: nowrap;
   font-weight: 800;
   border-radius: 10px;
-  padding: 1rem;
-  border-radius: 10px;
   backdrop-filter: opacity(0.5);
 
   @include mobile {
     // font-size: 2.2rem; // CULPRIT #1 - FIXED
-    text-align: center;
-    text-align: center;
     font-family: 'Toronto Subway Bold';
     font-variant: all-small-caps;
-    font-size: 2.1rem;
-
+    font-size: 2rem;
+    display: flex;
+    width: fit-content;
+    align-self: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    text-wrap: wrap;
+    justify-content: center;
+    text-align: center;
   }
 
   @include tablet {
     font-size: 2.5rem;
     text-align: center;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    text-wrap: nowrap;
   }
 
   @include desktop {
     font-size: 3.4rem;
     text-align: center;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    text-wrap: nowrap;
   }
 }
 
@@ -147,7 +155,8 @@ h3 {
   align-items: center;
 
   @include mobile {
-    width: max-content;
+    // width: max-content;
+    gap: 1rem;
   }
 }
 .subHeader__title {
@@ -299,6 +308,7 @@ h3 {
   overflow-y: auto;
   box-sizing: border-box;
   border-radius: 5px;
+
   // background-image: linear-gradient(307deg, #c3cbdc 23%, #edf1f4 66%); // SILVER WHITE GRADIENT DESIGN
   // background: conic-gradient(from 242deg at 132% -20%, #5870a9, #7d75ad, #9c7cae, #b583ac, #ca8daa, #da99a8, #e6a6a7, #eeb5a9); // BLUE / PEACH DESIGN V1
   // background: conic-gradient(from 227deg at 191% -35%, #5870a9, #7d75ad, #9c7cae, #b583ac, #ca8daa, #da99a8, #e6a6a7, #eeb5a9); // BLUE / PEACH DESIGN V2
@@ -367,6 +377,9 @@ h3 {
 
   @include mobile {
     letter-spacing: 0.02rem;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
   }
 }
 
@@ -380,7 +393,7 @@ h3 {
   ); // Visual seperator (vertical)
   border-image-slice: 1; // Visual seperator (vertical)
   padding: 1rem;
-  background-color: rgba(53, 55, 59, 0.19);
+  background-color: rgb(31 27 27);
   // width: 100%;
   height: 100%;
   z-index: 9;
@@ -467,7 +480,6 @@ h3 {
   font-family: 'Toronto Subway Bold';
   // background-image: linear-gradient(147deg, #c3cbdc24 23%, #e0f2ff24 66%);
   // backdrop-filter: blur(25px);
-
   border-radius: 5px;
 
   &:hover {
@@ -483,16 +495,16 @@ h3 {
     text-align: center;
   }
   @include tablet {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     line-height: 3rem;
-    min-width: 23rem;
-    text-align: center;
+    min-width: 24rem;
+    text-align: start;
   }
   @include desktop {
     display: inline-flex;
     font-size: 2.5rem;
     line-height: 3.25rem;
-    min-width: 23rem;
+    min-width: 22rem;
   }
 }
 
@@ -518,6 +530,8 @@ h3 {
   justify-content: center;
   align-items: center;
   line-height: 2.1rem;
+  font-family: 'Avenir Next';
+  font-weight: 600;
   // CURPRIT #6
 
   @include mobile {
@@ -580,7 +594,7 @@ h3 {
 
   @include desktop {
     // min-width: -webkit-fit-content;
-    width: 14rem;
+    width: 15rem;
     line-height: 1.6rem;
     font-variant-caps: all-petite-caps;
   }
@@ -655,13 +669,38 @@ h3 {
   }
 }
 
+.scroll-instructions {
+  @include mobile {
+    display: none;
+  }
+
+  @include tablet {
+    display: none;
+  }
+
+  @include desktop {
+    display: none;
+    color: white;
+    display: flex;
+    width: 40rem;
+    justify-content: center;
+    font-variant: all-petite-caps;
+    font-size: 1.1rem;
+    padding-top: 1rem;
+    letter-spacing: 0.5px;
+  }
+}
 // ----------------- DETAILED VIEW (MOBILE)-----------------
 
 .mobile__shelter-scrollable-container {
   height: auto;
 
+  @include mobile {
+    width: auto;
+  }
+
   @include tablet {
-    display: none;
+    // display: none;
   }
 
   @include desktop {
@@ -700,9 +739,15 @@ h3 {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
   margin-bottom: 1rem;
   margin-top: 1rem;
-  width: inherit;
+  width: 95dvw;
   font-family: 'Toronto Subway Bold';
   font-variant: all-small-caps;
+
+  @include tablet {
+    width: 100%;
+    letter-spacing: normal;
+    font-size: 1.2rem;
+  }
 }
 
 .shelter-detailed-view {
@@ -731,14 +776,14 @@ h3 {
   font-weight: 400;
   font-size: 1.2rem;
   z-index: 1002;
-  margin-top:7.5rem;
+  margin-top: 5.3rem;
 }
 
 .mobile-header {
   font-size: 1rem;
   display: flex;
   place-content: center;
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
 }
 .detailed-view__container {
   background-color: rgba(0, 0, 0, 0.8);
@@ -748,6 +793,10 @@ h3 {
   padding: 1rem;
   flex-direction: column;
   place-items: center;
+
+  @include mobile {
+    height: 13rem;
+  }
 }
 
 .detailed-view__text-container {
@@ -776,12 +825,12 @@ h3 {
 
 .location-text {
   color: white;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-family: 'Toronto Subway Bold';
   text-align: center;
   // margin-bottom: 1rem;
   display: flex;
-  padding: 1rem;
+  padding: 2rem 1rem 0.5rem 1rem;
   background-color: rgba(0, 0, 0, 0.8);
   width: -webkit-fill-available;
 }

@@ -1,5 +1,5 @@
 import './SheltersCard.scss';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
 import SheltersMap from '../SheltersMap/SheltersMap';
 import RouteIcon from '../../assets/icons/SafeHavenTO_icon-route.svg';
@@ -15,7 +15,7 @@ export default function SheltersCard() {
   const [filterType, setFilterType] = useState('All'); // new state for filter type
   const [selectedButton, setSelectedButton] = useState('All');
   const [goHere, setGoHere] = useState(null);
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768); // state to check if the screen is mobile size
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 1279); // state to check if the screen is mobile size
   // const [uniqueLocations, setUniqueLocations] = useState({}); // alt piece of state to store unique locations
 
   useEffect(() => {
@@ -184,6 +184,34 @@ export default function SheltersCard() {
   // console.log('records = :', records);
   // console.log('goHere= ', goHere)
 
+
+  const observer = useRef(null); // Using useRef to persist the observer instance
+
+  useEffect(() => {
+    // Observer setup
+    observer.current = new IntersectionObserver((entries) => {
+      console.log('entries', entries);
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, {
+      threshold: 0.5
+    }, []);
+
+    // Attaching observer to elements
+    const hiddenElements = document.querySelectorAll('.hidden');
+    hiddenElements.forEach((el) => observer.current.observe(el));
+
+    // Cleanup function to disconnect observer
+    return () => {
+      if(observer.current) {
+        observer.current.disconnect();
+      }
+    }
+  }, []);
+
   return (
     <>
       <section className='shelter-section' id='shelters'>
@@ -228,13 +256,13 @@ export default function SheltersCard() {
                     <h6 className='shelter-item__text'>
                       {record.SHELTER_GROUP} ⟩⟩⟩
                     </h6>
-                    <h4 className='shelter-item__availability mobile__shelter-item__availability'>
+                    <p className='shelter-item__availability mobile__shelter-item__availability'>
                       {record.CAPACITY_TYPE === 'Bed Based Capacity'
                         ? `Available Beds: ${record.UNOCCUPIED_BEDS}`
                         : `Available Rooms: ${record.UNOCCUPIED_ROOMS}`}
                       <br />
                       Last Updated: {record.OCCUPANCY_DATE}
-                    </h4>
+                    </p>
                   </div>
                 </li>
               ))}
@@ -330,7 +358,7 @@ export default function SheltersCard() {
 
                                 <ul className='shelter-item__right-inner'>
                                   <h4 className='shelter-item__right-title'>
-                                    SECTOR{' '}
+                                    SECTOR (User Group){' '}
                                   </h4>
                                   <p className='shelter-item__right-text'>
                                     {record.SECTOR}
@@ -339,7 +367,7 @@ export default function SheltersCard() {
 
                                 <ul className='shelter-item__right-inner'>
                                   <h4 className='shelter-item__right-title'>
-                                    CAPACITY TYPE{' '}
+                                    ACCOMODATION TYPE{' '}
                                   </h4>
                                   <p className='shelter-item__right-text'>
                                     {record.CAPACITY_TYPE}
@@ -353,10 +381,20 @@ export default function SheltersCard() {
                                   <p className='shelter-item__right-text'>
                                     {record.PROGRAM_MODEL}
                                   </p>
+                                  {/* <p className='shelter-item__right-text'>
+                                    {record.OVERNIGHT_SERVICE_TYPE}
+                                  </p> */}
+                                </ul>
+
+                                <ul className='shelter-item__right-inner'>
+                                  <h4 className='shelter-item__right-title'>
+                                    SERVICE TYPE{' '}
+                                  </h4>
                                   <p className='shelter-item__right-text'>
                                     {record.OVERNIGHT_SERVICE_TYPE}
                                   </p>
                                 </ul>
+
                               </div>
                             </div>
                           </li>
@@ -379,6 +417,7 @@ export default function SheltersCard() {
             ></SheltersMap>
           </div>
         )}
+        {/* <span className='scroll-instructions'>↓ Scroll Down For More ↓</span> */}
         {goHere && (
           <div className='shelter-detailed-view'>
             <button className='back-button' onClick={() => setGoHere(null)}>
@@ -404,6 +443,8 @@ export default function SheltersCard() {
                   <p className='shelter-item__right-text mobile-left'>
                     Organization Name
                     <br />
+                    Shelter Group
+                    <br />
                     Overnight Service Type
                     <br />
                     Sector
@@ -415,6 +456,8 @@ export default function SheltersCard() {
                     Total Capacity
                   </p>
                   <p className='shelter-item__right-text mobile-right'>
+                    {goHere.ORGANIZATION_NAME}
+                    <br />
                     {goHere.ORGANIZATION_NAME}
                     <br />
                     {goHere.OVERNIGHT_SERVICE_TYPE} <br />

@@ -1,0 +1,59 @@
+@use '../../partials/abstracts' as *;
+@use '../../partials/fonts' as *;
+@use '../../partials/global' as *;
+@use '../../partials/variables' as *;
+
+body {
+  // background-color: rgb(38, 38, 38);
+  background-color: #0f0f0f;
+  height: 100%;
+  width: 100%;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-evenly;
+  align-self: flex-start;
+  align-items: center;
+  align-content: center;
+  min-height: 58vw;
+  background-color: #6a5f62;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  flex-wrap: wrap;
+  // animation: heroFadeIn 6s ease-out;
+  z-index: -3;
+  position: relative;
+
+  @include mobile {
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    // display: none;
+  }
+
+  @include tablet {
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+  }
+
+  @include desktop {
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+  }
+}
+
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

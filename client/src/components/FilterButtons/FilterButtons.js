@@ -11,7 +11,6 @@ const FilterButtons = ({
   records,
 }) => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
-  const [showDropdown, setShowDropdown] = useState(false);
   const [selectedFilter, setSelectedFilter] = useState('All');
 
   useEffect(() => {
@@ -31,7 +30,7 @@ const FilterButtons = ({
 
   return (
     <>
-      {isMobile ? ( // if mobile, show dropdown
+      {isMobile ? ( // if mobile, show dropdown menu
         <Select
           defaultValue={selectedFilter}
           style={{ width: 200 }}

@@ -54,7 +54,7 @@ export default function Footer() {
           <div className='footer-right__socials'>
             <a
               className='footer-right__social-links'
-              href='https://www.linkedin.com/in/safehavento/'
+              href='https://www.linkedin.com/company/safehavento/'
               target='_blank'
               rel='noreferrer'
             >

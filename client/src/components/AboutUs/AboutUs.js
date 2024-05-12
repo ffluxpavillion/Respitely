@@ -1,64 +1,135 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './AboutUs.scss';
 import Logo from '../../assets/logo/SafeHavenTO.svg';
+import { Collapse, theme } from 'antd';
+import { CaretRightOutlined } from '@ant-design/icons';
 
 export default function AboutUs() {
+  const observer = useRef(null); // Using useRef to persist the observer instance
+
+  useEffect(() => {
+    // Observer setup
+    observer.current = new IntersectionObserver(
+      (entries) => {
+        console.log('entries', entries);
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+          }
+        });
+      },
+      {
+        threshold: 0.3,
+      },
+      []
+    );
+
+    // Attaching observer to elements
+    const hiddenElements = document.querySelectorAll('.hidden');
+    hiddenElements.forEach((el) => observer.current.observe(el));
+
+    // Cleanup function to disconnect observer
+    return () => {
+      if (observer.current) {
+        observer.current.disconnect();
+      }
+    };
+  }, []);
+
+  const items = [
+    {
+      key: '1',
+      label: 'WHAT IS THIS?',
+      children: (
+        <p className='mission__div-text'>
+          A tool that helps users find vacancies at nearby shelters, by
+          providing the latest updates from these facilities.
+        </p>
+      ),
+    },
+    {
+      key: '2',
+      label: 'THE MISSION',
+      children: (
+        <p className='mission__div-text'>
+          To provide a sense of security during times of intense vulnerability,
+          by bridging the gap between available resources and those in need.
+          <br /> <br />
+          SafeHavenTO is a project that I am proud to have built and I hope it
+          can make a difference in the lives of those who need it most.
+        </p>
+      ),
+    },
+    {
+      key: '3',
+      label: 'THE CHALLENGE',
+      children: (
+        <p className='mission__div-text'>
+          There is a lack of centralized, up-to-date resources, causing friction
+          for those seeking accomodation.
+          <br />
+          <br />
+          Modern problems require modern solutions. So, I built one.
+        </p>
+      ),
+    },
+    {
+      key: '4',
+      label: 'HOW DOES IT WORK?',
+      children: (
+        <p className='mission__div-text'>
+          Empowered by the City of Toronto's Daily Shelter Occupancy API, this
+          platform leverages this dataset by fetching, filtering, and sorting
+          the most recent and relevant updates, which is then mapped using
+          MapBox. For more information, check out my GitHub repo{' '}
+          <a
+            className='link'
+            href='https://github.com/ffluxpavillion/SafeHavenTO'
+          >
+            here
+          </a>
+          .
+        </p>
+      ),
+    },
+    {
+      key: '5',
+      label: "WHAT'S NEXT?",
+      children: (
+        <p className='mission__div-text'>
+          More resources on the way, stay tuned!
+        </p>
+      ),
+    },
+  ];
+
   return (
     <>
-      <section className='mission__section'>
-        <br />
-        <div className='mission__section-div'>
-          <h1 className='mission__section-div-h1' id='aboutUs'>
-            SAFEHAVEN•TO
-          </h1>
-        </div>
-        <br />
-        <br />
-        <br />
-
+      <section className='mission__section' id='aboutUs'>
         <div className='mission__div'>
           <div className='mission__div-inner'>
-            <div className='mission__div-inner-container-1'>
-              <h2 className='mission__div-h2'>Moderninzing Shelter Access</h2>
-              <h2 className='mission__div-h2'>in the Heart of Toronto</h2>
+            <div className='mission__div-inner-container-1 hidden'>
+              <h2 className='mission__div-h2'>
+                Moderninzing Shelter Access in the Heart of Toronto{' '}
+              </h2>
+              <img
+                loading='lazy'
+                className='mission__div-logo'
+                src={Logo}
+              ></img>
             </div>
             <br />
-            <div className='mission__div-inner-container-2'>
-              <p className='mission__div-text'>
-                SafeHavenTO is a full-stack & responsive web application
-                designed to help those experiencing homelessness in finding
-                nearby shelters based on their individual needs, and the latest
-                updates from locations around the city. This app leverages data
-                provided by the City of Toronto's Daily Shelter Occupancy Data
-                API, via the city's Open Data Portal initiative.
-                <br />
-                <br />
-                Our mission is to help bridge the gap between those in need and
-                the resources available to them; to serve as a beacon of hope in
-                addressing this pressing societal issue.
-                <br />
-                <br />
-                The homelessness crisis is riddled with multifaceted challenges,
-                one such obstacle is the access to timely and accurate shelter
-                information. There is a lack of centralized, up-to-date
-                resources for individuals in need, causing difficulties in
-                finding suitable shelters, especially during urgent situations.
-                <br />
-                <br />
-                By seamlessly integrating modern design and functionality with
-                an intuitive and reliable user experience, such an application
-                holds the potential to revolutionize the way individuals
-                experiencing homelessness access vital information.
-                <br />
-                <br />
-                This platform aims to provide critical information, but also a
-                sense of security during times of intense vulnerability. We
-                believe that everyone deserves a SafeHaven, and we are committed
-                to making that a reality.
-              </p>
-            </div>
-            <div className='mission__div-logo-container'>
-              <img className='mission__div-logo' src={Logo}></img>
+            <div className='mission__div-inner-container-2 hidden'>
+              <Collapse
+                className='custom-collapse'
+                accordion
+                expandIcon={({ isActive }) => (
+                  <CaretRightOutlined rotate={isActive ? 90 : 0} />
+                )}
+                ghost
+                items={items}
+                size='large'
+              />
             </div>
           </div>
         </div>

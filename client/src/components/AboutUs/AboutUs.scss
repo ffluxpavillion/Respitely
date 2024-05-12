@@ -3,8 +3,34 @@
 @use '../../partials/global' as *;
 @use '../../partials/variables' as *;
 
+.hidden {
+  opacity: 0;
+  transition: opacity 1s ease;
+
+  transform: translateY(10%);
+  visibility: hidden; // Ensures the content is not interactable when hidden
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease,
+    visibility 0s linear 0.5s;
+}
+
+.show {
+  opacity: 1;
+  transition: opacity 3s ease;
+  position: relative;
+  z-index: 3;
+  animation: slideInFromLeft 2s ease;
+
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
+}
+
 .mission__section {
-  background-color: white;
   // background-color: black;
   // background: linear-gradient(180deg, #aaa0b0 0%, #cca6af 95%,) center / cover no-repeat fixed; // alt background gradient (pink/purple)
   // background: linear-gradient(180deg, #EDF1F4 0%, #C3CBDC 95%) center / cover no-repeat fixed; // alt background gradient (white/blue)
@@ -12,116 +38,143 @@
   // background-image: linear-gradient(45deg, #f1f2f6 8%, #8693ab 84%);
   // background-image: linear-gradient(360deg, #0f0f0f 75%, #222222 76%, #000000ed 76%);
   // background-image: linear-gradient(360deg, #0f0f0f 75%,  #0f0f0f 75%); // new dark background
-  background: #0f0f0f; // temp dark background
+  // background-color: #0f0f0f; // temp dark background
   // background-image: radial-gradient(circle at 50% 39%, #0f0f0f 59%, #ffffff 43%); // spotlight styling effect -- for future implementation
   // background-image: radial-gradient(circle at 50% 60%, #ffffff 55%, #161616 45%); // more refined spotlight styling effect -- for future implementation
   // background-image: radial-gradient(circle at 48% -50%, #f1f2f6 0%, #8693ab 54%);
+  // background-image: radial-gradient(circle at 30% 40%, #b4af9b 30%, #0f0f0f 69%); // looks like the sun in space
+
+  // background-image: radial-gradient(circle at 100% 270%, #b4af9b 69%, #0f0f0f 69%);
+  // background-image: radial-gradient(circle at 50% 200%, #b4af9b 69%, #681c1c 43%, #0f0f0f 10%);
+  // background: linear-gradient(45deg, #b27474, #8789ae);
   // background-image: radial-gradient(circle at 50% 700%, #ffffff 90%, #0f0f0f 54%);
+  // background-image: url(../../assets/images/wave-haikei1.svg);
+  // background-image: url(../../assets/images/blob-scene-haikei2.svg);
+  // background-size: cover;
 
+  // background-attachment: fixed;
+  // padding: 1rem;
+  // height: 100vh;
+  // z-index: -1000;
+  // position: relative;
+  // flex-direction: column;
+  // display: flex;
+  // place-content: center;
+  // animation: fadeIn 1s forwards;
+
+  background-image: url(../../assets/images/wave-haikei1.svg);
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -2;
+  position: relative;
   background-attachment: fixed;
-  padding: 1rem;
-
-  @include mobile {
-    display: none;
-  }
-
-  &-div {
-    display: flex;
-    justify-content: center;
-
-    &-h1 {
-      color: $pastel-blue2;
-      // color: white;
-      // color: lightgrey;
-      padding-left: 1.05rem;
-      padding-bottom: 3vw;
-      margin-top: -0.5vw;
-      font-weight: 400;
-      letter-spacing: 0.5rem;
-    }
-
-    @include mobile {
-      font-size: 3rem;
-    }
-
-    @include tablet {
-      font-size: 4rem;
-    }
-
-    @include desktop {
-      font-size: 7.7rem;
-    }
-  }
 }
 
 .mission__div {
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-around;
 
   &-inner {
-    width: auto;
+    display: flex;
+    justify-content: space-evenly;
+    height: 85vh;
+    width: 100vw;
+
+    @include mobile {
+      flex-direction: column;
+    }
   }
 
   &-inner-container-1 {
+    display: flex;
     justify-content: center;
+    flex-direction: column;
+
+    // background-image: radial-gradient(circle at 50% 200%, #ecc423 59%, #681c1c 43%);
+    // background-image: radial-gradient(circle at 0% 0%, #ecc423 20%, #681c1c 60%); //red yellow sunset gradient
+    // background-image: radial-gradient(circle at 50% 200%, #ecc423 69%, #681c1c 43%, #0f0f0f 10%); //black page color, yellow fill
+    // background-image: radial-gradient(circle at 50% 200%, #b4af9b 69%, #681c1c 43%, #0f0f0f 10%);
+
+    background-attachment: fixed;
+    gap: 2rem;
+
+    @include mobile {
+      align-self: center;
+    }
+
+    @include tablet {
+      margin: 1rem;
+    }
+
+    @include desktop {
+      width: 40rem;
+    }
   }
 
   &-inner-container-2 {
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    background-attachment: fixed;
+
+    @include mobile {
+      width: 100%;
+    }
+
+    @include tablet {
+      // width: 100%;
+    }
+
+    @include desktop {
+      width: 40rem;
+    }
   }
 
   &-h2 {
     color: white;
     font-size: 2rem;
     display: flex;
-    justify-content: center;
     width: auto;
     margin: 0 auto;
-    letter-spacing: 1.18vw;
+    letter-spacing: 5px;
+    font-variant: all-petite-caps;
+    font-family: 'Toronto Subway Bold';
+    text-align: center;
 
     @include mobile {
       font-size: 1.6rem;
+      width: 20rem;
     }
 
     @include tablet {
-      font-size: 3rem;
+      font-size: 2rem;
+      width: 23rem;
     }
 
     @include desktop {
+      width: 30rem;
     }
   }
 
   &-text {
-    max-width: 55rem;
-    min-width: 14rem;
-    font-size: 1.05rem;
-    line-height: 1.625;
-    font-weight: 400;
-    word-wrap: normal;
-    text-align: justify;
-    margin-bottom: 1.6rem;
     color: #ffffff;
-    // color: #0f0f0f; // spotlight styling effect -- for future implementation
-    font-family: 'Avenir Next';
-    line-height: 1.9em;
-    font-weight: 600;
+    margin-left: 1.5rem;
+    // height: 12.25rem;
+    padding: auto;
+    font-family: StabilGrotesk, sans-serif;
+    width: 100%;
+    hyphens: auto;
 
     @include mobile {
-      font-size: 2rem;
-      padding-top: 2rem;
-      hyphens: auto;
-      padding: 2rem 2rem 0 2rem;
     }
 
     @include tablet {
-      font-size: 1.13rem;
-      padding: 2rem 2rem 0 2rem;
     }
 
     @include desktop {
-      font-size: 1.16rem;
-      padding: 3rem 4rem 0 4rem;
     }
   }
 
@@ -129,12 +182,168 @@
     display: flex;
     justify-content: center;
     padding-bottom: 1rem;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 65%;
+    align-self: center;
   }
 
   &-logo {
-    max-height: 35vh;
-    min-height: 2vw;
-    max-width: 35vw;
-    margin: 4vw;
+    align-self: center;
+
+    @include mobile {
+      height: 11rem;
+    }
+
+    @include tablet {
+      height: 14rem;
+    }
+
+    @include desktop {
+      height: 16rem;
+    }
   }
+}
+
+.mission__div-header {
+  display: inline;
+  flex-direction: row;
+  min-width: fit-content;
+  padding-bottom: 1rem;
+  font-size: 2rem;
+  color: white;
+  align-items: center;
+  font-variant: all-petite-caps;
+  font-family: 'Toronto Subway', 'Junction Light', 'Junction Bold';
+  // text-align: center;
+  // align-self: normal;
+  // width: 34.25rem;
+  width: 100%;
+}
+
+.mission-content__div {
+  display: inline-flex;
+  flex-direction: column;
+  font-family: 'Avenir Next', 'Junction Light', 'Junction Bold';
+  word-spacing: 1.5px;
+  font-size: 1.1rem;
+  line-height: 1.6rem;
+  align-items: center;
+  justify-content: center;
+  // background-color: transparent;
+  border-radius: 0 20px 0 20px;
+  // border: 3px solid #ffffff;
+  min-width: fit-content;
+  padding: 1.39rem 2.78rem;
+  place-items: flex-start;
+}
+
+.slide-left {
+  animation: slideInFromRight 0.5s forwards;
+}
+
+.slide-right {
+  animation: slideInFromLeft 0.5s forwards;
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.link {
+  font-style: italic;
+  font-family: 'Avenir Next';
+  color: darkslateblue;
+}
+
+@media (prefers-reduced-motion) {
+  .hidden {
+    transition: none;
+    animation: none;
+  }
+}
+
+.mission__div-item {
+  width: 100%;
+  border-bottom: 1px solid white;
+  flex-direction: row;
+  display: flex;
+  cursor: pointer;
+  margin-bottom: 2rem;
+  padding: 1rem 1rem 1rem 0;
+}
+.mission__item-button {
+  min-width: fit-content;
+  background-color: transparent;
+  color: white;
+  border: none;
+  display: inline-flex;
+  justify-content: space-between;
+
+  cursor: pointer;
+}
+
+#one,
+#two,
+#three {
+  color: white;
+  font-size: 3rem;
+  align-self: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.custom-collapse .ant-collapse-content {
+  color: white;
+  font-family: 'League Spartan Regular';
+  font-size: 1.13rem;
+}
+
+.custom-collapse .ant-collapse-header-text {
+  color: white;
+  font-family: 'DT Black';
+
+  @include mobile {
+    font-size: 1.2rem;
+  }
+
+  @include tablet {
+    font-size: 1.5rem;
+  }
+
+  @include desktop {
+    font-size: 1.75rem;
+  }
+}
+
+.ant-collape-header {
+}
+
+.ant-collapse-content-box {
+  backdrop-filter: contrast(2.5);
+}
+
+.custom-collapse .ant-collapse-expand-icon {
+  // targets expand icon (arrow)
+  color: white;
+  animation: slideInFromRight 5s forwards;
+}
+
+.ant-collapse {
+  backdrop-filter: contrast(0.8);
 }

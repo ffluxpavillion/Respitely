@@ -27,5 +27,5 @@ yarn-debug.log*
 yarn-error.log*
 
 # local files
-/src/components/Parallax3
+/src/components/ParallaxInfoCard
 /src/assets/images/PlaceCard.png

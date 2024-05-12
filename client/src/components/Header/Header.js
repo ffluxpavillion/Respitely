@@ -61,15 +61,17 @@ export default function Header() {
       }`}
       id='home'
     >
-      <h3 className='mobile-static-header'> SAFEHAVENTO</h3>
-      <div
-        className={`navbar__burger menu  ${menuOpen ? 'active' : ''}`}
-        onClick={toggleMenu}
-      >
-        <div className='active-menu__fullscreen'>
-          <span className='navbar__burger-bar bar'></span>
-          <span className='navbar__burger-bar bar'></span>
-          <span className='navbar__burger-bar bar'></span>
+      <div className='header__container'>
+        <h3 className='header-brand'> SAFEHAVENTO</h3>
+        <div
+          className={`navbar__burger menu  ${menuOpen ? 'active' : ''}`}
+          onClick={toggleMenu}
+        >
+          <div className='active-menu__fullscreen'>
+            <span className='navbar__burger-bar bar'></span>
+            <span className='navbar__burger-bar bar'></span>
+            <span className='navbar__burger-bar bar'></span>
+          </div>
         </div>
       </div>
       <nav className='navbar'>
@@ -77,27 +79,27 @@ export default function Header() {
           <ul className={`navbar__div-ul navMenu ${menuOpen ? 'active' : ''}`}>
             <li onClick={handleClick}>
               <Link to='#home'>
-                <h3 className='navbar__div-li nav-stairs__home'>Home</h3>
-              </Link>
-            </li>
-            <li onClick={handleClick}>
-              <Link to='#aboutUs'>
-                <h3 className='navbar__div-li mobile-nav-item nav-stairs__about-us'>
-                  About Us
-                </h3>
+                <h3 className='navbar__div-li nav-stairs__home'>Home ⟩⟩</h3>
               </Link>
             </li>
             <li onClick={handleClick}>
               <Link to='#shelters'>
                 <h3 className='navbar__div-li nav-stairs__shelters'>
-                  Shelters
+                  Shelters ⟩⟩
                 </h3>
               </Link>
             </li>
             <li onClick={handleClick}>
               <Link to='#resources'>
                 <h3 className='navbar__div-li nav-stairs__resources'>
-                  Resources
+                  Resources ⟩⟩
+                </h3>
+              </Link>
+            </li>
+            <li onClick={handleClick}>
+              <Link to='#aboutUs'>
+                <h3 className='navbar__div-li mobile-nav-item nav-stairs__about-us'>
+                  About Us ⟩⟩
                 </h3>
               </Link>
             </li>

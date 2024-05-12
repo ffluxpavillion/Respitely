@@ -38,7 +38,7 @@
   z-index: -1;
 
   @include mobile {
-    padding: 5rem;
+    padding: 1rem;
   }
   @include tablet {
     padding: 5rem;
@@ -83,7 +83,7 @@
   width: 35rem;
 
   @include mobile {
-    font-size: 3rem;
+    font-size: 2rem;
     line-height: 2.5rem;
   }
 
@@ -101,7 +101,7 @@
 
 .home-header__line2 {
   opacity: 0;
-  animation: homeFadeIn 1.8s ease 3s forwards;
+  animation: homeFadeIn 1.8s ease 2s forwards;
 
   @include mobile {
     font-size: 3.2rem;
@@ -141,7 +141,7 @@
   justify-content: flex-end;
   width: 100%;
   opacity: 0;
-  animation: navFadeIn 4s ease-out 4s forwards;
+  animation: navFadeIn 4s ease-out 3s forwards;
 }
 
 .round {

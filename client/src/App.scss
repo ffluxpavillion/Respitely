@@ -1,1 +1,14 @@
 @import './partials/reset';
+
+.ant-float-btn-default {
+  background-color: #ffffff;
+  transition: background-color 0.2s;
+  z-index: -2;
+}
+
+@media (prefers-reduced-motion) {
+  .hidden {
+    transition: none;
+    animation: none;
+  }
+}

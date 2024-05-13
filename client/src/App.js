@@ -26,7 +26,7 @@ export default function App() {
       <Parallax3 />
       <AboutUs />
       <Footer />
-      <FloatButton.BackTop />
+      {/* <FloatButton.BackTop /> */}
     </BrowserRouter>
   );
 }

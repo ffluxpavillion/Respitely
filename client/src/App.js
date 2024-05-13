@@ -10,8 +10,11 @@ import Resources from './components/Resources/Resources';
 import Footer from './components/Footer/Footer';
 import './App.scss';
 import { FloatButton } from 'antd';
+import { initGA } from './utils/analytics';
 
 export default function App() {
+  initGA(); // Initialize Google Analytics
+
   return (
     <BrowserRouter>
       <Header />

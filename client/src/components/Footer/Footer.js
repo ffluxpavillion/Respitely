@@ -1,6 +1,7 @@
 import './Footer.scss';
 import FooterImage from '../../assets/images/SafeHavenTO_graphic-art-community-1.png';
 import Logo from '../../assets/logo/SafeHavenTO.svg';
+import { FloatButton } from 'antd';
 
 export default function Footer() {
   return (
@@ -74,6 +75,8 @@ export default function Footer() {
             >
               <i className='fab fa-twitter'></i>
             </a>
+            <FloatButton.BackTop />
+
           </div>
         </div>
       </footer>

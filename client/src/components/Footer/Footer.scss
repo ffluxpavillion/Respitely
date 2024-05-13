@@ -14,8 +14,7 @@
   background-color: black;
 
   @include mobile {
-    padding: 2rem;
-    // margin:1rem;
+    padding: 1rem;
   }
 }
 
@@ -112,6 +111,25 @@
   width: 15rem;
   height: 15rem;
   margin: 1rem;
+
+  @include mobile {
+
+  }
+
+  @include tablet {
+    width: 10rem;
+    // height: 10rem;
+    margin: 1rem;
+
+
+  }
+
+  @include desktop {
+    width: 15rem;
+    height: 15rem;
+    margin: 1rem;
+
+  }
 }
 
 .footer-left {
@@ -145,6 +163,9 @@
   @include mobile {
     display: none;
   }
+  @include tablet {
+    width: fit-content;
+  }
 }
 
 .footer-right {
@@ -156,11 +177,10 @@
   background-color: black;
 
   @include mobile {
-    display: none;
+    width: fit-content;
   }
 
   @include tablet {
-    display: none;
   }
 }
 
@@ -189,4 +209,10 @@
   width: max-content;
   font-variant: all-small-caps;
   color: #54545466;
+}
+
+.ant-float-btn-default {
+  background-color: #ffffffe0;
+  transition: background-color 0.2s;
+  position: absolute;
 }

@@ -25,6 +25,8 @@ a:hover {
   z-index: 2;
   position: relative;
   background-color: #1b2021;
+  z-index: -2;
+
 
   @include mobile {
     // height: 120rem;
@@ -100,7 +102,7 @@ a:hover {
 .grid__item {
   padding: 1rem;
   box-shadow: 0 3px 7px 0 #00000080;
-  width: 15rem;
+  width: 16rem;
   height: 16rem;
   border-radius: 20px;
   display: grid;
@@ -109,30 +111,16 @@ a:hover {
   font: small-caption;
   position: relative;
   z-index: -1;
-  background-image: url(../../assets/images/wave-haikei11.svg);
+  background: linear-gradient(45deg, #b27474, #8789ae);
   background-size: cover;
 
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: transparent;
-    pointer-events: none;
-    top: 7px;
-    left: 7px;
-    transition: 0.2s;
-  }
-
-  &::before {
-    top: 0;
-    left: 0;
+  &:hover {
     border-radius: 20px;
-    border: 2px solid #ffffff;
-
-    z-index: -1;
-    transform: translate(-10px, -10px);
+    border: 2px solid ghostwhite;
+    box-shadow: 0px 0px 10px 0 #cca6af;
+    scale: (1.05);
+    transition: all 0.5s ease-in-out;
+    margin: -0.1rem;
   }
 
   @include mobile {
@@ -146,7 +134,7 @@ a:hover {
   }
 
   @include desktop {
-    transform: scale(1);
+    // transform: scale(1);
     transition:
       border-radius 800ms ease,
       background-color 800ms ease,
@@ -156,19 +144,7 @@ a:hover {
       transform 0.4s ease-in-out,
       border-radius 0.4s ease-in-out;
 
-    &:hover:before {
-      top: 10px;
-      left: 10px;
-      // box-shadow: -10px -10px 0 0 #cca6af;
-      border: 4px solid #ffffff;
 
-    }
-
-    &:hover {
-      transform: scale(1.05);
-      border-radius: 20px;
-      background: #cca6af80;
-    }
   }
 
   &-header {
@@ -176,8 +152,9 @@ a:hover {
     color: #ffffff;
     text-align: center;
     padding-top: 1rem;
+    // padding: 1rem;
     text-transform: uppercase;
-    font-size: 1.2rem;
+    font-size: 1.15rem;
 
     @include mobile {
     }
@@ -197,10 +174,12 @@ a:hover {
     place-self: self-end;
     letter-spacing: 0.2px;
     word-wrap: normal;
-    line-height: 1.3em;
-    display: none;
+    line-height: 1.3rem;
+
 
     @include mobile {
+      display: none;
+
     }
 
     @include tablet {

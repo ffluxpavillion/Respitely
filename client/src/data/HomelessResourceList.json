@@ -1,0 +1,884 @@
+{
+  "Toronto Homeless Resource List": {
+    "last_updated": "2023-12-06",
+    "contact": {
+      "email": "diana@allsaintstoronto.com",
+      "subscribe_url": "https://tinyurl.com/THRSubscribe",
+      "central_intake_number": "416-338-4766",
+      "vaw_shelter_intake_number": "416-863-0511",
+      "mobile_crisis_response": "Request via 211"
+    },
+    "locations": [
+      {
+        "area": "Downtown West - Parkdale",
+        "facilities": [
+          {
+            "name": "The Dale Ministries",
+            "address": "201 Cowan Ave",
+            "phone": "647-926-6352",
+            "services": {
+              "type": "Takeaway services only",
+              "meals": [
+                "Monday at 1pm",
+                "Thursday at 10am"
+              ]
+            }
+          },
+          {
+            "name": "Parkdale Activity-Recreation Centre",
+            "address": "1499 Queen St. W.",
+            "phone": "416-537-2262",
+            "services": {
+              "operating_hours": {
+                "monday_to_thursday": "9am-1pm",
+                "friday": "12:30pm-4:30pm",
+                "weekend": "11am-3pm"
+              },
+              "meals": [
+                "Monday to Thursday at 9:30am-10:30am",
+                "Friday at 1pm-2pm",
+                "Weekend at 11:15am-12:15pm"
+              ],
+              "showers": [
+                "Monday to Thursday at 9:15am-10:15am, 11:30am-12:30pm",
+                "Friday at 1pm-2pm",
+                "Weekend at 11:15am-12:15pm, 1pm-2pm"
+              ],
+              "other_services": ["Harm reduction supplies", "Clothing", "Computers", "WiFi", "Phones"]
+            }
+          },
+          {
+            "name": "St. Francis’ Table",
+            "address": "1322 Queen St W",
+            "phone": "416-532-4172",
+            "services": {
+              "type": "Open indoors during meal times",
+              "meals": [
+                "Monday at 4:30pm-6pm",
+                "Tuesday to Thursday at 12pm-1pm, 4:30pm-6pm",
+                "Friday and Sunday at 12pm-1pm"
+              ]
+            }
+          },
+          {
+            "name": "St. Felix 24-Hour Respite",
+            "address": "69 Fraser Ave",
+            "phone": "416-203-1624",
+            "services": {
+              "type": "Takeaway services only",
+              "meals": "24/7",
+              "other_services": ["Harm reduction supplies"]
+            }
+          },
+          {
+            "name": "Bonar-Parkdale Presbyterian Church",
+            "address": "250 Dunn Ave",
+            "phone": "416-532-3729",
+            "services": {
+              "type": "Takeaway services only",
+              "meals": "Third Sunday of the month at 3pm"
+            }
+          },
+          {
+            "name": "Masaryk-Cowan Community Recreation Centre",
+            "address": "220 Cowan Ave",
+            "phone": "416-392-6928",
+            "services": {
+              "showers": "Monday to Friday from 9am to 8:30pm, Weekend from 9am to 6pm"
+            }
+          },
+          {
+            "name": "Allan A. Lamport Stadium",
+            "address": "1155 King St. W.",
+            "phone": "416-392-1366",
+            "services": {
+              "showers": "Monday to Thursday and Sunday from 8am to 3pm"
+            }
+          }
+        ]
+      },
+      {
+        "area": "Downtown West - Bloorcourt Village",
+        "facilities": [
+          {
+            "name": "Native Youth Resource Centre",
+            "address": "655 Bloor St. W.",
+            "phone": "416-969-8510",
+            "services": {
+              "type": "Open indoors for Indigenous youth ages 16-24",
+              "operating_hours": "Monday to Friday from 9am to 7pm",
+              "meals": [
+                "Monday to Friday at 9am, 12pm-1pm, 5pm-6pm"
+              ],
+              "other_services": ["Internet", "WiFi", "Phones"]
+            }
+          },
+          {
+            "name": "Christie Ossington Neighbourhood Centre",
+            "address": "854 Bloor St. W.",
+            "phone": "416-792-8941 ext 221",
+            "services": {
+              "operating_hours": "Monday to Friday from 8am to 6pm, Weekend from 8:30am to 5:30pm",
+              "meals": [
+                "Monday to Friday at 10am-11am, 12pm-1pm"
+              ],
+              "other_services": ["Computers", "Laundry", "Showers"]
+            }
+          },
+          {
+            "name": "Sistering",
+            "address": "962 Bloor St. W.",
+            "phone": "416-926-9762",
+            "services": {
+              "type": "Open indoors for women and transfolk (max 10 people)",
+              "operating_hours": "7 days a week from 10am to 5:30pm",
+              "meals": [
+                "12pm-2pm",
+                "7pm-9pm"
+              ],
+              "showers": "Available during opening hours",
+              "other_services": ["Harm reduction supplies", "Phone", "WiFi", "Laundry"]
+            }
+          }
+        ]
+      },
+      {
+        "area": "Downtown West - Spadina-Kensington-Queen West",
+        "facilities": [
+          {
+            "name": "Church of St. Stephen in-the-Fields",
+            "address": "103 Bellevue Ave",
+            "phone": "416-526-5438",
+            "services": {
+              "type": "Open indoors during meal times",
+              "meals": [
+                "Friday from 6pm to 10pm",
+                "Saturday and Sunday from 7am to 8:30am"
+              ],
+              "other_services": ["WiFi"]
+            }
+          },
+          {
+            "name": "Evergreen Centre for Youth",
+            "address": "365 Spadina Ave",
+            "phone": "416-929-9614",
+            "services": {
+              "type": "Open indoors for youth ages 16-24",
+              "operating_hours": "Monday to Friday from 12pm to 5pm",
+              "meals": [
+                "Monday to Thursday from 12pm to 1pm, 4pm to 5pm (except Friday)"
+              ],
+              "other_services": ["Harm reduction supplies", "Computers", "Phones"]
+            }
+          },
+          {
+            "name": "The Scott Mission",
+            "address": "502 Spadina Ave",
+            "phone": "416-923-8872 ext. 202",
+            "services": {
+              "type": "Open indoors during meal times, Men-only respite open 24/7 (capacity 50)",
+              "meals": [
+                "Monday to Saturday (Saturday takeout only) from 8am to 9:30am, 10am to 12pm",
+                "Sunday (takeout only) at 8am, 12pm"
+              ],
+              "other_services": ["Showers (8am to 11am)", "Laundry (8am to 10:30am)", "Clothing"]
+            }
+          },
+          {
+            "name": "The Corner Drop-in",
+            "address": "260 Augusta Ave",
+            "phone": "416 925 2103 ext. 2260",
+            "services": {
+              "type": "Open indoors",
+              "operating_hours": "Sunday to Friday from 7:30am to 11:30am, Thursday and Friday from 12pm to 4pm",
+              "meals": [
+                "Monday to Friday and Sunday at 7:30am, 10:45am"
+              ],
+              "showers": [
+                "Monday to Friday from 7:30am to 10:30am, Sunday from 8am to 10:30am"
+              ],
+              "other_services": ["Harm reduction supplies", "Laundry (Monday to Friday and Sunday from 8am to 9:45am)", "WiFi", "Computers", "Phone"]
+            }
+          },
+          {
+            "name": "Evangel Hall",
+            "address": "552 Adelaide St. W.",
+            "phone": "416-504-3563",
+            "services": {
+              "type": "Open indoors during meal times",
+              "meals": [
+                "Monday to Friday from 10:30am to 12:30pm, Sunday from 5pm to 6pm"
+              ],
+              "showers": "Monday to Friday from 9am to 12:30pm",
+              "other_services": ["Laundry", "Clothing (2nd and 4th Wednesday)"]
+            }
+          }
+        ]
+      },
+      {
+        "area": "Downtown East - Moss Park-Regent Park-Allan Gardens",
+        "facilities": [
+          {
+            "name": "All Saints Church-Community Centre",
+            "address": "315 Dundas St. E.",
+            "phone": "416-368-7768",
+            "services": {
+              "operating_hours": {
+                "monday": "8:30am-2:30pm",
+                "tuesday": "8:30am-2:30pm",
+                "thursday": "8:30am-2:30pm",
+                "wednesday": "10:30am-3pm, 5pm-7pm"
+              },
+              "meals": [
+                "Monday to Thursday at 9:30am, 12:30pm",
+                "Wednesday at 6pm"
+              ],
+              "snacks": "During opening hours",
+              "other_services": ["Harm reduction supplies", "Nurse", "WiFi", "Computers", "Phone"]
+            }
+          },
+          {
+            "name": "Fred Victor: Open House Drop-in",
+            "address": "145 Queen St. E.",
+            "phone": "416-364-8228",
+            "services": {
+              "type": "Open indoors",
+              "operating_hours": "Monday to Friday from 11am to 12:30pm, 2:30pm to 4:30pm",
+              "meals": [
+                "Monday to Friday at 11am, 4pm (takeaway only)"
+              ]
+            }
+          },
+          {
+            "name": "Council Fire",
+            "address": "439 Dundas St. E.",
+            "phone": "416-360-4350",
+            "services": {
+              "type": "Open indoors",
+              "operating_hours": "Monday to Thursday from 10am to 12pm, 1:30pm to 3:30pm",
+              "meals": [
+                "7 days a week at 9:30am, 1pm to 1:30pm"
+              ],
+              "capacity": "30 people max"
+            }
+          },
+          {
+            "name": "Fred Victor: CRC",
+            "address": "40 Oak St.",
+            "phone": "416-363-4234",
+            "services": {
+              "type": "Open indoors",
+              "operating_hours": "Monday from 9am to 11:30am",
+              "meals": [
+                "Monday, Tuesday, Thursday, Friday, Saturday at 12pm to 1pm"
+              ]
+            }
+          },
+          {
+            "name": "Haven Toronto",
+            "address": "170 Jarvis St.",
+            "phone": "416-366-5377",
+            "services": {
+              "type": "Open indoors for men 50+ only",
+              "operating_hours": "7 days a week from 8am to 5pm",
+              "meals": [
+                "7 days a week at 8:15am-9:15am, 12:15pm-1:15pm"
+              ],
+              "showers": "During opening hours",
+              "other_services": ["Clothing", "Nurse", "Dentist"]
+            }
+          },
+          {
+            "name": "Margaret's",
+            "address": "323 Dundas St. E.",
+            "phone": "416-463-1481 ext. 218",
+            "services": {
+              "type": "Open indoors 7 days a week",
+              "operating_hours": "7am to 4pm",
+              "meals": [
+                "7 days a week at 7am-8:30am, 11am-12pm"
+              ],
+              "other_services": ["Phone", "Doctor"]
+            }
+          },
+          {
+            "name": "Salvation Army: Gateway",
+            "address": "160 Jarvis St.",
+            "phone": "416 368 8710",
+            "services": {
+              "type": "Open indoors",
+              "operating_hours": "Monday, Thursday, Saturday, and Sunday from 1pm to 7pm",
+              "meals": [
+                "Monday, Wednesday, Thursday, Saturday, Sunday at 5pm-5:30pm"
+              ]
+            }
+          },
+          {
+            "name": "St. Luke's OOTC",
+            "address": "353 Sherbourne St.",
+            "phone": "416 924 9619",
+            "services": {
+              "type": "Open indoors during meal times",
+              "meals": [
+                "Wednesday and Sunday from 5pm to 7pm"
+              ]
+            }
+          },
+          {
+            "name": "John Innes Community Recreation Centre",
+            "address": "150 Sherbourne St.",
+            "phone": "416 392 6779",
+            "services": {
+              "showers": "Monday to Friday from 10am to 7:30pm, Weekend from 10am to 3:30pm"
+            }
+          },
+          {
+            "name": "Regent Park CHC",
+            "address": "465 Dundas St. E.",
+            "phone": "416 203 4506",
+            "services": {
+              "showers": "Monday, Wednesday to Friday from 9am to 3pm, Tuesday from 12pm to 3pm",
+              "laundry": "Same hours"
+            }
+          },
+          {
+            "name": "Allan Gardens",
+            "address": "160 Gerrard St. E.",
+            "services": {
+              "portable_toilets": "24/7"
+            }
+          },
+          {
+            "name": "Moss Park",
+            "address": "140 Sherbourne St.",
+            "services": {
+              "portable_toilets": "24/7"
+            }
+          },
+          {
+            "name": "Regent Park",
+            "address": "600 Dundas St. E.",
+            "services": {
+              "portable_toilets": "24/7"
+            }
+          }
+        ]
+      },
+      {
+        "area": "Downtown East - Leslieville-Danforth-Gerrard East",
+        "facilities": [
+          {
+            "name": "Good Shepherd",
+            "address": "412 Queen St. E.",
+            "phone": "416-869-3619",
+            "services": {
+              "type": "Open indoors 7 days a week",
+              "operating_hours": "9am to 11am",
+              "meals": [
+                "7 days a week from 2pm to 4pm"
+              ],
+              "other_services": ["Clothing"]
+            }
+          },
+          {
+            "name": "Fontbonne Ministries: Mustard Seed",
+            "address": "791 Queen St. E.",
+            "phone": "416-465-6069",
+            "services": {
+              "type": "Open indoors",
+              "operating_hours": "Friday to Tuesday from 8:30am to 11am",
+              "meals": [
+                "Friday to Sunday from 11:30am to 1pm"
+              ],
+              "snacks": "During opening hours",
+              "other_services": ["Clothing (Friday, 10am to 1pm)"]
+            }
+          },
+          {
+            "name": "St. John the Compassionate: Broadview",
+            "address": "155 Broadview Ave",
+            "phone": "416-466-1357",
+            "services": {
+              "type": "Open indoors",
+              "operating_hours": {
+                "tuesday": "5am to 11am",
+                "wednesday": "5am to 8pm",
+                "thursday": "5am to 4pm",
+                "friday": "5am to 8pm",
+                "saturday": "9am to 1pm",
+                "sunday": "6am to 9:30am"
+              },
+              "meals": [
+                "Tuesday and Wednesday from 6am to 8:30am, Thursday and Friday from 6am to 8:30am, 1:30pm, Saturday at 9am-1pm, Sunday from 6am to 9:30am"
+              ]
+            }
+          },
+          {
+            "name": "Friends of Ruby",
+            "address": "489 Queen St. E., Lower Level",
+            "phone": "416 359 0237",
+            "services": {
+              "type": "Open indoors for LGBTQI2S youth ages 16-29",
+              "operating_hours": "Monday to Friday from 11am to 6:30pm, Weekend from 12pm to 10pm",
+              "other_services": ["Harm reduction supplies", "WiFi"]
+            }
+          },
+          {
+            "name": "South Riverdale Community Health Centre",
+            "address": "955 Queen St. E.",
+            "phone": "416 461 1925",
+            "services": {
+              "type": "Open indoors",
+              "operating_hours": "Monday, Tuesday, Thursday from 9am to 8pm, Wednesday and Friday from 9am to 5pm",
+              "other_services": ["Harm reduction supplies"]
+            }
+          },
+          {
+            "name": "East End United OOTC",
+            "address": "310 Danforth Ave",
+            "phone": "416 461 7797",
+            "services": {
+              "type": "Open indoors during meal times",
+              "meals": [
+                "Friday from 6pm to 7:30pm, Saturday from 8am to 8:30am"
+              ],
+              "other_services": ["Clothing", "Haircuts (monthly)", "Overnight shelter (30 beds; abstinence-based)"]
+            }
+          },
+          {
+            "name": "St. Ann’s OOTC",
+            "address": "120 First Ave",
+            "phone": "416 466 2127",
+            "services": {
+              "type": "Open indoors during meal times",
+              "meals": [
+                "Thursday from 3:30pm to 4:30pm (until April 4)"
+              ]
+            }
+          },
+          {
+            "name": "Jimmie Simpson Recreation Centre",
+            "address": "870 Queen St. E.",
+            "phone": "416 392 0751",
+            "services": {
+              "showers": "7 days a week from 9am to 7pm"
+            }
+          },
+          {
+            "name": "Matty Eckler Recreation Centre",
+            "address": "953 Gerrard St. E.",
+            "phone": "416 392 0750",
+            "services": {
+              "showers": "Monday, Wednesday, Friday from 9am to 9pm, Tuesday, Thursday, Sunday from 9am to 4pm, Saturday from 9am to 6pm"
+            }
+          },
+          {
+            "name": "Jimmie Simpson Park",
+            "address": "879 Queen St. E.",
+            "services": {
+              "portable_toilets": "24/7"
+            }
+          }
+        ]
+      },
+      {
+        "area": "Midtown - Weston-Mount Dennis",
+        "facilities": [
+          {
+            "name": "Syme Woolner",
+            "address": "2468 Eglinton Ave. W., Unit 3",
+            "phone": "416-766-4634",
+            "services": {
+              "type": "Open indoors 7 days a week",
+              "operating_hours": "9am to 3pm",
+              "meals": [
+                "7 days a week from 9am to 10am, 12pm to 1:30pm"
+              ],
+              "other_services": ["Harm reduction supplies", "Clothing", "Computers"]
+            }
+          },
+          {
+            "name": "Weston King Neighbourhood Centre",
+            "address": "2017 Weston Rd.",
+            "phone": "416-241-9898",
+            "services": {
+              "type": "Open indoors",
+              "operating_hours": "Monday to Saturday from 8am to 8pm",
+              "meals": [
+                "Monday, Wednesday, Thursday, Saturday from 10am to 11am, 1pm to 2pm, Tuesday from 10am to 11am, 6pm to 7pm, Friday from 11am to 12pm"
+              ],
+              "showers": "Wednesday to Friday during opening hours",
+              "other_services": ["Harm reduction supplies", "Laundry (Monday, Wednesday, Thursday, Friday from 9am to 1pm)", "Clothing"]
+            }
+          },
+          {
+            "name": "Community Place Hub",
+            "address": "1765 Weston Rd.",
+            "phone": "416-323-1429",
+            "services": {
+              "type": "Open indoors",
+              "operating_hours": "Sunday to Wednesday and Friday from 9am to 5pm, Thursday from 9am to 6:30pm",
+              "meals": [
+                "Monday to Friday from 10am to 11:30am, 12:30pm to 2:30pm, Wednesday from 5pm to 6:30pm"
+              ]
+            }
+          },
+          {
+            "name": "Weston King: Mount Dennis",
+            "address": "1269 Weston Rd.",
+            "phone": "416-572-0203",
+            "services": {
+              "type": "Takeaway services only",
+              "meals": [
+                "Saturday at 10:30am, 5:30pm, Sunday at 5:30pm"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "area": "Midtown - Yonge and Eglinton",
+        "facilities": [
+          {
+            "name": "Yorkminster Park OOTC",
+            "address": "1585 Yonge St.",
+            "phone": "416 922 1167",
+            "services": {
+              "type": "Open indoors during meal times",
+              "meals": [
+                "Wednesday from 5:30pm to 8:30pm (until April 5)"
+              ],
+              "other_services": ["TTC tokens", "Clothing"]
+            }
+          },
+          {
+            "name": "Glenview Presbyterian OOTC",
+            "address": "1 Glenview Ave.",
+            "phone": "416 488 1156",
+            "services": {
+              "type": "Open indoors during meal times",
+              "meals": [
+                "Sunday from 3:30pm to 6:30pm (until March 24)"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "area": "Midtown - Pelham Park-Wychwood-Oakwood Village",
+        "facilities": [
+          {
+            "name": "The Stop",
+            "address": "1884 Davenport Rd.",
+            "phone": "416-652-7867",
+            "services": {
+              "type": "Open indoors during meal times",
+              "meals": [
+                "Monday, Tuesday, Thursday, Friday from 9am to 10am, 12pm to 1pm"
+              ]
+            }
+          },
+          {
+            "name": "Our Place Community of Hope",
+            "address": "1183 Davenport Rd.",
+            "phone": "416-598-2919",
+            "services": {
+              "type": "Open indoors",
+              "operating_hours": "Monday to Friday from 12pm to 5pm",
+              "meals": [
+                "2:30pm to 5pm"
+              ],
+              "other_services": ["Computers", "WiFi", "Phone"]
+            }
+          },
+          {
+            "name": "The Stop: Wychwood Open Doors",
+            "address": "729 St. Clair Ave. W.",
+            "phone": "416-412-4452",
+            "services": {
+              "type": "Open indoors during meal times",
+              "meals": [
+                "Tuesday from 4pm to 9:30pm (operated by St. Matthew’s OOTC), Wednesday from 9am to 10am, 12pm to 1pm, Thursday from 4pm to 5pm"
+              ],
+              "other_services": ["WiFi", "Computers"]
+            }
+          },
+          {
+            "name": "Davenport Perth NCHC",
+            "address": "1900 Davenport Rd.",
+            "phone": "416 656 8025",
+            "services": {
+              "type": "Open indoors during meal times",
+              "meals": [
+                "Wednesday from 5pm to 5:30pm"
+              ]
+            }
+          },
+          {
+            "name": "Beth Sholom OOTC",
+            "address": "1445 Eglinton Ave. E.",
+            "phone": "416 783 6103",
+            "services": {
+              "type": "Open indoors (starting Jan. 15, 2024)",
+              "operating_hours": "Monday from 5pm to 9:30pm",
+              "meals": [
+                "TBD"
+              ],
+              "other_services": ["Clothing", "TTC tokens", "Nurse"]
+            }
+          }
+        ]
+      },
+      {
+        "area": "North York",
+        "facilities": [
+          {
+            "name": "Cummer Avenue United Church",
+            "address": "53 Cummer Avenue",
+            "phone": "416 222 5417",
+            "services": {
+              "type": "Open indoors during meal times",
+              "meals": [
+                "Wednesday from 9am to 2pm"
+              ],
+              "other_services": ["Showers", "Clothing", "Legal support (every 3rd Wednesday)", "Nurse (1-2pm)"]
+            }
+          }
+        ]
+      },
+      {
+        "area": "Etobicoke",
+        "facilities": [
+          {
+            "name": "LAMP",
+            "address": "156 Sixth St.",
+            "phone": "416 252 6471",
+            "services": {
+              "type": "Open indoors during meal times",
+              "meals": [
+                "Tuesday to Thursday from 9:30am to 1:30pm, Friday from 10am to 6pm"
+              ]
+            }
+          },
+          {
+            "name": "Daily Bread Food Bank",
+            "address": "191 New Toronto St.",
+            "phone": "416 203 0050",
+            "services": {
+              "type": "Open indoors during meal times",
+              "meals": [
+                "Thursday from 5:30pm to 7pm"
+              ]
+            }
+          },
+          {
+            "name": "All Saints Kingsway OOTC",
+            "address": "2850 Bloor St. W.",
+            "phone": "416 233 1125",
+            "services": {
+              "type": "Open indoors",
+              "operating_hours": "Friday from 6pm to 9pm",
+              "meals": [
+                "Friday from 6pm to 7:30pm (until March 29)"
+              ],
+              "other_services": ["Computer access", "Clothing", "Showers"]
+            }
+          }
+        ]
+      },
+      {
+        "area": "Scarborough",
+        "facilities": [
+          {
+            "name": "Warden Woods: Teesdale Drop-In",
+            "address": "40 Teesdale Place",
+            "phone": "416 500 2583",
+            "services": {
+              "type": "Open indoors",
+              "operating_hours": "Monday to Friday from 9am to 5pm",
+              "meals": [
+                "Wednesday, Thursday from 12pm to 1pm"
+              ]
+            }
+          },
+          {
+            "name": "Warden Woods CC",
+            "address": "74 Firvalley Ct.",
+            "phone": "416 694 1138",
+            "services": {
+              "type": "Open indoors 7 days a week",
+              "operating_hours": "8am to 5pm"
+            }
+          },
+          {
+            "name": "ACSA North",
+            "address": "4155 Sheppard Ave",
+            "phone": "647 461 6912",
+            "services": {
+              "type": "Open indoors during meal times",
+              "operating_hours": "Tuesday to Saturday",
+              "meals": [
+                "Tuesday to Friday from 9am to 3pm, Saturday from 9am to 11pm"
+              ]
+            }
+          },
+          {
+            "name": "ACSA South",
+            "address": "202 Markham Rd",
+            "phone": "647 472 6912",
+            "services": {
+              "type": "Open indoors during meal times",
+              "meals": [
+                "Monday from 9am to 3pm"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "area": "Supervised Consumption Sites",
+        "facilities": [
+          {
+            "name": "Casey House",
+            "address": "119 Isabella St.",
+            "phone": "416-962-7600",
+            "services": {
+              "type": "Includes facilities for substance inhalation",
+              "operating_hours": "Monday to Friday from 10am to 4pm"
+            }
+          },
+          {
+            "name": "Fred Victor SIS",
+            "address": "139 Jarvis St.",
+            "phone": "416-644-3081",
+            "services": {
+              "operating_hours": "Monday from 8am to 10pm, Tuesday to Sunday from 7:30am to 7pm"
+            }
+          },
+          {
+            "name": "Moss Park Consumption and Treatment Site",
+            "address": "134 Sherbourne St.",
+            "phone": "416-546-3984",
+            "services": {
+              "operating_hours": "Tuesday to Saturday from 10am to 9:30pm",
+              "meals": "Served during operating hours"
+            }
+          },
+          {
+            "name": "Parkdale Queen West Community Health Centre: Queen West",
+            "address": "168 Bathurst St.",
+            "phone": "416-703-8482",
+            "services": {
+              "operating_hours": "Monday to Thursday from 9am to 8pm, Friday from 9:30am to 4:30pm, Weekend from 10am to 6pm"
+            }
+          },
+          {
+            "name": "Parkdale Queen West Community Health Centre: Parkdale",
+            "address": "1229 Queen St. W.",
+            "phone": "416-537-2455",
+            "services": {
+              "operating_hours": "Monday to Thursday from 10am to 6pm, Friday from 9:30am to 4:30pm"
+            }
+          },
+          {
+            "name": "Regent Park Community Health Centre",
+            "address": "465 Dundas St. E.",
+            "phone": "416-203-4506",
+            "services": {
+              "operating_hours": "Monday, Wednesday to Friday from 9:30am to 4:30pm, Tuesday from 12pm to 4:30pm"
+            }
+          },
+          {
+            "name": "KeepSIX",
+            "address": "955 Queen St. E.",
+            "phone": "416-461-1925",
+            "services": {
+              "operating_hours": "Monday, Tuesday, Thursday, Friday from 9am to 5pm, Wednesday from 11am to 5pm"
+            }
+          },
+          {
+            "name": "Street Health OPS",
+            "address": "338 Dundas St. E.",
+            "phone": "416-921-8668",
+            "services": {
+              "operating_hours": "Monday, Wednesday to Friday from 9:30am to 4:45pm, Tuesday from 11am to 4:45pm"
+            }
+          },
+          {
+            "name": "Kensington Market Overdose Prevention Service",
+            "address": "260 Augusta Ave.",
+            "phone": "416-925-2103",
+            "services": {
+              "operating_hours": "Monday to Friday and Sunday from 8am to 2pm"
+            }
+          },
+          {
+            "name": "The Works",
+            "address": "277 Victoria St.",
+            "phone": "416-338-7600",
+            "services": {
+              "operating_hours": "Monday to Saturday from 10am to 10pm, Sunday from 11am to 5pm"
+            }
+          }
+        ]
+      },
+      {
+        "area": "Warming Centres",
+        "facilities": [
+          {
+            "name": "75 Elizabeth St. (Downtown)",
+            "services": {
+              "type": "Open at -5°C until April 2023"
+            }
+          },
+          {
+            "name": "15 Olive Ave. (North York)",
+            "services": {
+              "type": "Open at -5°C until April 2023"
+            }
+          },
+          {
+            "name": "885 Scarborough Golf Club Rd (Scarborough)",
+            "services": {
+              "type": "Open at -5°C until April 2023"
+            }
+          },
+          {
+            "name": "136 Spadina Ave. (Downtown - Opening date TBD)",
+            "services": {
+              "type": "Open at -5°C until April 2023"
+            }
+          }
+        ]
+      },
+      {
+        "area": "24/7 Respites",
+        "facilities": [
+          {
+            "name": "Covenant House",
+            "address": "20 Gerrard St E",
+            "phone": "416 598 4898",
+            "services": {
+              "type": "Youth only (16-24), 20 spaces"
+            }
+          },
+          {
+            "name": "Scott Mission",
+            "address": "502 Spadina Ave",
+            "phone": "416 923 8872",
+            "services": {
+              "type": "Men only, 50 spaces"
+            }
+          },
+          {
+            "name": "Better Living Centre",
+            "address": "195 Princes' Blvd",
+            "services": {
+              "type": "240 spaces, Opening date TBD"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

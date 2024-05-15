@@ -1,0 +1,1962 @@
+{
+  "document_info": {
+    "title": "TDIN Toronto Meal List",
+    "date": "March 13, 2024",
+    "source": "Toronto Drop-In Network",
+    "website": "www.tdin.ca",
+    "update_contact": "support@tdin.ca"
+  },
+  "regions": {
+    "CENTRAL_DOWNTOWN": {
+      "drop_in_centers": [
+        {
+          "name": "Sanctuary Toronto",
+          "address": "25 Charles Street E",
+          "phone": "416-922-0628",
+          "population": "General Population; Adults",
+          "service_dog_allowed": true,
+          "wheelchair_accessible": true,
+          "schedule": {
+            "monday": {
+              "hours": "Closed"
+            },
+            "tuesday": {
+              "hours": "11:00am - 3:00pm",
+              "breakfast": "12:00pm - 2:30pm"
+            },
+            "wednesday": {
+              "hours": "Closed"
+            },
+            "thursday": {
+              "hours": "5:00pm - 9:00pm",
+              "dinner": "6:00pm - 8:30pm"
+            },
+            "friday": {
+              "hours": "Closed"
+            },
+            "saturday": {
+              "hours": "Closed"
+            },
+            "sunday": {
+              "hours": "Closed"
+            }
+          }
+        },
+        {
+          "name": "The 519",
+          "address": "519 Church Street",
+          "phone": "416-355-6795",
+          "population": "Broadly 2SLGBTQ+ Adults",
+          "pets_allowed": true,
+          "wheelchair_accessible": true,
+          "schedule": {
+            "monday": {
+              "hours": "2:00pm - 4:00pm"
+            },
+            "tuesday": {
+              "hours": "5:30pm - 8:30pm",
+              "dinner": "6:00pm - 7:30pm"
+            },
+            "wednesday": {
+              "hours": "2:00pm - 4:00pm"
+            },
+            "thursday": {
+              "hours": "3:00pm - 5:00pm",
+              "lunch": "3:00pm - 5:00pm",
+              "dinner": "5:00pm - 8:00pm"
+            },
+            "friday": {
+              "hours": "Closed"
+            },
+            "saturday": {
+              "hours": "Closed"
+            },
+            "sunday": {
+              "hours": "1:00pm - 4:00pm",
+              "snack": "1:00pm - 4:00pm",
+              "dinner": "4:00pm - 4:45pm"
+            }
+          }
+        },
+        {
+          "name": "St. James Cathedral Drop-In",
+          "address": "65 Church St.",
+          "phone": "416-364-7865 ext. 222",
+          "population": "General Population; Adults",
+          "service_dog_allowed": true,
+          "wheelchair_accessible": true,
+          "schedule": {
+            "monday": {
+              "hours": "Closed"
+            },
+            "tuesday": {
+              "hours": "Closed"
+            },
+            "wednesday": {
+              "hours": "Closed"
+            },
+            "thursday": {
+              "hours": "Closed"
+            },
+            "friday": {
+              "hours": "1:30pm - 3:30pm",
+              "lunch": "1:30pm - 3:30pm"
+            },
+            "saturday": {
+              "hours": "Closed"
+            },
+            "sunday": {
+              "hours": "Closed"
+            }
+          }
+        },
+        {
+          "name": "Church of the Holy Trinity: Trinity Community Hub",
+          "address": "19 Trinity Sq.",
+          "phone": "416-598-4521 ext. 225",
+          "population": "General Population",
+          "pets_allowed": false,
+          "wheelchair_accessible": true,
+          "schedule": {
+            "monday": {
+              "hours": "Closed"
+            },
+            "tuesday": {
+              "hours": "12:00pm - 1:30pm",
+              "lunch": "12:00pm - 1:30pm"
+            },
+            "wednesday": {
+              "hours": "12:00pm - 1:30pm",
+              "lunch": "12:00pm - 1:30pm"
+            },
+            "thursday": {
+              "hours": "Closed"
+            },
+            "friday": {
+              "hours": "Closed"
+            },
+            "saturday": {
+              "hours": "Closed"
+            },
+            "sunday": {
+              "hours": "Closed"
+            }
+          }
+        },
+        {
+          "name": "Maggie’s: Sex Worker Drop-In",
+          "address": "19 Trinity Sq.",
+          "phone": "416-964-0150",
+          "population": "Current & former sex workers - all genders/orientations",
+          "service_dog_allowed": true,
+          "wheelchair_accessible": true,
+          "schedule": {
+            "monday": {
+              "hours": "Closed"
+            },
+            "tuesday": {
+              "hours": "Closed"
+            },
+            "wednesday": {
+              "hours": "Closed"
+            },
+            "thursday": {
+              "hours": "2:30pm - 5:00pm",
+              "dinner": "3:00pm - 4:30pm"
+            },
+            "friday": {
+              "hours": "Closed"
+            },
+            "saturday": {
+              "hours": "Closed"
+            },
+            "sunday": {
+              "hours": "Closed"
+            }
+          }
+        },
+        {
+          "name": "TNG: Corner Drop-In",
+          "address": "260 Augusta Avenue",
+          "phone": "416-925-2103 ext. 2260",
+          "population": "General Population; Adults",
+          "service_dog_allowed": true,
+          "wheelchair_accessible": true,
+          "schedule": {
+            "monday": {
+              "hours": "7:30am - 11:30am",
+              "breakfast": "7:30am - 9:00am",
+              "snack": "8:30am",
+              "lunch": "10:45am"
+            },
+            "tuesday": {
+              "hours": "7:30am - 11:30am",
+              "breakfast": "7:30am - 9:00am",
+              "snack": "8:30am",
+              "lunch": "10:45am"
+            },
+            "wednesday": {
+              "hours": "7:30am - 11:30am",
+              "breakfast": "7:30am - 9:00am",
+              "snack": "8:30am",
+              "lunch": "10:45am"
+            },
+            "thursday": {
+              "hours": "7:30am - 11:30am",
+              "breakfast": "7:30am - 9:00am",
+              "snack": "8:30am",
+              "lunch": "10:45am"
+            },
+            "friday": {
+              "hours": "7:30am - 11:30am",
+              "breakfast": "7:30am - 9:00am",
+              "snack": "8:30am",
+              "lunch": "10:45am"
+            },
+            "saturday": {
+              "hours": "Closed"
+            },
+            "sunday": {
+              "hours": "7:30am - 11:30am",
+              "breakfast": "7:30am - 9:00am",
+              "snack": "8:30am",
+              "lunch": "10:45am"
+            }
+          }
+        },
+        {
+          "name": "Church of St. Stephen-in-the-Fields: Safe Space Drop-in",
+          "address": "103 Bellevue Ave.",
+          "phone": "416-921-6350",
+          "population": "General Population; Adults",
+          "pets_allowed": true,
+          "wheelchair_accessible": true,
+          "schedule": {
+            "monday": {
+              "hours": "Closed"
+            },
+            "tuesday": {
+              "hours": "Closed"
+            },
+            "wednesday": {
+              "hours": "Closed"
+            },
+            "thursday": {
+              "hours": "Closed"
+            },
+            "friday": {
+              "hours": "6:00pm - 10:00pm",
+              "dinner": "6:00pm - 10:00pm"
+            },
+            "saturday": {
+              "hours": "7:00am - 8:30am",
+              "breakfast": "7:00am - 8:30am"
+            },
+            "sunday": {
+              "hours": "7:00am - 8:30am",
+              "breakfast": "7:00am - 8:30am"
+            }
+          }
+        },
+        {
+          "name": "The Scott Mission: Community Meals",
+          "address": "346 Spadina Ave.",
+          "phone": "647-696-1372",
+          "population": "General Population; Adults",
+          "service_dog_allowed": true,
+          "wheelchair_accessible": true,
+          "schedule": {
+            "monday": {
+              "hours": "8:00am - 1:00pm",
+              "breakfast": "8:00am - 8:30am",
+              "lunch": "11:30am - 12:00pm"
+            },
+            "tuesday": {
+              "hours": "8:00am - 1:00pm",
+              "breakfast": "8:00am - 8:30am",
+              "lunch": "11:30am - 12:00pm"
+            },
+            "wednesday": {
+              "hours": "8:00am - 1:00pm",
+              "breakfast": "8:00am - 8:30am",
+              "lunch": "11:30am - 12:00pm"
+            },
+            "thursday": {
+              "hours": "8:00am - 1:00pm",
+              "breakfast": "8:00am - 8:30am",
+              "lunch": "11:30am - 12:00pm"
+            },
+            "friday": {
+              "hours": "8:00am - 1:00pm",
+              "breakfast": "8:00am - 8:30am",
+              "lunch": "11:30am - 12:00pm"
+            },
+            "saturday": {
+              "hours": "Closed"
+            },
+            "sunday": {
+              "hours": "Closed"
+            }
+          }
+        },
+        {
+          "name": "St. Felix Centre - Respite",
+          "address": "69 Fraser Ave.",
+          "phone": "416-203-1624",
+          "population": "General Population; Adults",
+          "pets_allowed": true,
+          "wheelchair_accessible": true,
+          "schedule": {
+            "monday": {
+              "hours": "24/7"
+            },
+            "tuesday": {
+              "hours": "24/7"
+            },
+            "wednesday": {
+              "hours": "24/7"
+            },
+            "thursday": {
+              "hours": "24/7"
+            },
+            "friday": {
+              "hours": "24/7"
+            },
+            "saturday": {
+              "hours": "24/7"
+            },
+            "sunday": {
+              "hours": "24/7"
+            }
+          }
+        },
+        {
+          "name": "Evangel Hall Mission",
+          "address": "552 Adelaide St. W",
+          "phone": "416-504-3564",
+          "population": "General Population; Adults",
+          "service_dog_allowed": true,
+          "wheelchair_accessible": true,
+          "schedule": {
+            "monday": {
+              "hours": "9:00am - 12:30pm",
+              "lunch": "10:30am - 12:30pm"
+            },
+            "tuesday": {
+              "hours": "9:00am - 12:30pm",
+              "lunch": "10:30am - 12:30pm"
+            },
+            "wednesday": {
+              "hours": "9:00am - 12:30pm",
+              "lunch": "10:30am - 12:30pm"
+            },
+            "thursday": {
+              "hours": "9:00am - 12:30pm",
+              "lunch": "10:30am - 12:30pm"
+            },
+            "friday": {
+              "hours": "9:00am - 12:30pm",
+              "lunch": "10:30am - 12:30pm"
+            },
+            "saturday": {
+              "hours": "Closed"
+            },
+            "sunday": {
+              "hours": "4:45pm - 6:15pm",
+              "dinner": "4:45pm - 6:15pm"
+            }
+          }
+        },
+        {
+          "name": "West Neighbourhood House: Meeting Place",
+          "address": "588 Queen Street West",
+          "phone": "416-504-4275",
+          "population": "General Population; Adults",
+          "pets_allowed": true,
+          "wheelchair_accessible": true,
+          "schedule": {
+            "monday": {
+              "hours": "Closed"
+            },
+            "tuesday": {
+              "hours": "11:00am - 4:00pm",
+              "breakfast": "11:00am - 3:00pm",
+              "snack": "11:00am - 3:00pm"
+            },
+            "wednesday": {
+              "hours": "10:00am - 4:00pm",
+              "breakfast": "10:00am - 1:00pm",
+              "lunch": "1:00pm",
+              "snack": "10:00am - 3:00pm"
+            },
+            "thursday": {
+              "hours": "10:00am - 4:00pm",
+              "breakfast": "10:00am - 3:00pm",
+              "snack": "10:00am - 3:00pm"
+            },
+            "friday": {
+              "hours": "10:00am - 4:00pm",
+              "breakfast": "10:00am - 3:00pm",
+              "snack": "10:00am - 3:00pm"
+            },
+            "saturday": {
+              "hours": "10:00am - 3:00pm",
+              "breakfast": "10:00am - 1:00pm",
+              "lunch": "1:00pm",
+              "snack": "10:00am - 3:00pm"
+            },
+            "sunday": {
+              "hours": "Closed"
+            }
+          }
+        },
+        {
+          "name": "YMCA Wagner Green Drop-in",
+          "address": "7 Vanauley Street",
+          "phone": "647-632-2500",
+          "population": "Youth 16 - 24 years",
+          "service_dog_allowed": true,
+          "wheelchair_accessible": true,
+          "schedule": {
+            "monday": {
+              "hours": "9:00am - 5:00pm",
+              "breakfast": "9:00am - 10:30am",
+              "lunch": "12:00pm - 1:30pm",
+              "snack": "3:00pm"
+            },
+            "tuesday": {
+              "hours": "9:00am - 5:00pm",
+              "breakfast": "9:00am - 10:30am",
+              "lunch": "12:00pm - 1:30pm",
+              "snack": "3:00pm"
+            },
+            "wednesday": {
+              "hours": "9:00am - 5:00pm",
+              "breakfast": "9:00am - 10:30am",
+              "lunch": "12:00pm - 1:30pm",
+              "snack": "3:00pm"
+            },
+            "thursday": {
+              "hours": "9:00am - 5:00pm",
+              "breakfast": "9:00am - 10:30am",
+              "lunch": "12:00pm - 1:30pm",
+              "snack": "3:00pm"
+            },
+            "friday": {
+              "hours": "9:00am - 5:00pm",
+              "breakfast": "9:00am - 10:30am",
+              "lunch": "12:00pm - 1:30pm",
+              "snack": "3:00pm"
+            },
+            "saturday": {
+              "hours": "Closed"
+            },
+            "sunday": {
+              "hours": "Closed"
+            }
+          }
+        },
+        {
+          "name": "Ballroom Drop-in",
+          "address": "192 Spadina Ave.",
+          "phone": "647-609-2300",
+          "population": "Adults: LGBTQ, BIPOC, Youth",
+          "service_dog_allowed": true,
+          "wheelchair_accessible": true,
+          "schedule": {
+            "monday": {
+              "hours": ""
+            },
+            "tuesday": {
+              "hours": ""
+            },
+            "wednesday": {
+              "hours": ""
+            },
+            "thursday": {
+              "hours": ""
+            },
+            "friday": {
+              "hours": ""
+            },
+            "saturday": {
+              "hours": ""
+            },
+            "sunday": {
+              "hours": "6:00pm - 9:00pm (bi-weekly)",
+              "dinner": "6:00pm - 9:00pm"
+            }
+          }
+        },
+        {
+          "name": "YSM Evergreen",
+          "address": "365 Spadina Ave.",
+          "phone": "416-929-9614 ext. 2200",
+          "population": "Youth 16 - 24 years",
+          "service_dog_allowed": true,
+          "wheelchair_accessible": true,
+          "schedule": {
+            "monday": {
+              "hours": "12:00pm - 5:00pm",
+              "lunch": "12:00pm - 2:00pm"
+            },
+            "tuesday": {
+              "hours": "12:00pm - 5:00pm",
+              "lunch": "12:00pm - 2:00pm"
+            },
+            "wednesday": {
+              "hours": "12:00pm - 5:00pm",
+              "lunch": "12:00pm - 2:00pm"
+            },
+            "thursday": {
+              "hours": "12:00pm - 5:00pm",
+              "lunch": "12:00pm - 2:00pm"
+            },
+            "friday": {
+              "hours": "12:00pm - 5:00pm",
+              "lunch": "12:00pm - 2:00pm"
+            },
+            "saturday": {
+              "hours": "Closed"
+            },
+            "sunday": {
+              "hours": "Closed"
+            }
+          }
+        },
+        {
+          "name": "Covenant House: Community Support Services",
+          "address": "20 Gerrard Street",
+          "phone": "416-204-7037",
+          "population": "Youth 16 - 24 years",
+          "pets_allowed": true,
+          "wheelchair_accessible": true,
+          "schedule": {
+            "monday": {
+              "hours": "12:00pm - 7:00pm",
+              "lunch": "12:00pm - 3:00pm",
+              "dinner": "3:00pm - 7:00pm"
+            },
+            "tuesday": {
+              "hours": "12:00pm - 7:00pm",
+              "lunch": "12:00pm - 3:00pm",
+              "dinner": "3:00pm - 7:00pm"
+            },
+            "wednesday": {
+              "hours": "12:00pm - 7:00pm",
+              "lunch": "12:00pm - 3:00pm",
+              "dinner": "3:00pm - 7:00pm"
+            },
+            "thursday": {
+              "hours": "12:00pm - 7:00pm",
+              "lunch": "12:00pm - 3:00pm",
+              "dinner": "3:00pm - 7:00pm"
+            },
+            "friday": {
+              "hours": "12:00pm - 7:00pm",
+              "lunch": "12:00pm - 3:00pm",
+              "dinner": "3:00pm - 7:00pm"
+            },
+            "saturday": {
+              "hours": "12:00pm - 7:00pm",
+              "lunch": "12:00pm - 3:00pm",
+              "dinner": "3:00pm - 7:00pm"
+            },
+            "sunday": {
+              "hours": "12:00pm - 7:00pm",
+              "lunch": "12:00pm - 3:00pm",
+              "dinner": "3:00pm - 7:00pm"
+            }
+          }
+        },
+        {
+          "name": "Metropolitan United Church",
+          "address": "56 Queen Street East",
+          "phone": "416-363-0331 ext. 241",
+          "population": "General Population; Adults",
+          "pets_allowed": true,
+          "wheelchair_accessible": true,
+          "schedule": {
+            "monday": {
+              "hours": "Closed"
+            },
+            "tuesday": {
+              "hours": "Closed"
+            },
+            "wednesday": {
+              "hours": "Closed"
+            },
+            "thursday": {
+              "hours": "Closed"
+            },
+            "friday": {
+              "hours": "10:30am - 12:30pm"
+            },
+            "saturday": {
+              "hours": "Closed"
+            },
+            "sunday": {
+              "hours": "Closed"
+            }
+          }
+        },
+        {
+          "name": "Fred Victor: Women's Drop-in (Adelaide Resource Centre)",
+          "address": "67 Adelaide St. E.",
+          "phone": "416-364-7739",
+          "population": "Women",
+          "service_dog_allowed": true,
+          "wheelchair_accessible": true,
+          "schedule": {
+            "monday": {
+              "hours": "24/7"
+            },
+            "tuesday": {
+              "hours": "24/7"
+            },
+            "wednesday": {
+              "hours": "24/7"
+            },
+            "thursday": {
+              "hours": "24/7"
+            },
+            "friday": {
+              "hours": "24/7"
+            },
+            "saturday": {
+              "hours": "24/7"
+            },
+            "sunday": {
+              "hours": "24/7"
+            }
+          }
+        },
+        {
+          "name": "Fred Victor: Open House Drop-in",
+          "address": "145 Queen St. E.",
+          "phone": "416-364-8228",
+          "population": "General Population; Adults",
+          "service_dog_allowed": true,
+          "wheelchair_accessible": true,
+          "schedule": {
+            "monday": {
+              "hours": "12:00pm - 4:00pm"
+            },
+            "tuesday": {
+              "hours": "12:00pm - 4:00pm"
+            },
+            "wednesday": {
+              "hours": "12:00pm - 4:00pm"
+            },
+            "thursday": {
+              "hours": "12:00pm - 4:00pm"
+            },
+            "friday": {
+              "hours": "12:00pm - 4:00pm"
+            },
+            "saturday": {
+              "hours": "Closed"
+            },
+            "sunday": {
+              "hours": "Closed"
+            }
+          }
+        },
+        {
+          "name": "Good Shepherd Ministries",
+          "address": "412 Queen St East",
+          "phone": "416-869-3619",
+          "population": "General Population; Adults",
+          "service_dog_allowed": true,
+          "wheelchair_accessible": true,
+          "schedule": {
+            "monday": {
+              "hours": "24/7",
+              "dinner": "2:00pm - 4:00pm",
+              "snack": "6:00pm"
+            },
+            "tuesday": {
+              "hours": "24/7",
+              "dinner": "2:00pm - 4:00pm",
+              "snack": "6:00pm"
+            },
+            "wednesday": {
+              "hours": "24/7",
+              "dinner": "2:00pm - 4:00pm",
+              "snack": "6:00pm"
+            },
+            "thursday": {
+              "hours": "24/7",
+              "dinner": "2:00pm - 4:00pm",
+              "snack": "6:00pm"
+            },
+            "friday": {
+              "hours": "24/7",
+              "dinner": "2:00pm - 4:00pm",
+              "snack": "6:00pm"
+            },
+            "saturday": {
+              "hours": "24/7",
+              "dinner": "2:00pm - 4:00pm",
+              "snack": "6:00pm"
+            },
+            "sunday": {
+              "hours": "24/7",
+              "dinner": "2:00pm - 4:00pm",
+              "snack": "6:00pm"
+            }
+          }
+        },
+        {
+          "name": "Haven Toronto",
+          "address": "170 Jarvis Street",
+          "phone": "416-366-5377",
+          "population": "Men 50+ (Must sign up to be a member)",
+          "service_dog_allowed": true,
+          "wheelchair_accessible": true,
+          "schedule": {
+            "monday": {
+              "hours": "8:00am - 4:00pm",
+              "breakfast": "8:00am - 9:15am",
+              "lunch": "12:00pm - 1:15pm",
+              "snack": "3:00pm - 3:15pm"
+            },
+            "tuesday": {
+              "hours": "8:00am - 4:00pm",
+              "breakfast": "8:00am - 9:15am",
+              "lunch": "12:00pm - 1:15pm",
+              "snack": "3:00pm - 3:15pm"
+            },
+            "wednesday": {
+              "hours": "8:00am - 4:00pm",
+              "breakfast": "8:00am - 9:15am",
+              "lunch": "12:00pm - 1:15pm",
+              "snack": "3:00pm - 3:15pm"
+            },
+            "thursday": {
+              "hours": "8:00am - 4:00pm",
+              "breakfast": "8:00am - 9:15am",
+              "lunch": "12:00pm - 1:15pm",
+              "snack": "3:00pm - 3:15pm"
+            },
+            "friday": {
+              "hours": "8:00am - 4:00pm",
+              "breakfast": "8:00am - 9:15am",
+              "lunch": "12:00pm - 1:15pm",
+              "snack": "3:00pm - 3:15pm"
+            },
+            "saturday": {
+              "hours": "8:00am - 4:00pm",
+              "breakfast": "8:00am - 9:15am",
+              "lunch": "12:00pm - 1:15pm",
+              "snack": "3:00pm - 3:15pm"
+            },
+            "sunday": {
+              "hours": "8:00am - 4:00pm",
+              "breakfast": "8:00am - 9:15am",
+              "lunch": "12:00pm - 1:15pm",
+              "snack": "3:00pm - 3:15pm"
+            }
+          }
+        },
+        {
+          "name": "Toronto Council Fire: Gathering Place",
+          "address": "439 Dundas St. E",
+          "phone": "416-360-4350",
+          "population": "Indigenous Adults",
+          "service_dog_allowed": true,
+          "wheelchair_accessible": true,
+          "schedule": {
+            "monday": {
+              "hours": "9:30am - 4:00pm",
+              "breakfast": "9:30am",
+              "lunch": "1:00pm",
+              "snack": "10:00am - 12:00pm & 1:30pm - 3:30pm"
+            },
+            "tuesday": {
+              "hours": "9:30am - 4:00pm",
+              "breakfast": "9:30am",
+              "lunch": "1:00pm",
+              "snack": "10:00am - 12:00pm & 1:30pm - 3:30pm"
+            },
+            "wednesday": {
+              "hours": "9:30am - 4:00pm",
+              "breakfast": "9:30am",
+              "lunch": "1:00pm",
+              "snack": "10:00am - 12:00pm & 1:30pm - 3:30pm"
+            },
+            "thursday": {
+              "hours": "9:30am - 4:00pm",
+              "breakfast": "9:30am",
+              "lunch": "1:00pm",
+              "snack": "10:00am - 12:00pm & 1:30pm - 3:30pm"
+            },
+            "friday": {
+              "hours": "9:30am - 4:00pm",
+              "breakfast": "9:30am",
+              "lunch": "1:00pm"
+            },
+            "saturday": {
+              "hours": "9:30am - 4:00pm",
+              "breakfast": "9:30am",
+              "lunch": "1:00pm"
+            },
+            "sunday": {
+              "hours": "9:30am - 4:00pm",
+              "breakfast": "9:30am",
+              "lunch": "1:00pm"
+            }
+          }
+        },
+        {
+          "name": "All Saints Church Community Centre",
+          "address": "315 Dundas St. E.",
+          "phone": "416-368-7768",
+          "population": "General Population; Adults",
+          "pets_allowed": true,
+          "wheelchair_accessible": true,
+          "schedule": {
+            "monday": {
+              "hours": "8:30am - 2:30pm",
+              "breakfast": "9:30am",
+              "lunch": "12:30pm",
+              "snack": "8:30am - 2:00pm"
+            },
+            "tuesday": {
+              "hours": "8:30am - 2:30pm",
+              "breakfast": "9:30am",
+              "lunch": "12:30pm",
+              "snack": "8:30am - 2:00pm"
+            },
+            "wednesday": {
+              "hours": "10:30am - 3:00pm",
+              "lunch": "12:30pm",
+              "snack": "8:30am - 2:00pm"
+            },
+            "thursday": {
+              "hours": "8:30am - 2:30pm",
+              "breakfast": "9:30am",
+              "lunch": "12:30pm",
+              "snack": "8:30am - 2:00pm"
+            },
+            "friday": {
+              "hours": "Closed"
+            },
+            "saturday": {
+              "hours": "Closed"
+            },
+            "sunday": {
+              "hours": "Closed"
+            }
+          }
+        },
+        {
+          "name": "Margaret's Toronto East Drop-in Centre",
+          "address": "323 Dundas St. East",
+          "phone": "647-367-2100",
+          "population": "General Population; Adults",
+          "pets_allowed": true,
+          "wheelchair_accessible": true,
+          "schedule": {
+            "monday": {
+              "hours": "7:00am - 4:00pm",
+              "breakfast": "7:00am - 8:00am",
+              "lunch": "11:00am - 12:00pm",
+              "snack": "3:00pm"
+            },
+            "tuesday": {
+              "hours": "7:00am - 4:00pm",
+              "breakfast": "7:00am - 8:00am",
+              "lunch": "11:00am - 12:00pm",
+              "snack": "3:00pm"
+            },
+            "wednesday": {
+              "hours": "7:00am - 4:00pm",
+              "breakfast": "7:00am - 8:00am",
+              "lunch": "11:00am - 12:00pm",
+              "snack": "3:00pm"
+            },
+            "thursday": {
+              "hours": "7:00am - 4:00pm",
+              "breakfast": "7:00am - 8:00am",
+              "lunch": "11:00am - 12:00pm",
+              "snack": "3:00pm"
+            },
+            "friday": {
+              "hours": "7:00am - 4:00pm",
+              "breakfast": "7:00am - 8:00am",
+              "lunch": "11:00am - 12:00pm",
+              "snack": "3:00pm"
+            },
+            "saturday": {
+              "hours": "7:00am - 4:00pm",
+              "breakfast": "7:00am - 8:00am",
+              "lunch": "11:00am - 12:00pm",
+              "snack": "3:00pm"
+            },
+            "sunday": {
+              "hours": "7:00am - 4:00pm",
+              "breakfast": "7:00am - 8:00am",
+              "lunch": "11:00am - 12:00pm",
+              "snack": "3:00pm"
+            }
+          }
+        },
+        {
+          "name": "Church of the Redeemer: The Common Table",
+          "address": "162 Bloor St. W",
+          "phone": "416-922-4948",
+          "population": "General Population; Adults",
+          "service_dog_allowed": true,
+          "wheelchair_accessible": true,
+          "schedule": {
+            "monday": {
+              "hours": "8:00am - 11:30am",
+              "breakfast": "8:30am",
+              "lunch": "10:00am - 11:15am"
+            },
+            "tuesday": {
+              "hours": "8:00am - 11:30am",
+              "breakfast": "8:30am",
+              "lunch": "10:00am - 11:15am"
+            },
+            "wednesday": {
+              "hours": "8:00am - 11:30am",
+              "breakfast": "8:30am",
+              "lunch": "10:00am - 11:15am"
+            },
+            "thursday": {
+              "hours": "8:00am - 11:30am",
+              "breakfast": "8:30am",
+              "lunch": "10:00am - 11:15am"
+            },
+            "friday": {
+              "hours": "8:00am - 11:30am",
+              "breakfast": "8:30am",
+              "lunch": "10:00am - 11:15am"
+            },
+            "saturday": {
+              "hours": "Closed"
+            },
+            "sunday": {
+              "hours": "Closed"
+            }
+          }
+        },
+        {
+          "name": "St. Basil's Church",
+          "address": "50 St. Joseph St.",
+          "phone": "416-926-7110",
+          "population": "General Population",
+          "service_dog_allowed": true,
+          "wheelchair_accessible": true,
+          "schedule": {
+            "monday": {
+              "hours": "11:30am - 12:30pm",
+              "lunch": "11:30am - 12:30pm"
+            },
+            "tuesday": {
+              "hours": "11:30am - 12:30pm",
+              "lunch": "11:30am - 12:30pm"
+            },
+            "wednesday": {
+              "hours": "Closed"
+            },
+            "thursday": {
+              "hours": "Closed"
+            },
+            "friday": {
+              "hours": "Closed"
+            },
+            "saturday": {
+              "hours": "Closed"
+            },
+            "sunday": {
+              "hours": "Closed"
+            }
+          }
+        },
+        {
+          "name": "Law Society Foundation Feed the Hungry Program",
+          "address": "130 Queen St W",
+          "phone": "416-947-3412",
+          "population": "General Population",
+          "pets_allowed": false,
+          "wheelchair_accessible": true,
+          "schedule": {
+            "monday": {
+              "hours": "Closed"
+            },
+            "tuesday": {
+              "hours": "5:00pm",
+              "dinner": "5:00pm (Take-out meals only)"
+            },
+            "wednesday": {
+              "hours": "5:00pm",
+              "dinner": "5:00pm (Take-out meals only)"
+            },
+            "thursday": {
+              "hours": "6:45am",
+              "breakfast": "6:45am (Take-out meals only)"
+            },
+            "friday": {
+              "hours": "Closed"
+            },
+            "saturday": {
+              "hours": "10:00am",
+              "breakfast": "10:00am (Take-out meals only)"
+            },
+            "sunday": {
+              "hours": "Closed"
+            }
+          }
+        }
+      ]
+    },
+    "EAST_DOWNTOWN": {
+      "drop_in_centers": [
+        {
+          "name": "Fred Victor: 40 Oak Drop-in",
+          "address": "40 Oak Street",
+          "phone": "416-363-4234",
+          "population": "General Population; Adults",
+          "service_dog_allowed": true,
+          "wheelchair_accessible": true,
+          "schedule": {
+            "monday": {
+              "hours": "9:00am - 3:30pm",
+              "breakfast": "9:00am - 10:00am",
+              "lunch": "12:00pm - 1:00pm"
+            },
+            "tuesday": {
+              "hours": "9:00am - 3:30pm",
+              "lunch": "12:00pm - 1:00pm"
+            },
+            "wednesday": {
+              "hours": "9:00am - 1:00pm"
+            },
+            "thursday": {
+              "hours": "9:00am - 3:30pm",
+              "lunch": "12:00pm - 1:00pm"
+            },
+            "friday": {
+              "hours": "9:00am - 3:30pm",
+              "breakfast": "9:00am - 10:00am",
+              "lunch": "12:00pm - 1:00pm"
+            },
+            "saturday": {
+              "hours": "Closed",
+              "lunch": "12:00pm - 1:00pm (provided by Muslim Welfare Centre)"
+            },
+            "sunday": {
+              "hours": "Closed"
+            }
+          }
+        },
+        {
+          "name": "Friends of Ruby",
+          "address": "489 Queen St E LL01",
+          "phone": "416-359-0237",
+          "population": "LGBTQI2S youth 16 to 29yrs",
+          "pets_allowed": true,
+          "wheelchair_accessible": true,
+          "schedule": {
+            "monday": {
+              "hours": "11:00am - 6:30pm"
+            },
+            "tuesday": {
+              "hours": "11:00am - 6:30pm"
+            },
+            "wednesday": {
+              "hours": "11:00am - 6:30pm"
+            },
+            "thursday": {
+              "hours": "11:00am - 6:30pm"
+            },
+            "friday": {
+              "hours": "11:00am - 6:30pm"
+            },
+            "saturday": {
+              "hours": "12:00pm - 10:00pm (pilot)"
+            },
+            "sunday": {
+              "hours": "12:00pm - 10:00pm (pilot)"
+            }
+          }
+        },
+        {
+          "name": "St. John the Compassionate: Broadview",
+          "address": "155 Broadview Ave.",
+          "phone": "416-466-1357",
+          "population": "General Population; Adults",
+          "service_dog_allowed": true,
+          "schedule": {
+            "monday": {
+              "hours": "Closed"
+            },
+            "tuesday": {
+              "hours": "5:00am - 8:30am",
+              "breakfast": "5:00am - 8:30am"
+            },
+            "wednesday": {
+              "hours": "5:00am - 6:00pm",
+              "breakfast": "5:00am - 8:30am",
+              "dinner": "5:00pm"
+            },
+            "thursday": {
+              "hours": "5:00am - 4:00pm",
+              "breakfast": "5:00am - 8:30am",
+              "lunch": "1:30pm"
+            },
+            "friday": {
+              "hours": "5:00am - 8:00pm",
+              "breakfast": "5:00am - 8:30am",
+              "lunch": "1:30pm"
+            },
+            "saturday": {
+              "hours": "9:00am - 2:00pm",
+              "breakfast": "11:00am - 12:00pm"
+            },
+            "sunday": {
+              "hours": "Closed"
+            }
+          }
+        },
+        {
+          "name": "Fontbonne Ministries: Mustard Seed Drop-In",
+          "address": "791 Queen St. E.",
+          "phone": "416-465-6069",
+          "population": "General Population; Adults",
+          "pets_allowed": true,
+          "wheelchair_accessible": true,
+          "schedule": {
+            "monday": {
+              "hours": "8:30am - 1:00pm",
+              "breakfast": "8:30am - 10:00am"
+            },
+            "tuesday": {
+              "hours": "8:30am - 1:00pm",
+              "breakfast": "8:30am - 10:00am"
+            },
+            "wednesday": {
+              "hours": "Closed"
+            },
+            "thursday": {
+              "hours": "Closed"
+            },
+            "friday": {
+              "hours": "10:00am - 1:00pm",
+              "lunch": "8:30am - 1:00pm",
+              "snack": "8:30am - 11:00am"
+            },
+            "saturday": {
+              "hours": "10:00am - 1:00pm",
+              "lunch": "11:30am - 1:00pm",
+              "snack": "10:00am - 11:00am"
+            },
+            "sunday": {
+              "hours": "10:00am - 1:00pm",
+              "lunch": "11:30am - 1:00pm",
+              "snack": "10:00am - 11:00am"
+            }
+          }
+        }
+      ]
+    },
+    "MIDTOWN_WEST": {
+      "drop_in_centers": [
+        {
+          "name": "Sistering",
+          "address": "962 Bloor St. W",
+          "phone": "416-926-9762",
+          "population": "Women",
+          "pets_allowed": true,
+          "wheelchair_accessible": true,
+          "schedule": {
+            "monday": {
+              "hours": "24/7",
+              "breakfast": "9:30am - 10:30am",
+              "lunch": "12:00pm - 2:00pm",
+              "dinner": "6:30pm - 7:30pm",
+              "snack": "9:00pm - 9:30pm"
+            },
+            "tuesday": {
+              "hours": "24/7",
+              "breakfast": "9:30am - 10:30am",
+              "lunch": "12:00pm - 2:00pm",
+              "dinner": "6:30pm - 7:30pm",
+              "snack": "9:00pm - 9:30pm"
+            },
+            "wednesday": {
+              "hours": "24/7",
+              "breakfast": "9:30am - 10:30am",
+              "lunch": "12:00pm - 2:00pm",
+              "dinner": "6:30pm - 7:30pm",
+              "snack": "9:00pm - 9:30pm"
+            },
+            "thursday": {
+              "hours": "24/7",
+              "breakfast": "9:30am - 10:30am",
+              "lunch": "12:00pm - 2:00pm",
+              "dinner": "6:30pm - 7:30pm",
+              "snack": "9:00pm - 9:30pm"
+            },
+            "friday": {
+              "hours": "24/7",
+              "breakfast": "9:30am - 10:30am",
+              "lunch": "12:00pm - 2:00pm",
+              "dinner": "6:30pm - 7:30pm",
+              "snack": "9:00pm - 9:30pm"
+            },
+            "saturday": {
+              "hours": "24/7",
+              "breakfast": "9:30am - 10:30am",
+              "lunch": "12:00pm - 2:00pm",
+              "dinner": "6:30pm - 7:30pm",
+              "snack": "9:00pm - 9:30pm"
+            },
+            "sunday": {
+              "hours": "24/7",
+              "breakfast": "9:30am - 10:30am",
+              "lunch": "12:00pm - 2:00pm",
+              "dinner": "6:30pm - 7:30pm",
+              "snack": "9:00pm - 9:30pm"
+            }
+          }
+        },
+        {
+          "name": "Christie Ossington Neighbourhood Center",
+          "address": "854 Bloor St W.",
+          "phone": "416-792-8941",
+          "population": "General Population; Adults",
+          "service_dog_allowed": true,
+          "wheelchair_accessible": true,
+          "schedule": {
+            "monday": {
+              "hours": "8:30am - 5:30pm",
+              "breakfast": "8:30am - 10:00am",
+              "lunch": "11:00am - 1:00pm",
+              "snack": "1:30pm"
+            },
+            "tuesday": {
+              "hours": "8:30am - 5:30pm",
+              "breakfast": "8:30am - 10:00am",
+              "lunch": "11:00am - 1:00pm",
+              "snack": "1:30pm"
+            },
+            "wednesday": {
+              "hours": "8:30am - 5:30pm",
+              "breakfast": "8:30am - 10:00am",
+              "lunch": "11:00am - 1:00pm",
+              "snack": "1:30pm"
+            },
+            "thursday": {
+              "hours": "8:30am - 5:30pm",
+              "breakfast": "8:30am - 10:00am",
+              "lunch": "11:00am - 1:00pm",
+              "snack": "1:30pm"
+            },
+            "friday": {
+              "hours": "8:30am - 5:30pm",
+              "breakfast": "8:30am - 10:00am",
+              "lunch": "11:00am - 1:00pm",
+              "snack": "1:30pm"
+            },
+            "saturday": {
+              "hours": "8:00am - 4:00pm",
+              "lunch": "11:00am - 1:00pm",
+              "snack": "1:30pm"
+            },
+            "sunday": {
+              "hours": "Closed"
+            }
+          }
+        },
+        {
+          "name": "Native Youth Resource Centre",
+          "address": "655 Bloor Street West",
+          "phone": "416-639-9070",
+          "population": "Indigenous youth, 16 to 24 years",
+          "pets_allowed": false,
+          "wheelchair_accessible": true,
+          "schedule": {
+            "monday": {
+              "hours": "9:00am - 7:00pm",
+              "breakfast": "9:00am",
+              "lunch": "12:00pm",
+              "snack": "2:00pm",
+              "dinner": "4:00pm"
+            },
+            "tuesday": {
+              "hours": "9:00am - 7:00pm",
+              "breakfast": "9:00am",
+              "lunch": "12:00pm",
+              "snack": "2:00pm",
+              "dinner": "4:00pm"
+            },
+            "wednesday": {
+              "hours": "9:00am - 7:00pm",
+              "breakfast": "9:00am",
+              "lunch": "12:00pm",
+              "snack": "2:00pm",
+              "dinner": "4:00pm"
+            },
+            "thursday": {
+              "hours": "9:00am - 7:00pm",
+              "breakfast": "9:00am",
+              "lunch": "12:00pm",
+              "snack": "2:00pm",
+              "dinner": "4:00pm"
+            },
+            "friday": {
+              "hours": "9:00am - 7:00pm",
+              "breakfast": "9:00am",
+              "lunch": "12:00pm",
+              "snack": "2:00pm",
+              "dinner": "4:00pm"
+            },
+            "saturday": {
+              "hours": "9:00am - 5:00pm",
+              "breakfast": "9:00am",
+              "lunch": "12:00pm",
+              "snack": "2:00pm"
+            },
+            "sunday": {
+              "hours": "Closed"
+            }
+          }
+        },
+        {
+          "name": "St. Michael’s Homes: Our Place Community of Hope",
+          "address": "1183 Davenport Road",
+          "phone": "416-598-2919",
+          "population": "General Population; Adults",
+          "service_dog_allowed": true,
+          "schedule": {
+            "monday": {
+              "hours": "12:00pm - 5:00pm",
+              "dinner": "2:30pm - 5:00pm"
+            },
+            "tuesday": {
+              "hours": "12:00pm - 5:00pm",
+              "dinner": "2:30pm - 5:00pm"
+            },
+            "wednesday": {
+              "hours": "12:00pm - 5:00pm",
+              "dinner": "2:30pm - 5:00pm"
+            },
+            "thursday": {
+              "hours": "12:00pm - 5:00pm",
+              "dinner": "2:30pm - 5:00pm"
+            },
+            "friday": {
+              "hours": "12:00pm - 5:00pm",
+              "dinner": "2:30pm - 5:00pm"
+            },
+            "saturday": {
+              "hours": "Closed"
+            },
+            "sunday": {
+              "hours": "Closed"
+            }
+          }
+        },
+        {
+          "name": "Davenport Perth Neighbourhood & Community Health Centre",
+          "address": "1900 Davenport Rd",
+          "phone": "416-656-8025",
+          "population": "General Population",
+          "service_dog_allowed": true,
+          "wheelchair_accessible": true,
+          "schedule": {
+            "monday": {
+              "hours": "Closed"
+            },
+            "tuesday": {
+              "hours": "Closed"
+            },
+            "wednesday": {
+              "hours": "5:00pm - 5:30pm",
+              "dinner": "5:00pm - 5:30pm"
+            },
+            "thursday": {
+              "hours": "Closed"
+            },
+            "friday": {
+              "hours": "Closed"
+            },
+            "saturday": {
+              "hours": "Closed"
+            },
+            "sunday": {
+              "hours": "Closed"
+            }
+          }
+        },
+        {
+          "name": "Breakaway Community Services: Pieces to Pathways",
+          "address": "21 Strickland Ave.",
+          "phone": "416-537-9346",
+          "population": "LGBTQI2S youth 16 to 29yrs",
+          "pets_allowed": true,
+          "wheelchair_accessible": true,
+          "schedule": {
+            "monday": {
+              "hours": "Closed"
+            },
+            "tuesday": {
+              "hours": "Closed"
+            },
+            "wednesday": {
+              "hours": "Closed"
+            },
+            "thursday": {
+              "hours": "5:00pm - 7:00pm",
+              "dinner": "5:00pm - 7:00pm"
+            },
+            "friday": {
+              "hours": "Closed"
+            },
+            "saturday": {
+              "hours": "Closed"
+            },
+            "sunday": {
+              "hours": "Closed"
+            }
+          }
+        },
+        {
+          "name": "Parkdale Activity Recreation Centre",
+          "address": "1499 Queen Street West",
+          "phone": "416-537-2262",
+          "population": "General Population; Adults",
+          "pets_allowed": true,
+          "wheelchair_accessible": true,
+          "schedule": {
+            "monday": {
+              "hours": "9:00am - 1:00pm",
+              "breakfast": "9:30am - 10:30am",
+              "lunch": "11:30am - 12:30pm"
+            },
+            "tuesday": {
+              "hours": "9:00am - 1:00pm",
+              "breakfast": "9:30am - 10:30am",
+              "lunch": "11:30am - 12:30pm"
+            },
+            "wednesday": {
+              "hours": "9:00am - 1:00pm",
+              "breakfast": "9:30am - 10:30am",
+              "snack": "11:30am - 12:30pm"
+            },
+            "thursday": {
+              "hours": "9:00am - 1:00pm",
+              "breakfast": "9:30am - 10:30am",
+              "lunch": "11:30am - 12:30pm"
+            },
+            "friday": {
+              "hours": "12:30pm - 4:30pm",
+              "lunch": "1:00pm - 2:00pm"
+            },
+            "saturday": {
+              "hours": "11:00am - 3:00pm",
+              "breakfast": "11:15am - 12:15pm",
+              "lunch": "1:00pm - 2:00pm"
+            },
+            "sunday": {
+              "hours": "11:00am - 3:00pm",
+              "breakfast": "11:15am - 12:15pm",
+              "lunch": "1:00pm - 2:00pm"
+            }
+          }
+        },
+        {
+          "name": "The Dale Ministries",
+          "address": "201 Cowan Ave.",
+          "phone": "647-926-6352",
+          "population": "General Population; Adults",
+          "service_dog_allowed": true,
+          "schedule": {
+            "monday": {
+              "hours": "1:00pm"
+            },
+            "tuesday": {
+              "hours": "Unknown"
+            },
+            "wednesday": {
+              "hours": "Unknown"
+            },
+            "thursday": {
+              "hours": "1:00pm"
+            },
+            "friday": {
+              "hours": "Unknown"
+            },
+            "saturday": {
+              "hours": "Unknown"
+            },
+            "sunday": {
+              "hours": "Unknown"
+            }
+          }
+        },
+        {
+          "name": "Syme Woolner Neighbourhood & Family Centre",
+          "address": "2468 Eglinton Ave West, Unit 3",
+          "phone": "416-766-4634",
+          "population": "General Population",
+          "pets_allowed": false,
+          "wheelchair_accessible": true,
+          "schedule": {
+            "monday": {
+              "hours": "9:00am - 3:00pm & 4:00pm-6:30pm",
+              "breakfast": "9:30am - 10:30am",
+              "lunch": "12:00pm - 1:30pm",
+              "dinner": "5:00pm - 6:00pm",
+              "snack": "9:00am - 6:30pm"
+            },
+            "tuesday": {
+              "hours": "9:00am - 3:00pm & 4:00pm-6:30pm",
+              "breakfast": "9:30am - 10:30am",
+              "lunch": "12:00pm - 1:30pm",
+              "dinner": "5:00pm - 6:00pm",
+              "snack": "9:00am - 6:30pm"
+            },
+            "wednesday": {
+              "hours": "9:00am - 3:00pm & 4:00pm-6:30pm",
+              "breakfast": "9:30am - 10:30am",
+              "lunch": "12:00pm - 1:30pm",
+              "dinner": "5:00pm - 6:00pm",
+              "snack": "9:00am - 6:30pm"
+            },
+            "thursday": {
+              "hours": "9:00am - 3:00pm",
+              "breakfast": "9:30am - 10:30am",
+              "lunch": "12:00pm - 1:30pm",
+              "snack": "9:00am - 6:30pm"
+            },
+            "friday": {
+              "hours": "9:00am - 3:00pm",
+              "breakfast": "9:30am - 10:30am",
+              "lunch": "12:00pm - 1:30pm",
+              "snack": "9:00am - 6:30pm"
+            },
+            "saturday": {
+              "hours": "9:00am - 3:00pm",
+              "breakfast": "9:30am - 10:30am",
+              "lunch": "12:00pm - 1:30pm",
+              "snack": "9:00am - 6:30pm"
+            },
+            "sunday": {
+              "hours": "9:00am - 3:00pm",
+              "breakfast": "9:30am - 10:30am",
+              "lunch": "12:00pm - 1:30pm",
+              "snack": "9:00am - 6:30pm"
+            }
+          }
+        },
+        {
+          "name": "Weston King Neighbourhood Centre",
+          "address": "2017 Weston Rd.",
+          "phone": "416-241-9898",
+          "population": "General Population; Adults",
+          "service_dog_allowed": true,
+          "schedule": {
+            "monday": {
+              "hours": "8:00am - 8:00pm",
+              "breakfast": "10:00am - 11:00am",
+              "lunch": "1:00pm - 2:00pm",
+              "snack": "3:00pm - 8:00pm"
+            },
+            "tuesday": {
+              "hours": "8:00am - 8:00pm",
+              "breakfast": "10:00am - 11:00am",
+              "dinner": "6:00pm - 7:00pm"
+            },
+            "wednesday": {
+              "hours": "8:00am - 8:00pm",
+              "breakfast": "10:00am - 11:00am",
+              "lunch": "1:00pm - 2:00pm",
+              "snack": "3:00pm - 8:00pm"
+            },
+            "thursday": {
+              "hours": "8:00am - 8:00pm",
+              "breakfast": "10:00am - 11:00am",
+              "lunch": "1:00pm - 2:00pm",
+              "snack": "3:00pm - 8:00pm"
+            },
+            "friday": {
+              "hours": "8:00am - 8:00pm",
+              "breakfast": "11:00am - 12:00pm",
+              "snack": "3:00pm - 8:00pm"
+            },
+            "saturday": {
+              "hours": "8:00am - 8:00pm",
+              "breakfast": "10:00am - 11:00am",
+              "lunch": "1:00pm - 2:00pm",
+              "snack": "3:00pm - 8:00pm"
+            },
+            "sunday": {
+              "hours": "Closed"
+            }
+          }
+        }
+      ]
+    },
+    "SOUTHWEST": {
+      "drop_in_centers": [
+        {
+          "name": "LAMP Community Health Centre: Adult Drop-in",
+          "address": "156 Sixth Street",
+          "phone": "416-252-6471",
+          "population": "General Population; Adults",
+          "service_dog_allowed": true,
+          "wheelchair_accessible": true,
+          "schedule": {
+            "monday": {
+              "hours": "Closed"
+            },
+            "tuesday": {
+              "hours": "9:30am - 2:00pm",
+              "breakfast": "10:00am",
+              "lunch": "12:00pm"
+            },
+            "wednesday": {
+              "hours": "9:30am - 2:00pm",
+              "breakfast": "10:00am",
+              "lunch": "12:00pm"
+            },
+            "thursday": {
+              "hours": "9:30am - 2:00pm",
+              "breakfast": "10:00am",
+              "lunch": "12:00pm"
+            },
+            "friday": {
+              "hours": "10:00am - 6:30pm",
+              "breakfast": "10:00am",
+              "lunch": "1:00pm",
+              "dinner": "4:00pm"
+            },
+            "saturday": {
+              "hours": "Closed"
+            },
+            "sunday": {
+              "hours": "Closed"
+            }
+          }
+        },
+        {
+          "name": "Daily Bread Food Bank's Community Meal",
+          "address": "191 New Toronto Street, gate #1",
+          "phone": "416-203-0050",
+          "population": "General Population",
+          "pets_allowed": false,
+          "wheelchair_accessible": true,
+          "schedule": {
+            "monday": {
+              "hours": "Closed"
+            },
+            "tuesday": {
+              "hours": "Closed"
+            },
+            "wednesday": {
+              "hours": "Closed"
+            },
+            "thursday": {
+              "hours": "5:30pm - 7:00pm",
+              "dinner": "5:30pm - 7:00pm"
+            },
+            "friday": {
+              "hours": "Closed"
+            },
+            "saturday": {
+              "hours": "Closed"
+            },
+            "sunday": {
+              "hours": "Closed"
+            }
+          }
+        }
+      ]
+    },
+    "NORTHWEST": {
+      "drop_in_centers": [
+        {
+          "name": "Cummer Avenue United Church Drop Inn",
+          "address": "53 Cummer Ave.",
+          "phone": "647-400-1746",
+          "population": "General Population; Adults",
+          "service_dog_allowed": true,
+          "wheelchair_accessible": true,
+          "schedule": {
+            "monday": {
+              "hours": "9:00am - 2:00pm",
+              "breakfast": "9:00am - 11:00am",
+              "lunch": "12:00pm - 1:30pm",
+              "snack": "9:00am - 1:30pm"
+            },
+            "tuesday": {
+              "hours": "9:00am - 2:00pm",
+              "breakfast": "9:00am - 11:00am",
+              "lunch": "12:00pm - 1:30pm",
+              "snack": "9:00am - 1:30pm"
+            },
+            "wednesday": {
+              "hours": "9:00am - 2:00pm",
+              "breakfast": "9:00am - 11:00am",
+              "lunch": "12:00pm - 1:30pm",
+              "snack": "9:00am - 1:30pm"
+            },
+            "thursday": {
+              "hours": "9:00am - 2:00pm",
+              "breakfast": "9:00am - 11:00am",
+              "lunch": "12:00pm - 1:30pm",
+              "snack": "9:00am - 1:30pm"
+            },
+            "friday": {
+              "hours": "9:00am - 2:00pm",
+              "breakfast": "9:00am - 11:00am",
+              "lunch": "12:00pm - 1:30pm",
+              "snack": "9:00am - 1:30pm"
+            },
+            "saturday": {
+              "hours": "9:00am - 2:00pm",
+              "breakfast": "9:00am - 11:00am",
+              "lunch": "12:00pm - 1:30pm",
+              "snack": "9:00am - 1:30pm"
+            },
+            "sunday": {
+              "hours": "9:00am - 2:00pm",
+              "breakfast": "9:00am - 11:00am",
+              "lunch": "12:00pm - 1:30pm",
+              "snack": "9:00am - 1:30pm"
+            }
+          }
+        },
+        {
+          "name": "Progress Place: Community Place Hub",
+          "address": "1765 Weston Road",
+          "phone": "416-323-1429",
+          "population": "General Population; Adults",
+          "service_dog_allowed": true,
+          "wheelchair_accessible": true,
+          "schedule": {
+            "monday": {
+              "hours": "10:00am - 11:30am; 1:00pm - 2:30pm",
+              "breakfast": "10:00am - 11:30am",
+              "lunch": "1:00pm - 2:30pm"
+            },
+            "tuesday": {
+              "hours": "10:00am - 11:30am; 1:00pm - 2:30pm",
+              "breakfast": "10:00am - 11:30am",
+              "lunch": "1:00pm - 2:30pm"
+            },
+            "wednesday": {
+              "hours": "10:00am - 11:30am; 1:00pm - 2:30pm",
+              "breakfast": "10:00am - 11:30am",
+              "snack": "1:00pm - 2:30pm"
+            },
+            "thursday": {
+              "hours": "10:00am - 11:30am; 1:00pm - 2:30pm; 5:00pm - 6:00pm",
+              "breakfast": "10:00am - 11:30am",
+              "lunch": "1:00pm - 2:30pm",
+              "snack": "5:00pm - 6:00pm"
+            },
+            "friday": {
+              "hours": "10:00am - 11:30am; 1:00pm - 2:30pm",
+              "breakfast": "10:00am - 11:30am",
+              "lunch": "1:00pm - 2:30pm"
+            },
+            "saturday": {
+              "hours": "Closed"
+            },
+            "sunday": {
+              "hours": "10:00am - 11:30am; 1:00pm - 2:30pm",
+              "breakfast": "10:00am - 11:30am",
+              "lunch": "1:00pm - 2:30pm"
+            }
+          }
+        }
+      ]
+    },
+    "EAST__SCARBOROUGH": {
+      "drop_in_centers": [
+        {
+          "name": "Warden Woods Community Centre: Teesdale Drop-In",
+          "address": "40 Teesdale Place",
+          "phone": "416-694-1138 ext. 164",
+          "population": "General Population",
+          "service_dog_allowed": true,
+          "wheelchair_accessible": true,
+          "schedule": {
+            "monday": {
+              "hours": "9:00am - 5:00pm",
+              "snack": "12:00pm - 1:00pm"
+            },
+            "tuesday": {
+              "hours": "9:00am - 5:00pm"
+            },
+            "wednesday": {
+              "hours": "9:00am - 5:00pm",
+              "lunch": "12:00pm - 1:00pm"
+            },
+            "thursday": {
+              "hours": "9:00am - 5:00pm",
+              "lunch": "12:00pm - 1:00pm"
+            },
+            "friday": {
+              "hours": "9:00am - 4:30pm"
+            },
+            "saturday": {
+              "hours": "Closed"
+            },
+            "sunday": {
+              "hours": "Closed"
+            }
+          }
+        },
+        {
+          "name": "Warden Woods Community Centre: Respite",
+          "address": "705 Progress Ave",
+          "phone": "416-639-6766",
+          "population": "General Population",
+          "service_dog_allowed": true,
+          "wheelchair_accessible": true,
+          "schedule": {
+            "monday": {
+              "hours": "24/7"
+            },
+            "tuesday": {
+              "hours": "24/7"
+            },
+            "wednesday": {
+              "hours": "24/7"
+            },
+            "thursday": {
+              "hours": "24/7"
+            },
+            "friday": {
+              "hours": "24/7"
+            },
+            "saturday": {
+              "hours": "24/7"
+            },
+            "sunday": {
+              "hours": "24/7"
+            }
+          }
+        },
+        {
+          "name": "Agincourt Community Services Association: North Drop-in",
+          "address": "4155 Sheppard Avenue East",
+          "phone": "647-461-6912",
+          "population": "General Population; Adults",
+          "service_dog_allowed": true,
+          "wheelchair_accessible": true,
+          "schedule": {
+            "monday": {
+              "hours": "Closed"
+            },
+            "tuesday": {
+              "hours": "9:00am - 3:00pm",
+              "breakfast": "9:00am - 10:30am",
+              "snack": "10:30am",
+              "lunch": "11:00am - 3:00pm"
+            },
+            "wednesday": {
+              "hours": "9:00am - 3:00pm",
+              "breakfast": "9:00am - 10:30am",
+              "snack": "10:30am",
+              "lunch": "11:00am - 3:00pm"
+            },
+            "thursday": {
+              "hours": "9:00am - 3:00pm",
+              "breakfast": "9:00am - 10:30am",
+              "snack": "10:30am",
+              "lunch": "11:00am - 3:00pm"
+            },
+            "friday": {
+              "hours": "9:00am - 3:00pm (Take-out Only)",
+              "breakfast": "9:00am - 10:30am",
+              "snack": "9:00am - 3:00pm",
+              "lunch": "10:30am - 3:00pm"
+            },
+            "saturday": {
+              "hours": "Closed"
+            },
+            "sunday": {
+              "hours": "Closed"
+            }
+          }
+        },
+        {
+          "name": "Agincourt Community Services Association: South Drop-in",
+          "address": "202 Markham Road",
+          "phone": "647-472-6912",
+          "population": "General Population; Adults",
+          "service_dog_allowed": true,
+          "wheelchair_accessible": true,
+          "schedule": {
+            "monday": {
+              "hours": "9:00am - 3:00pm",
+              "breakfast": "9:00am - 10:30am",
+              "lunch": "11:00am - 2:00pm",
+              "snack": "10:30am"
+            },
+            "tuesday": {
+              "hours": "Closed"
+            },
+            "wednesday": {
+              "hours": "Closed"
+            },
+            "thursday": {
+              "hours": "Closed"
+            },
+            "friday": {
+              "hours": "Closed"
+            },
+            "saturday": {
+              "hours": "Closed"
+            },
+            "sunday": {
+              "hours": "9:00am - 3:00pm",
+              "breakfast": "9:00am - 10:30am",
+              "lunch": "11:00am - 2:00pm",
+              "snack": "10:30am"
+            }
+          }
+        },
+        {
+          "name": "Good Neighbours Drop-In",
+          "address": "193 Markham Road",
+          "phone": "647-358-4105",
+          "population": "General Population; Adults",
+          "service_dog_allowed": true,
+          "wheelchair_accessible": true,
+          "schedule": {
+            "monday": {
+              "hours": "Closed"
+            },
+            "tuesday": {
+              "hours": "Closed"
+            },
+            "wednesday": {
+              "hours": "Closed"
+            },
+            "thursday": {
+              "hours": "9:30am - 4:00pm"
+            },
+            "friday": {
+              "hours": "9:30am - 4:00pm"
+            },
+            "saturday": {
+              "hours": "Closed"
+            },
+            "sunday": {
+              "hours": "Closed"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

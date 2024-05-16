@@ -5,7 +5,7 @@ export default function Parallax1() {
 
   return (
     <>
-      <div className="parallax" style={{ backgroundImage: `url(${HeroImage})` }} />
+      <div className="parallax1" style={{ backgroundImage: `url(${HeroImage})` }} />
     </>
   );
 }

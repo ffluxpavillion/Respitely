@@ -3,7 +3,7 @@
 @use '../../partials/global' as *;
 @use '../../partials/variables' as *;
 
-.parallax {
+.parallax3 {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -12,9 +12,6 @@
 
   @include mobile {
     height: 33rem;
-    background-attachment: fixed;
-
-    // display: none;
   }
 
   @include tablet {

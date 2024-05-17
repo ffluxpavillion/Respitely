@@ -6,6 +6,9 @@ import RouteIcon from '../../assets/icons/SafeHavenTO_icon-route.svg';
 import ShareIcon from '../../assets/icons/SafeHavenTO_icon-share.svg';
 import FilterButtons from '../FilterButtons/FilterButtons';
 import LoadMoreButton from '../LoadMoreButton/LoadMoreButton';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { faCircleArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 export default function SheltersCard() {
   const [loading, setLoading] = useState(true); // state to show/hide Loading Shelter Data message
@@ -175,7 +178,14 @@ export default function SheltersCard() {
 
   const handleCardClick = (record) => {
     setGoHere(record);
+    document.body.style.overflow = "hidden"; // disable scrolling
   };
+
+  const closeDetailedView = () => {
+    setGoHere(null);
+    document.body.style.overflow = "auto"; // Enable scrolling
+  };
+
 
   // Console logs for debugging purposes
   // console.log('displayed records= ', displayedRecords.map(record => record.LOCATION_ADDRESS));
@@ -242,9 +252,10 @@ export default function SheltersCard() {
         </div>
         {isMobile ? (
           <div className='mobile__shelter-scrollable-container'>
-            <span className='mobile__instructions-text'>
-              Tap a shelter to learn more ⟩⟩⟩
-            </span>
+          <span className='mobile__instructions-text'>
+            Tap a shelter to learn more
+            {/* <FontAwesomeIcon icon={faCircleArrowRight} /> */}
+          </span>
             <ul className='shelter-list'>
               {displayedRecords.map((record) => (
                 <li
@@ -254,7 +265,12 @@ export default function SheltersCard() {
                 >
                   <div className='shelter-item__content'>
                     <h6 className='shelter-item__text'>
-                      {record.SHELTER_GROUP} ⟩⟩⟩
+                      {record.SHELTER_GROUP}
+                      <span className='fa-chevron-icons'>
+                        <FontAwesomeIcon icon={faChevronRight}  />
+                        <FontAwesomeIcon icon={faChevronRight}  />
+                        <FontAwesomeIcon icon={faChevronRight}  />
+                      </span>
                     </h6>
                     <p className='shelter-item__availability mobile__shelter-item__availability'>
                       {record.CAPACITY_TYPE === 'Bed Based Capacity'
@@ -316,7 +332,7 @@ export default function SheltersCard() {
                                     target='_blank'
                                     rel='noopener noreferrer'
                                   >
-                                    <button className='shelter-item__actions-btn'>
+                                    {/* <button className='shelter-item__actions-btn'>
                                       <img
                                         className='btn--Directions-Icon'
                                         src={RouteIcon}
@@ -325,7 +341,7 @@ export default function SheltersCard() {
                                       <h4 className='btn--Directions-Text'>
                                         Get Directions
                                       </h4>
-                                    </button>
+                                    </button> */}
                                   </a>
                                   <button
                                     className='shelter-item__actions-btn'
@@ -420,20 +436,20 @@ export default function SheltersCard() {
         {/* <span className='scroll-instructions'>↓ Scroll Down For More ↓</span> */}
         {goHere && (
           <div className='shelter-detailed-view'>
-            <button className='back-button' onClick={() => setGoHere(null)}>
-              ⟨ Back To Shelters
+            <button className='back-button' onClick={closeDetailedView}>
+            <FontAwesomeIcon icon={faCircleArrowLeft} /> Back To Shelters
+
             </button>
+            <span className='location-text'>LOCATION MAP</span>
+
+            <SheltersMap
+              locations={displayedRecords}
+              records={records}
+              filterType={filterType}
+              goHere={goHere}
+            ></SheltersMap>
             <div className='detailed-view__container'>
               <ul className='shelter-item__right-inner'>
-                {/* <h4 className="shelter-item__right-title">LOCATION ADDRESS</h4>
-        <div className='detailed-view__text-container'>
-          <p className='shelter-item__right-text'>
-            {goHere.SHELTER_GROUP}<br />
-            {goHere.LOCATION_ADDRESS}<br />
-            {goHere.LOCATION_CITY}<br />
-            {goHere.LOCATION_POSTAL_CODE}
-          </p>
-        </div> */}
               </ul>
               <ul className='shelter-item__right-inner'>
                 <h4 className='shelter-item__right-title mobile-header'>
@@ -472,14 +488,7 @@ export default function SheltersCard() {
                 </div>
               </ul>
             </div>
-            <span className='location-text'>LOCATION MAP</span>
 
-            <SheltersMap
-              locations={displayedRecords}
-              records={records}
-              filterType={filterType}
-              goHere={goHere}
-            ></SheltersMap>
           </div>
         )}
       </section>

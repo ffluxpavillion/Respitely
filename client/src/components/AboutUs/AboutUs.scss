@@ -165,10 +165,10 @@
     // height: 12.25rem;
     padding: auto;
     font-family: StabilGrotesk, sans-serif;
-    width: 100%;
-    hyphens: auto;
+    width: 85%;
 
     @include mobile {
+      margin-left: 1rem;
     }
 
     @include tablet {
@@ -335,7 +335,7 @@
 }
 
 .ant-collapse-content-box {
-  backdrop-filter: contrast(2.5);
+  background-color: #20242c;
 }
 
 .custom-collapse .ant-collapse-expand-icon {
@@ -345,5 +345,11 @@
 }
 
 .ant-collapse {
-  backdrop-filter: contrast(0.8);
+  background-color: #20242c;
+}
+
+.ant-float-btn-default {
+  background-color: #ffffffe0;
+  transition: background-color 0.2s;
+  position: absolute;
 }

@@ -3,6 +3,7 @@ import './AboutUs.scss';
 import Logo from '../../assets/logo/SafeHavenTO.svg';
 import { Collapse, theme } from 'antd';
 import { CaretRightOutlined } from '@ant-design/icons';
+import { FloatButton } from 'antd';
 
 export default function AboutUs() {
   const observer = useRef(null); // Using useRef to persist the observer instance
@@ -97,7 +98,9 @@ export default function AboutUs() {
       label: "WHAT'S NEXT?",
       children: (
         <p className='mission__div-text'>
-          More resources on the way, stay tuned!
+          Currently building a database and allocating resources on things like
+          Food, Legal/Pro Bono, Childcare, Clothing, Drug Testing / Support,
+          Mental Health Support and more, stay tuned!
         </p>
       ),
     },
@@ -133,6 +136,7 @@ export default function AboutUs() {
             </div>
           </div>
         </div>
+        <FloatButton.BackTop />
       </section>
     </>
   );

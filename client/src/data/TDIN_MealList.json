@@ -10,10 +10,16 @@
     "CENTRAL_DOWNTOWN": {
       "drop_in_centers": [
         {
-          "name": "Sanctuary Toronto",
-          "address": "25 Charles Street E",
-          "phone": "416-922-0628",
-          "population": "General Population; Adults",
+          "name": "Sanctuary Ministries",
+          "address": "25 Charles Street East",
+          "latitude": 43.668868,
+          "longitude": -79.384986,
+          "city": "Toronto",
+          "province": "ON",
+          "postal_code": "M4Y 1R9",
+          "phone": "416-922-0628 ext. 211",
+          "website": "www.sanctuarytoronto.ca",
+          "population": "General Population Adults",
           "service_dog_allowed": true,
           "wheelchair_accessible": true,
           "schedule": {
@@ -21,14 +27,14 @@
               "hours": "Closed"
             },
             "tuesday": {
-              "hours": "11:00am - 3:00pm",
+              "hours": "11:00am – 3:00pm",
               "breakfast": "12:00pm - 2:30pm"
             },
             "wednesday": {
               "hours": "Closed"
             },
             "thursday": {
-              "hours": "5:00pm - 9:00pm",
+              "hours": "5:00pm – 9:00pm",
               "dinner": "6:00pm - 8:30pm"
             },
             "friday": {
@@ -45,7 +51,13 @@
         {
           "name": "The 519",
           "address": "519 Church Street",
-          "phone": "416-355-6795",
+          "latitude": 43.666415,
+          "longitude": -79.381126,
+          "city": "Toronto",
+          "province": "ON",
+          "postal_code": "M4Y 2C9",
+          "phone": "416-392-6874",
+          "website": "www.the519.org",
           "population": "Broadly 2SLGBTQ+ Adults",
           "pets_allowed": true,
           "wheelchair_accessible": true,
@@ -55,15 +67,15 @@
             },
             "tuesday": {
               "hours": "5:30pm - 8:30pm",
-              "dinner": "6:00pm - 7:30pm"
+              "dinner": "6:00pm – 7:30pm"
             },
             "wednesday": {
-              "hours": "2:00pm - 4:00pm"
+              "hours": "2:00pm – 4:00pm"
             },
             "thursday": {
-              "hours": "3:00pm - 5:00pm",
-              "lunch": "3:00pm - 5:00pm",
-              "dinner": "5:00pm - 8:00pm"
+              "hours": "3:00pm – 5:00pm",
+              "lunch": "3:00pm – 5:00pm",
+              "dinner": "5:00pm – 8:00pm"
             },
             "friday": {
               "hours": "Closed"
@@ -72,16 +84,22 @@
               "hours": "Closed"
             },
             "sunday": {
-              "hours": "1:00pm - 4:00pm",
-              "snack": "1:00pm - 4:00pm",
-              "dinner": "4:00pm - 4:45pm"
+              "hours": "1:00pm – 4:00pm",
+              "snack": "1:00pm – 4:00pm",
+              "dinner": "4:00pm – 4:45pm"
             }
           }
         },
         {
           "name": "St. James Cathedral Drop-In",
-          "address": "65 Church St.",
+          "address": "65 Church Street",
+          "latitude": 43.6505023,
+          "longitude": -79.3740815,
+          "city": "Toronto",
+          "province": "ON",
+          "postal_code": "M5C 2E9",
           "phone": "416-364-7865 ext. 222",
+          "website": "https://stjamescathedral.ca/",
           "population": "General Population; Adults",
           "service_dog_allowed": true,
           "wheelchair_accessible": true,
@@ -111,9 +129,15 @@
           }
         },
         {
-          "name": "Church of the Holy Trinity: Trinity Community Hub",
-          "address": "19 Trinity Sq.",
-          "phone": "416-598-4521 ext. 225",
+          "name": "Church of the Holy Trinity: Trinity Community Hub - People's Presence Drop-in",
+          "address": "19 Trinity Square",
+          "latitude": 43.654448,
+          "longitude": -79.381825,
+          "city": "Toronto",
+          "province": "ON",
+          "postal_code": "M5G 1B1",
+          "phone": "416-598-4521",
+          "website": "www.holytrinitytoronto.org",
           "population": "General Population",
           "pets_allowed": false,
           "wheelchair_accessible": true,
@@ -144,9 +168,15 @@
           }
         },
         {
-          "name": "Maggie’s: Sex Worker Drop-In",
-          "address": "19 Trinity Sq.",
+          "name": "Maggie's Toronto Sex Workers Action Project",
+          "address": "526 Richmond Street East",
+          "latitude": 43.65486222,
+          "longitude": -79.36457306,
+          "city": "Toronto",
+          "province": "ON",
+          "postal_code": "M5A 1R3",
           "phone": "416-964-0150",
+          "website": "https://www.maggiesto.org/",
           "population": "Current & former sex workers - all genders/orientations",
           "service_dog_allowed": true,
           "wheelchair_accessible": true,
@@ -176,39 +206,45 @@
           }
         },
         {
-          "name": "TNG: Corner Drop-In",
+          "name": "The Neighbourhood Group | St. Stephen's Community House: The Corner Drop-In",
           "address": "260 Augusta Avenue",
-          "phone": "416-925-2103 ext. 2260",
-          "population": "General Population; Adults",
+          "latitude": 43.6564796,
+          "longitude": -79.4029962,
+          "city": "Toronto",
+          "province": "ON",
+          "postal_code": "M5T 2L9",
+          "phone": "416-925-2103 ext. 2266",
+          "website": "www.sschto.ca",
+          "population": "General Population; Adults (18+)",
           "service_dog_allowed": true,
           "wheelchair_accessible": true,
           "schedule": {
             "monday": {
-              "hours": "7:30am - 11:30am",
+              "hours": "7:30am – 11:30am",
               "breakfast": "7:30am - 9:00am",
               "snack": "8:30am",
               "lunch": "10:45am"
             },
             "tuesday": {
-              "hours": "7:30am - 11:30am",
+              "hours": "7:30am – 11:30am",
               "breakfast": "7:30am - 9:00am",
               "snack": "8:30am",
               "lunch": "10:45am"
             },
             "wednesday": {
-              "hours": "7:30am - 11:30am",
+              "hours": "7:30am – 11:30am",
               "breakfast": "7:30am - 9:00am",
               "snack": "8:30am",
               "lunch": "10:45am"
             },
             "thursday": {
-              "hours": "7:30am - 11:30am",
+              "hours": "7:30am – 11:30am",
               "breakfast": "7:30am - 9:00am",
               "snack": "8:30am",
               "lunch": "10:45am"
             },
             "friday": {
-              "hours": "7:30am - 11:30am",
+              "hours": "7:30am – 11:30am",
               "breakfast": "7:30am - 9:00am",
               "snack": "8:30am",
               "lunch": "10:45am"
@@ -217,7 +253,7 @@
               "hours": "Closed"
             },
             "sunday": {
-              "hours": "7:30am - 11:30am",
+              "hours": "7:30am – 11:30am",
               "breakfast": "7:30am - 9:00am",
               "snack": "8:30am",
               "lunch": "10:45am"
@@ -225,11 +261,17 @@
           }
         },
         {
-          "name": "Church of St. Stephen-in-the-Fields: Safe Space Drop-in",
-          "address": "103 Bellevue Ave.",
-          "phone": "416-921-6350",
+          "name": "Church of St. Stephen In-The-Fields: Safe Space Drop-in",
+          "address": "103 Bellevue Avenue, Toronto",
+          "latitude": 43.657193,
+          "longitude": -79.403867,
+          "city": "Toronto",
+          "province": "ON",
+          "postal_code": "M5T 1P1",
+          "phone": "416-526-5438",
+          "website": "http://saintstephens.ca/",
           "population": "General Population; Adults",
-          "pets_allowed": true,
+          "service_dog_allowed": true,
           "wheelchair_accessible": true,
           "schedule": {
             "monday": {
@@ -242,52 +284,58 @@
               "hours": "Closed"
             },
             "thursday": {
-              "hours": "Closed"
-            },
-            "friday": {
               "hours": "6:00pm - 10:00pm",
               "dinner": "6:00pm - 10:00pm"
+            },
+            "friday": {
+              "hours": "7:00am - 8:30am",
+              "breakfast": "7:00am - 8:30am"
             },
             "saturday": {
               "hours": "7:00am - 8:30am",
               "breakfast": "7:00am - 8:30am"
             },
             "sunday": {
-              "hours": "7:00am - 8:30am",
-              "breakfast": "7:00am - 8:30am"
+              "hours": "Closed"
             }
           }
         },
         {
           "name": "The Scott Mission: Community Meals",
-          "address": "346 Spadina Ave.",
-          "phone": "647-696-1372",
+          "address": "346 Spadina Avenue",
+          "latitude": 43.65431006,
+          "longitude": -79.39889616,
+          "city": "Toronto",
+          "province": "ON",
+          "postal_code": "M5T 1J5",
+          "phone": "416-923-8872",
+          "website": "www.scottmission.com",
           "population": "General Population; Adults",
           "service_dog_allowed": true,
           "wheelchair_accessible": true,
           "schedule": {
             "monday": {
-              "hours": "8:00am - 1:00pm",
+              "hours": "8:00am – 1:00pm",
               "breakfast": "8:00am - 8:30am",
               "lunch": "11:30am - 12:00pm"
             },
             "tuesday": {
-              "hours": "8:00am - 1:00pm",
+              "hours": "8:00am – 1:00pm",
               "breakfast": "8:00am - 8:30am",
               "lunch": "11:30am - 12:00pm"
             },
             "wednesday": {
-              "hours": "8:00am - 1:00pm",
+              "hours": "8:00am – 1:00pm",
               "breakfast": "8:00am - 8:30am",
               "lunch": "11:30am - 12:00pm"
             },
             "thursday": {
-              "hours": "8:00am - 1:00pm",
+              "hours": "8:00am – 1:00pm",
               "breakfast": "8:00am - 8:30am",
               "lunch": "11:30am - 12:00pm"
             },
             "friday": {
-              "hours": "8:00am - 1:00pm",
+              "hours": "8:00am – 1:00pm",
               "breakfast": "8:00am - 8:30am",
               "lunch": "11:30am - 12:00pm"
             },
@@ -332,8 +380,14 @@
         },
         {
           "name": "Evangel Hall Mission",
-          "address": "552 Adelaide St. W",
-          "phone": "416-504-3564",
+          "address": "552 Adelaide Street West",
+          "latitude": 43.6454499,
+          "longitude": -79.40243,
+          "city": "Toronto",
+          "province": "ON",
+          "postal_code": "M5V 3W8",
+          "phone": "416-504-3563 ext. 240",
+          "website": "www.evangelhall.ca",
           "population": "General Population; Adults",
           "service_dog_allowed": true,
           "wheelchair_accessible": true,
@@ -368,9 +422,15 @@
           }
         },
         {
-          "name": "West Neighbourhood House: Meeting Place",
+          "name": "West Neighbourhood House: The Meeting Place",
           "address": "588 Queen Street West",
+          "latitude": 43.6474229,
+          "longitude": -79.4042806,
+          "city": "Toronto",
+          "province": "ON",
+          "postal_code": "M6J 1E3",
           "phone": "416-504-4275",
+          "website": "www.westnh.org",
           "population": "General Population; Adults",
           "pets_allowed": true,
           "wheelchair_accessible": true,
@@ -380,30 +440,30 @@
             },
             "tuesday": {
               "hours": "11:00am - 4:00pm",
-              "breakfast": "11:00am - 3:00pm",
-              "snack": "11:00am - 3:00pm"
+              "breakfast": "11:00am – 3:00pm",
+              "snack": "11:00am – 3:00pm"
             },
             "wednesday": {
               "hours": "10:00am - 4:00pm",
-              "breakfast": "10:00am - 1:00pm",
+              "breakfast": "10:00am – 1:00pm",
               "lunch": "1:00pm",
-              "snack": "10:00am - 3:00pm"
+              "snack": "10:00am – 3:00pm"
             },
             "thursday": {
               "hours": "10:00am - 4:00pm",
-              "breakfast": "10:00am - 3:00pm",
-              "snack": "10:00am - 3:00pm"
+              "breakfast": "10:00am – 3:00pm",
+              "snack": "10:00am – 3:00pm"
             },
             "friday": {
               "hours": "10:00am - 4:00pm",
-              "breakfast": "10:00am - 3:00pm",
-              "snack": "10:00am - 3:00pm"
+              "breakfast": "10:00am – 3:00pm",
+              "snack": "10:00am – 3:00pm"
             },
             "saturday": {
               "hours": "10:00am - 3:00pm",
-              "breakfast": "10:00am - 1:00pm",
+              "breakfast": "10:00am – 1:00pm",
               "lunch": "1:00pm",
-              "snack": "10:00am - 3:00pm"
+              "snack": "10:00am – 3:00pm"
             },
             "sunday": {
               "hours": "Closed"
@@ -411,39 +471,45 @@
           }
         },
         {
-          "name": "YMCA Wagner Green Drop-in",
+          "name": "YMCA of Greater Toronto: Wagner Green YMCA Drop In",
           "address": "7 Vanauley Street",
-          "phone": "647-632-2500",
+          "latitude": 43.648335,
+          "longitude": -79.397987,
+          "city": "Toronto",
+          "province": "Ontario",
+          "postal_code": "M5T 2V9",
+          "phone": "647-632-2500 || 416-603-6366 ext. 33209",
+          "website": "www.ymcagta.org",
           "population": "Youth 16 - 24 years",
           "service_dog_allowed": true,
           "wheelchair_accessible": true,
           "schedule": {
             "monday": {
-              "hours": "9:00am - 5:00pm",
+              "hours": "9:00am – 5:00pm",
               "breakfast": "9:00am - 10:30am",
               "lunch": "12:00pm - 1:30pm",
               "snack": "3:00pm"
             },
             "tuesday": {
-              "hours": "9:00am - 5:00pm",
+              "hours": "9:00am – 5:00pm",
               "breakfast": "9:00am - 10:30am",
               "lunch": "12:00pm - 1:30pm",
               "snack": "3:00pm"
             },
             "wednesday": {
-              "hours": "9:00am - 5:00pm",
+              "hours": "9:00am – 5:00pm",
               "breakfast": "9:00am - 10:30am",
               "lunch": "12:00pm - 1:30pm",
               "snack": "3:00pm"
             },
             "thursday": {
-              "hours": "9:00am - 5:00pm",
+              "hours": "9:00am – 5:00pm",
               "breakfast": "9:00am - 10:30am",
               "lunch": "12:00pm - 1:30pm",
               "snack": "3:00pm"
             },
             "friday": {
-              "hours": "9:00am - 5:00pm",
+              "hours": "9:00am – 5:00pm",
               "breakfast": "9:00am - 10:30am",
               "lunch": "12:00pm - 1:30pm",
               "snack": "3:00pm"
@@ -489,31 +555,37 @@
           }
         },
         {
-          "name": "YSM Evergreen",
-          "address": "365 Spadina Ave.",
+          "name": "Yonge Street Mission: Evergreen Centre",
+          "address": "365 Spadina Ave",
+          "latitude": 43.65589549,
+          "longitude": -79.39868543,
+          "city": "Toronto",
+          "province": "ON",
+          "postal_code": "M5T 2G3",
           "phone": "416-929-9614 ext. 2200",
+          "website": "www.ysm.ca",
           "population": "Youth 16 - 24 years",
           "service_dog_allowed": true,
           "wheelchair_accessible": true,
           "schedule": {
             "monday": {
-              "hours": "12:00pm - 5:00pm",
+              "hours": "12:00pm – 5:00pm",
               "lunch": "12:00pm - 2:00pm"
             },
             "tuesday": {
-              "hours": "12:00pm - 5:00pm",
+              "hours": "12:00pm – 5:00pm",
               "lunch": "12:00pm - 2:00pm"
             },
             "wednesday": {
-              "hours": "12:00pm - 5:00pm",
+              "hours": "12:00pm – 5:00pm",
               "lunch": "12:00pm - 2:00pm"
             },
             "thursday": {
-              "hours": "12:00pm - 5:00pm",
+              "hours": "12:00pm – 5:00pm",
               "lunch": "12:00pm - 2:00pm"
             },
             "friday": {
-              "hours": "12:00pm - 5:00pm",
+              "hours": "12:00pm – 5:00pm",
               "lunch": "12:00pm - 2:00pm"
             },
             "saturday": {
@@ -525,56 +597,68 @@
           }
         },
         {
-          "name": "Covenant House: Community Support Services",
-          "address": "20 Gerrard Street",
+          "name": "Covenant House Toronto: Community Support Services",
+          "address": "20 Gerrard Street East",
+          "latitude": 43.659224,
+          "longitude": -79.381497,
+          "city": "Toronto",
+          "province": "ON",
+          "postal_code": "M5B 2P3",
           "phone": "416-204-7037",
+          "website": "www.covenanthouse.on.ca",
           "population": "Youth 16 - 24 years",
           "pets_allowed": true,
           "wheelchair_accessible": true,
           "schedule": {
             "monday": {
-              "hours": "12:00pm - 7:00pm",
-              "lunch": "12:00pm - 3:00pm",
-              "dinner": "3:00pm - 7:00pm"
+              "hours": "12:00pm – 7:00pm",
+              "lunch": "12:00pm – 3:00pm",
+              "dinner": "3:00pm – 7:00pm"
             },
             "tuesday": {
-              "hours": "12:00pm - 7:00pm",
-              "lunch": "12:00pm - 3:00pm",
-              "dinner": "3:00pm - 7:00pm"
+              "hours": "12:00pm – 7:00pm",
+              "lunch": "12:00pm – 3:00pm",
+              "dinner": "3:00pm – 7:00pm"
             },
             "wednesday": {
-              "hours": "12:00pm - 7:00pm",
-              "lunch": "12:00pm - 3:00pm",
-              "dinner": "3:00pm - 7:00pm"
+              "hours": "12:00pm – 7:00pm",
+              "lunch": "12:00pm – 3:00pm",
+              "dinner": "3:00pm – 7:00pm"
             },
             "thursday": {
-              "hours": "12:00pm - 7:00pm",
-              "lunch": "12:00pm - 3:00pm",
-              "dinner": "3:00pm - 7:00pm"
+              "hours": "12:00pm – 7:00pm",
+              "lunch": "12:00pm – 3:00pm",
+              "dinner": "3:00pm – 7:00pm"
             },
             "friday": {
-              "hours": "12:00pm - 7:00pm",
-              "lunch": "12:00pm - 3:00pm",
-              "dinner": "3:00pm - 7:00pm"
+              "hours": "12:00pm – 7:00pm",
+              "lunch": "12:00pm – 3:00pm",
+              "dinner": "3:00pm – 7:00pm"
             },
             "saturday": {
-              "hours": "12:00pm - 7:00pm",
-              "lunch": "12:00pm - 3:00pm",
-              "dinner": "3:00pm - 7:00pm"
+              "hours": "12:00pm – 7:00pm",
+              "lunch": "12:00pm – 3:00pm",
+              "dinner": "3:00pm – 7:00pm"
             },
             "sunday": {
-              "hours": "12:00pm - 7:00pm",
-              "lunch": "12:00pm - 3:00pm",
-              "dinner": "3:00pm - 7:00pm"
+              "hours": "12:00pm – 7:00pm",
+              "lunch": "12:00pm – 3:00pm",
+              "dinner": "3:00pm – 7:00pm"
             }
           }
         },
         {
-          "name": "Metropolitan United Church",
+          "name": "Metropolitan United Church: Met United Community Services",
           "address": "56 Queen Street East",
-          "phone": "416-363-0331 ext. 241",
+          "latitude": 43.653174,
+          "longitude": -79.375796,
+          "city": "Toronto",
+          "province": "ON",
+          "postal_code": "M5C 2Z3",
+          "phone": "416-363-0331 ext. 22",
+          "website": "www.metunited.org",
           "population": "General Population; Adults",
-          "pets_allowed": true,
+          "service_dog_allowed": true,
           "wheelchair_accessible": true,
           "schedule": {
             "monday": {
@@ -632,27 +716,33 @@
           }
         },
         {
-          "name": "Fred Victor: Open House Drop-in",
-          "address": "145 Queen St. E.",
-          "phone": "416-364-8228",
+          "name": "Fred Victor Open House Drop-In",
+          "address": "145 Queen Street East",
+          "latitude": 43.653678,
+          "longitude": -79.373037,
+          "city": "Toronto",
+          "province": "ON",
+          "postal_code": "M5A 1S1",
+          "phone": "416-364-8228 ext. 3331 or 416-644-3081",
+          "website": "www.fredvictor.org",
           "population": "General Population; Adults",
           "service_dog_allowed": true,
           "wheelchair_accessible": true,
           "schedule": {
             "monday": {
-              "hours": "12:00pm - 4:00pm"
+              "hours": "12:00pm – 4:00pm"
             },
             "tuesday": {
-              "hours": "12:00pm - 4:00pm"
+              "hours": "12:00pm – 4:00pm"
             },
             "wednesday": {
-              "hours": "12:00pm - 4:00pm"
+              "hours": "12:00pm – 4:00pm"
             },
             "thursday": {
-              "hours": "12:00pm - 4:00pm"
+              "hours": "12:00pm – 4:00pm"
             },
             "friday": {
-              "hours": "12:00pm - 4:00pm"
+              "hours": "12:00pm – 4:00pm"
             },
             "saturday": {
               "hours": "Closed"
@@ -663,46 +753,52 @@
           }
         },
         {
-          "name": "Good Shepherd Ministries",
-          "address": "412 Queen St East",
+          "name": "Good Shepherd Centre Drop-In",
+          "address": "412 Queen Street East",
+          "latitude": 43.65614,
+          "longitude": -79.362529,
+          "city": "Toronto",
+          "province": "ON",
+          "postal_code": "M5A 1T3",
           "phone": "416-869-3619",
+          "website": "www.goodshepherd.ca",
           "population": "General Population; Adults",
           "service_dog_allowed": true,
           "wheelchair_accessible": true,
           "schedule": {
             "monday": {
               "hours": "24/7",
-              "dinner": "2:00pm - 4:00pm",
+              "lunch": "2:00pm – 4:00pm",
               "snack": "6:00pm"
             },
             "tuesday": {
               "hours": "24/7",
-              "dinner": "2:00pm - 4:00pm",
+              "dinner": "2:00pm – 4:00pm",
               "snack": "6:00pm"
             },
             "wednesday": {
               "hours": "24/7",
-              "dinner": "2:00pm - 4:00pm",
+              "dinner": "2:00pm – 4:00pm",
               "snack": "6:00pm"
             },
             "thursday": {
               "hours": "24/7",
-              "dinner": "2:00pm - 4:00pm",
+              "dinner": "2:00pm – 4:00pm",
               "snack": "6:00pm"
             },
             "friday": {
               "hours": "24/7",
-              "dinner": "2:00pm - 4:00pm",
+              "dinner": "2:00pm – 4:00pm",
               "snack": "6:00pm"
             },
             "saturday": {
               "hours": "24/7",
-              "dinner": "2:00pm - 4:00pm",
+              "dinner": "2:00pm – 4:00pm",
               "snack": "6:00pm"
             },
             "sunday": {
               "hours": "24/7",
-              "dinner": "2:00pm - 4:00pm",
+              "dinner": "2:00pm – 4:00pm",
               "snack": "6:00pm"
             }
           }
@@ -710,8 +806,14 @@
         {
           "name": "Haven Toronto",
           "address": "170 Jarvis Street",
+          "latitude": 43.6555622,
+          "longitude": -79.3743282,
+          "city": "Toronto",
+          "province": "ON",
+          "postal_code": "M5B 2B7",
           "phone": "416-366-5377",
-          "population": "Men 50+ (Must sign up to be a member)",
+          "website": "www.haventoronto.ca",
+          "population": "Men 50+. Must sign up to be a member",
           "service_dog_allowed": true,
           "wheelchair_accessible": true,
           "schedule": {
@@ -760,49 +862,56 @@
           }
         },
         {
-          "name": "Toronto Council Fire: Gathering Place",
-          "address": "439 Dundas St. E",
+          "name": "Toronto Council Fire Native Cultural Centre: The Gathering Place",
+          "address": "439 Dundas Street East",
+          "latitude": 43.659298,
+          "longitude": -79.366208,
+          "city": "Toronto",
+          "province": "ON",
+          "postal_code": "M5A 2B1",
           "phone": "416-360-4350",
+          "website": "www.councilfire.ca",
           "population": "Indigenous Adults",
           "service_dog_allowed": true,
           "wheelchair_accessible": true,
           "schedule": {
             "monday": {
-              "hours": "9:30am - 4:00pm",
+              "hours": "9:30am – 4:00pm",
               "breakfast": "9:30am",
               "lunch": "1:00pm",
               "snack": "10:00am - 12:00pm & 1:30pm - 3:30pm"
             },
             "tuesday": {
-              "hours": "9:30am - 4:00pm",
+              "hours": "9:30am – 4:00pm",
               "breakfast": "9:30am",
               "lunch": "1:00pm",
               "snack": "10:00am - 12:00pm & 1:30pm - 3:30pm"
             },
             "wednesday": {
-              "hours": "9:30am - 4:00pm",
+              "hours": "9:30am – 4:00pm",
               "breakfast": "9:30am",
               "lunch": "1:00pm",
               "snack": "10:00am - 12:00pm & 1:30pm - 3:30pm"
             },
             "thursday": {
-              "hours": "9:30am - 4:00pm",
+              "hours": "9:30am – 4:00pm",
               "breakfast": "9:30am",
               "lunch": "1:00pm",
               "snack": "10:00am - 12:00pm & 1:30pm - 3:30pm"
             },
             "friday": {
-              "hours": "9:30am - 4:00pm",
+              "hours": "9:30am – 4:00pm",
               "breakfast": "9:30am",
-              "lunch": "1:00pm"
+              "lunch": "1:00pm",
+              "snack": "10:00am - 12:00pm & 1:30pm - 3:30pm"
             },
             "saturday": {
-              "hours": "9:30am - 4:00pm",
+              "hours": "9:30am – 4:00pm",
               "breakfast": "9:30am",
               "lunch": "1:00pm"
             },
             "sunday": {
-              "hours": "9:30am - 4:00pm",
+              "hours": "9:30am – 4:00pm",
               "breakfast": "9:30am",
               "lunch": "1:00pm"
             }
@@ -810,8 +919,14 @@
         },
         {
           "name": "All Saints Church Community Centre",
-          "address": "315 Dundas St. E.",
+          "address": "315 Dundas Street East",
+          "latitude": 43.658288,
+          "longitude": -79.370981,
+          "city": "Toronto",
+          "province": "ON",
+          "postal_code": "M5A 2A2",
           "phone": "416-368-7768",
+          "website": "www.allsaintstoronto.com",
           "population": "General Population; Adults",
           "pets_allowed": true,
           "wheelchair_accessible": true,
@@ -820,24 +935,24 @@
               "hours": "8:30am - 2:30pm",
               "breakfast": "9:30am",
               "lunch": "12:30pm",
-              "snack": "8:30am - 2:00pm"
+              "snack": "8:30am-2:00pm"
             },
             "tuesday": {
               "hours": "8:30am - 2:30pm",
               "breakfast": "9:30am",
               "lunch": "12:30pm",
-              "snack": "8:30am - 2:00pm"
+              "snack": "8:30am-2:00pm"
             },
             "wednesday": {
               "hours": "10:30am - 3:00pm",
               "lunch": "12:30pm",
-              "snack": "8:30am - 2:00pm"
+              "snack": "8:30am-2:00pm"
             },
             "thursday": {
               "hours": "8:30am - 2:30pm",
               "breakfast": "9:30am",
               "lunch": "12:30pm",
-              "snack": "8:30am - 2:00pm"
+              "snack": "8:30am-2:00pm"
             },
             "friday": {
               "hours": "Closed"
@@ -851,9 +966,15 @@
           }
         },
         {
-          "name": "Margaret's Toronto East Drop-in Centre",
-          "address": "323 Dundas St. East",
+          "name": "Margaret's Housing and Community Support Services: Toronto East Drop-in Centre",
+          "address": "323 Dundas Street East",
+          "latitude": 43.658396,
+          "longitude": -79.370536,
+          "city": "Toronto",
+          "province": "Ontario",
+          "postal_code": "M5A 2A2",
           "phone": "647-367-2100",
+          "website": "https://margarets.ca/drop-in-services/",
           "population": "General Population; Adults",
           "pets_allowed": true,
           "wheelchair_accessible": true,
@@ -904,34 +1025,40 @@
         },
         {
           "name": "Church of the Redeemer: The Common Table",
-          "address": "162 Bloor St. W",
+          "address": "162 Bloor Street West",
+          "latitude": 43.668729,
+          "longitude": -79.393968,
+          "city": "Toronto",
+          "province": "ON",
+          "postal_code": "M5S 1M4",
           "phone": "416-922-4948",
+          "website": "www.theredeemer.ca/Page/LunchProgram.html",
           "population": "General Population; Adults",
           "service_dog_allowed": true,
           "wheelchair_accessible": true,
           "schedule": {
             "monday": {
-              "hours": "8:00am - 11:30am",
+              "hours": "8:00am – 11:30am",
               "breakfast": "8:30am",
               "lunch": "10:00am - 11:15am"
             },
             "tuesday": {
-              "hours": "8:00am - 11:30am",
+              "hours": "8:00am – 11:30am",
               "breakfast": "8:30am",
               "lunch": "10:00am - 11:15am"
             },
             "wednesday": {
-              "hours": "8:00am - 11:30am",
+              "hours": "8:00am – 11:30am",
               "breakfast": "8:30am",
               "lunch": "10:00am - 11:15am"
             },
             "thursday": {
-              "hours": "8:00am - 11:30am",
+              "hours": "8:00am – 11:30am",
               "breakfast": "8:30am",
               "lunch": "10:00am - 11:15am"
             },
             "friday": {
-              "hours": "8:00am - 11:30am",
+              "hours": "8:00am – 11:30am",
               "breakfast": "8:30am",
               "lunch": "10:00am - 11:15am"
             },
@@ -1016,9 +1143,15 @@
     "EAST_DOWNTOWN": {
       "drop_in_centers": [
         {
-          "name": "Fred Victor: 40 Oak Drop-in",
+          "name": "Fred Victor - 40 Oak Drop-in",
           "address": "40 Oak Street",
+          "latitude": 43.6613801,
+          "longitude": -79.3652943,
+          "city": "Toronto",
+          "province": "ON",
+          "postal_code": "M5A 2C6",
           "phone": "416-363-4234",
+          "website": "www.tcrc.ca",
           "population": "General Population; Adults",
           "service_dog_allowed": true,
           "wheelchair_accessible": true,
@@ -1055,8 +1188,14 @@
         },
         {
           "name": "Friends of Ruby",
-          "address": "489 Queen St E LL01",
+          "address": "489 Queen Street East, LL1",
+          "latitude": 43.65686665,
+          "longitude": -79.35855706,
+          "city": "Toronto",
+          "province": "Ontario",
+          "postal_code": "M5A 1V1",
           "phone": "416-359-0237",
+          "website": "https://www.friendsofruby.ca/",
           "population": "LGBTQI2S youth 16 to 29yrs",
           "pets_allowed": true,
           "wheelchair_accessible": true,
@@ -1085,36 +1224,43 @@
           }
         },
         {
-          "name": "St. John the Compassionate: Broadview",
-          "address": "155 Broadview Ave.",
+          "name": "St. John The Compassionate Mission",
+          "address": "155 Broadview Avenue",
+          "latitude": 43.660318,
+          "longitude": -79.350402,
+          "city": "Toronto",
+          "province": "ON",
+          "postal_code": "M4M 2E9",
           "phone": "416-466-1357",
+          "website": "www.stjohnsmission.org",
           "population": "General Population; Adults",
           "service_dog_allowed": true,
+          "wheelchair_accessible": "",
           "schedule": {
             "monday": {
               "hours": "Closed"
             },
             "tuesday": {
-              "hours": "5:00am - 8:30am",
-              "breakfast": "5:00am - 8:30am"
+              "hours": "5:00am – 8:30am",
+              "breakfast": "5:00am – 8:30am"
             },
             "wednesday": {
-              "hours": "5:00am - 6:00pm",
-              "breakfast": "5:00am - 8:30am",
+              "hours": "5:00am – 6:00pm",
+              "breakfast": "5:00am – 8:30am",
               "dinner": "5:00pm"
             },
             "thursday": {
-              "hours": "5:00am - 4:00pm",
-              "breakfast": "5:00am - 8:30am",
+              "hours": "5:00am – 4:00pm",
+              "breakfast": "5:00am – 8:30am",
               "lunch": "1:30pm"
             },
             "friday": {
-              "hours": "5:00am - 8:00pm",
-              "breakfast": "5:00am - 8:30am",
+              "hours": "5:00am – 8:00pm",
+              "breakfast": "5:00am – 8:30am",
               "lunch": "1:30pm"
             },
             "saturday": {
-              "hours": "9:00am - 2:00pm",
+              "hours": "9:00am – 2:00pm",
               "breakfast": "11:00am - 12:00pm"
             },
             "sunday": {
@@ -1123,9 +1269,15 @@
           }
         },
         {
-          "name": "Fontbonne Ministries: Mustard Seed Drop-In",
-          "address": "791 Queen St. E.",
+          "name": "Fontbonne Ministries: Mustard Seed Drop-in",
+          "address": "791 Queen Street East",
+          "latitude": 43.659787,
+          "longitude": -79.345742,
+          "city": "Toronto",
+          "province": "ON",
+          "postal_code": "M4M 1H6",
           "phone": "416-465-6069",
+          "website": "http://www.fontbonneministries.ca/",
           "population": "General Population; Adults",
           "pets_allowed": true,
           "wheelchair_accessible": true,
@@ -1167,8 +1319,14 @@
       "drop_in_centers": [
         {
           "name": "Sistering",
-          "address": "962 Bloor St. W",
-          "phone": "416-926-9762",
+          "address": "962 Bloor Street West",
+          "latitude": 43.661322,
+          "longitude": -79.428766,
+          "city": "Toronto",
+          "province": "ON",
+          "postal_code": "M6H 1L6",
+          "phone": "416-926-9762 ext. 243 (Tekla)",
+          "website": "www.sistering.org",
           "population": "Women",
           "pets_allowed": true,
           "wheelchair_accessible": true,
@@ -1176,58 +1334,64 @@
             "monday": {
               "hours": "24/7",
               "breakfast": "9:30am - 10:30am",
-              "lunch": "12:00pm - 2:00pm",
+              "lunch": "12:00pm – 2:00pm",
               "dinner": "6:30pm - 7:30pm",
               "snack": "9:00pm - 9:30pm"
             },
             "tuesday": {
               "hours": "24/7",
               "breakfast": "9:30am - 10:30am",
-              "lunch": "12:00pm - 2:00pm",
+              "lunch": "12:00pm – 2:00pm",
               "dinner": "6:30pm - 7:30pm",
               "snack": "9:00pm - 9:30pm"
             },
             "wednesday": {
               "hours": "24/7",
               "breakfast": "9:30am - 10:30am",
-              "lunch": "12:00pm - 2:00pm",
+              "lunch": "12:00pm – 2:00pm",
               "dinner": "6:30pm - 7:30pm",
               "snack": "9:00pm - 9:30pm"
             },
             "thursday": {
               "hours": "24/7",
               "breakfast": "9:30am - 10:30am",
-              "lunch": "12:00pm - 2:00pm",
+              "lunch": "12:00pm – 2:00pm",
               "dinner": "6:30pm - 7:30pm",
               "snack": "9:00pm - 9:30pm"
             },
             "friday": {
               "hours": "24/7",
               "breakfast": "9:30am - 10:30am",
-              "lunch": "12:00pm - 2:00pm",
+              "lunch": "12:00pm – 2:00pm",
               "dinner": "6:30pm - 7:30pm",
               "snack": "9:00pm - 9:30pm"
             },
             "saturday": {
               "hours": "24/7",
               "breakfast": "9:30am - 10:30am",
-              "lunch": "12:00pm - 2:00pm",
+              "lunch": "12:00pm – 2:00pm",
               "dinner": "6:30pm - 7:30pm",
               "snack": "9:00pm - 9:30pm"
             },
             "sunday": {
               "hours": "24/7",
               "breakfast": "9:30am - 10:30am",
-              "lunch": "12:00pm - 2:00pm",
+              "lunch": "12:00pm – 2:00pm",
               "dinner": "6:30pm - 7:30pm",
               "snack": "9:00pm - 9:30pm"
             }
           }
         },
         {
-          "name": "Christie Ossington Neighbourhood Center",
-          "address": "854 Bloor St W.",
+          "name": "Christie Ossington Neighbourhood Centre",
+          "address": "850/854 Bloor Street West",
+          "latitude": 43.6624092,
+          "longitude": -79.4242105,
+          "city": "Toronto",
+          "province": "ON",
+          "postal_code": "M6G 1M2",
           "phone": "416-792-8941",
+          "website": "www.conccommunity.org",
           "population": "General Population; Adults",
           "service_dog_allowed": true,
           "wheelchair_accessible": true,
@@ -1273,11 +1437,17 @@
           }
         },
         {
-          "name": "Native Youth Resource Centre",
+          "name": "Native Child and Family Services of Toronto: Native Youth Resource Centre Drop-in",
           "address": "655 Bloor Street West",
-          "phone": "416-639-9070",
+          "latitude": 43.644867,
+          "longitude": -79.522487,
+          "city": "Toronto",
+          "province": "ON",
+          "postal_code": "M4Y 1W9",
+          "phone": "416-969-8510 ext. 4111",
+          "website": "www.nativechild.org",
           "population": "Indigenous youth, 16 to 24 years",
-          "pets_allowed": false,
+          "service_dog_allowed": false,
           "wheelchair_accessible": true,
           "schedule": {
             "monday": {
@@ -1329,9 +1499,16 @@
         {
           "name": "St. Michael’s Homes: Our Place Community of Hope",
           "address": "1183 Davenport Road",
+          "latitude": 43.67413,
+          "longitude": -79.433581,
+          "city": "Toronto",
+          "province": "Ontario",
+          "postal_code": "M5G 2G7",
           "phone": "416-598-2919",
+          "website": "www.ourplacecommunityofhope.com",
           "population": "General Population; Adults",
           "service_dog_allowed": true,
+          "wheelchair_accessible": "",
           "schedule": {
             "monday": {
               "hours": "12:00pm - 5:00pm",
@@ -1362,9 +1539,15 @@
           }
         },
         {
-          "name": "Davenport Perth Neighbourhood & Community Health Centre",
-          "address": "1900 Davenport Rd",
-          "phone": "416-656-8025",
+          "name": "Davenport Perth Neighbourhood and Community Health Centre",
+          "address": "1900 Davenport Road",
+          "latitude": 43.6706764,
+          "longitude": -79.4548339,
+          "city": "Toronto",
+          "province": "ON",
+          "postal_code": "M6N 1B7",
+          "phone": "416-656-8025 ext. 370",
+          "website": "www.dpnchc.ca",
           "population": "General Population",
           "service_dog_allowed": true,
           "wheelchair_accessible": true,
@@ -1395,8 +1578,14 @@
         },
         {
           "name": "Breakaway Community Services: Pieces to Pathways",
-          "address": "21 Strickland Ave.",
-          "phone": "416-537-9346",
+          "address": "21 Strickland Avenue",
+          "latitude": 43.643296,
+          "longitude": -79.43104,
+          "city": "Toronto",
+          "province": "ON",
+          "postal_code": "M6K 2H8",
+          "phone": "647-209-2043",
+          "website": "https://piecestopathways.com/",
           "population": "LGBTQI2S youth 16 to 29yrs",
           "pets_allowed": true,
           "wheelchair_accessible": true,
@@ -1411,8 +1600,8 @@
               "hours": "Closed"
             },
             "thursday": {
-              "hours": "5:00pm - 7:00pm",
-              "dinner": "5:00pm - 7:00pm"
+              "hours": "5:00pm – 7:00pm",
+              "dinner": "5:00pm – 7:00pm"
             },
             "friday": {
               "hours": "Closed"
@@ -1428,44 +1617,50 @@
         {
           "name": "Parkdale Activity Recreation Centre",
           "address": "1499 Queen Street West",
+          "latitude": 43.639706,
+          "longitude": -79.440610,
+          "city": "Toronto",
+          "province": "ON",
+          "postal_code": "M6R 1A3",
           "phone": "416-537-2262",
+          "website": "www.parc.on.ca",
           "population": "General Population; Adults",
           "pets_allowed": true,
           "wheelchair_accessible": true,
           "schedule": {
             "monday": {
-              "hours": "9:00am - 1:00pm",
+              "hours": "9:00am – 1:00pm",
               "breakfast": "9:30am - 10:30am",
               "lunch": "11:30am - 12:30pm"
             },
             "tuesday": {
-              "hours": "9:00am - 1:00pm",
+              "hours": "9:00am – 1:00pm",
               "breakfast": "9:30am - 10:30am",
               "lunch": "11:30am - 12:30pm"
             },
             "wednesday": {
-              "hours": "9:00am - 1:00pm",
+              "hours": "9:00am – 1:00pm",
               "breakfast": "9:30am - 10:30am",
               "snack": "11:30am - 12:30pm"
             },
             "thursday": {
-              "hours": "9:00am - 1:00pm",
+              "hours": "9:00am – 1:00pm",
               "breakfast": "9:30am - 10:30am",
               "lunch": "11:30am - 12:30pm"
             },
             "friday": {
               "hours": "12:30pm - 4:30pm",
-              "lunch": "1:00pm - 2:00pm"
+              "lunch": "1:00pm – 2:00pm"
             },
             "saturday": {
-              "hours": "11:00am - 3:00pm",
+              "hours": "11:00am – 3:00pm",
               "breakfast": "11:15am - 12:15pm",
-              "lunch": "1:00pm - 2:00pm"
+              "lunch": "1:00pm – 2:00pm"
             },
             "sunday": {
-              "hours": "11:00am - 3:00pm",
+              "hours": "11:00am – 3:00pm",
               "breakfast": "11:15am - 12:15pm",
-              "lunch": "1:00pm - 2:00pm"
+              "lunch": "1:00pm – 2:00pm"
             }
           }
         },
@@ -1475,6 +1670,7 @@
           "phone": "647-926-6352",
           "population": "General Population; Adults",
           "service_dog_allowed": true,
+          "wheelchair_accessible": "",
           "schedule": {
             "monday": {
               "hours": "1:00pm"
@@ -1500,100 +1696,113 @@
           }
         },
         {
-          "name": "Syme Woolner Neighbourhood & Family Centre",
-          "address": "2468 Eglinton Ave West, Unit 3",
+          "name": "Syme Woolner Neighbourhood and Family Centre: Jane's Drop-in",
+          "address": "2468 Eglinton Avenue West, Unit 3",
+          "latitude": 43.6919292,
+          "longitude": -79.4684109,
+          "city": "Toronto",
+          "province": "ON",
+          "postal_code": "M6M 5E2",
           "phone": "416-766-4634",
+          "website": "www.symewoolner.org",
           "population": "General Population",
-          "pets_allowed": false,
+          "service_dog_allowed": true,
           "wheelchair_accessible": true,
           "schedule": {
             "monday": {
-              "hours": "9:00am - 3:00pm & 4:00pm-6:30pm",
+              "hours": "9:00am – 3:00pm & 4:00pm-6:30pm",
               "breakfast": "9:30am - 10:30am",
               "lunch": "12:00pm - 1:30pm",
-              "dinner": "5:00pm - 6:00pm",
-              "snack": "9:00am - 6:30pm"
+              "dinner": "5:00pm – 6:00pm",
+              "snack": "9:00am – 6:30pm"
             },
             "tuesday": {
-              "hours": "9:00am - 3:00pm & 4:00pm-6:30pm",
+              "hours": "9:00am – 3:00pm & 4:00pm-6:30pm",
               "breakfast": "9:30am - 10:30am",
               "lunch": "12:00pm - 1:30pm",
-              "dinner": "5:00pm - 6:00pm",
-              "snack": "9:00am - 6:30pm"
+              "dinner": "5:00pm – 6:00pm",
+              "snack": "9:00am – 6:30pm"
             },
             "wednesday": {
-              "hours": "9:00am - 3:00pm & 4:00pm-6:30pm",
+              "hours": "9:00am – 3:00pm & 4:00pm-6:30pm",
               "breakfast": "9:30am - 10:30am",
               "lunch": "12:00pm - 1:30pm",
-              "dinner": "5:00pm - 6:00pm",
-              "snack": "9:00am - 6:30pm"
+              "dinner": "5:00pm – 6:00pm",
+              "snack": "9:00am – 6:30pm"
             },
             "thursday": {
-              "hours": "9:00am - 3:00pm",
+              "hours": "9:00am – 3:00pm",
               "breakfast": "9:30am - 10:30am",
               "lunch": "12:00pm - 1:30pm",
-              "snack": "9:00am - 6:30pm"
+              "snack": "9:00am – 6:30pm"
             },
             "friday": {
-              "hours": "9:00am - 3:00pm",
+              "hours": "9:00am – 3:00pm",
               "breakfast": "9:30am - 10:30am",
               "lunch": "12:00pm - 1:30pm",
-              "snack": "9:00am - 6:30pm"
+              "snack": "9:00am – 6:30pm"
             },
             "saturday": {
-              "hours": "9:00am - 3:00pm",
+              "hours": "9:00am – 3:00pm",
               "breakfast": "9:30am - 10:30am",
               "lunch": "12:00pm - 1:30pm",
-              "snack": "9:00am - 6:30pm"
+              "snack": "9:00am – 6:30pm"
             },
             "sunday": {
-              "hours": "9:00am - 3:00pm",
+              "hours": "9:00am – 3:00pm",
               "breakfast": "9:30am - 10:30am",
               "lunch": "12:00pm - 1:30pm",
-              "snack": "9:00am - 6:30pm"
+              "snack": "9:00am – 6:30pm"
             }
           }
         },
         {
           "name": "Weston King Neighbourhood Centre",
-          "address": "2017 Weston Rd.",
+          "address": "2017 Weston Road",
+          "latitude": 43.7013717,
+          "longitude": -79.5201013,
+          "city": "Weston",
+          "province": "ON",
+          "postal_code": "M9N 1X2",
           "phone": "416-241-9898",
-          "population": "General Population; Adults",
+          "website": "www.wknc.ca",
+          "population": "General Population Adults",
           "service_dog_allowed": true,
+          "wheelchair_accessible": "",
           "schedule": {
             "monday": {
-              "hours": "8:00am - 8:00pm",
-              "breakfast": "10:00am - 11:00am",
-              "lunch": "1:00pm - 2:00pm",
-              "snack": "3:00pm - 8:00pm"
+              "hours": "8:00am – 8:00pm",
+              "breakfast": "10:00am – 11:00am",
+              "lunch": "1:00pm – 2:00pm",
+              "snack": "3:00pm – 8:00pm"
             },
             "tuesday": {
-              "hours": "8:00am - 8:00pm",
-              "breakfast": "10:00am - 11:00am",
-              "dinner": "6:00pm - 7:00pm"
+              "hours": "8:00am – 8:00pm",
+              "breakfast": "10:00am – 11:00am",
+              "dinner": "6:00pm – 7:00pm"
             },
             "wednesday": {
-              "hours": "8:00am - 8:00pm",
-              "breakfast": "10:00am - 11:00am",
-              "lunch": "1:00pm - 2:00pm",
-              "snack": "3:00pm - 8:00pm"
+              "hours": "8:00am – 8:00pm",
+              "breakfast": "10:00am – 11:00am",
+              "lunch": "1:00pm – 2:00pm",
+              "snack": "3:00pm – 8:00pm"
             },
             "thursday": {
-              "hours": "8:00am - 8:00pm",
-              "breakfast": "10:00am - 11:00am",
-              "lunch": "1:00pm - 2:00pm",
-              "snack": "3:00pm - 8:00pm"
+              "hours": "8:00am – 8:00pm",
+              "breakfast": "10:00am – 11:00am",
+              "lunch": "1:00pm – 2:00pm",
+              "snack": "3:00pm – 8:00pm"
             },
             "friday": {
-              "hours": "8:00am - 8:00pm",
-              "breakfast": "11:00am - 12:00pm",
-              "snack": "3:00pm - 8:00pm"
+              "hours": "8:00am – 8:00pm",
+              "breakfast": "11:00am – 12:00pm",
+              "snack": "3:00pm – 8:00pm"
             },
             "saturday": {
-              "hours": "8:00am - 8:00pm",
-              "breakfast": "10:00am - 11:00am",
-              "lunch": "1:00pm - 2:00pm",
-              "snack": "3:00pm - 8:00pm"
+              "hours": "8:00am – 8:00pm",
+              "breakfast": "10:00am – 11:00am",
+              "lunch": "1:00pm – 2:00pm",
+              "snack": "3:00pm – 8:00pm"
             },
             "sunday": {
               "hours": "Closed"
@@ -1605,9 +1814,15 @@
     "SOUTHWEST": {
       "drop_in_centers": [
         {
-          "name": "LAMP Community Health Centre: Adult Drop-in",
-          "address": "156 Sixth Street",
-          "phone": "416-252-6471",
+          "name": "LAMP Community Health Centre",
+          "address": "185 Fifth Street",
+          "latitude": 43.603348,
+          "longitude": -79.50356,
+          "city": "Etobicoke",
+          "province": "ON",
+          "postal_code": "M8V 2Z5",
+          "phone": "416-252-6471 ext. 287",
+          "website": "www.lampchc.org",
           "population": "General Population; Adults",
           "service_dog_allowed": true,
           "wheelchair_accessible": true,
@@ -1733,9 +1948,15 @@
           }
         },
         {
-          "name": "Progress Place: Community Place Hub",
+          "name": "Progress Place: The Community Place Hub",
           "address": "1765 Weston Road",
+          "latitude": 43.69924157,
+          "longitude": -79.51194179,
+          "city": "Toronto",
+          "province": "ON",
+          "postal_code": "M9N 3P7",
           "phone": "416-323-1429",
+          "website": "https://www.progressplace.org/approach.html#community",
           "population": "General Population; Adults",
           "service_dog_allowed": true,
           "wheelchair_accessible": true,
@@ -1753,7 +1974,7 @@
             "wednesday": {
               "hours": "10:00am - 11:30am; 1:00pm - 2:30pm",
               "breakfast": "10:00am - 11:30am",
-              "snack": "1:00pm - 2:30pm"
+              "lunch": "1:00pm - 2:30pm"
             },
             "thursday": {
               "hours": "10:00am - 11:30am; 1:00pm - 2:30pm; 5:00pm - 6:00pm",
@@ -1782,8 +2003,14 @@
       "drop_in_centers": [
         {
           "name": "Warden Woods Community Centre: Teesdale Drop-In",
-          "address": "40 Teesdale Place",
-          "phone": "416-694-1138 ext. 164",
+          "address": "40 Teesdale Place, Ground Floor",
+          "latitude": 43.697052,
+          "longitude": -79.285477,
+          "city": "Scarborough",
+          "province": "ON",
+          "postal_code": "M1L 1L3",
+          "phone": "416-694-1138",
+          "website": "www.wardenwoods.com",
           "population": "General Population",
           "service_dog_allowed": true,
           "wheelchair_accessible": true,
@@ -1846,9 +2073,15 @@
           }
         },
         {
-          "name": "Agincourt Community Services Association: North Drop-in",
-          "address": "4155 Sheppard Avenue East",
-          "phone": "647-461-6912",
+          "name": "Agincourt Community Services Association: Scarborough Drop-in North",
+          "address": "4155 Sheppard Avenue East, Suite 100",
+          "latitude": 43.7845592,
+          "longitude": -79.2809082,
+          "city": "Scarborough",
+          "province": "ON",
+          "postal_code": "M1S 1T4",
+          "phone": "416-321-6912",
+          "website": "www.agincourtcommunityservices.com",
           "population": "General Population; Adults",
           "service_dog_allowed": true,
           "wheelchair_accessible": true,
@@ -1857,28 +2090,28 @@
               "hours": "Closed"
             },
             "tuesday": {
-              "hours": "9:00am - 3:00pm",
+              "hours": "9:00am – 3:00pm",
               "breakfast": "9:00am - 10:30am",
               "snack": "10:30am",
-              "lunch": "11:00am - 3:00pm"
+              "lunch": "11:00am – 3:00pm"
             },
             "wednesday": {
-              "hours": "9:00am - 3:00pm",
+              "hours": "9:00am – 3:00pm",
               "breakfast": "9:00am - 10:30am",
               "snack": "10:30am",
-              "lunch": "11:00am - 3:00pm"
+              "lunch": "11:00am – 3:00pm"
             },
             "thursday": {
-              "hours": "9:00am - 3:00pm",
+              "hours": "9:00am – 3:00pm",
               "breakfast": "9:00am - 10:30am",
               "snack": "10:30am",
-              "lunch": "11:00am - 3:00pm"
+              "lunch": "11:00am – 3:00pm"
             },
             "friday": {
-              "hours": "9:00am - 3:00pm (Take-out Only)",
+              "hours": "9:00am – 3:00pm (Take-out Only)",
               "breakfast": "9:00am - 10:30am",
-              "snack": "9:00am - 3:00pm",
-              "lunch": "10:30am - 3:00pm"
+              "snack": "9:00am – 3:00pm",
+              "lunch": "10:30am – 3:00pm"
             },
             "saturday": {
               "hours": "Closed"
@@ -1889,9 +2122,15 @@
           }
         },
         {
-          "name": "Agincourt Community Services Association: South Drop-in",
-          "address": "202 Markham Road",
-          "phone": "647-472-6912",
+          "name": "Agincourt Community Services Association: Scarborough Drop-in South",
+          "address": "202 Markham Road, Suite 100",
+          "latitude": 43.65366138,
+          "longitude": -79.40818186,
+          "city": "Scarborough",
+          "province": "ON",
+          "postal_code": "M6J 2G6",
+          "phone": "416-267-0115",
+          "website": "www.agincourtcommunityservices.com",
           "population": "General Population; Adults",
           "service_dog_allowed": true,
           "wheelchair_accessible": true,
@@ -1899,7 +2138,7 @@
             "monday": {
               "hours": "9:00am - 3:00pm",
               "breakfast": "9:00am - 10:30am",
-              "lunch": "11:00am - 2:00pm",
+              "lunch": "11:00am – 2:00pm",
               "snack": "10:30am"
             },
             "tuesday": {
@@ -1920,7 +2159,7 @@
             "sunday": {
               "hours": "9:00am - 3:00pm",
               "breakfast": "9:00am - 10:30am",
-              "lunch": "11:00am - 2:00pm",
+              "lunch": "11:00am – 2:00pm",
               "snack": "10:30am"
             }
           }

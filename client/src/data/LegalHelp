@@ -1,0 +1,26 @@
+{
+  "name": "The Neighbourhood Group | St. Stephen's Community House: The Corner Drop-In",
+  "address": "260 Augusta Avenue",
+  "latitude": 43.6564796,
+  "longitude": -79.4029962,
+  "city": "Toronto",
+  "province": "ON",
+  "postal_code": "M5T 2L9",
+  "phone": "416-925-2103 ext. 2266",
+  "website": "www.sschto.ca",
+  "population": "General Population; Adults",
+  "service_dog_allowed": true,
+  "schedule": {
+    "thursday": {
+      "hours": "7:30am – 11:30am",
+      "breakfast": "7:30am - 9:00am",
+      "snack": "8:30am",
+      "lunch": "10:45am",
+      "free_legal_information": {
+        "hours": "9:30am - 11:30am",
+        "start_date": "September 14th",
+        "details": "First come - first served. For more information please talk to Drop-In Staff."
+      }
+    }
+  }
+}

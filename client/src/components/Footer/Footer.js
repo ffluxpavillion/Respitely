@@ -1,7 +1,10 @@
+import React from 'react';
 import './Footer.scss';
 import FooterImage from '../../assets/images/SafeHavenTO_graphic-art-community-1.png';
 import Logo from '../../assets/logo/SafeHavenTO.svg';
-import { FloatButton } from 'antd';
+import BuyMeACoffee from '../BuyMeACoffee/BuyMeACoffee';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 
 export default function Footer() {
   return (
@@ -14,19 +17,11 @@ export default function Footer() {
       <footer className='footer'>
         <div className='footer-left'>
           <h3 className='footer-brand'>SAFEHAVENTO</h3>
-          {/* <p className='footer-paragraph'>
-            SafeHavenTO is a service that provides shelter occupancy information and additional resources for those in need residing in Toronto.
-          </p> */}
           <div className='footer__list'>
             <ul className='footer__list-ul'>
               <li className='footer__list-li'>
                 <a href='#home' className='footer__list-a'>
                   <h3 className='footer__item'>Home</h3>
-                </a>
-              </li>
-              <li className='footer__list-li'>
-                <a href='#aboutUs' className='footer__list-a'>
-                  <h3 className='footer__item'>About Us</h3>
                 </a>
               </li>
               <li className='footer__list-li'>
@@ -39,6 +34,11 @@ export default function Footer() {
                   <h3 className='footer__item'>Resources</h3>
                 </a>
               </li>
+              <li className='footer__list-li'>
+                <a href='#aboutUs' className='footer__list-a'>
+                  <h3 className='footer__item'>About Us</h3>
+                </a>
+              </li>
             </ul>
           </div>
         </div>
@@ -46,7 +46,12 @@ export default function Footer() {
         <div className='footer-middle'>
           <div className='footer-div__logo-container'>
             <div className='mission__div-logo-container'>
-              <img loading='lazy' className='footer-div__logo' src={Logo}></img>
+              <img
+                loading='lazy'
+                className='footer-div__logo'
+                src={Logo}
+                alt='SafeHavenTO Logo'
+              />
             </div>
           </div>
         </div>
@@ -55,29 +60,22 @@ export default function Footer() {
           <div className='footer-right__socials'>
             <a
               className='footer-right__social-links'
-              href='https://www.linkedin.com/company/safehavento/'
+              href='https://www.linkedin.com/in/arjunsahjpaul/ '
               target='_blank'
               rel='noreferrer'
             >
-              <i className='fab fa-instagram'>LinkedIn</i>
+              <FontAwesomeIcon icon={faLinkedin} />
             </a>
             <a
-              href='https://www.facebook.com/safehavento'
+              className='footer-right__social-links'
+              href='https://github.com/ffluxpavillion/SafeHavenTO'
               target='_blank'
               rel='noreferrer'
             >
-              <i className='fab fa-facebook-f'></i>
+              <FontAwesomeIcon icon={faGithub} />
             </a>
-            <a
-              href='https://twitter.com/safehavento'
-              target='_blank'
-              rel='noreferrer'
-            >
-              <i className='fab fa-twitter'></i>
-            </a>
-            <FloatButton.BackTop />
-
           </div>
+          <BuyMeACoffee />
         </div>
       </footer>
       <div className='footer-bottom'>

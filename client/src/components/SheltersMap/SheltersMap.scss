@@ -38,24 +38,25 @@
 
   &__div {
     animation: fadeIn 0.5s ease-out forwards;
-    overflow:none;
-    height:100%;
+    overflow: none;
+    height: 100%;
     display: flex;
     flex-direction: row;
-
 
     @include mobile {
       width: max-content;
       height: fit-content;
       align-items: start;
+      zoom: 0.7;
+    }
 
-
+    @include tablet {
+      zoom: 0.7;
     }
 
     &-header {
       font-size: 1.3rem;
       color: white;
-
     }
 
     &-subheader-1 {
@@ -63,7 +64,7 @@
       color: ghostwhite;
       font-family: Verdana;
       color: white;
-
+      width: 9rem;
     }
 
     &-subheader-2 {
@@ -73,11 +74,6 @@
       color: white;
       background-color: #364156;
       padding: 0.5rem;
-
-
-
-
-
     }
 
     &-text {
@@ -91,12 +87,8 @@
       padding: 0.5rem;
       font-family: 'League Spartan SemiBold';
 
-
-
-
       @include mobile {
         // margin-bottom: 0.9rem;
-
       }
     }
   }
@@ -104,18 +96,15 @@
   &__div-top {
     // height: 3rem;
     animation: fadeIn 0.5s ease-out forwards;
-    width: 7rem;
+    width: 10rem;
     align-self: center;
     margin: 0.7rem;
-
-
   }
 
   &__div-bottom {
     min-height: auto;
     animation: fadeIn 0.5s ease-out forwards;
     width: 10rem;
-
   }
 
   &__btn-Directions {
@@ -142,9 +131,9 @@
   cursor: pointer;
   width: 100%;
 
-
   @include mobile {
     padding: 0.5rem 1rem;
+    width: max-content;
   }
   &:hover {
     border: 1px solid white;
@@ -157,8 +146,6 @@
 .popup__button-directions-text {
   font-family: 'Avenir Next';
   font-size: 1rem;
-
-
 }
 
 .directions-icon {
@@ -202,8 +189,6 @@
   display: flex;
   justify-content: center;
   place-content: center;
-
-
 }
 
 .mapboxgl-popup-anchor-bottom-left {
@@ -232,12 +217,9 @@
   background: #212d40;
   align-self: center;
 
-
   @include mobile {
     line-height: 1rem;
-    padding: 1rem 1.5rem 1rem 0.5rem;
-
-
+    padding: 0.7rem 1rem 0.7rem 0.5rem;
   }
 
   @include tablet {
@@ -251,7 +233,7 @@
 
 .mapboxgl-map {
   box-shadow: #ffffff2d 0px 16px 48px 0px;
-  // animation: fadeIn 1s ease-out forwards;
+  animation: fadeIn 1s ease-out forwards;
 }
 
 .mapboxgl-canvas {
@@ -284,4 +266,3 @@
     transform: translateY(0);
   }
 }
-

@@ -21,7 +21,9 @@ li {
   top: 0;
   width: 100%;
   justify-content: space-between;
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  transition:
+    transform 0.3s ease-in-out,
+    opacity 0.3s ease-in-out;
   transform: translateY(-100%); // Start hidden
   width: 100%;
   background-color: #0f0f0f;
@@ -53,16 +55,13 @@ li {
   transform: translateY(-100%);
   transition: transform 0.45s ease-in-out;
   align-items: end;
-
 }
 
 .header.visible {
   transform: translateY(0);
   transition: transform 0.45s ease-in-out;
   align-items: end;
-
 }
-
 
 .header-brand {
   display: inline;
@@ -73,13 +72,11 @@ li {
   letter-spacing: 1.5px;
 
   @include mobile {
-    font-size: 2.3rem;
-
+    font-size: 2.4rem;
   }
 
   @include tablet {
     font-size: 2.8rem;
-
   }
 
   @include desktop {
@@ -164,7 +161,7 @@ li {
           transition: all 0.4s ease-in-out;
           background-color: white;
           color: #cca6af;
-          border-radius: 0 40px 0 50px ;
+          border-radius: 0 40px 0 50px;
           width: 100%;
         }
       }
@@ -390,7 +387,7 @@ li {
   height: 100%;
 
   @include mobile {
-    scale: 0.9;
+    scale: 0.8;
   }
 
   @include tablet {

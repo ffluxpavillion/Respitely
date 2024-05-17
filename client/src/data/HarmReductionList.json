@@ -1,0 +1,494 @@
+{
+  "name": "Black CAP Harm Reduction After Hours Drop-In",
+  "address": "20 Victoria Street, 4th Floor",
+  "latitude": 43.6499935,
+  "longitude": -79.3772196,
+  "city": "Toronto",
+  "province": "Ontario",
+  "postal_code": "M5C 2N8",
+  "phone": "416-977-9955 ext. 258",
+  "website": "https://www.facebook.com/pages/Harm-Reduction-Black-CAP/1532624590340820",
+  "population": "General Population",
+  "service_dog_allowed": true,
+  "schedule": {
+    "monday": {
+      "hours": "TBD"
+    },
+    "tuesday": {
+      "hours": "TBD"
+    },
+    "wednesday": {
+      "hours": "TBD"
+    },
+    "thursday": {
+      "hours": "TBD"
+    },
+    "friday": {
+      "hours": "TBD"
+    },
+    "saturday": {
+      "hours": "TBD"
+    },
+    "sunday": {
+      "hours": "TBD"
+    }
+  }
+}
+
+
+{ // WHERE DO ALL THESE BELOW GO?
+
+  "name": "Dixon Hall Neighbourhood Services",
+  "address": "188 Carlton Street",
+  "latitude": 43.66383934,
+  "longitude": -79.37187848,
+  "city": "Toronto",
+  "province": "ON",
+  "postal_code": "M5A 2K8",
+  "phone": "647-277-5548",
+  "website": "https://dixonhall.org/",
+  "population": "General Population",
+  "service_dog_allowed": true,
+  "schedule": {
+    "monday": {
+      "hours": "TBD"
+    },
+    "tuesday": {
+      "hours": "TBD"
+    },
+    "wednesday": {
+      "hours": "TBD"
+    },
+    "thursday": {
+      "hours": "TBD"
+    },
+    "friday": {
+      "hours": "TBD"
+    },
+    "saturday": {
+      "hours": "TBD"
+    },
+    "sunday": {
+      "hours": "TBD"
+    }
+  }
+}
+
+{ // Where does this go?
+  "name": "St. John The Compassionate Mission: Good Neighbors Scarborough Drop In",
+  "address": "193 Markham Rd",
+  "latitude": 43.743567,
+  "longitude": -79.218823,
+  "city": "Toronto",
+  "province": "ON",
+  "postal_code": "M1J 3C3",
+  "phone": "416-466-1357",
+  "website": "www.stjohnsmission.org",
+  "population": "General Population; Adults",
+  "service_dog_allowed": true,
+  "schedule": {
+    "monday": {
+      "hours": "TBD"
+    },
+    "tuesday": {
+      "hours": "TBD"
+    },
+    "wednesday": {
+      "hours": "TBD"
+    },
+    "thursday": {
+      "hours": "TBD"
+    },
+    "friday": {
+      "hours": "TBD"
+    },
+    "saturday": {
+      "hours": "TBD"
+    },
+    "sunday": {
+      "hours": "TBD"
+    }
+  }
+}
+
+{ // where does this go?
+  "name": "Houselink Community Homes",
+  "address": "805 Bloor Street West",
+  "latitude": 43.6627871,
+  "longitude": -79.4215095,
+  "city": "Toronto",
+  "province": "ON",
+  "postal_code": "M6G 1L8",
+  "phone": "416-539-0690 ext. 322",
+  "website": "www.houselink.on.ca",
+  "population": "General Population",
+  "service_dog_allowed": true,
+  "schedule": {
+    "monday": {
+      "hours": "TBD"
+    },
+    "tuesday": {
+      "hours": "TBD"
+    },
+    "wednesday": {
+      "hours": "TBD"
+    },
+    "thursday": {
+      "hours": "TBD"
+    },
+    "friday": {
+      "hours": "TBD"
+    },
+    "saturday": {
+      "hours": "TBD"
+    },
+    "sunday": {
+      "hours": "TBD"
+    }
+  }
+}
+{ // where does this go?
+  "name": "Ralph Thornton Community Centre",
+  "address": "765 Queen St East",
+  "latitude": 43.65996781,
+  "longitude": -79.34733971,
+  "city": "Toronto",
+  "province": "ON",
+  "postal_code": "M4M 1H3",
+  "phone": "416-392-6810",
+  "website": "https://www.ralphthornton.org/",
+  "population": "General Population",
+  "service_dog_allowed": true,
+  "schedule": {
+    "monday": {
+      "hours": "TBD"
+    },
+    "tuesday": {
+      "hours": "TBD"
+    },
+    "wednesday": {
+      "hours": "TBD"
+    },
+    "thursday": {
+      "hours": "TBD"
+    },
+    "friday": {
+      "hours": "TBD"
+    },
+    "saturday": {
+      "hours": "TBD"
+    },
+    "sunday": {
+      "hours": "TBD"
+    }
+  }
+}
+
+{ //where does this go?
+  "name": "Regent Park Community Health Centre",
+  "address": "465 Dundas St East",
+  "latitude": 43.65962997,
+  "longitude": -79.36551407,
+  "city": "Toronto",
+  "province": "ON",
+  "postal_code": "M5A 2B2",
+  "phone": "416-364-2261",
+  "website": "https://regentparkchc.org/",
+  "population": "General Population",
+  "service_dog_allowed": true,
+  "schedule": {
+    "monday": {
+      "hours": "TBD"
+    },
+    "tuesday": {
+      "hours": "TBD"
+    },
+    "wednesday": {
+      "hours": "TBD"
+    },
+    "thursday": {
+      "hours": "TBD"
+    },
+    "friday": {
+      "hours": "TBD"
+    },
+    "saturday": {
+      "hours": "TBD"
+    },
+    "sunday": {
+      "hours": "TBD"
+    }
+  }
+}
+{ // where does this go?
+  "name": "Regent Park Community Ministry",
+  "address": "40 Oak Street",
+  "latitude": 43.6613801,
+  "longitude": -79.3652943,
+  "city": "Toronto",
+  "province": "ON",
+  "postal_code": "M5A 2C6",
+  "phone": "437-238-3424",
+  "website": "https://www.rpcmtoronto.ca/",
+  "population": "General Population",
+  "service_dog_allowed": true,
+  "schedule": {
+    "monday": {
+      "hours": "TBD"
+    },
+    "tuesday": {
+      "hours": "TBD"
+    },
+    "wednesday": {
+      "hours": "TBD"
+    },
+    "thursday": {
+      "hours": "TBD"
+    },
+    "friday": {
+      "hours": "TBD"
+    },
+    "saturday": {
+      "hours": "TBD"
+    },
+    "sunday": {
+      "hours": "TBD"
+    }
+  }
+}
+{ // where does this go?
+  "name": "St Thomas's Anglican Church: Friday Food Ministry",
+  "address": "383 Huron St.",
+  "latitude": 43.66604986,
+  "longitude": -79.40072375,
+  "city": "Toronto",
+  "province": "ON",
+  "postal_code": "M5S 2G5",
+  "phone": "647-947-6442",
+  "website": "https://www.stthomas.on.ca/outreach",
+  "population": "General Population",
+  "service_dog_allowed": true,
+  "schedule": {
+    "monday": {
+      "hours": "Closed"
+    },
+    "tuesday": {
+      "hours": "Closed"
+    },
+    "wednesday": {
+      "hours": "Closed"
+    },
+    "thursday": {
+      "hours": "Closed"
+    },
+    "friday": {
+      "hours": "6:00pm - 7:00pm"
+    },
+    "saturday": {
+      "hours": "Closed"
+    },
+    "sunday": {
+      "hours": "Closed"
+    }
+  }
+}
+
+{
+  "name": "St. Felix Centre",
+  "address": "25 Augusta Avenue",
+  "latitude": 43.648939,
+  "longitude": -79.399796,
+  "city": "Toronto",
+  "province": "ON",
+  "postal_code": "M5T 2K7",
+  "phone": "416-203-1624",
+  "website": "www.stfelixcentre.ca",
+  "population": "General Population; Adults",
+  "pets_allowed": true,
+  "schedule": {
+    "monday": {
+      "hours": "24/7"
+    },
+    "tuesday": {
+      "hours": "24/7"
+    },
+    "wednesday": {
+      "hours": "24/7"
+    },
+    "thursday": {
+      "hours": "24/7"
+    },
+    "friday": {
+      "hours": "24/7"
+    },
+    "saturday": {
+      "hours": "24/7"
+    },
+    "sunday": {
+      "hours": "24/7"
+    }
+  }
+}
+{
+  "name": "The Dale Ministries",
+  "address": "250 Dunn Avenue",
+  "latitude": 43.640412,
+  "longitude": -79.434492,
+  "city": "Toronto",
+  "province": "ON",
+  "postal_code": "M6K 2R9",
+  "phone": "647-926-6352",
+  "website": "https://www.thedale.org/",
+  "population": "General Population; Adults",
+  "service_dog_allowed": true,
+  "schedule": {
+    "monday": {
+      "hours": "1:00pm"
+    },
+    "tuesday": {
+      "hours": "TBD"
+    },
+    "wednesday": {
+      "hours": "TBD"
+    },
+    "thursday": {
+      "hours": "1:00pm"
+    },
+    "friday": {
+      "hours": "TBD"
+    },
+    "saturday": {
+      "hours": "TBD"
+    },
+    "sunday": {
+      "hours": "TBD"
+    }
+  }
+}
+
+{
+  "name": "The Stop Community Food Centre",
+  "address": "1884 Davenport Road",
+  "latitude": 43.6708591,
+  "longitude": -79.4538197,
+  "city": "Toronto",
+  "province": "ON",
+  "postal_code": "M6H 4E1",
+  "phone": "416-652-7867 ext. 227",
+  "website": "www.thestop.org",
+  "population": "General Population",
+  "service_dog_allowed": true,
+  "schedule": {
+    "monday": {
+      "hours": "TBD"
+    },
+    "tuesday": {
+      "hours": "TBD"
+    },
+    "wednesday": {
+      "hours": "TBD"
+    },
+    "thursday": {
+      "hours": "TBD"
+    },
+    "friday": {
+      "hours": "TBD"
+    },
+    "saturday": {
+      "hours": "TBD"
+    },
+    "sunday": {
+      "hours": "TBD"
+    }
+  }
+}
+
+{
+  "name": "The Stop Community Food Centre - Wychwood Open Door Drop-In Centre",
+  "address": "729 St. Clair Avenue West",
+  "latitude": 43.6812386,
+  "longitude": -79.4272457,
+  "city": "Toronto",
+  "province": "ON",
+  "postal_code": "M6C 1B2",
+  "phone": "647-352-3513",
+  "website": "www.wychwoodopendoor.org",
+  "population": "General Population",
+  "service_dog_allowed": true,
+  "schedule": {
+    "monday": {
+      "hours": "TBD"
+    },
+    "tuesday": {
+      "hours": "TBD"
+    },
+    "wednesday": {
+      "hours": "TBD"
+    },
+    "thursday": {
+      "hours": "TBD"
+    },
+    "friday": {
+      "hours": "TBD"
+    },
+    "saturday": {
+      "hours": "TBD"
+    },
+    "sunday": {
+      "hours": "TBD"
+    }
+  }
+}
+
+{
+  "name": "Weston King Neighbourhood Centre: Mount Dennis Drop-in",
+  "address": "1269 Weston Rd",
+  "latitude": 43.68907043,
+  "longitude": -79.49434062,
+  "city": "Toronto",
+  "province": "ON",
+  "postal_code": "M6M 4R2",
+  "phone": "416-241-9898",
+  "website": "www.wknc.ca",
+  "population": "General Population Adults",
+  "service_dog_allowed": true,
+  "schedule": {
+    "monday": {
+      "hours": "8:00am – 8:00pm", // hours inserted from other location -- are they accurate for this loction ??
+      "breakfast": "10:00am – 11:00am",
+      "lunch": "1:00pm – 2:00pm",
+      "snack": "3:00pm – 8:00pm"
+    },
+    "tuesday": {
+      "hours": "8:00am – 8:00pm",
+      "breakfast": "10:00am – 11:00am",
+      "dinner": "6:00pm – 7:00pm"
+    },
+    "wednesday": {
+      "hours": "8:00am – 8:00pm",
+      "breakfast": "10:00am – 11:00am",
+      "lunch": "1:00pm – 2:00pm",
+      "snack": "3:00pm – 8:00pm"
+    },
+    "thursday": {
+      "hours": "8:00am – 8:00pm",
+      "breakfast": "10:00am – 11:00am",
+      "lunch": "1:00pm – 2:00pm",
+      "snack": "3:00pm – 8:00pm"
+    },
+    "friday": {
+      "hours": "8:00am – 8:00pm",
+      "breakfast": "11:00am – 12:00pm",
+      "snack": "3:00pm – 8:00pm"
+    },
+    "saturday": {
+      "hours": "8:00am – 8:00pm",
+      "breakfast": "10:00am – 11:00am",
+      "lunch": "1:00pm – 2:00pm",
+      "snack": "3:00pm – 8:00pm"
+    },
+    "sunday": {
+      "hours": "Closed"
+    }
+  }
+}

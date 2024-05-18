@@ -118,7 +118,6 @@
 }
 
 .popup__button-directions {
-  min-width: -webkit-max-content;
   text-transform: uppercase;
   white-space: normal;
   text-align: center;
@@ -127,13 +126,12 @@
   transition: all 0.3s ease;
   border-radius: 5px;
   color: white;
-  background-color: #232427;
+  background-color: #232f27;
   cursor: pointer;
   width: 100%;
 
   @include mobile {
     padding: 0.5rem 1rem;
-    width: max-content;
   }
   &:hover {
     border: 1px solid white;
@@ -208,8 +206,6 @@
   // border-left: 25px solid #353333;
   border-radius: 10px;
   box-shadow: 0 0 14px 5px #999999;
-  min-width: -webkit-fit-content;
-  min-height: -webkit-fit-content;
   display: flex;
   flex-direction: column;
   font-variant-caps: all-petite-caps;
@@ -220,6 +216,8 @@
   @include mobile {
     line-height: 1rem;
     padding: 0.7rem 1rem 0.7rem 0.5rem;
+    width: 17.5rem;
+    height: 8rem;
   }
 
   @include tablet {

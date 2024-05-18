@@ -178,14 +178,15 @@ export default function SheltersCard() {
 
   const handleCardClick = (record) => {
     setGoHere(record);
-    document.body.style.overflow = "hidden"; // disable scrolling
+    document.body.style.overflow = 'hidden'; // disable scrolling
+    document.querySelector('header').classList.remove = 'visible'; // Hide header
   };
 
   const closeDetailedView = () => {
     setGoHere(null);
-    document.body.style.overflow = "auto"; // Enable scrolling
+    document.body.style.overflow = 'auto'; // Enable scrolling
+    document.querySelector('header').classList.add = 'visible'; // Show header again
   };
-
 
   // Console logs for debugging purposes
   // console.log('displayed records= ', displayedRecords.map(record => record.LOCATION_ADDRESS));
@@ -194,21 +195,24 @@ export default function SheltersCard() {
   // console.log('records = :', records);
   // console.log('goHere= ', goHere)
 
-
   const observer = useRef(null); // Using useRef to persist the observer instance
 
   useEffect(() => {
     // Observer setup
-    observer.current = new IntersectionObserver((entries) => {
-      console.log('entries', entries);
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('show');
-        }
-      });
-    }, {
-      threshold: 0.5
-    }, []);
+    observer.current = new IntersectionObserver(
+      (entries) => {
+        console.log('entries', entries);
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+          }
+        });
+      },
+      {
+        threshold: 0.5,
+      },
+      []
+    );
 
     // Attaching observer to elements
     const hiddenElements = document.querySelectorAll('.hidden');
@@ -216,10 +220,10 @@ export default function SheltersCard() {
 
     // Cleanup function to disconnect observer
     return () => {
-      if(observer.current) {
+      if (observer.current) {
         observer.current.disconnect();
       }
-    }
+    };
   }, []);
 
   return (
@@ -252,10 +256,10 @@ export default function SheltersCard() {
         </div>
         {isMobile ? (
           <div className='mobile__shelter-scrollable-container'>
-          <span className='mobile__instructions-text'>
-            Tap a shelter to learn more
-            {/* <FontAwesomeIcon icon={faCircleArrowRight} /> */}
-          </span>
+            <span className='mobile__instructions-text'>
+              Tap a shelter to learn more
+              {/* <FontAwesomeIcon icon={faCircleArrowRight} /> */}
+            </span>
             <ul className='shelter-list'>
               {displayedRecords.map((record) => (
                 <li
@@ -267,9 +271,9 @@ export default function SheltersCard() {
                     <h6 className='shelter-item__text'>
                       {record.SHELTER_GROUP}
                       <span className='fa-chevron-icons'>
-                        <FontAwesomeIcon icon={faChevronRight}  />
-                        <FontAwesomeIcon icon={faChevronRight}  />
-                        <FontAwesomeIcon icon={faChevronRight}  />
+                        <FontAwesomeIcon icon={faChevronRight} />
+                        <FontAwesomeIcon icon={faChevronRight} />
+                        <FontAwesomeIcon icon={faChevronRight} />
                       </span>
                     </h6>
                     <p className='shelter-item__availability mobile__shelter-item__availability'>
@@ -410,7 +414,6 @@ export default function SheltersCard() {
                                     {record.OVERNIGHT_SERVICE_TYPE}
                                   </p>
                                 </ul>
-
                               </div>
                             </div>
                           </li>
@@ -437,8 +440,7 @@ export default function SheltersCard() {
         {goHere && (
           <div className='shelter-detailed-view'>
             <button className='back-button' onClick={closeDetailedView}>
-            <FontAwesomeIcon icon={faCircleArrowLeft} /> Back To Shelters
-
+              <FontAwesomeIcon icon={faCircleArrowLeft} /> Back To Shelters
             </button>
             <span className='location-text'>LOCATION MAP</span>
 
@@ -449,11 +451,10 @@ export default function SheltersCard() {
               goHere={goHere}
             ></SheltersMap>
             <div className='detailed-view__container'>
-              <ul className='shelter-item__right-inner'>
-              </ul>
+              <ul className='shelter-item__right-inner'></ul>
               <ul className='shelter-item__right-inner'>
                 <h4 className='shelter-item__right-title mobile-header'>
-                  ABOUT THIS LOCATION
+                  LOCATION DETAILS
                 </h4>
                 <div className='detailed-view__text-container'>
                   <p className='shelter-item__right-text mobile-left'>
@@ -474,9 +475,10 @@ export default function SheltersCard() {
                   <p className='shelter-item__right-text mobile-right'>
                     {goHere.ORGANIZATION_NAME}
                     <br />
-                    {goHere.ORGANIZATION_NAME}
+                    {goHere.SHELTER_GROUP}
                     <br />
-                    {goHere.OVERNIGHT_SERVICE_TYPE} <br />
+                    {goHere.OVERNIGHT_SERVICE_TYPE}
+                    <br />
                     {goHere.SECTOR}
                     <br />
                     {goHere.CAPACITY_TYPE}
@@ -488,7 +490,6 @@ export default function SheltersCard() {
                 </div>
               </ul>
             </div>
-
           </div>
         )}
       </section>

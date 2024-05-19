@@ -27,7 +27,6 @@ a:hover {
   background-color: #1b2021;
   z-index: -2;
 
-
   @include mobile {
     // height: 120rem;
     position: relative;
@@ -50,9 +49,10 @@ a:hover {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  overflow: hidden;
 
   @include mobile {
-    padding: 4rem;
+    padding: 5rem 0;
     display: grid;
     place-items: center;
   }
@@ -68,9 +68,13 @@ a:hover {
     text-transform: uppercase;
     font-size: 3rem;
     z-index: -1;
+    font-family: 'Junction Bold';
+    font-size: 4rem;
+    letter-spacing: 0rem;
 
     @include mobile {
-      font-size: 3rem;
+      font-size: 15vw;
+      letter-spacing: -0.25rem;
     }
   }
 }
@@ -83,28 +87,30 @@ a:hover {
   @include mobile {
     grid-template-columns: repeat(1, minmax(40px, 200px));
     row-gap: 1.5rem;
-    // padding:5rem;
-    column-gap: 14rem;
     justify-content: center;
   }
 
   @include tablet {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 3rem;
-    column-gap: 1rem;
+    // column-gap: 1rem;
+    flex-basis: 1;
   }
 
   @include desktop {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    row-gap: 3rem;
+    column-gap: 1rem;
+    width: 86rem;
+    justify-content: center;
   }
 }
 
 .grid__item {
-  padding: 1rem;
   box-shadow: 0 3px 7px 0 #00000080;
   width: 16rem;
   height: 16rem;
-  border-radius: 20px;
+  border-radius: 17px;
   display: grid;
   place-content: space-between;
   // backdrop-filter: blur(15px);
@@ -115,17 +121,17 @@ a:hover {
   background-size: cover;
 
   &:hover {
-    border-radius: 20px;
+    border-radius: 10px;
     border: 2px solid ghostwhite;
     box-shadow: 0px 0px 10px 0 #cca6af;
     scale: (1.05);
-    transition: all 0.5s ease-in-out;
-    margin: -0.1rem;
+    transition: all 0.4s ease-in-out;
+    // margin: -1rem;
   }
 
   @include mobile {
     padding: 3rem;
-    width: 22.5rem;
+    width: 90vw;
     height: 5rem;
     border-radius: 10px;
     place-content: center;
@@ -133,26 +139,25 @@ a:hover {
     position: relative;
   }
 
+  @include tablet {
+    padding: 1rem;
+  }
+
   @include desktop {
+    padding: 1rem;
     // transform: scale(1);
     transition:
-      border-radius 800ms ease,
-      background-color 800ms ease,
-      transform 800ms ease;
-    transition:
-      background 0.4s ease-in-out,
-      transform 0.4s ease-in-out,
-      border-radius 0.4s ease-in-out;
-
-
+      border-radius 0.4s ease-in-out,
+      background-color 0.4s ease,
+      transform 0.4s ease,
+      box-shadow 0.4s ease,
+      scale 0.4s ease;
   }
 
   &-header {
     font-weight: 800;
     color: #ffffff;
     text-align: center;
-    padding-top: 1rem;
-    // padding: 1rem;
     text-transform: uppercase;
     font-size: 1.15rem;
 
@@ -160,9 +165,11 @@ a:hover {
     }
 
     @include tablet {
+      padding-top: 1rem;
     }
 
     @include desktop {
+      padding-top: 1rem;
     }
   }
 
@@ -176,10 +183,8 @@ a:hover {
     word-wrap: normal;
     line-height: 1.3rem;
 
-
     @include mobile {
       display: none;
-
     }
 
     @include tablet {

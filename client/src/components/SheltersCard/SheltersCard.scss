@@ -54,7 +54,7 @@ h3 {
   }
 
   @include tablet {
-    padding: 2.5rem 5rem 2.5rem 5rem;
+    padding: 2.5rem 3rem 2.5rem 3rem;
   }
 
   @include desktop {
@@ -483,14 +483,12 @@ h3 {
   border-radius: 5px;
 
   &:hover {
-    text-shadow: 0 2px 4px rgba(229, 228, 255, 0.9);
+    text-shadow: 0 2px 4px rgba(229, 228, 255, 0.7);
     transition: all 1s ease-in-out;
   }
 
   @include mobile {
-    font-size: 1.15rem; // CULPRIT #5 - fixed
-    // line-height: 3rem;
-    min-width: 23rem;
+    font-size: 1rem; // CULPRIT #5 - fixed
     display: inline-flex;
     align-items: center;
   }
@@ -746,9 +744,14 @@ h3 {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
   margin-bottom: 1rem;
   margin-top: 1rem;
-  width: 95dvw;
+  width: 95%;
   font-family: 'Toronto Subway Bold';
   font-variant: all-small-caps;
+
+  @include mobile {
+    font-size: 1.25rem;
+    width: 95vw;
+  }
 
   @include tablet {
     width: 100%;
@@ -796,7 +799,7 @@ h3 {
   display: flex;
   place-content: center;
   padding: 1rem;
-  width: 100vw;
+  width: 100%;
   background-color: #2a445e;
 }
 
@@ -808,7 +811,7 @@ h3 {
   place-items: center;
 
   @include mobile {
-    height: 30rem;
+    height: 34rem;
   }
 
   @include tablet {

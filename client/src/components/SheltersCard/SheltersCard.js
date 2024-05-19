@@ -179,13 +179,13 @@ export default function SheltersCard() {
   const handleCardClick = (record) => {
     setGoHere(record);
     document.body.style.overflow = 'hidden'; // disable scrolling
-    document.querySelector('header').classList.remove = 'visible'; // Hide header
+    document.querySelector('header').classList.replace('visible', 'hidden'); // Hide header
   };
 
   const closeDetailedView = () => {
     setGoHere(null);
     document.body.style.overflow = 'auto'; // Enable scrolling
-    document.querySelector('header').classList.add = 'visible'; // Show header again
+    document.querySelector('header').classList.replace('hidden', 'visible'); // Show header
   };
 
   // Console logs for debugging purposes

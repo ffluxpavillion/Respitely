@@ -82,14 +82,8 @@ export default function AboutUs() {
           Empowered by the City of Toronto's Daily Shelter Occupancy API, this
           platform leverages this dataset by fetching, filtering, and sorting
           the most recent and relevant updates, which is then mapped using
-          MapBox. For more information, check out my GitHub repo{' '}
-          <a
-            className='link'
-            href='https://github.com/ffluxpavillion/SafeHavenTO'
-          >
-            here
-          </a>
-          .
+          MapBox. For more information, check out my{' '}
+          <a className='link' href='https://github.com/ffluxpavillion/SafeHavenTO'>GitHub repo.</a>
         </p>
       ),
     },
@@ -98,9 +92,21 @@ export default function AboutUs() {
       label: "WHAT'S NEXT?",
       children: (
         <p className='mission__div-text'>
-          Currently building a database and allocating resources on things like
-          Food, Legal/Pro Bono, Childcare, Clothing, Drug Testing / Support,
-          Mental Health Support and more, stay tuned!
+          Currently building a database/API and allocating resources on:
+          <ul>
+          <br />
+            <li>Food</li>
+            <li>Legal/Pro Bono</li>
+            <li>Childcare</li>
+            <li>Clothing</li>
+            <li>Personal Care</li>
+            <li>Drug Testing / Support</li>
+            <li>Employment</li>
+            <li>Mental Health Support</li>
+            <i>...AND MORE</i>
+          </ul>
+          <br />
+           Stay tuned!
         </p>
       ),
     },
@@ -136,6 +142,11 @@ export default function AboutUs() {
             </div>
           </div>
         </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
         <FloatButton.BackTop />
       </section>
     </>

@@ -63,13 +63,24 @@
   // animation: fadeIn 1s forwards;
 
   background-image: url(../../assets/images/wave-haikei1.svg);
-  height: 100vh;
-  background-position: center;
+  height: 100%;
   background-repeat: no-repeat;
   background-size: cover;
   z-index: -2;
   position: relative;
-  background-attachment: fixed;
+
+  @include mobile {
+    background-position: bottom;
+  }
+
+  @include tablet {
+    background-position: bottom;
+  }
+
+  @include desktop {
+    background-attachment: fixed;
+    background-position: center;
+  }
 }
 
 .mission__div {
@@ -85,7 +96,18 @@
 
     @include mobile {
       flex-direction: column;
-      height: 90vh;
+      height: 100%;
+      justify-content: normal;
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+
+    @include tablet {
+      flex-direction: column;
+      height: 100%;
+      justify-content: normal;
+      padding-top: 2rem;
+      padding-bottom: 2rem;
     }
   }
 
@@ -126,7 +148,7 @@
     }
 
     @include tablet {
-      // width: 100%;
+      width: 100%;
     }
 
     @include desktop {
@@ -144,6 +166,8 @@
     font-variant: all-petite-caps;
     font-family: 'Toronto Subway Bold';
     text-align: center;
+    width: 92%;
+    font-size: 1.9rem;
 
     @include mobile {
       font-size: 1.6rem;
@@ -166,7 +190,7 @@
     // height: 12.25rem;
     padding: auto;
     font-family: StabilGrotesk, sans-serif;
-    width: 85%;
+    width: 97%;
 
     @include mobile {
       margin-left: 1rem;
@@ -268,7 +292,9 @@
 .link {
   font-style: italic;
   font-family: 'Avenir Next';
-  color: darkslateblue;
+  color: rgb(237, 203, 30);
+  text-decoration-line: underline;
+  font-weight: 600;
 }
 
 @media (prefers-reduced-motion) {
@@ -294,7 +320,6 @@
   border: none;
   display: inline-flex;
   justify-content: space-between;
-
   cursor: pointer;
 }
 
@@ -312,7 +337,7 @@
 .custom-collapse .ant-collapse-content {
   color: white;
   font-family: 'League Spartan Regular';
-  font-size: 1.13rem;
+  font-size: 1rem;
 }
 
 .custom-collapse .ant-collapse-header-text {
@@ -320,15 +345,18 @@
   font-family: 'DT Black';
 
   @include mobile {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    padding: 0rem 1rem;
   }
 
   @include tablet {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
+    padding: 0rem 0.5rem;
   }
 
   @include desktop {
-    font-size: 1.75rem;
+    font-size: 1.42rem;
+    padding: 0rem 1rem;
   }
 }
 
@@ -347,6 +375,19 @@
 
 .ant-collapse {
   background-color: #20242c;
+  place-self: center;
+
+  @include mobile {
+    width: 96%;
+  }
+
+  @include tablet {
+    width: 86%;
+  }
+
+  @include desktop {
+    width: 96%;
+  }
 }
 
 .ant-float-btn-default {

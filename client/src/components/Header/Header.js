@@ -62,7 +62,9 @@ export default function Header() {
       id='home'
     >
       <div className='header__container'>
-        <h3 className='header-brand'> SAFEHAVENTO</h3>
+        <h3 className='header-brand'>
+          <a href='https://www.safehavento.ca'>SAFEHAVENTO</a>
+        </h3>
         <div
           className={`navbar__burger menu  ${menuOpen ? 'active' : ''}`}
           onClick={toggleMenu}
@@ -78,7 +80,7 @@ export default function Header() {
         <div className='navbar__div'>
           <ul className={`navbar__div-ul navMenu ${menuOpen ? 'active' : ''}`}>
             <li onClick={handleClick}>
-              <Link to='#home'>
+              <Link to='#landing'>
                 <h3 className='navbar__div-li nav-stairs__home'>Home ⟩⟩</h3>
               </Link>
             </li>
@@ -98,7 +100,7 @@ export default function Header() {
             </li>
             <li onClick={handleClick}>
               <Link to='#aboutUs'>
-                <h3 className='navbar__div-li mobile-nav-item nav-stairs__about-us'>
+                <h3 className='navbar__div-li nav-stairs__about-us'>
                   About Us ⟩⟩
                 </h3>
               </Link>

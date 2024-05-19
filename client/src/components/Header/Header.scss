@@ -31,7 +31,7 @@ li {
 
   @include mobile {
     justify-content: space-evenly;
-    padding: 1.25rem 1.25rem 1.25rem 1.25rem;
+    padding: 1rem 1rem 0.25rem 1rem;
   }
 
   @include tablet {
@@ -61,6 +61,10 @@ li {
   transform: translateY(0);
   transition: transform 0.45s ease-in-out;
   align-items: end;
+
+  @include mobile {
+    width: 102%;
+  }
 }
 
 .header-brand {
@@ -72,7 +76,7 @@ li {
   letter-spacing: 1.5px;
 
   @include mobile {
-    font-size: 2.4rem;
+    font-size: 2.3rem;
   }
 
   @include tablet {
@@ -97,16 +101,13 @@ li {
     top: 0;
 
     z-index: 1000;
-    opacity: 96%;
   }
 
   @include tablet {
     position: fixed;
     top: 0;
-
     margin-bottom: -1000rem;
     z-index: 1000;
-    opacity: 96%;
   }
 
   @include desktop {
@@ -115,7 +116,6 @@ li {
     overflow: hidden; // enables overflow scrolling block for menu
     width: 100%;
     z-index: 1000;
-    opacity: 96%;
   }
 
   &__div {
@@ -371,7 +371,7 @@ li {
     height: 100%;
     justify-content: center;
     align-items: center;
-    background-color: #090909;
+    background-color: #0f0f0f;
     opacity: 1;
     -webkit-transition: all 0.6s ease-in-out;
     align-items: flex-end;
@@ -387,16 +387,12 @@ li {
   height: 100%;
 
   @include mobile {
-    scale: 0.8;
+    scale: 0.75;
+    padding-bottom: 0.5rem;
   }
 
   @include tablet {
     scale: 0.95;
-  }
-}
-.mobile-nav-item {
-  @include mobile {
-    display: none;
   }
 }
 

@@ -7,7 +7,6 @@ import ShareIcon from '../../assets/icons/SafeHavenTO_icon-share.svg';
 import FilterButtons from '../FilterButtons/FilterButtons';
 import LoadMoreButton from '../LoadMoreButton/LoadMoreButton';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { faCircleArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 export default function SheltersCard() {
@@ -257,8 +256,7 @@ export default function SheltersCard() {
         {isMobile ? (
           <div className='mobile__shelter-scrollable-container'>
             <span className='mobile__instructions-text'>
-              Tap a shelter to learn more
-              {/* <FontAwesomeIcon icon={faCircleArrowRight} /> */}
+              Tap a shelter to learn more ⟩⟩⟩
             </span>
             <ul className='shelter-list'>
               {displayedRecords.map((record) => (
@@ -269,12 +267,7 @@ export default function SheltersCard() {
                 >
                   <div className='shelter-item__content'>
                     <h6 className='shelter-item__text'>
-                      {record.SHELTER_GROUP}
-                      <span className='fa-chevron-icons'>
-                        <FontAwesomeIcon icon={faChevronRight} />
-                        <FontAwesomeIcon icon={faChevronRight} />
-                        <FontAwesomeIcon icon={faChevronRight} />
-                      </span>
+                      {record.SHELTER_GROUP} ⟩⟩⟩
                     </h6>
                     <p className='shelter-item__availability mobile__shelter-item__availability'>
                       {record.CAPACITY_TYPE === 'Bed Based Capacity'

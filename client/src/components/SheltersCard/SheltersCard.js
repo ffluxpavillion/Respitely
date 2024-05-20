@@ -2,12 +2,11 @@ import './SheltersCard.scss';
 import { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
 import SheltersMap from '../SheltersMap/SheltersMap';
-import RouteIcon from '../../assets/icons/SafeHavenTO_icon-route.svg';
-import ShareIcon from '../../assets/icons/SafeHavenTO_icon-share.svg';
 import FilterButtons from '../FilterButtons/FilterButtons';
 import LoadMoreButton from '../LoadMoreButton/LoadMoreButton';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { faLocationCrosshairs } from '@fortawesome/free-solid-svg-icons';
 
 export default function SheltersCard() {
   const [loading, setLoading] = useState(true); // state to show/hide Loading Shelter Data message
@@ -344,11 +343,12 @@ export default function SheltersCard() {
                                     className='shelter-item__actions-btn'
                                     onClick={() => handleCardClick(record)}
                                   >
-                                    <img
-                                      className='btn--Share-Icon'
-                                      src={ShareIcon}
-                                      alt='Share Icon'
-                                    />
+                                    <span>
+                                      <FontAwesomeIcon
+                                        icon={faLocationCrosshairs}
+                                        size='lg'
+                                      />
+                                    </span>
                                     <h4 className='btn--Share-Text'>Go Here</h4>
                                   </button>
                                 </div>

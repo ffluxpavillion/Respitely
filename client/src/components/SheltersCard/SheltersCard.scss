@@ -238,6 +238,7 @@ h3 {
   // padding: 1rem;
   transition: all 0.3s ease;
   min-width: -webkit-fill-available;
+  gap: 1rem;
 
   &:hover {
     border: 1px solid white;
@@ -853,7 +854,6 @@ h3 {
   white-space: pre-line;
   font-family: 'Avenir Next';
   line-height: 1.5rem;
-  letter-spacing: 1px;
   font-variant-caps: all-petite-caps;
 
   @include mobile {
@@ -868,14 +868,14 @@ h3 {
 .mobile-right {
   text-align: left;
   white-space: pre-line;
-  font-family: 'Ostrich Inline Italic';
+  font-family: 'Avenir Next';
   font-weight: 400;
   line-height: 1.5rem;
-  letter-spacing: 2px;
+  // letter-spacing: 0.3px;
   font-variant-caps: all-petite-caps;
 
   @include mobile {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
   @include tablet {

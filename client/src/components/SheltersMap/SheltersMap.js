@@ -9,9 +9,9 @@ import Map, {
 } from 'react-map-gl';
 import axios from 'axios';
 import 'mapbox-gl/dist/mapbox-gl.css';
-// import HeartMarker from '../../assets/icons/SafeHavenTO_icon-marker.png'
 import HeartMarker from '../../assets/icons/SafeHavenTO_icon-marker.png';
-import OpenIcon from '../../assets/icons/SafeHavenTO_icon-open-in.svg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faRoute } from '@fortawesome/free-solid-svg-icons';
 
 import './SheltersMap.scss';
 
@@ -298,25 +298,23 @@ export default function SheltersMap(props) {
               </div>
               <div className='popup__button-container'>
                 <a
-                  href={`https://www.google.com/maps/place/${encodeURIComponent(
-                    selectedPlace.properties.LOCATION_ADDRESS
-                  )},+${encodeURIComponent(
-                    selectedPlace.properties.LOCATION_CITY
-                  )},+${encodeURIComponent(
-                    selectedPlace.properties.LOCATION_POSTAL_CODE
-                  )}`}
+                  href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
+                    selectedPlace.properties.LOCATION_ADDRESS +
+                      ', ' +
+                      selectedPlace.properties.LOCATION_CITY +
+                      ', ' +
+                      selectedPlace.properties.LOCATION_POSTAL_CODE
+                  )}&travelmode=walking`}
                   target='_blank'
                   rel='noopener noreferrer'
                   className='btn--Directions-anchor'
                 >
                   <button className='popup__button-directions'>
+                    <span>
+                      <FontAwesomeIcon icon={faRoute} size='lg' />
+                    </span>
                     <p className='popup__button-directions-text'>
                       {' '}
-                      <img
-                        className='directions-icon'
-                        src={OpenIcon}
-                        alt='Open Icon'
-                      />
                       Get Directions
                     </p>
                   </button>

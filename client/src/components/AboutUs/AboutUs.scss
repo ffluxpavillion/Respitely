@@ -191,6 +191,8 @@
     padding: auto;
     font-family: StabilGrotesk, sans-serif;
     width: 97%;
+    font-style: italic;
+    letter-spacing: 0.4px;
 
     @include mobile {
       margin-left: 1rem;

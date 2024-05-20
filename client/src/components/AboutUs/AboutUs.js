@@ -50,6 +50,19 @@ export default function AboutUs() {
     },
     {
       key: '2',
+      label: 'THE CHALLENGE',
+      children: (
+        <p className='mission__div-text'>
+          There is a lack of centralized, up-to-date resources, causing friction
+          for those in need of accomodation.
+          <br />
+          <br />
+          Modern problems require modern solutions <br />⎯So I built one.
+        </p>
+      ),
+    },
+    {
+      key: '3',
       label: 'THE MISSION',
       children: (
         <p className='mission__div-text'>
@@ -58,19 +71,6 @@ export default function AboutUs() {
           <br /> <br />
           SafeHavenTO is a project that I am proud to have built and I hope it
           can make a difference in the lives of those who need it most.
-        </p>
-      ),
-    },
-    {
-      key: '3',
-      label: 'THE CHALLENGE',
-      children: (
-        <p className='mission__div-text'>
-          There is a lack of centralized, up-to-date resources, causing friction
-          for those seeking accomodation.
-          <br />
-          <br />
-          Modern problems require modern solutions. So, I built one.
         </p>
       ),
     },

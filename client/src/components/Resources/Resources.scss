@@ -201,3 +201,27 @@ a:hover {
     }
   }
 }
+
+.show-resources {
+  opacity: 1;
+  transition: opacity 3s ease;
+  position: relative;
+  z-index: 3;
+  animation: slideInFromBottom 2s ease;
+
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
+}
+
+@keyframes slideInFromBottom {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}

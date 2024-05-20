@@ -11,7 +11,7 @@ export default function Resources() {
         console.log('entries', entries);
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('show');
+            entry.target.classList.add('show-resources');
           }
         });
       },
@@ -90,7 +90,7 @@ export default function Resources() {
               target='_blank'
               href='https://www.toronto.ca/community-people/housing-shelter/homeless-help/streets-to-homes-street-outreach-support-program/'
             >
-              <div className='grid__item hidden hidden'>
+              <div className='grid__item hidden'>
                 <h4 className='grid__item-header hidden'>Street Outreach</h4>
                 <p className='grid__item-text'>
                   Services for people experiencing homelessness and living

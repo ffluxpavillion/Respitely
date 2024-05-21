@@ -148,7 +148,8 @@
     }
 
     @include tablet {
-      width: 100%;
+      width: 80%;
+      align-self: center;
     }
 
     @include desktop {
@@ -186,7 +187,6 @@
 
   &-text {
     color: #ffffff;
-    margin-left: 1.5rem;
     // height: 12.25rem;
     padding: auto;
     font-family: StabilGrotesk, sans-serif;
@@ -195,13 +195,15 @@
     letter-spacing: 0.4px;
 
     @include mobile {
-      margin-left: 1rem;
+      padding: 0 2rem;
     }
 
     @include tablet {
+      padding: 0 2rem;
     }
 
     @include desktop {
+      padding: 0 2rem;
     }
   }
 
@@ -294,7 +296,7 @@
 .link {
   font-style: italic;
   font-family: 'Avenir Next';
-  color: rgb(237, 203, 30);
+  color: rgb(255, 175, 163);
   text-decoration-line: underline;
   font-weight: 600;
 }
@@ -345,24 +347,23 @@
 .custom-collapse .ant-collapse-header-text {
   color: white;
   font-family: 'DT Black';
+  padding: 0rem 0.25rem;
 
   @include mobile {
     font-size: 1.1rem;
-    padding: 0rem 1rem;
   }
 
   @include tablet {
     font-size: 1.25rem;
-    padding: 0rem 0.5rem;
   }
 
   @include desktop {
     font-size: 1.42rem;
-    padding: 0rem 1rem;
   }
 }
 
 .ant-collape-header {
+  padding: 0;
 }
 
 .ant-collapse-content-box {

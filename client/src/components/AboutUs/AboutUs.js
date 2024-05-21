@@ -57,7 +57,8 @@ export default function AboutUs() {
           for those in need of accomodation.
           <br />
           <br />
-          Modern problems require modern solutions <br />⎯So I built one.
+          Modern problems require modern solutions <br />
+          ⎯So I built one.
         </p>
       ),
     },
@@ -68,7 +69,8 @@ export default function AboutUs() {
         <p className='mission__div-text'>
           To provide a sense of security during times of intense vulnerability,
           by bridging the gap between available resources and those in need.
-          <br /> <br />
+          <br />
+          <br />
           SafeHavenTO is a project that I am proud to have built and I hope it
           can make a difference in the lives of those who need it most.
         </p>
@@ -82,8 +84,16 @@ export default function AboutUs() {
           Empowered by the City of Toronto's Daily Shelter Occupancy API, this
           platform leverages this dataset by fetching, filtering, and sorting
           the most recent and relevant updates, which is then mapped using
-          MapBox. For more information, check out my{' '}
-          <a className='link' href='https://github.com/ffluxpavillion/SafeHavenTO'>GitHub repo.</a>
+          MapBox.
+          <br />
+          <br />
+          For more information, check out my{' '}
+          <a
+            className='link'
+            href='https://github.com/ffluxpavillion/SafeHavenTO'
+          >
+            GitHub repo.
+          </a>
         </p>
       ),
     },
@@ -94,7 +104,7 @@ export default function AboutUs() {
         <p className='mission__div-text'>
           Currently building a database/API and allocating resources on:
           <ul>
-          <br />
+            <br />
             <li>Food</li>
             <li>Legal/Pro Bono</li>
             <li>Childcare</li>
@@ -106,7 +116,40 @@ export default function AboutUs() {
             <i>...AND MORE</i>
           </ul>
           <br />
-           Stay tuned!
+          Stay tuned!
+        </p>
+      ),
+    },
+    {
+      key: '6',
+      label: 'WANT TO GET IN TOUCH?',
+      children: (
+        <p className='mission__div-text'>
+          I'd love to hear from you!
+          <br />
+          <br />
+          Whether you have questions about SafeHavenTO, feedback, or just want
+          to connect, feel free to reach out. I welcome any feedback on how I
+          can improve this platform.
+          <br />
+          <br />
+          You can email me at{' '}
+          <a className='link' href='mailto:contact@safehavento.org'>
+            contact@safehavento.org
+          </a>{' '}
+          or connect with me on{' '}
+          <a
+            className='link'
+            href='https://www.linkedin.com/in/arjunsahjpaul/'
+            target='_blank'
+            rel='noreferrer'
+          >
+            LinkedIn
+          </a>{' '}
+          and send me DM.
+          <br />
+          <br />
+          Looking forward to connecting!
         </p>
       ),
     },

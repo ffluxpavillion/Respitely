@@ -63,7 +63,7 @@ export default function Header() {
     >
       <div className='header__container'>
         <h3 className='header-brand'>
-          <a href='https://www.safehavento.ca'>SAFEHAVENTO</a>
+          <a href='https://www.safehavento.org'>SAFEHAVENTO</a>
         </h3>
         <div
           className={`navbar__burger menu  ${menuOpen ? 'active' : ''}`}

@@ -11,25 +11,21 @@
   font-weight: 700;
   border-radius: 5px;
   transition: all 0.3s ease;
-  background-color: #6c85ba;
   background-color: #2b2b2b;
   color: #ffffff;
   cursor: pointer;
   letter-spacing: 2px;
 
-  &:hover {
-    background-color: rgba(128, 128, 128, 0.118);
-    border: 1px solid white;
-    color: #f8faff;
-    transition: all 0.4s ease-in-out;
-  }
+
 
   &:active {
     transform: scale(0.98);
+    border: none;
   }
 
   &:focus {
     outline: none;
+
   }
 }
 
@@ -51,11 +47,10 @@
     text-transform: uppercase;
     white-space: normal;
     text-align: center;
-    box-shadow: inset 0 0 0 2px #00000019;
-    border: 1px solid #c3cbdc;
-    transition: all 0.3s ease;
+    // box-shadow: inset 0 0 0 2px #00000019;
     width: -webkit-fit-content;
-    transition: all 1s ease-in-out;
+    // border: none;
+    button-decoration: none;
 
     @include mobile {
       // min-width: 5rem;
@@ -68,21 +63,24 @@
       min-width: 9rem;
     }
 
-    &:hover {
-      border: 1px solid white;
-      background-color: ghostwhite;
-    }
     &:not(.selected) {
-      border: 1px solid white;
-      background-image: linear-gradient(170deg, #5870a9 9%, #edf1f4 176%);
-      background-color: #2b2b2b;
-      display: contents;
+      background-color: transparent;
+      border: none;
+
+
+      &:hover {
+        background-color: rgba(128, 128, 128, 0.118);
+        border: 1.9px solid white;
+        color: #f8faff;
+        transition: all 0.15s ease;
+      }
     }
 
     &.selected {
       top: 9rem;
-      border: 1px solid white;
       background-size: 100% 100%;
+      border: none;
+    // border: 2px solid white;
       background-position:
         0px 0px,
         0px 0px,
@@ -101,11 +99,9 @@
         ),
         radial-gradient(99% 99% at 109% 2%, #00c9ffff 0%, #073aff00 100%),
         radial-gradient(160% 154% at 711px -303px, #2000ffff 0%, #073affff 27%);
-      border: 1px solid white;
       color: ghostwhite;
       width: max-content;
       padding: 0.3rem;
-      transition: all 1s ease-in-out;
     }
   }
 
@@ -124,7 +120,7 @@
     min-width: inherit;
 
     @include tablet {
-      font-size: 1rem;
+      font-size: 1.2rem;
     }
 
     &::after {

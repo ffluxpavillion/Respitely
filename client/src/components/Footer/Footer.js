@@ -5,6 +5,7 @@ import Logo from '../../assets/logo/SafeHavenTO.svg';
 import BuyMeACoffee from '../BuyMeACoffee/BuyMeACoffee';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 export default function Footer() {
   return (
@@ -73,6 +74,14 @@ export default function Footer() {
               rel='noreferrer'
             >
               <FontAwesomeIcon icon={faGithub} />
+            </a>
+            <a
+              className='footer-right__social-links'
+              href='mailto:contact@safehavento.org'
+              target='_blank'
+              rel='noreferrer'
+            >
+              <FontAwesomeIcon icon={faEnvelope} />
             </a>
           </div>
           <BuyMeACoffee />

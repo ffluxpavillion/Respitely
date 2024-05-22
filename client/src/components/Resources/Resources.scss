@@ -182,6 +182,8 @@ a:hover {
     letter-spacing: 0.2px;
     word-wrap: normal;
     line-height: 1.3rem;
+    opacity: 1;
+
 
     @include mobile {
       display: none;
@@ -195,6 +197,7 @@ a:hover {
       display: contents;
       margin: 10rem;
 
+
       &:hover {
         color: white;
       }
@@ -203,25 +206,7 @@ a:hover {
 }
 
 .show-resources {
-  opacity: 1;
-  transition: opacity 3s ease;
   position: relative;
   z-index: 3;
-  animation: slideInFromBottom 2s ease;
-
-  opacity: 1;
-  transform: translateY(0);
-  visibility: visible;
-  transition:
-    opacity 0.5s ease,
-    transform 0.5s ease;
-}
-
-@keyframes slideInFromBottom {
-  from {
-    transform: translateY(100%);
-  }
-  to {
-    transform: translateX(0);
-  }
+  transition: opacity 0.2s ease, transform 0.5s ease;
 }

@@ -22,7 +22,7 @@ export default function Resources() {
     );
 
     // Attaching observer to elements
-    const hiddenElements = document.querySelectorAll('.hidden');
+    const hiddenElements = document.querySelectorAll('.hidden-resources');
     hiddenElements.forEach((el) => observer.current.observe(el));
 
     // Cleanup function to disconnect observer
@@ -37,7 +37,7 @@ export default function Resources() {
     <>
       <section className='resources__section'>
         <br />
-        <h3 className='resources__div-header hidden' id='resources'>
+        <h3 className='resources__div-header hidden-resources' id='resources'>
           Resources
         </h3>
         <div className='resources__div'>
@@ -48,7 +48,7 @@ export default function Resources() {
               target='_blank'
               href='https://www.toronto.ca/community-people/housing-shelter/homeless-help/shelters/#shelters'
             >
-              <div className='grid__item hidden'>
+              <div className='grid__item hidden-resources'>
                 <h4 className='grid__item-header'>Shelters</h4>
                 <p className='grid__item-text'>
                   Emergency accommodation and related support services that
@@ -61,10 +61,8 @@ export default function Resources() {
               target='_blank'
               href='https://www.toronto.ca/community-people/housing-shelter/homeless-help/24-hour-respite-sites/#respitesites'
             >
-              <div className='grid__item hidden'>
-                <h4 className='grid__item-header'>
-                  24-Hour Respite Sites
-                </h4>
+              <div className='grid__item hidden-resources'>
+                <h4 className='grid__item-header'>24-Hour Respite Sites</h4>
                 <p className='grid__item-text'>
                   Low-barrier services, providing resting spaces, meals and
                   service referrals. <br />
@@ -77,7 +75,7 @@ export default function Resources() {
               target='_blank'
               href='https://www.toronto.ca/community-people/housing-shelter/homeless-help/drop-ins/#dropin'
             >
-              <div className='grid__item hidden'>
+              <div className='grid__item hidden-resources'>
                 <h4 className='grid__item-header'>Drop-In Programs</h4>
                 <p className='grid__item-text'>
                   Basic necessity services to people who are homeless or at risk
@@ -90,7 +88,7 @@ export default function Resources() {
               target='_blank'
               href='https://www.toronto.ca/community-people/housing-shelter/homeless-help/streets-to-homes-street-outreach-support-program/'
             >
-              <div className='grid__item hidden'>
+              <div className='grid__item hidden-resources'>
                 <h4 className='grid__item-header'>Street Outreach</h4>
                 <p className='grid__item-text'>
                   Services for people experiencing homelessness and living
@@ -103,7 +101,7 @@ export default function Resources() {
               target='_blank'
               href='https://www.toronto.ca/community-people/housing-shelter/homeless-help/toronto-warming-centres/'
             >
-              <div className='grid__item hidden'>
+              <div className='grid__item hidden-resources'>
                 <h4 className='grid__item-header'>Warming Centres</h4>
                 <p className='grid__item-text'>
                   Warm spaces for vulnerable residents to come inside during
@@ -116,7 +114,7 @@ export default function Resources() {
               target='_blank'
               href='https://www.toronto.ca/community-people/housing-shelter/homeless-help/housing-help/'
             >
-              <div className='grid__item hidden'>
+              <div className='grid__item hidden-resources'>
                 <h4 className='grid__item-header'>Housing Help</h4>
                 <p className='grid__item-text'>
                   Non-profit agencies that help people find and keep housing,
@@ -129,7 +127,7 @@ export default function Resources() {
               target='_blank'
               href='https://www.toronto.ca/community-people/housing-shelter/homeless-help/pet-services-in-homeless-shelters/'
             >
-              <div className='grid__item hidden'>
+              <div className='grid__item hidden-resources'>
                 <h4 className='grid__item-header'>
                   Pet Services for clients of Homeless Services
                 </h4>
@@ -144,7 +142,7 @@ export default function Resources() {
               target='_blank'
               href='https://www.toronto.ca/explore-enjoy/recreation/washrooms-drinking-water-in-parks-recreational-facilities/#location=&lat=&lng='
             >
-              <div className='grid__item hidden'>
+              <div className='grid__item hidden-resources'>
                 <h4 className='grid__item-header'>
                   Public Washrooms & Showers
                 </h4>

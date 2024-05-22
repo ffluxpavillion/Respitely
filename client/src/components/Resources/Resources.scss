@@ -40,6 +40,33 @@ a:hover {
   }
 }
 
+.hidden-resources {
+  opacity: 0;
+  transition: opacity 1s ease;
+
+  transform: translateY(10%);
+  visibility: hidden; // Ensures the content is not interactable when hidden
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease,
+    visibility 0s linear 0.5s;
+}
+
+.show-resources {
+  opacity: 1;
+  transition: opacity 3s ease;
+  position: relative;
+  z-index: 3;
+  animation: fadeInFromBottom 2.5s ease;
+
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible; // Ensures the content is interactable when visible
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
+}
+
 .resources__div {
   padding: 4rem;
   display: flex;
@@ -184,7 +211,6 @@ a:hover {
     line-height: 1.3rem;
     opacity: 1;
 
-
     @include mobile {
       display: none;
     }
@@ -197,7 +223,6 @@ a:hover {
       display: contents;
       margin: 10rem;
 
-
       &:hover {
         color: white;
       }
@@ -205,8 +230,18 @@ a:hover {
   }
 }
 
-.show-resources {
-  position: relative;
-  z-index: 3;
-  transition: opacity 0.2s ease, transform 0.5s ease;
+// .show-resources {
+//   position: relative;
+//   z-index: 3;
+//   transition: opacity 0.2s ease, transform 0.5s ease;
+// }
+
+@keyframes fadeInFromBottom {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+  }
 }

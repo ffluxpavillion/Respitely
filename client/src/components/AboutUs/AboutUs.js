@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './AboutUs.scss';
 import Logo from '../../assets/logo/SafeHavenTO.svg';
-import { Collapse, theme } from 'antd';
+import { Collapse, FloatButton } from 'antd';
 import { CaretRightOutlined } from '@ant-design/icons';
-import { FloatButton } from 'antd';
 
 export default function AboutUs() {
-  const observer = useRef(null); // Using useRef to persist the observer instance
+  const [activeKey, setActiveKey] = useState(null);
+  const observer = useRef(null);
 
   useEffect(() => {
     // Observer setup
@@ -15,18 +15,17 @@ export default function AboutUs() {
         console.log('entries', entries);
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('show');
+            entry.target.classList.add('show-about-us');
           }
         });
       },
       {
         threshold: 0.3,
-      },
-      []
+      }
     );
 
     // Attaching observer to elements
-    const hiddenElements = document.querySelectorAll('.hidden');
+    const hiddenElements = document.querySelectorAll('.hidden-about-us');
     hiddenElements.forEach((el) => observer.current.observe(el));
 
     // Cleanup function to disconnect observer
@@ -35,6 +34,17 @@ export default function AboutUs() {
         observer.current.disconnect();
       }
     };
+  }, []);
+
+  useEffect(() => {
+    if (window.location.hash === '#contact') {
+      setTimeout(() => {
+        setActiveKey('6');
+        document
+          .getElementById('contact')
+          ?.scrollIntoView({ behavior: 'smooth' });
+      }, 500);
+    }
   }, []);
 
   const items = [
@@ -124,7 +134,7 @@ export default function AboutUs() {
       key: '6',
       label: 'WANT TO GET IN TOUCH?',
       children: (
-        <p className='mission__div-text'>
+        <p className='mission__div-text' id='contact'>
           I'd love to hear from you!
           <br />
           <br />
@@ -149,7 +159,6 @@ export default function AboutUs() {
           and send me DM.
           <br />
           <br />
-          Looking forward to connecting!
         </p>
       ),
     },
@@ -160,18 +169,19 @@ export default function AboutUs() {
       <section className='mission__section' id='aboutUs'>
         <div className='mission__div'>
           <div className='mission__div-inner'>
-            <div className='mission__div-inner-container-1 hidden'>
+            <div className='mission__div-inner-container-1 hidden-about-us slide-right'>
               <h2 className='mission__div-h2'>
-                Moderninzing Shelter Access in the Heart of Toronto{' '}
+                Modernizing Shelter Access in the Heart of Toronto{' '}
               </h2>
               <img
                 loading='lazy'
                 className='mission__div-logo'
                 src={Logo}
-              ></img>
+                alt='SafeHavenTO Logo'
+              />
             </div>
             <br />
-            <div className='mission__div-inner-container-2 hidden'>
+            <div className='mission__div-inner-container-2 hidden-about-us slide-left'>
               <Collapse
                 className='custom-collapse'
                 accordion
@@ -181,6 +191,8 @@ export default function AboutUs() {
                 ghost
                 items={items}
                 size='large'
+                activeKey={activeKey}
+                onChange={(key) => setActiveKey(key)}
               />
             </div>
           </div>

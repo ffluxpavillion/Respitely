@@ -87,21 +87,28 @@ export default function Header() {
             <li onClick={handleClick}>
               <Link to='#shelters'>
                 <h3 className='navbar__div-li nav-stairs__shelters'>
-                  Shelters ⟩⟩
+                  SHELTERS ⟩⟩
                 </h3>
               </Link>
             </li>
             <li onClick={handleClick}>
               <Link to='#resources'>
                 <h3 className='navbar__div-li nav-stairs__resources'>
-                  Resources ⟩⟩
+                  RESOURCES ⟩⟩
                 </h3>
               </Link>
             </li>
             <li onClick={handleClick}>
               <Link to='#aboutUs'>
                 <h3 className='navbar__div-li nav-stairs__about-us'>
-                  About Us ⟩⟩
+                  ABOUT US ⟩⟩
+                </h3>
+              </Link>
+            </li>
+            <li onClick={handleClick}>
+              <Link to='#contact'>
+                <h3 className='navbar__div-li nav-stairs__about-us'>
+                  CONTACT ⟩⟩
                 </h3>
               </Link>
             </li>

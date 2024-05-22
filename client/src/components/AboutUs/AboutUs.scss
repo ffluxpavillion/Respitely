@@ -3,7 +3,7 @@
 @use '../../partials/global' as *;
 @use '../../partials/variables' as *;
 
-.hidden {
+.hidden-about-us {
   opacity: 0;
   transition: opacity 1s ease;
 
@@ -15,19 +15,18 @@
     visibility 0s linear 0.5s;
 }
 
-.show {
-  opacity: 1;
+.show-about-us {
   transition: opacity 3s ease;
   position: relative;
   z-index: 3;
-  animation: slideInFromLeft 2s ease;
+  animation: slideInFromLeft 5s ease;
 
   opacity: 1;
   transform: translateY(0);
   visibility: visible;
   transition:
     opacity 0.5s ease,
-    transform 0.5s ease;
+    transform s ease;
 }
 
 .mission__section {
@@ -268,11 +267,11 @@
 }
 
 .slide-left {
-  animation: slideInFromRight 0.5s forwards;
+  animation: slideInFromRight 1.5s forwards;
 }
 
 .slide-right {
-  animation: slideInFromLeft 0.5s forwards;
+  animation: slideInFromLeft 1.5s forwards;
 }
 
 @keyframes slideInFromRight {
@@ -286,7 +285,7 @@
 
 @keyframes slideInFromLeft {
   from {
-    transform: translateY(100%);
+    transform: translateX(-100%);
   }
   to {
     transform: translateY(0);

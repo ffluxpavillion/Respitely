@@ -1,7 +1,7 @@
 import React from 'react';
 import './Footer.scss';
 import FooterImage from '../../assets/images/SafeHavenTO_graphic-art-community-1.png';
-import Logo from '../../assets/logo/SafeHavenTO.svg';
+import { ReactComponent as Logo } from '../../assets/logo/SafeHavenTO.svg'; // Import SVG as a React component
 import BuyMeACoffee from '../BuyMeACoffee/BuyMeACoffee';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
@@ -41,14 +41,21 @@ export default function Footer() {
                   <h3 className='footer__item'>About Us</h3>
                 </a>
               </li>
+            </ul>
+            <ul className='footer__list-ul'>
+              <br />
+              <br />
+              <br />
+              <br />
+
               <li className='footer__list-li'>
                 <Link to='/cookie-policy' className='footer__list-a'>
-                  <h3 className='footer__item'>Cookie Policy</h3>
+                  <h3 className='footer__item legal-item'>Cookie Policy</h3>
                 </Link>
               </li>
               <li className='footer__list-li'>
                 <Link to='/terms-of-use' className='footer__list-a'>
-                  <h3 className='footer__item'>Terms of Use</h3>
+                  <h3 className='footer__item legal-item'>Terms of Use</h3>
                 </Link>
               </li>
             </ul>
@@ -57,14 +64,7 @@ export default function Footer() {
 
         <div className='footer-middle'>
           <div className='footer-div__logo-container'>
-            <div className='mission__div-logo-container'>
-              <img
-                loading='lazy'
-                className='footer-div__logo'
-                src={Logo}
-                alt='SafeHavenTO Logo'
-              />
-            </div>
+            <Logo className='footer__logo-svg' />
           </div>
         </div>
 
@@ -95,7 +95,7 @@ export default function Footer() {
               <FontAwesomeIcon icon={faEnvelope} />
             </a>
           </div>
-          <BuyMeACoffee />
+          {/* <BuyMeACoffee /> */}
         </div>
       </footer>
       <div className='footer-bottom'>

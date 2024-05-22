@@ -28,7 +28,14 @@ li {
   width: 100%;
   background-color: #0f0f0f;
   padding: 1;
+}
 
+.header__container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  z-index: 1001;
   @include mobile {
     justify-content: space-evenly;
     padding: 1rem 1rem 0.25rem 1rem;
@@ -43,17 +50,8 @@ li {
   }
 }
 
-.header__container {
-  display: inline-flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  z-index: 1001;
-}
-
 .header.hidden {
   transform: translateY(-100%);
-  transition: transform 0.45s ease-in-out;
   align-items: end;
 }
 

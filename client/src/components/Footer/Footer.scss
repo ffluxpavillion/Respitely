@@ -12,10 +12,11 @@
   z-index: -2;
   position: relative;
   background-color: black;
+  height: 50vh;
 
   @include mobile {
     padding: 0.1rem;
-    height: 17rem;
+    height: 30rem;
   }
 }
 

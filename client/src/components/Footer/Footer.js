@@ -6,6 +6,7 @@ import BuyMeACoffee from '../BuyMeACoffee/BuyMeACoffee';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
@@ -39,6 +40,16 @@ export default function Footer() {
                 <a href='#aboutUs' className='footer__list-a'>
                   <h3 className='footer__item'>About Us</h3>
                 </a>
+              </li>
+              <li className='footer__list-li'>
+                <Link to='/cookie-policy' className='footer__list-a'>
+                  <h3 className='footer__item'>Cookie Policy</h3>
+                </Link>
+              </li>
+              <li className='footer__list-li'>
+                <Link to='/terms-of-use' className='footer__list-a'>
+                  <h3 className='footer__item'>Terms of Use</h3>
+                </Link>
               </li>
             </ul>
           </div>

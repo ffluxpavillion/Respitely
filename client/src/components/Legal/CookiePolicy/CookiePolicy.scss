@@ -1,0 +1,88 @@
+@use '../../../partials/abstracts' as *;
+@use '../../../partials/fonts' as *;
+@use '../../../partials/global' as *;
+@use '../../../partials/variables' as *;
+
+.cookie--policy {
+  color: ghostwhite;
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  margin: 7rem 11rem 11rem 11rem;
+  padding: 5rem;
+  font-size: 1rem;
+      // line-height: 3rem;
+
+
+}
+
+.cookie-header {
+  font-size: 24px;
+
+}
+
+.cookie-date {
+
+}
+
+.cookie-h2 {
+  font-weight: bold;
+  font-size: 1.3rem;
+
+}
+
+.cookie-h2-number {
+  padding-right: 0.4rem;
+}
+.cookie-h3{
+  // font-weight: bold;
+  font-size: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 2rem;
+
+}
+
+.cookie-text {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  padding: 0 2rem 0 2rem;
+
+
+
+}
+
+
+.cookie__list-item {
+  list-style: disc;
+  display: list-item;
+  margin-block-start: 1rem;
+  margin-block-end: 1rem;
+  margin-left: 2.5rem;
+  padding-left: 0.3rem;
+
+}
+
+.cookie-link {
+  color: #0066cc;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.cookie-ul {
+  list-style-type: none;
+  padding: 0;
+  padding: 0rem 2rem;
+  font-size: 1.1rem;
+
+}
+
+.cookie-li {
+  padding: 10px;
+  border: 1px solid #ddd;
+  margin-top: 5px;
+
+}
+

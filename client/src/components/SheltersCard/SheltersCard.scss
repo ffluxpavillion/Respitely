@@ -206,13 +206,14 @@ h3 {
     display: inline-flex; // CULPRIT #3 - fixed
     font-style: italic;
     font-variant: contextual;
-        width: 17rem;
+    width: 17rem;
 
   }
 
   @include tablet {
-    display: inline;
+    display: inline-flex;
     font-style: italic;
+    width: 25rem;
   }
 
   @include desktop {
@@ -358,7 +359,7 @@ h3 {
   }
 
   &::-webkit-scrollbar {
-    display: none; //  hides the scrollbar
+    // display: none; //  hides the scrollbar
   }
 
   @include mobile {

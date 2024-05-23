@@ -254,7 +254,7 @@ export default function SheltersCard() {
             <div className='subHeader__lower'>
               <span className='subheader__text'>
                 Results are automatically sorted by most recently updated, with
-                highest occupancy
+                highest occupancy <br />(~ 7 Days )
               </span>
             </div>
           </span>
@@ -435,7 +435,7 @@ export default function SheltersCard() {
             ></SheltersMap>
           </div>
         )}
-        {/* <span className='scroll-instructions'>↓ Scroll Down For More ↓</span> */}
+        <span className='scroll-instructions'>↓ Scroll Down For More ↓</span>
         {goHere && (
           <div className='shelter-detailed-view'>
             <button className='back-button' onClick={closeDetailedView}>

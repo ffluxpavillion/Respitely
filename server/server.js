@@ -12,8 +12,6 @@ let { PORT } = process.env;
 
 PORT = process.env.PORT || 8081;
 
-// app.use(cors()); // OLD CORS
-
 // Enable CORS based on the environment
 if (process.env.NODE_ENV === 'development') { // Allow requests from any origin in development
   app.use(cors());

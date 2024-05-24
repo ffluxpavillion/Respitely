@@ -7,6 +7,8 @@ import LoadMoreButton from '../LoadMoreButton/LoadMoreButton';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { faLocationCrosshairs } from '@fortawesome/free-solid-svg-icons';
+import EmergencyBanner from '../EmergencyBanner/EmergencyBanner';
+
 
 export default function SheltersCard() {
   const [loading, setLoading] = useState(true); // state to show/hide Loading Shelter Data message
@@ -233,6 +235,7 @@ export default function SheltersCard() {
 
   return (
     <>
+      <EmergencyBanner />
       <section className='shelter-section' id='shelters'>
         <div className='shelter-section__upper'>
           <h3 className='shelter-section__header'>
@@ -254,11 +257,12 @@ export default function SheltersCard() {
             <div className='subHeader__lower'>
               <span className='subheader__text'>
                 Results are automatically sorted by most recently updated, with
-                highest occupancy <br />(~ 7 Days )
+                highest occupancy (~ 7 Days )
               </span>
             </div>
           </span>
         </div>
+        <span className='shelter__dispatch-info-banner'></span>
         {isMobile ? (
           <div className='mobile__shelter-scrollable-container'>
             <span className='mobile__instructions-text'>
@@ -280,7 +284,7 @@ export default function SheltersCard() {
                         ? `Available Beds: ${record.UNOCCUPIED_BEDS}`
                         : `Available Rooms: ${record.UNOCCUPIED_ROOMS}`}
                       <br />
-                      Last Updated: {record.OCCUPANCY_DATE}
+                      Last Updated: {record.OCCUPANCY_DATE} <br /> {calculateDaysAgo(record.OCCUPANCY_DATE)}
                     </p>
                   </div>
                 </li>

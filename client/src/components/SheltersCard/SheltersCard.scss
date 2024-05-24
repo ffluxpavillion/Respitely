@@ -196,7 +196,6 @@ h3 {
 .subheader__text {
   font-family: 'Toronto Subway Bold';
   font-weight: 800;
-  width: 23rem;
   text-align: center;
   text-transform: uppercase;
   font-variant-caps: all-petite-caps;
@@ -218,6 +217,8 @@ h3 {
 
   @include desktop {
     display: flex;
+    width: 25rem;
+
   }
 }
 
@@ -533,7 +534,7 @@ h3 {
 
 .shelter-item__details {
   padding: 0.6rem;
-  background-image: linear-gradient(135deg, #6d5dfc 0%, #c792ec 100%);
+  background-image: linear-gradient(135deg, #6d5dfc 0%, #c692ecdd 100%);
   border-radius: 12px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
   margin-bottom: 2rem;
@@ -548,7 +549,6 @@ h3 {
   font-size: 0.88rem;
   line-height: 1.6;
   font-weight: normal;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -782,7 +782,7 @@ h3 {
 
 .mobile__shelter-item__availability {
   padding: 0.6rem;
-  background-image: linear-gradient(135deg, #6d5dfc 0%, #c792ec 100%);
+  background-image: linear-gradient(135deg, #6d5dfc 0%, #c692ecdd 100%);
   border-radius: 12px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
   margin-bottom: 1rem;
@@ -792,6 +792,8 @@ h3 {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
+  line-height: 1.5rem;
+
 
   @include mobile {
     font-size: 1rem;

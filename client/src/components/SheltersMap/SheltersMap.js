@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
+import './SheltersMap.scss';
+import React, { useState, useEffect, useRef, useContext } from 'react';
 import Map, {
   NavigationControl,
   ScaleControl,
@@ -12,11 +13,10 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import HeartMarker from '../../assets/icons/SafeHavenTO_icon-marker.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRoute } from '@fortawesome/free-solid-svg-icons';
-
-import './SheltersMap.scss';
+import { ApiKeyContext } from '../../contexts/ApiKeyContext';
 
 export default function SheltersMap(props) {
-  const [apiKey, setApiKey] = useState(''); // piece of state to store maps API key
+  const apiKey = useContext(ApiKeyContext); // piece of state to store maps API key
   const [locations, setLocations] = useState([]); // Raw locations as an array
   const [refreshKey, setRefreshKey] = useState(0); // Forces a re-render of the map
   const [selectedPlace, setSelectedPlace] = useState(null); // Sets the selected place upon marker click
@@ -46,17 +46,6 @@ export default function SheltersMap(props) {
     setSelectedPlace(null); // to deselect any currently selected marker on the map
   }, [props.filterType]);
 
-  useEffect(() => {
-    // Fetch and set maps key from server
-    axios
-      .get(`${process.env.REACT_APP_BACKEND_URL}/api/maps-key`)
-      .then((response) => {
-        setApiKey(response.data.key);
-      })
-      .catch((error) => {
-        console.error('Error fetching maps key:', error);
-      });
-  }, []);
 
   // console.log('apiKey:', apiKey);
   // console.log('locations:', locations);

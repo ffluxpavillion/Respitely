@@ -10,6 +10,8 @@ import Resources from './components/Resources/Resources';
 import Footer from './components/Footer/Footer';
 import CookiePolicy from './components/Legal/CookiePolicy/CookiePolicy';
 import TermsOfUse from './components/Legal/TermsOfUse/TermsOfUse';
+// import MealsMap from './components/MealsMap/MealsMap';
+import ApiKeyProvider from './contexts/ApiKeyContext';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { FloatButton } from 'antd';
 import { initGA } from './utils/analytics';
@@ -18,22 +20,26 @@ export default function App() {
   initGA(); // Initialize Google Analytics
 
   return (
-    <BrowserRouter>
-      <Header />
-      <Routes>
-      <Route path='/' element={<>
-        <Home />
-        <Parallax1 />
-        <SheltersCard />
-        <Parallax2 />
-        <Resources />
-        <Parallax3 />
-        <AboutUs />
-      </>} />
-      <Route path='/cookie-policy' element={<CookiePolicy />} />
-      <Route path='/terms-of-use' element={<TermsOfUse />} />
-      </Routes>
-      <Footer />
-    </BrowserRouter>
+    <ApiKeyProvider>
+      <BrowserRouter>
+        <Header />
+        <Routes>
+        <Route path='/' element={<>
+          <Home />
+          <Parallax1 />
+          <SheltersCard />
+          {/* <MealsMap /> */}
+          <Parallax2 />
+          <Resources />
+          <Parallax3 />
+          <AboutUs />
+        </>} />
+        <Route path='/cookie-policy' element={<CookiePolicy />} />
+        <Route path='/terms-of-use' element={<TermsOfUse />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
+    </ApiKeyProvider>
+
   );
 }

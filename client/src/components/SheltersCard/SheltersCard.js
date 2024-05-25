@@ -359,7 +359,7 @@ export default function SheltersCard() {
                                         size='lg'
                                       />
                                     </span>
-                                    <h4 className='btn--Share-Text'>Go Here</h4>
+                                    <h4 className='btn--Go-Here-Text'>Go Here</h4>
                                   </button>
                                 </div>
                               </div>

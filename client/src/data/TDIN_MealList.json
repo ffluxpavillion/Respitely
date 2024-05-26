@@ -10,6 +10,7 @@
     "CENTRAL_DOWNTOWN": {
       "drop_in_centers": [
         {
+          "id": "CD-001",
           "name": "Sanctuary Ministries",
           "address": "25 Charles Street East",
           "latitude": 43.668868,
@@ -49,6 +50,7 @@
           }
         },
         {
+          "id": "CD-002",
           "name": "The 519",
           "address": "519 Church Street",
           "latitude": 43.666415,
@@ -91,6 +93,7 @@
           }
         },
         {
+          "id": "CD-003",
           "name": "St. James Cathedral Drop-In",
           "address": "65 Church Street",
           "latitude": 43.6505023,
@@ -129,6 +132,7 @@
           }
         },
         {
+          "id": "CD-004",
           "name": "Church of the Holy Trinity: Trinity Community Hub - People's Presence Drop-in",
           "address": "19 Trinity Square",
           "latitude": 43.654448,
@@ -168,6 +172,7 @@
           }
         },
         {
+          "id": "CD-005",
           "name": "Maggie's Toronto Sex Workers Action Project",
           "address": "526 Richmond Street East",
           "latitude": 43.65486222,
@@ -206,6 +211,7 @@
           }
         },
         {
+          "id": "CD-006",
           "name": "The Neighbourhood Group | St. Stephen's Community House: The Corner Drop-In",
           "address": "260 Augusta Avenue",
           "latitude": 43.6564796,
@@ -261,6 +267,7 @@
           }
         },
         {
+          "id": "CD-007",
           "name": "Church of St. Stephen In-The-Fields: Safe Space Drop-in",
           "address": "103 Bellevue Avenue, Toronto",
           "latitude": 43.657193,
@@ -301,6 +308,7 @@
           }
         },
         {
+          "id": "CD-008",
           "name": "The Scott Mission: Community Meals",
           "address": "346 Spadina Avenue",
           "latitude": 43.65431006,
@@ -348,9 +356,16 @@
           }
         },
         {
+          "id": "CD-009",
           "name": "St. Felix Centre - Respite",
           "address": "69 Fraser Ave.",
-          "phone": "416-203-1624",
+          "latitude": 43.638725,
+          "longitude": -79.424537,
+          "city": "Toronto",
+          "province": "ON",
+          "postal_code": "M6K 1E9",
+          "phone": "416-534-4554",
+          "website": "https://stfelixcentre.org/programs-services/respite-services-program/",
           "population": "General Population; Adults",
           "pets_allowed": true,
           "wheelchair_accessible": true,
@@ -379,6 +394,7 @@
           }
         },
         {
+          "id": "CD-010",
           "name": "Evangel Hall Mission",
           "address": "552 Adelaide Street West",
           "latitude": 43.6454499,
@@ -422,6 +438,7 @@
           }
         },
         {
+          "id": "CD-011",
           "name": "West Neighbourhood House: The Meeting Place",
           "address": "588 Queen Street West",
           "latitude": 43.6474229,
@@ -471,6 +488,7 @@
           }
         },
         {
+          "id": "CD-012",
           "name": "YMCA of Greater Toronto: Wagner Green YMCA Drop In",
           "address": "7 Vanauley Street",
           "latitude": 43.648335,
@@ -523,9 +541,16 @@
           }
         },
         {
+          "id": "CD-013",
           "name": "Ballroom Drop-in",
           "address": "192 Spadina Ave.",
+          "latitude": 43.650230,
+          "longitude": -79.397056,
+          "city": "Toronto",
+          "province": "Ontario",
+          "postal_code": "M5T 2G7",
           "phone": "647-609-2300",
+          "website": "",
           "population": "Adults: LGBTQ, BIPOC, Youth",
           "service_dog_allowed": true,
           "wheelchair_accessible": true,
@@ -555,6 +580,7 @@
           }
         },
         {
+          "id": "CD-014",
           "name": "Yonge Street Mission: Evergreen Centre",
           "address": "365 Spadina Ave",
           "latitude": 43.65589549,
@@ -597,6 +623,7 @@
           }
         },
         {
+          "id": "CD-015",
           "name": "Covenant House Toronto: Community Support Services",
           "address": "20 Gerrard Street East",
           "latitude": 43.659224,
@@ -648,6 +675,7 @@
           }
         },
         {
+          "id": "CD-016",
           "name": "Metropolitan United Church: Met United Community Services",
           "address": "56 Queen Street East",
           "latitude": 43.653174,
@@ -685,9 +713,16 @@
           }
         },
         {
+          "id": "CD-017",
           "name": "Fred Victor: Women's Drop-in (Adelaide Resource Centre)",
           "address": "67 Adelaide St. E.",
+          "latitude": 43.651119,
+          "longitude": -79.375267,
+          "city": "Toronto",
+          "province": "ON",
+          "postal_code": "M5C 1K6",
           "phone": "416-364-7739",
+          "website": "https://www.fredvictor.org/what-we-do/health-services/drop-ins-community-programs/",
           "population": "Women",
           "service_dog_allowed": true,
           "wheelchair_accessible": true,
@@ -715,7 +750,7 @@
             }
           }
         },
-        {
+        {"id": "CD-018",
           "name": "Fred Victor Open House Drop-In",
           "address": "145 Queen Street East",
           "latitude": 43.653678,
@@ -753,6 +788,7 @@
           }
         },
         {
+          "id": "CD-019",
           "name": "Good Shepherd Centre Drop-In",
           "address": "412 Queen Street East",
           "latitude": 43.65614,
@@ -804,6 +840,7 @@
           }
         },
         {
+          "id": "CD-020",
           "name": "Haven Toronto",
           "address": "170 Jarvis Street",
           "latitude": 43.6555622,
@@ -862,6 +899,7 @@
           }
         },
         {
+          "id": "CD-021",
           "name": "Toronto Council Fire Native Cultural Centre: The Gathering Place",
           "address": "439 Dundas Street East",
           "latitude": 43.659298,
@@ -918,6 +956,7 @@
           }
         },
         {
+          "id": "CD-022",
           "name": "All Saints Church Community Centre",
           "address": "315 Dundas Street East",
           "latitude": 43.658288,
@@ -966,6 +1005,7 @@
           }
         },
         {
+          "id": "CD-023",
           "name": "Margaret's Housing and Community Support Services: Toronto East Drop-in Centre",
           "address": "323 Dundas Street East",
           "latitude": 43.658396,
@@ -1024,6 +1064,7 @@
           }
         },
         {
+          "id": "CD-024",
           "name": "Church of the Redeemer: The Common Table",
           "address": "162 Bloor Street West",
           "latitude": 43.668729,
@@ -1032,7 +1073,7 @@
           "province": "ON",
           "postal_code": "M5S 1M4",
           "phone": "416-922-4948",
-          "website": "www.theredeemer.ca/Page/LunchProgram.html",
+          "website": "https://theredeemer.ca/alt/get-involved-alternative/drop-in/",
           "population": "General Population; Adults",
           "service_dog_allowed": true,
           "wheelchair_accessible": true,
@@ -1071,9 +1112,16 @@
           }
         },
         {
+          "id": "CD-025",
           "name": "St. Basil's Church",
           "address": "50 St. Joseph St.",
+          "latitude": 43.665686,
+          "longitude": -79.387925,
+          "city": "Toronto",
+          "province": "ON",
+          "postal_code": "M5S 1J4",
           "phone": "416-926-7110",
+          "website": "https://www.stbasiltoronto.org/",
           "population": "General Population",
           "service_dog_allowed": true,
           "wheelchair_accessible": true,
@@ -1104,9 +1152,16 @@
           }
         },
         {
+          "id": "CD-026",
           "name": "Law Society Foundation Feed the Hungry Program",
           "address": "130 Queen St W",
+          "latitude": 43.651953,
+          "longitude": -79.385586,
+          "city": "Toronto",
+          "province": "ON",
+          "postal_code": "M5H 2N6",
           "phone": "416-947-3412",
+          "website": "https://lso.ca/the-law-society-foundation/home",
           "population": "General Population",
           "pets_allowed": false,
           "wheelchair_accessible": true,
@@ -1143,6 +1198,7 @@
     "EAST_DOWNTOWN": {
       "drop_in_centers": [
         {
+          "id": "ED-001",
           "name": "Fred Victor - 40 Oak Drop-in",
           "address": "40 Oak Street",
           "latitude": 43.6613801,
@@ -1187,6 +1243,7 @@
           }
         },
         {
+          "id": "ED-002",
           "name": "Friends of Ruby",
           "address": "489 Queen Street East, LL1",
           "latitude": 43.65686665,
@@ -1269,6 +1326,7 @@
           }
         },
         {
+          "id": "ED-003",
           "name": "Fontbonne Ministries: Mustard Seed Drop-in",
           "address": "791 Queen Street East",
           "latitude": 43.659787,
@@ -1318,6 +1376,7 @@
     "MIDTOWN_WEST": {
       "drop_in_centers": [
         {
+          "id": "MW-001",
           "name": "Sistering",
           "address": "962 Bloor Street West",
           "latitude": 43.661322,
@@ -1383,6 +1442,7 @@
           }
         },
         {
+          "id": "MW-002",
           "name": "Christie Ossington Neighbourhood Centre",
           "address": "850/854 Bloor Street West",
           "latitude": 43.6624092,
@@ -1437,6 +1497,7 @@
           }
         },
         {
+          "id": "MW-003",
           "name": "Native Child and Family Services of Toronto: Native Youth Resource Centre Drop-in",
           "address": "655 Bloor Street West",
           "latitude": 43.644867,
@@ -1497,6 +1558,7 @@
           }
         },
         {
+          "id": "MW-004",
           "name": "St. Michael’s Homes: Our Place Community of Hope",
           "address": "1183 Davenport Road",
           "latitude": 43.67413,
@@ -1539,6 +1601,7 @@
           }
         },
         {
+          "id": "MW-005",
           "name": "Davenport Perth Neighbourhood and Community Health Centre",
           "address": "1900 Davenport Road",
           "latitude": 43.6706764,
@@ -1577,6 +1640,7 @@
           }
         },
         {
+          "id": "MW-006",
           "name": "Breakaway Community Services: Pieces to Pathways",
           "address": "21 Strickland Avenue",
           "latitude": 43.643296,
@@ -1615,6 +1679,7 @@
           }
         },
         {
+          "id": "MW-007",
           "name": "Parkdale Activity Recreation Centre",
           "address": "1499 Queen Street West",
           "latitude": 43.639706,
@@ -1665,9 +1730,16 @@
           }
         },
         {
+          "id": "MW-008",
           "name": "The Dale Ministries",
           "address": "201 Cowan Ave.",
+          "latitude": 43.640403,
+          "longitude":-79.432731,
+          "city": "Toronto",
+          "province": "ON",
+          "postal_code": "M6K 2N7",
           "phone": "647-926-6352",
+          "website": "https://www.thedale.org/visit-us/",
           "population": "General Population; Adults",
           "service_dog_allowed": true,
           "wheelchair_accessible": "",
@@ -1696,6 +1768,7 @@
           }
         },
         {
+          "id": "MW-009",
           "name": "Syme Woolner Neighbourhood and Family Centre: Jane's Drop-in",
           "address": "2468 Eglinton Avenue West, Unit 3",
           "latitude": 43.6919292,
@@ -1757,6 +1830,7 @@
           }
         },
         {
+          "id": "MW-010",
           "name": "Weston King Neighbourhood Centre",
           "address": "2017 Weston Road",
           "latitude": 43.7013717,
@@ -1814,6 +1888,7 @@
     "SOUTHWEST": {
       "drop_in_centers": [
         {
+          "id": "SW-001",
           "name": "LAMP Community Health Centre",
           "address": "185 Fifth Street",
           "latitude": 43.603348,
@@ -1860,9 +1935,16 @@
           }
         },
         {
+          "id": "SW-002",
           "name": "Daily Bread Food Bank's Community Meal",
           "address": "191 New Toronto Street, gate #1",
+          "latitude": 43.607955,
+          "longitude": -79.501304,
+          "city": "Etobicoke",
+          "province": "ON",
+          "postal_code": "M8V 2E7",
           "phone": "416-203-0050",
+          "website": "https://www.dailybread.ca/need-food/",
           "population": "General Population",
           "pets_allowed": false,
           "wheelchair_accessible": true,
@@ -1896,9 +1978,16 @@
     "NORTHWEST": {
       "drop_in_centers": [
         {
+          "id": "NW-001",
           "name": "Cummer Avenue United Church Drop Inn",
           "address": "53 Cummer Ave.",
+          "latitude": 43.78737640,
+          "longitude": -79.41579437,
+          "city": "North York",
+          "province": "ON",
+          "postal_code": "M2M 2E5",
           "phone": "647-400-1746",
+          "website": "https://www.cummeravenueuc.ca/",
           "population": "General Population; Adults",
           "service_dog_allowed": true,
           "wheelchair_accessible": true,
@@ -1948,6 +2037,7 @@
           }
         },
         {
+          "id": "NW-002",
           "name": "Progress Place: The Community Place Hub",
           "address": "1765 Weston Road",
           "latitude": 43.69924157,
@@ -2002,6 +2092,7 @@
     "EAST__SCARBOROUGH": {
       "drop_in_centers": [
         {
+          "id": "ES-001",
           "name": "Warden Woods Community Centre: Teesdale Drop-In",
           "address": "40 Teesdale Place, Ground Floor",
           "latitude": 43.697052,
@@ -2042,9 +2133,16 @@
           }
         },
         {
-          "name": "Warden Woods Community Centre: Respite",
+          "id": "ES-002",
+          "name": "Warden Woods Community Centre: Respite on Progress",
           "address": "705 Progress Ave",
+          "latitude": 43.777717,
+          "longitude": -79.247428,
+          "city": "Scarborough",
+          "province": "ON",
+          "postal_code": "M1H 2X1",
           "phone": "416-639-6766",
+          "website": "https://wardenwoods.com/programs/respite/",
           "population": "General Population",
           "service_dog_allowed": true,
           "wheelchair_accessible": true,
@@ -2073,6 +2171,7 @@
           }
         },
         {
+          "id": "ES-003",
           "name": "Agincourt Community Services Association: Scarborough Drop-in North",
           "address": "4155 Sheppard Avenue East, Suite 100",
           "latitude": 43.7845592,
@@ -2122,6 +2221,7 @@
           }
         },
         {
+          "id": "ES-004",
           "name": "Agincourt Community Services Association: Scarborough Drop-in South",
           "address": "202 Markham Road, Suite 100",
           "latitude": 43.65366138,
@@ -2165,9 +2265,16 @@
           }
         },
         {
+          "id": "ES-005",
           "name": "Good Neighbours Drop-In",
           "address": "193 Markham Road",
+          "latitude": 43.743495,
+          "longitude": -79.219055,
+          "city": "Scarborough",
+          "province": "ON",
+          "postal_code": "M1J 3C3",
           "phone": "647-358-4105",
+          "website": "https://www.goodneighboursmission.org/",
           "population": "General Population; Adults",
           "service_dog_allowed": true,
           "wheelchair_accessible": true,

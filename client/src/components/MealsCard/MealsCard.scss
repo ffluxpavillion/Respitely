@@ -1,0 +1,79 @@
+@use '../../partials/abstracts' as *;
+@use '../../partials/fonts' as *;
+@use '../../partials/global' as *;
+@use '../../partials/variables' as *;
+
+
+.meals-section {
+  margin: 5.25rem 5.25rem 5.25rem 5.25rem;
+  padding: 2.5rem 3.5rem 2.5rem 3.5rem;
+  background-color: white;
+  background-color: #aaa0b009;
+  box-shadow: 0 0px 20px 5px rgb(84, 84, 84);
+  position: relative;
+  z-index: -1;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.meals-section__upper {
+  padding-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  border-radius: 30px;
+
+  @include mobile {
+    width: -webkit-fill-available;
+  }
+
+}
+
+.meals-section__header {
+  color: ghostwhite;
+  font-family: 'Junction Light', 'Junction Bold', 'Toronto Subway',
+    'Toronto Subway Bold';
+  text-wrap: nowrap;
+  font-weight: 800;
+  border-radius: 10px;
+  backdrop-filter: opacity(0.5);
+
+  @include mobile {
+    // font-size: 2.2rem; // CULPRIT #1 - FIXED
+    font-family: 'Toronto Subway Bold';
+    font-variant: all-small-caps;
+    font-size: 2rem;
+    display: flex;
+    width: 80%;
+    align-self: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    text-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+
+  @include tablet {
+    font-size: 2.5rem;
+    text-align: center;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    text-wrap: nowrap;
+  }
+
+  @include desktop {
+    font-size: 3.4rem;
+    text-align: center;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    text-wrap: nowrap;
+  }
+
+}
+
+.meals-section__lower {
+
+}

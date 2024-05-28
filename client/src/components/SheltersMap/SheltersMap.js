@@ -123,6 +123,7 @@ export default function SheltersMap(props) {
         // Attach a click event listener to the "location-markers" layer
         if (e.features.length > 0) {
           const feature = e.features[0];
+          // console.log('feature:=======', feature);
           setSelectedPlace(feature); // Store the entire feature
           setViewState({
             // Update the view state to center on the clicked marker

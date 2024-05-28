@@ -42,6 +42,7 @@
     height: 100%;
     display: flex;
     flex-direction: row;
+    background-color: #212d40;
 
     @include mobile {
       // width: max-content;
@@ -199,6 +200,7 @@
   display: flex;
   justify-content: center;
   place-content: center;
+  width: 100%;
 }
 
 .mapboxgl-popup-anchor-bottom-left {
@@ -212,15 +214,14 @@
   pointer-events: auto;
   position: relative;
   animation: fadeIn 0.5s ease-out forwards;
-  background-color: #4c4c47;
   backdrop-filter: blur(18.5px);
-  border-radius: 10px;
+  border-radius: 10px !important;
   box-shadow: 0 0 14px 5px #999999;
   display: flex;
   flex-direction: column;
   font-variant-caps: all-petite-caps;
   border-left: 20px solid #d66853;
-  background: #212d40;
+  background-color: #212d40 !important;
   align-self: center;
 
   @include mobile {

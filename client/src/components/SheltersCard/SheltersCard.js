@@ -7,8 +7,7 @@ import LoadMoreButton from '../LoadMoreButton/LoadMoreButton';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { faLocationCrosshairs } from '@fortawesome/free-solid-svg-icons';
-import EmergencyBanner from '../EmergencyBanner/EmergencyBanner';
-
+import EmergencyBanner from '../InfoBanner/EmergencyBanner';
 
 export default function SheltersCard() {
   const [loading, setLoading] = useState(true); // state to show/hide Loading Shelter Data message
@@ -97,40 +96,56 @@ export default function SheltersCard() {
     if (dateA.getTime() !== dateB.getTime()) {
       return dateB.getTime() - dateA.getTime(); // Sort by date (most recent first)
     } else {
-      const maxA = Math.max(parseInt(a.UNOCCUPIED_BEDS || '0', 10), parseInt(a.UNOCCUPIED_ROOMS || '0', 10));
-      const maxB = Math.max(parseInt(b.UNOCCUPIED_BEDS || '0', 10), parseInt(b.UNOCCUPIED_ROOMS || '0', 10));
+      const maxA = Math.max(
+        parseInt(a.UNOCCUPIED_BEDS || '0', 10),
+        parseInt(a.UNOCCUPIED_ROOMS || '0', 10)
+      );
+      const maxB = Math.max(
+        parseInt(b.UNOCCUPIED_BEDS || '0', 10),
+        parseInt(b.UNOCCUPIED_ROOMS || '0', 10)
+      );
       return maxB - maxA; // If dates are equal, sort by availability (highest first)
     }
   };
 
   // function to filter data based on CAPACITY_TYPE, and then sort based on OCCUPANCY_DATE
   const filterAndSortData = (data, type) => {
-  const fetchedData = JSON.parse(JSON.stringify(data)); // deep copy data to avoid mutating state
-  let filteredData;
+    const fetchedData = JSON.parse(JSON.stringify(data)); // deep copy data to avoid mutating state
+    let filteredData;
 
-  if (type === 'Beds') {
-    filteredData = fetchedData
-      .filter((record) => record.CAPACITY_TYPE === 'Bed Based Capacity' && parseInt(record.UNOCCUPIED_BEDS, 10) > 0)
-      .sort(sortByDateAndAvailability);
-  } else if (type === 'Rooms') {
-    filteredData = fetchedData
-      .filter((record) => record.CAPACITY_TYPE === 'Room Based Capacity' && parseInt(record.UNOCCUPIED_ROOMS, 10) > 0)
-      .sort(sortByDateAndAvailability);
-  } else {
-    filteredData = fetchedData
-      .filter((record) => {
-        const maxAvailability = Math.max(parseInt(record.UNOCCUPIED_BEDS || '0', 10), parseInt(record.UNOCCUPIED_ROOMS || '0', 10));
-        return maxAvailability > 0;
-      })
-      .sort(sortByDateAndAvailability);
-  }
+    if (type === 'Beds') {
+      filteredData = fetchedData
+        .filter(
+          (record) =>
+            record.CAPACITY_TYPE === 'Bed Based Capacity' &&
+            parseInt(record.UNOCCUPIED_BEDS, 10) > 0
+        )
+        .sort(sortByDateAndAvailability);
+    } else if (type === 'Rooms') {
+      filteredData = fetchedData
+        .filter(
+          (record) =>
+            record.CAPACITY_TYPE === 'Room Based Capacity' &&
+            parseInt(record.UNOCCUPIED_ROOMS, 10) > 0
+        )
+        .sort(sortByDateAndAvailability);
+    } else {
+      filteredData = fetchedData
+        .filter((record) => {
+          const maxAvailability = Math.max(
+            parseInt(record.UNOCCUPIED_BEDS || '0', 10),
+            parseInt(record.UNOCCUPIED_ROOMS || '0', 10)
+          );
+          return maxAvailability > 0;
+        })
+        .sort(sortByDateAndAvailability);
+    }
 
-  setRecords(fetchedData); // set newly sorted records
-  setDisplayedRecords(filteredData.slice(0, loadCount)); // initially load 5 records
-  setFilterType(type); // set filter state
-  setGoHere(null);
-};
-
+    setRecords(fetchedData); // set newly sorted records
+    setDisplayedRecords(filteredData.slice(0, loadCount)); // initially load 5 records
+    setFilterType(type); // set filter state
+    setGoHere(null);
+  };
 
   // function to load more records
   const loadMore = () => {
@@ -141,18 +156,30 @@ export default function SheltersCard() {
     let newDisplayedRecords = [];
     if (filterType === 'Beds') {
       newDisplayedRecords = records
-        .filter((record) => record.CAPACITY_TYPE === 'Bed Based Capacity' && parseInt(record.UNOCCUPIED_BEDS, 10) > 0)
+        .filter(
+          (record) =>
+            record.CAPACITY_TYPE === 'Bed Based Capacity' &&
+            parseInt(record.UNOCCUPIED_BEDS, 10) > 0
+        )
         .sort(sortByDateAndAvailability)
         .slice(0, newLoadCount);
     } else if (filterType === 'Rooms') {
       newDisplayedRecords = records
-        .filter((record) => record.CAPACITY_TYPE === 'Room Based Capacity' && parseInt(record.UNOCCUPIED_ROOMS, 10) > 0)
+        .filter(
+          (record) =>
+            record.CAPACITY_TYPE === 'Room Based Capacity' &&
+            parseInt(record.UNOCCUPIED_ROOMS, 10) > 0
+        )
         .sort(sortByDateAndAvailability)
         .slice(0, newLoadCount);
-    } else { // Default to 'All', applying a sort based on occupancy (if needed) and slicing
+    } else {
+      // Default to 'All', applying a sort based on occupancy (if needed) and slicing
       newDisplayedRecords = records
         .filter((record) => {
-          const maxAvailability = Math.max(parseInt(record.UNOCCUPIED_BEDS || '0', 10), parseInt(record.UNOCCUPIED_ROOMS || '0', 10));
+          const maxAvailability = Math.max(
+            parseInt(record.UNOCCUPIED_BEDS || '0', 10),
+            parseInt(record.UNOCCUPIED_ROOMS || '0', 10)
+          );
           return maxAvailability > 0;
         })
         .sort(sortByDateAndAvailability)
@@ -232,7 +259,6 @@ export default function SheltersCard() {
     }
   };
 
-
   return (
     <>
       <EmergencyBanner />
@@ -275,6 +301,8 @@ export default function SheltersCard() {
                   key={record._id}
                   onClick={() => handleCardClick(record)}
                 >
+                  {console.log('recordfdddd=========', record)}
+
                   <div className='shelter-item__content'>
                     <h6 className='shelter-item__text'>
                       {record.SHELTER_GROUP} ⟩⟩⟩
@@ -284,7 +312,8 @@ export default function SheltersCard() {
                         ? `Available Beds: ${record.UNOCCUPIED_BEDS}`
                         : `Available Rooms: ${record.UNOCCUPIED_ROOMS}`}
                       <br />
-                      Last Updated: {record.OCCUPANCY_DATE} <br /> {calculateDaysAgo(record.OCCUPANCY_DATE)}
+                      Last Updated: {record.OCCUPANCY_DATE} <br />{' '}
+                      {calculateDaysAgo(record.OCCUPANCY_DATE)}
                     </p>
                   </div>
                 </li>
@@ -321,7 +350,9 @@ export default function SheltersCard() {
                                         ? `Available Beds: ${record.UNOCCUPIED_BEDS}`
                                         : `Available Rooms: ${record.UNOCCUPIED_ROOMS}`}
                                       <br />
-                                      Last Updated: {record.OCCUPANCY_DATE} <br /> {calculateDaysAgo(record.OCCUPANCY_DATE)}
+                                      Last Updated: {record.OCCUPANCY_DATE}{' '}
+                                      <br />{' '}
+                                      {calculateDaysAgo(record.OCCUPANCY_DATE)}
                                     </h4>
                                   </div>
                                 </ul>
@@ -359,7 +390,9 @@ export default function SheltersCard() {
                                         size='lg'
                                       />
                                     </span>
-                                    <h4 className='btn--Go-Here-Text'>Go Here</h4>
+                                    <h4 className='btn--Go-Here-Text'>
+                                      Go Here
+                                    </h4>
                                   </button>
                                 </div>
                               </div>

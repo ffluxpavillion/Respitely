@@ -3,7 +3,6 @@
 @use '../../partials/global' as *;
 @use '../../partials/variables' as *;
 
-
 @keyframes scrollTextTablet {
   0% {
     transform: translateX(90%);
@@ -42,13 +41,11 @@
   color: black;
   position: relative;
   z-index: -1;
-
 }
 
 .banner-content {
   display: inline-block;
   white-space: nowrap;
-
 
   @include mobile {
     animation: scrollTextMobile 15s linear infinite;
@@ -59,11 +56,11 @@
 }
 
 .phone-link {
-  color: #0000EE;
+  color: #0000ee;
   text-decoration: underline;
 
   &:hover {
-    color: #551A8B;
+    color: #551a8b;
     text-decoration: underline;
   }
 }

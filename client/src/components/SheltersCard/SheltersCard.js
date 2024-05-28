@@ -7,7 +7,7 @@ import LoadMoreButton from '../LoadMoreButton/LoadMoreButton';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { faLocationCrosshairs } from '@fortawesome/free-solid-svg-icons';
-import EmergencyBanner from '../InfoBanner/EmergencyBanner';
+import EmergencyBanner from '../EmergencyBanner/EmergencyBanner';
 
 export default function SheltersCard() {
   const [loading, setLoading] = useState(true); // state to show/hide Loading Shelter Data message

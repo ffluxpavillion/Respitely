@@ -28,14 +28,14 @@
               "hours": "Closed"
             },
             "tuesday": {
-              "hours": "11:00am – 3:00pm",
+              "hours": "11:00am - 3:00pm",
               "breakfast": "12:00pm - 2:30pm"
             },
             "wednesday": {
               "hours": "Closed"
             },
             "thursday": {
-              "hours": "5:00pm – 9:00pm",
+              "hours": "5:00pm - 9:00pm",
               "dinner": "6:00pm - 8:30pm"
             },
             "friday": {
@@ -69,15 +69,15 @@
             },
             "tuesday": {
               "hours": "5:30pm - 8:30pm",
-              "dinner": "6:00pm – 7:30pm"
+              "dinner": "6:00pm - 7:30pm"
             },
             "wednesday": {
-              "hours": "2:00pm – 4:00pm"
+              "hours": "2:00pm - 4:00pm"
             },
             "thursday": {
-              "hours": "3:00pm – 5:00pm",
-              "lunch": "3:00pm – 5:00pm",
-              "dinner": "5:00pm – 8:00pm"
+              "hours": "3:00pm - 5:00pm",
+              "lunch": "3:00pm - 5:00pm",
+              "dinner": "5:00pm - 8:00pm"
             },
             "friday": {
               "hours": "Closed"
@@ -86,9 +86,9 @@
               "hours": "Closed"
             },
             "sunday": {
-              "hours": "1:00pm – 4:00pm",
-              "snack": "1:00pm – 4:00pm",
-              "dinner": "4:00pm – 4:45pm"
+              "hours": "1:00pm - 4:00pm",
+              "snack": "1:00pm - 4:00pm",
+              "dinner": "4:00pm - 4:45pm"
             }
           }
         },
@@ -226,31 +226,31 @@
           "wheelchair_accessible": true,
           "schedule": {
             "monday": {
-              "hours": "7:30am – 11:30am",
+              "hours": "7:30am - 11:30am",
               "breakfast": "7:30am - 9:00am",
               "snack": "8:30am",
               "lunch": "10:45am"
             },
             "tuesday": {
-              "hours": "7:30am – 11:30am",
+              "hours": "7:30am - 11:30am",
               "breakfast": "7:30am - 9:00am",
               "snack": "8:30am",
               "lunch": "10:45am"
             },
             "wednesday": {
-              "hours": "7:30am – 11:30am",
+              "hours": "7:30am - 11:30am",
               "breakfast": "7:30am - 9:00am",
               "snack": "8:30am",
               "lunch": "10:45am"
             },
             "thursday": {
-              "hours": "7:30am – 11:30am",
+              "hours": "7:30am - 11:30am",
               "breakfast": "7:30am - 9:00am",
               "snack": "8:30am",
               "lunch": "10:45am"
             },
             "friday": {
-              "hours": "7:30am – 11:30am",
+              "hours": "7:30am - 11:30am",
               "breakfast": "7:30am - 9:00am",
               "snack": "8:30am",
               "lunch": "10:45am"
@@ -259,7 +259,7 @@
               "hours": "Closed"
             },
             "sunday": {
-              "hours": "7:30am – 11:30am",
+              "hours": "7:30am - 11:30am",
               "breakfast": "7:30am - 9:00am",
               "snack": "8:30am",
               "lunch": "10:45am"
@@ -323,27 +323,27 @@
           "wheelchair_accessible": true,
           "schedule": {
             "monday": {
-              "hours": "8:00am – 1:00pm",
+              "hours": "8:00am - 1:00pm",
               "breakfast": "8:00am - 8:30am",
               "lunch": "11:30am - 12:00pm"
             },
             "tuesday": {
-              "hours": "8:00am – 1:00pm",
+              "hours": "8:00am - 1:00pm",
               "breakfast": "8:00am - 8:30am",
               "lunch": "11:30am - 12:00pm"
             },
             "wednesday": {
-              "hours": "8:00am – 1:00pm",
+              "hours": "8:00am - 1:00pm",
               "breakfast": "8:00am - 8:30am",
               "lunch": "11:30am - 12:00pm"
             },
             "thursday": {
-              "hours": "8:00am – 1:00pm",
+              "hours": "8:00am - 1:00pm",
               "breakfast": "8:00am - 8:30am",
               "lunch": "11:30am - 12:00pm"
             },
             "friday": {
-              "hours": "8:00am – 1:00pm",
+              "hours": "8:00am - 1:00pm",
               "breakfast": "8:00am - 8:30am",
               "lunch": "11:30am - 12:00pm"
             },
@@ -457,30 +457,30 @@
             },
             "tuesday": {
               "hours": "11:00am - 4:00pm",
-              "breakfast": "11:00am – 3:00pm",
-              "snack": "11:00am – 3:00pm"
+              "breakfast": "11:00am - 3:00pm",
+              "snack": "11:00am - 3:00pm"
             },
             "wednesday": {
               "hours": "10:00am - 4:00pm",
-              "breakfast": "10:00am – 1:00pm",
+              "breakfast": "10:00am - 1:00pm",
               "lunch": "1:00pm",
-              "snack": "10:00am – 3:00pm"
+              "snack": "10:00am - 3:00pm"
             },
             "thursday": {
               "hours": "10:00am - 4:00pm",
-              "breakfast": "10:00am – 3:00pm",
-              "snack": "10:00am – 3:00pm"
+              "breakfast": "10:00am - 3:00pm",
+              "snack": "10:00am - 3:00pm"
             },
             "friday": {
               "hours": "10:00am - 4:00pm",
-              "breakfast": "10:00am – 3:00pm",
-              "snack": "10:00am – 3:00pm"
+              "breakfast": "10:00am - 3:00pm",
+              "snack": "10:00am - 3:00pm"
             },
             "saturday": {
               "hours": "10:00am - 3:00pm",
-              "breakfast": "10:00am – 1:00pm",
+              "breakfast": "10:00am - 1:00pm",
               "lunch": "1:00pm",
-              "snack": "10:00am – 3:00pm"
+              "snack": "10:00am - 3:00pm"
             },
             "sunday": {
               "hours": "Closed"
@@ -503,31 +503,31 @@
           "wheelchair_accessible": true,
           "schedule": {
             "monday": {
-              "hours": "9:00am – 5:00pm",
+              "hours": "9:00am - 5:00pm",
               "breakfast": "9:00am - 10:30am",
               "lunch": "12:00pm - 1:30pm",
               "snack": "3:00pm"
             },
             "tuesday": {
-              "hours": "9:00am – 5:00pm",
+              "hours": "9:00am - 5:00pm",
               "breakfast": "9:00am - 10:30am",
               "lunch": "12:00pm - 1:30pm",
               "snack": "3:00pm"
             },
             "wednesday": {
-              "hours": "9:00am – 5:00pm",
+              "hours": "9:00am - 5:00pm",
               "breakfast": "9:00am - 10:30am",
               "lunch": "12:00pm - 1:30pm",
               "snack": "3:00pm"
             },
             "thursday": {
-              "hours": "9:00am – 5:00pm",
+              "hours": "9:00am - 5:00pm",
               "breakfast": "9:00am - 10:30am",
               "lunch": "12:00pm - 1:30pm",
               "snack": "3:00pm"
             },
             "friday": {
-              "hours": "9:00am – 5:00pm",
+              "hours": "9:00am - 5:00pm",
               "breakfast": "9:00am - 10:30am",
               "lunch": "12:00pm - 1:30pm",
               "snack": "3:00pm"
@@ -595,23 +595,23 @@
           "wheelchair_accessible": true,
           "schedule": {
             "monday": {
-              "hours": "12:00pm – 5:00pm",
+              "hours": "12:00pm - 5:00pm",
               "lunch": "12:00pm - 2:00pm"
             },
             "tuesday": {
-              "hours": "12:00pm – 5:00pm",
+              "hours": "12:00pm - 5:00pm",
               "lunch": "12:00pm - 2:00pm"
             },
             "wednesday": {
-              "hours": "12:00pm – 5:00pm",
+              "hours": "12:00pm - 5:00pm",
               "lunch": "12:00pm - 2:00pm"
             },
             "thursday": {
-              "hours": "12:00pm – 5:00pm",
+              "hours": "12:00pm - 5:00pm",
               "lunch": "12:00pm - 2:00pm"
             },
             "friday": {
-              "hours": "12:00pm – 5:00pm",
+              "hours": "12:00pm - 5:00pm",
               "lunch": "12:00pm - 2:00pm"
             },
             "saturday": {
@@ -636,41 +636,41 @@
           "population": "Youth 16 - 24 years",
           "pets_allowed": true,
           "wheelchair_accessible": true,
-          "schedule": {
+           "schedule": {
             "monday": {
-              "hours": "12:00pm – 7:00pm",
-              "lunch": "12:00pm – 3:00pm",
-              "dinner": "3:00pm – 7:00pm"
+              "hours": "12:00pm - 7:00pm",
+              "lunch": "12:00pm - 3:00pm",
+              "dinner": "3:00pm - 7:00pm"
             },
             "tuesday": {
-              "hours": "12:00pm – 7:00pm",
-              "lunch": "12:00pm – 3:00pm",
-              "dinner": "3:00pm – 7:00pm"
+              "hours": "12:00pm - 7:00pm",
+              "lunch": "12:00pm - 3:00pm",
+              "dinner": "3:00pm - 7:00pm"
             },
             "wednesday": {
-              "hours": "12:00pm – 7:00pm",
-              "lunch": "12:00pm – 3:00pm",
-              "dinner": "3:00pm – 7:00pm"
+              "hours": "12:00pm - 7:00pm",
+              "lunch": "12:00pm - 3:00pm",
+              "dinner": "3:00pm - 7:00pm"
             },
             "thursday": {
-              "hours": "12:00pm – 7:00pm",
-              "lunch": "12:00pm – 3:00pm",
-              "dinner": "3:00pm – 7:00pm"
+              "hours": "12:00pm - 7:00pm",
+              "lunch": "12:00pm - 3:00pm",
+              "dinner": "3:00pm - 7:00pm"
             },
             "friday": {
-              "hours": "12:00pm – 7:00pm",
-              "lunch": "12:00pm – 3:00pm",
-              "dinner": "3:00pm – 7:00pm"
+              "hours": "12:00pm - 7:00pm",
+              "lunch": "12:00pm - 3:00pm",
+              "dinner": "3:00pm - 7:00pm"
             },
             "saturday": {
-              "hours": "12:00pm – 7:00pm",
-              "lunch": "12:00pm – 3:00pm",
-              "dinner": "3:00pm – 7:00pm"
+              "hours": "12:00pm - 7:00pm",
+              "lunch": "12:00pm - 3:00pm",
+              "dinner": "3:00pm - 7:00pm"
             },
             "sunday": {
-              "hours": "12:00pm – 7:00pm",
-              "lunch": "12:00pm – 3:00pm",
-              "dinner": "3:00pm – 7:00pm"
+              "hours": "12:00pm - 7:00pm",
+              "lunch": "12:00pm - 3:00pm",
+              "dinner": "3:00pm - 7:00pm"
             }
           }
         },
@@ -765,19 +765,19 @@
           "wheelchair_accessible": true,
           "schedule": {
             "monday": {
-              "hours": "12:00pm – 4:00pm"
+              "hours": "12:00pm - 4:00pm"
             },
             "tuesday": {
-              "hours": "12:00pm – 4:00pm"
+              "hours": "12:00pm - 4:00pm"
             },
             "wednesday": {
-              "hours": "12:00pm – 4:00pm"
+              "hours": "12:00pm - 4:00pm"
             },
             "thursday": {
-              "hours": "12:00pm – 4:00pm"
+              "hours": "12:00pm - 4:00pm"
             },
             "friday": {
-              "hours": "12:00pm – 4:00pm"
+              "hours": "12:00pm - 4:00pm"
             },
             "saturday": {
               "hours": "Closed"
@@ -804,37 +804,37 @@
           "schedule": {
             "monday": {
               "hours": "24/7",
-              "lunch": "2:00pm – 4:00pm",
+              "lunch": "2:00pm - 4:00pm",
               "snack": "6:00pm"
             },
             "tuesday": {
               "hours": "24/7",
-              "dinner": "2:00pm – 4:00pm",
+              "dinner": "2:00pm - 4:00pm",
               "snack": "6:00pm"
             },
             "wednesday": {
               "hours": "24/7",
-              "dinner": "2:00pm – 4:00pm",
+              "dinner": "2:00pm - 4:00pm",
               "snack": "6:00pm"
             },
             "thursday": {
               "hours": "24/7",
-              "dinner": "2:00pm – 4:00pm",
+              "dinner": "2:00pm - 4:00pm",
               "snack": "6:00pm"
             },
             "friday": {
               "hours": "24/7",
-              "dinner": "2:00pm – 4:00pm",
+              "dinner": "2:00pm - 4:00pm",
               "snack": "6:00pm"
             },
             "saturday": {
               "hours": "24/7",
-              "dinner": "2:00pm – 4:00pm",
+              "dinner": "2:00pm - 4:00pm",
               "snack": "6:00pm"
             },
             "sunday": {
               "hours": "24/7",
-              "dinner": "2:00pm – 4:00pm",
+              "dinner": "2:00pm - 4:00pm",
               "snack": "6:00pm"
             }
           }
@@ -914,42 +914,42 @@
           "wheelchair_accessible": true,
           "schedule": {
             "monday": {
-              "hours": "9:30am – 4:00pm",
+              "hours": "9:30am - 4:00pm",
               "breakfast": "9:30am",
               "lunch": "1:00pm",
               "snack": "10:00am - 12:00pm & 1:30pm - 3:30pm"
             },
             "tuesday": {
-              "hours": "9:30am – 4:00pm",
+              "hours": "9:30am - 4:00pm",
               "breakfast": "9:30am",
               "lunch": "1:00pm",
               "snack": "10:00am - 12:00pm & 1:30pm - 3:30pm"
             },
             "wednesday": {
-              "hours": "9:30am – 4:00pm",
+              "hours": "9:30am - 4:00pm",
               "breakfast": "9:30am",
               "lunch": "1:00pm",
               "snack": "10:00am - 12:00pm & 1:30pm - 3:30pm"
             },
             "thursday": {
-              "hours": "9:30am – 4:00pm",
+              "hours": "9:30am - 4:00pm",
               "breakfast": "9:30am",
               "lunch": "1:00pm",
               "snack": "10:00am - 12:00pm & 1:30pm - 3:30pm"
             },
             "friday": {
-              "hours": "9:30am – 4:00pm",
+              "hours": "9:30am - 4:00pm",
               "breakfast": "9:30am",
               "lunch": "1:00pm",
               "snack": "10:00am - 12:00pm & 1:30pm - 3:30pm"
             },
             "saturday": {
-              "hours": "9:30am – 4:00pm",
+              "hours": "9:30am - 4:00pm",
               "breakfast": "9:30am",
               "lunch": "1:00pm"
             },
             "sunday": {
-              "hours": "9:30am – 4:00pm",
+              "hours": "9:30am - 4:00pm",
               "breakfast": "9:30am",
               "lunch": "1:00pm"
             }
@@ -1079,27 +1079,27 @@
           "wheelchair_accessible": true,
           "schedule": {
             "monday": {
-              "hours": "8:00am – 11:30am",
+              "hours": "8:00am - 11:30am",
               "breakfast": "8:30am",
               "lunch": "10:00am - 11:15am"
             },
             "tuesday": {
-              "hours": "8:00am – 11:30am",
+              "hours": "8:00am - 11:30am",
               "breakfast": "8:30am",
               "lunch": "10:00am - 11:15am"
             },
             "wednesday": {
-              "hours": "8:00am – 11:30am",
+              "hours": "8:00am - 11:30am",
               "breakfast": "8:30am",
               "lunch": "10:00am - 11:15am"
             },
             "thursday": {
-              "hours": "8:00am – 11:30am",
+              "hours": "8:00am - 11:30am",
               "breakfast": "8:30am",
               "lunch": "10:00am - 11:15am"
             },
             "friday": {
-              "hours": "8:00am – 11:30am",
+              "hours": "8:00am - 11:30am",
               "breakfast": "8:30am",
               "lunch": "10:00am - 11:15am"
             },
@@ -1298,26 +1298,26 @@
               "hours": "Closed"
             },
             "tuesday": {
-              "hours": "5:00am – 8:30am",
-              "breakfast": "5:00am – 8:30am"
+              "hours": "5:00am - 8:30am",
+              "breakfast": "5:00am - 8:30am"
             },
             "wednesday": {
-              "hours": "5:00am – 6:00pm",
-              "breakfast": "5:00am – 8:30am",
+              "hours": "5:00am - 6:00pm",
+              "breakfast": "5:00am - 8:30am",
               "dinner": "5:00pm"
             },
             "thursday": {
-              "hours": "5:00am – 4:00pm",
-              "breakfast": "5:00am – 8:30am",
+              "hours": "5:00am - 4:00pm",
+              "breakfast": "5:00am - 8:30am",
               "lunch": "1:30pm"
             },
             "friday": {
-              "hours": "5:00am – 8:00pm",
-              "breakfast": "5:00am – 8:30am",
+              "hours": "5:00am - 8:00pm",
+              "breakfast": "5:00am - 8:30am",
               "lunch": "1:30pm"
             },
             "saturday": {
-              "hours": "9:00am – 2:00pm",
+              "hours": "9:00am - 2:00pm",
               "breakfast": "11:00am - 12:00pm"
             },
             "sunday": {
@@ -1393,49 +1393,49 @@
             "monday": {
               "hours": "24/7",
               "breakfast": "9:30am - 10:30am",
-              "lunch": "12:00pm – 2:00pm",
+              "lunch": "12:00pm - 2:00pm",
               "dinner": "6:30pm - 7:30pm",
               "snack": "9:00pm - 9:30pm"
             },
             "tuesday": {
               "hours": "24/7",
               "breakfast": "9:30am - 10:30am",
-              "lunch": "12:00pm – 2:00pm",
+              "lunch": "12:00pm - 2:00pm",
               "dinner": "6:30pm - 7:30pm",
               "snack": "9:00pm - 9:30pm"
             },
             "wednesday": {
               "hours": "24/7",
               "breakfast": "9:30am - 10:30am",
-              "lunch": "12:00pm – 2:00pm",
+              "lunch": "12:00pm - 2:00pm",
               "dinner": "6:30pm - 7:30pm",
               "snack": "9:00pm - 9:30pm"
             },
             "thursday": {
               "hours": "24/7",
               "breakfast": "9:30am - 10:30am",
-              "lunch": "12:00pm – 2:00pm",
+              "lunch": "12:00pm - 2:00pm",
               "dinner": "6:30pm - 7:30pm",
               "snack": "9:00pm - 9:30pm"
             },
             "friday": {
               "hours": "24/7",
               "breakfast": "9:30am - 10:30am",
-              "lunch": "12:00pm – 2:00pm",
+              "lunch": "12:00pm - 2:00pm",
               "dinner": "6:30pm - 7:30pm",
               "snack": "9:00pm - 9:30pm"
             },
             "saturday": {
               "hours": "24/7",
               "breakfast": "9:30am - 10:30am",
-              "lunch": "12:00pm – 2:00pm",
+              "lunch": "12:00pm - 2:00pm",
               "dinner": "6:30pm - 7:30pm",
               "snack": "9:00pm - 9:30pm"
             },
             "sunday": {
               "hours": "24/7",
               "breakfast": "9:30am - 10:30am",
-              "lunch": "12:00pm – 2:00pm",
+              "lunch": "12:00pm - 2:00pm",
               "dinner": "6:30pm - 7:30pm",
               "snack": "9:00pm - 9:30pm"
             }
@@ -1664,8 +1664,8 @@
               "hours": "Closed"
             },
             "thursday": {
-              "hours": "5:00pm – 7:00pm",
-              "dinner": "5:00pm – 7:00pm"
+              "hours": "5:00pm - 7:00pm",
+              "dinner": "5:00pm - 7:00pm"
             },
             "friday": {
               "hours": "Closed"
@@ -1694,38 +1694,38 @@
           "wheelchair_accessible": true,
           "schedule": {
             "monday": {
-              "hours": "9:00am – 1:00pm",
+              "hours": "9:00am - 1:00pm",
               "breakfast": "9:30am - 10:30am",
               "lunch": "11:30am - 12:30pm"
             },
             "tuesday": {
-              "hours": "9:00am – 1:00pm",
+              "hours": "9:00am - 1:00pm",
               "breakfast": "9:30am - 10:30am",
               "lunch": "11:30am - 12:30pm"
             },
             "wednesday": {
-              "hours": "9:00am – 1:00pm",
+              "hours": "9:00am - 1:00pm",
               "breakfast": "9:30am - 10:30am",
               "snack": "11:30am - 12:30pm"
             },
             "thursday": {
-              "hours": "9:00am – 1:00pm",
+              "hours": "9:00am - 1:00pm",
               "breakfast": "9:30am - 10:30am",
               "lunch": "11:30am - 12:30pm"
             },
             "friday": {
               "hours": "12:30pm - 4:30pm",
-              "lunch": "1:00pm – 2:00pm"
+              "lunch": "1:00pm - 2:00pm"
             },
             "saturday": {
-              "hours": "11:00am – 3:00pm",
+              "hours": "11:00am - 3:00pm",
               "breakfast": "11:15am - 12:15pm",
-              "lunch": "1:00pm – 2:00pm"
+              "lunch": "1:00pm - 2:00pm"
             },
             "sunday": {
-              "hours": "11:00am – 3:00pm",
+              "hours": "11:00am - 3:00pm",
               "breakfast": "11:15am - 12:15pm",
-              "lunch": "1:00pm – 2:00pm"
+              "lunch": "1:00pm - 2:00pm"
             }
           }
         },
@@ -1783,49 +1783,49 @@
           "wheelchair_accessible": true,
           "schedule": {
             "monday": {
-              "hours": "9:00am – 3:00pm & 4:00pm-6:30pm",
+              "hours": "9:00am - 3:00pm & 4:00pm-6:30pm",
               "breakfast": "9:30am - 10:30am",
               "lunch": "12:00pm - 1:30pm",
-              "dinner": "5:00pm – 6:00pm",
-              "snack": "9:00am – 6:30pm"
+              "dinner": "5:00pm - 6:00pm",
+              "snack": "9:00am - 6:30pm"
             },
             "tuesday": {
-              "hours": "9:00am – 3:00pm & 4:00pm-6:30pm",
+              "hours": "9:00am - 3:00pm & 4:00pm-6:30pm",
               "breakfast": "9:30am - 10:30am",
               "lunch": "12:00pm - 1:30pm",
-              "dinner": "5:00pm – 6:00pm",
-              "snack": "9:00am – 6:30pm"
+              "dinner": "5:00pm - 6:00pm",
+              "snack": "9:00am - 6:30pm"
             },
             "wednesday": {
-              "hours": "9:00am – 3:00pm & 4:00pm-6:30pm",
+              "hours": "9:00am - 3:00pm & 4:00pm-6:30pm",
               "breakfast": "9:30am - 10:30am",
               "lunch": "12:00pm - 1:30pm",
-              "dinner": "5:00pm – 6:00pm",
-              "snack": "9:00am – 6:30pm"
+              "dinner": "5:00pm - 6:00pm",
+              "snack": "9:00am - 6:30pm"
             },
             "thursday": {
-              "hours": "9:00am – 3:00pm",
+              "hours": "9:00am - 3:00pm",
               "breakfast": "9:30am - 10:30am",
               "lunch": "12:00pm - 1:30pm",
-              "snack": "9:00am – 6:30pm"
+              "snack": "9:00am - 6:30pm"
             },
             "friday": {
-              "hours": "9:00am – 3:00pm",
+              "hours": "9:00am - 3:00pm",
               "breakfast": "9:30am - 10:30am",
               "lunch": "12:00pm - 1:30pm",
-              "snack": "9:00am – 6:30pm"
+              "snack": "9:00am - 6:30pm"
             },
             "saturday": {
-              "hours": "9:00am – 3:00pm",
+              "hours": "9:00am - 3:00pm",
               "breakfast": "9:30am - 10:30am",
               "lunch": "12:00pm - 1:30pm",
-              "snack": "9:00am – 6:30pm"
+              "snack": "9:00am - 6:30pm"
             },
             "sunday": {
-              "hours": "9:00am – 3:00pm",
+              "hours": "9:00am - 3:00pm",
               "breakfast": "9:30am - 10:30am",
               "lunch": "12:00pm - 1:30pm",
-              "snack": "9:00am – 6:30pm"
+              "snack": "9:00am - 6:30pm"
             }
           }
         },
@@ -1845,38 +1845,38 @@
           "wheelchair_accessible": "",
           "schedule": {
             "monday": {
-              "hours": "8:00am – 8:00pm",
-              "breakfast": "10:00am – 11:00am",
-              "lunch": "1:00pm – 2:00pm",
-              "snack": "3:00pm – 8:00pm"
+              "hours": "8:00am - 8:00pm",
+              "breakfast": "10:00am - 11:00am",
+              "lunch": "1:00pm - 2:00pm",
+              "snack": "3:00pm - 8:00pm"
             },
             "tuesday": {
-              "hours": "8:00am – 8:00pm",
-              "breakfast": "10:00am – 11:00am",
-              "dinner": "6:00pm – 7:00pm"
+              "hours": "8:00am - 8:00pm",
+              "breakfast": "10:00am - 11:00am",
+              "dinner": "6:00pm - 7:00pm"
             },
             "wednesday": {
-              "hours": "8:00am – 8:00pm",
-              "breakfast": "10:00am – 11:00am",
-              "lunch": "1:00pm – 2:00pm",
-              "snack": "3:00pm – 8:00pm"
+              "hours": "8:00am - 8:00pm",
+              "breakfast": "10:00am - 11:00am",
+              "lunch": "1:00pm - 2:00pm",
+              "snack": "3:00pm - 8:00pm"
             },
             "thursday": {
-              "hours": "8:00am – 8:00pm",
-              "breakfast": "10:00am – 11:00am",
-              "lunch": "1:00pm – 2:00pm",
-              "snack": "3:00pm – 8:00pm"
+              "hours": "8:00am - 8:00pm",
+              "breakfast": "10:00am - 11:00am",
+              "lunch": "1:00pm - 2:00pm",
+              "snack": "3:00pm - 8:00pm"
             },
             "friday": {
-              "hours": "8:00am – 8:00pm",
-              "breakfast": "11:00am – 12:00pm",
-              "snack": "3:00pm – 8:00pm"
+              "hours": "8:00am - 8:00pm",
+              "breakfast": "11:00am - 12:00pm",
+              "snack": "3:00pm - 8:00pm"
             },
             "saturday": {
-              "hours": "8:00am – 8:00pm",
-              "breakfast": "10:00am – 11:00am",
-              "lunch": "1:00pm – 2:00pm",
-              "snack": "3:00pm – 8:00pm"
+              "hours": "8:00am - 8:00pm",
+              "breakfast": "10:00am - 11:00am",
+              "lunch": "1:00pm - 2:00pm",
+              "snack": "3:00pm - 8:00pm"
             },
             "sunday": {
               "hours": "Closed"
@@ -2189,28 +2189,28 @@
               "hours": "Closed"
             },
             "tuesday": {
-              "hours": "9:00am – 3:00pm",
+              "hours": "9:00am - 3:00pm",
               "breakfast": "9:00am - 10:30am",
               "snack": "10:30am",
-              "lunch": "11:00am – 3:00pm"
+              "lunch": "11:00am - 3:00pm"
             },
             "wednesday": {
-              "hours": "9:00am – 3:00pm",
+              "hours": "9:00am - 3:00pm",
               "breakfast": "9:00am - 10:30am",
               "snack": "10:30am",
-              "lunch": "11:00am – 3:00pm"
+              "lunch": "11:00am - 3:00pm"
             },
             "thursday": {
-              "hours": "9:00am – 3:00pm",
+              "hours": "9:00am - 3:00pm",
               "breakfast": "9:00am - 10:30am",
               "snack": "10:30am",
-              "lunch": "11:00am – 3:00pm"
+              "lunch": "11:00am - 3:00pm"
             },
             "friday": {
-              "hours": "9:00am – 3:00pm (Take-out Only)",
+              "hours": "9:00am - 3:00pm (Take-out Only)",
               "breakfast": "9:00am - 10:30am",
-              "snack": "9:00am – 3:00pm",
-              "lunch": "10:30am – 3:00pm"
+              "snack": "9:00am - 3:00pm",
+              "lunch": "10:30am - 3:00pm"
             },
             "saturday": {
               "hours": "Closed"
@@ -2238,7 +2238,7 @@
             "monday": {
               "hours": "9:00am - 3:00pm",
               "breakfast": "9:00am - 10:30am",
-              "lunch": "11:00am – 2:00pm",
+              "lunch": "11:00am - 2:00pm",
               "snack": "10:30am"
             },
             "tuesday": {
@@ -2259,7 +2259,7 @@
             "sunday": {
               "hours": "9:00am - 3:00pm",
               "breakfast": "9:00am - 10:30am",
-              "lunch": "11:00am – 2:00pm",
+              "lunch": "11:00am - 2:00pm",
               "snack": "10:30am"
             }
           }

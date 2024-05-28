@@ -8,7 +8,6 @@ export default function Resources() {
     // Observer setup
     observer.current = new IntersectionObserver(
       (entries) => {
-        console.log('entries', entries);
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('show-resources');

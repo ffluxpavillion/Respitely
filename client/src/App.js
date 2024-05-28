@@ -10,7 +10,7 @@ import Resources from './components/Resources/Resources';
 import Footer from './components/Footer/Footer';
 import CookiePolicy from './components/Legal/CookiePolicy/CookiePolicy';
 import TermsOfUse from './components/Legal/TermsOfUse/TermsOfUse';
-// import MealsMap from './components/MealsMap/MealsMap';
+import MealsCard from './components/MealsCard/MealsCard';
 import ApiKeyProvider from './contexts/ApiKeyContext';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { FloatButton } from 'antd';
@@ -28,7 +28,7 @@ export default function App() {
           <Home />
           <Parallax1 />
           <SheltersCard />
-          {/* <MealsMap /> */}
+          <MealsCard />
           <Parallax2 />
           <Resources />
           <Parallax3 />

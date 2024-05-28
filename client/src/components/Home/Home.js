@@ -14,13 +14,13 @@ export default function Home() {
         </div>
 
         <div className='home-button__container'>
-          <div class='center-con'>
+          <div className='center-con'>
             <span className='header-actions__text'>Jump to Shelters Map </span>
             <Link to='#shelters'>
-              <div class='round'>
+              <div className='round'>
                 <div id='cta'>
-                  <span class='arrow primera next '></span>
-                  <span class='arrow segunda next '></span>
+                  <span className='arrow primera next '></span>
+                  <span className='arrow segunda next '></span>
                 </div>
               </div>
             </Link>

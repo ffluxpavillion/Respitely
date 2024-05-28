@@ -12,7 +12,6 @@ export default function AboutUs() {
     // Observer setup
     observer.current = new IntersectionObserver(
       (entries) => {
-        console.log('entries', entries);
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('show-about-us');

@@ -165,6 +165,20 @@ export default function Resources() {
                 </p>
               </div>
             </a>
+            <a
+              className='link'
+              target='_blank'
+              href='https://communityfridgesto.org/'
+            >
+              <div className='grid__item hidden-resources'>
+                <h4 className='grid__item-header'>
+                  Community Fridges Toronto
+                </h4>
+                <p className='grid__item-text'>
+                  Accessible food located in refridgerators around the city, 24/7.
+                </p>
+              </div>
+            </a>
           </div>
         </div>
       </section>

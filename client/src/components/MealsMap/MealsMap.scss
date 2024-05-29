@@ -9,7 +9,7 @@
 
   @include mobile {
     height: 75vh;
-    width: 80vw;
+    width: 99vw;
   }
 
   @include tablet {
@@ -54,6 +54,16 @@
   .ant-drawer-close {
     color: white;
     font-size: 2rem;
+    margin: 1rem;
+    width: 50px;
+    padding: 1rem;
+
+    &:hover {
+      background-color: white;
+      margin: 1rem;
+      color: #181818;
+      border-radius: 2px;
+    }
   }
 
   h2 {
@@ -112,6 +122,10 @@
   text-align: center;
   align-self: center;
   font-size: 1rem;
+
+  @include mobile {
+    font-size: 0.85rem;
+  }
 }
 
 .mealsMap__C1--Meal-Info-Container {
@@ -122,6 +136,10 @@
   // padding: 11px 8px 11px 64px;
   text-transform: capitalize;
   width: 100%;
+
+  @include mobile {
+    font-size: 0.8rem;
+  }
 }
 
 .mealsMap__C1--Hours {

@@ -41,6 +41,9 @@
   color: black;
   position: relative;
   z-index: -1;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
 }
 
 .banner-content {
@@ -48,10 +51,10 @@
   white-space: nowrap;
 
   @include mobile {
-    animation: scrollTextMobile 15s linear infinite;
+    animation: scrollTextMobile 25s linear infinite;
   }
   @include tablet {
-    animation: scrollTextTablet 13s linear infinite;
+    animation: scrollTextTablet 20s linear infinite;
   }
 }
 

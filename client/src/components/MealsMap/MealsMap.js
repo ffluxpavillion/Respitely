@@ -32,6 +32,8 @@ export default function MealsMap() {
   const [selectedPlace, setSelectedPlace] = useState(null); // Sets the selected place upon marker click
   const [drawerVisible, setDrawerVisible] = useState(false); // Manage the drawer visibility
   const [activeKey, setActiveKey] = useState(null);
+  const [lastClickedMarker, setLastClickedMarker] = useState(null); // State to track the last selected marker for detecting double taps
+
   const [geoJsonLocations, setGeoJsonLocations] = useState({
     // GeoJSON representation for Mapbox
     type: 'FeatureCollection',
@@ -103,29 +105,55 @@ export default function MealsMap() {
       map.addImage('meal-marker', image);
     });
 
-    let popup = null;
+    function handleMarkerInteraction(e) {
+      const thisLocation = e.features[0].properties;
 
-    map.on('mouseenter', 'drop-in-markers', (e) => {
+      // Check if the same marker was tapped again
+      if (lastClickedMarker === thisLocation.id) {
+        // Open the drawer if it's a second tap on the same marker
+        setDrawerVisible(true);
+      } else {
+        // Update the selected place and show popup only if a different marker is tapped
+        setSelectedPlace(thisLocation);
+        setDrawerVisible(false); // Ensure the drawer is not visible
+        setLastClickedMarker(thisLocation.id); // Update the last clicked marker
+      }
+    }
+
+    function handleMouseEnter(e) {
       map.getCanvas().style.cursor = 'pointer';
       const thisLocation = e.features[0].properties; // this is what triggers the hover card
       setSelectedPlace(thisLocation);
-    });
+    }
 
-    map.on('mouseleave', 'drop-in-markers', () => {
+    function handleMouseLeave() {
       map.getCanvas().style.cursor = '';
-    });
+    }
 
-    // Adding click event listener for markers
+    // Add mouse and touch event listeners for markers
+    map.on('mouseenter', 'drop-in-markers', handleMouseEnter);
+    map.on('mouseleave', 'drop-in-markers', handleMouseLeave);
+
+    // Touch-specific event handling
+    map.on('touchstart', 'drop-in-markers', handleMouseEnter);
+    map.on('touchend', 'drop-in-markers', handleMouseLeave);
+
+    // Click event for both touch and mouse
     map.on('click', 'drop-in-markers', (e) => {
       if (e.features.length > 0) {
+        handleMarkerInteraction(e);
+
         const thisLocation = e.features[0].properties;
         setSelectedPlace(thisLocation);
-        setDrawerVisible(true); // Open the drawer when a marker is clicked
+        setDrawerVisible(true);
 
-        // map.easeTo({ // eases map repositioning animation
-        //   center: e.features[0].geometry.coordinates,
-        //   duration: 1000,
-        // });
+        // Prevent the map from zooming on marker click
+        e.originalEvent.preventDefault();
+
+        map.easeTo({
+          center: e.features[0].geometry.coordinates,
+          duration: 1000,
+        });
       }
     });
   };

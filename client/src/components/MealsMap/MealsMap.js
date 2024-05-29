@@ -249,7 +249,7 @@ export default function MealsMap() {
               <Popup
                 latitude={selectedPlace.latitude}
                 longitude={selectedPlace.longitude}
-                closeButton={true}
+                closeButton={false}
                 onClose={() => setSelectedPlace(null)}
                 onClick={() => {
                   setDrawerVisible(true);

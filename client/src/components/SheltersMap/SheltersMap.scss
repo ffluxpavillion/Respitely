@@ -134,7 +134,7 @@
   white-space: normal;
   text-align: center;
   padding: 0.5rem;
-  border: 1px solid #727272;
+  border: 1px solid #313843;
   transition: all 0.3s ease;
   border-radius: 5px;
   color: white;
@@ -146,10 +146,10 @@
   justify-content: center;
 
   &:hover {
-    border: 1px solid white;
-    background-color: #2f4066;
-    color: white;
-    border: 1px solid #ffffffc9;
+    background-color: white;
+    color: #20242c;
+    transform: translateY(-2px);
+    transition: all 0.5s ease;
   }
 }
 
@@ -157,6 +157,10 @@
   font-family: 'Avenir Next Bold', 'Verdana', 'Arial', 'system-ui';
   font-size: 1rem;
   width: 8rem;
+
+  &:hover {
+    color: #232f27;
+  }
 }
 
 .directions-icon {

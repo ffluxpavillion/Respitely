@@ -40,7 +40,7 @@
     animation: fadeIn 0.5s ease-out forwards;
     overflow: none;
     height: 100%;
-    width: 100%;
+    width: 10rem;
 
     display: flex;
     flex-direction: row;
@@ -84,7 +84,7 @@
     }
 
     &-text {
-      margin-bottom: 1rem;
+      margin-bottom: 0.6rem;
       color: ghostwhite;
       font-size: 1.1rem;
       font-family: 'Avenir Next';
@@ -110,7 +110,7 @@
 
   &__div-right {
     min-height: auto;
-    width: 100%;
+    min-width:fit-content;
     height: auto;
     animation: fadeIn 0.5s ease-out forwards;
   }

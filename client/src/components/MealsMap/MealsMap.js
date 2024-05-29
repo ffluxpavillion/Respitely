@@ -23,9 +23,8 @@ import {
   faGlobe,
   faPhone,
   faDog,
-  faWheelchair
+  faWheelchair,
 } from '@fortawesome/free-solid-svg-icons';
-
 
 export default function MealsMap() {
   const apiKey = useContext(ApiKeyContext); // API Key
@@ -54,7 +53,7 @@ export default function MealsMap() {
   const DEFAULT_VIEW_STATE = {
     longitude: -79.409527,
     latitude: 43.678122,
-    zoom: 12,
+    zoom: 10.5,
   };
 
   const mapRef = useRef(); // Reference to the map instance
@@ -123,10 +122,10 @@ export default function MealsMap() {
         setSelectedPlace(thisLocation);
         setDrawerVisible(true); // Open the drawer when a marker is clicked
 
-        map.easeTo({
-          center: e.features[0].geometry.coordinates,
-          duration: 1000, // Smooth transition duration in milliseconds
-        });
+        // map.easeTo({ // eases map repositioning animation
+        //   center: e.features[0].geometry.coordinates,
+        //   duration: 1000,
+        // });
       }
     });
   };
@@ -166,9 +165,17 @@ export default function MealsMap() {
   });
   const todayDay = new Date().toLocaleDateString('en-US', { weekday: 'long' });
 
+  // console.logs for debugging
+  // console.log('SELECTEDPLACE======', selectedPlace)}
+  // console.log('SELECTEDPLACE.schedule======', selectedPlace.schedule)
+  // console.log('Type of schedule:', typeof selectedPlace.schedule)
+  // console.log('Content of schedule:', selectedPlace.schedule)
   return (
     <>
-      <section className='mealsMap-section' id='meals' aria-label='Map showing weekly meal drop-ins Toronto'>
+      <section
+        className='mealsMap-section'
+        aria-label='Map showing weekly meal drop-ins Toronto'
+      >
         {apiKey && (
           <Map
             ref={mapRef}
@@ -199,10 +206,12 @@ export default function MealsMap() {
                     'interpolate',
                     ['linear'],
                     ['zoom'],
+                    10,
+                    0.1,
                     12,
-                    0.07,
+                    0.095,
                     14,
-                    0.05,
+                    0.08,
                   ],
                   'icon-allow-overlap': true,
                 }}
@@ -238,35 +247,11 @@ export default function MealsMap() {
                   </div>
                 </div>
                 <div className='popup__button-container'>
-                  <a
-                    href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
-                      selectedPlace.address +
-                        ', ' +
-                        selectedPlace.city +
-                        ', ' +
-                        selectedPlace.postal_code
-                    )}&travelmode=walking`}
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className='btn--Directions-anchor'
-                  >
-                    <button className='popup__button-directions'>
-                      <span>
-                        <FontAwesomeIcon icon={faRoute} size='lg' />
-                      </span>
-                      <p className='popup__button-directions-text'>
-                        {' '}
-                        Get Directions
-                      </p>
-                    </button>
-                  </a>
                   <Button
                     onClick={handleShowDrawer}
                     className='popup__button-view-details'
                   >
-                    <p className='popup__button-directions-text'>
-                      View Details
-                    </p>
+                    <p className='popup__button-directions-text'>Learn More</p>
                   </Button>
                 </div>
               </Popup>
@@ -285,55 +270,87 @@ export default function MealsMap() {
         >
           {selectedPlace && (
             <aside className='drawer__upper-text-container'>
+              <div className='drawer__button-container'>
+                <a
+                  href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
+                    selectedPlace.address +
+                      ', ' +
+                      selectedPlace.city +
+                      ', ' +
+                      selectedPlace.postal_code
+                  )}&travelmode=walking`}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='btn--Directions-anchor'
+                >
+                  <button className='popup__button-directions drawer-button'>
+                    <span>
+                      <FontAwesomeIcon icon={faRoute} size='lg' />
+                    </span>
+                    <p className='popup__button-directions-text drawer-button-text'>
+                      {' '}
+                      Get Directions
+                    </p>
+                  </button>
+                </a>
+              </div>
+              <br />
+
               <p className='drawer__upper-text-left'>
-              <FontAwesomeIcon className='drawer-icon' icon={faMapMarkerAlt} />{' '}
+                <FontAwesomeIcon
+                  className='drawer-icon'
+                  icon={faMapMarkerAlt}
+                />{' '}
                 <span className='drawer__upper-text-right'>
-                  {selectedPlace.address}, {selectedPlace.city}, {selectedPlace.province}, {selectedPlace.postal_code}
+                  {selectedPlace.address}, {selectedPlace.city},{' '}
+                  {selectedPlace.province}, {selectedPlace.postal_code}
                 </span>{' '}
               </p>
               <p className='drawer__upper-text-left'>
-              <FontAwesomeIcon className='drawer-icon' icon={faPhone} />{' '}
+                <FontAwesomeIcon className='drawer-icon' icon={faPhone} />{' '}
                 <span className='drawer__upper-text-right'>
-                <a href="tel:{selectedPlace.phone}" className="MealsMap-phone-link"> {selectedPlace.phone} </a>
+                  <a
+                    href='tel:{selectedPlace.phone}'
+                    className='MealsMap-phone-link'
+                  >
+                    {' '}
+                    {selectedPlace.phone}{' '}
+                  </a>
                 </span>
               </p>
               <p className='drawer__upper-text-left'>
-              <FontAwesomeIcon className='drawer-icon' icon={faGlobe} />{' '}
+                <FontAwesomeIcon className='drawer-icon' icon={faGlobe} />{' '}
                 <a
                   className='MealsMap-site-link'
                   target='_blank'
                   href={selectedPlace.website}
                 >
-                <span className='drawer__upper-text-right MealsMap-site-link'>
-                  {selectedPlace.website}
-                </span>
+                  <span className='drawer__upper-text-right MealsMap-site-link'>
+                    {selectedPlace.website}
+                  </span>
                 </a>
               </p>
               <p className='drawer__upper-text-left'>
-              <FontAwesomeIcon className='drawer-icon' icon={faPeopleGroup} />{' '}
+                <FontAwesomeIcon className='drawer-icon' icon={faPeopleGroup} />{' '}
                 <span className='drawer__upper-text-right'>
                   {selectedPlace.population}
                 </span>
               </p>
               <p className='drawer__upper-text-left'>
-              <FontAwesomeIcon className='drawer-icon' icon={faDog} />{' '}
+                <FontAwesomeIcon className='drawer-icon' icon={faDog} />{' '}
                 <span className='drawer__upper-text-right'>
                   Service Dog Allowed:{' '}
                   {selectedPlace.service_dog_allowed ? 'Yes' : 'No'}
                 </span>
               </p>
               <p className='drawer__upper-text-left'>
-              <FontAwesomeIcon className='drawer-icon' icon={faWheelchair} />{' '}
+                <FontAwesomeIcon className='drawer-icon' icon={faWheelchair} />{' '}
                 <span className='drawer__upper-text-right'>
                   Wheelchair Accessible:{' '}
                   {selectedPlace.wheelchair_accessible ? 'Yes' : 'No'}
                 </span>
               </p>
               <br />
-              {/* {console.log('SELECTEDPLACE======', selectedPlace)}
-              {console.log('SELECTEDPLACE.schedule======', selectedPlace.schedule)} */}
-              {console.log('Type of schedule:', typeof selectedPlace.schedule)}
-              {console.log('Content of schedule:', selectedPlace.schedule)}
 
               <Collapse
                 accordion
@@ -341,17 +358,17 @@ export default function MealsMap() {
                 expandIcon={({ isActive }) => (
                   <CaretRightOutlined rotate={isActive ? 90 : 0} />
                 )}
-                className='custom-collapse'
+                className='custom-collapse mealsMap-collapse'
                 activeKey={activeKey}
                 onChange={(key) => setActiveKey(key)}
                 size='small'
-
               >
                 <Collapse.Panel
                   header={`Meal Schedule`}
                   key='1'
                   size='Large'
-                  >
+                  className='mealsMap-collapse-panel'
+                >
                   <div className='mealsMap__C1--DropIn-Schedule'>
                     {selectedPlace &&
                       selectedPlace.schedule &&

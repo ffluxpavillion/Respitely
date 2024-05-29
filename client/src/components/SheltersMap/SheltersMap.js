@@ -187,7 +187,7 @@ export default function SheltersMap(props) {
           // Update the view state to center on the selected location
           ...prevViewState,
           longitude: longitude,
-          latitude: latitude + 0.003, // Offset the latitude slightly to prevent the popup from covering the marker
+          latitude: latitude + 0.005, // Offset the latitude slightly to prevent the popup from covering the marker
           zoom: 13,
         }));
 

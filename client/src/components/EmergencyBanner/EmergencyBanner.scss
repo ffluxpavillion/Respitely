@@ -21,6 +21,15 @@
   }
 }
 
+@keyframes scrollTextDesktop {
+  0% {
+    transform: translateX(150%);
+  }
+  100% {
+    transform: translateX(-150%);
+  }
+}
+
 @keyframes scrollTextReversed {
   0% {
     transform: translateX(-95%);
@@ -34,27 +43,41 @@
   width: 100%;
   overflow: hidden;
   background-color: #ffcc00;
-  padding: 10px 0;
   text-align: center;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: bold;
   color: black;
   position: relative;
   z-index: -1;
-  height: auto;
-      display: flex;
-    align-items: center;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include mobile {
+    padding: 2.75rem 1.7rem;
+  }
+
+  @include tablet {
+    // padding: 1rem 4rem;
+  }
 }
 
 .banner-content {
   display: inline-block;
-  white-space: nowrap;
 
-  @include mobile {
-    animation: scrollTextMobile 25s linear infinite;
-  }
-  @include tablet {
-    animation: scrollTextTablet 20s linear infinite;
+  // ANIMATION CAUSING PROBLEMS ON MOBILE/TABLET !!!
+  // white-space: nowrap;
+  // @include mobile {
+  //   animation: scrollTextMobile 25s linear infinite;
+  // }
+  // @include tablet {
+  //   animation: scrollTextTablet 20s linear infinite;
+  // }
+
+  @include desktop {
+    white-space: nowrap;
+    animation: scrollTextDesktop 23s linear infinite;
   }
 }
 

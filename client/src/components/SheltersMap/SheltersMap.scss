@@ -61,7 +61,7 @@
     }
 
     &-subheader-1 {
-      font-size: 1rem;
+      font-size: 1.05rem;
       color: ghostwhite;
       color: white;
       width: 10rem;
@@ -143,6 +143,7 @@
   width: 100%;
   text-align: -webkit-center;
   display: flex;
+  flex-direction: row;
   justify-content: center;
 
   &:hover {

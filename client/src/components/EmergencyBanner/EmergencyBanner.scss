@@ -75,10 +75,10 @@
   //   animation: scrollTextTablet 20s linear infinite;
   // }
 
-  @include desktop {
-    white-space: nowrap;
-    animation: scrollTextDesktop 23s linear infinite;
-  }
+  // @include desktop {
+  //   white-space: nowrap;
+  //   animation: scrollTextDesktop 23s linear infinite;
+  // }
 }
 
 .phone-link {

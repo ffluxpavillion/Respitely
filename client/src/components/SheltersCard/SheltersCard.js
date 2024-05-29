@@ -219,7 +219,7 @@ export default function SheltersCard() {
     // Observer setup
     observer.current = new IntersectionObserver(
       (entries) => {
-        console.log('entries', entries);
+        // console.log('entries', entries);
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('show');
@@ -301,9 +301,7 @@ export default function SheltersCard() {
                   key={record._id}
                   onClick={() => handleCardClick(record)}
                 >
-                  {console.log('recordfdddd=========', record)}
-
-                  <div className='shelter-item__content'>
+                  <div className='shelter-item__content mobile__shelter-item__content'>
                     <h6 className='shelter-item__text'>
                       {record.SHELTER_GROUP} ⟩⟩⟩
                     </h6>

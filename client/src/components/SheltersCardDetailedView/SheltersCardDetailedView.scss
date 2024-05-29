@@ -1,0 +1,89 @@
+@use '../../partials/abstracts' as *;
+@use '../../partials/fonts' as *;
+@use '../../partials/global' as *;
+@use '../../partials/variables' as *;
+
+.detailed-view__container {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr; // Creates three columns, middle for divider
+  align-items: start; // Aligns items to start of grid area
+  background-color: rgb(0, 0, 0);
+  padding: 20px;
+  border-radius: 8px;
+
+  @include mobile {
+    height: 34rem;
+    padding-bottom: 3rem;
+  }
+
+  @include tablet {
+    padding-bottom: 3.5rem;
+    justify-content: center;
+  }
+}
+
+.detail-row {
+  display: contents; // Ensures grid structure is followed in child elements
+
+  &__label {
+    grid-column: 1; // Assigns to first column
+    font-weight: bold;
+    // border-right: 1px solid #8e5ccf; // Creates a visual divider
+    font-size: 0.5rem;
+    text-align: right;
+    width: 100%;
+    color: white;
+    padding-right: 0.6rem;
+    align-self: center;
+    font-family: 'Avenir Next';
+    white-space: pre-line;
+    font-family: 'Avenir Next';
+    line-height: 1.5rem;
+    font-variant-caps: all-petite-caps;
+
+    @include mobile {
+      font-size: 1rem;
+    }
+
+    @include tablet {
+      font-size: 1.1rem;
+    }
+  }
+
+  &__value {
+    grid-column: 3; // Assigns to third column
+    // background: #e0e0e0;
+    font-size: 0.5rem;
+    text-align: left;
+    width: 100%;
+    color: white;
+    padding-left: 0.6rem;
+    align-self: center;
+    white-space: pre-line;
+    font-family: 'Avenir Next';
+    font-weight: 400;
+    line-height: 1rem;
+    // letter-spacing: 0.3px;
+    font-variant-caps: all-petite-caps;
+
+    @include mobile {
+      font-size: 1rem;
+    }
+
+    @include tablet {
+      font-size: 1.3rem;
+    }
+  }
+}
+
+.vertical-divider {
+  position: absolute;
+  left: 50%;
+  height: 38%;
+  transform: translateX(-50%);
+  background: #6232c1;
+  width: 1.9px;
+  top: 59%;
+  bottom: 0;
+  border-radius: 10px;
+}

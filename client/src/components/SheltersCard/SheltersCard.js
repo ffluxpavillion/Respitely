@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { faLocationCrosshairs } from '@fortawesome/free-solid-svg-icons';
 import EmergencyBanner from '../EmergencyBanner/EmergencyBanner';
+import SheltersCardDetailedView from '../SheltersCardDetailedView/SheltersCardDetailedView';
 
 export default function SheltersCard() {
   const [loading, setLoading] = useState(true); // state to show/hide Loading Shelter Data message
@@ -476,7 +477,7 @@ export default function SheltersCard() {
             <button className='back-button' onClick={closeDetailedView}>
               <FontAwesomeIcon icon={faCircleArrowLeft} /> Back To Shelters
             </button>
-            <span className='location-text'>LOCATION MAP</span>
+            {/* <span className='location-text'>LOCATION MAP</span> */}
 
             <SheltersMap
               locations={displayedRecords}
@@ -484,46 +485,12 @@ export default function SheltersCard() {
               filterType={filterType}
               goHere={goHere}
             ></SheltersMap>
-            <div className='detailed-view__container'>
-              <ul className='shelter-item__right-inner'></ul>
-              <ul className='shelter-item__right-inner'>
-                <h4 className='shelter-item__right-title mobile-header'>
-                  LOCATION DETAILS
-                </h4>
-                <div className='detailed-view__text-container'>
-                  <p className='shelter-item__right-text mobile-left'>
-                    Organization Name
-                    <br />
-                    Shelter Group
-                    <br />
-                    Overnight Service Type
-                    <br />
-                    Sector
-                    <br />
-                    Capacity Type
-                    <br />
-                    Program Model
-                    <br />
-                    Total Capacity
-                  </p>
-                  <p className='shelter-item__right-text mobile-right'>
-                    {goHere.ORGANIZATION_NAME}
-                    <br />
-                    {goHere.SHELTER_GROUP}
-                    <br />
-                    {goHere.OVERNIGHT_SERVICE_TYPE}
-                    <br />
-                    {goHere.SECTOR}
-                    <br />
-                    {goHere.CAPACITY_TYPE}
-                    <br />
-                    {goHere.PROGRAM_MODEL}
-                    <br />
-                    {goHere.CAPACITY_ACTUAL_BED || goHere.CAPACITY_ACTUAL_ROOM}
-                  </p>
-                </div>
-              </ul>
-            </div>
+
+            <h4 className='detailed-view__header'>LOCATION DETAILS</h4>
+
+            <SheltersCardDetailedView
+              goHere={goHere}
+            ></SheltersCardDetailedView>
           </div>
         )}
       </section>

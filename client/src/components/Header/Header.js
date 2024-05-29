@@ -92,6 +92,13 @@ export default function Header() {
               </Link>
             </li>
             <li onClick={handleClick}>
+              <Link to='#dropInMeals'>
+                <h3 className='navbar__div-li nav-stairs__about-us'>
+                  DROP-IN MEALS ⟩⟩
+                </h3>
+              </Link>
+            </li>
+            <li onClick={handleClick}>
               <Link to='#resources'>
                 <h3 className='navbar__div-li nav-stairs__resources'>
                   RESOURCES ⟩⟩

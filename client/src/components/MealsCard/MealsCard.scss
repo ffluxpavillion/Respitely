@@ -3,13 +3,9 @@
 @use '../../partials/global' as *;
 @use '../../partials/variables' as *;
 
-
 .meals-section {
-  margin: 5.25rem 5.25rem 5.25rem 5.25rem;
-  padding: 2.5rem 3.5rem 2.5rem 3.5rem;
   background-color: white;
   background-color: #aaa0b009;
-  box-shadow: 0 0px 20px 5px rgb(84, 84, 84);
   position: relative;
   z-index: -1;
   border-radius: 10px;
@@ -17,6 +13,35 @@
   flex-direction: column;
   align-items: center;
 
+  @include mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    background-color: white;
+    // border-radius: 30px;
+    background-color: #aaa0b009;
+    min-height: fit-content;
+    margin: 5rem 0;
+    padding: 3rem 1rem;
+  }
+
+  @include tablet {
+    margin: 5rem 1rem 1rem 1.25rem;
+
+    padding: 2.5rem 3rem 2.5rem 3rem;
+    box-shadow:
+      0 5px 10px rgba(154, 160, 185, 0.05),
+      0 15px 40px rgba(166, 173, 201, 0.1);
+  }
+
+  @include desktop {
+    margin: 8rem 1.25rem;
+    margin-top: 8rem;
+    padding: 2.5rem 2.5rem 2.5rem 2.5rem;
+    box-shadow:
+      0 5px 10px rgba(154, 160, 185, 0.05),
+      0 15px 40px rgba(166, 173, 201, 0.1);
+  }
 }
 
 .meals-section__upper {
@@ -29,7 +54,6 @@
   @include mobile {
     width: -webkit-fill-available;
   }
-
 }
 
 .meals-section__header {
@@ -47,7 +71,7 @@
     font-variant: all-small-caps;
     font-size: 2rem;
     display: flex;
-    width: 80%;
+    // width: 80%;
     align-self: center;
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -71,9 +95,7 @@
     padding-bottom: 3rem;
     text-wrap: nowrap;
   }
-
 }
 
 .meals-section__lower {
-
 }

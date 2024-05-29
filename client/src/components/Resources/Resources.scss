@@ -100,7 +100,7 @@ a:hover {
     letter-spacing: 0rem;
 
     @include mobile {
-      font-size: 15vw;
+      font-size: 14vw;
       letter-spacing: -0.25rem;
     }
   }
@@ -157,9 +157,9 @@ a:hover {
   }
 
   @include mobile {
-    padding: 3rem;
+    padding: 1rem;
     width: 90vw;
-    height: 5rem;
+    height: 4rem;
     border-radius: 10px;
     place-content: center;
     z-index: -1;

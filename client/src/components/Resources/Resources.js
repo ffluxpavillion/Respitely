@@ -179,6 +179,20 @@ export default function Resources() {
                 </p>
               </div>
             </a>
+            <a
+              className='link'
+              target='_blank'
+              href='https://www.toogoodtogo.com/en-ca'
+            >
+              <div className='grid__item hidden-resources'>
+                <h4 className='grid__item-header'>
+                  Too Good To Go
+                </h4>
+                <p className='grid__item-text'>
+                  Too Good To Go is a free app that connects you with local restaurants & stores that sells surplus (unsold) food at a discount.
+                </p>
+              </div>
+            </a>
           </div>
         </div>
       </section>

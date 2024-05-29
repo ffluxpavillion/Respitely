@@ -10,10 +10,15 @@
   background-color: rgb(0, 0, 0);
   padding: 20px;
   border-radius: 8px;
+  text-align: center;
+  text-align: -webkit-auto;
+  vertical-align: baseline;
+  vertical-align: -webkit-baseline-middle;
+  align-self: center;
 
   @include mobile {
-    height: 34rem;
-    padding-bottom: 3rem;
+    height: 36vh;
+    // padding-bottom: 3rem;
   }
 
   @include tablet {
@@ -64,7 +69,6 @@
     letter-spacing: 0.3px;
     font-variant-caps: all-petite-caps;
     border-left: 2px solid #6232c1;
-
 
     @include mobile {
       font-size: 1rem;

@@ -7,7 +7,7 @@
   background-color: white;
   background-color: #aaa0b009;
   position: relative;
-  z-index: -1;
+  z-index: -2;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -67,14 +67,15 @@
 
   @include mobile {
     // font-size: 2.2rem; // CULPRIT #1 - FIXED
-    font-family: 'Toronto Subway Bold';
+    font-family: 'Toronto Subway';
     font-variant: all-small-caps;
-    font-size: 2rem;
+    font-size: 3rem;
     display: flex;
     // width: 80%;
     align-self: center;
     padding-top: 1rem;
     padding-bottom: 1rem;
+    letter-spacing: 1.5px;
     text-wrap: wrap;
     justify-content: center;
     text-align: center;

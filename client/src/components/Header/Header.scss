@@ -37,16 +37,18 @@ li {
   width: 100%;
   z-index: 1001;
   @include mobile {
-    justify-content: space-evenly;
+    justify-content: space-between;
     padding: 1rem 1rem 0.25rem 1rem;
   }
 
   @include tablet {
     padding: 1.75rem 1rem 0.5rem 1rem;
+    align-items: end;
   }
 
   @include desktop {
     padding: 1.75rem 1.5rem 0.5rem 1.5rem;
+    align-items: end;
   }
 }
 
@@ -153,7 +155,7 @@ li {
       transition: all 0.4s ease-in-out;
 
       @include mobile {
-        font-size: 1.9rem;
+        font-size: 1.5rem;
 
         &:active {
           transition: all 0.4s ease-in-out;
@@ -165,7 +167,7 @@ li {
       }
 
       @include tablet {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
 
         &:active {
           transition: all 0.4s ease-in-out;
@@ -187,6 +189,54 @@ li {
       }
     }
   }
+}
+
+.navbar__socials-container {
+  display: flex;
+  gap: 1.25rem;
+  position: relative;
+  padding-right: 3.5rem;
+
+  @include mobile {
+    top: 4.5rem;
+  }
+
+  @include tablet {
+    top: 7rem;
+  }
+
+  @include desktop {
+    top: 10rem;
+  }
+}
+
+.navbar__socials-item {
+  display: flex;
+  color: white;
+
+  @include mobile {
+    font-size: 1.4rem;
+  }
+
+  @include tablet {
+    font-size: 1.5rem;
+  }
+
+  @include desktop {
+    font-size: 1.75rem;
+  }
+}
+.navbar__socials-link {
+  display: flex;
+}
+
+.navbar__socials-item:hover {
+  color: #0073b1;
+}
+
+.navbar__socials-item:hover .fa-github {
+  color: #333;
+  transition: all 0.3s ease;
 }
 
 // --------------- NAV STAIRS STYLING ---------------
@@ -306,10 +356,6 @@ li {
   }
 
   @include tablet {
-    .menu {
-      scale: 1.1;
-    }
-
     .menu.active .bar:nth-child(2) {
       opacity: 0;
     }
@@ -324,10 +370,6 @@ li {
   }
 
   @include desktop {
-    .menu {
-      scale: 0.95;
-    }
-
     .menu.active .bar:nth-child(2) {
       opacity: 0;
     }

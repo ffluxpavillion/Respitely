@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react';
 import './Header.scss';
 import { HashLink as Link } from 'react-router-hash-link';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -112,13 +115,38 @@ export default function Header() {
                 </h3>
               </Link>
             </li>
-            <li onClick={handleClick}>
-              <Link to='#contact'>
-                <h3 className='navbar__div-li nav-stairs__about-us'>
-                  CONTACT ⟩⟩
-                </h3>
-              </Link>
-            </li>
+            <div className='navbar__socials-container'>
+              <li className='navbar__socials-item'>
+                <a
+                  className='navbar__socials-link'
+                  href='https://www.linkedin.com/in/arjunsahjpaul/ '
+                  target='_blank'
+                  rel='noreferrer'
+                >
+                  <FontAwesomeIcon icon={faLinkedin} />
+                </a>
+              </li>
+              <li className='navbar__socials-item'>
+                <a
+                  className='navbar__socials-link'
+                  href='https://github.com/ffluxpavillion/SafeHavenTO'
+                  target='_blank'
+                  rel='noreferrer'
+                >
+                  <FontAwesomeIcon icon={faGithub} />
+                </a>
+              </li>
+              <li className='navbar__socials-item'>
+                <a
+                  className='navbar__socials-link'
+                  href='mailto:contact@safehavento.org'
+                  target='_blank'
+                  rel='noreferrer'
+                >
+                  <FontAwesomeIcon icon={faEnvelope} />
+                </a>
+              </li>
+            </div>
           </ul>
         </div>
       </nav>

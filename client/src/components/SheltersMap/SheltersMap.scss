@@ -46,11 +46,6 @@
   background-color: #212d40;
 
   @include mobile {
-    // width: max-content;
-    height: fit-content;
-    align-items: start;
-    // zoom: 0.9;
-    width: 10rem;
   }
 
   @include tablet {
@@ -67,35 +62,24 @@
 .popup__div-upper {
   display: flex;
   flex-direction: row;
-  gap: 1rem;
+  gap: 1.1rem;
 }
 
-.popup__div__div-left {
-  // height: 3rem;
+.popup__div-left {
+  width: 50%;
   animation: fadeIn 0.5s ease-out forwards;
-  width: 100%;
   align-self: center;
-  // margin: 0.7rem;
 }
 
 .popup__div-right {
-  min-height: auto;
-  min-width: fit-content;
-  height: auto;
+  width: 50%;
   animation: fadeIn 0.5s ease-out forwards;
+  height: auto;
 }
 
 .popup__div-header {
-  font-size: 1.3rem;
   color: white;
-
-  @include tablet {
-    widtwidth: max-content;
-  }
-
-  @include desktop {
-    width: max-content;
-  }
+  font-size: 1.1rem;
 }
 
 .popup__div-subheader-1 {
@@ -111,7 +95,7 @@
   }
 
   @include tablet {
-    width: 10rem;
+    width: 12rem;
   }
 
   @include desktop {
@@ -133,17 +117,12 @@
 .popup__div-text {
   margin-bottom: 0.6rem;
   color: ghostwhite;
-  font-size: 0.95rem;
   font-family: 'Avenir Next';
   font-weight: 600;
   letter-spacing: 0.4px;
   background: #7d4e57;
   padding: 0.5rem;
-  // font-family: 'League Spartan SemiBold';
-
-  @include mobile {
-    // margin-bottom: 0.9rem;
-  }
+  font-size: 0.9rem;
 }
 
 .popup__div-lower {
@@ -282,6 +261,7 @@
   @include mobile {
     line-height: 1rem;
     width: 19rem;
+    zoom: 0.9;
   }
 
   @include tablet {

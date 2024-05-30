@@ -46,7 +46,6 @@ export default function SheltersMap(props) {
     setSelectedPlace(null); // to deselect any currently selected marker on the map
   }, [props.filterType]);
 
-
   // console.log('apiKey:', apiKey);
   // console.log('locations:', locations);
   // console.log('geoJsonLocations:', geoJsonLocations);
@@ -254,61 +253,65 @@ export default function SheltersMap(props) {
               offset={[0, -20]}
             >
               <div className='popup__div'>
-                <div className='popup__div-left'>
-                  <h4 className='popup__div-header'>
-                    {selectedPlace.properties.SHELTER_GROUP || 'LOCATION NAME'}
-                  </h4>
-                  <br />
-                  {selectedPlace.properties.CAPACITY_TYPE ===
-                  'Bed Based Capacity' ? (
-                    <p className='popup__div-subheader-1 '>
-                      Available Beds:{' '}
-                      <span className='popup-availability'>
-                        {selectedPlace.properties.UNOCCUPIED_BEDS}
-                      </span>
-                    </p>
-                  ) : (
-                    <p className='popup__div-subheader-1'>
-                      Available Rooms:{' '}
-                      <span className='popup-availability'>
-                        {selectedPlace.properties.UNOCCUPIED_ROOMS}
-                      </span>
-                    </p>
-                  )}
-                </div>
-                <br />
-                <div className='popup__div-right'>
-                  <p className='popup__div-subheader-2'>Address:</p>
-                  <p className='popup__div-text'>
-                    {selectedPlace.properties.LOCATION_ADDRESS}
+                <div className='popup__div-upper'>
+                  <div className='popup__div-left'>
+                    <h4 className='popup__div-header'>
+                      {selectedPlace.properties.SHELTER_GROUP ||
+                        'LOCATION NAME'}
+                    </h4>
                     <br />
-                    {selectedPlace.properties.LOCATION_CITY}
-                  </p>
-                </div>
-              </div>
-              <div className='popup__button-container'>
-                <a
-                  href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
-                    selectedPlace.properties.LOCATION_ADDRESS +
-                      ', ' +
-                      selectedPlace.properties.LOCATION_CITY +
-                      ', ' +
-                      selectedPlace.properties.LOCATION_POSTAL_CODE
-                  )}&travelmode=walking`}
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='btn--Directions-anchor'
-                >
-                  <button className='popup__button-directions'>
-                    <span>
-                      <FontAwesomeIcon icon={faRoute} size='lg' />
-                    </span>
-                    <p className='popup__button-directions-text'>
-                      {' '}
-                      Get Directions
+                    {selectedPlace.properties.CAPACITY_TYPE ===
+                    'Bed Based Capacity' ? (
+                      <p className='popup__div-subheader-1 '>
+                        Available Beds:{' '}
+                        <span className='popup-availability'>
+                          {selectedPlace.properties.UNOCCUPIED_BEDS}
+                        </span>
+                      </p>
+                    ) : (
+                      <p className='popup__div-subheader-1'>
+                        Available Rooms:{' '}
+                        <span className='popup-availability'>
+                          {selectedPlace.properties.UNOCCUPIED_ROOMS}
+                        </span>
+                      </p>
+                    )}
+                  </div>
+                  <div className='popup__div-right'>
+                    <p className='popup__div-subheader-2'>Address:</p>
+                    <p className='popup__div-text'>
+                      {selectedPlace.properties.LOCATION_ADDRESS}
+                      <br />
+                      {selectedPlace.properties.LOCATION_CITY}
                     </p>
-                  </button>
-                </a>
+                  </div>
+                </div>
+                <div className='popup__div-lower'>
+                  <div className='popup__button-container'>
+                    <a
+                      href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
+                        selectedPlace.properties.LOCATION_ADDRESS +
+                          ', ' +
+                          selectedPlace.properties.LOCATION_CITY +
+                          ', ' +
+                          selectedPlace.properties.LOCATION_POSTAL_CODE
+                      )}&travelmode=walking`}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      className='btn--directions-link'
+                    >
+                      <button className='popup__button-directions'>
+                        <span>
+                          <FontAwesomeIcon icon={faRoute} size='lg' />
+                        </span>
+                        <p className='popup__button-directions-text'>
+                          {' '}
+                          Get Directions
+                        </p>
+                      </button>
+                    </a>
+                  </div>
+                </div>
               </div>
             </Popup>
             //<SearchBox accessToken={apiKey} />

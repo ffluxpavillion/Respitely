@@ -41,12 +41,17 @@
     font-weight: 800;
     text-align: center;
     color: white;
-    font-family: 'Toronto Subway Bold';
+    font-family: 'Toronto Subway';
+    letter-spacing: 1px;
     text-transform: uppercase;
+
+    @include mobile {
+      font-size: 1.3rem;
+    }
   }
 
   .ant-drawer-body {
-    padding: 2rem;
+    padding: 1rem;
     background-color: #181818;
     color: white;
   }
@@ -63,6 +68,10 @@
       margin: 1rem;
       color: #181818;
       border-radius: 2px;
+    }
+
+    @include mobile {
+      margin: 0rem;
     }
   }
 
@@ -112,12 +121,18 @@
 .mealsMap__C1--Weekday-Div {
   display: flex;
   flex-direction: row;
-  gap: 4rem;
+  justify-content: space-between;
+  // gap: 14%;
+}
+
+.mealsMap__C1--Day-Container {
+  display: flex;
 }
 
 .mealsMap__C1--Day {
   text-transform: capitalize;
-  width: 30%;
+  // width: 50%;
+
   font-family: 'DT Black';
   text-align: center;
   align-self: center;
@@ -153,18 +168,20 @@
   gap: 3rem;
   margin: 1rem;
   line-height: 18px;
+  width: 100%;
 }
 
 .mealsMap__C2--Day {
   // padding: 11px 8px 11px 64px;
   text-transform: capitalize;
-  width: 30%;
+  width: 31%;
+  font-size: 0.85rem;
+  font-family: 'DT Black';
 }
 
 .mealsMap__C2--Hours {
   // padding: 11px 8px 11px 64px;
   text-align: start;
-  width: 100%;
   display: flex;
   justify-content: start;
 }
@@ -177,8 +194,11 @@
   display: flex;
 }
 
+.mealsMap-collapse {
+  width: 100%;
+}
+
 .mealsMap-collapse-panel {
-  background-color: #20242c;
   width: 100%;
 }
 
@@ -296,11 +316,8 @@
   border-left: none;
   white-space: pre-line;
   font-family: 'Avenir Next';
-  // line-height: 1.5rem;
   margin-bottom: 1rem;
   font-variant-caps: all-petite-caps;
-  // border-left: 4px solid white;
-  padding-left: 1rem;
   gap: 0.5rem;
   display: flex;
   flex-direction: row;
@@ -349,7 +366,7 @@
 
 .MealsMap-site-link {
   color: #ae94fc;
-  font-size: 1rem;
+  font-size: 0.85rem;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;

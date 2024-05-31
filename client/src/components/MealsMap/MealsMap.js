@@ -330,8 +330,9 @@ export default function MealsMap() {
                   icon={faMapMarkerAlt}
                 />{' '}
                 <span className='drawer__upper-text-right'>
-                  {selectedPlace.address}, {selectedPlace.city},{' '}
-                  {selectedPlace.province}, {selectedPlace.postal_code}
+                  {selectedPlace.address} <br />
+                  {selectedPlace.city}, {selectedPlace.province}{' '}
+                  {selectedPlace.postal_code}
                 </span>{' '}
               </p>
               <p className='drawer__upper-text-left'>
@@ -408,7 +409,9 @@ export default function MealsMap() {
                               key={day}
                             >
                               {day && (
-                                <p className='mealsMap__C1--Day'>{day}</p>
+                                <div className='mealsMap__C1--Day-Container'>
+                                  <p className='mealsMap__C1--Day'>{day}</p>
+                                </div>
                               )}
                               <div className='mealsMap__C1--Meal-Info-Container'>
                                 {details.breakfast && (
@@ -446,10 +449,10 @@ export default function MealsMap() {
                       Object.entries(JSON.parse(selectedPlace.schedule)).map(
                         ([day, details]) => (
                           <div className='mealsMap__C2--Weekday-Div' key={day}>
-                            <span className='mealsMap__C2--Day'>{day}</span>
-                            <span className='mealsMap__C2--Hours'>
+                            <p className='mealsMap__C2--Day'>{day}</p>
+                            <p className='mealsMap__C2--Hours'>
                               {details.hours}
-                            </span>
+                            </p>
                           </div>
                         )
                       )}

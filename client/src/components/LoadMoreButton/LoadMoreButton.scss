@@ -13,6 +13,8 @@
   color: white;
   display: flex;
   justify-content: center;
+  font-style: italic;
+  font-variant-caps: all-petite-caps;
 
   @include mobile {
     min-width: -webkit-fill-available;
@@ -36,7 +38,6 @@
   letter-spacing: 1px;
   transition: all 0.3s ease;
   cursor: pointer;
-
 
   @include mobile {
     margin-top: 0rem;

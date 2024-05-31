@@ -198,7 +198,8 @@ li {
   padding-right: 3.5rem;
 
   @include mobile {
-    top: 4.5rem;
+    top: 5.5rem;
+    gap: 1.9rem;
   }
 
   @include tablet {
@@ -215,7 +216,7 @@ li {
   color: white;
 
   @include mobile {
-    font-size: 1.4rem;
+    font-size: 1.65rem;
   }
 
   @include tablet {

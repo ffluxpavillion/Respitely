@@ -35,7 +35,6 @@
     grid-column: 1;
     font-weight: bold;
     font-size: 0.5rem;
-    // text-align: right;
     width: 100%;
     color: white;
     padding-right: 0.6rem;
@@ -45,6 +44,9 @@
     line-height: 1rem;
     font-variant-caps: all-petite-caps;
     text-align: right;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-align: end;
 
     @include mobile {
       font-size: 1rem;

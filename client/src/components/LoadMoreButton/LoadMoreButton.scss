@@ -19,6 +19,7 @@
   @include mobile {
     min-width: -webkit-fill-available;
     justify-content: center;
+    height: 50vh;
   }
 
   @include tablet {

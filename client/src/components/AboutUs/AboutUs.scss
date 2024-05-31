@@ -170,7 +170,7 @@
     font-size: 1.9rem;
 
     @include mobile {
-      font-size: 1.6rem;
+      font-size: 1.7rem;
       width: 20rem;
     }
 
@@ -191,10 +191,12 @@
     font-family: StabilGrotesk, sans-serif;
     width: 97%;
     font-style: italic;
-    letter-spacing: 0.4px;
+    letter-spacing: -0.3px;
 
     @include mobile {
-      padding: 0 2rem;
+      margin-left: 1rem;
+      font-size: 0.95rem;
+      // padding-bottom: 1rem;
     }
 
     @include tablet {
@@ -346,18 +348,20 @@
 .custom-collapse .ant-collapse-header-text {
   color: white;
   font-family: 'DT Black';
-  padding: 0rem 0.25rem;
+  text-align: left;
 
   @include mobile {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
   }
 
   @include tablet {
     font-size: 1.25rem;
+    padding: 0rem 0.25rem;
   }
 
   @include desktop {
     font-size: 1.42rem;
+    padding: 0rem 0.25rem;
   }
 }
 
@@ -380,7 +384,7 @@
   place-self: center;
 
   @include mobile {
-    width: 90vw;
+    width: 93vw;
   }
 
   @include tablet {

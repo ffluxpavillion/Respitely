@@ -182,7 +182,7 @@ export default function AboutUs() {
             <br />
             <div className='mission__div-inner-container-2 hidden-about-us slide-left'>
               <Collapse
-                className='custom-collapse'
+                className='custom-collapse about-us-collapse'
                 accordion
                 expandIcon={({ isActive }) => (
                   <CaretRightOutlined rotate={isActive ? 90 : 0} />

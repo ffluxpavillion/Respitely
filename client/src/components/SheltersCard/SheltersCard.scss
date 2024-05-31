@@ -732,10 +732,12 @@ h3 {
 
   @include mobile {
     width: auto;
+    height: 80vh;
   }
 
   @include tablet {
     // display: none;
+    height: 80vh;
   }
 
   @include desktop {

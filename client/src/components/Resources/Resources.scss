@@ -188,6 +188,7 @@ a:hover {
     font-size: 1.15rem;
 
     @include mobile {
+      font-size: 1.05rem;
     }
 
     @include tablet {

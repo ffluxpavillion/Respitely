@@ -11,7 +11,7 @@ import Map, {
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { ApiKeyContext } from '../../contexts/ApiKeyContext';
 import mealList from '../../data/TDIN_MealList.json';
-import MealMarker from '../../assets/icons/SafeHavenTO_icon-meal.png';
+import MealMarker from '../../assets/icons/SafeHavenTO_icon-meal-marker.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRoute } from '@fortawesome/free-solid-svg-icons';
 import { Drawer, Button, Collapse } from 'antd';
@@ -257,7 +257,7 @@ export default function MealsMap() {
                 anchor='bottom'
                 offset={[0, -20]}
               >
-                <div className='popup__div'>
+                <div className='popup__div mealsMap-popup__div'>
                   <div className='popup__div-left'>
                     <h4 className='popup__div-header'>
                       {selectedPlace.name || 'LOCATION NAME'}

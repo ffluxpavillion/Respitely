@@ -231,6 +231,11 @@
 //   }
 // }
 
+.mealsMap-popup__div {
+  display: flex;
+  flex-direction: row;
+}
+
 .popup__button-directions-text {
   font-family: 'Avenir Next Bold', 'Verdana', 'Arial', 'system-ui';
   font-size: 1rem;

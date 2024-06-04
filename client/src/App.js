@@ -1,4 +1,13 @@
 import './App.scss';
+// react-router
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+// google analytics
+import { initGA } from './utils/analytics';
+// contexts
+import ApiKeyProvider from './contexts/ApiKeyContext';
+// hooks
+import {useGeolocation} from './hooks/useGeolocation';
+// components
 import Header from '../src/components/Header/Header';
 import Home from '../src/components/Home/Home';
 import Parallax1 from './components/Parallax1/Parallax1';
@@ -11,12 +20,10 @@ import Footer from './components/Footer/Footer';
 import CookiePolicy from './components/Legal/CookiePolicy/CookiePolicy';
 import TermsOfUse from './components/Legal/TermsOfUse/TermsOfUse';
 import MealsCard from './components/MealsCard/MealsCard';
-import ApiKeyProvider from './contexts/ApiKeyContext';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { FloatButton } from 'antd';
-import { initGA } from './utils/analytics';
 
 export default function App() {
+  const {locationInfo, locationError} = useGeolocation();
+  console.log({locationError, locationInfo})
   initGA(); // Initialize Google Analytics
 
   return (

@@ -212,6 +212,10 @@ export default function SheltersMap(props) {
           {...viewState} // updates view state on marker click
           onMove={(evt) => setViewState(evt.viewState)} // updates view state on marker click
           mapboxAccessToken={apiKey}
+          maxBounds={[
+            [-80.000039, 43.4], // Southwest coordinates
+            [-78.700044, 44.0], // Northeast coordinates
+          ]}
           style={{ width: '100%', Height: '100%' }}
           mapStyle='mapbox://styles/mapbox/streets-v9'
           onClick={handleMapClick}

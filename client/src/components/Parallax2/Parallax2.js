@@ -4,7 +4,10 @@ import ParallaxImage2 from '../../assets/images/SafeHavenTO_graphic-art-skyline-
 export default function Parallax2() {
   return (
     <>
-      <div className="parallax2" style={{ backgroundImage: `url(${ParallaxImage2})` }}></div>
+      <div
+        className='parallax2'
+        style={{ backgroundImage: `url(${ParallaxImage2})` }}
+      ></div>
     </>
   );
 }

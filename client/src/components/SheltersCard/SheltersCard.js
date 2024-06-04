@@ -197,9 +197,12 @@ export default function SheltersCard() {
 
   const handleCardClick = (record) => {
     setGoHere(record);
-    document.body.style.overflow = 'hidden'; // disable scrolling
-    document.querySelector('header').classList.replace('visible', 'hidden'); // Hide header
-  };
+    if (window.innerWidth < 768) { // Example breakpoint for mobile devices
+        document.body.style.overflow = 'hidden';
+    }
+    document.querySelector('header').classList.replace('visible', 'hidden');
+};
+
 
   const closeDetailedView = () => {
     setGoHere(null);

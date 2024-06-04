@@ -145,6 +145,12 @@ a:hover {
   z-index: -1;
   background: linear-gradient(45deg, #b27474, #8789ae);
   background-size: cover;
+  transition:
+    transform 0.4s ease-in-out,
+    box-shadow 0.4s ease-in-out;
+  transform: translateZ(
+    0
+  ); // Promote layering for GPU acceleration - to assist in janky feel on ios
 
   &:hover {
     border-radius: 10px;
@@ -152,7 +158,6 @@ a:hover {
     box-shadow: 0px 0px 10px 0 #cca6af;
     scale: (1.05);
     transition: all 0.4s ease-in-out;
-    // margin: -1rem;
   }
 
   @include mobile {

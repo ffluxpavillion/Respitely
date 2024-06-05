@@ -32,17 +32,14 @@
   background-color: #5271b3;
   color: white;
   border: none;
-  padding: 0.6rem 1.2rem;
-  margin-top: 5.2rem;
+  padding: 3rem 0rem;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.12);
-  width: 100%;
   letter-spacing: 1px;
   transition: all 0.3s ease;
   cursor: pointer;
 
-  @include mobile {
-    margin-top: 0rem;
-    padding: 3rem 1.2rem;
+  @include desktop {
+    margin: 0 10rem;
   }
 
   &:hover {

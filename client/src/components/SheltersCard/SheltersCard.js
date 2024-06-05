@@ -9,6 +9,7 @@ import { faCircleArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { faLocationCrosshairs } from '@fortawesome/free-solid-svg-icons';
 import EmergencyBanner from '../EmergencyBanner/EmergencyBanner';
 import SheltersCardDetailedView from '../SheltersCardDetailedView/SheltersCardDetailedView';
+import CalculateDaysAgo from '../../helpers/CalculateDaysAgo';
 
 export default function SheltersCard() {
   const [loading, setLoading] = useState(true); // state to show/hide Loading Shelter Data message
@@ -18,7 +19,9 @@ export default function SheltersCard() {
   const [filterType, setFilterType] = useState('All'); // new state for filter type
   const [selectedButton, setSelectedButton] = useState('All');
   const [goHere, setGoHere] = useState(null);
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 1279); // state to check if the screen is mobile size
+  const [isMobile, setIsMobile] = useState(window.innerWidth > 0); // state to check if the screen is mobile size
+  const calculateDaysAgo = CalculateDaysAgo;
+
   // const [uniqueLocations, setUniqueLocations] = useState({}); // alt piece of state to store unique locations
 
   useEffect(() => {
@@ -48,7 +51,7 @@ export default function SheltersCard() {
   useEffect(() => {
     // check if the screen is mobile size
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
+      setIsMobile(window.innerWidth > 0);
     };
 
     window.addEventListener('resize', handleResize);
@@ -197,12 +200,12 @@ export default function SheltersCard() {
 
   const handleCardClick = (record) => {
     setGoHere(record);
-    if (window.innerWidth < 768) { // Example breakpoint for mobile devices
-        document.body.style.overflow = 'hidden';
+    if (window.innerWidth < 768) {
+      // breakpoint for mobile devices
+      document.body.style.overflow = 'hidden';
     }
     document.querySelector('header').classList.replace('visible', 'hidden');
-};
-
+  };
 
   const closeDetailedView = () => {
     setGoHere(null);
@@ -248,21 +251,6 @@ export default function SheltersCard() {
     };
   }, []);
 
-  const calculateDaysAgo = (dateString) => {
-    const date = new Date(dateString);
-    const today = new Date();
-    const timeDifference = today.getTime() - date.getTime();
-    const daysDifference = Math.floor(timeDifference / (1000 * 3600 * 24));
-
-    if (daysDifference === 0) {
-      return '(Today)';
-    } else if (daysDifference === 1) {
-      return '(1 Day Ago)';
-    } else {
-      return `(${daysDifference} Days Ago)`;
-    }
-  };
-
   return (
     <>
       <EmergencyBanner />
@@ -275,7 +263,7 @@ export default function SheltersCard() {
           <br />
           <span className='shelter-section__subHeader'>
             <div className='subHeader__upper'>
-              <p className='subHeader__title'>FILTER BY →</p>
+              <p className='subHeader__title'>SHOW ME →</p>
               <FilterButtons
                 selectedButton={selectedButton}
                 filterAndSortData={filterAndSortData}
@@ -296,7 +284,7 @@ export default function SheltersCard() {
         {isMobile ? (
           <div className='mobile__shelter-scrollable-container'>
             <span className='mobile__instructions-text'>
-              Tap a shelter to learn more ⟩⟩⟩
+              Select a shelter to learn more ⟩⟩⟩
             </span>
             <ul className='shelter-list'>
               {displayedRecords.map((record) => (
@@ -474,7 +462,6 @@ export default function SheltersCard() {
             ></SheltersMap>
           </div>
         )}
-        <span className='scroll-instructions'>↓ Scroll Down For More ↓</span>
         {goHere && (
           <div className='shelter-detailed-view'>
             <button className='back-button' onClick={closeDetailedView}>

@@ -15,7 +15,7 @@ export default function Home() {
 
         <div className='home-button__container'>
           <div className='center-con'>
-            <span className='header-actions__text'>Jump to Shelters Map </span>
+            <span className='header-actions__text'>Jump to Shelters</span>
             <Link to='#shelters'>
               <div className='round'>
                 <div id='cta'>

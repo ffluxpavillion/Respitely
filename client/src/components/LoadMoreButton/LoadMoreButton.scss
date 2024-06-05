@@ -37,6 +37,16 @@
   letter-spacing: 1px;
   transition: all 0.3s ease;
   cursor: pointer;
+  width: -webkit-fill-available;
+
+
+  @include mobile {
+    width: 100%;
+  }
+
+  @include tablet {
+    width: 100%;
+  }
 
   @include desktop {
     margin: 0 10rem;

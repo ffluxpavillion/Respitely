@@ -25,13 +25,21 @@
   @include tablet {
     padding: 1rem;
   }
+
+  @include desktop {
+    height: 2rem;
+  }
 }
 
 .banner-content {
   display: inline-block;
   line-height: 1rem;
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   text-wrap: balance;
+
+  @include desktop {
+    font-size: 0.85rem;
+  }
 }
 
 .phone-link {

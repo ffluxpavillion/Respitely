@@ -55,6 +55,11 @@
     @include tablet {
       font-size: 1.1rem;
     }
+
+    @include desktop {
+      font-size: 1.3rem;
+      line-height: 1.8rem;
+    }
   }
 
   &__value {
@@ -73,5 +78,9 @@
     font-variant-caps: all-petite-caps;
     border-left: 2px solid #6232c1;
     text-align: left;
+
+    @include desktop {
+      font-size: 1.2rem;
+    }
   }
 }

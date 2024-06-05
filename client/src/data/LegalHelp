@@ -10,6 +10,7 @@
   "website": "www.sschto.ca",
   "population": "General Population; Adults",
   "service_dog_allowed": true,
+  "flyer": "https://www.tdin.ca/res_documents/KBCLS_AT_THE_CORNER_DROP_IN_%28003%29_uwpkz.pdf",
   "schedule": {
     "thursday": {
       "hours": "7:30am – 11:30am",

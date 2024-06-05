@@ -437,6 +437,10 @@ h3 {
   @include tablet {
     padding: 0.5rem;
   }
+
+  @include desktop {
+    padding: 0.5rem;
+  }
 }
 
 .shelter-item__content {
@@ -522,9 +526,9 @@ h3 {
     padding: 0.75rem 0rem;
   }
   @include tablet {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     line-height: 3rem;
-    min-width: 24rem;
+    min-width: 30rem;
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;

@@ -280,7 +280,6 @@ export default function SheltersCard() {
             </div>
           </span>
         </div>
-        <span className='shelter__dispatch-info-banner'></span>
         {isMobile ? (
           <div className='mobile__shelter-scrollable-container'>
             <span className='mobile__instructions-text'>

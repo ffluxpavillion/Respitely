@@ -134,8 +134,10 @@ a:hover {
 
 .grid__item {
   box-shadow: 0 3px 7px 0 #00000080;
-  width: 16rem;
-  height: 16rem;
+  width: 15rem;
+  height: 15rem;
+  text-align: center;
+  text-wrap: balance;
   border-radius: 17px;
   display: grid;
   place-content: space-between;
@@ -171,11 +173,11 @@ a:hover {
   }
 
   @include tablet {
-    padding: 1rem;
+    padding: 0.1rem 0.5rem 1rem 0.5rem;
   }
 
   @include desktop {
-    padding: 1rem;
+    padding: 0.5rem 0.5rem 1rem 0.5rem;
     // transform: scale(1);
     transition:
       border-radius 0.4s ease-in-out,

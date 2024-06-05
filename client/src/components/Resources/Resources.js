@@ -45,6 +45,97 @@ export default function Resources() {
             <a
               className='link'
               target='_blank'
+              href='https://communityfridgesto.org/'
+            >
+              <div className='grid__item hidden-resources'>
+                <h4 className='grid__item-header'>Community Fridges Toronto</h4>
+                <p className='grid__item-text'>
+                  Accessible food located in refridgerators around the city,
+                  24/7.
+                </p>
+              </div>
+            </a>
+            <a
+              className='link'
+              target='_blank'
+              href='https://www.toogoodtogo.com/en-ca'
+            >
+              <div className='grid__item hidden-resources'>
+                <h4 className='grid__item-header'>Too Good To Go</h4>
+                <p className='grid__item-text'>
+                  Free app that connects you with local restaurants & stores
+                  that sell surplus (unsold) food at a discount.
+                </p>
+              </div>
+            </a>
+            <a
+              className='link'
+              target='_blank'
+              href='https://www.toronto.ca/community-people/employment-social-support/housing-support/financial-support-for-renters/toronto-rent-bank/'
+            >
+              <div className='grid__item hidden-resources'>
+                <h4 className='grid__item-header'>Toronto Rent Bank</h4>
+                <p className='grid__item-text'>
+                  Interest-free loans to low-income households facing eviction.
+                </p>
+              </div>
+            </a>
+            <a
+              className='link'
+              target='_blank'
+              href='https://everydayconnect.ca/legal/'
+            >
+              <div className='grid__item hidden-resources'>
+                <h4 className='grid__item-header'>Legal Resoures</h4>
+                <p className='grid__item-text'>
+                  Legal services for:
+                  <br /> immigration, housing/tenant, human rights, criminal,
+                  and more.
+                </p>
+              </div>
+            </a>
+            <a
+              className='link'
+              target='_blank'
+              href='https://www.icha-toronto.ca/shelter-health-services-map'
+            >
+              <div className='grid__item hidden-resources'>
+                <h4 className='grid__item-header'>
+                  Toronto Homelessness Health Services
+                </h4>
+                <p className='grid__item-text'>
+                  Mapping tool for clinical services, primary care & psychiatry,
+                  referral status, harm reduction, etc.
+                </p>
+              </div>
+            </a>
+            <a className='link' target='_blank' href='https://srhrmap.ca/map'>
+              <div className='grid__item hidden-resources'>
+                <h4 className='grid__item-header'>
+                  Sexual & Reproductive Health Services Map
+                </h4>
+                <p className='grid__item-text'>
+                  Mapping tool that detailing all sexual and reproductive health
+                  services in Canada.
+                </p>
+              </div>
+            </a>
+            <a
+              className='link'
+              target='_blank'
+              href='https://www.awhl.org/home'
+            >
+              <div className='grid__item hidden-resources'>
+                <h4 className='grid__item-header'>Assulted Womens Hotline</h4>
+                <p className='grid__item-text'>
+                  Crisis counselling, shelter referrals, employment, legal, and
+                  more. Available in 200 languages -- 24/7.
+                </p>
+              </div>
+            </a>
+            <a
+              className='link'
+              target='_blank'
               href='https://www.toronto.ca/community-people/housing-shelter/homeless-help/shelters/#shelters'
             >
               <div className='grid__item hidden-resources'>
@@ -103,8 +194,7 @@ export default function Resources() {
               <div className='grid__item hidden-resources'>
                 <h4 className='grid__item-header'>Warming Centres</h4>
                 <p className='grid__item-text'>
-                  Warm spaces for vulnerable residents to come inside during
-                  extreme cold weather.
+                  Warm spaces during extreme cold weather.
                 </p>
               </div>
             </a>
@@ -148,48 +238,6 @@ export default function Resources() {
                 <p className='grid__item-text'>
                   Locations of public washrooms in parks and recreational
                   facilities.
-                </p>
-              </div>
-            </a>
-            <a
-              className='link'
-              target='_blank'
-              href='https://www.toronto.ca/community-people/employment-social-support/housing-support/financial-support-for-renters/toronto-rent-bank/'
-            >
-              <div className='grid__item hidden-resources'>
-                <h4 className='grid__item-header'>
-                  Toronto Rent Bank
-                </h4>
-                <p className='grid__item-text'>
-                  Interest-free loans to low-income households facing eviction.
-                </p>
-              </div>
-            </a>
-            <a
-              className='link'
-              target='_blank'
-              href='https://communityfridgesto.org/'
-            >
-              <div className='grid__item hidden-resources'>
-                <h4 className='grid__item-header'>
-                  Community Fridges Toronto
-                </h4>
-                <p className='grid__item-text'>
-                  Accessible food located in refridgerators around the city, 24/7.
-                </p>
-              </div>
-            </a>
-            <a
-              className='link'
-              target='_blank'
-              href='https://www.toogoodtogo.com/en-ca'
-            >
-              <div className='grid__item hidden-resources'>
-                <h4 className='grid__item-header'>
-                  Too Good To Go
-                </h4>
-                <p className='grid__item-text'>
-                  Too Good To Go is a free app that connects you with local restaurants & stores that sells surplus (unsold) food at a discount.
                 </p>
               </div>
             </a>

@@ -521,27 +521,22 @@ h3 {
 
   @include mobile {
     font-size: 1.1rem; // CULPRIT #5 - fixed
-    display: inline-flex;
+    line-height: 1.5;
     align-items: center;
     padding: 0.75rem 0rem;
   }
   @include tablet {
     font-size: 1.4rem;
-    line-height: 3rem;
+    line-height: 2rem;
     min-width: 30rem;
-    display: inline-flex;
     align-items: center;
     gap: 0.5rem;
   }
   @include desktop {
-    display: inline-flex;
     letter-spacing: -0.1px;
     font-size: 2.9rem;
-    line-height: 4rem;
+    line-height: 2.25rem;
     min-width: 22rem;
-    // font-family: 'Ostrich Sans Bold';
-    // color:#d6d6e5;
-    // color:#ed7b8c
     font-size: 1.8rem; // testing mobile layout on desktop
     min-width: max-content; // testing mobile layout on desktop
     width: 100%; // testing mobile layout on desktop
@@ -784,6 +779,20 @@ h3 {
   @include desktop {
     width: 95%; // testing mobile layout on desktop
     justify-content: space-between; // testing mobile layout on desktop
+  }
+}
+
+.shelter-item__location-glance {
+  @include mobile {
+    font-size: 0.8rem;
+  }
+
+  @include tablet {
+    font-size: 0.8rem;
+  }
+
+  @include desktop {
+    font-size: 0.8rem;
   }
 }
 

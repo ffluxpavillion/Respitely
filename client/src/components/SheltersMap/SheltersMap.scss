@@ -79,7 +79,18 @@
 
 .popup__div-header {
   color: white;
-  font-size: 1.1rem;
+
+  @include mobile {
+    font-size: 1.1rem;
+  }
+
+  @include tablet {
+    font-size: 1.25rem;
+  }
+
+  @include desktop {
+    font-size: 1.25rem;
+  }
 }
 
 .popup__div-subheader-1 {
@@ -141,32 +152,18 @@
   background-color: #232f27;
   cursor: pointer;
   text-align: -webkit-center;
-  display: flex;
   flex-direction: row;
   justify-content: center;
+  width: 100%;
+  width: -webkit-fill-available;
+  display: flex;
+  gap: 0.5rem;
 
   &:hover {
     background-color: white;
     color: #20242c;
     transform: translateY(-2px);
     transition: all 0.5s ease;
-  }
-
-  @include mobile {
-    width: 100%;
-    width: -webkit-fill-available;
-    display: flex;
-    gap: 0.5rem;
-  }
-
-  @include tablet {
-    width: 10rem;
-    width: -webkit-fill-available;
-  }
-
-  @include desktop {
-    width: 100%;
-    width: -webkit-fill-available;
   }
 }
 

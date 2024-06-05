@@ -295,6 +295,10 @@ export default function SheltersCard() {
                   <div className='shelter-item__content mobile__shelter-item__content'>
                     <h6 className='shelter-item__text'>
                       {record.SHELTER_GROUP} ⟩⟩⟩
+                      <br />
+                      <p className='shelter-item__location-glance'>
+                        📍 {record.LOCATION_CITY}
+                      </p>
                     </h6>
                     <p className='shelter-item__availability mobile__shelter-item__availability'>
                       {record.CAPACITY_TYPE === 'Bed Based Capacity'

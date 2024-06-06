@@ -401,7 +401,7 @@ h3 {
   }
 
   @include desktop {
-    margin: 0 10rem; // testing mobile layout on desktop
+    // margin: 0 10rem; // testing mobile layout on desktop
   }
 }
 
@@ -743,7 +743,7 @@ h3 {
   }
 
   @include desktop {
-    // display: none;
+    display: none;
   }
 }
 

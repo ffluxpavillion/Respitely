@@ -19,7 +19,7 @@ export default function SheltersCard() {
   const [filterType, setFilterType] = useState('All'); // new state for filter type
   const [selectedButton, setSelectedButton] = useState('All');
   const [goHere, setGoHere] = useState(null);
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 1279); // state to check if the screen is mobile size
+  const [isMobile, setIsMobile] = useState(window.innerWidth > 0); // state to check if the screen is mobile size
   const calculateDaysAgo = CalculateDaysAgo;
 
   // const [uniqueLocations, setUniqueLocations] = useState({}); // alt piece of state to store unique locations

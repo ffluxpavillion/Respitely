@@ -146,7 +146,7 @@ export default function Resources() {
                 </p>
               </div>
             </a>
-            <a
+            {/* <a
               className='link'
               target='_blank'
               href='https://www.toronto.ca/community-people/housing-shelter/homeless-help/24-hour-respite-sites/#respitesites'
@@ -240,7 +240,7 @@ export default function Resources() {
                   facilities.
                 </p>
               </div>
-            </a>
+            </a> */}
           </div>
         </div>
       </section>

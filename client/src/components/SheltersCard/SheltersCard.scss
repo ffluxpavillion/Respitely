@@ -533,11 +533,11 @@ h3 {
     gap: 0.5rem;
   }
   @include desktop {
-    letter-spacing: -0.1px;
+    letter-spacing: 1.2px;
     font-size: 2.9rem;
     line-height: 2.25rem;
     min-width: 22rem;
-    font-size: 1.8rem; // testing mobile layout on desktop
+    font-size: 1.5vw; // testing mobile layout on desktop
     min-width: max-content; // testing mobile layout on desktop
     width: 100%; // testing mobile layout on desktop
   }

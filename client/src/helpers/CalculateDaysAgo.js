@@ -9,6 +9,6 @@ export default function calculateDaysAgo(dateString) {
   } else if (daysDifference === 1) {
     return '(1 Day Ago)';
   } else {
-    return `(${daysDifference} Days Ago)`;
+    return `${daysDifference} Days Ago`;
   }
 }

@@ -50,6 +50,7 @@ h3 {
     background-color: #aaa0b009;
     min-height: fit-content;
     // margin: 1rem;
+    padding-bottom: 2.5rem;
   }
 
   @include tablet {
@@ -142,7 +143,7 @@ h3 {
     text-align: center;
     display: flex;
     flex-direction: column-reverse;
-    font-size: 0.93rem;
+    font-size: 0.85rem;
     width: 95%;
     align-self: center;
   }
@@ -199,12 +200,12 @@ h3 {
 }
 
 .subheader__text {
-  font-family: 'Toronto Subway Bold';
-  font-weight: 800;
+  font-family: 'Avenir Next';
+  font-weight: 400;
   text-align: center;
   text-transform: uppercase;
   font-variant-caps: all-petite-caps;
-  letter-spacing: 0.35px;
+  letter-spacing: 0.45px;
 
   @include mobile {
     display: inline-flex; // CULPRIT #3 - fixed
@@ -523,7 +524,7 @@ h3 {
     font-size: 1.1rem; // CULPRIT #5 - fixed
     line-height: 1.5;
     align-items: center;
-    padding: 0.75rem 0rem;
+    padding: 0.5rem 0rem;
   }
   @include tablet {
     font-size: 1.4rem;
@@ -533,7 +534,7 @@ h3 {
     gap: 0.5rem;
   }
   @include desktop {
-    letter-spacing: 1.2px;
+    letter-spacing: 0.8px;
     font-size: 2.9rem;
     line-height: 2.25rem;
     min-width: 22rem;
@@ -814,12 +815,14 @@ h3 {
   @include mobile {
     font-size: 0.65rem;
     width: 90vw;
+    line-height: 1.3rem;
+    margin: 0;
   }
 
   @include tablet {
     width: 100%;
     letter-spacing: normal;
-    font-size: 0.9rem;
+    font-size: 0.75rem;
   }
 
   @include desktop {
@@ -948,4 +951,45 @@ h3 {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+// ----------------- NEW JUNE 2024 STANDARDIZED VIEW (Across Devices)-----------------
+
+.ant-pagination-item a {
+  color: white !important;
+
+  &:hover {
+    color: #1677ff !important;
+    background-color: white;
+  }
+}
+
+.ant-pagination-item-active a {
+  color: #1677ff !important;
+}
+
+.ant-pagination {
+  color: white !important;
+  display: flex;
+  justify-content: center;
+}
+
+.ant-pagination-item-link {
+  color: white !important;
+}
+
+.ant-select-selector {
+  cursor: pointer;
+}
+
+.ant-pagination-item-ellipsis {
+  color: white !important;
+  line-height: 4;
+}
+
+.ant-spin-spinning {
+  position: static;
+  display: block;
+  opacity: 1;
+  padding: 10rem;
 }

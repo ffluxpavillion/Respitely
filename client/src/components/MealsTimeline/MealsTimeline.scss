@@ -1,0 +1,241 @@
+@use '../../partials/abstracts' as *;
+@use '../../partials/fonts' as *;
+@use '../../partials/global' as *;
+@use '../../partials/variables' as *;
+
+.timeline-container {
+  margin: 4rem 0;
+  padding: 2.5rem;
+  color: white;
+  overflow-x: aut o;
+  white-space: nowrap;
+  position: relative;
+}
+
+.horizontal-timeline {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  position: relative;
+
+  .ant-timeline-item-tail {
+    display: none; // Hide the vertical lines
+  }
+  .ant-timeline-item-content {
+    display: inline-block;
+    white-space: nowrap;
+    margin: 0 2rem; // Space between timeline items
+    color: white; // Ensure text is visible on dark background
+  }
+  .ant-timeline-item-head {
+    margin-right: 10px; // Adjust the spacing between markers
+  }
+}
+
+.horizontal-timeline::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: white; // Line color
+  z-index: -1;
+}
+
+.current-time-marker {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  background-color: #1677ff; // Marker color
+  border-radius: 50%;
+  animation: pulse 2.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    // opacity: 0.9;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.renderTimeTickers {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+
+.timeline-container {
+  margin: 4rem 0;
+  padding: 2.5rem;
+  color: white;
+  overflow-x: auto;
+  white-space: nowrap;
+  position: relative;
+}
+
+.current-time-marker {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  background-color: #1677ff; // Marker color
+  border-radius: 50%;
+  animation: pulse 2.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.timeline-container {
+  margin: 4rem 0;
+  padding: 2.5rem;
+  color: white;
+  overflow-x: auto;
+  white-space: nowrap;
+  position: relative;
+}
+
+.current-time-marker {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  background-color: #1677ff; // Marker color
+  border-radius: 50%;
+  animation: pulse 2.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.react-chrono-timeline {
+  width: 100%;
+}
+
+// ------- CHRONO WORKING ONE ----
+.mealsTimeline-container {
+  padding: 20px;
+}
+
+.timeline-wrapper {
+  position: relative;
+  width: 90vw;
+  overflow-x: auto;
+}
+
+.current-time-indicator {
+  position: absolute;
+  top: 10.4rem;
+  left: calc(50% - 10px); // Adjust based on your needs
+  width: 20px;
+  height: 20px;
+  background-color: orange;
+  border-radius: 50%;
+  animation: pulse 4s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.15);
+    // opacity: 0.9;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.eOidfK {
+  // Main Card Info (Right Side Vertical)
+  width: 30rem !important;
+}
+
+.prJHE {
+  // Small Card - Time (Left Side Vertical)
+  width: 15% !important;
+  font-size: 1rem !important;
+}
+.flPqfd {
+  color: #007fff;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0.25rem 0 0.5rem 0;
+  text-align: left;
+  width: 30rem !important;
+}
+
+.bUTGgW.horizontal {
+  width: 90vw;
+  height: 50rem;
+  margin-top: 20px; // Adjust to lower the timeline
+}
+
+.timeline-item-title {
+  font-size: 0.75rem;
+}
+
+.my-card {
+}
+.my-card-media {
+}
+.jHGHrJ,
+.my-card-subtitle {
+  // Big Card - Address Text
+  // color: white !important;
+}
+.gRmrgw::after,
+.my-card-text {
+  // Big Card - Meal Time Text
+  color: white !important;
+}
+.my-card-title {
+  // Big Card - Title Text
+}
+.my-controls {
+}
+.my-title {
+  // Small Card
+  padding: 1rem !important;
+  margin: 0rem !important;
+}

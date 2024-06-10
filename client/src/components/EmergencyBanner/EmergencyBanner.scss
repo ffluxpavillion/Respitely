@@ -37,6 +37,10 @@
   font-size: 0.75rem;
   text-wrap: balance;
 
+  @include mobile {
+    line-height: 0.9rem;
+    font-size: 0.7rem;
+  }
   @include desktop {
     font-size: 0.85rem;
   }

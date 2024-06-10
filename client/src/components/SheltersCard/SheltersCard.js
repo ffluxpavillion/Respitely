@@ -174,8 +174,7 @@ export default function SheltersCard() {
             <hr className='subheader__divider'></hr>
             <div className='subHeader__lower'>
               <span className='subheader__text'>
-                Results are automatically sorted by most recently updated, with
-                highest occupancy (~ 7 Days )
+                Results are auto-sorted by recently updated, with highest occupancy.
               </span>
               <span ref={shelterListRef}></span>
             </div>

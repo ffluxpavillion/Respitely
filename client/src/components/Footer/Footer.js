@@ -64,7 +64,7 @@ export default function Footer() {
 
         <div className='footer-middle'>
           <div className='footer-div__logo-container'>
-            <Logo className='footer__logo-svg' />
+            {/* <Logo className='footer__logo-svg' /> */}
           </div>
         </div>
 

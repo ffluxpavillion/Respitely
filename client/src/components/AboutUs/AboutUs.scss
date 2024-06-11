@@ -194,7 +194,7 @@
     font-size: 1.05rem;
 
     @include mobile {
-      margin-left: 1rem;
+      margin-left: 0.5rem;
       font-size: 0.95rem;
       // padding-bottom: 1rem;
     }
@@ -385,6 +385,7 @@
 
   @include mobile {
     width: 93vw;
+    padding: 1rem 0.15rem;
   }
 
   @include tablet {

@@ -1,70 +1,63 @@
 import React, { useState, useEffect } from 'react';
 import { Chrono } from 'react-chrono';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faRoute,
-  faMapMarkerAlt,
-  faPhone,
-  faGlobe,
-  faPeopleGroup,
-  faDog,
-  faWheelchair,
-} from '@fortawesome/free-solid-svg-icons';
 import mealList from '../../data/TDIN_MealList.json';
 import './MealsTimeline.scss';
 import moment from 'moment';
 
 const MealsTimeline = () => {
-  const [selectedMeal, setSelectedMeal] = useState(null);
   const [timelineItems, setTimelineItems] = useState([]);
-  const [currentTimePosition, setCurrentTimePosition] = useState(0);
+  const [currentEventIndex, setCurrentEventIndex] = useState(0);
 
   useEffect(() => {
     const today = moment().format('dddd').toLowerCase();
-    const mealsForToday = Object.keys(mealList.regions).reduce(
-      (acc, regionKey) => {
-        const region = mealList.regions[regionKey];
-        const meals = region.drop_in_centers.flatMap((center) => {
-          const schedule = center.schedule[today] || {};
-          const mealTimes = [];
+    let mealsForToday = [];
 
-          if (schedule.breakfast)
-            mealTimes.push({ type: 'Breakfast', time: schedule.breakfast });
-          if (schedule.lunch)
-            mealTimes.push({ type: 'Lunch', time: schedule.lunch });
-          if (schedule.dinner)
-            mealTimes.push({ type: 'Dinner', time: schedule.dinner });
-          if (schedule.snack)
-            mealTimes.push({ type: 'Snack', time: schedule.snack });
+    Object.keys(mealList.regions).forEach((regionKey) => {
+      // for each region
+      mealList.regions[regionKey].drop_in_centers.forEach((center) => {
+        // for each center
+        const schedule = center.schedule[today] || {};
+        const mealTypes = ['breakfast', 'lunch', 'dinner', 'snack'];
 
-          return mealTimes.map((meal) => ({
-            title: meal.time,
-            cardTitle: meal.type,
-            cardSubtitle: `${center.name}`,
-            cardDetailedText: `Address: ${center.address}, ${center.city}`,
-            startTime: moment(meal.time, 'h:mm a').toDate(),
-            ...center,
-            ...meal,
-          }));
+        mealTypes.forEach((mealType) => {
+          // for each meal type
+          if (schedule[mealType]) {
+            const mealEntries = schedule[mealType]
+              .split('&')
+              .map((timeRange) => timeRange.trim()); // split by '&' and trim each entry
+
+            mealEntries.forEach((timeRange) => {
+              // for each time range
+              const [startTimeStr, endTimeStr] = timeRange
+                .split(' - ')
+                .map((t) => t.trim()); // split by ' - ' and trim each entry
+              const startTime = moment(startTimeStr, 'h:mma').toDate(); // setting start of timeline (current time marker --todo)
+              const endTime = endTimeStr
+                ? moment(endTimeStr, 'h:mma').toDate()
+                : null; // setting end of timeline (current time marker --todo)
+
+              mealsForToday.push({
+                // add to mealsForToday array
+                title: timeRange,
+                cardTitle: mealType.charAt(0).toUpperCase() + mealType.slice(1),
+                cardSubtitle: center.name,
+                cardDetailedText: `Address: ${center.address}, ${center.city}`,
+                startTime,
+                endTime,
+                isCurrent: moment().isBetween(startTime, endTime || startTime),
+                ...center,
+              });
+            });
+          }
         });
-        return acc.concat(meals);
-      },
-      []
-    );
+      });
+    });
 
-    // Sort meals by start time
-    const sortedMeals = mealsForToday.sort((a, b) => a.startTime - b.startTime);
+    const sortedMeals = mealsForToday.sort((a, b) => a.startTime - b.startTime); // sort by start time
     setTimelineItems(sortedMeals);
 
-    // Calculate the position of the current time marker
-    const now = moment();
-    const startOfDay = moment().startOf('day');
-    const totalMinutesInDay = 1440; // 24 * 60
-
-    const minutesSinceStartOfDay = now.diff(startOfDay, 'minutes');
-    const currentTimePercentage =
-      (minutesSinceStartOfDay / totalMinutesInDay) * 100;
-    setCurrentTimePosition(currentTimePercentage);
+    const currentEventIndex = sortedMeals.findIndex((meal) => meal.isCurrent); // find current event index for happening now
+    setCurrentEventIndex(currentEventIndex !== -1 ? currentEventIndex : 0);
   }, []);
 
   return (
@@ -75,7 +68,6 @@ const MealsTimeline = () => {
       <div className='timeline-wrapper'>
         <Chrono
           items={timelineItems}
-          // mode='HORIZONTAL'
           mode='VERTICAL'
           cardHeight={'100'}
           disableToolbar={true}
@@ -84,10 +76,10 @@ const MealsTimeline = () => {
           slideShow={false}
           darkMode={true}
           enableQuickJump={true}
+          activeItemIndex={currentEventIndex}
           theme={{
             primary: '#6232c1',
             secondary: 'white',
-            // cardBgColor: '#202020',
             cardForeColor: 'white',
             titleColor: 'white',
           }}
@@ -95,21 +87,19 @@ const MealsTimeline = () => {
           allowDynamicUpdate
           scrollable={{ scrollbar: true }}
           classNames={{
-            card: 'my-card',
+            card: ({ index }) =>
+              index === currentEventIndex ? 'my-card current-event' : 'my-card',
             cardMedia: 'my-card-media',
             cardSubTitle: 'my-card-subtitle',
             cardText: 'my-card-text',
             cardTitle: 'my-card-title',
             controls: 'my-controls',
-            title: 'my-title',
+            title: ({ index }) =>
+              index === currentEventIndex
+                ? 'my-title current-event-title'
+                : 'my-title',
           }}
-
-          // onItemSelected={(item) => handleShowDrawer(item)}
         />
-        <div
-          className='current-time-indicator'
-          style={{ left: `${currentTimePosition}%` }}
-        ></div>
       </div>
     </div>
   );

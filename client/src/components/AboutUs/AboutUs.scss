@@ -188,10 +188,10 @@
     color: #ffffff;
     // height: 12.25rem;
     padding: auto;
-    font-family: StabilGrotesk, sans-serif;
     width: 97%;
-    font-style: italic;
-    letter-spacing: -0.3px;
+    // font-style: italic;
+    // letter-spacing: -0.1px;
+    font-size: 1.05rem;
 
     @include mobile {
       margin-left: 1rem;
@@ -376,6 +376,7 @@
 .custom-collapse .ant-collapse-expand-icon {
   // targets expand icon (arrow)
   color: white;
+  order: 2;
 }
 
 .ant-collapse {
@@ -399,4 +400,14 @@
   background-color: #ffffffe0;
   transition: background-color 0.2s;
   position: absolute;
+}
+
+.about__ul {
+  padding: 1rem 0;
+}
+
+.about__list-item {
+  display: list-item;
+  list-style-type: disc;
+  margin-bottom: -0.5rem;
 }

@@ -49,51 +49,89 @@ export default function AboutUs() {
   const items = [
     {
       key: '1',
-      label: 'WHAT IS THIS?',
+      label: '🏠 WHAT IS SAFEHAVENTO?',
       children: (
         <p className='mission__div-text'>
-          A tool that helps users find vacancies at nearby shelters, by
-          providing the latest updates from these facilities.
+          This is a platform designed to help individuals who are homeless or at
+          risk of becoming homeless in quickly identifying vacancies at support
+          shelters, or drop-in meals across Toronto & the GTA.
         </p>
       ),
     },
     {
       key: '2',
-      label: 'THE CHALLENGE',
+      label: '🚧 THE CHALLENGE',
       children: (
         <p className='mission__div-text'>
-          There is a lack of centralized, up-to-date resources, causing friction
-          for those in need of accomodation.
+          Navigating the landscape of available resources for the homeless
+          population can be incredibly challenging.
           <br />
           <br />
-          Modern problems require modern solutions <br />
-          ⎯So I built one.
+          Although many support systems exist, finding current shelter
+          availability or meal services often proves cumbersome. Details are
+          often fragmented across the web, buried within lengthly timetables, or
+          require making numerous phone calls.
+          <br />
+          <br />
+          This absence of of real-time, centralized data creates friction,
+          leaving many individuals struggling to find the vital support they
+          need.
         </p>
       ),
     },
     {
       key: '3',
-      label: 'THE MISSION',
+      label: '💡 THE SOLUTION',
       children: (
         <p className='mission__div-text'>
-          To provide a sense of security during times of intense vulnerability,
-          by bridging the gap between available resources and those in need.
+          SafeHavenTO is a platform that provide the latest updates for shelter
+          vacancies, and maps out meal schedules across the city.
           <br />
           <br />
-          SafeHavenTO is a project that I am proud to have built and I hope it
-          can make a difference in the lives of those who need it most.
+          Both features are are supported by secondary information, dynamic
+          filtering, and interactive maps.
+          <br />
+          <br />
+          It is engineered to serve relevant information for that day, ensuring
+          the most relevant and immediate information is always at users'
+          fingertips, and helping them make informed decisions quickly.
         </p>
       ),
     },
     {
       key: '4',
-      label: 'HOW DOES IT WORK?',
+      label: '🎯 THE MISSION',
+      children: (
+        <p className='mission__div-text'>
+          Our mission is to modernize and transform how critical information
+          like shelter status and meal times are accessed.
+          <br />
+          <br />
+          By bridging the gap between available resources and those in need, we
+          hope to provide a sense of security during times of intense
+          vulnerability.
+          <br />
+          <br />
+          The goal is to create a live web application that shows current and
+          upcoming events, and aspires to become the go-to resource for those
+          seeking help, as well as for organizations managing these critical
+          services.
+        </p>
+      ),
+    },
+    {
+      key: '5',
+      label: '⚙️ HOW DOES IT WORK?',
       children: (
         <p className='mission__div-text'>
           Empowered by the City of Toronto's Daily Shelter Occupancy API, this
           platform leverages this dataset by fetching, filtering, and sorting
           the most recent and relevant updates, which is then mapped using
           MapBox.
+          <br />
+          <br />
+          The Drop-In Meals feature is powered by a custom-built database that I
+          am currently maintaining and updating manually.
           <br />
           <br />
           For more information, check out my{' '}
@@ -107,14 +145,39 @@ export default function AboutUs() {
       ),
     },
     {
-      key: '5',
-      label: "WHAT'S NEXT?",
+      key: '6',
+      label: "🔜 WHAT'S NEXT?",
       children: (
         <p className='mission__div-text'>
-          Currently building a database/API and allocating resources on:
-          <ul>
+          This is an ongoing project, and I am continiously working hard to
+          expand and improve. My vision for the future includes:
+          <ul className='about__ul'>
             <br />
-            <li>Food</li>
+            <li className='about__list-item'>
+              A centralized portal for drop-in organizers to manage and update
+              their information, ensuring consistency and reliability.
+            </li>
+            <br />
+            <li className='about__list-item'>
+              A crowd-sourced component where service providers can input and
+              verify information about drop-in meal locations and times.
+            </li>
+            <br />
+            <li className='about__list-item'>
+              Enhanced user experience with more intuitive navigation and
+              additional filter options.
+            </li>
+            <br />
+            <li className='about__list-item'>
+              Partnerships with more shelters and meal providers to ensure
+              comprehensive coverage.
+            </li>
+            <br />
+            <li className='about__list-item'>
+              Implementation of user feedback to refine and perfect our
+              platform.
+            </li>
+            {/* <li>Food</li>
             <li>Legal/Pro Bono</li>
             <li>Childcare</li>
             <li>Clothing</li>
@@ -122,7 +185,7 @@ export default function AboutUs() {
             <li>Drug Testing / Support</li>
             <li>Employment</li>
             <li>Mental Health Support</li>
-            <i>...AND MORE</i>
+            <i>...AND MORE</i> */}
           </ul>
           <br />
           Stay tuned!
@@ -130,16 +193,16 @@ export default function AboutUs() {
       ),
     },
     {
-      key: '6',
-      label: 'WANT TO GET IN TOUCH?',
+      key: '7',
+      label: '📬 WANT TO GET IN TOUCH?',
       children: (
         <p className='mission__div-text' id='contact'>
           I'd love to hear from you!
           <br />
           <br />
           Whether you have questions about SafeHavenTO, feedback, or just want
-          to connect, feel free to reach out. I welcome any feedback on how I
-          can improve this platform.
+          to connect, feel free to reach out. Any constructive feedback on how I
+          can improve this platform is wholeheartedly welcomed.
           <br />
           <br />
           You can email me at{' '}
@@ -185,7 +248,7 @@ export default function AboutUs() {
                 className='custom-collapse about-us-collapse'
                 accordion
                 expandIcon={({ isActive }) => (
-                  <CaretRightOutlined rotate={isActive ? 90 : 0} />
+                  <CaretRightOutlined rotate={isActive ? 90 : 180} />
                 )}
                 ghost
                 items={items}

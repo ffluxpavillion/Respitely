@@ -3,6 +3,8 @@
 @use '../../partials/global' as *;
 @use '../../partials/variables' as *;
 
+// ------------------ CHRONO TIMELINE ------------------
+
 .mealsTimeline-container {
   padding: 20px;
   overflow-x: hidden;
@@ -36,7 +38,7 @@
 .bUTGgW.horizontal {
   width: 90vw;
   height: 50rem;
-  margin-top: 20px; // Adjust to lower the timeline
+  margin-top: 20px;
 }
 
 .timeline-item-title {
@@ -68,13 +70,36 @@
   margin: 0rem !important;
 }
 
+.timeline-container {
+  margin: 4rem 0;
+  padding: 2.5rem;
+  color: white;
+  overflow-x: auto;
+  white-space: nowrap;
+  position: relative;
+}
+
+.mealsTimeline-card {
+  color: white;
+  border: 1px solid red;
+}
+
+// SCROLL CONTAINER -- LIVE PULSING CURRENT EVENT
+
 .current-event {
-  border: 2px solid orange;
+  border: 2px solid green;
+  background-color: #0c4527;
   animation: pulse 1s infinite;
 }
+
+.timeline-item.current-event .timeline-item-content {
+  border: 2px solid rgb(255, 255, 255);
+  background-color: rgba(255, 165, 0, 0.1);
+}
+
 @keyframes pulse {
   0% {
-    box-shadow: 0 0 0 0 rgba(255, 165, 0, 0.4);
+    box-shadow: 0 0 0 0 #0c4527;
   }
   70% {
     box-shadow: 0 0 0 10px rgba(255, 165, 0, 0);
@@ -84,11 +109,154 @@
   }
 }
 
-.timeline-container {
-  margin: 4rem 0;
-  padding: 2.5rem;
+// end SCROLL CONTAINER -- LIVE PULSING CURRENT EVENT
+
+.mealsTimeline-container {
+  padding: 20px;
+  overflow-x: hidden;
+}
+
+.my-card {
+  border-radius: 8px;
+  padding: 16px;
+  margin: 10px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.my-card.current-event {
+  border: 2px solid orange;
+  background-color: rgba(255, 165, 0, 0.1);
+}
+
+.my-title.current-event-title {
+  color: orange;
+}
+
+.mealsTimeline-live-event-cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.previous-event-container,
+.current-event-container,
+.next-event-container {
+  margin-bottom: 1.5rem;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   color: white;
-  overflow-x: auto;
-  white-space: nowrap;
+}
+
+.previous-event-header,
+.current-event-header,
+.next-event-header {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.previous-event-container {
+  border: 2px solid gray;
+  color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(128, 128, 128, 0.1);
+  width: 25vw;
+}
+
+.current-event-container {
+  border: 2px solid green;
+  background-color: rgba(0, 128, 0, 0.1);
+  width: 25vw;
+}
+
+.next-event-container {
+  border: 2px solid #c79c04;
+  background-color: #c79d04c2;
+  color: white;
+  width: 25vw;
+}
+
+// NEW CUSTOM TIMELINE STYLING
+
+.mealsTimeline-live-event-cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.previous-event-container,
+.current-event-container,
+.next-event-container {
+  width: 80%;
+  margin-bottom: 20px;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.previous-event-container {
+  border: 2px solid gray;
+  background-color: rgba(128, 128, 128, 0.1);
+}
+
+.current-event-container {
+  border: 2px solid orange;
+  background-color: rgba(255, 165, 0, 0.1);
+}
+
+.next-event-container {
+  border: 2px solid green;
+  background-color: rgba(0, 128, 0, 0.1);
+}
+
+.mealsTimeline-container {
+  padding: 20px;
+  overflow-x: hidden;
+}
+
+.timeline-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   position: relative;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.timeline-item-time {
+  width: 10%;
+  text-align: right;
+  margin-right: 20px;
+  font-weight: bold;
+  color: white;
+}
+
+.timeline-divider {
+  width: 20px;
+  height: 100%;
+  background-color: #6232c1;
+  margin-right: 20px;
+}
+
+.timeline-item-content {
+  width: 40%;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.timeline-item-content h3 {
+  margin: 0 0 10px 0;
+}
+
+.timeline-item-content p {
+  margin: 5px 0;
 }

@@ -384,7 +384,7 @@ export default function MealsMap() {
                 accordion
                 ghost
                 expandIcon={({ isActive }) => (
-                  <CaretRightOutlined rotate={isActive ? 90 : 0} />
+                  <CaretRightOutlined rotate={isActive ? 90 : 180} />
                 )}
                 className='custom-collapse mealsMap-collapse'
                 activeKey={activeKey}

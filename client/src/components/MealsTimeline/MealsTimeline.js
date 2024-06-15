@@ -4,7 +4,6 @@ import mealList from '../../data/TDIN_MealList.json';
 import moment from 'moment';
 import { Collapse } from 'antd';
 import { CaretRightOutlined } from '@ant-design/icons';
-
 import LiveClock from '../LiveClock/LiveClock';
 
 const { Panel } = Collapse;
@@ -98,11 +97,11 @@ const MealsTimeline = () => {
 
   return (
     <>
+      <h1 className='mealsTimeline-live-clock'>
+        <LiveClock />
+      </h1>
+      <br />
       <article className='mealsTimeline-container'>
-        <h1 className='mealsTimeline-live-clock'>
-          <LiveClock />
-        </h1>
-        <br />
         <div className='mealsTimeline-live-event-container'>
           {previousEvent && (
             <div className='previous-event-container'>

@@ -12,6 +12,41 @@
     font-size: 1.1rem;
   }
 }
+
+.mealsTimeline-container {
+  @include mobile {
+  }
+
+  @include tablet {
+  }
+
+  @include desktop {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+.mealsTimeline-live-event-container {
+  display: flex;
+  text-align: center;
+
+  justify-content: center;
+
+  @include mobile {
+    flex-direction: column;
+  }
+
+  @include tablet {
+    flex-direction: row;
+  }
+
+  @include desktop {
+    flex-direction: column;
+  }
+}
+
 .timeline-container {
   height: 75vh;
   overflow-y: auto;
@@ -54,7 +89,6 @@
   @include desktop {
     padding: 1rem;
     width: 100%;
-
   }
 }
 
@@ -124,18 +158,6 @@
   text-align: center;
 }
 
-.mealsTimeline-live-event-container {
-  display: flex;
-  flex-direction: row;
-  text-align: center;
-  width: 100%;
-  justify-content: center;
-
-  @include mobile {
-    flex-direction: column;
-  }
-}
-
 .previous-event-container,
 .current-event-container,
 .next-event-container {
@@ -144,6 +166,7 @@
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   color: white;
+  text-align: center;
 
   @include mobile {
     margin: 0rem;
@@ -210,7 +233,7 @@
 .mealsTimeline-ant-collapse {
   color: white;
   font-family: 'DT Black';
-  text-align: left;
+  text-align: center;
 
   @include mobile {
     width: 100%;

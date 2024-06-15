@@ -14,7 +14,7 @@ export default function MealsCard() {
           <h3 className='meals-section__header'>Drop-In Meals in Toronto</h3>
 
           {/* <DropInMealsToday /> */}
-          <div className='MealsTimeline-container'>
+          <div>
             <MealsTimeline />
           </div>
         </div>

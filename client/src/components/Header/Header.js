@@ -102,6 +102,13 @@ export default function Header() {
               </Link>
             </li>
             <li onClick={handleClick}>
+              <Link to='/drop-in-map'>
+                <h3 className='navbar__div-li nav-stairs__about-us'>
+                  EXPLORE DROP-IN MAP ⟩⟩
+                </h3>
+              </Link>
+            </li>
+            <li onClick={handleClick}>
               <Link to='#resources'>
                 <h3 className='navbar__div-li nav-stairs__resources'>
                   RESOURCES ⟩⟩

@@ -13,7 +13,7 @@
   }
 }
 .timeline-container {
-  height: 60vh;
+  height: 75vh;
   overflow-y: auto;
   width: 100%;
   display: flex;
@@ -38,7 +38,6 @@
 
 .timeline-wrapper {
   position: relative;
-  width: 70%;
   overflow-x: auto;
   display: flex;
   flex-direction: column;
@@ -54,6 +53,8 @@
 
   @include desktop {
     padding: 1rem;
+    width: 100%;
+
   }
 }
 

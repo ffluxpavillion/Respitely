@@ -1185,11 +1185,53 @@
               "hours": "Closed"
             },
             "saturday": {
-              "hours": "10:00am",
-              "breakfast": "10:00am (Take-out meals only)"
+              "hours": "10:00am"
             },
             "sunday": {
+              "hours": "10:00am",
+              "breakfast": "10:00am (Brunch)(Take-out meals only)"
+
+            }
+          }
+        },
+        {
+          "id": "CD-027",
+          "name": "St Moses & St Katherine Coptic Orthodox Church",
+          "address": "557 Bathurst Street",
+          "latitude": 43.658160,
+          "longitude": -79.407980,
+          "city": "Toronto",
+          "province": "ON",
+          "postal_code": "M5S 2P8",
+          "phone": "416-800-0888",
+          "website": "https://www.smsk.ca/",
+          "population": "General Population",
+          "pets_allowed": "",
+          "wheelchair_accessible": "",
+          "schedule": {
+            "monday": {
               "hours": "Closed"
+            },
+            "tuesday": {
+              "hours": "12:30pm - 2:00pm",
+              "lunch": "12:30pm - 1:30pm"
+            },
+            "wednesday": {
+              "hours": "6:00am - 8:00am"
+            },
+            "thursday": {
+              "hours": "12:30pm - 2:00pm & 4:00pm - 10:00pm",
+              "lunch": "12:30pm - 1:30pm"
+            },
+            "friday": {
+              "hours": "7:00pm - 10:00pm"
+            },
+            "saturday": {
+              "hours": "9:00am - 12:30pm & 5:00pm - 10:00pm",
+              "dinner": "4:30pm - 6:30pm"
+            },
+            "sunday": {
+              "hours": "8:30am - 1:00pm"
             }
           }
         }
@@ -1423,7 +1465,7 @@
               "breakfast": "9:30am - 10:30am",
               "lunch": "12:00pm - 2:00pm",
               "dinner": "6:30pm - 7:30pm",
-              "snack": "9:00pm - 9:30pm"
+              "snack": "9:00pm - 11:30pm"
             },
             "saturday": {
               "hours": "24/7",
@@ -1835,7 +1877,7 @@
           "address": "2017 Weston Road",
           "latitude": 43.7013717,
           "longitude": -79.5201013,
-          "city": "Weston",
+          "city": "Toronto",
           "province": "ON",
           "postal_code": "M9N 1X2",
           "phone": "416-241-9898",
@@ -1880,6 +1922,53 @@
             },
             "sunday": {
               "hours": "Closed"
+            }
+          }
+        },
+        {
+          "id": "MW-011",
+          "name": "St. Francis Table",
+          "address": "1322 Queen St W",
+          "latitude": 43.641970,
+          "longitude": -79.431400,
+          "city": "Toronto",
+          "province": "ON",
+          "postal_code": "M6K 1L4",
+          "phone": "416-532-4172",
+          "website": "https://www.capuchinoutreach.org/programs/",
+          "population": "General Population Adults",
+          "service_dog_allowed": "",
+          "wheelchair_accessible": "",
+          "schedule": {
+            "monday": {
+              "hours": "",
+              "dinner": "4:30pm - 6:00pm"
+            },
+            "tuesday": {
+              "hours": "12:00pm - 1:00pm & 4:30pm - 6:00pm",
+              "lunch": "12:00pm - 1:00pm",
+              "dinner": "4:30pm - 6:00pm"
+            },
+            "wednesday": {
+              "hours": "12:00pm - 1:00pm & 4:30pm - 6:00pm",
+              "lunch": "12:00pm - 1:00pm",
+              "dinner": "4:30pm - 6:00pm"
+            },
+            "thursday": {
+              "hours": "12:00pm - 1:00pm & 4:30pm - 6:00pm",
+              "lunch": "12:00pm - 1:00pm",
+              "dinner": "4:30pm - 6:00pm"
+            },
+            "friday": {
+              "hours": "12:00pm - 1:00pm",
+              "lunch": "12:00pm - 1:00pm"
+            },
+            "saturday": {
+              "hours": "Closed"
+            },
+            "sunday": {
+              "hours": "12:00pm - 1:00pm",
+              "lunch": "12:00pm - 1:00pm"
             }
           }
         }

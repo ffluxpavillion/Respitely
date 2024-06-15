@@ -186,12 +186,7 @@ export default function MealsMap() {
     setSelectedPlace(null);
   };
 
-  const todayTime = new Date().toLocaleTimeString('en-US', {
-    hour: '2-digit',
-    minute: '2-digit',
-    hour12: false,
-  });
-  const todayDay = new Date().toLocaleDateString('en-US', { weekday: 'long' });
+
 
   // console.logs for debugging
   // console.log('SELECTEDPLACE======', selectedPlace)}
@@ -215,6 +210,10 @@ export default function MealsMap() {
             // onClick={handleMapClick}
             onLoad={handleMapLoad}
             cooperativeGestures // requires CMD + scroll to zoom --helps prevent accidental zooming
+            maxBounds={[
+            [-80.000039, 43.4], // Southwest coordinates
+            [-78.700044, 44.0], // Northeast coordinates
+          ]}
           >
             <NavigationControl position='bottom-right' />
             <ScaleControl />
@@ -245,7 +244,7 @@ export default function MealsMap() {
                 }}
               />
             </Source>
-            {selectedPlace && (
+            {/* {selectedPlace && (
               <Popup
                 latitude={selectedPlace.latitude}
                 longitude={selectedPlace.longitude}
@@ -283,7 +282,7 @@ export default function MealsMap() {
                   </Button>
                 </div>
               </Popup>
-            )}
+            )} */}
           </Map>
         )}
         <Drawer
@@ -395,7 +394,7 @@ export default function MealsMap() {
                 <Collapse.Panel
                   header={`Meal Schedule`}
                   key='1'
-                  size='Large'
+                  size='small'
                   className='mealsMap-collapse-panel'
                 >
                   <div className='mealsMap__C1--DropIn-Schedule'>

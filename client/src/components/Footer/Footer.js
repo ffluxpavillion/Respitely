@@ -32,6 +32,16 @@ export default function Footer() {
                 </a>
               </li>
               <li className='footer__list-li'>
+                <a href='#dropInMeals' className='footer__list-a'>
+                  <h3 className='footer__item'>Drop-In Meals</h3>
+                </a>
+              </li>
+              <li className='footer__list-li'>
+                <a href='/drop-in-map' className='footer__list-a'>
+                  <h3 className='footer__item'>Explore Drop-In Map</h3>
+                </a>
+              </li>
+              <li className='footer__list-li'>
                 <a href='#resources' className='footer__list-a'>
                   <h3 className='footer__item'>Resources</h3>
                 </a>

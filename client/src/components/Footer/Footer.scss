@@ -242,11 +242,12 @@
 }
 
 .footer-right__social-links:hover {
-  color: #0073b1; /* LinkedIn blue color for hover effect */
+  color: #0073b1;
 }
 
 .footer-right__social-links:hover .fa-github {
-  color: #333; /* GitHub black color for hover effect */
+  color: #6e5494;
+  transition: all 0.3s ease;
 }
 
 .footer-bottom {

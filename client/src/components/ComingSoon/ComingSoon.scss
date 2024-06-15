@@ -1,0 +1,35 @@
+@use '../../partials/abstracts' as *;
+@use '../../partials/fonts' as *;
+@use '../../partials/global' as *;
+@use '../../partials/variables' as *;
+
+.coming-soon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  text-align: center;
+  background-color: #000000;
+  color: #ffffff;
+  border: 1px solid #ff9900;
+  font-family: 'Arial', sans-serif;
+  padding: 1rem;
+  margin-top: 3rem;
+}
+
+.construction-icon {
+  color: #ff9900;
+  margin-bottom: 30px;
+}
+
+.coming-soon__header {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.coming-soon__text {
+  font-size: 1.25rem;
+  color: #666;
+}

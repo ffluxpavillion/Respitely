@@ -3,145 +3,81 @@
 @use '../../partials/global' as *;
 @use '../../partials/variables' as *;
 
-// ------------------ CHRONO TIMELINE ------------------
-
-.mealsTimeline-container {
-  padding: 20px;
-  overflow-x: hidden;
+.mealsTimeline-live-clock {
+  font-size: 2rem;
+  color: white;
+  text-align: center;
+}
+.timeline-container {
+  height: 60vh;
+  overflow-y: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .timeline-wrapper {
   position: relative;
-  width: 90vw;
+  width: 70%;
   overflow-x: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
 }
 
-.eOidfK {
-  // Main Card Info (Right Side Vertical)
-  width: 30rem !important;
+.timeline-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 8rem;
+  margin: 1rem 0;
+  padding: 1rem;
+  gap: 1rem;
+  row-gap: 1rem;
 }
 
-.prJHE {
-  // Small Card - Time (Left Side Vertical)
-  width: 15% !important;
-  font-size: 1rem !important;
-}
-.flPqfd {
-  color: #007fff;
-  font-size: 1rem;
-  font-weight: 600;
-  margin: 0.25rem 0 0.5rem 0;
-  text-align: left;
-  width: 30rem !important;
+.timeline-divider {
+  width: 5px;
+  height: 100%;
+  margin: 1.5rem;
+  background-color: #6232c1;
+  border: none;
 }
 
-.bUTGgW.horizontal {
-  width: 90vw;
-  height: 50rem;
-  margin-top: 20px;
-}
-
-.timeline-item-title {
-  font-size: 0.75rem;
-}
-
-.my-card {
-}
-.my-card-media {
-}
-.jHGHrJ,
-.my-card-subtitle {
-  // Big Card - Address Text
-  // color: white !important;
-}
-.gRmrgw::after,
-.my-card-text {
-  // Big Card - Meal Time Text
-  color: white !important;
-}
-.my-card-title {
-  // Big Card - Title Text
-}
-.my-controls {
-}
-.my-title {
-  // Small Card
-  padding: 1rem !important;
-  margin: 0rem !important;
-}
-
-.timeline-container {
-  margin: 4rem 0;
-  padding: 2.5rem;
-  color: white;
-  overflow-x: auto;
-  white-space: nowrap;
-  position: relative;
-}
-
-.mealsTimeline-card {
-  color: white;
-  border: 1px solid red;
-}
-
-// SCROLL CONTAINER -- LIVE PULSING CURRENT EVENT
-
-.current-event {
-  border: 2px solid green;
-  background-color: #0c4527;
-  animation: pulse 1s infinite;
-}
-
-.timeline-item.current-event .timeline-item-content {
-  border: 2px solid rgb(255, 255, 255);
-  background-color: rgba(255, 165, 0, 0.1);
-}
-
-@keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0 #0c4527;
-  }
-  70% {
-    box-shadow: 0 0 0 10px rgba(255, 165, 0, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(255, 165, 0, 0);
-  }
-}
-
-// end SCROLL CONTAINER -- LIVE PULSING CURRENT EVENT
-
-.mealsTimeline-container {
-  padding: 20px;
-  overflow-x: hidden;
-}
-
-.my-card {
-  border-radius: 8px;
-  padding: 16px;
-  margin: 10px 0;
+.timeline-item-content {
+  width: 40%;
+  padding: 1.5rem;
+  // border-radius: 8px;
+  border-bottom: 1px solid white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: -webkit-fill-available;
+  text-wrap: wrap;
 }
 
-.my-card.current-event {
-  border: 2px solid orange;
-  background-color: rgba(255, 165, 0, 0.1);
+.timeline-item-time {
+  width: 10%;
+  text-align: right;
+  margin-right: 20px;
+  font-weight: bold;
+  color: white;
 }
 
-.my-title.current-event-title {
-  color: orange;
+.mealsTimeline-moment-h1 {
+  color: white;
+  text-align: center;
 }
 
-.mealsTimeline-live-event-cards {
+.mealsTimeline-live-event-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  text-align: center;
+  width: 100%;
+  justify-content: center;
 }
 
 .previous-event-container,
 .current-event-container,
 .next-event-container {
-  margin-bottom: 1.5rem;
   margin: 1rem;
   padding: 1rem;
   border-radius: 8px;
@@ -154,7 +90,7 @@
 .next-event-header {
   font-size: 1.5rem;
   font-weight: 600;
-  margin-bottom: 10px;
+  margin-bottom: 1.5rem;
 }
 
 .previous-event-container {
@@ -166,8 +102,50 @@
 
 .current-event-container {
   border: 2px solid green;
-  background-color: rgba(0, 128, 0, 0.1);
+  background-color: rgba(0, 128, 0, 0.788);
   width: 25vw;
+}
+
+.mealsTimeline-ant-collapse {
+  color: white;
+  font-family: 'DT Black';
+  text-align: left;
+}
+.mealsTimeline-ant-collapse-header {
+  color: white;
+}
+
+.ant-collapse-header-text {
+  color: white;
+  font-family: 'DT Black';
+  text-align: left;
+  text-transform: uppercase;
+  text-align: center;
+
+  @include mobile {
+    font-size: 0.9rem;
+  }
+
+  @include tablet {
+    font-size: 1.25rem;
+    padding: 0rem 0.25rem;
+  }
+
+  @include desktop {
+    font-size: 1.12rem;
+    padding: 0rem 0.25rem;
+  }
+}
+
+.ant-collapse-expand-icon {
+  // targets expand icon (arrow)
+  color: white;
+  order: 2;
+}
+
+.current-ant-collapse-inner {
+  background-color: #20242c;
+  color: white;
 }
 
 .next-event-container {
@@ -177,86 +155,26 @@
   width: 25vw;
 }
 
-// NEW CUSTOM TIMELINE STYLING
-
-.mealsTimeline-live-event-cards {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 20px;
+.is-ended {
+  filter: brightness(0.5);
 }
 
-.previous-event-container,
-.current-event-container,
-.next-event-container {
-  width: 80%;
-  margin-bottom: 20px;
-  padding: 16px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.happening-now {
+  border: 1px solid green;
+  background-color: #0c4527;
+  animation: pulse 1.5s infinite;
+  border-radius: 10px;
+  width: auto;
 }
 
-.previous-event-container {
-  border: 2px solid gray;
-  background-color: rgba(128, 128, 128, 0.1);
-}
-
-.current-event-container {
-  border: 2px solid orange;
-  background-color: rgba(255, 165, 0, 0.1);
-}
-
-.next-event-container {
-  border: 2px solid green;
-  background-color: rgba(0, 128, 0, 0.1);
-}
-
-.mealsTimeline-container {
-  padding: 20px;
-  overflow-x: hidden;
-}
-
-.timeline-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  position: relative;
-}
-
-.timeline-item {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  margin-bottom: 20px;
-}
-
-.timeline-item-time {
-  width: 10%;
-  text-align: right;
-  margin-right: 20px;
-  font-weight: bold;
-  color: white;
-}
-
-.timeline-divider {
-  width: 20px;
-  height: 100%;
-  background-color: #6232c1;
-  margin-right: 20px;
-}
-
-.timeline-item-content {
-  width: 40%;
-  padding: 16px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: white;
-}
-
-.timeline-item-content h3 {
-  margin: 0 0 10px 0;
-}
-
-.timeline-item-content p {
-  margin: 5px 0;
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 #0c4527;
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(255, 165, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 165, 0, 0);
+  }
 }

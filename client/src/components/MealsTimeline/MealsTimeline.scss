@@ -7,6 +7,10 @@
   font-size: 2rem;
   color: white;
   text-align: center;
+
+  @include mobile {
+    font-size: 1.1rem;
+  }
 }
 .timeline-container {
   height: 60vh;
@@ -14,6 +18,22 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  margin: 1rem 0;
+  color: white;
+  overflow-x: auto;
+  white-space: nowrap;
+  position: relative;
+
+  @include mobile {
+  }
+
+  @include tablet {
+    padding: 1rem;
+  }
+
+  @include desktop {
+    padding: 1rem;
+  }
 }
 
 .timeline-wrapper {
@@ -22,7 +42,19 @@
   overflow-x: auto;
   display: flex;
   flex-direction: column;
-  padding: 1rem;
+
+  @include mobile {
+    width: 100%;
+  }
+
+  @include tablet {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  @include desktop {
+    padding: 1rem;
+  }
 }
 
 .timeline-item {
@@ -31,9 +63,20 @@
   width: 100%;
   height: 8rem;
   margin: 1rem 0;
-  padding: 1rem;
   gap: 1rem;
   row-gap: 1rem;
+
+  @include mobile {
+    gap: 0.5rem;
+  }
+
+  @include tablet {
+    padding: 1rem;
+  }
+
+  @include desktop {
+    padding: 1rem;
+  }
 }
 
 .timeline-divider {
@@ -46,18 +89,31 @@
 
 .timeline-item-content {
   width: 40%;
-  padding: 1.5rem;
   // border-radius: 8px;
   border-bottom: 1px solid white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: -webkit-fill-available;
   text-wrap: wrap;
+
+  @include mobile {
+    font-size: 0.9rem;
+    padding-bottom: 1rem;
+    line-height: 1.2rem;
+  }
+
+  @include tablet {
+    padding: 1.5rem;
+  }
+
+  @include desktop {
+    padding: 1.5rem;
+  }
 }
 
 .timeline-item-time {
   width: 10%;
   text-align: right;
-  margin-right: 20px;
+  margin-right: 1rem;
   font-weight: bold;
   color: white;
 }
@@ -73,6 +129,10 @@
   text-align: center;
   width: 100%;
   justify-content: center;
+
+  @include mobile {
+    flex-direction: column;
+  }
 }
 
 .previous-event-container,
@@ -83,6 +143,59 @@
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   color: white;
+
+  @include mobile {
+    margin: 0rem;
+    padding: 0.6rem 1rem;
+  }
+}
+
+.previous-event-container {
+  border: 2px solid gray;
+  color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(128, 128, 128, 0.1);
+  width: 25vw;
+
+  @include mobile {
+    width: 100%;
+    position: sticky;
+    display: none;
+  }
+
+  @include tablet {
+    display: none;
+  }
+}
+
+.current-event-container {
+  border: 1px solid black;
+  background-color: #0c4527;
+  width: 25vw;
+
+  @include mobile {
+    width: 100%;
+    position: sticky;
+  }
+
+  @include tablet {
+    width: 100%;
+  }
+}
+
+.next-event-container {
+  border: 2px solid #c79c04;
+  background-color: #c79d04c2;
+  color: white;
+  width: 25vw;
+
+  @include mobile {
+    width: 100%;
+    position: sticky;
+  }
+
+  @include tablet {
+    width: 100%;
+  }
 }
 
 .previous-event-header,
@@ -93,23 +206,19 @@
   margin-bottom: 1.5rem;
 }
 
-.previous-event-container {
-  border: 2px solid gray;
-  color: rgba(255, 255, 255, 0.5);
-  background-color: rgba(128, 128, 128, 0.1);
-  width: 25vw;
-}
-
-.current-event-container {
-  border: 2px solid green;
-  background-color: rgba(0, 128, 0, 0.788);
-  width: 25vw;
-}
-
 .mealsTimeline-ant-collapse {
   color: white;
   font-family: 'DT Black';
   text-align: left;
+
+  @include mobile {
+    width: 100%;
+    padding: 0rem;
+  }
+
+  @include tablet {
+    width: 100%;
+  }
 }
 .mealsTimeline-ant-collapse-header {
   color: white;
@@ -124,6 +233,7 @@
 
   @include mobile {
     font-size: 0.9rem;
+    letter-spacing: 1.6px;
   }
 
   @include tablet {
@@ -148,13 +258,6 @@
   color: white;
 }
 
-.next-event-container {
-  border: 2px solid #c79c04;
-  background-color: #c79d04c2;
-  color: white;
-  width: 25vw;
-}
-
 .is-ended {
   filter: brightness(0.5);
 }
@@ -165,6 +268,10 @@
   animation: pulse 1.5s infinite;
   border-radius: 10px;
   width: auto;
+
+  @include mobile {
+    padding: 6rem 0.7rem;
+  }
 }
 
 @keyframes pulse {

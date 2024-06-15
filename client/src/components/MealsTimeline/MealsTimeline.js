@@ -99,6 +99,10 @@ const MealsTimeline = () => {
   return (
     <>
       <article className='mealsTimeline-container'>
+        <h1 className='mealsTimeline-live-clock'>
+          <LiveClock />
+        </h1>
+        <br />
         <div className='mealsTimeline-live-event-container'>
           {previousEvent && (
             <div className='previous-event-container'>
@@ -150,9 +154,7 @@ const MealsTimeline = () => {
           )}
         </div>
         <br />
-        <h1 className='mealsTimeline-live-clock'>
-          <LiveClock />
-        </h1>
+
         <div className='timeline-container' ref={timelineContainerRef}>
           <div className='timeline-wrapper'>
             {timelineItems.map((item, index) => (

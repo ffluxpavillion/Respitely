@@ -100,3 +100,22 @@
 
 .meals-section__lower {
 }
+
+.meals-section__map-link {
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  font-family: 'Toronto Subway';
+  padding: 0.5rem 3rem 0.5rem 5rem;
+  letter-spacing: 1.4px;
+  color: white;
+  // text-transform: uppercase;
+  width: fit-content;
+  transition: all 0.4s ease-in-out;
+
+  &:hover {
+    text-decoration: underline;
+    transition: all 0.4s ease-in-out;
+  }
+}

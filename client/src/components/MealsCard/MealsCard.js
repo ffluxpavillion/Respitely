@@ -1,8 +1,8 @@
 import React from 'react';
 import './MealsCard.scss';
-import MealsMap from '../MealsMap/MealsMap';
 import DropInMealsToday from '../DropInMealsToday/DropInMealsToday';
 import MealsTimeline from '../MealsTimeline/MealsTimeline';
+import { HashLink as Link } from 'react-router-hash-link';
 
 import ComingSoon from '../ComingSoon/ComingSoon';
 
@@ -19,7 +19,11 @@ export default function MealsCard() {
           </div>
         </div>
         <div className='meals-section__lower'>
-          <MealsMap />
+          <Link to='/drop-in-map'>
+            <h3 className='meals-section__map-link'>
+              CLICK HERE TO EXPLORE DROP-IN MAP ⟩⟩
+            </h3>
+          </Link>
         </div>
         {/* <ComingSoon
             title="New Drop-In Meals UI Coming Soon!"

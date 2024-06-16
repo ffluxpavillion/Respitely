@@ -6,7 +6,7 @@ import { initGA } from './utils/analytics';
 // contexts
 import ApiKeyProvider from './contexts/ApiKeyContext';
 // hooks
-import {useGeolocation} from './hooks/useGeolocation';
+import { useGeolocation } from './hooks/useGeolocation';
 // components
 import Header from '../src/components/Header/Header';
 import Home from '../src/components/Home/Home';
@@ -20,10 +20,12 @@ import Footer from './components/Footer/Footer';
 import CookiePolicy from './components/Legal/CookiePolicy/CookiePolicy';
 import TermsOfUse from './components/Legal/TermsOfUse/TermsOfUse';
 import MealsCard from './components/MealsCard/MealsCard';
+import MealsMap from './components/MealsMap/MealsMap';
+import ComingSoon from './components/ComingSoon/ComingSoon';
 
 export default function App() {
-  const {locationInfo, locationError} = useGeolocation();
-  console.log({locationError, locationInfo})
+  const { locationInfo, locationError } = useGeolocation();
+  console.log({ locationError, locationInfo });
   initGA(); // Initialize Google Analytics
 
   return (
@@ -31,22 +33,27 @@ export default function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-        <Route path='/' element={<>
-          <Home />
-          <Parallax1 />
-          <SheltersCard />
-          <MealsCard />
-          <Parallax2 />
-          <Resources />
-          <Parallax3 />
-          <AboutUs />
-        </>} />
-        <Route path='/cookie-policy' element={<CookiePolicy />} />
-        <Route path='/terms-of-use' element={<TermsOfUse />} />
+          <Route
+            path='/'
+            element={
+              <>
+                <Home />
+                <Parallax1 />
+                <SheltersCard />
+                <MealsCard />
+                <Parallax2 />
+                <Resources />
+                <Parallax3 />
+                <AboutUs />
+              </>
+            }
+          />
+          <Route path='/cookie-policy' element={<CookiePolicy />} />
+          <Route path='/terms-of-use' element={<TermsOfUse />} />
+          <Route path='/drop-in-map' element={<MealsMap />} />
         </Routes>
         <Footer />
       </BrowserRouter>
     </ApiKeyProvider>
-
   );
 }

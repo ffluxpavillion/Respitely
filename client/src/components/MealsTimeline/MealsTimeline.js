@@ -12,7 +12,7 @@ const MealsTimeline = () => {
   const [timelineItems, setTimelineItems] = useState([]);
   const [currentEvents, setCurrentEvents] = useState([]);
   const [previousEvent, setPreviousEvent] = useState(null);
-  const [nextEvent, setNextEvent] = useState(null);
+  const [nextEvents, setNextEvents] = useState([]);
   const timelineContainerRef = useRef(null);
   const currentEventRef = useRef(null);
 
@@ -45,7 +45,7 @@ const MealsTimeline = () => {
               const isEnded = now.isAfter(endTime);
               const isComingUp =
                 now.isBefore(startTime) &&
-                moment(startTime).diff(now, 'hours') <= 1;
+                moment(startTime).diff(now, 'hours') <= 2;
 
               mealsForToday.push({
                 title: timeRange,
@@ -71,7 +71,7 @@ const MealsTimeline = () => {
     const currentEvents = sortedMeals.filter((meal) => meal.isCurrent);
     const previousEventIndex =
       sortedMeals.findIndex((meal) => meal.isEnded) - 1;
-    const nextEventIndex = sortedMeals.findIndex((meal) => meal.isComingUp);
+    const nextEvents = sortedMeals.filter((meal) => meal.isComingUp);
 
     setCurrentEvents(currentEvents);
     setPreviousEvent(
@@ -79,83 +79,105 @@ const MealsTimeline = () => {
         ? sortedMeals[previousEventIndex]
         : null
     );
-    setNextEvent(
-      nextEventIndex !== null && nextEventIndex < sortedMeals.length
-        ? sortedMeals[nextEventIndex]
-        : null
-    );
+    setNextEvents(nextEvents);
   }, []);
 
-  // useEffect(() => {
-  //   if (timelineContainerRef.current && currentEvents.length > 0) {
-  //     const element = timelineContainerRef.current.querySelector(`[data-index="${timelineItems.indexOf(currentEvents[0])}"]`);
-  //     if (element) {
-  //       element.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  //     }
-  //   }
-  // }, [currentEvents, timelineItems]);
+  useEffect(() => {
+    if (timelineContainerRef.current && currentEvents.length > 0) {
+      const element = timelineContainerRef.current.querySelector(
+        `[data-index="${timelineItems.indexOf(currentEvents[0])}"]`
+      );
+      if (element) {
+        timelineContainerRef.current.scrollTo({
+          top: element.offsetTop - timelineContainerRef.current.offsetTop,
+          behavior: 'smooth',
+        });
+      }
+    }
+  }, [currentEvents, timelineItems]);
 
   return (
     <>
-      <h1 className='mealsTimeline-live-clock'>
-        <LiveClock />
-      </h1>
       <br />
       <article className='mealsTimeline-container'>
-        <div className='mealsTimeline-live-event-container'>
-          {previousEvent && (
-            <div className='previous-event-container'>
-              <h2 className='previous-event-header'>JUST ENDED</h2>
-              <div className='previous-event-content'>
-                <h3>{previousEvent.cardTitle}</h3>
-                <p>{previousEvent.title}</p>
-                <p>{previousEvent.cardSubtitle}</p>
-                <p>{previousEvent.cardDetailedText}</p>
+        <div className='mealsTimeline-upper'>
+          <h1 className='mealsTimeline-live-clock'>
+            <LiveClock />
+          </h1>
+          <br />
+          <div className='mealsTimeline-live-event-container'>
+            {previousEvent && (
+              <div className='previous-event-container'>
+                <h2 className='previous-event-header'>JUST ENDED</h2>
+                <div className='previous-event-content'>
+                  <h3>{previousEvent.cardTitle}</h3>
+                  <p>{previousEvent.title}</p>
+                  <p>{previousEvent.cardSubtitle}</p>
+                  <p>{previousEvent.cardDetailedText}</p>
+                </div>
               </div>
-            </div>
-          )}
-          {currentEvents.length > 0 && (
-            <div className='current-event-container'>
-              <h2 className='current-event-header'>HAPPENING NOW</h2>
-              <Collapse
-                className='mealsTimeline-ant-collapse'
-                accordion
-                expandIcon={({ isActive }) => (
-                  <CaretRightOutlined rotate={isActive ? 90 : 180} />
-                )}
-              >
-                {currentEvents.map((event, index) => (
-                  <Panel
-                    className='mealsTimeline-ant-collapse-header'
-                    header={event.cardTitle}
-                    key={index}
-                  >
-                    <div className='current-ant-collapse-inner'>
-                      <p>{event.title}</p>
-                      <p>{event.cardSubtitle}</p>
-                      <p>{event.cardDetailedText}</p>
-                    </div>
-                  </Panel>
-                ))}
-              </Collapse>
-            </div>
-          )}
-          {nextEvent && (
-            <div className='next-event-container'>
-              <h2 className='next-event-header'>COMING UP</h2>
-              <div className='next-event-content'>
-                <h3>{nextEvent.cardTitle}</h3>
-                <p>{nextEvent.title}</p>
-                <p>{nextEvent.cardSubtitle}</p>
-                <p>{nextEvent.cardDetailedText}</p>
+            )}
+            {currentEvents.length > 0 && (
+              <div className='current-event-container'>
+                <h2 className='current-event-header'>HAPPENING NOW</h2>
+                <Collapse
+                  className='mealsTimeline-ant-collapse'
+                  accordion
+                  expandIcon={({ isActive }) => (
+                    <CaretRightOutlined rotate={isActive ? 90 : 180} />
+                  )}
+                >
+                  {currentEvents.map((event, index) => (
+                    <Panel
+                      className='mealsTimeline-ant-collapse-header'
+                      header={event.cardTitle}
+                      key={index}
+                    >
+                      <div className='current-ant-collapse-inner'>
+                        <p>{event.title}</p>
+                        <p>{event.cardSubtitle}</p>
+                        <p>{event.cardDetailedText}</p>
+                      </div>
+                    </Panel>
+                  ))}
+                </Collapse>
               </div>
-            </div>
-          )}
+            )}
+            {nextEvents.length > 0 && (
+              <div className='next-event-container'>
+                <h2 className='next-event-header'>LATER TODAY</h2>
+                <Collapse
+                  className='mealsTimeline-ant-collapse'
+                  accordion
+                  expandIcon={({ isActive }) => (
+                    <CaretRightOutlined rotate={isActive ? 90 : 180} />
+                  )}
+                >
+                  {nextEvents.map((event, index) => (
+                    <Panel
+                      className='mealsTimeline-ant-collapse-header'
+                      header={event.cardTitle}
+                      key={index}
+                    >
+                      <div className='current-ant-collapse-inner'>
+                        <p>{event.title}</p>
+                        <p>{event.cardSubtitle}</p>
+                        <p>{event.cardDetailedText}</p>
+                      </div>
+                    </Panel>
+                  ))}
+                </Collapse>
+              </div>
+            )}
+          </div>
         </div>
         <br />
 
         <div className='timeline-container' ref={timelineContainerRef}>
           <div className='timeline-wrapper'>
+            <h1 className='timeline-wrapper__header'>
+              Timeline of Today's Events
+            </h1>
             {timelineItems.map((item, index) => (
               <div
                 key={index}
@@ -185,7 +207,7 @@ const MealsTimeline = () => {
                   <h3>{item.cardTitle}</h3>
                   <p>{item.title}</p>
                   <p>{item.cardSubtitle}</p>
-                  <p>{item.cardDetailedText}</p>
+                  <p>📍 {item.cardDetailedText}</p>
                 </div>
               </div>
             ))}

@@ -3,16 +3,6 @@
 @use '../../partials/global' as *;
 @use '../../partials/variables' as *;
 
-.mealsTimeline-live-clock {
-  font-size: 2rem;
-  color: white;
-  text-align: center;
-
-  @include mobile {
-    font-size: 1.1rem;
-  }
-}
-
 .mealsTimeline-container {
   @include mobile {
   }
@@ -25,6 +15,33 @@
     flex-direction: row-reverse;
     width: 100%;
     justify-content: center;
+  }
+}
+
+.mealsTimeline-upper {
+  display: flex;
+  flex-direction: column;
+}
+
+.mealsTimeline-live-clock {
+  font-size: 2rem;
+  color: white;
+  text-align: center;
+  font-family: 'Toronto Subway';
+  letter-spacing: 1.4px;
+  line-height: 2.1rem;
+  // width: 25rem;
+
+  @include mobile {
+    font-size: 1rem;
+  }
+
+  @include tablet {
+  }
+
+  @include desktop {
+    width: 25rem; // needed to fix 'width-glitch' as the clock updates
+    place-self: center;
   }
 }
 
@@ -92,6 +109,10 @@
   }
 }
 
+.timeline-wrapper__header {
+  text-align: center;
+}
+
 .timeline-item {
   display: flex;
   align-items: center;
@@ -122,6 +143,14 @@
   border: none;
 }
 
+.timeline-item-time {
+  width: 10%;
+  text-align: right;
+  margin-right: 1rem;
+  font-weight: bold;
+  color: white;
+}
+
 .timeline-item-content {
   width: 40%;
   // border-radius: 8px;
@@ -145,14 +174,6 @@
   }
 }
 
-.timeline-item-time {
-  width: 10%;
-  text-align: right;
-  margin-right: 1rem;
-  font-weight: bold;
-  color: white;
-}
-
 .mealsTimeline-moment-h1 {
   color: white;
   text-align: center;
@@ -161,6 +182,7 @@
 .previous-event-container,
 .current-event-container,
 .next-event-container {
+  // event card containers
   margin: 1rem;
   padding: 1rem;
   border-radius: 8px;
@@ -170,7 +192,12 @@
 
   @include mobile {
     margin: 0rem;
-    padding: 0.6rem 1rem;
+    padding: 0.6rem 0.5rem;
+    display: flex;
+    align-items: end;
+    justify-content: space-evenly;
+    display: flex;
+    gap: 1rem;
   }
 }
 
@@ -195,6 +222,7 @@
   border: 1px solid black;
   background-color: #0c4527;
   width: 25vw;
+  text-align: -webkit-center;
 
   @include mobile {
     width: 100%;
@@ -211,6 +239,7 @@
   background-color: #c79d04c2;
   color: white;
   width: 25vw;
+  text-align: -webkit-center;
 
   @include mobile {
     width: 100%;
@@ -225,9 +254,24 @@
 .previous-event-header,
 .current-event-header,
 .next-event-header {
+  // event card headers
   font-size: 1.5rem;
   font-weight: 600;
-  margin-bottom: 1.5rem;
+
+  @include mobile {
+    font-size: 1rem;
+    width: 9.9rem;
+    place-self: center;
+  }
+
+  @include tablet {
+    margin-bottom: 1.2rem;
+    font-size: 1.3rem;
+  }
+
+  @include desktop {
+    margin-bottom: 1.2rem;
+  }
 }
 
 .mealsTimeline-ant-collapse {
@@ -236,7 +280,7 @@
   text-align: center;
 
   @include mobile {
-    width: 100%;
+    width: fit-content;
     padding: 0rem;
   }
 
@@ -246,9 +290,11 @@
 }
 .mealsTimeline-ant-collapse-header {
   color: white;
+  align-items: baseline;
 }
 
 .ant-collapse-header-text {
+  // ant dropdown header text
   color: white;
   font-family: 'DT Black';
   text-align: left;
@@ -256,12 +302,13 @@
   text-align: center;
 
   @include mobile {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     letter-spacing: 1.6px;
+    align-self: end;
   }
 
   @include tablet {
-    font-size: 1.1rem;
+    font-size: 1rem;
     padding: 0rem 0.25rem;
   }
 
@@ -275,6 +322,11 @@
   // targets expand icon (arrow)
   color: white;
   order: 2;
+
+  @include mobile {
+    padding-inline-end: 0px !important;
+    padding-left: 0.5rem;
+  }
 }
 
 .current-ant-collapse-inner {

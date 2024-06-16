@@ -6,21 +6,23 @@
 .mealsMap-section {
   display: flex;
   position: relative;
+  height: 100vh;
+  width: 100vw;
 
-  @include mobile {
-    height: 75vh;
-    width: 99vw;
-  }
+  // @include mobile {
+  //   height: 75vh;
+  //   width: 99vw;
+  // }
 
-  @include tablet {
-    height: 75vh;
-    width: 80vw;
-  }
+  // @include tablet {
+  //   height: 75vh;
+  //   width: 80vw;
+  // }
 
-  @include desktop {
-    height: 75vh;
-    width: 80vw;
-  }
+  // @include desktop {
+  //   height: 100vh;
+  //   width: 100vw;
+  // }
 }
 
 .drawer {

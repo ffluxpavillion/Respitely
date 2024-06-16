@@ -4,6 +4,13 @@
 @use '../../partials/variables' as *;
 
 .mealsTimeline-container {
+  -webkit-overflow-scrolling: touch; // Improves scrolling on iOS devices
+  scroll-behavior: smooth;
+
+  &::-webkit-scrollbar {
+    display: none; //  hides the scrollbar
+  }
+
   @include mobile {
   }
 

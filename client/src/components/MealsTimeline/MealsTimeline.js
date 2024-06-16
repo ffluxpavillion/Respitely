@@ -117,7 +117,7 @@ const MealsTimeline = () => {
                 </div>
               </div>
             )}
-            {currentEvents.length > 0 && (
+            {currentEvents.length > 0 ? (
               <div className='current-event-container'>
                 <h2 className='current-event-header'>HAPPENING NOW</h2>
                 <Collapse
@@ -142,8 +142,13 @@ const MealsTimeline = () => {
                   ))}
                 </Collapse>
               </div>
+            ) : (
+              <div className='current-event-container'>
+                <h2 className='current-event-header'>HAPPENING NOW</h2>
+                <p>No live events happening at the moment.</p>
+              </div>
             )}
-            {nextEvents.length > 0 && (
+            {nextEvents.length > 0 ? (
               <div className='next-event-container'>
                 <h2 className='next-event-header'>LATER TODAY</h2>
                 <Collapse
@@ -167,6 +172,11 @@ const MealsTimeline = () => {
                     </Panel>
                   ))}
                 </Collapse>
+              </div>
+            ) : (
+              <div className='next-event-container'>
+                <h2 className='next-event-header'>LATER TODAY</h2>
+                <p>No upcoming events in the next 2 hours.</p>
               </div>
             )}
           </div>

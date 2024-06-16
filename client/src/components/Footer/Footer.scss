@@ -89,6 +89,7 @@
 
   @include mobile {
     font-size: 1.1rem;
+    width: max-content;
 
     &:active {
       transition: all 0.4s ease-in-out;

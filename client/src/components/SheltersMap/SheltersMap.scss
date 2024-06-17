@@ -185,7 +185,7 @@
 .popup__button-directions-text {
   font-family: 'Avenir Next Bold', 'Verdana', 'Arial', 'system-ui';
   font-size: 1rem;
-  width: auto;
+  width: max-content;
 
   &:hover {
     color: #232f27;

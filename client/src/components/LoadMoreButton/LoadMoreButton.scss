@@ -39,7 +39,6 @@
   cursor: pointer;
   width: -webkit-fill-available;
 
-
   @include mobile {
     width: 100%;
   }
@@ -49,7 +48,7 @@
   }
 
   @include desktop {
-    margin: 0 10rem;
+    // margin: 0 10rem; // for OG layout testing purposes -- using pagination now anyways for new layout
   }
 
   &:hover {

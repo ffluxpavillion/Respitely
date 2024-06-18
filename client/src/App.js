@@ -15,6 +15,7 @@ import AboutUs from './components/AboutUs/AboutUs';
 import Parallax3 from './components/Parallax3/Parallax3';
 import Parallax2 from './components/Parallax2/Parallax2';
 import SheltersCard from './components/SheltersCard/SheltersCard';
+import SheltersCardOG from './components/SheltersCard-OG/SheltersCard-OG';
 import Resources from './components/Resources/Resources';
 import Footer from './components/Footer/Footer';
 import CookiePolicy from './components/Legal/CookiePolicy/CookiePolicy';
@@ -49,6 +50,7 @@ export default function App() {
             }
           />
           <Route path='/cookie-policy' element={<CookiePolicy />} />
+          <Route path='/shelterscard-og' element={<SheltersCardOG />} />
           <Route path='/terms-of-use' element={<TermsOfUse />} />
           <Route path='/drop-in-map' element={<MealsMap />} />
         </Routes>

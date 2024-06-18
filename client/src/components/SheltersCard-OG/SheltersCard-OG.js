@@ -1,4 +1,4 @@
-import '../SheltersCard/SheltersCard.scss';
+import './SheltersCard-OG.scss';
 import { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
 import SheltersMap from '../SheltersMap/SheltersMap';
@@ -11,7 +11,7 @@ import EmergencyBanner from '../EmergencyBanner/EmergencyBanner';
 import SheltersCardDetailedView from '../SheltersCardDetailedView/SheltersCardDetailedView';
 import CalculateDaysAgo from '../../helpers/CalculateDaysAgo';
 
-export default function SheltersCard() {
+export default function SheltersCardOG() {
   const [loading, setLoading] = useState(true); // state to show/hide Loading Shelter Data message
   const [records, setRecords] = useState([]);
   const [displayedRecords, setDisplayedRecords] = useState([]);
@@ -19,7 +19,7 @@ export default function SheltersCard() {
   const [filterType, setFilterType] = useState('All'); // new state for filter type
   const [selectedButton, setSelectedButton] = useState('All');
   const [goHere, setGoHere] = useState(null);
-  const [isMobile, setIsMobile] = useState(window.innerWidth > 0); // state to check if the screen is mobile size
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768); // state to check if the screen is mobile size
   const calculateDaysAgo = CalculateDaysAgo;
 
   // const [uniqueLocations, setUniqueLocations] = useState({}); // alt piece of state to store unique locations
@@ -285,7 +285,7 @@ export default function SheltersCard() {
             <span className='mobile__instructions-text'>
               Select a shelter to learn more ⟩⟩⟩
             </span>
-            <ul className='shelter-list'>
+            <ul className='shelter-list-og'>
               {displayedRecords.map((record) => (
                 <li
                   className='shelter-item mobile__shelter-item'
@@ -293,7 +293,7 @@ export default function SheltersCard() {
                   onClick={() => handleCardClick(record)}
                 >
                   <div className='shelter-item__content mobile__shelter-item__content'>
-                    <h6 className='shelter-item__text'>
+                    <h6 className='shelter-item__text-og'>
                       {record.SHELTER_GROUP} ⟩⟩⟩
                       <br />
                       <p className='shelter-item__location-glance'>
@@ -318,7 +318,7 @@ export default function SheltersCard() {
           <div className='shelter-section__lower'>
             <div className='shelter-scrollable-container'>
               <div className='shelter-cards'>
-                <ul className='shelter-list'>
+                <ul className='shelter-list-og'>
                   <div>
                     {displayedRecords &&
                       displayedRecords.map(
@@ -331,7 +331,7 @@ export default function SheltersCard() {
                               <div className='shelter-item__left'>
                                 <ul className='shelter-item__left-inner'>
                                   <div className='shelter-item__title'>
-                                    <h6 className='shelter-item__text'>
+                                    <h6 className='shelter-item__text-og'>
                                       {record.SHELTER_GROUP}
                                     </h6>
                                   </div>

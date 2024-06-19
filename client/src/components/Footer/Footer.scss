@@ -84,12 +84,11 @@
   letter-spacing: 1.4px;
   color: white;
   text-transform: uppercase;
-  width: fit-content;
+  width: max-content;
   transition: all 0.4s ease-in-out;
 
   @include mobile {
     font-size: 1.1rem;
-    width: max-content;
 
     &:active {
       transition: all 0.4s ease-in-out;

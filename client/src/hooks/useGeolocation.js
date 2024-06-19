@@ -1,24 +1,24 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
-export const useGeolocation = () => { // useGeolocation hook function
+export const useGeolocation = () => {// hook function to get user's geolocation
   const [locationInfo, setLocationInfo] = useState(null);
   const [locationError, setLocationError] = useState(null);
 
   const { geolocation } = navigator;
 
   const successFn = (res) => {
-    console.log({res});
     setLocationInfo(res.coords);
-  }
+  };
 
   const errorFn = (res) => {
-    console.log({res});
     setLocationError(res.message);
-  }
+  };
 
-  if (!locationError && !locationInfo) { // if no error and no location info
-    geolocation.getCurrentPosition(successFn, errorFn);
-  }
+  useEffect(() => {
+    if (!locationError && !locationInfo) {
+      geolocation.getCurrentPosition(successFn, errorFn);
+    }
+  }, [geolocation, locationError, locationInfo]);
 
-  return { locationError, locationInfo }; // return locationError and locationInfo
-}
+  return { locationError, locationInfo };
+};

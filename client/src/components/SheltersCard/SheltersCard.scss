@@ -135,7 +135,7 @@ h3 {
   border-radius: 10px;
   border: 1px solid ghostwhite;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
 
   @include mobile {
     // display: contents;      // CULPRIT #2 - fixed

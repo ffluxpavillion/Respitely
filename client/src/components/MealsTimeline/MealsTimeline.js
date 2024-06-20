@@ -2,7 +2,7 @@ import './MealsTimeline.scss';
 import React, { useState, useEffect, useRef } from 'react';
 import mealList from '../../data/TDIN_MealList.json';
 import moment from 'moment';
-import { Collapse, Space, Switch, Radio } from 'antd';
+import { Collapse, Space, Radio } from 'antd';
 import { CaretRightOutlined } from '@ant-design/icons';
 import LiveClock from '../LiveClock/LiveClock';
 import { useGeolocation } from '../../hooks/useGeolocation';
@@ -139,6 +139,10 @@ const MealsTimeline = () => {
     setLiveView(liveView === 'inProgress' ? 'upNext' : 'inProgress');
   };
 
+  const getDirectionsUrl = (latitude, longitude) => {
+    return `https://www.google.com/maps/dir/?api=1&destination=${latitude},${longitude}`;
+  };
+
   return (
     <>
       <aside className='mealsTimeline-live-clock-container'>
@@ -217,6 +221,16 @@ const MealsTimeline = () => {
                     <p className='timeline-item-content-text'>
                       📍 {item.cardDetailedText}
                     </p>
+                    <button
+                      className='directions-button'
+                      onClick={() =>
+                        window.open(
+                          getDirectionsUrl(item.latitude, item.longitude)
+                        )
+                      }
+                    >
+                      Get Directions
+                    </button>
                   </div>
                 </div>
               ))}
@@ -237,6 +251,19 @@ const MealsTimeline = () => {
                     <p>{previousEvent.title}</p>
                     <p>{previousEvent.cardSubtitle}</p>
                     <p>{previousEvent.cardDetailedText}</p>
+                    <button
+                      className='directions-button'
+                      onClick={() =>
+                        window.open(
+                          getDirectionsUrl(
+                            previousEvent.latitude,
+                            previousEvent.longitude
+                          )
+                        )
+                      }
+                    >
+                      Get Directions
+                    </button>
                   </div>
                 </div>
               )}
@@ -275,6 +302,19 @@ const MealsTimeline = () => {
                           <p>{event.title}</p>
                           <p>{event.cardSubtitle}</p>
                           <p>{event.cardDetailedText}</p>
+                          <button
+                            className='directions-button'
+                            onClick={() =>
+                              window.open(
+                                getDirectionsUrl(
+                                  event.latitude,
+                                  event.longitude
+                                )
+                              )
+                            }
+                          >
+                            Get Directions
+                          </button>
                         </div>
                       </Panel>
                     ))}
@@ -330,6 +370,19 @@ const MealsTimeline = () => {
                           <p>{event.title}</p>
                           <p>{event.cardSubtitle}</p>
                           <p>{event.cardDetailedText}</p>
+                          <button
+                            className='directions-button'
+                            onClick={() =>
+                              window.open(
+                                getDirectionsUrl(
+                                  event.latitude,
+                                  event.longitude
+                                )
+                              )
+                            }
+                          >
+                            Get Directions
+                          </button>
                         </div>
                       </Panel>
                     ))}

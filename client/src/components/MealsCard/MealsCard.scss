@@ -22,12 +22,12 @@
     background-color: #aaa0b009;
     min-height: fit-content;
     margin: 5rem 0;
-    padding: 3rem 1rem;
+    padding: 2rem 1rem;
   }
 
   @include tablet {
     margin: 5rem 1rem 1rem 1.25rem;
-    padding: 2.5rem 3rem 2.5rem 3rem;
+    padding: 0rem 3rem 2.5rem 3rem;
     box-shadow:
       0 5px 10px rgba(154, 160, 185, 0.05),
       0 15px 40px rgba(166, 173, 201, 0.1);
@@ -82,8 +82,8 @@
   @include tablet {
     font-size: 2.5rem;
     text-align: center;
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     text-wrap: nowrap;
   }
 
@@ -111,6 +111,11 @@
   // text-transform: uppercase;
   width: fit-content;
   transition: all 0.4s ease-in-out;
+
+  @include mobile {
+    padding: 0.5rem 2rem 0.5rem 2rem;
+    text-wrap: balance;
+  }
 
   &:hover {
     text-decoration: underline;

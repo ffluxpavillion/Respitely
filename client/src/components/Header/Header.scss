@@ -342,7 +342,7 @@ li {
     justify-content: center;
     opacity: 0;
     visibility: hidden;
-    -webkit-transition: all 0.3s ease-in-out; // menu drop down speed
+    -webkit-transition: all 0.25s ease-in-out; // main menu close speed
     align-items: flex-end;
     top: -95%;
     width: 100%;
@@ -360,7 +360,7 @@ li {
     align-items: center;
     background-color: #0f0f0f;
     opacity: 1;
-    -webkit-transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out; // main menu drop down speed
     align-items: flex-end;
     height: 100vh;
   }

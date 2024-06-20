@@ -1,12 +1,8 @@
 import './App.scss';
-// react-router
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-// google analytics
-import { initGA } from './utils/analytics';
-// contexts
-import ApiKeyProvider from './contexts/ApiKeyContext';
-// hooks
-import { useGeolocation } from './hooks/useGeolocation';
+import { BrowserRouter, Routes, Route } from 'react-router-dom'; // react-router
+import { initGA } from './utils/analytics'; // google analytics
+import ApiKeyProvider from './contexts/ApiKeyContext'; // contexts
+import { useGeolocation } from './hooks/useGeolocation'; // hooks
 // components
 import Header from '../src/components/Header/Header';
 import Home from '../src/components/Home/Home';

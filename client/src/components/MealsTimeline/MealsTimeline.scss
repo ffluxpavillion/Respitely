@@ -465,7 +465,6 @@
   position: absolute;
   margin-left: 0.3rem;
   margin-bottom: 0.3rem;
-  font-style: bold;
   font-weight: 600;
   font-family: 'League Spartan Regular';
 }
@@ -489,6 +488,25 @@
 .current-ant-collapse-inner {
   background-color: #20242c;
   color: white;
+}
+
+.directions-button {
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid ghostwhite;
+  border-radius: 5px;
+  padding: 0.3rem 5rem;
+  font-size: 0.9rem;
+  color: ghostwhite;
+  font-family: 'Avenir Next';
+  font-weight: 600;
+
+  &:hover {
+    background-color: ghostwhite;
+    color: #0f0f0f;
+    border: 1px solid #0f0f0f;
+    transition: all 0.3s ease-in-out;
+  }
 }
 
 .is-ended {

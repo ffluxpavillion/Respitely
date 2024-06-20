@@ -4,14 +4,6 @@
 @use '../../partials/variables' as *;
 
 .mealsTimeline-container {
-  -webkit-overflow-scrolling: touch; // Improves scrolling on iOS devices
-  scroll-behavior: smooth;
-
-  &::-webkit-scrollbar {
-    // NEED TO FIX THIS
-    display: none; //  hides the scrollbar
-  }
-
   @include mobile {
   }
 
@@ -31,11 +23,6 @@
   flex-direction: column;
 }
 
-.mealsTimeline-live-clock-container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
 .mealsTimeline-live-clock {
   font-size: 2rem;
   color: white;
@@ -46,100 +33,35 @@
   // width: 25rem;
 
   @include mobile {
-    min-width: 15rem; // needed to fix 'width-glitch' as the clock updates
-    max-width: 15rem;
-    font-size: 1.1rem;
-    line-height: 1.4rem;
+    font-size: 1rem;
   }
 
   @include tablet {
-    font-size: 1.4rem;
-    min-width: 20rem; // needed to fix 'width-glitch' as the clock updates
-    max-width: 20rem;
   }
 
   @include desktop {
-    min-width: 27rem; // needed to fix 'width-glitch' as the clock updates
-    max-width: 27rem;
+    width: 25rem; // needed to fix 'width-glitch' as the clock updates
     place-self: center;
   }
 }
 
-.mealsTimeline-toggle-view {
-  width: 100%;
-  place-content: center;
-}
-
-.ant-radio-group {
-  width: 100%;
+.mealsTimeline-live-event-container {
   display: flex;
-  flex-direction: row;
-}
-
-.toggle-view-button {
   text-align: center;
-  align-content: center;
-  background-color: #0f0f0f;
-  color: white;
-  font-family: 'Ostrich Heavy';
+
+  justify-content: center;
 
   @include mobile {
-    width: 45vw;
-    font-size: 1.1rem;
+    flex-direction: column;
   }
 
   @include tablet {
-    width: 20rem;
-    font-size: 1.1rem;
+    flex-direction: row;
   }
 
   @include desktop {
-    width: 30rem;
-    height: 3rem;
-    font-size: 1.5rem;
+    flex-direction: column;
   }
-
-  &:hover {
-    background-color: rgb(230, 230, 239);
-    color: #20242c;
-    transition: all 0.3s ease-in-out;
-  }
-}
-
-.toggle-live-submenu {
-  width: 50%;
-  place-content: center;
-  display: flex;
-  flex-direction: column;
-}
-
-.toggle-live-submenu-item {
-  @include mobile {
-    width: 22vw;
-    font-size: 1.1rem;
-  }
-
-  @include tablet {
-    width: 10rem;
-    font-size: 1.1rem;
-  }
-
-  @include desktop {
-    width: 11.5rem;
-    height: 2.5rem;
-    font-size: 1.5rem;
-  }
-
-  &:hover {
-    background-color: rgb(230, 230, 239);
-    color: #20242c;
-    transition: all 0.3s ease-in-out;
-  }
-}
-
-.ant-radio-button-checked {
-  background: ghostwhite;
-  border-radius: 10px;
 }
 
 .timeline-container {
@@ -242,6 +164,7 @@
 .timeline-item-content {
   width: 40%;
   // border-radius: 8px;
+  border-bottom: 1px solid white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: -webkit-fill-available;
   text-wrap: wrap;
@@ -261,22 +184,6 @@
   }
 }
 
-// .timeline-item-content-h3 {
-
-// }
-
-// .timeline-item-content-title {
-
-// }
-
-// .timeline-item-content-subtitle {
-
-// }
-
-// .timeline-item-content-text {
-
-// }
-
 .mealsTimeline-moment-h1 {
   color: white;
   text-align: center;
@@ -292,8 +199,6 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   color: white;
   text-align: center;
-  // height: 20rem;
-  // overflow: auto;
 
   @include mobile {
     margin: 0rem;
@@ -302,8 +207,7 @@
     align-items: end;
     justify-content: space-evenly;
     display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+    gap: 1rem;
   }
 }
 
@@ -327,7 +231,7 @@
 .current-event-container {
   border: 1px solid black;
   background-color: #0c4527;
-  width: 30vw;
+  width: 25vw;
   text-align: -webkit-center;
 
   @include mobile {
@@ -342,11 +246,10 @@
 
 .next-event-container {
   border: 2px solid #c79c04;
-  background-color: #c79d04;
+  background-color: #c79d04c2;
   color: white;
-  width: 30vw;
+  width: 25vw;
   text-align: -webkit-center;
-  place-items: center;
 
   @include mobile {
     width: 100%;
@@ -377,13 +280,8 @@
   }
 
   @include desktop {
-    // margin-bottom: 1.2rem;
+    margin-bottom: 1.2rem;
   }
-}
-
-.current-event-subtext,
-.next-event-subtext {
-  place-self: center;
 }
 
 .mealsTimeline-ant-collapse {
@@ -392,15 +290,11 @@
   text-align: center;
 
   @include mobile {
-    width: 80%;
+    width: fit-content;
     padding: 0rem;
   }
 
   @include tablet {
-    width: 100%;
-  }
-
-  @include desktop {
     width: 100%;
   }
 }
@@ -409,19 +303,13 @@
   align-items: baseline;
 }
 
-.ant-collapse-item,
-.ant-collapse-header {
-  // padding: 0.2rem !important;
-}
-
 .ant-collapse-header-text {
   // ant dropdown header text
   color: white;
   font-family: 'DT Black';
   text-align: left;
   text-transform: uppercase;
-  align-items: center;
-  display: flex;
+  text-align: center;
 
   @include mobile {
     font-size: 0.8rem;
@@ -440,42 +328,8 @@
   }
 }
 
-.collapse__title {
-  width: 100%;
-  text-align: center;
-
-  @include mobile {
-    padding-left: 2rem;
-  }
-  @include tablet {
-    padding-left: 2rem;
-    width: 35vw;
-  }
-  @include desktop {
-    padding-left: 2rem;
-  }
-}
-
-.collapse__distance {
-  font-family: 'Avenir Next';
-  font-size: 0.75rem;
-  font-style: italic;
-  text-transform: lowercase;
-  justify-content: start;
-  position: absolute;
-  margin-left: 0.3rem;
-  margin-bottom: 0.3rem;
-  font-weight: 600;
-  font-family: 'League Spartan Regular';
-}
-
-.mealsTimeline-distance-popover .ant-popover-inner {
-  // width: 1rem;
-}
-
 .ant-collapse-expand-icon {
   // targets expand icon (arrow)
-
   color: white;
   order: 2;
 
@@ -488,25 +342,6 @@
 .current-ant-collapse-inner {
   background-color: #20242c;
   color: white;
-}
-
-.directions-button {
-  cursor: pointer;
-  background-color: transparent;
-  border: 1px solid ghostwhite;
-  border-radius: 5px;
-  padding: 0.3rem 5rem;
-  font-size: 0.9rem;
-  color: ghostwhite;
-  font-family: 'Avenir Next';
-  font-weight: 600;
-
-  &:hover {
-    background-color: ghostwhite;
-    color: #0f0f0f;
-    border: 1px solid #0f0f0f;
-    transition: all 0.3s ease-in-out;
-  }
 }
 
 .is-ended {
@@ -542,127 +377,21 @@
   }
 }
 
-.mealsTimeline-live-event-container {
-  position: relative;
-  width: 100%;
-  height: 50vh;
-  display: flex;
-  justify-content: center;
-  place-items: center;
-
-  text-align: center;
-}
-
-.event-card {
-  position: absolute;
-  width: 90%;
-  max-width: 500px;
-  transition:
-    opacity 0.6s,
-    transform 0.6s;
-  opacity: 0;
-  transform: translateX(0) translateY(0);
-  // box-shadow: 0 4px 8px rgba(135, 135, 135, 0.9);
-  border-radius: 10px;
-}
-
-.event-card.active {
-  z-index: 2;
-  opacity: 1;
-  animation: slideIn 0.6s forwards;
-}
-
-.event-card.inactive {
-  z-index: 1;
-  opacity: 0.9;
-  animation: slideOut 0.6s forwards;
-}
-
-@keyframes slideIn {
-  0% {
-    opacity: 0;
-    transform: translateX(-100%) translateY(-10px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(-10px) translateY(-10px);
-  }
-}
-
-@keyframes slideOut {
-  0% {
-    opacity: 1;
-    transform: translateX(-10px) translateY(-10px);
-  }
-  100% {
-    opacity: 0;
-    transform: translateX(100%) translateY(10px) translateZ(-100%);
-  }
-}
-
-.toggle-view-secondary-button {
-  // margin: 1rem 0;
-  // padding: 1rem 1.5rem;
-  // background-color: #1890ff;
-  // color: white;
-  // border: none;
-  // cursor: pointer;
-  // border-radius: 4px;
-  // transition: background-color 0.3s ease;
+.directions-button {
   cursor: pointer;
-  padding: 0.25rem;
-
-  background-color: #0f0f0f;
+  background-color: transparent;
   border: 1px solid ghostwhite;
-  border-radius: 5px 0 5px 0;
-  font-family: 'Ostrich Heavy';
+  border-radius: 5px;
+  padding: 0.3rem 5rem;
+  font-size: 0.9rem;
   color: ghostwhite;
-  margin-top: 0.25rem;
+  font-family: 'Avenir Next';
+  font-weight: 600;
 
   &:hover {
-    color: #0f0f0f;
     background-color: ghostwhite;
-  }
-
-  @include mobile {
-    width: 50%;
-    font-size: 1rem;
-    margin-left: 0.1rem;
-    margin-bottom: 2rem;
-  }
-
-  @include tablet {
-    width: 20rem;
-    font-size: 1rem;
-    margin-bottom: 2rem;
-  }
-
-  @include desktop {
-    width: 50%;
-    height: 3rem;
-    font-size: 1rem;
-    margin-bottom: 2rem;
-  }
-
-  &:hover {
-    background-color: rgb(230, 230, 239);
-    color: #20242c;
+    color: #0f0f0f;
+    border: 1px solid #0f0f0f;
     transition: all 0.3s ease-in-out;
   }
-}
-
-.mealsTimeline-live-toggle-view {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.toggle-live-subfilter {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  // margin: 0.5rem 0.5rem;
-  text-align: center;
-  align-content: center;
-  transition: background-color 0.3s ease;
 }

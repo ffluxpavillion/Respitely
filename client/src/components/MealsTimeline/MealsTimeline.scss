@@ -47,7 +47,8 @@
   }
 
   @include desktop {
-    width: 25rem; // needed to fix 'width-glitch' as the clock updates
+    min-width: 27rem; // needed to fix 'width-glitch' as the clock updates
+    max-width: 27rem;
     place-self: center;
   }
 }
@@ -55,11 +56,11 @@
 .mealsTimeline-live-event-container {
   display: flex;
   text-align: center;
-
   justify-content: center;
 
   @include mobile {
     flex-direction: column;
+    gap: 0.5rem;
   }
 
   @include tablet {
@@ -165,7 +166,6 @@
 .timeline-item-content {
   width: 40%;
   // border-radius: 8px;
-  border-bottom: 1px solid white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: -webkit-fill-available;
   text-wrap: wrap;
@@ -208,7 +208,8 @@
     align-items: end;
     justify-content: space-evenly;
     display: flex;
-    gap: 1rem;
+    flex-direction: column;
+    gap: 0.5rem;
   }
 }
 
@@ -251,6 +252,7 @@
   color: white;
   width: 25vw;
   text-align: -webkit-center;
+  place-items: center;
 
   @include mobile {
     width: 100%;
@@ -281,7 +283,7 @@
   }
 
   @include desktop {
-    margin-bottom: 1.2rem;
+    // margin-bottom: 1.2rem;
   }
 }
 
@@ -291,7 +293,7 @@
   text-align: center;
 
   @include mobile {
-    width: fit-content;
+    width: 70%;
     padding: 0rem;
   }
 
@@ -304,13 +306,19 @@
   align-items: baseline;
 }
 
+.ant-collapse-item,
+.ant-collapse-header {
+  padding: 0.2rem !important;
+}
+
 .ant-collapse-header-text {
   // ant dropdown header text
   color: white;
   font-family: 'DT Black';
   text-align: left;
   text-transform: uppercase;
-  text-align: center;
+  align-items: center;
+  display: flex;
 
   @include mobile {
     font-size: 0.8rem;
@@ -329,8 +337,30 @@
   }
 }
 
+.collapse__title {
+  width: 100%;
+  text-align: center;
+}
+
+.collapse__distance {
+  font-family: 'Avenir Next';
+  font-size: 0.75rem;
+  font-style: italic;
+  text-transform: lowercase;
+  justify-content: start;
+  position: absolute;
+  margin-left: 0.3rem;
+  margin-bottom: 0.3rem;
+
+  font-style: bold;
+  margin-left: 0.3rem;
+  font-weight: 600;
+  font-family: 'League Spartan Regular';
+}
+
 .ant-collapse-expand-icon {
   // targets expand icon (arrow)
+
   color: white;
   order: 2;
 

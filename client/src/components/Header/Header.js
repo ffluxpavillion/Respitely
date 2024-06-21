@@ -83,19 +83,19 @@ export default function Header() {
         <div className='navbar__div'>
           <ul className={`navbar__div-ul navMenu ${menuOpen ? 'active' : ''}`}>
             <li onClick={handleClick}>
-              <Link to='#landing'>
+              <Link to='/#landing'>
                 <h3 className='navbar__div-li nav-stairs__home'>Home ⟩⟩</h3>
               </Link>
             </li>
             <li onClick={handleClick}>
-              <Link to='#shelters'>
+              <Link to='/#shelters'>
                 <h3 className='navbar__div-li nav-stairs__shelters'>
                   SHELTERS ⟩⟩
                 </h3>
               </Link>
             </li>
             <li onClick={handleClick}>
-              <Link to='#dropInMeals'>
+              <Link to='/#dropInMeals'>
                 <h3 className='navbar__div-li nav-stairs__about-us'>
                   DROP-IN MEALS ⟩⟩
                 </h3>
@@ -109,14 +109,14 @@ export default function Header() {
               </Link>
             </li>
             <li onClick={handleClick}>
-              <Link to='#resources'>
+              <Link to='/#resources'>
                 <h3 className='navbar__div-li nav-stairs__resources'>
                   RESOURCES ⟩⟩
                 </h3>
               </Link>
             </li>
             <li onClick={handleClick}>
-              <Link to='#aboutUs'>
+              <Link to='/#aboutUs'>
                 <h3 className='navbar__div-li nav-stairs__about-us'>
                   ABOUT US ⟩⟩
                 </h3>

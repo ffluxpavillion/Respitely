@@ -381,16 +381,16 @@
 .directions-button {
   cursor: pointer;
   background-color: transparent;
-  border: 1px solid ghostwhite;
+  border: 1px solid white;
   border-radius: 5px;
   padding: 0.3rem 5rem;
   font-size: 0.9rem;
-  color: ghostwhite;
+  color: white;
   font-family: 'Avenir Next';
   font-weight: 600;
 
   &:hover {
-    background-color: ghostwhite;
+    background-color: white;
     color: #0f0f0f;
     border: 1px solid #0f0f0f;
     transition: all 0.3s ease-in-out;

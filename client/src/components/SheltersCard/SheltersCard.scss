@@ -84,7 +84,7 @@ h3 {
 }
 
 .shelter-section__header {
-  color: ghostwhite;
+  color: white;
   font-family: 'Junction Light', 'Junction Bold', 'Toronto Subway',
     'Toronto Subway Bold';
   text-wrap: nowrap;
@@ -128,12 +128,12 @@ h3 {
   font-family: 'Toronto Subway', 'Junction Light', 'Junction Bold';
   font-weight: 800;
   font-size: 1.2rem;
-  color: ghostwhite;
+  color: white;
   background-image: linear-gradient(170deg, #262729 9%, #313232 96%);
   width: 100%;
   padding: 1rem;
   border-radius: 10px;
-  border: 1px solid ghostwhite;
+  border: 1px solid white;
   align-items: center;
   justify-content: center;
 
@@ -206,6 +206,7 @@ h3 {
   text-transform: uppercase;
   font-variant-caps: all-petite-caps;
   letter-spacing: 0.45px;
+  color: white;
 
   @include mobile {
     display: inline-flex; // CULPRIT #3 - fixed
@@ -557,7 +558,7 @@ h3 {
 }
 
 .shelter-item__availability {
-  color: ghostwhite;
+  color: white;
   font-size: 0.88rem;
   line-height: 1.6;
   font-weight: normal;
@@ -685,7 +686,7 @@ h3 {
   font-weight: 600;
   max-width: fit-content;
   color: #2a445e;
-  color: ghostwhite;
+  color: white;
   margin-left: 0.7rem;
   padding-left: 0.7rem;
   border-left: #7e67f9 solid 2px;

@@ -127,7 +127,8 @@
   row-gap: 1rem;
 
   @include mobile {
-    gap: 0.5rem;
+    gap: 0;
+    height: 15rem;
   }
 
   @include tablet {
@@ -172,7 +173,7 @@
   @include mobile {
     font-size: 0.9rem;
     padding-bottom: 1rem;
-    line-height: 1.2rem;
+    line-height: 1.5rem;
   }
 
   @include tablet {
@@ -312,7 +313,7 @@
   text-align: center;
 
   @include mobile {
-    font-size: 0.8rem;
+    font-size: 0.8rem !important;
     letter-spacing: 1.6px;
     align-self: end;
   }
@@ -393,5 +394,12 @@
     color: #0f0f0f;
     border: 1px solid #0f0f0f;
     transition: all 0.3s ease-in-out;
+  }
+
+  @include mobile {
+    padding: 0.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
 }

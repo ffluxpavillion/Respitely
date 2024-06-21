@@ -1,14 +1,17 @@
 import './MealsTimeline.scss';
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useContext } from 'react';
 import mealList from '../../data/TDIN_MealList.json';
 import moment from 'moment';
 import { Collapse } from 'antd';
 import { CaretRightOutlined } from '@ant-design/icons';
 import LiveClock from '../LiveClock/LiveClock';
+import { useGeolocation } from '../../hooks/useGeolocation';
+import * as turf from '@turf/turf';
 
 const { Panel } = Collapse;
 
 const MealsTimeline = () => {
+  const { locationInfo } = useGeolocation();
   const [timelineItems, setTimelineItems] = useState([]);
   const [currentEvents, setCurrentEvents] = useState([]);
   const [previousEvent, setPreviousEvent] = useState(null);
@@ -20,50 +23,58 @@ const MealsTimeline = () => {
     const today = moment().format('dddd').toLowerCase();
     let mealsForToday = [];
 
-    Object.keys(mealList.regions).forEach((regionKey) => {
-      mealList.regions[regionKey].drop_in_centers.forEach((center) => {
-        const schedule = center.schedule[today] || {};
-        const mealTypes = ['breakfast', 'lunch', 'dinner', 'snack'];
+    if (mealList && mealList.regions) {
+      Object.keys(mealList.regions).forEach((regionKey) => {
+        const region = mealList.regions[regionKey];
+        if (region.drop_in_centers && Array.isArray(region.drop_in_centers)) {
+          region.drop_in_centers.forEach((center) => {
+            const schedule = center.schedule
+              ? center.schedule[today] || {}
+              : {};
+            const mealTypes = ['breakfast', 'lunch', 'dinner', 'snack'];
 
-        mealTypes.forEach((mealType) => {
-          if (schedule[mealType]) {
-            const mealEntries = schedule[mealType]
-              .split('&')
-              .map((timeRange) => timeRange.trim());
+            mealTypes.forEach((mealType) => {
+              if (schedule[mealType]) {
+                const mealEntries = schedule[mealType]
+                  .split('&')
+                  .map((timeRange) => timeRange.trim());
 
-            mealEntries.forEach((timeRange) => {
-              const [startTimeStr, endTimeStr] = timeRange
-                .split(' - ')
-                .map((t) => t.trim());
-              const startTime = moment(startTimeStr, 'h:mma').toDate();
-              const endTime = endTimeStr
-                ? moment(endTimeStr, 'h:mma').toDate()
-                : moment(startTimeStr, 'h:mma').add(1, 'hour').toDate();
+                mealEntries.forEach((timeRange) => {
+                  const [startTimeStr, endTimeStr] = timeRange
+                    .split(' - ')
+                    .map((t) => t.trim());
+                  const startTime = moment(startTimeStr, 'h:mma').toDate();
+                  const endTime = endTimeStr
+                    ? moment(endTimeStr, 'h:mma').toDate()
+                    : moment(startTimeStr, 'h:mma').add(1, 'hour').toDate();
 
-              const now = moment();
-              const isCurrent = now.isBetween(startTime, endTime);
-              const isEnded = now.isAfter(endTime);
-              const isComingUp =
-                now.isBefore(startTime) &&
-                moment(startTime).diff(now, 'hours') <= 2;
+                  const now = moment();
+                  const isCurrent = now.isBetween(startTime, endTime);
+                  const isEnded = now.isAfter(endTime);
+                  const isComingUp =
+                    now.isBefore(startTime) &&
+                    moment(startTime).diff(now, 'hours') <= 2;
 
-              mealsForToday.push({
-                title: timeRange,
-                cardTitle: mealType.charAt(0).toUpperCase() + mealType.slice(1),
-                cardSubtitle: center.name,
-                cardDetailedText: `Address: ${center.address}, ${center.city}`,
-                startTime,
-                endTime,
-                isCurrent,
-                isEnded,
-                isComingUp,
-                ...center,
-              });
+                  mealsForToday.push({
+                    title: timeRange,
+                    cardTitle:
+                      mealType.charAt(0).toUpperCase() + mealType.slice(1),
+                    cardSubtitle: center.name,
+                    cardDetailedText: `Address: ${center.address}, ${center.city}`,
+                    startTime,
+                    endTime,
+                    isCurrent,
+                    isEnded,
+                    isComingUp,
+                    ...center,
+                  });
+                });
+              }
             });
-          }
-        });
+          });
+        }
       });
-    });
+    }
 
     const sortedMeals = mealsForToday.sort((a, b) => a.startTime - b.startTime);
     setTimelineItems(sortedMeals);
@@ -83,6 +94,29 @@ const MealsTimeline = () => {
   }, []);
 
   useEffect(() => {
+    if (locationInfo) {
+      const userLocation = turf.point([
+        locationInfo.longitude,
+        locationInfo.latitude,
+      ]);
+      console.log('UserLocation========', userLocation);
+
+      const addDistanceToEvents = (events) => {
+        return events.map((event) => {
+          const eventLocation = turf.point([event.longitude, event.latitude]);
+          const distance = turf
+            .distance(userLocation, eventLocation, { units: 'kilometers' })
+            .toFixed(1);
+          return { ...event, distance };
+        });
+      };
+
+      setCurrentEvents((prevEvents) => addDistanceToEvents(prevEvents));
+      setNextEvents((prevEvents) => addDistanceToEvents(prevEvents));
+    }
+  }, [locationInfo]);
+
+  useEffect(() => {
     if (timelineContainerRef.current && currentEvents.length > 0) {
       const element = timelineContainerRef.current.querySelector(
         `[data-index="${timelineItems.indexOf(currentEvents[0])}"]`
@@ -95,10 +129,6 @@ const MealsTimeline = () => {
       }
     }
   }, [currentEvents, timelineItems]);
-
-  const getDirectionsUrl = (latitude, longitude) => {
-    return `https://www.google.com/maps/dir/?api=1&destination=${latitude},${longitude}`;
-  };
 
   return (
     <>
@@ -123,7 +153,7 @@ const MealsTimeline = () => {
             )}
             {currentEvents.length > 0 ? (
               <div className='current-event-container'>
-                <h2 className='current-event-header'>HAPPENING NOW</h2>
+                <h2 className='current-event-header'>IN PROGRESS</h2>
                 <Collapse
                   className='mealsTimeline-ant-collapse'
                   accordion
@@ -134,7 +164,18 @@ const MealsTimeline = () => {
                   {currentEvents.map((event, index) => (
                     <Panel
                       className='mealsTimeline-ant-collapse-header'
-                      header={event.cardTitle}
+                      header={
+                        <>
+                          <span className='collapse__title'>
+                            {event.cardTitle}{' '}
+                          </span>
+                          <span className='collapse__distance'>
+                            {event.distance
+                              ? `${event.distance} km`
+                              : 'calculating..'}
+                          </span>
+                        </>
+                      }
                       key={index}
                     >
                       <div className='current-ant-collapse-inner'>
@@ -148,13 +189,18 @@ const MealsTimeline = () => {
               </div>
             ) : (
               <div className='current-event-container'>
-                <h2 className='current-event-header'>HAPPENING NOW</h2>
-                <p>No live events happening at the moment.</p>
+                <h2 className='current-event-header'></h2>
+                <p>
+                  Sorry, looks like we don't have anything scheduled right now.
+                  Please refer to the timetable or check back later 🤍{' '}
+                </p>
               </div>
             )}
             {nextEvents.length > 0 ? (
               <div className='next-event-container'>
-                <h2 className='next-event-header'>LATER TODAY</h2>
+                <h2 className='next-event-header'>UP NEXT</h2>
+                <p>Events starting in the next 2 hours.</p>
+                <br />
                 <Collapse
                   className='mealsTimeline-ant-collapse'
                   accordion
@@ -165,7 +211,18 @@ const MealsTimeline = () => {
                   {nextEvents.map((event, index) => (
                     <Panel
                       className='mealsTimeline-ant-collapse-header'
-                      header={event.cardTitle}
+                      header={
+                        <>
+                          <span className='collapse__title'>
+                            {event.cardTitle}{' '}
+                          </span>
+                          <span className='collapse__distance'>
+                            {event.distance
+                              ? `(${event.distance} km)`
+                              : 'calculating..'}
+                          </span>
+                        </>
+                      }
                       key={index}
                     >
                       <div className='current-ant-collapse-inner'>
@@ -179,7 +236,7 @@ const MealsTimeline = () => {
               </div>
             ) : (
               <div className='next-event-container'>
-                <h2 className='next-event-header'>LATER TODAY</h2>
+                <h2 className='next-event-header'></h2>
                 <p>No upcoming events in the next 2 hours.</p>
               </div>
             )}
@@ -222,16 +279,6 @@ const MealsTimeline = () => {
                   <p>{item.title}</p>
                   <p>{item.cardSubtitle}</p>
                   <p>📍 {item.cardDetailedText}</p>
-                  <button
-                    className='directions-button'
-                    onClick={() =>
-                      window.open(
-                        getDirectionsUrl(item.latitude, item.longitude)
-                      )
-                    }
-                  >
-                    Get Directions
-                  </button>
                 </div>
               </div>
             ))}

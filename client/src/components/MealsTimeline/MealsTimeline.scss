@@ -4,6 +4,15 @@
 @use '../../partials/variables' as *;
 
 .mealsTimeline-container {
+  -webkit-overflow-scrolling: touch; // Improves scrolling on iOS devices
+  scroll-behavior: smooth;
+
+  &::-webkit-scrollbar {
+    display: none; //  hides the scrollbar
+  }
+
+  width: 90vw;
+
   @include mobile {
   }
 
@@ -40,7 +49,8 @@
   }
 
   @include desktop {
-    width: 25rem; // needed to fix 'width-glitch' as the clock updates
+    min-width: 27rem; // needed to fix 'width-glitch' as the clock updates
+    max-width: 27rem;
     place-self: center;
   }
 }
@@ -48,11 +58,11 @@
 .mealsTimeline-live-event-container {
   display: flex;
   text-align: center;
-
   justify-content: center;
 
   @include mobile {
     flex-direction: column;
+    gap: 0.5rem;
   }
 
   @include tablet {
@@ -127,8 +137,7 @@
   row-gap: 1rem;
 
   @include mobile {
-    gap: 0;
-    height: 15rem;
+    gap: 0.5rem;
   }
 
   @include tablet {
@@ -137,12 +146,6 @@
 
   @include desktop {
     padding: 1rem;
-  }
-
-  &:hover {
-    background-color: #20242c;
-    border-radius: 8px;
-    transition: all 0.3s ease-in-out;
   }
 }
 
@@ -165,7 +168,6 @@
 .timeline-item-content {
   width: 40%;
   // border-radius: 8px;
-  border-bottom: 1px solid white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: -webkit-fill-available;
   text-wrap: wrap;
@@ -173,7 +175,7 @@
   @include mobile {
     font-size: 0.9rem;
     padding-bottom: 1rem;
-    line-height: 1.5rem;
+    line-height: 1.2rem;
   }
 
   @include tablet {
@@ -208,7 +210,8 @@
     align-items: end;
     justify-content: space-evenly;
     display: flex;
-    gap: 1rem;
+    flex-direction: column;
+    gap: 0.5rem;
   }
 }
 
@@ -251,6 +254,7 @@
   color: white;
   width: 25vw;
   text-align: -webkit-center;
+  place-items: center;
 
   @include mobile {
     width: 100%;
@@ -281,7 +285,7 @@
   }
 
   @include desktop {
-    margin-bottom: 1.2rem;
+    // margin-bottom: 1.2rem;
   }
 }
 
@@ -291,7 +295,7 @@
   text-align: center;
 
   @include mobile {
-    width: fit-content;
+    width: 95%;
     padding: 0rem;
   }
 
@@ -304,16 +308,22 @@
   align-items: baseline;
 }
 
+.ant-collapse-item,
+.ant-collapse-header {
+  padding: 0.2rem !important;
+}
+
 .ant-collapse-header-text {
   // ant dropdown header text
   color: white;
   font-family: 'DT Black';
   text-align: left;
   text-transform: uppercase;
-  text-align: center;
+  align-items: center;
+  display: flex;
 
   @include mobile {
-    font-size: 0.8rem !important;
+    font-size: 0.8rem;
     letter-spacing: 1.6px;
     align-self: end;
   }
@@ -329,8 +339,31 @@
   }
 }
 
+.collapse__title {
+  width: 100%;
+  text-align: center;
+  margin-left: 2rem;
+}
+
+.collapse__distance {
+  font-family: 'Avenir Next';
+  font-size: 0.75rem;
+  font-style: italic;
+  text-transform: lowercase;
+  justify-content: start;
+  position: absolute;
+  margin-left: 0.3rem;
+  margin-bottom: 0.3rem;
+
+  font-style: bold;
+  margin-left: 0.3rem;
+  font-weight: 600;
+  font-family: 'League Spartan Regular';
+}
+
 .ant-collapse-expand-icon {
   // targets expand icon (arrow)
+
   color: white;
   order: 2;
 
@@ -347,11 +380,6 @@
 
 .is-ended {
   filter: brightness(0.5);
-  &:hover {
-    background-color: #5e5e5e;
-    border-radius: 8px;
-    transition: all 0.15s ease-in-out;
-  }
 }
 
 .happening-now {
@@ -375,31 +403,5 @@
   }
   100% {
     box-shadow: 0 0 0 0 rgba(255, 165, 0, 0);
-  }
-}
-
-.directions-button {
-  cursor: pointer;
-  background-color: transparent;
-  border: 1px solid white;
-  border-radius: 5px;
-  padding: 0.3rem 5rem;
-  font-size: 0.9rem;
-  color: white;
-  font-family: 'Avenir Next';
-  font-weight: 600;
-
-  &:hover {
-    background-color: white;
-    color: #0f0f0f;
-    border: 1px solid #0f0f0f;
-    transition: all 0.3s ease-in-out;
-  }
-
-  @include mobile {
-    padding: 0.5rem;
-    width: 100%;
-    display: flex;
-    justify-content: center;
   }
 }

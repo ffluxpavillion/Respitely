@@ -6,16 +6,16 @@ This app was built using React & Express.js, and leverages data from the City of
 #### Key Features
 1. Latest Shelter Updates: Instant access to the most recent updates from shelters across the city, ensuring users have the latest information at their fingertips.
 2. Shelter Information & Map: Select an update to quickly access key shelter details, distance from user's current location, and location on a map with navigation support. highlighting key shelter details.
-2. Dynamic Filtering: Easily sort updates by tailoring to individual needs (ie. location, women, families, youth, referral required etc.)
-3. Daily Meal Timeline: Instant access to a timeline of today’s events.
-4. Real-Time Meal Tracker: A live & continuously updating tracker of free meals and drop-in service schedules, so users can effortlessly find nearby events happening right now or starting soon, and how to get there.
-5. Comprehensive Mapping: Detailed information shelters and drop-ins/meals, including location, directions, hours, website, and contact info and more.
-6. Fully Responsive: Designed to be compatible across all device sizes.
-7. Resources: Dedicated resource section for lesser-known gems.
-* And more features on the way!
+3. Dynamic Filtering: Easily sort updates by tailoring to individual needs (ie. location, women, families, youth, referral required etc.)
+4. Daily Meal Timeline: Instant access to a timeline of today’s events.
+5. Real-Time Meal Tracker: A live & continuously updating tracker of free meals and drop-in service schedules, so users can effortlessly find nearby events happening right now or starting soon, and how to get there.
+6. Comprehensive Mapping: Detailed information shelters and drop-ins/meals, including location, directions, hours, website, and contact info and more.
+7. Fully Responsive: Designed to be compatible across all device sizes.
+8. Resources: Dedicated resource section for lesser-known gems.
+* And more on the way!
 
 #### Next Steps
-Future implementations include account creation, with the ability to share, save and favourite specific shelters, enable notifications for change in occupancy, along with a more comprehensive resources section.
+Future implementations include account creation with share, save and favourite functionality, notifications, login portal for event organizers, and more.
 
 Long term plans for SafeHavenTO inlcude researching data availability to determine if the application can be scaled up beyond Toronto, to service other major cities in Canada, and beyond.
 

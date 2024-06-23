@@ -136,13 +136,13 @@ export default function Resources() {
             <a
               className='link'
               target='_blank'
-              href='https://www.toronto.ca/community-people/housing-shelter/homeless-help/shelters/#shelters'
+              href='https://benefitswayfinder.org/'
             >
               <div className='grid__item hidden-resources'>
-                <h4 className='grid__item-header'>Shelters</h4>
+                <h4 className='grid__item-header'>Benefits Wayfinder</h4>
                 <p className='grid__item-text'>
-                  Emergency accommodation and related support services that
-                  assist people to move into housing.
+                  Your guide to government benefits that can help put more money
+                  in your pocket.
                 </p>
               </div>
             </a>

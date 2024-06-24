@@ -206,8 +206,8 @@ const MealsTimeline = () => {
                     >
                       <div className='current-ant-collapse-inner'>
                         <p>{event.timeOfMeal}</p>
-                        <p> {event.providerOfMeal}</p>
-                        <p>📍{event.addressOfMeal}</p>
+                        <p>🏛️ {event.providerOfMeal}</p>
+                        <p>📍 {event.addressOfMeal}</p>
                         <button
                           className='directions-button'
                           onClick={() =>
@@ -268,8 +268,8 @@ const MealsTimeline = () => {
                     >
                       <div className='current-ant-collapse-inner'>
                         <p>{event.timeOfMeal}</p>
-                        <p>{event.providerOfMeal}</p>
-                        <p>📍{event.addressOfMeal}</p>
+                        <p>🏛️ {event.providerOfMeal}</p>
+                        <p>📍 {event.addressOfMeal}</p>
                         <button
                           className='directions-button'
                           onClick={() =>
@@ -331,10 +331,21 @@ const MealsTimeline = () => {
                 </div>
                 <hr className='timeline-divider' />
                 <div className='timeline-item-content'>
-                  <h3>{item.typeOfMeal}</h3>
-                  <p>{item.timeOfMeal}</p>
-                  <p>{item.providerOfMeal}</p>
-                  <p>📍 {item.addressOfMeal}</p>
+                  <div className='mealsTimeline-upper'>
+                    <div className='mealsTimeline__meal-type'>
+                      {item.typeOfMeal}
+                    </div>
+                    <div className='mealsTimeline__meal-time'>
+                      {item.timeOfMeal}
+                    </div>
+                    <br />
+                    <div className='mealsTimeline__meal-provider'>
+                      🏛️ {item.providerOfMeal}
+                    </div>
+                    <div className='mealsTimeline__meal-address'>
+                      📍 {item.addressOfMeal}
+                    </div>
+                  </div>
                   <button
                     className='directions-button'
                     onClick={() =>

@@ -7,19 +7,24 @@ import { HashLink as Link } from 'react-router-hash-link';
 import ComingSoon from '../ComingSoon/ComingSoon';
 
 export default function MealsCard() {
+  const scrollToTop = (el) => {
+    // need to fix this
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
   return (
     <>
       <section className='meals-section' id='dropInMeals'>
         <div className='meals-section__upper'>
-          <h3 className='meals-section__header'>Drop-In Meals in Toronto</h3>
+          <h3 className='meals-section__header'>
+            Toronto Drop-In Meals Daily Tracker
+          </h3>
 
           {/* <DropInMealsToday /> */}
-          <div>
-            <MealsTimeline />
-          </div>
+          <MealsTimeline />
         </div>
         <div className='meals-section__lower'>
-          <Link to='/drop-in-map'>
+          <Link to='/drop-in-map' scroll={scrollToTop}>
             <h3 className='meals-section__map-link'>
               CLICK HERE TO EXPLORE DROP-IN MAP ⟩⟩
             </h3>

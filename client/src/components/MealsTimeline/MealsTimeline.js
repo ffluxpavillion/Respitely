@@ -7,6 +7,9 @@ import { CaretRightOutlined } from '@ant-design/icons';
 import LiveClock from '../LiveClock/LiveClock';
 import { useGeolocation } from '../../hooks/useGeolocation';
 import * as turf from '@turf/turf';
+import HoverPopover from '../AntDesign/HoverPopover';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleExclamation } from '@fortawesome/free-solid-svg-icons';
 
 const { Panel } = Collapse;
 
@@ -160,7 +163,9 @@ const MealsTimeline = () => {
             {currentEvents.length > 0 ? (
               <div className='current-event-container'>
                 <h2 className='current-event-header'>IN PROGRESS</h2>
-                <p>Events happening right now</p>
+                <p className='current-event-subheader'>
+                  Events happening right now
+                </p>
                 <br />
                 <Collapse
                   className='mealsTimeline-ant-collapse'
@@ -178,9 +183,22 @@ const MealsTimeline = () => {
                             {event.typeOfMeal}{' '}
                           </span>
                           <span className='collapse__distance'>
-                            {event.distance
-                              ? `${event.distance} km`
-                              : 'calculating..'}
+                            {event.distance ? (
+                              `(${event.distance} km)`
+                            ) : (
+                              <HoverPopover
+                                content='To calculate distance, please enable Location Services and refresh the page.'
+                                title='Location Services Disabled'
+                                buttonText={
+                                  <FontAwesomeIcon
+                                    icon={faCircleExclamation}
+                                    size='lg'
+                                  />
+                                }
+                                contentClassName='popover-alert-content'
+                                buttonClassName='popover-alert-button'
+                              ></HoverPopover>
+                            )}
                           </span>
                         </>
                       }
@@ -211,7 +229,7 @@ const MealsTimeline = () => {
             ) : (
               <div className='current-event-container'>
                 <h2 className='current-event-header'></h2>
-                <p>
+                <p className='current-event-subheader'>
                   Sorry, looks like nothing is scheduled right now. <br />
                   Please refer to the timeline or check back later.
                 </p>
@@ -220,7 +238,9 @@ const MealsTimeline = () => {
             {nextEvents.length > 0 ? (
               <div className='next-event-container'>
                 <h2 className='next-event-header'>UP NEXT</h2>
-                <p>Events starting in the next 2 hours.</p>
+                <p className='next-event-subheader'>
+                  Events starting in the next 2 hours.
+                </p>
                 <br />
                 <Collapse
                   className='mealsTimeline-ant-collapse'
@@ -250,6 +270,19 @@ const MealsTimeline = () => {
                         <p>{event.timeOfMeal}</p>
                         <p>{event.providerOfMeal}</p>
                         <p>📍{event.addressOfMeal}</p>
+                        <button
+                          className='directions-button'
+                          onClick={() =>
+                            window.open(
+                              getDirectionsUrl(
+                                event.providerOfMeal,
+                                event.addressOfMeal
+                              )
+                            )
+                          }
+                        >
+                          Get Directions
+                        </button>
                       </div>
                     </Panel>
                   ))}
@@ -258,7 +291,9 @@ const MealsTimeline = () => {
             ) : (
               <div className='next-event-container'>
                 <h2 className='next-event-header'></h2>
-                <p>No upcoming events in the next 2 hours.</p>
+                <p className='next-event-subheader'>
+                  No upcoming events in the next 2 hours.
+                </p>
               </div>
             )}
           </div>

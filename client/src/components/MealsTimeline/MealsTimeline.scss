@@ -179,19 +179,45 @@
 }
 
 .directions-button {
-  margin-top: 10px;
-  padding: 8px 12px;
+  margin-top: 0.5rem;
+  padding: 0.5rem 0.75rem;
   background-color: #1890ff;
   color: white;
   border: none;
   cursor: pointer;
   border-radius: 4px;
   transition: background-color 0.3s ease;
+
+  text-transform: uppercase;
+  font-family: 'Avenir Next Bold';
+  white-space: normal;
+  text-align: center;
+  padding: 0.5rem;
+  border: 1px solid #313843;
+  transition: all 0.3s ease;
+  border-radius: 5px;
+  color: white;
+  background-color: #232f27;
+  cursor: pointer;
+  text-align: -webkit-center;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  width: -webkit-fill-available;
+  display: flex;
+  gap: 0.5rem;
+
+  &:hover {
+    background-color: white;
+    color: #20242c;
+    transform: translateY(-2px);
+    transition: all 0.5s ease;
+  }
 }
 
-.directions-button:hover {
-  background-color: #40a9ff;
-}
+// .directions-button:hover {
+//   background-color: #40a9ff;
+// }
 
 .mealsTimeline-moment-h1 {
   color: white;
@@ -281,6 +307,11 @@
   }
 }
 
+.current-event-subheader,
+.next-event-subheader {
+  font-family: 'Avenir Next';
+}
+
 .mealsTimeline-ant-collapse {
   color: white;
   font-family: 'DT Black';
@@ -339,18 +370,41 @@
 
 .collapse__distance {
   font-family: 'Avenir Next';
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   font-style: italic;
   text-transform: lowercase;
   justify-content: start;
   position: absolute;
   margin-left: 0.3rem;
   margin-bottom: 0.3rem;
-
   font-style: bold;
-  margin-left: 0.3rem;
   font-weight: 600;
   font-family: 'League Spartan Regular';
+}
+
+.popover-alert-button {
+  background-color: #20242c;
+  padding: 0.1rem 0.5rem;
+  box-shadow: none;
+  border-radius: 50px;
+  box-shadow: none !important;
+
+  &:hover {
+    background: #414a5a !important;
+    box-shadow: none !important;
+  }
+}
+.popover-alert-content {
+  line-height: 1rem;
+  padding-left: 1rem !important;
+  width: 15rem;
+  text-align: center;
+  filter: invert(0.09);
+  text-wrap: balance;
+}
+
+.ant-popover-inner {
+  box-shadow: none !important;
 }
 
 .ant-collapse-expand-icon {

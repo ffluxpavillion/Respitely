@@ -186,8 +186,6 @@ export default function MealsMap() {
     setSelectedPlace(null);
   };
 
-
-
   // console.logs for debugging
   // console.log('SELECTEDPLACE======', selectedPlace)}
   // console.log('SELECTEDPLACE.schedule======', selectedPlace.schedule)
@@ -211,9 +209,9 @@ export default function MealsMap() {
             onLoad={handleMapLoad}
             cooperativeGestures // requires CMD + scroll to zoom --helps prevent accidental zooming
             maxBounds={[
-            [-80.000039, 43.4], // Southwest coordinates
-            [-78.700044, 44.0], // Northeast coordinates
-          ]}
+              [-80.000039, 43.4], // Southwest coordinates
+              [-78.700044, 44.0], // Northeast coordinates
+            ]}
           >
             <NavigationControl position='bottom-right' />
             <ScaleControl />
@@ -441,7 +439,12 @@ export default function MealsMap() {
                       )}
                   </div>
                 </Collapse.Panel>
-                <Collapse.Panel header={`Hours of Operation`} key='2'>
+                <Collapse.Panel
+                  header={`Hours of Operation`}
+                  key='2'
+                  size='small'
+                  className='mealsMap-collapse-panel'
+                >
                   <div>
                     {selectedPlace &&
                       selectedPlace.schedule &&

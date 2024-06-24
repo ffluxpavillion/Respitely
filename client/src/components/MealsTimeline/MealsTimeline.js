@@ -56,11 +56,11 @@ const MealsTimeline = () => {
                     moment(startTime).diff(now, 'hours') <= 2;
 
                   mealsForToday.push({
-                    title: timeRange,
-                    cardTitle:
+                    timeOfMeal: timeRange,
+                    typeOfMeal:
                       mealType.charAt(0).toUpperCase() + mealType.slice(1),
-                    cardSubtitle: center.name,
-                    cardDetailedText: `Address: ${center.address}, ${center.city}`,
+                    providerOfMeal: center.name,
+                    addressOfMeal: `${center.address}, ${center.city}`,
                     startTime,
                     endTime,
                     isCurrent,
@@ -130,6 +130,12 @@ const MealsTimeline = () => {
     }
   }, [currentEvents, timelineItems]);
 
+  const getDirectionsUrl = (providerOfMeal, addressOfMeal) => {
+    return `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
+      `${providerOfMeal} ${addressOfMeal}`
+    )}&travelmode=walking`;
+  };
+
   return (
     <>
       <br />
@@ -144,16 +150,18 @@ const MealsTimeline = () => {
               <div className='previous-event-container'>
                 <h2 className='previous-event-header'>JUST ENDED</h2>
                 <div className='previous-event-content'>
-                  <h3>{previousEvent.cardTitle}</h3>
-                  <p>{previousEvent.title}</p>
-                  <p>{previousEvent.cardSubtitle}</p>
-                  <p>{previousEvent.cardDetailedText}</p>
+                  <h3>{previousEvent.typeOfMeal}</h3>
+                  <p>{previousEvent.timeOfMeal}</p>
+                  <p>{previousEvent.providerOfMeal}</p>
+                  <p>{previousEvent.addressOfMeal}</p>
                 </div>
               </div>
             )}
             {currentEvents.length > 0 ? (
               <div className='current-event-container'>
                 <h2 className='current-event-header'>IN PROGRESS</h2>
+                <p>Events happening right now</p>
+                <br />
                 <Collapse
                   className='mealsTimeline-ant-collapse'
                   accordion
@@ -167,7 +175,7 @@ const MealsTimeline = () => {
                       header={
                         <>
                           <span className='collapse__title'>
-                            {event.cardTitle}{' '}
+                            {event.typeOfMeal}{' '}
                           </span>
                           <span className='collapse__distance'>
                             {event.distance
@@ -179,9 +187,22 @@ const MealsTimeline = () => {
                       key={index}
                     >
                       <div className='current-ant-collapse-inner'>
-                        <p>{event.title}</p>
-                        <p>{event.cardSubtitle}</p>
-                        <p>{event.cardDetailedText}</p>
+                        <p>{event.timeOfMeal}</p>
+                        <p> {event.providerOfMeal}</p>
+                        <p>📍{event.addressOfMeal}</p>
+                        <button
+                          className='directions-button'
+                          onClick={() =>
+                            window.open(
+                              getDirectionsUrl(
+                                event.providerOfMeal,
+                                event.addressOfMeal
+                              )
+                            )
+                          }
+                        >
+                          Get Directions
+                        </button>
                       </div>
                     </Panel>
                   ))}
@@ -191,8 +212,8 @@ const MealsTimeline = () => {
               <div className='current-event-container'>
                 <h2 className='current-event-header'></h2>
                 <p>
-                  Sorry, looks like we don't have anything scheduled right now.
-                  Please refer to the timetable or check back later 🤍{' '}
+                  Sorry, looks like nothing is scheduled right now. <br />
+                  Please refer to the timeline or check back later.
                 </p>
               </div>
             )}
@@ -214,7 +235,7 @@ const MealsTimeline = () => {
                       header={
                         <>
                           <span className='collapse__title'>
-                            {event.cardTitle}{' '}
+                            {event.typeOfMeal}{' '}
                           </span>
                           <span className='collapse__distance'>
                             {event.distance
@@ -226,9 +247,9 @@ const MealsTimeline = () => {
                       key={index}
                     >
                       <div className='current-ant-collapse-inner'>
-                        <p>{event.title}</p>
-                        <p>{event.cardSubtitle}</p>
-                        <p>{event.cardDetailedText}</p>
+                        <p>{event.timeOfMeal}</p>
+                        <p>{event.providerOfMeal}</p>
+                        <p>📍{event.addressOfMeal}</p>
                       </div>
                     </Panel>
                   ))}
@@ -275,10 +296,23 @@ const MealsTimeline = () => {
                 </div>
                 <hr className='timeline-divider' />
                 <div className='timeline-item-content'>
-                  <h3>{item.cardTitle}</h3>
-                  <p>{item.title}</p>
-                  <p>{item.cardSubtitle}</p>
-                  <p>📍 {item.cardDetailedText}</p>
+                  <h3>{item.typeOfMeal}</h3>
+                  <p>{item.timeOfMeal}</p>
+                  <p>{item.providerOfMeal}</p>
+                  <p>📍 {item.addressOfMeal}</p>
+                  <button
+                    className='directions-button'
+                    onClick={() =>
+                      window.open(
+                        getDirectionsUrl(
+                          item.providerOfMeal,
+                          item.addressOfMeal
+                        )
+                      )
+                    }
+                  >
+                    Get Directions
+                  </button>
                 </div>
               </div>
             ))}

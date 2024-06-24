@@ -4,14 +4,14 @@
 @use '../../partials/variables' as *;
 
 .mealsTimeline-container {
-  -webkit-overflow-scrolling: touch; // Improves scrolling on iOS devices
+  width: 90vw;
   scroll-behavior: smooth;
+  place-self: center;
+  -webkit-overflow-scrolling: touch; // Improves scrolling on iOS devices
 
   &::-webkit-scrollbar {
     display: none; //  hides the scrollbar
   }
-
-  width: 90vw;
 
   @include mobile {
   }
@@ -30,29 +30,19 @@
 .mealsTimeline-upper {
   display: flex;
   flex-direction: column;
+
+  @include desktop {
+    padding: 1.5rem;
+  }
 }
 
 .mealsTimeline-live-clock {
-  font-size: 2rem;
   color: white;
   text-align: center;
   font-family: 'Toronto Subway';
-  letter-spacing: 1.4px;
+  letter-spacing: 1.3px;
   line-height: 2.1rem;
-  // width: 25rem;
-
-  @include mobile {
-    font-size: 1rem;
-  }
-
-  @include tablet {
-  }
-
-  @include desktop {
-    min-width: 27rem; // needed to fix 'width-glitch' as the clock updates
-    max-width: 27rem;
-    place-self: center;
-  }
+  place-self: center;
 }
 
 .mealsTimeline-live-event-container {
@@ -63,6 +53,7 @@
   @include mobile {
     flex-direction: column;
     gap: 0.5rem;
+    padding: 0.5rem 0;
   }
 
   @include tablet {
@@ -131,7 +122,7 @@
   display: flex;
   align-items: center;
   width: 100%;
-  height: 8rem;
+  height: 13rem;
   margin: 1rem 0;
   gap: 1rem;
   row-gap: 1rem;
@@ -187,9 +178,40 @@
   }
 }
 
+.directions-button {
+  margin-top: 10px;
+  padding: 8px 12px;
+  background-color: #1890ff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.directions-button:hover {
+  background-color: #40a9ff;
+}
+
 .mealsTimeline-moment-h1 {
   color: white;
   text-align: center;
+}
+
+.current-event-container {
+  border: 2px solid #0f5630;
+  background-color: #0c4527;
+  color: white;
+  width: 25vw;
+  text-align: -webkit-center;
+}
+
+.next-event-container {
+  border: 2px solid #c79c04;
+  background-color: #c79d04c2;
+  color: white;
+  width: 25vw;
+  text-align: -webkit-center;
 }
 
 .previous-event-container,
@@ -202,45 +224,17 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   color: white;
   text-align: center;
+  place-items: center;
+  place-content: center;
+  padding: 1rem;
 
   @include mobile {
     margin: 0rem;
     padding: 0.6rem 0.5rem;
     display: flex;
-    align-items: end;
     justify-content: space-evenly;
-    display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-  }
-}
-
-.previous-event-container {
-  border: 2px solid gray;
-  color: rgba(255, 255, 255, 0.5);
-  background-color: rgba(128, 128, 128, 0.1);
-  width: 25vw;
-
-  @include mobile {
     width: 100%;
-    position: sticky;
-    display: none;
-  }
-
-  @include tablet {
-    display: none;
-  }
-}
-
-.current-event-container {
-  border: 1px solid black;
-  background-color: #0c4527;
-  width: 25vw;
-  text-align: -webkit-center;
-
-  @include mobile {
-    width: 100%;
-    position: sticky;
   }
 
   @include tablet {
@@ -248,23 +242,22 @@
   }
 }
 
-.next-event-container {
-  border: 2px solid #c79c04;
-  background-color: #c79d04c2;
-  color: white;
-  width: 25vw;
-  text-align: -webkit-center;
-  place-items: center;
+// .previous-event-container {
+//   border: 2px solid gray;
+//   color: rgba(255, 255, 255, 0.5);
+//   background-color: rgba(128, 128, 128, 0.1);
+//   width: 25vw;
 
-  @include mobile {
-    width: 100%;
-    position: sticky;
-  }
+//   @include mobile {
+//     width: 100%;
+//     position: sticky;
+//     display: none;
+//   }
 
-  @include tablet {
-    width: 100%;
-  }
-}
+//   @include tablet {
+//     display: none;
+//   }
+// }
 
 .previous-event-header,
 .current-event-header,
@@ -272,20 +265,19 @@
   // event card headers
   font-size: 1.5rem;
   font-weight: 600;
+  margin-bottom: 0.5rem;
 
   @include mobile {
     font-size: 1rem;
-    width: 9.9rem;
     place-self: center;
+    margin-bottom: 0.25rem;
   }
 
   @include tablet {
-    margin-bottom: 1.2rem;
     font-size: 1.3rem;
   }
 
   @include desktop {
-    // margin-bottom: 1.2rem;
   }
 }
 

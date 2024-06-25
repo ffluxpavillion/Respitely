@@ -51,6 +51,10 @@
 .home-header__container {
   display: flex;
   align-items: end;
+
+  @include mobile {
+    padding-bottom: 2rem;
+  }
 }
 
 .home-header__text,
@@ -83,14 +87,15 @@
   width: 35rem;
 
   @include mobile {
-    font-size: 1.99rem;
+    font-size: 1.59rem;
     line-height: 2.5rem;
     letter-spacing: 1.5px;
   }
 
   @include tablet {
-    font-size: 3rem;
-    line-height: 2.5rem;
+    font-size: 3.25rem;
+    line-height: 5rem;
+    width: fit-content;
   }
 
   @include desktop {

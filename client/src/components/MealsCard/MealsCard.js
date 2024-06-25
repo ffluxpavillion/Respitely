@@ -16,7 +16,7 @@ export default function MealsCard() {
     <>
       <section className='meals-section' id='dropInMeals'>
         <div className='meals-section__upper'>
-          <h3 className='meals-section__header'>
+          <h3 className='meals-section__header' id='meals'>
             Toronto Drop-In Meals Daily Tracker
           </h3>
 

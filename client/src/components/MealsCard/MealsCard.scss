@@ -64,10 +64,9 @@
   backdrop-filter: opacity(0.5);
 
   @include mobile {
-    // font-size: 2.2rem; // CULPRIT #1 - FIXED
     font-family: 'Toronto Subway';
     font-variant: all-small-caps;
-    font-size: 3rem;
+    font-size: 2.8rem;
     line-height: 2.3rem;
     display: flex;
     align-self: center;

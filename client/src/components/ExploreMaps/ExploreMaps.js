@@ -11,6 +11,8 @@ export default function ExploreMaps() {
     <>
       <section className='exploreMaps-section'>
         <div className='exploreMaps-map-1-container'>
+          <span className='exploreMaps-title'>Explore Drop-In Meals Map</span>
+
           {/* <a href='/shelterscard'>
             <img
               className='exploreMaps-shelters-screenshot'
@@ -20,12 +22,11 @@ export default function ExploreMaps() {
           </a>
         </div>
         <div className='exploreMaps-map-2-container'> */}
-          <a href='/drop-in-map'>
+          <a href='/drop-in-map' className='exploreMaps-link'>
             <img
               className='exploreMaps-drop-in-screenshot'
               src={MealsMapScreenshot}
             ></img>
-            <span className='exploreMaps-title'>Explore Drop-In Meals Map</span>
           </a>
         </div>
       </section>

@@ -50,7 +50,7 @@
 
 .home-header__container {
   display: flex;
-  align-items: center;
+  align-items: end;
 }
 
 .home-header__text,
@@ -100,6 +100,10 @@
   }
 }
 
+.and-symbol {
+  font-size: 85%;
+}
+
 .home-header__line2 {
   opacity: 0;
   animation: homeFadeIn 1.8s ease 2s forwards;
@@ -121,8 +125,11 @@
 
 .home-button__container {
   height: 17rem;
+  height: auto;
   width: auto;
   display: flex;
+  flex-direction: column;
+  // display: flex;
   font-variant-caps: all-small-caps;
   padding-right: 2rem;
 }
@@ -146,6 +153,7 @@
   width: 100%;
   opacity: 0;
   animation: navFadeIn 4s ease-out 3s forwards;
+  margin-bottom: 1rem;
 }
 
 .round {
@@ -155,6 +163,11 @@
   border-radius: 100%;
   rotate: 90deg;
   cursor: pointer;
+
+  &:hover {
+    background-color: #b8ceda;
+    // filter:invert(1);
+  }
 }
 
 #cta {

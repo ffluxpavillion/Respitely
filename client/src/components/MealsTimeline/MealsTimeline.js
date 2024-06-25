@@ -10,6 +10,7 @@ import * as turf from '@turf/turf';
 import HoverPopover from '../AntDesign/HoverPopover';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleExclamation } from '@fortawesome/free-solid-svg-icons';
+import { CaretDownOutlined, CaretUpOutlined } from '@ant-design/icons';
 
 const { Panel } = Collapse;
 
@@ -19,6 +20,7 @@ const MealsTimeline = () => {
   const [currentEvents, setCurrentEvents] = useState([]);
   const [previousEvent, setPreviousEvent] = useState(null);
   const [nextEvents, setNextEvents] = useState([]);
+  const [isTimelineVisible, setIsTimelineVisible] = useState(true); // State to control timeline visibility
   const timelineContainerRef = useRef(null);
   const currentEventRef = useRef(null);
 
@@ -258,18 +260,37 @@ const MealsTimeline = () => {
                             {event.typeOfMeal}{' '}
                           </span>
                           <span className='collapse__distance'>
-                            {event.distance
-                              ? `(${event.distance} km)`
-                              : 'calculating..'}
+                            {event.distance ? (
+                              `(${event.distance} km)`
+                            ) : (
+                              <HoverPopover
+                                content='To calculate distance, please enable Location Services and refresh the page.'
+                                title='Location Services Disabled'
+                                buttonText={
+                                  <FontAwesomeIcon
+                                    icon={faCircleExclamation}
+                                    size='lg'
+                                  />
+                                }
+                                contentClassName='popover-alert-content'
+                                buttonClassName='popover-alert-button'
+                              ></HoverPopover>
+                            )}
                           </span>
                         </>
                       }
                       key={index}
                     >
                       <div className='current-ant-collapse-inner'>
-                        <p>{event.timeOfMeal}</p>
-                        <p>🏛️ {event.providerOfMeal}</p>
-                        <p>📍 {event.addressOfMeal}</p>
+                        <p className='mealsTimeline__next-up-time'>
+                          {event.timeOfMeal}
+                        </p>
+                        <p className='mealsTimeline__next-up-provider'>
+                          🏛️ {event.providerOfMeal}
+                        </p>
+                        <p className='mealsTimeline__next-up-address'>
+                          📍 {event.addressOfMeal}
+                        </p>
                         <button
                           className='directions-button'
                           onClick={() =>
@@ -302,66 +323,75 @@ const MealsTimeline = () => {
 
         <div className='timeline-container' ref={timelineContainerRef}>
           <div className='timeline-wrapper'>
-            <h1 className='timeline-wrapper__header'>
+            <h1
+              className='timeline-wrapper__header'
+              onClick={() => setIsTimelineVisible(!isTimelineVisible)}
+            >
               Timeline of Today's Events
+              {isTimelineVisible ? (
+                <CaretUpOutlined className='timeline-toggle-icon' />
+              ) : (
+                <CaretDownOutlined className='timeline-toggle-icon' />
+              )}
             </h1>
-            {timelineItems.map((item, index) => (
-              <div
-                key={index}
-                className={`timeline-item ${
-                  item.isEnded
-                    ? 'is-ended'
-                    : item.isCurrent
-                    ? 'happening-now'
-                    : item.isComingUp
-                    ? 'is-coming-up'
-                    : ''
-                }`}
-                data-index={index}
-                ref={
-                  item.isCurrent
-                    ? currentEventRef
-                    : item.isComingUp
-                    ? currentEventRef
-                    : null
-                }
-              >
-                <div className='timeline-item-time'>
-                  {moment(item.startTime).format('h:mma')}
-                </div>
-                <hr className='timeline-divider' />
-                <div className='timeline-item-content'>
-                  <div className='mealsTimeline-upper'>
-                    <div className='mealsTimeline__meal-type'>
-                      {item.typeOfMeal}
-                    </div>
-                    <div className='mealsTimeline__meal-time'>
-                      {item.timeOfMeal}
-                    </div>
-                    <br />
-                    <div className='mealsTimeline__meal-provider'>
-                      🏛️ {item.providerOfMeal}
-                    </div>
-                    <div className='mealsTimeline__meal-address'>
-                      📍 {item.addressOfMeal}
-                    </div>
+            {isTimelineVisible &&
+              timelineItems.map((item, index) => (
+                <div
+                  key={index}
+                  className={`timeline-item ${
+                    item.isEnded
+                      ? 'is-ended'
+                      : item.isCurrent
+                      ? 'happening-now'
+                      : item.isComingUp
+                      ? 'is-coming-up'
+                      : ''
+                  }`}
+                  data-index={index}
+                  ref={
+                    item.isCurrent
+                      ? currentEventRef
+                      : item.isComingUp
+                      ? currentEventRef
+                      : null
+                  }
+                >
+                  <div className='timeline-item-time'>
+                    {moment(item.startTime).format('h:mma')}
                   </div>
-                  <button
-                    className='directions-button'
-                    onClick={() =>
-                      window.open(
-                        getDirectionsUrl(
-                          item.providerOfMeal,
-                          item.addressOfMeal
+                  <hr className='timeline-divider' />
+                  <div className='timeline-item-content'>
+                    <div className='mealsTimeline-upper'>
+                      <div className='mealsTimeline__meal-type'>
+                        {item.typeOfMeal}
+                      </div>
+                      <div className='mealsTimeline__meal-time'>
+                        {item.timeOfMeal}
+                      </div>
+                      <br />
+                      <div className='mealsTimeline__meal-provider'>
+                        🏛️ {item.providerOfMeal}
+                      </div>
+                      <div className='mealsTimeline__meal-address'>
+                        📍 {item.addressOfMeal}
+                      </div>
+                    </div>
+                    <button
+                      className='directions-button'
+                      onClick={() =>
+                        window.open(
+                          getDirectionsUrl(
+                            item.providerOfMeal,
+                            item.addressOfMeal
+                          )
                         )
-                      )
-                    }
-                  >
-                    Get Directions
-                  </button>
+                      }
+                    >
+                      Get Directions
+                    </button>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
           </div>
         </div>
       </article>

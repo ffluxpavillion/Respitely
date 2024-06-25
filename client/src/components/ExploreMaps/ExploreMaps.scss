@@ -15,6 +15,7 @@
   padding: 2rem 1rem;
   height: 60vh;
   place-content: center;
+  z-index: -1;
 
   margin: 3rem 1rem 3rem 1.25rem;
   padding: 0rem 3rem 2.5rem 3rem;
@@ -35,7 +36,12 @@
 
 .exploreMaps-link {
   display: flex;
+  z-index: -1;
   flex-direction: column;
+
+  @include desktop {
+    max-height: none !important; // disables auto styling of max-height: 15rem by anchor link -- was causing position issues
+  }
 }
 
 .exploreMaps-title {
@@ -47,6 +53,7 @@
   border-radius: 10px;
   backdrop-filter: opacity(0.5);
   text-align: center;
+  z-index: -1;
 
   @include mobile {
     // font-size: 2.2rem; // CULPRIT #1 - FIXED
@@ -85,12 +92,16 @@
 .exploreMaps-drop-in-screenshot {
   // width: 100%;
   height: 10rem;
-  scale: 0.7;
+  scale: 1;
   cursor: pointer;
   transition: all 1s ease;
   height: 20rem;
 
   &:hover {
     scale: 1.05;
+  }
+
+  @include mobile {
+    scale: 0.7; // need this for mobile -- otherwise gets squeezed
   }
 }

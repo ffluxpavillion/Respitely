@@ -1,0 +1,71 @@
+@use '../../partials/abstracts' as *;
+@use '../../partials/fonts' as *;
+@use '../../partials/global' as *;
+@use '../../partials/variables' as *;
+
+.meals-banner-container {
+  width: 100%;
+  background-color: #ffcc00;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: black;
+  position: relative;
+  z-index: -1;
+  overflow: hidden;
+
+  @include mobile {
+    padding: 0.5rem 0.77rem;
+  }
+
+  @include tablet {
+    padding: 0.5rem;
+  }
+
+  @include desktop {
+    padding: 0.5rem;
+  }
+}
+
+.meals-banner-header {
+  cursor: pointer;
+  background-color: #ffcc00;
+  padding: 0.25rem 1.5rem;
+  border-bottom: 1px solid #000;
+}
+
+.meals-banner-subheader {
+  font-size: 0.75rem;
+
+}
+
+.meals-banner-content {
+  display: inline-block;
+  line-height: 1rem;
+  font-size: 0.75rem;
+  text-wrap: balance;
+  padding: 1rem;
+
+  @include mobile {
+    line-height: 0.9rem;
+    font-size: 0.7rem;
+    padding: 1rem 0rem;
+
+  }
+
+  @include desktop {
+    font-size: 0.85rem;
+    padding: 1rem 17rem;
+
+  }
+}
+
+.phone-link {
+  color: #0000ee;
+  text-decoration: underline;
+
+  &:hover {
+    color: #551a8b;
+    text-decoration: underline;
+  }
+}

@@ -2,6 +2,7 @@ import React from 'react';
 import './MealsCard.scss';
 import DropInMealsToday from '../DropInMealsToday/DropInMealsToday';
 import MealsTimeline from '../MealsTimeline/MealsTimeline';
+import MealsBanner from '../MealsBanner/MealsBanner';
 import { HashLink as Link } from 'react-router-hash-link';
 
 import ComingSoon from '../ComingSoon/ComingSoon';
@@ -14,6 +15,7 @@ export default function MealsCard() {
 
   return (
     <>
+      <MealsBanner />
       <section className='meals-section' id='dropInMeals'>
         <div className='meals-section__upper'>
           <h3 className='meals-section__header' id='meals'>

@@ -4,24 +4,45 @@
 @use '../../partials/variables' as *;
 
 body {
-  // background-color: rgb(38, 38, 38);
   background-color: #0f0f0f;
   height: 100%;
   width: 100%;
 }
 
-.parallax1 {
+.parallax1-mobile {
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
   z-index: -3;
   position: relative;
 
   @include mobile {
-    height: 33rem;
-    // background-attachment: fixed;
+    zoom: 0.45;
+    height: 50vh;
+  }
 
-    // display: none;
+  @include tablet {
+    // zoom: .45;
+
+    height: 100vh;
+  }
+
+  @include desktop {
+    height: 900px;
+  }
+}
+
+.parallax1 {
+  height: 1200px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -2;
+  position: relative;
+
+  @include mobile {
+    height: 33rem;
+    position: relative;
+    z-index: -2;
   }
 
   @include tablet {
@@ -30,16 +51,7 @@ body {
   }
 
   @include desktop {
-    height: 900px;
+    height: 100vh;
     background-attachment: fixed;
-  }
-}
-
-@keyframes heroFadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
   }
 }

@@ -38,10 +38,10 @@
   z-index: -1;
 
   @include mobile {
-    padding: 1rem;
+    padding: 3.5vw;
   }
   @include tablet {
-    padding: 5rem;
+    padding: 2.5rem;
   }
   @include desktop {
     padding: 20rem 10rem 1rem 10rem;

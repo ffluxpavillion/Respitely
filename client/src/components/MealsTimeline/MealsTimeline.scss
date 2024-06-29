@@ -264,7 +264,6 @@
   border: 2px solid #0f5630;
   background-color: #0c4527;
   color: white;
-  width: 25vw;
   text-align: -webkit-center;
   text-wrap: nowrap;
 }
@@ -273,7 +272,6 @@
   border: 2px solid #c79c04;
   background-color: #c79d04c2;
   color: white;
-  width: 25vw;
   text-align: -webkit-center;
 }
 
@@ -290,6 +288,7 @@
   place-items: center;
   place-content: center;
   padding: 1rem;
+  width: 100%;
 
   @include mobile {
     margin: 0rem;
@@ -297,11 +296,9 @@
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
-    width: 100%;
   }
 
   @include tablet {
-    width: 100%;
     align-content: baseline;
   }
 }

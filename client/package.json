@@ -25,6 +25,7 @@
     "react-router-dom": "^6.20.1",
     "react-router-hash-link": "^2.4.3",
     "react-scripts": "5.0.1",
+    "react-scroll-parallax": "^3.4.5",
     "sass": "^1.69.5",
     "web-vitals": "^2.1.4"
   },

@@ -34,10 +34,16 @@ export default function MealsBanner() {
           </i>
           <br />
           <br />
-          Please contact the location/service provider directly to confirm any
-          information. You can check the MealsMap below as a head start, or
-          check the provider's official website. These updates are for
-          informational purposes only.
+          <u>
+            Please contact the location/service provider directly to confirm any
+            information.
+          </u>
+          <br />
+          <br />
+          You can check the MealsMap below as a head start, or check the
+          provider's official website.
+          <br />
+          These updates are for informational purposes only.
         </div>
       )}
     </div>

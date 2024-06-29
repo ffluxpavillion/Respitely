@@ -15,6 +15,7 @@ export default function EmergencyBanner() {
             guarantee availability.
           </u>
         </i>{' '}
+        <br />
         If you are in need of emergency shelter space, please call the City of
         Toronto’s Central Intake line at
         <a href='tel:4163384766' className='phone-link'>

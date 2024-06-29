@@ -76,7 +76,7 @@ h3 {
   display: flex;
   flex-direction: column;
   align-self: center;
-  border-radius: 30px;
+  background-color: #141414;
 
   @include mobile {
     width: -webkit-fill-available;

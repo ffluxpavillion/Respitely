@@ -3,12 +3,6 @@
 @use '../../partials/global' as *;
 @use '../../partials/variables' as *;
 
-body {
-  background-color: #0f0f0f;
-  height: 100%;
-  width: 100%;
-}
-
 .parallax1-mobile {
   background-position: center;
   background-repeat: no-repeat;

@@ -9,9 +9,14 @@ export default function EmergencyBanner() {
       aria-label='Emergency Banner Contact Information'
     >
       <div className='banner-content'>
-        Shelter updates are for informational purposes only. If you are in need
-        of emergency shelter space, please call the City of Toronto’s Central
-        Intake line at
+        <i>
+          <u>
+            Shelter updates are for informational purposes only and does not
+            guarantee availability.
+          </u>
+        </i>{' '}
+        If you are in need of emergency shelter space, please call the City of
+        Toronto’s Central Intake line at
         <a href='tel:4163384766' className='phone-link'>
           {' '}
           416-338-4766{' '}

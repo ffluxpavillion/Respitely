@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'; // react-router
 import { initGA } from './utils/analytics'; // google analytics
 import ApiKeyProvider from './contexts/ApiKeyContext'; // contexts
 import { useGeolocation } from './hooks/useGeolocation'; // hooks
+import { ParallaxProvider } from 'react-scroll-parallax';
 // components
 import Header from '../src/components/Header/Header';
 import Home from '../src/components/Home/Home';
@@ -19,6 +20,8 @@ import TermsOfUse from './components/Legal/TermsOfUse/TermsOfUse';
 import MealsCard from './components/MealsCard/MealsCard';
 import MealsMap from './components/MealsMap/MealsMap';
 import ComingSoon from './components/ComingSoon/ComingSoon';
+// import { GeocodedLocationsProvider } from './contexts/GeocodedDataContext'; // TODO - Need to fix before enabling
+// import ShelterMap from './components/SheltersMap/SheltersMap'; // Import SheltersMap component
 
 export default function App() {
   const { locationInfo, locationError } = useGeolocation();
@@ -27,31 +30,36 @@ export default function App() {
 
   return (
     <ApiKeyProvider>
-      <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route
-            path='/'
-            element={
-              <>
-                <Home />
-                <Parallax1 />
-                <SheltersCard />
-                <MealsCard />
-                <Parallax2 />
-                <Resources />
-                <Parallax3 />
-                <AboutUs />
-              </>
-            }
-          />
-          <Route path='/cookie-policy' element={<CookiePolicy />} />
-          <Route path='/shelterscard-og' element={<SheltersCardOG />} />
-          <Route path='/terms-of-use' element={<TermsOfUse />} />
-          <Route path='/drop-in-map' element={<MealsMap />} />
-        </Routes>
-        <Footer />
-      </BrowserRouter>
+      <ParallaxProvider>
+        <BrowserRouter>
+          <Header />
+          <Routes>
+            <Route
+              path='/'
+              element={
+                <>
+                  <Home />
+                  <Parallax1 />
+                  {/* <GeocodedLocationsProvider> */}
+                    <SheltersCard />
+                  {/* </GeocodedLocationsProvider> */}
+                  <MealsCard />
+                  <Parallax2 />
+                  <Resources />
+                  <Parallax3 />
+                  <AboutUs />
+                </>
+              }
+            />
+            <Route path='/cookie-policy' element={<CookiePolicy />} />
+            <Route path='/shelterscard-og' element={<SheltersCardOG />} />
+            <Route path='/terms-of-use' element={<TermsOfUse />} />
+            <Route path='/drop-in-map' element={<MealsMap />} />
+            {/* <Route path='/shelter-map' element={<ShelterMap />} /> */}
+          </Routes>
+          <Footer />
+        </BrowserRouter>
+      </ParallaxProvider>
     </ApiKeyProvider>
   );
 }

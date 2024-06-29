@@ -254,16 +254,16 @@ export default function SheltersCardOG() {
   return (
     <>
       <EmergencyBanner />
-      <section className='shelter-section' id='shelters'>
-        <div className='shelter-section__upper'>
-          <h3 className='shelter-section__header'>
+      <section className='shelter-section-og' id='shelters'>
+        <div className='shelter-section__upper-og'>
+          <h3 className='shelter-section__header-og'>
             Latest Shelter Occupancy in Toronto
           </h3>
 
           <br />
-          <span className='shelter-section__subHeader'>
-            <div className='subHeader__upper'>
-              <p className='subHeader__title'>SHOW ME →</p>
+          <span className='shelter-section__subHeader-og'>
+            <div className='subHeader__upper-og'>
+              <p className='subHeader__title-og'>SHOW ME →</p>
               <FilterButtons
                 selectedButton={selectedButton}
                 filterAndSortData={filterAndSortData}
@@ -271,9 +271,9 @@ export default function SheltersCardOG() {
                 records={records}
               ></FilterButtons>
             </div>
-            <hr className='subheader__divider'></hr>
-            <div className='subHeader__lower'>
-              <span className='subheader__text'>
+            <hr className='subheader__divider-og'></hr>
+            <div className='subHeader__lower-og'>
+              <span className='subheader__text-og'>
                 Results are automatically sorted by most recently updated, with
                 highest occupancy (~ 7 Days )
               </span>
@@ -281,27 +281,27 @@ export default function SheltersCardOG() {
           </span>
         </div>
         {isMobile ? (
-          <div className='mobile__shelter-scrollable-container'>
-            <span className='mobile__instructions-text'>
+          <div className='mobile__shelter-scrollable-container-og'>
+            <span className='mobile__instructions-text-og'>
               Select a shelter to learn more ⟩⟩⟩
             </span>
-            <ul className='shelter-list-og'>
+            <ul className='shelter-list-og-og'>
               {displayedRecords.map((record) => (
                 <li
-                  className='shelter-item mobile__shelter-item'
+                  className='shelter-item mobile__shelter-item-og'
                   key={record._id}
                   onClick={() => handleCardClick(record)}
                 >
-                  <div className='shelter-item__content mobile__shelter-item__content'>
+                  <div className='shelter-item__content-og mobile__shelter-item__content-og'>
                     <h6 className='shelter-item__text-og'>
                       {record.SHELTER_GROUP} ⟩⟩⟩
                       <br />
-                      <p className='shelter-item__location-glance'>
+                      <p className='shelter-item__location-glance-og'>
                         📍 {record.LOCATION_CITY}
                       </p>
                     </h6>
-                    <p className='shelter-item__availability mobile__shelter-item__availability'>
-                      {record.CAPACITY_TYPE === 'Bed Based Capacity'
+                    <p className='shelter-item__availability-og mobile__shelter-item__availability-og'>
+                      {record.CAPACITY_TYPE === 'Bed Based Capacity-og'
                         ? `Available Beds: ${record.UNOCCUPIED_BEDS}`
                         : `Available Rooms: ${record.UNOCCUPIED_ROOMS}`}
                       <br />
@@ -315,10 +315,10 @@ export default function SheltersCardOG() {
             <LoadMoreButton loading={loading} loadMore={loadMore} />
           </div>
         ) : (
-          <div className='shelter-section__lower'>
-            <div className='shelter-scrollable-container'>
-              <div className='shelter-cards'>
-                <ul className='shelter-list-og'>
+          <div className='shelter-section__lower-og'>
+            <div className='shelter-scrollable-container-og'>
+              <div className='shelter-cards-og'>
+                <ul className='shelter-list-og-og'>
                   <div>
                     {displayedRecords &&
                       displayedRecords.map(
@@ -326,18 +326,18 @@ export default function SheltersCardOG() {
                           record // first, checks if displayedRecords data exists, then maps through the data
                         ) => (
                           // Using _id as key
-                          <li className='shelter-item' key={record._id}>
-                            <div className='shelter-item__content'>
-                              <div className='shelter-item__left'>
-                                <ul className='shelter-item__left-inner'>
-                                  <div className='shelter-item__title'>
-                                    <h6 className='shelter-item__text-og'>
+                          <li className='shelter-item-og' key={record._id}>
+                            <div className='shelter-item__content-og'>
+                              <div className='shelter-item__left-og'>
+                                <ul className='shelter-item__left-inner-og'>
+                                  <div className='shelter-item__title-og'>
+                                    <h6 className='shelter-item__text-og-og'>
                                       {record.SHELTER_GROUP}
                                     </h6>
                                   </div>
 
-                                  <div className='shelter-item__details'>
-                                    <h4 className='shelter-item__availability'>
+                                  <div className='shelter-item__details-og'>
+                                    <h4 className='shelter-item__availability-og'>
                                       {record.CAPACITY_TYPE ===
                                       'Bed Based Capacity'
                                         ? `Available Beds: ${record.UNOCCUPIED_BEDS}`
@@ -350,7 +350,7 @@ export default function SheltersCardOG() {
                                   </div>
                                 </ul>
 
-                                <div className='shelter-item__actions'>
+                                <div className='shelter-item__actions-og'>
                                   <a
                                     href={`https://www.google.com/maps/place/${encodeURIComponent(
                                       record.LOCATION_ADDRESS
@@ -374,7 +374,7 @@ export default function SheltersCardOG() {
                                     </button> */}
                                   </a>
                                   <button
-                                    className='shelter-item__actions-btn'
+                                    className='shelter-item__actions-btn-og'
                                     onClick={() => handleCardClick(record)}
                                   >
                                     <span>
@@ -383,21 +383,21 @@ export default function SheltersCardOG() {
                                         size='lg'
                                       />
                                     </span>
-                                    <h4 className='btn--Go-Here-Text'>
+                                    <h4 className='btn--Go-Here-Text-og'>
                                       Go Here
                                     </h4>
                                   </button>
                                 </div>
                               </div>
 
-                              <hr className='shelter-item__divider' />
+                              <hr className='shelter-item__divider-og' />
 
-                              <div className='shelter-item__right'>
-                                <ul className='shelter-item__right-inner'>
-                                  <h4 className='shelter-item__right-title'>
+                              <div className='shelter-item__right-og'>
+                                <ul className='shelter-item__right-inner-og'>
+                                  <h4 className='shelter-item__right-title-og'>
                                     LOCATION ADDRESS{' '}
                                   </h4>
-                                  <p className='shelter-item__right-text'>
+                                  <p className='shelter-item__right-text-og'>
                                     {record.LOCATION_ADDRESS}
                                     <br />
                                     {record.LOCATION_CITY} <br />
@@ -405,29 +405,29 @@ export default function SheltersCardOG() {
                                   </p>
                                 </ul>
 
-                                <ul className='shelter-item__right-inner'>
-                                  <h4 className='shelter-item__right-title'>
+                                <ul className='shelter-item__right-inner-og'>
+                                  <h4 className='shelter-item__right-title-og'>
                                     SECTOR (User Group){' '}
                                   </h4>
-                                  <p className='shelter-item__right-text'>
+                                  <p className='shelter-item__right-text-og'>
                                     {record.SECTOR}
                                   </p>
                                 </ul>
 
-                                <ul className='shelter-item__right-inner'>
-                                  <h4 className='shelter-item__right-title'>
+                                <ul className='shelter-item__right-inner-og'>
+                                  <h4 className='shelter-item__right-title-og'>
                                     ACCOMODATION TYPE{' '}
                                   </h4>
-                                  <p className='shelter-item__right-text'>
+                                  <p className='shelter-item__right-text-og'>
                                     {record.CAPACITY_TYPE}
                                   </p>
                                 </ul>
 
-                                <ul className='shelter-item__right-inner'>
-                                  <h4 className='shelter-item__right-title'>
+                                <ul className='shelter-item__right-inner-og'>
+                                  <h4 className='shelter-item__right-title-og'>
                                     PROGRAM MODEL{' '}
                                   </h4>
-                                  <p className='shelter-item__right-text'>
+                                  <p className='shelter-item__right-text-og'>
                                     {record.PROGRAM_MODEL}
                                   </p>
                                   {/* <p className='shelter-item__right-text'>
@@ -435,11 +435,11 @@ export default function SheltersCardOG() {
                                   </p> */}
                                 </ul>
 
-                                <ul className='shelter-item__right-inner'>
-                                  <h4 className='shelter-item__right-title'>
+                                <ul className='shelter-item__right-inner-og'>
+                                  <h4 className='shelter-item__right-title-og'>
                                     SERVICE TYPE{' '}
                                   </h4>
-                                  <p className='shelter-item__right-text'>
+                                  <p className='shelter-item__right-text-og'>
                                     {record.OVERNIGHT_SERVICE_TYPE}
                                   </p>
                                 </ul>
@@ -466,8 +466,8 @@ export default function SheltersCardOG() {
           </div>
         )}
         {goHere && (
-          <div className='shelter-detailed-view'>
-            <button className='back-button' onClick={closeDetailedView}>
+          <div className='shelter-detailed-view-og'>
+            <button className='back-button-og' onClick={closeDetailedView}>
               <FontAwesomeIcon icon={faCircleArrowLeft} /> Back To Shelters
             </button>
             {/* <span className='location-text'>LOCATION MAP</span> */}
@@ -479,7 +479,7 @@ export default function SheltersCardOG() {
               goHere={goHere}
             ></SheltersMap>
 
-            <h4 className='detailed-view__header'>LOCATION DETAILS</h4>
+            <h4 className='detailed-view__header-og'>LOCATION DETAILS</h4>
 
             <SheltersCardDetailedView
               goHere={goHere}

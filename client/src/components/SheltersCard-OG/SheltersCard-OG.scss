@@ -3,10 +3,6 @@
 @use '../../partials/global' as *;
 @use '../../partials/variables' as *;
 
-html {
-  // min-width: -webkit-fit-content;
-}
-
 h3 {
   display: inline;
 }
@@ -32,7 +28,7 @@ h3 {
   }
 }
 
-.shelter-section {
+.shelter-section-og {
   display: flex;
   flex-direction: column;
   align-items: left;
@@ -71,7 +67,7 @@ h3 {
   }
 }
 
-.shelter-section__upper {
+.shelter-section__upper-og {
   padding-bottom: 1rem;
   display: flex;
   flex-direction: column;
@@ -83,8 +79,8 @@ h3 {
   }
 }
 
-.shelter-section__header {
-  color: ghostwhite;
+.shelter-section__header-og {
+  color: white;
   font-family: 'Junction Light', 'Junction Bold', 'Toronto Subway',
     'Toronto Subway Bold';
   text-wrap: nowrap;
@@ -124,16 +120,16 @@ h3 {
   }
 }
 
-.shelter-section__subHeader {
+.shelter-section__subHeader-og {
   font-family: 'Toronto Subway', 'Junction Light', 'Junction Bold';
   font-weight: 800;
   font-size: 1.2rem;
-  color: ghostwhite;
+  color: white;
   background-image: linear-gradient(170deg, #262729 9%, #313232 96%);
   width: 100%;
   padding: 1rem;
   border-radius: 10px;
-  border: 1px solid ghostwhite;
+  border: 1px solid white;
   align-items: center;
   justify-content: center;
 
@@ -157,7 +153,7 @@ h3 {
   }
 }
 
-.subHeader__upper {
+.subHeader__upper-og {
   display: inline-flex;
   align-items: center;
 
@@ -166,7 +162,7 @@ h3 {
     gap: 1rem;
   }
 }
-.subHeader__title {
+.subHeader__title-og {
   width: max-content;
   display: inline-flex;
 
@@ -175,7 +171,7 @@ h3 {
   }
 }
 
-.subheader__divider {
+.subheader__divider-og {
   height: 3rem;
   display: flex;
 
@@ -199,7 +195,7 @@ h3 {
   }
 }
 
-.subheader__text {
+.subheader__text-og {
   font-family: 'Avenir Next';
   font-weight: 400;
   text-align: center;
@@ -227,7 +223,7 @@ h3 {
 
 // ----------------- BUTTONS -----------------
 
-.shelter-item__actions-btn {
+.shelter-item__actions-btn-og {
   display: inline-flex;
   flex-direction: row;
   justify-content: center;
@@ -278,7 +274,7 @@ h3 {
   }
 }
 
-.btn {
+.btn-og {
   &--Directions-Text,
   &--Go-Here-Text {
     font-size: 0.85rem;
@@ -293,7 +289,7 @@ h3 {
   }
 }
 
-.shelter-section__lower {
+.shelter-section__lower-og {
   display: flex;
   justify-content: space-between;
   height: 40rem;
@@ -319,7 +315,7 @@ h3 {
   }
 }
 
-.shelter-scrollable-container {
+.shelter-scrollable-container-og {
   overflow: hidden visible;
   max-height: fit-content;
   overflow-y: auto;
@@ -406,7 +402,7 @@ h3 {
   }
 }
 
-.shelter-item {
+.shelter-item-og {
   display: flex;
   border-bottom: 4px solid; // Visual seperator (vertical)
   border-image: radial-gradient(
@@ -444,7 +440,7 @@ h3 {
   }
 }
 
-.shelter-item__content {
+.shelter-item__content-og {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -465,7 +461,7 @@ h3 {
 
 // ----------------- SHELTER ITEM -- LEFT -----------------
 
-.shelter-item__left {
+.shelter-item__left-og {
   // DO NOT CHANGE
   display: flex;
   flex-direction: column;
@@ -491,13 +487,13 @@ h3 {
   }
 }
 
-.shelter-item__left-inner {
+.shelter-item__left-inner-og {
   display: inline-flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-.shelter-item__title {
+.shelter-item__title-og {
   display: flex;
   justify-content: center;
 
@@ -544,7 +540,7 @@ h3 {
   }
 }
 
-.shelter-item__details {
+.shelter-item__details-og {
   padding: 0.6rem;
   background-image: linear-gradient(135deg, #6d5dfc 0%, #c692ecdd 100%);
   border-radius: 12px;
@@ -556,8 +552,8 @@ h3 {
   }
 }
 
-.shelter-item__availability {
-  color: ghostwhite;
+.shelter-item__availability-og {
+  color: white;
   font-size: 0.88rem;
   line-height: 1.6;
   font-weight: normal;
@@ -585,14 +581,14 @@ h3 {
   }
 }
 
-.shelter-item__divider {
+.shelter-item__divider-og {
   height: 100%;
   align-self: center;
 }
 
 // ----------------- SHELTER ITEM -- RIGHT -----------------
 
-.shelter-item__right {
+.shelter-item__right-og {
   // DO NOT CHANGE
   display: flex;
   flex-direction: column;
@@ -618,7 +614,7 @@ h3 {
   }
 }
 
-.shelter-item__right-inner {
+.shelter-item__right-inner-og {
   box-shadow: 1px -2px 10px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
 
@@ -662,7 +658,7 @@ h3 {
   }
 }
 
-.shelter-item__right-title {
+.shelter-item__right-title-og {
   color: white;
   margin-bottom: 0.6rem;
   font-weight: 600;
@@ -681,11 +677,11 @@ h3 {
   }
 }
 
-.shelter-item__right-text {
+.shelter-item__right-text-og {
   font-weight: 600;
   max-width: fit-content;
   color: #2a445e;
-  color: ghostwhite;
+  color: white;
   margin-left: 0.7rem;
   padding-left: 0.7rem;
   border-left: #7e67f9 solid 2px;
@@ -710,7 +706,7 @@ h3 {
   }
 }
 
-.scroll-instructions {
+.scroll-instructions-og {
   @include mobile {
     display: none;
   }
@@ -733,7 +729,7 @@ h3 {
 }
 // ----------------- DETAILED VIEW (MOBILE)-----------------
 
-.mobile__shelter-scrollable-container {
+.mobile__shelter-scrollable-container-og {
   height: auto;
 
   @include mobile {
@@ -748,7 +744,7 @@ h3 {
   }
 }
 
-.mobile__instructions-text {
+.mobile__instructions-text-og {
   color: white;
   font-style: italic;
   display: flex;
@@ -759,7 +755,7 @@ h3 {
   gap: 1rem;
 }
 
-.mobile__shelter-item {
+.mobile__shelter-item-og {
   justify-content: center;
 
   &:hover {
@@ -772,7 +768,7 @@ h3 {
   }
 }
 
-.mobile__shelter-item__content {
+.mobile__shelter-item__content-og {
   @include mobile {
     width: 95vw;
   }
@@ -783,7 +779,7 @@ h3 {
   }
 }
 
-.shelter-item__location-glance {
+.shelter-item__location-glance-og {
   @include mobile {
     font-size: 0.8rem;
   }
@@ -797,7 +793,7 @@ h3 {
   }
 }
 
-.mobile__shelter-item__availability {
+.mobile__shelter-item__availability-og {
   padding: 0.6rem;
   background-image: linear-gradient(135deg, #6d5dfc 0%, #c692ecdd 100%);
   border-radius: 12px;
@@ -849,7 +845,7 @@ h3 {
   }
 }
 
-.back-button {
+.back-button-og {
   width: 100%;
   height: 9rem;
   font-family: 'Toronto Subway';
@@ -882,7 +878,7 @@ h3 {
   }
 }
 
-.detailed-view__header {
+.detailed-view__header-og {
   color: white;
   padding: 0.75rem;
   font-weight: 600;
@@ -910,7 +906,7 @@ h3 {
   }
 }
 
-.detailed-view__text-container {
+.detailed-view__text-container-og {
   display: inline-flex;
   flex-direction: row;
   margin-top: 1rem;
@@ -925,12 +921,12 @@ h3 {
     justify-content: center;
   }
 }
-.location-text-container {
+.location-text-container-og {
   background-color: rgba(0, 0, 0, 0.8);
   width: -webkit-fill-available;
 }
 
-.location-text {
+.location-text-og {
   color: white;
   font-size: 1.3rem;
   font-family: 'Toronto Subway Bold';

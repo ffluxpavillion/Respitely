@@ -67,10 +67,9 @@ a:hover {
 }
 
 .resources__div {
-  padding: 4rem;
+  padding: 4rem 0;
   display: flex;
   justify-content: center;
-  min-height: 925px;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -78,9 +77,17 @@ a:hover {
   overflow: hidden;
 
   @include mobile {
-    padding: 5rem 0;
+    padding: 4rem 0;
     display: grid;
     place-items: center;
+  }
+
+  @include tablet {
+    min-height: 925px;
+  }
+
+  @include desktop {
+    min-height: 925px;
   }
 
   &-header {

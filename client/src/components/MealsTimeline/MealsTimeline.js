@@ -145,7 +145,7 @@ const MealsTimeline = () => {
     <>
       <br />
       <article className='mealsTimeline-container'>
-        <div className='mealsTimeline-upper'>
+        <div className='mealsTimeline-half'>
           <h1 className='mealsTimeline-live-clock'>
             <LiveClock />
           </h1>
@@ -207,9 +207,21 @@ const MealsTimeline = () => {
                       key={index}
                     >
                       <div className='current-ant-collapse-inner'>
-                        <p>{event.timeOfMeal}</p>
-                        <p>🏛️ {event.providerOfMeal}</p>
-                        <p>📍 {event.addressOfMeal}</p>
+                        <p className='mealsTimeline__in-progress-time'>
+                          {event.timeOfMeal}
+                        </p>
+                        <p className='mealsTimeline__in-progress-provider'>
+                          🏛️
+                          <p className='MTL-collapse-live-text'>
+                            {event.providerOfMeal}
+                          </p>
+                        </p>
+                        <p className='mealsTimeline__in-progress-address'>
+                          📍
+                          <p className='MTL-collapse-live-text'>
+                            {event.addressOfMeal}
+                          </p>
+                        </p>
                         <button
                           className='directions-button'
                           onClick={() =>
@@ -282,14 +294,20 @@ const MealsTimeline = () => {
                       key={index}
                     >
                       <div className='current-ant-collapse-inner'>
-                        <p className='mealsTimeline__next-up-time'>
+                        <p className='mealsTimeline__up-next-time'>
                           {event.timeOfMeal}
                         </p>
-                        <p className='mealsTimeline__next-up-provider'>
-                          🏛️ {event.providerOfMeal}
+                        <p className='mealsTimeline__up-next-provider'>
+                          🏛️{' '}
+                          <p className='MTL-collapse-live-text'>
+                            {event.providerOfMeal}
+                          </p>
                         </p>
-                        <p className='mealsTimeline__next-up-address'>
-                          📍 {event.addressOfMeal}
+                        <p className='mealsTimeline__up-next-address'>
+                          📍{' '}
+                          <p className='MTL-collapse-live-text'>
+                            {event.addressOfMeal}
+                          </p>
                         </p>
                         <button
                           className='directions-button'
@@ -370,10 +388,16 @@ const MealsTimeline = () => {
                       </div>
                       <br />
                       <div className='mealsTimeline__meal-provider'>
-                        🏛️ {item.providerOfMeal}
+                        🏛️{' '}
+                        <p className='daily-timeline-text'>
+                          {item.providerOfMeal}
+                        </p>
                       </div>
                       <div className='mealsTimeline__meal-address'>
-                        📍 {item.addressOfMeal}
+                        📍{' '}
+                        <p className='daily-timeline-text'>
+                          {item.addressOfMeal}
+                        </p>
                       </div>
                     </div>
                     <button

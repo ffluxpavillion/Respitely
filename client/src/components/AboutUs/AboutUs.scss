@@ -90,8 +90,9 @@
   &-inner {
     display: flex;
     justify-content: space-evenly;
-    height: 85vh;
+    height: 90vh;
     width: 100vw;
+    padding: 2rem 0;
 
     @include mobile {
       flex-direction: column;
@@ -191,20 +192,19 @@
     width: 97%;
     // font-style: italic;
     // letter-spacing: -0.1px;
-    font-size: 1.05rem;
+    font-size: 0.95rem;
 
     @include mobile {
       margin-left: 0.5rem;
-      font-size: 0.95rem;
       // padding-bottom: 1rem;
     }
 
     @include tablet {
-      padding: 0 2rem;
+      padding: 0 1rem;
     }
 
     @include desktop {
-      padding: 0 2rem;
+      padding: 0 1rem;
     }
   }
 
@@ -355,12 +355,12 @@
   }
 
   @include tablet {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     padding: 0rem 0.25rem;
   }
 
   @include desktop {
-    font-size: 1.42rem;
+    font-size: 1.32rem;
     padding: 0rem 0.25rem;
   }
 }
@@ -382,10 +382,10 @@
 .about-us-collapse {
   background-color: #20242c;
   place-self: center;
+  padding: 0.25rem 0.15rem;
 
   @include mobile {
     width: 93vw;
-    padding: 1rem 0.15rem;
   }
 
   @include tablet {

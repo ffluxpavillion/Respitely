@@ -67,9 +67,9 @@ export default function AboutUs() {
           population can be incredibly challenging.
           <br />
           <br />
-          Although many support systems exist, finding current shelter
-          availability or meal services often proves cumbersome. Details are
-          often fragmented across the web, buried within lengthly timetables, or
+          Although many support systems exist, quickly identifying shelter
+          updates or meal services often proves cumbersome. Details are often
+          fragmented across the web, buried within lengthly timetables, or
           require making numerous phone calls.
           <br />
           <br />
@@ -112,7 +112,7 @@ export default function AboutUs() {
           vulnerability.
           <br />
           <br />
-          The goal is to create a live web application that shows current and
+          The goal is to create a 'live' web application that shows current and
           upcoming events, and aspires to become the go-to resource for those
           seeking help, as well as for organizations managing these critical
           services.
@@ -131,7 +131,15 @@ export default function AboutUs() {
           <br />
           <br />
           The Drop-In Meals feature is powered by a custom-built database that I
-          am currently maintaining and updating manually.
+          am currently maintaining and updating. A large portion of the data was
+          sourced from the{' '}
+          <a className='link' href='https://tdin.ca/resource.php?id=766'>
+            TDIN Drop-In Resource List
+          </a>
+          , which was last updated on March 13, 2024 (according to the
+          document). The static nature of this document means information can
+          become outdated, so please verify with the service provider directly.
+          I am exploring potential solutions to address this issue.
           <br />
           <br />
           For more information, check out my{' '}
@@ -169,12 +177,12 @@ export default function AboutUs() {
             </li>
             <br />
             <li className='about__list-item'>
-              Partnerships with more shelters and meal providers to ensure
-              comprehensive coverage.
+              Explore potential partnerships with more shelters and meal
+              providers to ensure comprehensive and accurate coverage.
             </li>
             <br />
             <li className='about__list-item'>
-              Implementation of user feedback to refine and perfect our
+              Implementation of user feedback to refine and perfect the
               platform.
             </li>
             {/* <li>Food</li>
@@ -233,7 +241,7 @@ export default function AboutUs() {
           <div className='mission__div-inner'>
             <div className='mission__div-inner-container-1 hidden-about-us slide-right'>
               <h2 className='mission__div-h2'>
-                Modernizing Shelter Access in the Heart of Toronto{' '}
+                Modernizing Access in the Heart of Toronto{' '}
               </h2>
               <img
                 loading='lazy'

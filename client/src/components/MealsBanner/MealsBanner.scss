@@ -14,12 +14,6 @@
   z-index: -1;
   overflow: hidden;
 
-  &:hover {
-    filter: brightness(0.75);
-    text-decoration: underline;
-    transition: all 1s ease;
-  }
-
   @include mobile {
     padding: 0.5rem 0.77rem;
   }
@@ -29,7 +23,7 @@
   }
 
   @include desktop {
-    padding: 0.5rem;
+    // padding: 0.5rem;
   }
 }
 
@@ -38,6 +32,14 @@
   background-color: #ffcc00;
   padding: 0.25rem 1.5rem;
   border-bottom: 1px solid #000;
+  transition: all 0.3s ease;
+
+  &:hover {
+    // filter: saturate(0.5);
+    background-color: #c59e00;
+    // text-decoration: underline;
+    transition: all 0.3s ease;
+  }
 }
 
 .meals-banner-subheader {

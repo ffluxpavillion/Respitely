@@ -3,15 +3,40 @@
 @use '../../partials/global' as *;
 @use '../../partials/variables' as *;
 
-.parallax3 {
+.parallax3-mobile {
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
   z-index: -3;
   position: relative;
 
   @include mobile {
+    zoom: 0.45;
+    height: 50vh;
+  }
+
+  @include tablet {
+    // zoom: .45;
+
+    height: 100vh;
+  }
+
+  @include desktop {
+    height: 900px;
+  }
+}
+
+.parallax3 {
+  height: 1200px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -2;
+  position: relative;
+
+  @include mobile {
     height: 33rem;
+    position: relative;
+    z-index: -2;
   }
 
   @include tablet {
@@ -20,7 +45,7 @@
   }
 
   @include desktop {
-    height: 900px;
+    height: 100vh;
     background-attachment: fixed;
   }
 }

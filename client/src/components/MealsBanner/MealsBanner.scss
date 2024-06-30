@@ -21,10 +21,6 @@
   @include tablet {
     padding: 0.5rem;
   }
-
-  @include desktop {
-    // padding: 0.5rem;
-  }
 }
 
 .meals-banner-header {
@@ -36,7 +32,6 @@
 
   &:hover {
     // filter: saturate(0.5);
-    background-color: #c59e00;
     // text-decoration: underline;
     transition: all 0.3s ease;
   }

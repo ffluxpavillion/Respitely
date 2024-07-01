@@ -49,7 +49,7 @@ export default function AboutUs() {
   const items = [
     {
       key: '1',
-      label: '🏠 WHAT IS SAFEHAVENTO?',
+      label: '🏠 WHAT IS RESPITELY·TO?',
       children: (
         <p className='mission__div-text'>
           This is a platform designed to help individuals who are homeless or at
@@ -84,7 +84,7 @@ export default function AboutUs() {
       label: '💡 THE SOLUTION',
       children: (
         <p className='mission__div-text'>
-          SafeHavenTO is a platform that provide the latest updates for shelter
+          Respitely is a platform that provide the latest updates for shelter
           vacancies, and maps out meal schedules across the city.
           <br />
           <br />
@@ -208,8 +208,8 @@ export default function AboutUs() {
           I'd love to hear from you!
           <br />
           <br />
-          Whether you have questions about SafeHavenTO, feedback, or just want
-          to connect, feel free to reach out. Any constructive feedback on how I
+          Whether you have questions about Respitely, feedback, or just want to
+          connect, feel free to reach out. Any constructive feedback on how I
           can improve this platform is wholeheartedly welcomed.
           <br />
           <br />

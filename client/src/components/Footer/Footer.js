@@ -18,7 +18,7 @@ export default function Footer() {
 
       <footer className='footer'>
         <div className='footer-left'>
-          <h3 className='footer-brand'>SAFEHAVENTO</h3>
+          <h3 className='footer-brand'>RESPITELY·TO</h3>
           <div className='footer__list'>
             <ul className='footer__list-ul'>
               <li className='footer__list-li'>

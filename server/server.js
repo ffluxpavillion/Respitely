@@ -60,6 +60,15 @@ app.use((req, res) => {
   res.send('This is not a valid route. Try <b>/shelters</b> instead.');
 });
 
+// redirect from safehavento.org to respitely.org
+app.use((req, res, next) => {
+  if (req.hostname === 'safehavento.org' || req.hostname === 'www.safehavento.org') {
+    res.redirect(301, 'https://respitely.org' + req.originalUrl);
+  } else {
+    next();
+  }
+});
+
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);
   console.log('Press CTRL + C to stop server');

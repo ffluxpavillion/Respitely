@@ -133,7 +133,11 @@ export default function AboutUs() {
           The Drop-In Meals feature is powered by a custom-built database that I
           am currently maintaining and updating. A large portion of the data was
           sourced from the{' '}
-          <a className='link' href='https://tdin.ca/resource.php?id=766'>
+          <a
+            className='link'
+            href='https://tdin.ca/resource.php?id=766'
+            aria-label='Link to TDIN Drop-In Resource List'
+          >
             TDIN Drop-In Resource List
           </a>
           , which was last updated on March 13, 2024 (according to the
@@ -146,6 +150,7 @@ export default function AboutUs() {
           <a
             className='link'
             href='https://github.com/ffluxpavillion/Respitely'
+            aria-label='Link to Respitely Github Repository'
           >
             GitHub repo.
           </a>
@@ -214,7 +219,11 @@ export default function AboutUs() {
           <br />
           <br />
           You can email me at{' '}
-          <a className='link' href='mailto:contact@respitely.org'>
+          <a
+            className='link'
+            href='mailto:contact@respitely.org'
+            aria-label='Send Mail to contact@respitely.org'
+          >
             contact@respitely.org
           </a>{' '}
           or connect with me on{' '}
@@ -223,6 +232,7 @@ export default function AboutUs() {
             href='https://www.linkedin.com/in/arjunsahjpaul/'
             target='_blank'
             rel='noreferrer'
+            aria-label='Link to Founder LinkedIn Profile'
           >
             LinkedIn
           </a>{' '}

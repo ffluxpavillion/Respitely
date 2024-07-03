@@ -1,3 +1,6 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Disallow:
+Disallow: /shelters
+Disallow: /api/maps-key
+Sitemap: https://respitely.org/sitemap.xml

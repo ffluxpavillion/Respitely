@@ -11,11 +11,6 @@ import { Link } from 'react-router-dom';
 export default function Footer() {
   return (
     <>
-      <div
-        className='hero'
-        style={{ backgroundImage: `url(${FooterImage})` }}
-      />
-
       <footer className='footer'>
         <div className='footer-left'>
           <h3 className='footer-brand'>RESPITELY·TO</h3>
@@ -105,12 +100,11 @@ export default function Footer() {
               <FontAwesomeIcon icon={faEnvelope} />
             </a>
           </div>
-          {/* <BuyMeACoffee /> */}
         </div>
       </footer>
       <div className='footer-bottom'>
         <span className='copyright-disclaimer'>
-          &copy; 2024 SafeHavenTO. All rights reserved.
+          &copy; 2024 Respitely. All rights reserved.
         </span>
       </div>
     </>

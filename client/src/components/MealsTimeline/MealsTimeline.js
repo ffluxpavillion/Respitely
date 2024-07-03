@@ -134,6 +134,7 @@ const MealsTimeline = () => {
       }
     }
   }, [currentEvents, timelineItems]);
+  // console.log('CURRENTEVENTS=====', currentEvents);
 
   const getDirectionsUrl = (providerOfMeal, addressOfMeal) => {
     return `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
@@ -386,18 +387,26 @@ const MealsTimeline = () => {
                       <div className='mealsTimeline__meal-time'>
                         {item.timeOfMeal}
                       </div>
+                      <aside className='mealsTimeline-accessibility-div'>
+                        <div className='mealsTimeline-accessibility-icon'>{item.wheelchair_accessible ? '♿️' : ''}</div>
+                        <div className='mealsTimeline-accessibility-icon'>{item.service_dog_allowed ? '🦮' : ''}</div>
+
+                      </aside>
                       <br />
-                      <div className='mealsTimeline__meal-provider'>
-                        🏛️{' '}
-                        <p className='daily-timeline-text'>
-                          {item.providerOfMeal}
-                        </p>
-                      </div>
-                      <div className='mealsTimeline__meal-address'>
-                        📍{' '}
-                        <p className='daily-timeline-text'>
-                          {item.addressOfMeal}
-                        </p>
+
+                      <div className='mealsTimeline-lower'>
+                        <div className='mealsTimeline__meal-provider'>
+                          🏛️
+                          <p className='daily-timeline-text'>
+                            {item.providerOfMeal}
+                          </p>
+                        </div>
+                        <div className='mealsTimeline__meal-address'>
+                          📍{' '}
+                          <p className='daily-timeline-text'>
+                            {item.addressOfMeal}
+                          </p>
+                        </div>
                       </div>
                     </div>
                     <button

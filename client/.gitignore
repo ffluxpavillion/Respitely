@@ -29,3 +29,5 @@ yarn-error.log*
 # local files
 /src/components/ParallaxInfoCard
 /src/assets/images/PlaceCard.png
+/src/components/MealsTimeLine2
+/src/components/MealsTimeLineChrono

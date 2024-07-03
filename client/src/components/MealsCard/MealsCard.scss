@@ -21,12 +21,12 @@
     // border-radius: 30px;
     background-color: #aaa0b009;
     min-height: fit-content;
-    margin: 5rem 0;
+    margin: 1.25rem 0;
     padding: 2rem 1rem;
   }
 
   @include tablet {
-    margin: 5rem 1rem 1rem 1.25rem;
+    margin: 1rem 1rem 1rem 1.25rem;
     padding: 0rem 3rem 2.5rem 3rem;
     box-shadow:
       0 5px 10px rgba(154, 160, 185, 0.05),
@@ -34,7 +34,7 @@
   }
 
   @include desktop {
-    margin: 3rem 1.25rem;
+    margin: 1.5rem 1.25rem 1.25rem 1.25rem;
     padding: 0rem 2.5rem 2.5rem 2.5rem;
     box-shadow:
       0 5px 10px rgba(154, 160, 185, 0.05),
@@ -123,6 +123,5 @@
     transition: all 0.4s ease-in-out;
     background-color: white;
     color: black;
-
   }
 }

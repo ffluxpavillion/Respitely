@@ -1,4 +1,4 @@
-# Respitely·TO
+# Respitely
 A full-stack & responsive web application, designed to help those experiencing homelessness in finding nearby shelters based on their individual needs and the latest updates from locations around the city.
 
 This app was built using React & Express.js, and leverages data from the City of Toronto's [Daily Shelter & Overnight Service Occupancy & Capacity API](https://open.toronto.ca/dataset/daily-shelter-overnight-service-occupancy-capacity/).
@@ -36,6 +36,7 @@ Check it out live!
 <img src = "https://github.com/ffluxpavillion/SafeHavenTO/blob/master/client/src/assets/screenshots/Respitely_landing.png">
 <img src = "https://github.com/ffluxpavillion/SafeHavenTO/blob/master/client/src/assets/screenshots/Respitely_menu.png">
 <img src = "https://github.com/ffluxpavillion/SafeHavenTO/blob/master/client/src/assets/screenshots/Respitely_parallax-1.png">
+<img src = "https://github.com/ffluxpavillion/SafeHavenTO/blob/master/client/src/assets/screenshots/Respitely_shelters-card-update.png">
 <img src = "https://github.com/ffluxpavillion/SafeHavenTO/blob/master/client/src/assets/screenshots/Respitely_shelters-card.png">
 <img src = "https://github.com/ffluxpavillion/SafeHavenTO/blob/master/client/src/assets/screenshots/Respitely_parallax-2.png">
 <img src = "https://github.com/ffluxpavillion/SafeHavenTO/blob/master/client/src/assets/screenshots/Respitely_resources.png">

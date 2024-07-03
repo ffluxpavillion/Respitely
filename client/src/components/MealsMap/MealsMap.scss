@@ -37,11 +37,16 @@
     background-color: #181818;
     color: white;
     font-family: 'Junction Bold', 'Toronto Subway Bold';
+    // padding: 1rem 0;
+
+    // @include mobile {
+    //   padding: 2rem 0.5rem;
+
+    // }
   }
 
   .ant-drawer-title {
     font-size: 1.5rem;
-    padding-top: 3rem;
     font-weight: 800;
     text-align: center;
     color: white;
@@ -71,17 +76,14 @@
 
     color: white;
     font-size: 2rem;
-    margin: 1rem;
     width: 3rem;
     height: 3rem;
     border: 1px solid white;
-    margin: 1rem;
     border-radius: 50px;
     padding: 0.8rem;
 
     &:hover {
       background-color: white;
-      margin: 1rem;
       color: #181818;
       border-radius: 50px;
     }
@@ -224,6 +226,7 @@
 
 .mealsMap-collapse-panel {
   width: 100%;
+  padding: 0.3rem 0.5rem !important;
 
   background-color: #20242c;
   place-self: center;

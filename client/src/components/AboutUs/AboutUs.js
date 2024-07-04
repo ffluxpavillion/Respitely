@@ -145,7 +145,7 @@ export default function AboutUs() {
           For more information, check out my{' '}
           <a
             className='link'
-            href='https://github.com/ffluxpavillion/SafeHavenTO'
+            href='https://github.com/ffluxpavillion/Respitely'
           >
             GitHub repo.
           </a>
@@ -214,8 +214,8 @@ export default function AboutUs() {
           <br />
           <br />
           You can email me at{' '}
-          <a className='link' href='mailto:contact@safehavento.org'>
-            contact@safehavento.org
+          <a className='link' href='mailto:contact@respitely.org'>
+            contact@respitely.org
           </a>{' '}
           or connect with me on{' '}
           <a
@@ -247,7 +247,7 @@ export default function AboutUs() {
                 loading='lazy'
                 className='mission__div-logo'
                 src={Logo}
-                alt='SafeHavenTO Logo'
+                alt='Respitely Logo'
               />
             </div>
             <br />

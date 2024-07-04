@@ -6,7 +6,7 @@ import useIsMobile from '../../hooks/useIsMobile';
 export default function Parallax2() {
   const isMobile = useIsMobile();
   const parallaxRef = useRef(null);
-  const initialOffsetY = 600;
+  const initialOffsetY = 650;
   useEffect(() => {
     const handleScroll = () => {
       if (parallaxRef.current) {

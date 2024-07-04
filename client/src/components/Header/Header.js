@@ -77,7 +77,7 @@ export default function Header() {
           className={`navbar__burger menu  ${menuOpen ? 'active' : ''}`}
           onClick={toggleMenu}
         >
-          <div className='active-menu__fullscreen'>
+          <div className='active-menu__fullscreen' aria-label='Toggle Nav Menu'>
             <span className='navbar__burger-bar bar'></span>
             <span className='navbar__burger-bar bar'></span>
             <span className='navbar__burger-bar bar'></span>

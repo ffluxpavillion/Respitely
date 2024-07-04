@@ -18,17 +18,21 @@ export default function EmergencyBanner() {
         <br />
         If you are in need of emergency shelter space, please call the City of
         Toronto’s Central Intake line at
-        <a href='tel:4163384766' className='phone-link'>
+        <a href='tel:4163384766' className='phone-link' aria-label='4163384766'>
           {' '}
           416-338-4766{' '}
         </a>
         or
-        <a href='tel:18773383398' className='phone-link'>
+        <a
+          href='tel:18773383398'
+          className='phone-link'
+          aria-label='18773383398'
+        >
           {' '}
           1-877-338-3398.{' '}
         </a>
         For Street Outreach Services, please call
-        <a href='tel:311' className='phone-link'>
+        <a href='tel:311' className='phone-link' aria-label='311'>
           {' '}
           311
         </a>

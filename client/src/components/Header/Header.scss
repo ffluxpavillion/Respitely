@@ -38,7 +38,7 @@ li {
   z-index: 1001;
   @include mobile {
     justify-content: space-between;
-    padding: 1rem 1rem 0.25rem 1rem;
+    padding: 0.2rem 1rem 0rem 1rem;
   }
 
   @include tablet {
@@ -198,8 +198,9 @@ li {
   padding-right: 3.5rem;
 
   @include mobile {
-    top: 5.5rem;
+    top: 5rem;
     gap: 1.9rem;
+    padding-right: 2.4rem;
   }
 
   @include tablet {

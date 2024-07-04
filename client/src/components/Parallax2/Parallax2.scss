@@ -3,8 +3,6 @@
 @use '../../partials/global' as *;
 @use '../../partials/variables' as *;
 
-
-
 .parallax2-mobile {
   background-position: center;
   background-repeat: no-repeat;
@@ -12,9 +10,8 @@
   position: relative;
 
   @include mobile {
-
-    zoom: .45;
-    height:50vh;
+    zoom: 0.45;
+    height: 50vh;
   }
 
   @include tablet {

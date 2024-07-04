@@ -307,6 +307,7 @@ export default function MealsMap() {
                   target='_blank'
                   rel='noopener noreferrer'
                   className='btn--Directions-anchor'
+                  aria-label='Get Directions to Drop-In Location'
                 >
                   <button className='popup__button-directions drawer-button'>
                     <span>
@@ -338,6 +339,7 @@ export default function MealsMap() {
                   <a
                     href='tel:{selectedPlace.phone}'
                     className='MealsMap-phone-link'
+                    aria-label='Phone Number'
                   >
                     {' '}
                     {selectedPlace.phone}{' '}
@@ -350,6 +352,7 @@ export default function MealsMap() {
                   className='MealsMap-site-link'
                   target='_blank'
                   href={selectedPlace.website}
+                  aria-label='Website Link'
                 >
                   <span className='drawer__upper-text-right MealsMap-site-link'>
                     {selectedPlace.website}

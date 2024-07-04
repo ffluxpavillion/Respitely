@@ -46,6 +46,7 @@ export default function Resources() {
               className='link'
               target='_blank'
               href='https://communityfridgesto.org/'
+              aria-label="Community Fridges Toronto"
             >
               <div className='grid__item hidden-resources'>
                 <h4 className='grid__item-header'>Community Fridges Toronto</h4>
@@ -59,6 +60,7 @@ export default function Resources() {
               className='link'
               target='_blank'
               href='https://www.toogoodtogo.com/en-ca'
+              aria-label="Too Good To Go"
             >
               <div className='grid__item hidden-resources'>
                 <h4 className='grid__item-header'>Too Good To Go</h4>
@@ -72,6 +74,7 @@ export default function Resources() {
               className='link'
               target='_blank'
               href='https://www.toronto.ca/community-people/employment-social-support/housing-support/financial-support-for-renters/toronto-rent-bank/'
+              aria-label="Toronto Rent Bank"
             >
               <div className='grid__item hidden-resources'>
                 <h4 className='grid__item-header'>Toronto Rent Bank</h4>
@@ -84,6 +87,7 @@ export default function Resources() {
               className='link'
               target='_blank'
               href='https://everydayconnect.ca/legal/'
+              aria-label="Everyday Legal Services"
             >
               <div className='grid__item hidden-resources'>
                 <h4 className='grid__item-header'>Legal Resoures</h4>
@@ -98,6 +102,7 @@ export default function Resources() {
               className='link'
               target='_blank'
               href='https://www.icha-toronto.ca/shelter-health-services-map'
+              aria-label="Toronto Homelessness Health Services Map"
             >
               <div className='grid__item hidden-resources'>
                 <h4 className='grid__item-header'>
@@ -109,7 +114,12 @@ export default function Resources() {
                 </p>
               </div>
             </a>
-            <a className='link' target='_blank' href='https://srhrmap.ca/map'>
+            <a
+              className='link'
+              target='_blank'
+              href='https://srhrmap.ca/map'
+              aria-label="Sexual & Reproductive Health Services Map"
+            >
               <div className='grid__item hidden-resources'>
                 <h4 className='grid__item-header'>
                   Sexual & Reproductive Health Services Map
@@ -137,6 +147,7 @@ export default function Resources() {
               className='link'
               target='_blank'
               href='https://benefitswayfinder.org/'
+              aria-label="Benefits Wayfinder"
             >
               <div className='grid__item hidden-resources'>
                 <h4 className='grid__item-header'>Benefits Wayfinder</h4>

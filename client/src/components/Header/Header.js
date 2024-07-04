@@ -66,7 +66,12 @@ export default function Header() {
     >
       <div className='header__container'>
         <h3 className='header-brand'>
-          <a href='https://www.safehavento.org'>RESPITELY·TO</a>
+          <a
+            href='https://www.respitely.org'
+            aria-label='Link to Respitely Homepage'
+          >
+            RESPITELY·TO
+          </a>
         </h3>
         <div
           className={`navbar__burger menu  ${menuOpen ? 'active' : ''}`}
@@ -83,40 +88,40 @@ export default function Header() {
         <div className='navbar__div'>
           <ul className={`navbar__div-ul navMenu ${menuOpen ? 'active' : ''}`}>
             <li onClick={handleClick}>
-              <Link to='/#landing'>
+              <Link to='/#landing' aria-label='Link to Respitely Homepage'>
                 <h3 className='navbar__div-li nav-stairs__home'>Home ⟩⟩</h3>
               </Link>
             </li>
             <li onClick={handleClick}>
-              <Link to='/#shelters'>
+              <Link to='/#shelters' aria-label='Link to Shelters'>
                 <h3 className='navbar__div-li nav-stairs__shelters'>
                   SHELTERS ⟩⟩
                 </h3>
               </Link>
             </li>
             <li onClick={handleClick}>
-              <Link to='/#dropInMeals'>
+              <Link to='/#dropInMeals' aria-label='Link to Drop-In Meals'>
                 <h3 className='navbar__div-li nav-stairs__about-us'>
                   DROP-IN MEALS ⟩⟩
                 </h3>
               </Link>
             </li>
             <li onClick={handleClick}>
-              <Link to='/drop-in-map'>
+              <Link to='/drop-in-map' aria-label='Link to Drop-In Map'>
                 <h3 className='navbar__div-li nav-stairs__about-us'>
                   EXPLORE DROP-IN MAP ⟩⟩
                 </h3>
               </Link>
             </li>
             <li onClick={handleClick}>
-              <Link to='/#resources'>
+              <Link to='/#resources' aria-label='Link to Resources'>
                 <h3 className='navbar__div-li nav-stairs__resources'>
                   RESOURCES ⟩⟩
                 </h3>
               </Link>
             </li>
             <li onClick={handleClick}>
-              <Link to='/#aboutUs'>
+              <Link to='/#aboutUs' aria-label='Link to About Us'>
                 <h3 className='navbar__div-li nav-stairs__about-us'>
                   ABOUT US ⟩⟩
                 </h3>
@@ -129,6 +134,7 @@ export default function Header() {
                   href='https://www.linkedin.com/in/arjunsahjpaul/ '
                   target='_blank'
                   rel='noreferrer'
+                  aria-label='Link to Founder LinkedIn Profile'
                 >
                   <FontAwesomeIcon icon={faLinkedin} />
                 </a>
@@ -136,9 +142,10 @@ export default function Header() {
               <li className='navbar__socials-item'>
                 <a
                   className='navbar__socials-link'
-                  href='https://github.com/ffluxpavillion/SafeHavenTO'
+                  href='https://github.com/ffluxpavillion/Respitely'
                   target='_blank'
                   rel='noreferrer'
+                  aria-label='Link to Github Repository'
                 >
                   <FontAwesomeIcon icon={faGithub} />
                 </a>
@@ -146,9 +153,10 @@ export default function Header() {
               <li className='navbar__socials-item'>
                 <a
                   className='navbar__socials-link'
-                  href='mailto:contact@safehavento.org'
+                  href='mailto:contact@respitely.org'
                   target='_blank'
                   rel='noreferrer'
+                  aria-label='Link to Email Respitely'
                 >
                   <FontAwesomeIcon icon={faEnvelope} />
                 </a>

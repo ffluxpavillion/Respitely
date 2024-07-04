@@ -17,32 +17,56 @@ export default function Footer() {
           <div className='footer__list'>
             <ul className='footer__list-ul'>
               <li className='footer__list-li'>
-                <a href='#home' className='footer__list-a'>
+                <a
+                  href='#home'
+                  className='footer__list-a'
+                  aria-label='Link to Respitely Homepage'
+                >
                   <h3 className='footer__item'>Home</h3>
                 </a>
               </li>
               <li className='footer__list-li'>
-                <a href='#shelters' className='footer__list-a'>
+                <a
+                  href='#shelters'
+                  className='footer__list-a'
+                  aria-label='Link to Shelters'
+                >
                   <h3 className='footer__item'>Shelters</h3>
                 </a>
               </li>
               <li className='footer__list-li'>
-                <a href='#dropInMeals' className='footer__list-a'>
+                <a
+                  href='#dropInMeals'
+                  className='footer__list-a'
+                  aria-label='Link to Drop-In Meals'
+                >
                   <h3 className='footer__item'>Drop-In Meals</h3>
                 </a>
               </li>
               <li className='footer__list-li'>
-                <a href='/drop-in-map' className='footer__list-a'>
+                <a
+                  href='/drop-in-map'
+                  className='footer__list-a'
+                  aria-label='Link to Drop-In Map'
+                >
                   <h3 className='footer__item'>Explore Drop-In Map</h3>
                 </a>
               </li>
               <li className='footer__list-li'>
-                <a href='#resources' className='footer__list-a'>
+                <a
+                  href='#resources'
+                  className='footer__list-a'
+                  aria-label='Link to Resources'
+                >
                   <h3 className='footer__item'>Resources</h3>
                 </a>
               </li>
               <li className='footer__list-li'>
-                <a href='#aboutUs' className='footer__list-a'>
+                <a
+                  href='#aboutUs'
+                  className='footer__list-a'
+                  aria-label='Link to About Us'
+                >
                   <h3 className='footer__item'>About Us</h3>
                 </a>
               </li>
@@ -54,12 +78,20 @@ export default function Footer() {
               <br />
 
               <li className='footer__list-li'>
-                <Link to='/cookie-policy' className='footer__list-a'>
+                <Link
+                  to='/cookie-policy'
+                  className='footer__list-a'
+                  aria-label='Link to Cookie Policy'
+                >
                   <h3 className='footer__item legal-item'>Cookie Policy</h3>
                 </Link>
               </li>
               <li className='footer__list-li'>
-                <Link to='/terms-of-use' className='footer__list-a'>
+                <Link
+                  to='/terms-of-use'
+                  className='footer__list-a'
+                  aria-label='Link to Terms of Use'
+                >
                   <h3 className='footer__item legal-item'>Terms of Use</h3>
                 </Link>
               </li>
@@ -80,22 +112,25 @@ export default function Footer() {
               href='https://www.linkedin.com/in/arjunsahjpaul/ '
               target='_blank'
               rel='noreferrer'
+              aria-label='Link to Founder LinkedIn Profile'
             >
               <FontAwesomeIcon icon={faLinkedin} />
             </a>
             <a
               className='footer-right__social-links'
-              href='https://github.com/ffluxpavillion/SafeHavenTO'
+              href='https://github.com/ffluxpavillion/Respitely'
               target='_blank'
               rel='noreferrer'
+              aria-label='Link to GitHub Repository'
             >
               <FontAwesomeIcon icon={faGithub} />
             </a>
             <a
               className='footer-right__social-links'
-              href='mailto:contact@safehavento.org'
+              href='mailto:contact@respitely.org'
               target='_blank'
               rel='noreferrer'
+              aria-label='Link to Email Respitely'
             >
               <FontAwesomeIcon icon={faEnvelope} />
             </a>

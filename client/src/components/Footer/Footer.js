@@ -130,7 +130,7 @@ export default function Footer() {
               href='mailto:contact@respitely.org'
               target='_blank'
               rel='noreferrer'
-              aria-label='Link to Email Respitely'
+              aria-label='Send Mail to contact@respitely.org'
             >
               <FontAwesomeIcon icon={faEnvelope} />
             </a>

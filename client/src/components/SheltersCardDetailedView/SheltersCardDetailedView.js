@@ -9,7 +9,7 @@ export default function SheltersCardDetailedView({ goHere }) {
   const details = [
     { label: 'Organization Name', value: goHere.ORGANIZATION_NAME },
     { label: 'Shelter Group', value: goHere.SHELTER_GROUP },
-    { label: 'Overnight Service Type', value: goHere.OVERNIGHT_SERVICE_TYPE },
+    { label: 'Overnight Service', value: goHere.OVERNIGHT_SERVICE_TYPE },
     { label: 'Sector', value: goHere.SECTOR },
     { label: 'Capacity Type', value: goHere.CAPACITY_TYPE },
     { label: 'Program Model', value: goHere.PROGRAM_MODEL },

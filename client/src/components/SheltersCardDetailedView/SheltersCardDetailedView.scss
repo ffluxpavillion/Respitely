@@ -20,6 +20,7 @@
 
   @include mobile {
     height: 36vh;
+    padding: 0.5rem 1rem 2rem 1rem;
   }
 
   @include tablet {
@@ -48,9 +49,11 @@
 
     @include mobile {
       font-size: 1rem;
-      text-align: center;
+      width: 35vw;
+      text-align: left;
       margin-right: 0rem;
-      margin-left: 2rem;
+      border-right: 2px solid #6232c1;
+      // margin-left: 1rem;
     }
 
     @include tablet {
@@ -73,7 +76,6 @@
     // text-align: left;
     width: 50vw;
     color: white;
-    padding-left: 0.6rem;
     align-self: center;
     white-space: pre-line;
     font-family: 'Avenir Next';
@@ -81,15 +83,21 @@
     line-height: 1rem;
     letter-spacing: 0.3px;
     font-variant-caps: all-petite-caps;
-    border-left: 3px solid #6232c1;
     text-align: left;
 
     @include mobile {
-      margin-left: -1rem;
+      // padding-left: 0.3rem;
+    }
+
+    @include tablet {
+      border-left: 3px solid #6232c1;
+      padding-left: 0.6rem;
     }
 
     @include desktop {
       font-size: 1.2rem;
+      border-left: 3px solid #6232c1;
+      padding-left: 0.6rem;
     }
   }
 }

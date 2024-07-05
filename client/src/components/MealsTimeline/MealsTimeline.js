@@ -396,7 +396,7 @@ const MealsTimeline = () => {
 
                       <div className='mealsTimeline-lower'>
                         <div className='mealsTimeline__meal-provider'>
-                          🏛️
+                          {/* 🏛️ */}
                           <p className='daily-timeline-text'>
                             {item.providerOfMeal}
                           </p>

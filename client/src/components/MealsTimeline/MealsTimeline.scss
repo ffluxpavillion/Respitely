@@ -152,12 +152,8 @@
     // padding: 1rem;
   }
   &:hover {
-    // background-color: darken(#5271b3, 15%);
-    transform: translateY(-1px);
-    scale: 1;
-    // border: 1px solid #5271b3;
+    background-color: darken(#5271b3, 19%);
     transition: all 0.5s ease;
-    filter: brightness(1);
   }
 }
 
@@ -223,6 +219,10 @@
 .mealsTimeline__meal-type {
   font-family: 'DT Black';
   font-size: 1.3rem;
+
+  @include mobile {
+    font-size: 1.15rem;
+  }
 }
 
 .mealsTimeline__meal-time {
@@ -233,6 +233,7 @@
 
   @include mobile {
     font-weight: 400;
+    font-size: 1rem;
   }
 }
 
@@ -246,6 +247,10 @@
 
 .mealsTimeline-accessibility-icon {
   scale: 1.3;
+
+  @include mobile {
+    scale: 1;
+  }
 }
 
 .mealsTimeline__meal-provider {
@@ -266,7 +271,6 @@
 
   @include mobile {
     margin-left: 0.3rem;
-
   }
 }
 

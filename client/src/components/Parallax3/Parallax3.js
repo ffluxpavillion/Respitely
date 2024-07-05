@@ -22,22 +22,29 @@ export default function Parallax3() {
   }, [initialOffsetY]);
 
   return (
+    // <>
+    //   {isMobile ? (
+    //     <div
+    //       className='parallax3-mobile'
+    //       style={{
+    //         backgroundImage: `url(${ParallaxImage3})`,
+    //         backgroundPositionY: `${initialOffsetY}px`,
+    //       }}
+    //       ref={parallaxRef}
+    //     />
+    //   ) : (
+    //     <div
+    //       className='parallax3'
+    //       style={{ backgroundImage: `url(${ParallaxImage3})` }}
+    //     />
+    //   )}
+    // </>
+
     <>
-      {isMobile ? (
-        <div
-          className='parallax3-mobile'
-          style={{
-            backgroundImage: `url(${ParallaxImage3})`,
-            backgroundPositionY: `${initialOffsetY}px`,
-          }}
-          ref={parallaxRef}
-        />
-      ) : (
-        <div
-          className='parallax3'
-          style={{ backgroundImage: `url(${ParallaxImage3})` }}
-        />
-      )}
+      <div
+        className='parallax3'
+        style={{ backgroundImage: `url(${ParallaxImage3})` }}
+      />
     </>
   );
 }

@@ -12,9 +12,9 @@ export default function TermsOfUse() {
       label: <h2 className='terms-section-header'>1. Acceptance of Terms</h2>,
       children: (
         <p className='terms-paragraph'>
-          SafeHavenTO ("we", "us", or "our") provides the website
-          https://www.safehavento.org (the "Site" or the "Web-App"), and the
-          SafeHavenTO mobile application (the "App"), collectively referred to
+          Respitely ("we", "us", or "our") provides the website
+          https://www.respitely.org (the "Site" or the "Web-App"), and the
+          Respitely mobile application (the "App"), collectively referred to
           as the "Services". These Terms of Use govern your access to and use of
           our Services. By accessing or using the Services, you agree to be
           bound by these Terms and all terms incorporated by reference. If you
@@ -27,7 +27,7 @@ export default function TermsOfUse() {
       label: <h2 className='terms-section-header'>2. Services Description</h2>,
       children: (
         <p className='terms-paragraph'>
-          SafeHavenTO is a platform designed to assist individuals who are
+          Respitely is a platform designed to assist individuals who are
           either experiencing homelessness or at risk of becoming homeless in
           Toronto by providing information on nearby shelters, free meals, legal
           services, and other essential resources. Our Services display
@@ -206,7 +206,7 @@ export default function TermsOfUse() {
             </li>
             <li className='terms-list-item'>
               Misuse of Information: Users may not use information obtained from
-              SafeHavenTO for purposes other than seeking shelter or essential
+              Respitely for purposes other than seeking shelter or essential
               resources.
             </li>
             <li className='terms-list-item'>
@@ -294,7 +294,7 @@ export default function TermsOfUse() {
       children: (
         <p className='terms-paragraph'>
           Our Services may contain links to third-party websites or services
-          that are not owned or controlled by SafeHavenTO. We have no control
+          that are not owned or controlled by Respitely. We have no control
           over, and assume no responsibility for, the content, privacy policies,
           or practices of any third-party websites or services.
           <br />
@@ -444,7 +444,7 @@ export default function TermsOfUse() {
       children: (
         <p className='terms-paragraph'>
           To the maximum extent permitted by applicable law, in no event shall
-          SafeHavenTO or its affiliates, agents, directors, employees,
+          Respitely or its affiliates, agents, directors, employees,
           suppliers, or licensors be liable for any indirect, punitive,
           incidental, special, consequential, or exemplary damages, including
           damages for loss of profits, goodwill, use, data, or other intangible
@@ -461,13 +461,13 @@ export default function TermsOfUse() {
       ),
       children: (
         <p className='terms-paragraph'>
-          SafeHavenTO strives to provide accurate and up-to-date information on
+          Respitely strives to provide accurate and up-to-date information on
           shelter availability based on data from the City of Toronto and other
           sources. However, we cannot guarantee the accuracy, completeness, or
           real-time availability of shelter accommodations. Shelter capacities
           and availability are subject to change frequently. Users are advised
           to contact shelters directly to confirm current availability.
-          SafeHavenTO is not liable for any discrepancies or issues that may
+          Respitely is not liable for any discrepancies or issues that may
           arise from relying on the information provided through our platform.
         </p>
       ),
@@ -500,8 +500,8 @@ export default function TermsOfUse() {
       children: (
         <p className='terms-paragraph'>
           If you have any questions about these Terms, please contact us at{' '}
-          <a href='mailto:contact@safehavento.org' className='terms-link'>
-            contact@safehavento.org
+          <a href='mailto:contact@respitely.org' className='terms-link'>
+            contact@respitely.org
           </a>
           .
         </p>
@@ -521,7 +521,7 @@ export default function TermsOfUse() {
     <>
     <div className="terms-of-use">
       <h1 className="terms-header">Terms of Use</h1>
-      <p className="terms-last-updated">Last Updated: May 20, 2024</p>
+      <p className="terms-last-updated">Last Updated: Jul 6, 2024</p>
 
       <Button onClick={handleToggleAll} className="toggle-all-button">
         {activeKeys.length === termsOfUse.length ? 'Collapse All' : 'Expand All'}

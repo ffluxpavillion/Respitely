@@ -25,12 +25,8 @@ export default function MealsBanner() {
       {isOpen && (
         <div className='meals-banner-content'>
           <i>
-            Meals Timeline & MealsMap is still very much under development & may
-            contain inaccuracies/bugs. I am not directly associated with any of
-            these services and therefore cannot guarantee the accuracy of any
-            info below, or elsewhere on this site as they may have made changes
-            to their services. I am working hard towards improving this app for
-            you all, and I am truly grateful for your patience.
+            Meals Timeline & MealsMap is still under development & may contain
+            inaccuracies & bugs.
           </i>
           <br />
           <br />
@@ -41,9 +37,8 @@ export default function MealsBanner() {
           <br />
           <br />
           You can check the MealsMap below as a head start, or check the
-          provider's official website.
-          <br />
-          These updates are for informational purposes only.
+          provider's official website. These updates are for informational
+          purposes only.
         </div>
       )}
     </div>

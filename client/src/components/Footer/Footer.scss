@@ -50,14 +50,14 @@
 }
 
 .footer-brand {
-  font-size: 2rem;
+  font-size: 2.4rem;
   display: flex;
   justify-content: flex-start;
   color: white;
+  font-family: 'Toronto Subway Bold';
 
   @include mobile {
-    font-size: 1.5rem;
-    // display: none;
+    font-size: 1.75rem;
     gap: 1rem;
   }
 }
@@ -270,5 +270,6 @@
   text-align: center;
   width: max-content;
   font-variant: all-small-caps;
-  color: #858585;
+  color: #ffffff;
+  margin-bottom: 1rem;
 }

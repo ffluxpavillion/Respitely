@@ -134,13 +134,13 @@ export default function CookiePolicy() {
     <>
       <div className='cookie--policy'>
         <h1 className='cookie-header'>Cookie Policy</h1>
-        <p className='cookie-date'>Last updated: May 20, 2024</p>
+        <p className='cookie-date'>Last updated: July 6, 2024</p>
         <br />
         <p className='cookie-text'>
-          This Cookie Policy explains how SafeHavenTO uses cookies and similar
+          This Cookie Policy explains how Respitely uses cookies and similar
           technologies to recognize you when you visit our website at{' '}
-          <a className='cookie-link' href='https://www.safehavento.org'>
-            https://www.safehavento.org
+          <a className='cookie-link' href='https://www.respitely.org'>
+            https://www.respitely.org
           </a>{' '}
           ("Website"). It explains what these technologies are and why we use
           them, as well as your rights to control our use of them.
@@ -164,8 +164,8 @@ export default function CookiePolicy() {
           </ul>
           <br />
             In the context of this policy, 'we', 'our', and 'us' refers to
-          safehavento.org and 'you' refers to you, as the user of this website.
-          By using safehavento.org, you accept our use of cookies in accordance
+          respitely.org and 'you' refers to you, as the user of this website.
+          By using respitely.org, you accept our use of cookies in accordance
           with this Cookie Policy. If you do not accept the use of cookies,
           please disable them as instructed in this Cookie Policy, so they are
           not downloaded to your device when you use our website. We reserve the
@@ -201,7 +201,7 @@ export default function CookiePolicy() {
         <p className='cookie-text'>
           If you have any questions about our use of cookies or other
           technologies, please email us at{' '}
-          <a className='cookie-link' href='mailto:contact@safehavento.org'>contact@safehavento.org</a>{' '}
+          <a className='cookie-link' href='mailto:contact@respitely.org'>contact@respitely.org</a>{' '}
         </p>
       </div>
     </>

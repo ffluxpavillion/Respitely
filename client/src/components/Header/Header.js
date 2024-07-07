@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import './Header.scss';
 import { HashLink as Link } from 'react-router-hash-link';
+import { Link as RouterLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
@@ -127,6 +128,21 @@ export default function Header() {
                 </h3>
               </Link>
             </li>
+            <br />
+            {/* <li onClick={handleClick}> */}
+            {/* <RouterLink to='/register' aria-label='Link to About Us'> */}
+            <h3 className='navbar__div-li nav-stairs__about-us'>
+              DROP-IN SIGNUP (<h6>UNDER DEVELOPMENT</h6>) ⟩⟩
+            </h3>
+            {/* </RouterLink> */}
+            {/* </li> */}
+            {/* <li onClick={handleClick}> */}
+            {/* <RouterLink to='/login' aria-label='Link to About Us'> */}
+            <h3 className='navbar__div-li nav-stairs__about-us'>
+              DROP-IN LOGIN (<h6>UNDER DEVELOPMENT</h6>) ⟩⟩
+            </h3>
+            {/* </RouterLink> */}
+            {/* </li> */}
             <div className='navbar__socials-container'>
               <li className='navbar__socials-item'>
                 <a

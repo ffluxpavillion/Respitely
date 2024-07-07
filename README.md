@@ -33,7 +33,7 @@ Check it out live!
 
 ## Screenshots:
 
-<!-- <img src = "https://github.com/ffluxpavillion/SafeHavenTO/blob/master/client/src/assets/screenshots/Respitely_landing.png">
+<img src = "https://github.com/ffluxpavillion/SafeHavenTO/blob/master/client/src/assets/screenshots/Respitely_landing.png">
 <img src = "https://github.com/ffluxpavillion/SafeHavenTO/blob/master/client/src/assets/screenshots/Respitely_menu.png">
 <img src = "https://github.com/ffluxpavillion/SafeHavenTO/blob/master/client/src/assets/screenshots/Respitely_parallax-1.png">
 <img src = "https://github.com/ffluxpavillion/SafeHavenTO/blob/master/client/src/assets/screenshots/Respitely_shelters-card.png">
@@ -42,4 +42,4 @@ Check it out live!
 <img src = "https://github.com/ffluxpavillion/SafeHavenTO/blob/master/client/src/assets/screenshots/Respitely_resources.png">
 <img src = "https://github.com/ffluxpavillion/SafeHavenTO/blob/master/client/src/assets/screenshots/Respitely_parallax-3.png">
 <img src = "https://github.com/ffluxpavillion/SafeHavenTO/blob/master/client/src/assets/screenshots/Respitely_about-us.png">
-<img src = "https://github.com/ffluxpavillion/SafeHavenTO/blob/master/client/src/assets/screenshots/Respitely_footer.png"> -->
+<img src = "https://github.com/ffluxpavillion/SafeHavenTO/blob/master/client/src/assets/screenshots/Respitely_footer.png">

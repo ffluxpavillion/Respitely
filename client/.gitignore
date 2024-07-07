@@ -31,3 +31,4 @@ yarn-error.log*
 /src/assets/images/PlaceCard.png
 /src/components/MealsTimeLine2
 /src/components/MealsTimeLineChrono
+/src/components/BuyMeACoffee

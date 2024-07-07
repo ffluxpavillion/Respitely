@@ -6,8 +6,9 @@
 .login-section {
   color: white;
   display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   height: 80vh;
-  justify-content: center;
   place-items: center;
   filter: contrast(0.8);
   position: relative;
@@ -31,10 +32,28 @@
     padding: 1rem;
     font-size: 1.4rem;
   }
-
 }
 
 .login-header {
   font-family: 'Toronto Subway Bold';
+}
 
+.login-upper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  place-items: center;
+}
+
+.login-lower {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  place-items: center;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }

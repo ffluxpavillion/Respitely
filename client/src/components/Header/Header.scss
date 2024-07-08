@@ -158,11 +158,8 @@ li {
         font-size: 1.3rem;
 
         &:active {
-          transition: all 0.4s ease-in-out;
-          background-color: white;
-          color: #cca6af;
-          border-radius: 0 40px 0 50px;
-          width: 100%;
+          text-decoration: underline;
+
         }
       }
 
@@ -181,13 +178,17 @@ li {
         // padding: 0.5rem 1rem 0.6rem 30rem;
 
         &:hover {
-          // transition: all 0.5s ease-in-out;
           text-decoration: underline;
-          // transition: all 0.5s ease;
-          animation: navFadeIn 4s ease-out 4s forwards;
         }
       }
     }
+  }
+}
+
+.coming-soon {
+
+  &:hover {
+    text-decoration: none;
   }
 }
 
@@ -355,7 +356,6 @@ li {
   .navMenu.active {
     visibility: visible;
     left: 0%;
-    top: 100%;
     height: 100%;
     justify-content: center;
     align-items: center;
@@ -364,6 +364,21 @@ li {
     -webkit-transition: all 0.3s ease-in-out; // main menu drop down speed
     align-items: flex-end;
     height: 100vh;
+
+    @include mobile {
+      top: 10%;
+
+    }
+
+    @include tablet {
+      top: 100%;
+
+    }
+
+    @include desktop {
+      top: 100%;
+
+    }
   }
 }
 

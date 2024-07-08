@@ -129,17 +129,20 @@ export default function Header() {
               </Link>
             </li>
             <br />
+            <h3 className='navbar__div-li coming-soon'>
+              (<h6>Coming Soon</h6>)
+            </h3>
             {/* <li onClick={handleClick}> */}
             {/* <RouterLink to='/register' aria-label='Link to About Us'> */}
-            <h3 className='navbar__div-li nav-stairs__about-us'>
-              DROP-IN SIGNUP (<h6>UNDER DEVELOPMENT</h6>) ⟩⟩
+            <h3 className='navbar__div-li coming-soon'>
+              <i>DROP-IN PROVIDER SIGNUP ⟩⟩</i>
             </h3>
             {/* </RouterLink> */}
             {/* </li> */}
             {/* <li onClick={handleClick}> */}
             {/* <RouterLink to='/login' aria-label='Link to About Us'> */}
-            <h3 className='navbar__div-li nav-stairs__about-us'>
-              DROP-IN LOGIN (<h6>UNDER DEVELOPMENT</h6>) ⟩⟩
+            <h3 className='navbar__div-li coming-soon'>
+              <i>DROP-IN PROVIDER LOGIN ⟩⟩</i>
             </h3>
             {/* </RouterLink> */}
             {/* </li> */}

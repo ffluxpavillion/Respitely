@@ -439,11 +439,11 @@ h3 {
   }
 
   @include tablet {
-    padding: 0.5rem;
+    padding: 0 0.5rem;
   }
 
   @include desktop {
-    padding: 0.5rem;
+    // padding: 0.5rem;
   }
 }
 
@@ -525,9 +525,8 @@ h3 {
 
   @include mobile {
     font-size: 1.1rem; // CULPRIT #5 - fixed
-    line-height: 1.5;
     align-items: center;
-    padding: 0.5rem 0rem;
+    padding: 0.3rem 0rem;
   }
   @include tablet {
     font-size: 1.4rem;
@@ -541,7 +540,7 @@ h3 {
     font-size: 2.9rem;
     line-height: 2.25rem;
     min-width: 22rem;
-    font-size: 1.5vw; // testing mobile layout on desktop
+    font-size: 1.3vw; // testing mobile layout on desktop
     min-width: max-content; // testing mobile layout on desktop
     width: 100%; // testing mobile layout on desktop
   }

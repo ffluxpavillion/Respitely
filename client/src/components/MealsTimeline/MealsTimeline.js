@@ -388,8 +388,8 @@ const MealsTimeline = () => {
                         {item.timeOfMeal}
                       </div>
                       <aside className='mealsTimeline-accessibility-div'>
-                        <div className='mealsTimeline-accessibility-icon'>{item.wheelchair_accessible ? '♿️' : ''}</div>
-                        <div className='mealsTimeline-accessibility-icon'>{item.service_dog_allowed ? '🦮' : ''}</div>
+                        {/* <div className='mealsTimeline-accessibility-icon'>{item.wheelchair_accessible ? '♿️' : ''}</div> */}
+                        {/* <div className='mealsTimeline-accessibility-icon'>{item.service_dog_allowed ? '🦮' : ''}</div> */}
 
                       </aside>
                       <br />

@@ -1,7 +1,7 @@
 # Respitely
-A full-stack & responsive web application, designed to help those experiencing homelessness in finding nearby shelters based on their individual needs and the latest updates from locations around the city.
+Respitely is a full-stack & responsive web application that provides instant access to critical information, for those at risk of experiencing homelessness & food insecurity within Toronto & the GTA.   Levreging the latest updates directly from the City of Toronto, users can easily identify nearby shelters and key information like occupancy, capacity, address, directions, capacity, accomodation type, service type, serviced population, and more.  Respitely also tackles the issue of meal insecurity by dramatically simplifying drop-in meal schedules across the city.  Users can view a daily timeline of all tracked meals happening that day and access real-time updates for nearby drop-in meals happening now or starting within the next two hours.  Both shelters and drop-in meals are thoroughly mapped using unique markers, with essential information accessible with just a tap.
 
-This app was built using React & Express.js, and leverages data from the City of Toronto's [Daily Shelter & Overnight Service Occupancy & Capacity API](https://open.toronto.ca/dataset/daily-shelter-overnight-service-occupancy-capacity/).
+This app was built using React & Express.js, leveraging data from the City of Toronto's [Daily Shelter & Overnight Service Occupancy & Capacity API](https://open.toronto.ca/dataset/daily-shelter-overnight-service-occupancy-capacity/).
 
 #### Key Features
 1. Latest Shelter Updates: Instant access to the most recent updates from shelters across the city, ensuring users have the latest information at their fingertips.

@@ -45,7 +45,6 @@
 .register-header {
   font-family: 'Toronto Subway Bold';
   font-size: 1.5rem;
-
 }
 
 .register-text {
@@ -55,4 +54,9 @@
 .register-form {
   display: flex;
   flex-direction: column;
+  gap: 1rem;
+}
+
+.register-input {
+  width: 20rem;
 }

@@ -130,7 +130,7 @@ export default function Header() {
             </li>
             <br />
             <h3 className='navbar__div-li coming-soon'>
-              (<h6>Coming Soon</h6>)
+              (<p className='coming-soon-text'>Coming Soon</p>)
             </h3>
             {/* <li onClick={handleClick}> */}
             {/* <RouterLink to='/register' aria-label='Link to About Us'> */}

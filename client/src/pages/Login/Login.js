@@ -1,17 +1,36 @@
 import { useState } from 'react';
 import './Login.scss';
 import axios from 'axios';
+import { toast } from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
+  const navigate = useNavigate();
   const [data, setData] = useState({
     email: '',
     password: '',
   });
 
-  const loginUser = (e) => {
+  const loginUser = async (e) => {
     e.preventDefault();
-    axios.get('http://localhost:8080');
-    axios.defaults.withCredentials = true;
+    const { email, password } = data;
+    try {
+      const { data } = await axios.post(
+        'http://localhost:8080/login',
+        {
+          email,
+          password,
+        },
+        { withCredentials: true }
+      );
+      if (data.error) {
+        toast.error(data.error);
+      } else {
+        setData({});
+        navigate('/dashboard');
+        window.location.reload();
+      }
+    } catch (error) {}
   };
   return (
     <>

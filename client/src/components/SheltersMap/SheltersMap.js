@@ -303,6 +303,7 @@ export default function SheltersMap(props) {
                       target='_blank'
                       rel='noopener noreferrer'
                       className='btn--directions-link'
+                      aria-label='Link to Get Directions to Shelter'
                     >
                       <button className='popup__button-directions'>
                         <span>

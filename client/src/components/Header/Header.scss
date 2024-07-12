@@ -159,7 +159,6 @@ li {
 
         &:active {
           text-decoration: underline;
-
         }
       }
 
@@ -186,12 +185,14 @@ li {
 }
 
 .coming-soon {
-
   &:hover {
     text-decoration: none;
   }
 }
 
+.coming-soon-text {
+  font-variant-caps: all-small-caps;
+}
 .navbar__socials-container {
   display: flex;
   gap: 1.25rem;
@@ -367,17 +368,14 @@ li {
 
     @include mobile {
       top: 10%;
-
     }
 
     @include tablet {
       top: 100%;
-
     }
 
     @include desktop {
       top: 100%;
-
     }
   }
 }

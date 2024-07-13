@@ -17,7 +17,7 @@ const mealSchema = new mongoose.Schema({
     required: true,
     validate: {
       validator: validateTimeFormat,
-      message: props => `${props.value} is not a valid time format! Use HH:mm.`
+      message: props => `${props.value} is not a valid time format, please use HH:mm.`
     }
   },
   end_time: {
@@ -25,7 +25,7 @@ const mealSchema = new mongoose.Schema({
     required: true,
     validate: {
       validator: validateTimeFormat,
-      message: props => `${props.value} is not a valid time format! Use HH:mm.`
+      message: props => `${props.value} is not a valid time format, please use HH:mm.`
     }
   }
 });

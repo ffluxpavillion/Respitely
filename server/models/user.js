@@ -20,10 +20,10 @@ const userSchema = new Schema(
       required: true,
       minlength: 8,
     },
-    isVerified: {
-      type: Boolean,
-      default: false,
-    },
+    // isVerified: {
+    //   type: Boolean,
+    //   default: false,
+    // },
   },
   {
     timestamps: true,

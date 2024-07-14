@@ -13,7 +13,11 @@ export default function Footer() {
     <>
       <footer className='footer'>
         <div className='footer-left'>
-          <h3 className='footer-brand'>RESPITELY·TO</h3>
+          <h3 className='footer-brand'>
+            <a href='https://www.respitely.org' aria-label='Link to Respitely Homepage'>
+              RESPITELY·TO
+            </a>
+          </h3>
           <div className='footer__list'>
             <ul className='footer__list-ul'>
               <li className='footer__list-li'>

@@ -15,7 +15,7 @@ export default function MealsBanner() {
       aria-label='Meals Banner Contact Information'
     >
       <div className='meals-banner-header' onClick={toggleBanner}>
-        {isOpen ? '❌ Close' : `IMPORTANT - PLEASE READ!`} <br />{' '}
+        {isOpen ? '[ ⛌ ] Close' : `IMPORTANT - PLEASE READ!`} <br />{' '}
         {isOpen ? (
           ''
         ) : (
@@ -23,23 +23,19 @@ export default function MealsBanner() {
         )}
       </div>
       {isOpen && (
-        <div className='meals-banner-content'>
-          <i>
-            Meals Timeline & MealsMap is still under development & may contain
-            inaccuracies & bugs.
-          </i>
-          <br />
-          <br />
-          <u>
-            Please contact the location/service provider directly to confirm any
-            information.
-          </u>
-          <br />
-          <br />
-          You can check the MealsMap below as a head start, or check the
-          provider's official website. These updates are for informational
-          purposes only.
-        </div>
+        <>
+          <div className='meals-banner-content'>
+            <p className='meals-banner-line-1'>
+              These updates are for informational purposes only.
+            </p>
+            <p className='meals-banner-line-2'>
+              Meals Timeline & MealsMap is still under development & may contain
+              inaccuracies & bugs. Please contact the location/service provider
+              directly to confirm any information. You can check the MealsMap
+              below as a head start, or check the provider's official website.
+            </p>
+          </div>
+        </>
       )}
     </div>
   );

@@ -15,7 +15,7 @@
   overflow: hidden;
 
   @include mobile {
-    padding: 0.5rem 0.77rem;
+    padding: 0rem 0.77rem;
   }
 
   @include tablet {
@@ -32,7 +32,6 @@
 
   &:hover {
     // filter: saturate(0.5);
-    // text-decoration: underline;
     transition: all 0.3s ease;
   }
 }
@@ -42,6 +41,7 @@
 }
 
 .meals-banner-content {
+  font-family: 'League Spartan ExtraLight';
   display: inline-block;
   line-height: 1rem;
   font-size: 0.75rem;
@@ -50,19 +50,55 @@
 
   @include mobile {
     line-height: 0.9rem;
-    font-size: 0.7rem;
+    font-size: 0.9rem;
     padding: 1rem 1rem;
   }
 
   @include tablet {
     line-height: 0.9rem;
-    font-size: 0.7rem;
-    padding: 1rem 10vw;
+    font-size: 0.85rem;
+    padding: 1rem 15vw;
   }
 
   @include desktop {
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     padding: 1rem 25rem;
+  }
+}
+
+.meals-banner-line-1 {
+  margin-bottom: 0.5rem;
+  border-bottom: 2px solid black;
+  padding-bottom: 0.25rem;
+  font-family: 'League Spartan Light';
+  font-style: italic;
+
+  @include mobile {
+    font-size: 0.8rem;
+  }
+
+  @include tablet {
+    font-size: 0.8rem;
+  }
+
+  @include desktop {
+    font-size: 1rem;
+  }
+}
+
+.meals-banner-line-2 {
+  font-family: 'League Spartan ExtraLight';
+
+  @include mobile {
+    font-size: 0.85rem;
+  }
+
+  @include tablet {
+    font-size: 0.8rem;
+  }
+
+  @include desktop {
+    font-size: 1rem;
   }
 }
 

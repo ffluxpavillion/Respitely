@@ -4,30 +4,31 @@
 @use '../../partials/variables' as *;
 
 .banner-container {
-  width: 100%;
   overflow: hidden;
   background-color: #ffcc00;
   text-align: center;
-  font-size: 0.9rem;
-  font-weight: bold;
+
   color: black;
   position: relative;
   z-index: -1;
-  height: 2.5rem;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
 
   @include mobile {
-    padding: 2.5rem 0.77rem;
+    padding: 0.5rem 0.77rem;
+    gap: 0.5rem;
   }
 
   @include tablet {
-    padding: 2rem;
+    padding: 0.5rem;
+    gap: 2rem;
   }
 
   @include desktop {
-    padding: 1.5rem;
+    padding: 0.75rem;
+    margin: 0 10rem;
+    gap: 0.5rem;
   }
 }
 
@@ -36,13 +37,72 @@
   line-height: 1rem;
   font-size: 0.75rem;
   text-wrap: balance;
+  font-weight: bold;
 
   @include mobile {
     line-height: 0.9rem;
     font-size: 0.7rem;
   }
+
+  @include tablet {
+    font-size: 0.7rem;
+  }
+
   @include desktop {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
+    line-height: 1.25rem;
+  }
+}
+
+.banner-line-0 {
+  font-family: 'Bungee Shade';
+
+  @include mobile {
+    font-size: 1.25rem;
+  }
+
+  @include tablet {
+    font-size: 1.75rem;
+  }
+
+  @include desktop {
+    font-size: 2rem;
+  }
+}
+.banner-line-1 {
+  font-family: 'League Spartan Light';
+  font-style: italic;
+  margin-bottom: 0.5rem;
+  border-bottom: 2px solid black;
+  font-weight: 600;
+
+  @include mobile {
+    font-size: 0.75rem;
+    padding-bottom: 0.5rem;
+  }
+
+  @include tablet {
+    font-size: 0.8rem;
+  }
+
+  @include desktop {
+    font-size: 1rem;
+  }
+}
+
+.banner-line-2 {
+  font-family: 'League Spartan ExtraLight';
+
+  @include mobile {
+    font-size: 0.8rem;
+  }
+
+  @include tablet {
+    font-size: 0.8rem;
+  }
+
+  @include desktop {
+    font-size: 0.8rem;
   }
 }
 

@@ -1323,6 +1323,7 @@
           }
         },
         {
+          "id": "ED-003",
           "name": "St. John The Compassionate Mission",
           "address": "155 Broadview Avenue",
           "latitude": 43.660318,
@@ -1368,7 +1369,7 @@
           }
         },
         {
-          "id": "ED-003",
+          "id": "ED-004",
           "name": "Fontbonne Ministries: Mustard Seed Drop-in",
           "address": "791 Queen Street East",
           "latitude": 43.659787,
@@ -1410,6 +1411,46 @@
               "hours": "10:00am - 1:00pm",
               "lunch": "11:30am - 1:00pm",
               "snack": "10:00am - 11:00am"
+            }
+          }
+        },
+        {
+          "id": "ED-005",
+          "name": "Danforth Multifaith Commons - Out of the Cold Program (Take-out only @ canopy on Danforth)",
+          "address": "310 Danforth Ave",
+          "latitude": 43.677559,
+          "longitude": -79.353729,
+          "city": "Toronto",
+          "province": "ON",
+          "postal_code": "M4K 1N6",
+          "phone": "416-463-2179",
+          "website": "https://www.instagram.com/outofthecold_eastend/",
+          "population": "Adults",
+          "pets_allowed": true,
+          "wheelchair_accessible": true,
+          "schedule": {
+            "monday": {
+              "hours": ""
+            },
+            "tuesday": {
+              "hours": ""
+            },
+            "wednesday": {
+              "hours": "11:30am - 1:00pm",
+              "lunch": "11:30am - 1:00pm"
+
+            },
+            "thursday": {
+              "hours": ""
+            },
+            "friday": {
+              "hours": ""
+            },
+            "saturday": {
+              "hours": ""
+            },
+            "sunday": {
+              "hours": ""
             }
           }
         }

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import './Header.scss';
 import { HashLink as Link } from 'react-router-hash-link';
-import { Link as RouterLink } from 'react-router-dom';
+import { Link as RouterLink, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
@@ -11,14 +11,22 @@ export default function Header() {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768); // state to check if the screen is mobile size
   const [lastScrollY, setLastScrollY] = useState(window.scrollY);
   const [navBarVisible, setNavBarVisible] = useState(true);
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
 
-  const handleClick = () => {
-    // closes menu when link is clicked
+  const handleHashLinkClick = (hash) => {
     setMenuOpen(false);
+    // navigate('/', { replace: true });
+
+    setTimeout(() => {
+      const element = document.getElementById(hash.replace('#', ''));
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100); // Timeout to ensure the page has navigated
   };
 
   useEffect(() => {
@@ -88,46 +96,49 @@ export default function Header() {
       <nav className='navbar'>
         <div className='navbar__div'>
           <ul className={`navbar__div-ul navMenu ${menuOpen ? 'active' : ''}`}>
-            <li onClick={handleClick}>
-              <Link to='/#landing' aria-label='Link to Respitely Homepage'>
+            <li onClick={() => handleHashLinkClick('#landing')}>
+              <Link
+                smooth
+                to='/#landing'
+                aria-label='Link to Respitely Homepage'
+              >
                 <h3 className='navbar__div-li nav-stairs__home'>Home ⟩⟩</h3>
               </Link>
             </li>
-            <li onClick={handleClick}>
-              <Link to='/#shelters' aria-label='Link to Shelters'>
+            <li onClick={() => handleHashLinkClick('#shelters')}>
+              <Link smooth to='/#shelters' aria-label='Link to Shelters'>
                 <h3 className='navbar__div-li nav-stairs__shelters'>
                   SHELTERS ⟩⟩
                 </h3>
               </Link>
             </li>
-            <li onClick={handleClick}>
-              <Link to='/#dropInMeals' aria-label='Link to Drop-In Meals'>
-                <h3 className='navbar__div-li nav-stairs__about-us'>
-                  DROP-IN MEALS ⟩⟩
-                </h3>
-              </Link>
+            <li onClick={() => handleHashLinkClick('#dropInMeals')}>
+              <h3 className='navbar__div-li nav-stairs__about-us'>
+                DROP-IN MEALS ⟩⟩
+              </h3>
             </li>
-            <li onClick={handleClick}>
-              <Link to='/drop-in-map' aria-label='Link to Drop-In Map'>
+            <li onClick={toggleMenu}>
+              <RouterLink to='/drop-in-map' aria-label='Link to Drop-In Map'>
                 <h3 className='navbar__div-li nav-stairs__about-us'>
                   EXPLORE DROP-IN MAP ⟩⟩
                 </h3>
-              </Link>
+              </RouterLink>
             </li>
-            <li onClick={handleClick}>
-              <Link to='/#resources' aria-label='Link to Resources'>
+            <li onClick={() => handleHashLinkClick('#resources')}>
+              <Link smooth to='/#resources' aria-label='Link to Resources'>
                 <h3 className='navbar__div-li nav-stairs__resources'>
                   RESOURCES ⟩⟩
                 </h3>
               </Link>
             </li>
-            <li onClick={handleClick}>
-              <Link to='/#aboutUs' aria-label='Link to About Us'>
+            <li onClick={() => handleHashLinkClick('#aboutUs')}>
+              <Link smooth to='/#aboutUs' aria-label='Link to About Us'>
                 <h3 className='navbar__div-li nav-stairs__about-us'>
                   ABOUT US ⟩⟩
                 </h3>
               </Link>
             </li>
+
             <br />
             <h3 className='navbar__div-li coming-soon'>
               (<p className='coming-soon-text'>Coming Soon</p>)

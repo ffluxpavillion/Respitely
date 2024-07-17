@@ -25,15 +25,20 @@ export default function MealsBanner() {
       {isOpen && (
         <>
           <div className='meals-banner-content'>
-            <p className='meals-banner-line-1'>
-              These updates are for informational purposes only.
-            </p>
-            <p className='meals-banner-line-2'>
-              Meals Timeline & MealsMap is still under development & may contain
-              inaccuracies & bugs. Please contact the location/service provider
-              directly to confirm any information. You can check the MealsMap
-              below as a head start, or check the provider's official website.
-            </p>
+            <p className='banner-line-0'>*</p>
+            <div className='meals-banner-text'>
+              <p className='meals-banner-line-1'>
+                Updates are for informational purposes only.
+              </p>
+              <p className='meals-banner-line-2'>
+                Meals Timeline & MealsMap is still under development & may
+                contain inaccuracies & bugs. Please contact the location/service
+                provider directly to confirm any information. You can check the
+                MealsMap below as a head start, or check the provider's official
+                website.
+              </p>
+            </div>
+            <p className='banner-line-0'>*</p>
           </div>
         </>
       )}

@@ -544,7 +544,7 @@
           "id": "CD-013",
           "name": "Ballroom Drop-in",
           "address": "192 Spadina Ave.",
-          "latitude": 43.650230,
+          "latitude": 43.65023,
           "longitude": -79.397056,
           "city": "Toronto",
           "province": "Ontario",
@@ -636,7 +636,7 @@
           "population": "Youth 16 - 24 years",
           "pets_allowed": true,
           "wheelchair_accessible": true,
-           "schedule": {
+          "schedule": {
             "monday": {
               "hours": "12:00pm - 7:00pm",
               "lunch": "12:00pm - 3:00pm",
@@ -702,7 +702,7 @@
               "hours": "Closed"
             },
             "friday": {
-              "hours": "10:30am - 12:30pm"
+              "hours": "11:00am - 12:30pm"
             },
             "saturday": {
               "hours": "Closed"
@@ -750,7 +750,8 @@
             }
           }
         },
-        {"id": "CD-018",
+        {
+          "id": "CD-018",
           "name": "Fred Victor Open House Drop-In",
           "address": "145 Queen Street East",
           "latitude": 43.653678,
@@ -1190,7 +1191,6 @@
             "sunday": {
               "hours": "10:00am",
               "breakfast": "10:00am (Brunch)(Take-out meals only)"
-
             }
           }
         },
@@ -1198,8 +1198,8 @@
           "id": "CD-027",
           "name": "St Moses & St Katherine Coptic Orthodox Church",
           "address": "557 Bathurst Street",
-          "latitude": 43.658160,
-          "longitude": -79.407980,
+          "latitude": 43.65816,
+          "longitude": -79.40798,
           "city": "Toronto",
           "province": "ON",
           "postal_code": "M5S 2P8",
@@ -1438,7 +1438,6 @@
             "wednesday": {
               "hours": "11:30am - 1:00pm",
               "lunch": "11:30am - 1:00pm"
-
             },
             "thursday": {
               "hours": ""
@@ -1766,7 +1765,7 @@
           "name": "Parkdale Activity Recreation Centre",
           "address": "1499 Queen Street West",
           "latitude": 43.639706,
-          "longitude": -79.440610,
+          "longitude": -79.44061,
           "city": "Toronto",
           "province": "ON",
           "postal_code": "M6R 1A3",
@@ -1817,7 +1816,7 @@
           "name": "The Dale Ministries",
           "address": "201 Cowan Ave.",
           "latitude": 43.640403,
-          "longitude":-79.432731,
+          "longitude": -79.432731,
           "city": "Toronto",
           "province": "ON",
           "postal_code": "M6K 2N7",
@@ -1970,8 +1969,8 @@
           "id": "MW-011",
           "name": "St. Francis Table",
           "address": "1322 Queen St W",
-          "latitude": 43.641970,
-          "longitude": -79.431400,
+          "latitude": 43.64197,
+          "longitude": -79.4314,
           "city": "Toronto",
           "province": "ON",
           "postal_code": "M6K 1L4",
@@ -2111,7 +2110,7 @@
           "id": "NW-001",
           "name": "Cummer Avenue United Church Drop Inn",
           "address": "53 Cummer Ave.",
-          "latitude": 43.78737640,
+          "latitude": 43.7873764,
           "longitude": -79.41579437,
           "city": "North York",
           "province": "ON",

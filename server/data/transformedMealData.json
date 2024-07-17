@@ -1487,7 +1487,7 @@
       },
       "friday": {
         "hours": {
-          "open": "10:30",
+          "open": "11:00",
           "close": "12:30"
         },
         "meals": {}
@@ -5342,6 +5342,76 @@
         "hours": {
           "open": "Closed",
           "close": "Closed"
+        },
+        "meals": {}
+      }
+    },
+    "claimed_by": null
+  },
+  {
+    "name": "Danforth Multifaith Commons - Out of the Cold Program (Take-out only @ canopy on Danforth)",
+    "address": {
+      "street": "310 Danforth Ave",
+      "city": "Scarborough",
+      "province": "ON",
+      "postal_code": "M4K 1N6"
+    },
+    "latitude": 43.677559,
+    "longitude": -79.353729,
+    "contact": {
+      "phone": "416-463-2179",
+      "website": "https://www.instagram.com/outofthecold_eastend/"
+    },
+    "population": "Adults",
+    "service_dog_allowed": true,
+    "wheelchair_accessible": true,
+    "schedule": {
+      "monday": {
+        "hours": {
+          "open": "",
+          "close": ""
+        },
+        "meals": {}
+      },
+      "tuesday": {
+        "hours": {
+          "open": "",
+          "close": ""
+        },
+        "meals": {}
+      },
+      "wednesday": {
+        "hours": {
+          "open": "11:30",
+          "close": "13:00"
+        },
+        "meals": {}
+      },
+      "thursday": {
+        "hours": {
+          "open": "",
+          "close": ""
+        },
+        "meals": {}
+      },
+      "friday": {
+        "hours": {
+          "open": "",
+          "close": ""
+        },
+        "meals": {}
+      },
+      "saturday": {
+        "hours": {
+          "open": "",
+          "close": ""
+        },
+        "meals": {}
+      },
+      "sunday": {
+        "hours": {
+          "open": "",
+          "close": ""
         },
         "meals": {}
       }

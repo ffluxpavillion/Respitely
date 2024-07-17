@@ -13,6 +13,7 @@
   position: relative;
   z-index: -100;
   overflow: hidden;
+  justify-content: space-around;
 
   @include mobile {
     padding: 0rem 0.77rem;
@@ -47,6 +48,9 @@
   font-size: 0.75rem;
   text-wrap: balance;
   padding: 1rem;
+  align-items: center;
+  display: flex;
+  gap: 2rem;
 
   @include mobile {
     line-height: 0.9rem;
@@ -64,6 +68,10 @@
     font-size: 0.95rem;
     padding: 1rem 25rem;
   }
+}
+
+.meals-banner-text {
+
 }
 
 .meals-banner-line-1 {

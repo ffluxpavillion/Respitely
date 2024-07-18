@@ -246,7 +246,7 @@ export default function AboutUs() {
 
   return (
     <>
-      <section className='mission__section' id='aboutUs'>
+      <section className='mission__section' id='about-us'>
         <div className='mission__div'>
           <div className='mission__div-inner'>
             <div className='mission__div-inner-container-1 hidden-about-us slide-right'>

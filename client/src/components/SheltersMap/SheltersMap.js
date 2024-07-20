@@ -207,7 +207,7 @@ export default function SheltersMap(props) {
     <>
       {apiKey && (
         <Map
-          key={refreshKey} // This forces the map to re-render, which is necessary to update the markers
+          key={refreshKey} // This forces the map to re-render / refresh, which is necessary to update the markers
           ref={mapRef}
           {...viewState} // updates view state on marker click
           onMove={(evt) => setViewState(evt.viewState)} // updates view state on marker click

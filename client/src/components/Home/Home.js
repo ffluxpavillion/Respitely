@@ -5,7 +5,7 @@ import { HashLink as Link } from 'react-router-hash-link';
 export default function Home() {
   return (
     <>
-      <section className='home-section' id='landing'>
+      <section className='home-section' id='home'>
         <div className='home-header__container'>
           <div className='home-header__text'>
             <h1 className='home-header__line1'>
@@ -19,7 +19,7 @@ export default function Home() {
         <div className='home-button__container'>
           <div className='center-con'>
             <span className='header-actions__text'>Jump to Shelters</span>
-            <Link aria-label="Go to Shelters" to='#shelters'>
+            <Link aria-label='Go to Shelters' to='#shelters'>
               <div className='round'>
                 <div id='cta'>
                   <span className='arrow primera next '></span>
@@ -30,7 +30,7 @@ export default function Home() {
           </div>
           <div className='center-con'>
             <span className='header-actions__text'>Jump to Meals</span>
-            <Link aria-label="Go to Meals" to='#meals'>
+            <Link aria-label='Go to Meals' to='#meals'>
               <div className='round'>
                 <div id='cta'>
                   <span className='arrow primera next '></span>

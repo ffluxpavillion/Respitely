@@ -1,26 +1,24 @@
 import './App.scss';
-import { BrowserRouter, Routes, Route } from 'react-router-dom'; // react-router
+import { Routes, Route, Navigate } from 'react-router-dom'; // react-router
 import { initGA } from './utils/analytics'; // google analytics
 import ApiKeyProvider from './contexts/ApiKeyContext'; // contexts
 import { useGeolocation } from './hooks/useGeolocation'; // hooks
 import { ParallaxProvider } from 'react-scroll-parallax';
 // components
 import Header from '../src/components/Header/Header';
-import Home from '../src/components/Home/Home';
-import Parallax1 from './components/Parallax1/Parallax1';
-import AboutUs from './components/AboutUs/AboutUs';
-import Parallax3 from './components/Parallax3/Parallax3';
-import Parallax2 from './components/Parallax2/Parallax2';
-import SheltersCard from './components/SheltersCard/SheltersCard';
 import SheltersCardOG from './components/SheltersCard-OG/SheltersCard-OG';
-import Resources from './components/Resources/Resources';
-import Footer from './components/Footer/Footer';
 import CookiePolicy from './components/Legal/CookiePolicy/CookiePolicy';
 import TermsOfUse from './components/Legal/TermsOfUse/TermsOfUse';
-import MealsCard from './components/MealsCard/MealsCard';
 import MealsMap from './components/MealsMap/MealsMap';
-import ComingSoon from './components/ComingSoon/ComingSoon';
-// import { GeocodedLocationsProvider } from './contexts/GeocodedDataContext'; // TODO - Need to fix before enabling
+import SheltersCard from './components/SheltersCard/SheltersCard';
+import Homepage from './pages/Homepage/Homepage';
+import Login from './pages/Login/Login';
+import Register from './pages/Register/Register';
+import axios from 'axios';
+import { Toaster } from 'react-hot-toast';
+import { UserContextProvider } from './contexts/userContext';
+import Dashboard from './pages/Dashboard/Dashboard';
+import { GeocodedLocationsProvider } from './contexts/GeocodedDataContext'; // TODO - Need to fix before enabling
 // import ShelterMap from './components/SheltersMap/SheltersMap'; // Import SheltersMap component
 
 export default function App() {
@@ -29,37 +27,27 @@ export default function App() {
   initGA(); // Initialize Google Analytics
 
   return (
-    <ApiKeyProvider>
-      <ParallaxProvider>
-        <BrowserRouter>
+    <UserContextProvider>
+      <ApiKeyProvider>
+        <ParallaxProvider>
           <Header />
+          <Toaster position='top-center' toastoptions={{ duration: 6000 }} />
           <Routes>
-            <Route
-              path='/'
-              element={
-                <>
-                  <Home />
-                  <Parallax1 />
-                  {/* <GeocodedLocationsProvider> */}
-                    <SheltersCard />
-                  {/* </GeocodedLocationsProvider> */}
-                  <MealsCard />
-                  <Parallax2 />
-                  <Resources />
-                  <Parallax3 />
-                  <AboutUs />
-                </>
-              }
-            />
+            <Route path='/' element={<Homepage />} />
+            <Route path='/shelters' element={<SheltersCard />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/dashboard' element={<Dashboard />} />
+            <Route path='/register' element={<Register />} />
             <Route path='/cookie-policy' element={<CookiePolicy />} />
             <Route path='/shelterscard-og' element={<SheltersCardOG />} />
             <Route path='/terms-of-use' element={<TermsOfUse />} />
             <Route path='/drop-in-map' element={<MealsMap />} />
+            <Route path='*' element={<Navigate to="/" />} />
+
             {/* <Route path='/shelter-map' element={<ShelterMap />} /> */}
           </Routes>
-          <Footer />
-        </BrowserRouter>
-      </ParallaxProvider>
-    </ApiKeyProvider>
+        </ParallaxProvider>
+      </ApiKeyProvider>
+    </UserContextProvider>
   );
 }

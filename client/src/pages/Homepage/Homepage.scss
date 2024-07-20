@@ -1,0 +1,12 @@
+@media (prefers-reduced-motion) {
+  .hidden {
+    transition: none;
+    animation: none;
+  }
+}
+
+body {
+  background-color: #0f0f0f;
+  height: 100%;
+  width: 100%;
+}

@@ -11,6 +11,7 @@ import CookiePolicy from './components/Legal/CookiePolicy/CookiePolicy';
 import TermsOfUse from './components/Legal/TermsOfUse/TermsOfUse';
 import MealsMap from './components/MealsMap/MealsMap';
 import SheltersCard from './components/SheltersCard/SheltersCard';
+
 import Homepage from './pages/Homepage/Homepage';
 import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
@@ -19,7 +20,7 @@ import { Toaster } from 'react-hot-toast';
 import { UserContextProvider } from './contexts/userContext';
 import Dashboard from './pages/Dashboard/Dashboard';
 import { GeocodedLocationsProvider } from './contexts/GeocodedDataContext'; // TODO - Need to fix before enabling
-// import ShelterMap from './components/SheltersMap/SheltersMap'; // Import SheltersMap component
+import ShelterMap from './components/ShelterMap/ShelterMap'; // Import SheltersMap component
 
 export default function App() {
   const { locationInfo, locationError } = useGeolocation();
@@ -42,9 +43,9 @@ export default function App() {
             <Route path='/shelterscard-og' element={<SheltersCardOG />} />
             <Route path='/terms-of-use' element={<TermsOfUse />} />
             <Route path='/drop-in-map' element={<MealsMap />} />
-            <Route path='*' element={<Navigate to="/" />} />
+            <Route path='/shelter-map' element={<ShelterMap />} />
 
-            {/* <Route path='/shelter-map' element={<ShelterMap />} /> */}
+            <Route path='*' element={<Navigate to='/' />} />
           </Routes>
         </ParallaxProvider>
       </ApiKeyProvider>

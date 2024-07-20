@@ -71,14 +71,10 @@ export default function Header() {
       className={`header ${
         navBarVisible ? 'visible' : menuOpen ? 'visible' : 'hidden'
       }`}
-      id='home'
     >
       <div className='header__container'>
         <h3 className='header-brand'>
-          <a
-            href='https://www.respitely.org'
-            aria-label='Link to Respitely Homepage'
-          >
+          <a href='/' aria-label='Link to Respitely Homepage'>
             RESPITELY·TO
           </a>
         </h3>
@@ -97,11 +93,7 @@ export default function Header() {
         <div className='navbar__div'>
           <ul className={`navbar__div-ul navMenu ${menuOpen ? 'active' : ''}`}>
             <li onClick={() => handleHashLinkClick('#landing')}>
-              <Link
-                smooth
-                to='/#landing'
-                aria-label='Link to Respitely Homepage'
-              >
+              <Link smooth to='/' aria-label='Link to Respitely Homepage'>
                 <h3 className='navbar__div-li nav-stairs__home'>Home ⟩⟩</h3>
               </Link>
             </li>
@@ -131,8 +123,8 @@ export default function Header() {
                 </h3>
               </Link>
             </li>
-            <li onClick={() => handleHashLinkClick('#aboutUs')}>
-              <Link smooth to='/#aboutUs' aria-label='Link to About Us'>
+            <li onClick={() => handleHashLinkClick('#about-us')}>
+              <Link smooth to='/#about-us' aria-label='Link to About Us'>
                 <h3 className='navbar__div-li nav-stairs__about-us'>
                   ABOUT US ⟩⟩
                 </h3>

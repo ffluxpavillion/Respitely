@@ -3,7 +3,7 @@ import './Footer.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
+import { Link as RouterLink, useNavigate } from 'react-router-dom';
 
 export default function Footer() {
   return (
@@ -45,14 +45,15 @@ export default function Footer() {
                 </a>
               </li>
               <li className='footer__list-li'>
-                <a
-                  href='/drop-in-map'
+                <RouterLink
+                  to='/drop-in-map'
                   className='footer__list-a'
                   aria-label='Link to Drop-In Map'
                 >
                   <h3 className='footer__item'>Explore Drop-In Map</h3>
-                </a>
+                </RouterLink>
               </li>
+
               <li className='footer__list-li'>
                 <a
                   href='#resources'
@@ -79,22 +80,22 @@ export default function Footer() {
               <br />
 
               <li className='footer__list-li'>
-                <Link
+                <RouterLink
                   to='/cookie-policy'
                   className='footer__list-a'
                   aria-label='Link to Cookie Policy'
                 >
                   <h3 className='footer__item legal-item'>Cookie Policy</h3>
-                </Link>
+                </RouterLink>
               </li>
               <li className='footer__list-li'>
-                <Link
+                <RouterLink
                   to='/terms-of-use'
                   className='footer__list-a'
                   aria-label='Link to Terms of Use'
                 >
                   <h3 className='footer__item legal-item'>Terms of Use</h3>
-                </Link>
+                </RouterLink>
               </li>
             </ul>
           </div>

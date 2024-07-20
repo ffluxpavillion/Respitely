@@ -1,8 +1,5 @@
 import React from 'react';
 import './Footer.scss';
-import FooterImage from '../../assets/images/SafeHavenTO_graphic-art-community-1.png';
-import { ReactComponent as Logo } from '../../assets/logo/SafeHavenTO.svg'; // Import SVG as a React component
-import BuyMeACoffee from '../BuyMeACoffee/BuyMeACoffee';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
@@ -14,7 +11,7 @@ export default function Footer() {
       <footer className='footer'>
         <div className='footer-left'>
           <h3 className='footer-brand'>
-            <a href='https://www.respitely.org' aria-label='Link to Respitely Homepage'>
+            <a href='/' aria-label='Link to Respitely Homepage'>
               RESPITELY·TO
             </a>
           </h3>
@@ -67,7 +64,7 @@ export default function Footer() {
               </li>
               <li className='footer__list-li'>
                 <a
-                  href='#aboutUs'
+                  href='#about-us'
                   className='footer__list-a'
                   aria-label='Link to About Us'
                 >

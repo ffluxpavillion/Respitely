@@ -12,8 +12,12 @@ import {
 import EmergencyBanner from '../EmergencyBanner/EmergencyBanner';
 import SheltersCardDetailedView from '../SheltersCardDetailedView/SheltersCardDetailedView';
 import CalculateDaysAgo from '../../helpers/CalculateDaysAgo';
+import { useGeolocation } from '../../hooks/useGeolocation';
+import * as turf from '@turf/turf';
+import GeocodedLocationsContext from '../../contexts/GeocodedDataContext';
 
 export default function SheltersCard() {
+  const { locationInfo } = useGeolocation();
   const [loading, setLoading] = useState(true);
   const [records, setRecords] = useState([]);
   const [displayedRecords, setDisplayedRecords] = useState([]);
@@ -129,6 +133,41 @@ export default function SheltersCard() {
 
     filteredData = filteredData.sort(sortByDateAndAvailability);
 
+    // TODO - Implement distance calculation -- BIG NEED TO FIX --TURF.JS + GEOCODEDDATACONTEXT -- implement geocoding on server side
+
+    // Calculate distance if location info is available
+    //   if (locationInfo) {
+    //     const userLocation = turf.point([
+    //       locationInfo.longitude,
+    //       locationInfo.latitude,
+    //     ]);
+    //     console.log('userLocation=======', userLocation);
+    //     console.log('locationInfoLAT==========', locationInfo.latitude);
+    //     console.log('locationInfoLONG==========', locationInfo.longitude);
+
+    //   filteredData = filteredData.map((record) => {
+    //     const latitude = parseFloat(record.LATITUDE);
+    //     const longitude = parseFloat(record.LONGITUDE);
+
+    //     if (!isNaN(latitude) && !isNaN(longitude)) {
+    //       const shelterLocation = turf.point([longitude, latitude]);
+    //       const distance = turf
+    //         .distance(userLocation, shelterLocation, { units: 'kilometers' })
+    //         .toFixed(1);
+    //       return { ...record, distance };
+    //     } else {
+    //       console.warn(
+    //         `Invalid coordinates for record ${record._id}: LATITUDE=${record.LATITUDE}, LONGITUDE=${record.LONGITUDE}`
+    //       );
+    //       console.log('Record details:', record);
+    //       return record; // Return the original record if coordinates are invalid
+    //     }
+    //   });
+
+    //   // Filter out records with invalid distances
+    //   filteredData = filteredData.filter(record => record.distance !== undefined);
+    // }
+
     setRecords(filteredData); // Set all records
     setDisplayedRecords(filteredData.slice(0, itemsPerPage)); // Display initially loaded records
   };
@@ -156,14 +195,13 @@ export default function SheltersCard() {
 
   return (
     <>
-      <EmergencyBanner />
       <section className='shelter-section' id='shelters'>
         <div className='shelter-section__upper'>
           <h3 className='shelter-section__header'>
             Latest Shelter Occupancy in Toronto
+            <span ref={shelterListRef}></span>
           </h3>
 
-          <br />
           <span className='shelter-section__subHeader'>
             <div className='subHeader__upper'>
               <FilterButtons
@@ -174,12 +212,14 @@ export default function SheltersCard() {
             <hr className='subheader__divider'></hr>
             <div className='subHeader__lower'>
               <span className='subheader__text'>
-                Results are auto-sorted by recently updated, with highest occupancy.
+                Results are auto-sorted by recently updated, with highest
+                occupancy.
               </span>
-              <span ref={shelterListRef}></span>
             </div>
           </span>
         </div>
+        <EmergencyBanner />
+
         <div className='mobile__shelter-scrollable-container'>
           <span className='mobile__instructions-text'>
             Select a shelter to learn more ⟩⟩⟩
@@ -201,6 +241,10 @@ export default function SheltersCard() {
                         <br />
                         <p className='shelter-item__location-glance'>
                           📍 {record.LOCATION_CITY}
+                          {/* <br /> */}
+                          {/* {record.distance
+                            ? `Distance: ${record.distance} km`
+                            : 'Calculating distance..'} */}
                         </p>
                       </h6>
                       <p className='shelter-item__availability mobile__shelter-item__availability'>

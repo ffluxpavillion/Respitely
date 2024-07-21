@@ -105,9 +105,11 @@ export default function Header() {
               </Link>
             </li>
             <li onClick={() => handleHashLinkClick('#dropInMeals')}>
-              <h3 className='navbar__div-li nav-stairs__about-us'>
-                DROP-IN MEALS ⟩⟩
-              </h3>
+              <Link smooth to='/#drop-in-meals' aria-label='Link to Drop In Meals'>
+                <h3 className='navbar__div-li nav-stairs__about-us'>
+                  DROP-IN MEALS ⟩⟩
+                </h3>
+              </Link>
             </li>
             <li onClick={toggleMenu}>
               <RouterLink to='/drop-in-map' aria-label='Link to Drop-In Map'>

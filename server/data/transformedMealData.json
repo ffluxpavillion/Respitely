@@ -10,10 +10,16 @@
     "latitude": 43.668868,
     "longitude": -79.384986,
     "contact": {
-      "phone": "416-922-0628 ext. 211",
+      "phone": {
+        "primary": {
+          "number": "(416) 922-0628",
+          "ext": "211"
+        }
+      },
       "website": "https://www.sanctuarytoronto.ca"
     },
-    "population": "General Population Adults",
+    "population": "Adults",
+    "notes": "",
     "service_dog_allowed": true,
     "wheelchair_accessible": true,
     "schedule": {
@@ -77,7 +83,8 @@
         "meals": {}
       }
     },
-    "claimed_by": null
+    "claimed_by": null,
+    "last_updated": ""
   },
   {
     "name": "The 519",
@@ -90,10 +97,15 @@
     "latitude": 43.666415,
     "longitude": -79.381126,
     "contact": {
-      "phone": "416-392-6874",
+      "phone": {
+        "primary": {
+          "number": "(416) 392-6874"
+        }
+      },
       "website": "https://www.the519.org"
     },
     "population": "Broadly 2SLGBTQ+ Adults",
+    "notes": "",
     "wheelchair_accessible": true,
     "schedule": {
       "monday": {
@@ -169,7 +181,8 @@
         }
       }
     },
-    "claimed_by": null
+    "claimed_by": null,
+    "last_updated": ""
   },
   {
     "name": "St. James Cathedral Drop-In",
@@ -182,10 +195,16 @@
     "latitude": 43.6505023,
     "longitude": -79.3740815,
     "contact": {
-      "phone": "416-364-7865 ext. 222",
+      "phone": {
+        "primary": {
+          "number": "(416) 364-7865",
+          "ext": "222"
+        }
+      },
       "website": "https://stjamescathedral.ca/"
     },
-    "population": "General Population; Adults",
+    "population": "Adults",
+    "notes": "",
     "service_dog_allowed": true,
     "wheelchair_accessible": true,
     "schedule": {
@@ -244,7 +263,8 @@
         "meals": {}
       }
     },
-    "claimed_by": null
+    "claimed_by": null,
+    "last_updated": ""
   },
   {
     "name": "Church of the Holy Trinity: Trinity Community Hub - People's Presence Drop-in",
@@ -257,10 +277,16 @@
     "latitude": 43.654448,
     "longitude": -79.381825,
     "contact": {
-      "phone": "416-598-4521",
+      "phone": {
+        "primary": {
+          "number": "(416) 598-4521"
+        }
+      },
       "website": "https://www.holytrinitytoronto.org"
     },
-    "population": "General Population",
+    "population": "Adults",
+    "notes": "",
+    "service_dog_allowed": "",
     "wheelchair_accessible": true,
     "schedule": {
       "monday": {
@@ -323,7 +349,8 @@
         "meals": {}
       }
     },
-    "claimed_by": null
+    "claimed_by": null,
+    "last_updated": ""
   },
   {
     "name": "Maggie's Toronto Sex Workers Action Project",
@@ -336,10 +363,15 @@
     "latitude": 43.65486222,
     "longitude": -79.36457306,
     "contact": {
-      "phone": "416-964-0150",
+      "phone": {
+        "primary": {
+          "number": "(416) 964-0150"
+        }
+      },
       "website": "https://www.maggiesto.org/"
     },
-    "population": "Current & former sex workers - all genders/orientations",
+    "population": "Adults",
+    "notes": "Current & former sex workers - all genders/orientations",
     "service_dog_allowed": true,
     "wheelchair_accessible": true,
     "schedule": {
@@ -398,7 +430,8 @@
         "meals": {}
       }
     },
-    "claimed_by": null
+    "claimed_by": null,
+    "last_updated": ""
   },
   {
     "name": "The Neighbourhood Group | St. Stephen's Community House: The Corner Drop-In",
@@ -411,10 +444,16 @@
     "latitude": 43.6564796,
     "longitude": -79.4029962,
     "contact": {
-      "phone": "416-925-2103 ext. 2266",
+      "phone": {
+        "primary": {
+          "number": "(416) 925-2103",
+          "ext": "2266"
+        }
+      },
       "website": "https://www.sschto.ca"
     },
-    "population": "General Population; Adults (18+)",
+    "population": "Adults",
+    "notes": "(18+)",
     "service_dog_allowed": true,
     "wheelchair_accessible": true,
     "schedule": {
@@ -534,7 +573,8 @@
         }
       }
     },
-    "claimed_by": null
+    "claimed_by": null,
+    "last_updated": ""
   },
   {
     "name": "Church of St. Stephen In-The-Fields: Safe Space Drop-in",
@@ -547,10 +587,15 @@
     "latitude": 43.657193,
     "longitude": -79.403867,
     "contact": {
-      "phone": "416-526-5438",
+      "phone": {
+        "primary": {
+          "number": "(416) 526-5438"
+        }
+      },
       "website": "http://saintstephens.ca/"
     },
-    "population": "General Population; Adults",
+    "population": "Adults",
+    "notes": "",
     "service_dog_allowed": true,
     "wheelchair_accessible": true,
     "schedule": {
@@ -619,7 +664,8 @@
         "meals": {}
       }
     },
-    "claimed_by": null
+    "claimed_by": null,
+    "last_updated": ""
   },
   {
     "name": "The Scott Mission: Community Meals",
@@ -632,10 +678,15 @@
     "latitude": 43.65431006,
     "longitude": -79.39889616,
     "contact": {
-      "phone": "416-923-8872",
+      "phone": {
+        "primary": {
+          "number": "(416) 923-8872"
+        }
+      },
       "website": "https://www.scottmission.com"
     },
-    "population": "General Population; Adults",
+    "population": "Adults",
+    "notes": "",
     "service_dog_allowed": true,
     "wheelchair_accessible": true,
     "schedule": {
@@ -734,7 +785,8 @@
         "meals": {}
       }
     },
-    "claimed_by": null
+    "claimed_by": null,
+    "last_updated": ""
   },
   {
     "name": "St. Felix Centre - Respite",
@@ -747,10 +799,16 @@
     "latitude": 43.638725,
     "longitude": -79.424537,
     "contact": {
-      "phone": "416-534-4554",
+      "phone": {
+        "primary": {
+          "number": "(416) 534-4554"
+        }
+      },
       "website": "https://stfelixcentre.org/programs-services/respite-services-program/"
     },
-    "population": "General Population; Adults",
+    "population": "Adults",
+    "notes": "",
+    "service_dog_allowed": "",
     "wheelchair_accessible": true,
     "schedule": {
       "monday": {
@@ -803,7 +861,8 @@
         "meals": {}
       }
     },
-    "claimed_by": null
+    "claimed_by": null,
+    "last_updated": ""
   },
   {
     "name": "Evangel Hall Mission",
@@ -816,10 +875,16 @@
     "latitude": 43.6454499,
     "longitude": -79.40243,
     "contact": {
-      "phone": "416-504-3563 ext. 240",
+      "phone": {
+        "primary": {
+          "number": "(416) 504-3563",
+          "ext": "240"
+        }
+      },
       "website": "https://www.evangelhall.ca"
     },
-    "population": "General Population; Adults",
+    "population": "Adults",
+    "notes": "",
     "service_dog_allowed": true,
     "wheelchair_accessible": true,
     "schedule": {
@@ -903,7 +968,8 @@
         }
       }
     },
-    "claimed_by": null
+    "claimed_by": null,
+    "last_updated": ""
   },
   {
     "name": "West Neighbourhood House: The Meeting Place",
@@ -916,10 +982,16 @@
     "latitude": 43.6474229,
     "longitude": -79.4042806,
     "contact": {
-      "phone": "416-504-4275",
+      "phone": {
+        "primary": {
+          "number": "(416) 504-4275"
+        }
+      },
       "website": "https://www.westnh.org"
     },
-    "population": "General Population; Adults",
+    "population": "Adults",
+    "notes": "",
+    "service_dog_allowed": "",
     "wheelchair_accessible": true,
     "schedule": {
       "monday": {
@@ -1023,7 +1095,8 @@
         "meals": {}
       }
     },
-    "claimed_by": null
+    "claimed_by": null,
+    "last_updated": ""
   },
   {
     "name": "YMCA of Greater Toronto: Wagner Green YMCA Drop In",
@@ -1036,10 +1109,19 @@
     "latitude": 43.648335,
     "longitude": -79.397987,
     "contact": {
-      "phone": "647-632-2500 || 416-603-6366 ext. 33209",
+      "phone": {
+        "primary": {
+          "number": "(647) 632-2500"
+        },
+        "secondary": {
+          "number": "(416) 603-6366",
+          "ext": "33209"
+        }
+      },
       "website": "https://www.ymcagta.org"
     },
     "population": "Youth 16 - 24 years",
+    "notes": "",
     "service_dog_allowed": true,
     "wheelchair_accessible": true,
     "schedule": {
@@ -1153,7 +1235,8 @@
         "meals": {}
       }
     },
-    "claimed_by": null
+    "claimed_by": null,
+    "last_updated": ""
   },
   {
     "name": "Ballroom Drop-in",
@@ -1166,10 +1249,15 @@
     "latitude": 43.65023,
     "longitude": -79.397056,
     "contact": {
-      "phone": "647-609-2300",
+      "phone": {
+        "primary": {
+          "number": "(647) 609-2300"
+        }
+      },
       "website": ""
     },
     "population": "Adults: LGBTQ, BIPOC, Youth",
+    "notes": "",
     "service_dog_allowed": true,
     "wheelchair_accessible": true,
     "schedule": {
@@ -1210,7 +1298,8 @@
         }
       }
     },
-    "claimed_by": null
+    "claimed_by": null,
+    "last_updated": ""
   },
   {
     "name": "Yonge Street Mission: Evergreen Centre",
@@ -1223,10 +1312,16 @@
     "latitude": 43.65589549,
     "longitude": -79.39868543,
     "contact": {
-      "phone": "416-929-9614 ext. 2200",
+      "phone": {
+        "primary": {
+          "number": "(416) 929-9614",
+          "ext": "2200"
+        }
+      },
       "website": "https://www.ysm.ca"
     },
     "population": "Youth 16 - 24 years",
+    "notes": "",
     "service_dog_allowed": true,
     "wheelchair_accessible": true,
     "schedule": {
@@ -1305,7 +1400,8 @@
         "meals": {}
       }
     },
-    "claimed_by": null
+    "claimed_by": null,
+    "last_updated": ""
   },
   {
     "name": "Covenant House Toronto: Community Support Services",
@@ -1318,10 +1414,16 @@
     "latitude": 43.659224,
     "longitude": -79.381497,
     "contact": {
-      "phone": "416-204-7037",
+      "phone": {
+        "primary": {
+          "number": "(416) 204-7037"
+        }
+      },
       "website": "https://www.covenanthouse.on.ca"
     },
     "population": "Youth 16 - 24 years",
+    "notes": "",
+    "service_dog_allowed": "",
     "wheelchair_accessible": true,
     "schedule": {
       "monday": {
@@ -1437,7 +1539,8 @@
         }
       }
     },
-    "claimed_by": null
+    "claimed_by": null,
+    "last_updated": ""
   },
   {
     "name": "Metropolitan United Church: Met United Community Services",
@@ -1450,10 +1553,16 @@
     "latitude": 43.653174,
     "longitude": -79.375796,
     "contact": {
-      "phone": "416-363-0331 ext. 22",
+      "phone": {
+        "primary": {
+          "number": "(416) 363-0331",
+          "ext": "22"
+        }
+      },
       "website": "https://www.metunited.org"
     },
-    "population": "General Population; Adults",
+    "population": "Adults",
+    "notes": "",
     "service_dog_allowed": true,
     "wheelchair_accessible": true,
     "schedule": {
@@ -1507,7 +1616,8 @@
         "meals": {}
       }
     },
-    "claimed_by": null
+    "claimed_by": null,
+    "last_updated": ""
   },
   {
     "name": "Fred Victor: Women's Drop-in (Adelaide Resource Centre)",
@@ -1520,10 +1630,15 @@
     "latitude": 43.651119,
     "longitude": -79.375267,
     "contact": {
-      "phone": "416-364-7739",
+      "phone": {
+        "primary": {
+          "number": "(416) 364-7739"
+        }
+      },
       "website": "https://www.fredvictor.org/what-we-do/health-services/drop-ins-community-programs/"
     },
     "population": "Women",
+    "notes": "",
     "service_dog_allowed": true,
     "wheelchair_accessible": true,
     "schedule": {
@@ -1577,7 +1692,8 @@
         "meals": {}
       }
     },
-    "claimed_by": null
+    "claimed_by": null,
+    "last_updated": ""
   },
   {
     "name": "Fred Victor Open House Drop-In",
@@ -1590,10 +1706,19 @@
     "latitude": 43.653678,
     "longitude": -79.373037,
     "contact": {
-      "phone": "416-364-8228 ext. 3331 or 416-644-3081",
+      "phone": {
+        "primary": {
+          "number": "(416) 364-8228",
+          "ext": "3331"
+        },
+        "secondary": {
+          "number": "(416) 644-3081"
+        }
+      },
       "website": "https://www.fredvictor.org"
     },
-    "population": "General Population; Adults",
+    "population": "Adults",
+    "notes": "",
     "service_dog_allowed": true,
     "wheelchair_accessible": true,
     "schedule": {
@@ -1647,7 +1772,8 @@
         "meals": {}
       }
     },
-    "claimed_by": null
+    "claimed_by": null,
+    "last_updated": ""
   },
   {
     "name": "Good Shepherd Centre Drop-In",
@@ -1660,10 +1786,15 @@
     "latitude": 43.65614,
     "longitude": -79.362529,
     "contact": {
-      "phone": "416-869-3619",
+      "phone": {
+        "primary": {
+          "number": "(416) 869-3619"
+        }
+      },
       "website": "https://www.goodshepherd.ca"
     },
-    "population": "General Population; Adults",
+    "population": "Adults",
+    "notes": "",
     "service_dog_allowed": true,
     "wheelchair_accessible": true,
     "schedule": {
@@ -1773,7 +1904,8 @@
         }
       }
     },
-    "claimed_by": null
+    "claimed_by": null,
+    "last_updated": ""
   },
   {
     "name": "Haven Toronto",
@@ -1786,10 +1918,15 @@
     "latitude": 43.6555622,
     "longitude": -79.3743282,
     "contact": {
-      "phone": "416-366-5377",
+      "phone": {
+        "primary": {
+          "number": "(416) 366-5377"
+        }
+      },
       "website": "https://www.haventoronto.ca"
     },
     "population": "Men 50+. Must sign up to be a member",
+    "notes": "",
     "service_dog_allowed": true,
     "wheelchair_accessible": true,
     "schedule": {
@@ -1934,7 +2071,8 @@
         }
       }
     },
-    "claimed_by": null
+    "claimed_by": null,
+    "last_updated": ""
   },
   {
     "name": "Toronto Council Fire Native Cultural Centre: The Gathering Place",
@@ -1947,10 +2085,15 @@
     "latitude": 43.659298,
     "longitude": -79.366208,
     "contact": {
-      "phone": "416-360-4350",
+      "phone": {
+        "primary": {
+          "number": "(416) 360-4350"
+        }
+      },
       "website": "https://www.councilfire.ca"
     },
     "population": "Indigenous Adults",
+    "notes": "",
     "service_dog_allowed": true,
     "wheelchair_accessible": true,
     "schedule": {
@@ -2093,7 +2236,8 @@
         }
       }
     },
-    "claimed_by": null
+    "claimed_by": null,
+    "last_updated": ""
   },
   {
     "name": "All Saints Church Community Centre",
@@ -2106,10 +2250,16 @@
     "latitude": 43.658288,
     "longitude": -79.370981,
     "contact": {
-      "phone": "416-368-7768",
+      "phone": {
+        "primary": {
+          "number": "(416) 368-7768"
+        }
+      },
       "website": "https://www.allsaintstoronto.com"
     },
-    "population": "General Population; Adults",
+    "population": "Adults",
+    "notes": "",
+    "service_dog_allowed": "",
     "wheelchair_accessible": true,
     "schedule": {
       "monday": {
@@ -2203,7 +2353,8 @@
         "meals": {}
       }
     },
-    "claimed_by": null
+    "claimed_by": null,
+    "last_updated": ""
   },
   {
     "name": "Margaret's Housing and Community Support Services: Toronto East Drop-in Centre",
@@ -2216,10 +2367,16 @@
     "latitude": 43.658396,
     "longitude": -79.370536,
     "contact": {
-      "phone": "647-367-2100",
+      "phone": {
+        "primary": {
+          "number": "(647) 367-2100"
+        }
+      },
       "website": "https://margarets.ca/drop-in-services/"
     },
-    "population": "General Population; Adults",
+    "population": "Adults",
+    "notes": "",
+    "service_dog_allowed": "",
     "wheelchair_accessible": true,
     "schedule": {
       "monday": {
@@ -2356,7 +2513,8 @@
         }
       }
     },
-    "claimed_by": null
+    "claimed_by": null,
+    "last_updated": ""
   },
   {
     "name": "Church of the Redeemer: The Common Table",
@@ -2369,10 +2527,15 @@
     "latitude": 43.668729,
     "longitude": -79.393968,
     "contact": {
-      "phone": "416-922-4948",
+      "phone": {
+        "primary": {
+          "number": "(416) 922-4948"
+        }
+      },
       "website": "https://theredeemer.ca/alt/get-involved-alternative/drop-in/"
     },
-    "population": "General Population; Adults",
+    "population": "Adults",
+    "notes": "",
     "service_dog_allowed": true,
     "wheelchair_accessible": true,
     "schedule": {
@@ -2466,7 +2629,8 @@
         "meals": {}
       }
     },
-    "claimed_by": null
+    "claimed_by": null,
+    "last_updated": ""
   },
   {
     "name": "St. Basil's Church",
@@ -2479,10 +2643,15 @@
     "latitude": 43.665686,
     "longitude": -79.387925,
     "contact": {
-      "phone": "416-926-7110",
+      "phone": {
+        "primary": {
+          "number": "(416) 926-7110"
+        }
+      },
       "website": "https://www.stbasiltoronto.org/"
     },
-    "population": "General Population",
+    "population": "Adults",
+    "notes": "",
     "service_dog_allowed": true,
     "wheelchair_accessible": true,
     "schedule": {
@@ -2546,7 +2715,8 @@
         "meals": {}
       }
     },
-    "claimed_by": null
+    "claimed_by": null,
+    "last_updated": ""
   },
   {
     "name": "Law Society Foundation Feed the Hungry Program",
@@ -2559,10 +2729,16 @@
     "latitude": 43.651953,
     "longitude": -79.385586,
     "contact": {
-      "phone": "416-947-3412",
+      "phone": {
+        "primary": {
+          "number": "(416) 947-3412"
+        }
+      },
       "website": "https://lso.ca/the-law-society-foundation/home"
     },
-    "population": "General Population",
+    "population": "Adults",
+    "notes": "Hot meal program, take out meals available",
+    "service_dog_allowed": "",
     "wheelchair_accessible": true,
     "schedule": {
       "monday": {
@@ -2631,7 +2807,8 @@
         }
       }
     },
-    "claimed_by": null
+    "claimed_by": null,
+    "last_updated": ""
   },
   {
     "name": "St Moses & St Katherine Coptic Orthodox Church",
@@ -2644,10 +2821,16 @@
     "latitude": 43.65816,
     "longitude": -79.40798,
     "contact": {
-      "phone": "416-800-0888",
+      "phone": {
+        "primary": {
+          "number": "(416) 800-0888"
+        }
+      },
       "website": "https://www.smsk.ca/"
     },
-    "population": "General Population",
+    "population": "Adults",
+    "notes": "",
+    "service_dog_allowed": "",
     "wheelchair_accessible": true,
     "schedule": {
       "monday": {
@@ -2727,7 +2910,8 @@
         "meals": {}
       }
     },
-    "claimed_by": null
+    "claimed_by": null,
+    "last_updated": ""
   },
   {
     "name": "Fred Victor - 40 Oak Drop-in",
@@ -2740,10 +2924,15 @@
     "latitude": 43.6613801,
     "longitude": -79.3652943,
     "contact": {
-      "phone": "416-363-4234",
+      "phone": {
+        "primary": {
+          "number": "(416) 363-4234"
+        }
+      },
       "website": "https://www.tcrc.ca"
     },
-    "population": "General Population; Adults",
+    "population": "Adults",
+    "notes": "",
     "service_dog_allowed": true,
     "wheelchair_accessible": true,
     "schedule": {
@@ -2830,7 +3019,8 @@
         "meals": {}
       }
     },
-    "claimed_by": null
+    "claimed_by": null,
+    "last_updated": ""
   },
   {
     "name": "Friends of Ruby",
@@ -2843,10 +3033,16 @@
     "latitude": 43.65686665,
     "longitude": -79.35855706,
     "contact": {
-      "phone": "416-359-0237",
+      "phone": {
+        "primary": {
+          "number": "(416) 359-0237"
+        }
+      },
       "website": "https://www.friendsofruby.ca/"
     },
     "population": "LGBTQI2S youth 16 to 29yrs",
+    "notes": "",
+    "service_dog_allowed": "",
     "wheelchair_accessible": true,
     "schedule": {
       "monday": {
@@ -2899,7 +3095,8 @@
         "meals": {}
       }
     },
-    "claimed_by": null
+    "claimed_by": null,
+    "last_updated": ""
   },
   {
     "name": "St. John The Compassionate Mission",
@@ -2912,10 +3109,15 @@
     "latitude": 43.660318,
     "longitude": -79.350402,
     "contact": {
-      "phone": "416-466-1357",
+      "phone": {
+        "primary": {
+          "number": "(416) 466-1357"
+        }
+      },
       "website": "https://www.stjohnsmission.org"
     },
-    "population": "General Population; Adults",
+    "population": "Adults",
+    "notes": "",
     "service_dog_allowed": true,
     "wheelchair_accessible": "",
     "schedule": {
@@ -3006,7 +3208,8 @@
         "meals": {}
       }
     },
-    "claimed_by": null
+    "claimed_by": null,
+    "last_updated": ""
   },
   {
     "name": "Fontbonne Ministries: Mustard Seed Drop-in",
@@ -3019,10 +3222,16 @@
     "latitude": 43.659787,
     "longitude": -79.345742,
     "contact": {
-      "phone": "416-465-6069",
+      "phone": {
+        "primary": {
+          "number": "(416) 465-6069"
+        }
+      },
       "website": "http://www.fontbonneministries.ca/"
     },
-    "population": "General Population; Adults",
+    "population": "Adults",
+    "notes": "",
+    "service_dog_allowed": "",
     "wheelchair_accessible": true,
     "schedule": {
       "monday": {
@@ -3112,7 +3321,8 @@
         }
       }
     },
-    "claimed_by": null
+    "claimed_by": null,
+    "last_updated": ""
   },
   {
     "name": "Sistering",
@@ -3125,10 +3335,17 @@
     "latitude": 43.661322,
     "longitude": -79.428766,
     "contact": {
-      "phone": "416-926-9762 ext. 243 (Tekla)",
+      "phone": {
+        "primary": {
+          "number": "(416) 926-9762",
+          "ext": "243"
+        }
+      },
       "website": "https://www.sistering.org"
     },
     "population": "Women",
+    "notes": "",
+    "service_dog_allowed": "",
     "wheelchair_accessible": true,
     "schedule": {
       "monday": {
@@ -3300,7 +3517,8 @@
         }
       }
     },
-    "claimed_by": null
+    "claimed_by": null,
+    "last_updated": ""
   },
   {
     "name": "Christie Ossington Neighbourhood Centre",
@@ -3313,10 +3531,15 @@
     "latitude": 43.6624092,
     "longitude": -79.4242105,
     "contact": {
-      "phone": "416-792-8941",
+      "phone": {
+        "primary": {
+          "number": "(416) 792-8941"
+        }
+      },
       "website": "https://www.conccommunity.org"
     },
-    "population": "General Population; Adults",
+    "population": "Adults",
+    "notes": "",
     "service_dog_allowed": true,
     "wheelchair_accessible": true,
     "schedule": {
@@ -3438,7 +3661,8 @@
         "meals": {}
       }
     },
-    "claimed_by": null
+    "claimed_by": null,
+    "last_updated": ""
   },
   {
     "name": "Native Child and Family Services of Toronto: Native Youth Resource Centre Drop-in",
@@ -3451,10 +3675,16 @@
     "latitude": 43.644867,
     "longitude": -79.522487,
     "contact": {
-      "phone": "416-969-8510 ext. 4111",
+      "phone": {
+        "primary": {
+          "number": "(416) 969-8510",
+          "ext": "4111"
+        }
+      },
       "website": "https://www.nativechild.org"
     },
     "population": "Indigenous youth, 16 to 24 years",
+    "notes": "",
     "service_dog_allowed": false,
     "wheelchair_accessible": true,
     "schedule": {
@@ -3583,7 +3813,8 @@
         "meals": {}
       }
     },
-    "claimed_by": null
+    "claimed_by": null,
+    "last_updated": ""
   },
   {
     "name": "St. Michael’s Homes: Our Place Community of Hope",
@@ -3596,10 +3827,15 @@
     "latitude": 43.67413,
     "longitude": -79.433581,
     "contact": {
-      "phone": "416-598-2919",
+      "phone": {
+        "primary": {
+          "number": "(416) 598-2919"
+        }
+      },
       "website": "https://www.ourplacecommunityofhope.com"
     },
-    "population": "General Population; Adults",
+    "population": "Adults",
+    "notes": "",
     "service_dog_allowed": true,
     "wheelchair_accessible": "",
     "schedule": {
@@ -3678,7 +3914,8 @@
         "meals": {}
       }
     },
-    "claimed_by": null
+    "claimed_by": null,
+    "last_updated": ""
   },
   {
     "name": "Davenport Perth Neighbourhood and Community Health Centre",
@@ -3691,10 +3928,16 @@
     "latitude": 43.6706764,
     "longitude": -79.4548339,
     "contact": {
-      "phone": "416-656-8025 ext. 370",
+      "phone": {
+        "primary": {
+          "number": "(416) 656-8025",
+          "ext": "370"
+        }
+      },
       "website": "https://www.dpnchc.ca"
     },
-    "population": "General Population",
+    "population": "Adults",
+    "notes": "",
     "service_dog_allowed": true,
     "wheelchair_accessible": true,
     "schedule": {
@@ -3753,7 +3996,8 @@
         "meals": {}
       }
     },
-    "claimed_by": null
+    "claimed_by": null,
+    "last_updated": ""
   },
   {
     "name": "Breakaway Community Services: Pieces to Pathways",
@@ -3766,10 +4010,16 @@
     "latitude": 43.643296,
     "longitude": -79.43104,
     "contact": {
-      "phone": "647-209-2043",
+      "phone": {
+        "primary": {
+          "number": "(647) 209-2043"
+        }
+      },
       "website": "https://piecestopathways.com/"
     },
     "population": "LGBTQI2S youth 16 to 29yrs",
+    "notes": "",
+    "service_dog_allowed": "",
     "wheelchair_accessible": true,
     "schedule": {
       "monday": {
@@ -3827,7 +4077,8 @@
         "meals": {}
       }
     },
-    "claimed_by": null
+    "claimed_by": null,
+    "last_updated": ""
   },
   {
     "name": "Parkdale Activity Recreation Centre",
@@ -3840,10 +4091,16 @@
     "latitude": 43.639706,
     "longitude": -79.44061,
     "contact": {
-      "phone": "416-537-2262",
+      "phone": {
+        "primary": {
+          "number": "(416) 537-2262"
+        }
+      },
       "website": "https://www.parc.on.ca"
     },
-    "population": "General Population; Adults",
+    "population": "Adults",
+    "notes": "",
+    "service_dog_allowed": "",
     "wheelchair_accessible": true,
     "schedule": {
       "monday": {
@@ -3955,7 +4212,8 @@
         }
       }
     },
-    "claimed_by": null
+    "claimed_by": null,
+    "last_updated": ""
   },
   {
     "name": "The Dale Ministries",
@@ -3968,10 +4226,15 @@
     "latitude": 43.640403,
     "longitude": -79.432731,
     "contact": {
-      "phone": "647-926-6352",
+      "phone": {
+        "primary": {
+          "number": "(647) 926-6352"
+        }
+      },
       "website": "https://www.thedale.org/visit-us/"
     },
-    "population": "General Population; Adults",
+    "population": "Adults",
+    "notes": "",
     "service_dog_allowed": true,
     "wheelchair_accessible": "",
     "schedule": {
@@ -4018,7 +4281,8 @@
         "meals": []
       }
     },
-    "claimed_by": null
+    "claimed_by": null,
+    "last_updated": ""
   },
   {
     "name": "Syme Woolner Neighbourhood and Family Centre: Jane's Drop-in",
@@ -4031,10 +4295,15 @@
     "latitude": 43.6919292,
     "longitude": -79.4684109,
     "contact": {
-      "phone": "416-766-4634",
+      "phone": {
+        "primary": {
+          "number": "(416) 766-4634"
+        }
+      },
       "website": "https://www.symewoolner.org"
     },
-    "population": "General Population",
+    "population": "Adults",
+    "notes": "",
     "service_dog_allowed": true,
     "wheelchair_accessible": true,
     "schedule": {
@@ -4209,7 +4478,8 @@
         }
       }
     },
-    "claimed_by": null
+    "claimed_by": null,
+    "last_updated": ""
   },
   {
     "name": "Weston King Neighbourhood Centre",
@@ -4222,10 +4492,15 @@
     "latitude": 43.7013717,
     "longitude": -79.5201013,
     "contact": {
-      "phone": "416-241-9898",
+      "phone": {
+        "primary": {
+          "number": "(416) 241-9898"
+        }
+      },
       "website": "https://www.wknc.ca"
     },
-    "population": "General Population Adults",
+    "population": "Adults",
+    "notes": "",
     "service_dog_allowed": true,
     "wheelchair_accessible": "",
     "schedule": {
@@ -4348,7 +4623,8 @@
         "meals": {}
       }
     },
-    "claimed_by": null
+    "claimed_by": null,
+    "last_updated": ""
   },
   {
     "name": "St. Francis Table",
@@ -4361,10 +4637,15 @@
     "latitude": 43.64197,
     "longitude": -79.4314,
     "contact": {
-      "phone": "416-532-4172",
+      "phone": {
+        "primary": {
+          "number": "(416) 532-4172"
+        }
+      },
       "website": "https://www.capuchinoutreach.org/programs/"
     },
-    "population": "General Population Adults",
+    "population": "Adults",
+    "notes": "",
     "service_dog_allowed": "",
     "wheelchair_accessible": "",
     "schedule": {
@@ -4456,7 +4737,8 @@
         }
       }
     },
-    "claimed_by": null
+    "claimed_by": null,
+    "last_updated": ""
   },
   {
     "name": "LAMP Community Health Centre",
@@ -4469,10 +4751,16 @@
     "latitude": 43.603348,
     "longitude": -79.50356,
     "contact": {
-      "phone": "416-252-6471 ext. 287",
+      "phone": {
+        "primary": {
+          "number": "(416) 252-6471",
+          "ext": "287"
+        }
+      },
       "website": "https://www.lampchc.org"
     },
-    "population": "General Population; Adults",
+    "population": "Adults",
+    "notes": "",
     "service_dog_allowed": true,
     "wheelchair_accessible": true,
     "schedule": {
@@ -4554,7 +4842,8 @@
         "meals": {}
       }
     },
-    "claimed_by": null
+    "claimed_by": null,
+    "last_updated": ""
   },
   {
     "name": "Daily Bread Food Bank's Community Meal",
@@ -4567,10 +4856,16 @@
     "latitude": 43.607955,
     "longitude": -79.501304,
     "contact": {
-      "phone": "416-203-0050",
+      "phone": {
+        "primary": {
+          "number": "(416) 203-0050"
+        }
+      },
       "website": "https://www.dailybread.ca/need-food/"
     },
-    "population": "General Population",
+    "population": "Adults",
+    "notes": "",
+    "service_dog_allowed": "",
     "wheelchair_accessible": true,
     "schedule": {
       "monday": {
@@ -4622,7 +4917,8 @@
         "meals": {}
       }
     },
-    "claimed_by": null
+    "claimed_by": null,
+    "last_updated": ""
   },
   {
     "name": "Cummer Avenue United Church Drop Inn",
@@ -4635,10 +4931,15 @@
     "latitude": 43.7873764,
     "longitude": -79.41579437,
     "contact": {
-      "phone": "647-400-1746",
+      "phone": {
+        "primary": {
+          "number": "(647) 400-1746"
+        }
+      },
       "website": "https://www.cummeravenueuc.ca/"
     },
-    "population": "General Population; Adults",
+    "population": "Adults",
+    "notes": "",
     "service_dog_allowed": true,
     "wheelchair_accessible": true,
     "schedule": {
@@ -4783,7 +5084,8 @@
         }
       }
     },
-    "claimed_by": null
+    "claimed_by": null,
+    "last_updated": ""
   },
   {
     "name": "Progress Place: The Community Place Hub",
@@ -4796,10 +5098,15 @@
     "latitude": 43.69924157,
     "longitude": -79.51194179,
     "contact": {
-      "phone": "416-323-1429",
+      "phone": {
+        "primary": {
+          "number": "(416) 323-1429"
+        }
+      },
       "website": "https://www.progressplace.org/approach.html#community"
     },
-    "population": "General Population; Adults",
+    "population": "Adults",
+    "notes": "",
     "service_dog_allowed": true,
     "wheelchair_accessible": true,
     "schedule": {
@@ -4910,7 +5217,8 @@
         }
       }
     },
-    "claimed_by": null
+    "claimed_by": null,
+    "last_updated": ""
   },
   {
     "name": "Warden Woods Community Centre: Teesdale Drop-In",
@@ -4923,10 +5231,15 @@
     "latitude": 43.697052,
     "longitude": -79.285477,
     "contact": {
-      "phone": "416-694-1138",
+      "phone": {
+        "primary": {
+          "number": "(416) 694-1138"
+        }
+      },
       "website": "https://www.wardenwoods.com"
     },
-    "population": "General Population",
+    "population": "Adults",
+    "notes": "",
     "service_dog_allowed": true,
     "wheelchair_accessible": true,
     "schedule": {
@@ -4993,7 +5306,8 @@
         "meals": {}
       }
     },
-    "claimed_by": null
+    "claimed_by": null,
+    "last_updated": ""
   },
   {
     "name": "Warden Woods Community Centre: Respite on Progress",
@@ -5006,10 +5320,15 @@
     "latitude": 43.777717,
     "longitude": -79.247428,
     "contact": {
-      "phone": "416-639-6766",
+      "phone": {
+        "primary": {
+          "number": "(416) 639-6766"
+        }
+      },
       "website": "https://wardenwoods.com/programs/respite/"
     },
-    "population": "General Population",
+    "population": "Adults",
+    "notes": "",
     "service_dog_allowed": true,
     "wheelchair_accessible": true,
     "schedule": {
@@ -5063,7 +5382,8 @@
         "meals": {}
       }
     },
-    "claimed_by": null
+    "claimed_by": null,
+    "last_updated": ""
   },
   {
     "name": "Agincourt Community Services Association: Scarborough Drop-in North",
@@ -5076,10 +5396,15 @@
     "latitude": 43.7845592,
     "longitude": -79.2809082,
     "contact": {
-      "phone": "416-321-6912",
+      "phone": {
+        "primary": {
+          "number": "(416) 321-6912"
+        }
+      },
       "website": "https://www.agincourtcommunityservices.com"
     },
-    "population": "General Population; Adults",
+    "population": "Adults",
+    "notes": "",
     "service_dog_allowed": true,
     "wheelchair_accessible": true,
     "schedule": {
@@ -5182,7 +5507,8 @@
         "meals": {}
       }
     },
-    "claimed_by": null
+    "claimed_by": null,
+    "last_updated": ""
   },
   {
     "name": "Agincourt Community Services Association: Scarborough Drop-in South",
@@ -5195,10 +5521,15 @@
     "latitude": 43.65366138,
     "longitude": -79.40818186,
     "contact": {
-      "phone": "416-267-0115",
+      "phone": {
+        "primary": {
+          "number": "(416) 267-0115"
+        }
+      },
       "website": "https://www.agincourtcommunityservices.com"
     },
-    "population": "General Population; Adults",
+    "population": "Adults",
+    "notes": "",
     "service_dog_allowed": true,
     "wheelchair_accessible": true,
     "schedule": {
@@ -5276,7 +5607,8 @@
         }
       }
     },
-    "claimed_by": null
+    "claimed_by": null,
+    "last_updated": ""
   },
   {
     "name": "Good Neighbours Drop-In",
@@ -5289,10 +5621,15 @@
     "latitude": 43.743495,
     "longitude": -79.219055,
     "contact": {
-      "phone": "647-358-4105",
+      "phone": {
+        "primary": {
+          "number": "(647) 358-4105"
+        }
+      },
       "website": "https://www.goodneighboursmission.org/"
     },
-    "population": "General Population; Adults",
+    "population": "Adults",
+    "notes": "",
     "service_dog_allowed": true,
     "wheelchair_accessible": true,
     "schedule": {
@@ -5346,10 +5683,11 @@
         "meals": {}
       }
     },
-    "claimed_by": null
+    "claimed_by": null,
+    "last_updated": ""
   },
   {
-    "name": "Danforth Multifaith Commons - Out of the Cold Program (Take-out only @ canopy on Danforth)",
+    "name": "Danforth Multifaith Commons - Out of the Cold Program",
     "address": {
       "street": "310 Danforth Ave",
       "city": "Scarborough",
@@ -5359,10 +5697,15 @@
     "latitude": 43.677559,
     "longitude": -79.353729,
     "contact": {
-      "phone": "416-463-2179",
+      "phone": {
+        "primary": {
+          "number": "(416) 463-2179"
+        }
+      },
       "website": "https://www.instagram.com/outofthecold_eastend/"
     },
     "population": "Adults",
+    "notes": "Take-out only @ canopy on Danforth",
     "service_dog_allowed": true,
     "wheelchair_accessible": true,
     "schedule": {
@@ -5416,6 +5759,7 @@
         "meals": {}
       }
     },
-    "claimed_by": null
+    "claimed_by": null,
+    "last_updated": ""
   }
 ]

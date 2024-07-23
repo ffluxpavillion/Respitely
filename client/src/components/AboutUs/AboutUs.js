@@ -84,8 +84,8 @@ export default function AboutUs() {
       label: '💡 THE SOLUTION',
       children: (
         <p className='mission__div-text'>
-          Respitely is a platform that provide the latest updates for shelter
-          vacancies, and maps out meal schedules across the city.
+          Respitely provides the latest updates for shelter
+          vacancies, and real-time drop-in meal schedules across the city.
           <br />
           <br />
           Both features are are supported by secondary information, dynamic

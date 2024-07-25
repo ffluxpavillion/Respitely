@@ -1421,8 +1421,8 @@
       },
       "website": "https://www.covenanthouse.on.ca"
     },
-    "population": "Youth 16 - 24 years",
-    "notes": "",
+    "population": "Youth",
+    "notes": "16 - 24 years",
     "service_dog_allowed": "",
     "wheelchair_accessible": true,
     "schedule": {
@@ -2811,7 +2811,7 @@
     "last_updated": ""
   },
   {
-    "name": "St Moses & St Katherine Coptic Orthodox Church",
+    "name": "–",
     "address": {
       "street": "557 Bathurst Street",
       "city": "Toronto",

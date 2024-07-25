@@ -28,7 +28,7 @@ export default function MealsCard() {
         <div className='meals-section__lower'>
           <Link to='/drop-in-map' scroll={scrollToTop} aria-label='Link to Drop-In Map'>
             <h3 className='meals-section__map-link'>
-              CLICK HERE TO EXPLORE DROP-IN MAP ⟩⟩
+              EXPLORE DROP-IN MAP ⟩⟩
             </h3>
           </Link>
         </div>

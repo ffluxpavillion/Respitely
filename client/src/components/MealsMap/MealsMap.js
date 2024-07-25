@@ -286,7 +286,7 @@ export default function MealsMap() {
         <Drawer
           className='drawer'
           title={selectedPlace ? selectedPlace.name : 'Details'}
-          placement='right'
+          placement='left'
           closable={true}
           onClose={handleCloseDrawer}
           open={drawerVisible}

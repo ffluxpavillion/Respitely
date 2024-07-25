@@ -92,44 +92,38 @@ export default function Header() {
       <nav className='navbar'>
         <div className='navbar__div'>
           <ul className={`navbar__div-ul navMenu ${menuOpen ? 'active' : ''}`}>
-            <li onClick={() => handleHashLinkClick('#landing')}>
+            <li onClick={() => handleHashLinkClick('')}>
               <Link smooth to='/' aria-label='Link to Respitely Homepage'>
-                <h3 className='navbar__div-li nav-stairs__home'>Home ⟩⟩</h3>
+                <h3 className='navbar__div-li '>Home ⟩⟩</h3>
               </Link>
             </li>
             <li onClick={() => handleHashLinkClick('#shelters')}>
               <Link smooth to='/#shelters' aria-label='Link to Shelters'>
-                <h3 className='navbar__div-li nav-stairs__shelters'>
-                  SHELTERS ⟩⟩
-                </h3>
+                <h3 className='navbar__div-li '>SHELTERS ⟩⟩</h3>
               </Link>
             </li>
             <li onClick={() => handleHashLinkClick('#dropInMeals')}>
-              <Link smooth to='/#drop-in-meals' aria-label='Link to Drop In Meals'>
-                <h3 className='navbar__div-li nav-stairs__about-us'>
-                  DROP-IN MEALS ⟩⟩
-                </h3>
+              <Link
+                smooth
+                to='/#drop-in-meals'
+                aria-label='Link to Drop In Meals'
+              >
+                <h3 className='navbar__div-li '>DROP-IN MEALS ⟩⟩</h3>
               </Link>
             </li>
             <li onClick={toggleMenu}>
               <RouterLink to='/drop-in-map' aria-label='Link to Drop-In Map'>
-                <h3 className='navbar__div-li nav-stairs__about-us'>
-                  EXPLORE DROP-IN MAP ⟩⟩
-                </h3>
+                <h3 className='navbar__div-li '>DROP-IN MAP ⟩⟩</h3>
               </RouterLink>
             </li>
             <li onClick={() => handleHashLinkClick('#resources')}>
               <Link smooth to='/#resources' aria-label='Link to Resources'>
-                <h3 className='navbar__div-li nav-stairs__resources'>
-                  RESOURCES ⟩⟩
-                </h3>
+                <h3 className='navbar__div-li '>RESOURCES ⟩⟩</h3>
               </Link>
             </li>
             <li onClick={() => handleHashLinkClick('#about-us')}>
               <Link smooth to='/#about-us' aria-label='Link to About Us'>
-                <h3 className='navbar__div-li nav-stairs__about-us'>
-                  ABOUT US ⟩⟩
-                </h3>
+                <h3 className='navbar__div-li '>ABOUT US ⟩⟩</h3>
               </Link>
             </li>
 

@@ -4,15 +4,15 @@ import { DownOutlined, UserOutlined } from '@ant-design/icons';
 import { Button, Dropdown, message, Space, Tooltip, Spin } from 'antd';
 import { useAuth0 } from '@auth0/auth0-react';
 import './UserLoginMenu.scss';
-import LoginButton from '../LoginButton/LoginButton';
+
 
 export default function UserLoginMenu() {
   const { user, logout, isAuthenticated, loginWithRedirect, isLoading } =
     useAuth0();
   const navigate = useNavigate();
 
-  const handleProfileClick = () => {
-    navigate('/profile');
+  const handleDashboardClick = () => {
+    navigate('/dashboard');
   };
 
   const handleLogout = () => {
@@ -27,13 +27,13 @@ export default function UserLoginMenu() {
           label: 'Dashboard',
           key: '1',
           icon: <UserOutlined />,
-          onClick: handleProfileClick,
+          onClick: handleDashboardClick,
         },
         {
           label: 'My Profile',
           key: '2',
           icon: <UserOutlined />,
-          onClick: handleProfileClick,
+          onClick: handleDashboardClick,
         },
         {
           label: 'Logout',

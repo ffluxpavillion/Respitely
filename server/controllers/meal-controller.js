@@ -1,7 +1,7 @@
 const TorontoMeal = require('../models/torontoMeal');
 const VancouverMeal = require('../models/vancouverMeal');
 
-  // Validate the city and day parameters
+// Validate the city and day parameters
 const validCities = ['toronto', 'vancouver'];
 const validDays = [
   'sunday',
@@ -13,6 +13,7 @@ const validDays = [
   'saturday',
 ];
 
+// Fetch all meals for /:city/:day
 const getMealsByDay = async (req, res) => {
   const city = req.params.city.toLowerCase();
   const day = req.params.day.toLowerCase();
@@ -69,8 +70,7 @@ const getMealsByDay = async (req, res) => {
   }
 };
 
-
-
+// Fetch all meals for /:city
 const getAllMealsByCity = async (req, res) => {
   const city = req.params.city.toLowerCase();
 

@@ -73,8 +73,8 @@ mealSchema.set('toJSON', { // Forcing mongoose to output JSON in specific order
       contact: ret.contact,
       population: ret.population,
       notes: ret.notes,
-      service_dog_allowed: ret.service_dog_allowed,
-      wheelchair_accessible: ret.wheelchair_accessible,
+      service_dog_allowed: ret.service_dog_allowed !== undefined ? ret.service_dog_allowed : null, // Ensuring value is displayed
+      wheelchair_accessible: ret.wheelchair_accessible !== undefined ? ret.wheelchair_accessible : null, // Ensuring value is displayed
       schedule: ret.schedule,
       claimed_by: ret.claimed_by,
       last_updated: ret.last_updated

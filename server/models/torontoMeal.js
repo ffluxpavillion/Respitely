@@ -3,29 +3,27 @@ const mongoose = require('mongoose');
 const mealTimeSchema = new mongoose.Schema({ // start & end times for each meal
   start: { type: String, required: true },
   end: { type: String, required: true }
-})
+}, { _id: false }); // Prevents Mongoose creating _id
 
 const dailyScheduleSchema = new mongoose.Schema({ // operating hours & meal times
-  hours: [
-    {
-      open: { type: String, required: true },
-      close: { type: String, required: true }
-    }
-  ],
+  hours: {
+    open: { type: String, required: true },
+    close: { type: String, required: true }
+  },
   meals: {
     breakfast: mealTimeSchema,
     lunch: mealTimeSchema,
     dinner: mealTimeSchema,
     snack: mealTimeSchema,
   }
-})
+}, { _id: false });
 
 const addressSchema = new mongoose.Schema({ // address of meal provider
   street: { type: String, required: true },
   city: { type: String, required: true },
   province: { type: String, required: true },
   postal_code: { type: String, required: true },
-})
+}, { _id: false });
 
 const contactSchema = new mongoose.Schema({ // contact information for meal provider
   phone: {
@@ -39,7 +37,7 @@ const contactSchema = new mongoose.Schema({ // contact information for meal prov
     }
   },
   website: { type: String, required: true }
-})
+}, { _id: false });
 
 const mealSchema = new mongoose.Schema({ // meal provider schema
   name: { type: String, required: true },
@@ -64,6 +62,26 @@ const mealSchema = new mongoose.Schema({ // meal provider schema
   last_updated: { type: Date }
 }, { collection: 'drop_in_meals' });
 
+mealSchema.set('toJSON', { // Forcing mongoose to output JSON in specific order
+  transform: (doc, ret) => {
+    return {
+      _id: ret._id,
+      name: ret.name,
+      address: ret.address,
+      latitude: ret.latitude,
+      longitude: ret.longitude,
+      contact: ret.contact,
+      population: ret.population,
+      notes: ret.notes,
+      service_dog_allowed: ret.service_dog_allowed,
+      wheelchair_accessible: ret.wheelchair_accessible,
+      schedule: ret.schedule,
+      claimed_by: ret.claimed_by,
+      last_updated: ret.last_updated
+    };
+  }
+});
+
 const TorontoMeal = mongoose.createConnection(process.env.MONGODB_URI_TORONTO).model('Meal', mealSchema);
 
-module.exports = TorontoMeal
+module.exports = TorontoMeal;

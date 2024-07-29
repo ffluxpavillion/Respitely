@@ -42,16 +42,6 @@ const registerUser = async (req, res) => { // register new user endpoint
   }
 };
 
-// const login = (req, res) => {
-//   const { email, password } = req.body;
-
-//   if (email === 'a@gmail.com' && password === 'a') {
-//     res.json({message: 'Login successful!'});
-//   } else {
-//     res.status(401).json({message: 'Login failed! -- Invalid email or password'});
-//   }
-// }
-
 
 const loginUser = async (req, res) => { // login user endpoint
   try {

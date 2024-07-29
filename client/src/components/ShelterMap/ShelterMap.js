@@ -210,7 +210,7 @@ export default function ShelterMap() {
 
   return (
     <>
-      <section className='shelter-map-container' id='shelters'>
+      <section className='shelter-map-container'>
         <SheltersMap
           locations={displayedRecords}
           records={records}

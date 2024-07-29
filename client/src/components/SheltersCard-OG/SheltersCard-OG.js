@@ -254,7 +254,7 @@ export default function SheltersCardOG() {
   return (
     <>
       <EmergencyBanner />
-      <section className='shelter-section-og' id='shelters'>
+      <section className='shelter-section-og' id='shelters-card-og'>
         <div className='shelter-section__upper-og'>
           <h3 className='shelter-section__header-og'>
             Latest Shelter Occupancy in Toronto

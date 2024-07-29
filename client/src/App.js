@@ -5,7 +5,7 @@ import ApiKeyProvider from './contexts/ApiKeyContext'; // contexts
 import { useGeolocation } from './hooks/useGeolocation'; // hooks
 import { ParallaxProvider } from 'react-scroll-parallax';
 // components
-import Header from '../src/components/Header/Header';
+import Header from './components/Header/Header';
 import SheltersCardOG from './components/SheltersCard-OG/SheltersCard-OG';
 import CookiePolicy from './components/Legal/CookiePolicy/CookiePolicy';
 import TermsOfUse from './components/Legal/TermsOfUse/TermsOfUse';
@@ -21,6 +21,7 @@ import { UserContextProvider } from './contexts/userContext';
 import Dashboard from './pages/Dashboard/Dashboard';
 import { GeocodedLocationsProvider } from './contexts/GeocodedDataContext'; // TODO - Need to fix before enabling
 import ShelterMap from './components/ShelterMap/ShelterMap'; // Import SheltersMap component
+import Profile from './pages/Profile/Profile';
 
 export default function App() {
   const { locationInfo, locationError } = useGeolocation();
@@ -28,7 +29,7 @@ export default function App() {
   initGA(); // Initialize Google Analytics
 
   return (
-    <UserContextProvider>
+    // <UserContextProvider>
       <ApiKeyProvider>
         <ParallaxProvider>
           <Header />
@@ -38,6 +39,7 @@ export default function App() {
             <Route path='/shelters' element={<SheltersCard />} />
             <Route path='/login' element={<Login />} />
             <Route path='/dashboard' element={<Dashboard />} />
+            <Route path='/profile' element={<Profile />} />
             <Route path='/register' element={<Register />} />
             <Route path='/cookie-policy' element={<CookiePolicy />} />
             <Route path='/shelterscard-og' element={<SheltersCardOG />} />
@@ -49,6 +51,6 @@ export default function App() {
           </Routes>
         </ParallaxProvider>
       </ApiKeyProvider>
-    </UserContextProvider>
+    // </UserContextProvider>
   );
 }

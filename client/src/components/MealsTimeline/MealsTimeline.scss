@@ -180,13 +180,15 @@
 
 .timeline-item-time {
   width: 13%;
-  text-align: right;
+  text-align: center;
   margin-right: 1rem;
   font-weight: bold;
   color: white;
 
   @include mobile {
     margin: 0rem 0.7rem 0 0;
+    font-size: 0.8rem;
+    width: 2rem;
   }
 }
 
@@ -241,11 +243,15 @@
 
 .mealsTimeline-accessibility-div {
   display: flex;
-  flex-direction: row;
   gap: 0.5rem;
   position: absolute;
-  top: 2.5rem;
-  right: 28px;
+  // align-self: end;
+  // bottom: 8rem;
+  right: 3rem;
+
+  @include mobile {
+    right: 2rem;
+  }
 }
 
 .mealsTimeline-accessibility-icon {
@@ -273,7 +279,7 @@
   margin-left: 0.6rem;
 
   @include mobile {
-    margin-left: 0.3rem;
+    margin-left: 0.5rem;
   }
 }
 
@@ -575,24 +581,75 @@
 // -------------------- MEALS TIMELINE  ----------------------------
 
 .is-ended {
-  filter: brightness(1);
-
   // EVENT ENDED LABEL -- TOP RIGHT
-  &::after {
-    content: 'Event Ended';
+
+  filter: brightness(0.7);
+  // height: 5rem;
+  // height: 2.1rem;
+  // contain: content;
+  &::before {
+    content: 'Ended';
     position: absolute;
-    top: 0.5rem;
-    right: 25px;
     color: red;
     font-size: 0.9em;
     font-weight: bold;
-    background-color: rgba(255, 255, 255, 0.7);
-    padding: 3px 6px;
+    background-color: rgba(255, 255, 255, 1);
+    padding: 0.25rem 0.5rem;
     border-radius: 3px;
+    text-align: center;
+
+    @include desktop {
+      width: 5rem;
+      left: 0.4rem;
+    }
+    @include tablet {
+      // left: 0.5rem;
+
+      width: 5.5rem;
+    }
 
     @include mobile {
-      right: 1rem;
+      left: 0;
+      text-align: center;
+      width: 4rem;
     }
+  }
+}
+
+// }
+
+// EVENT ENDED TIME STRIKETHROUGH
+.time-isEnded {
+  color: red;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 0.25rem 0.5rem;
+  border-radius: 3px;
+  width: 5rem;
+}
+
+// EVENT ENDED LABEL -- TOP RIGHT
+.event-ended {
+  &::before {
+    content: 'Ended';
+    position: absolute;
+    color: red;
+    font-size: 0.9em;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 0.25rem 0.5rem;
+    border-radius: 3px;
+    width: 5rem;
+
+    // @include desktop{
+    //   top: 0.5rem;
+    //   right: 25px;
+    // }
+
+    // @include mobile {
+    //   right: 1rem;
+    //   top: 0.5rem;
+    //   text-align: center;
+    // }
   }
 }
 

@@ -75,7 +75,15 @@ mealSchema.set('toJSON', { // Forcing mongoose to output JSON in specific order
       notes: ret.notes,
       service_dog_allowed: ret.service_dog_allowed !== undefined ? ret.service_dog_allowed : null, // Ensuring value is displayed
       wheelchair_accessible: ret.wheelchair_accessible !== undefined ? ret.wheelchair_accessible : null, // Ensuring value is displayed
-      schedule: ret.schedule,
+      schedule: {
+        monday: ret.schedule.monday,
+        tuesday: ret.schedule.tuesday,
+        wednesday: ret.schedule.wednesday,
+        thursday: ret.schedule.thursday,
+        friday: ret.schedule.friday,
+        saturday: ret.schedule.saturday,
+        sunday: ret.schedule.sunday
+      },
       claimed_by: ret.claimed_by,
       last_updated: ret.last_updated
     };

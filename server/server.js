@@ -41,10 +41,14 @@ if (process.env.NODE_ENV === 'production') {
 // const authRoutes = require('./routes/auth-routes');
 const shelterRoutes = require('./routes/shelters');
 const mealRoutes = require('./routes/meals');
+const showersRoutes = require('./routes/showers');
+
 
 // app.use(authRoutes);
 app.use('/shelters', shelterRoutes);
-app.use('/meals', mealRoutes);
+// app.use('/meals', mealRoutes);
+app.use('/', mealRoutes, showersRoutes);
+
 
 app.get('/', (req, res) => {
   res.send('Welcome to the Respitely Server!');
@@ -55,7 +59,7 @@ app.get('/api/maps-key', (req, res) => {
 });
 
 app.use((req, res) => {
-  res.send('This is not a valid route. Try <b>/shelters</b> or  <b>/meals/toronto/:day</b> or <b>/meals/vancouver/:day</b>  instead.');
+  res.send('This is not a valid route. Try <b>/shelters</b> or  <b>/toronto/meals/:day</b> or <b>/vancouver/meals/:day</b>  instead.');
 });
 
 // Start the server

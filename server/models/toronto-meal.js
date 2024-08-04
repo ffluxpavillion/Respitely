@@ -88,8 +88,8 @@ mealSchema.set('toJSON', { // Forcing mongoose to output JSON in specific order
         sunday: ret.schedule.sunday
       },
       claimed_by: ret.claimed_by,
-    }, {
-      timestamps: true
+      createdAt: ret.createdAt,
+      updatedAt: ret.updatedAt,
     };
   }
 });

@@ -1,10 +1,13 @@
 const router = require('express').Router();
-const { getMeals, createMeal } = require('../controllers/meal-controller');
+const { getMeals, getMeal, createMeal } = require('../controllers/meal-controller');
 
 // Routes
 
 // GET all meals for a city, or query by day of the week
 router.get('/:city/meals', getMeals);
+
+// GET a single meal for a city by id
+router.get('/:city/meals/:id', getMeal);
 
 // POST a single meal
 router.post('/toronto/meals', createMeal);

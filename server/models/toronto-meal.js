@@ -37,7 +37,8 @@ const contactSchema = new mongoose.Schema({ // contact information for meal prov
       ext: { type: String }
     }
   },
-  website: { type: String, required: true }
+  website: { type: String, required: true },
+  email: { type: String, required: true}
 }, { _id: false });
 
 const mealSchema = new mongoose.Schema({ // meal provider schema
@@ -46,7 +47,7 @@ const mealSchema = new mongoose.Schema({ // meal provider schema
   latitude: { type: Number },
   longitude: { type: Number },
   contact: contactSchema,
-  population: { type: String, required: true, enum: ['anyone', 'adults only', 'women only', 'men only', 'youth'] },
+  population: { type: String, required: true, enum: ['Anyone', 'Adults Only', 'Women Only', 'Men Only', 'Youth'] },
   notes: { type: String },
   service_dog_allowed: { type: Boolean, required: true },
   wheelchair_accessible: { type: Boolean, required: true },
@@ -59,8 +60,7 @@ const mealSchema = new mongoose.Schema({ // meal provider schema
     saturday: dailyScheduleSchema,
     sunday: dailyScheduleSchema,
   },
-  claimed_by: { type: String, default: null },
-  last_updated: { type: Date, default: Date.now}
+  claimed_by: { type: mongoose.Schema.Types.ObjectId, ref: 'User', default: null  },
 }, {
   timestamps: true
 });
@@ -88,7 +88,8 @@ mealSchema.set('toJSON', { // Forcing mongoose to output JSON in specific order
         sunday: ret.schedule.sunday
       },
       claimed_by: ret.claimed_by,
-      last_updated: ret.last_updated
+    }, {
+      timestamps: true
     };
   }
 });

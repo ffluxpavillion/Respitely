@@ -1,9 +1,11 @@
 const router = require('express').Router();
-const { getMealsByDay, getAllMealsByCity } = require('../controllers/meal-controller');
+const { getMeals } = require('../controllers/meal-controller');
 
 // Routes
-router.get('/:city/meals', getAllMealsByCity); // GET all meals for a city
-router.get('/:city/meals/:day', getMealsByDay); // GET all meals for a city by day
+
+// GET all meals for a city, or query by day of the week
+router.get('/:city/meals', getMeals);
+
 
 // POST a single meal
 router.post('/:city/meals', (req, res) => {

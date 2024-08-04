@@ -4,13 +4,13 @@ const VancouverMeal = require('../models/vancouverMeal');
 // Validate the city and day parameters
 const validCities = ['toronto', 'vancouver'];
 const validDays = [
-  'sunday',
   'monday',
   'tuesday',
   'wednesday',
   'thursday',
   'friday',
   'saturday',
+  'sunday'
 ];
 
 // Fetch all meals for /:city/:day

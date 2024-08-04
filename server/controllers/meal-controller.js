@@ -1,5 +1,6 @@
 const TorontoMeal = require('../models/toronto-meal');
 const VancouverMeal = require('../models/vancouverMeal');
+const geocodeAddress = require('../helpers/geocode')
 
 const validCities = ['toronto', 'vancouver'];
 const validDays = [
@@ -11,6 +12,8 @@ const validDays = [
   'saturday',
   'sunday',
 ];
+
+// ------------------------ (GET) FETCH MEALS ------------------------
 
 const getMeals = async (req, res) => { // GET all meals for a city
   const city = req.params.city.toLowerCase();
@@ -26,7 +29,7 @@ const getMeals = async (req, res) => { // GET all meals for a city
     return res.status(400).json({ error: 'Invalid day parameter' });
   }
 
-  try { // Fetch location information + drop-in meal schedule for specific day-- /api/v1/:city/meals?day=:day
+  try { // Fetch provider information + drop-in meal schedule for specific day-- /api/v1/:city/meals?day=:day
     let query = { };
     if (day) {
       query[`schedule.${day}`] = { $exists: true };
@@ -67,7 +70,7 @@ const getMeals = async (req, res) => { // GET all meals for a city
       return res.status(404).json({ error: `No meal data found for ${city}` });
     }
 
-    res.json(meals);
+    res.json(meals); // Return all meals
   }
   } catch (err) {
     console.error(`Error fetching meals for ${city}${day ? ` on ${day}` : ''}:`, err);
@@ -75,6 +78,27 @@ const getMeals = async (req, res) => { // GET all meals for a city
   }
 };
 
+// ------------------------ (POST) CREATE MEALS ------------------------
+
+  const createMeal = async ( req, res ) => {
+  const {name, address, contact, population, notes, service_dog_allowed, wheelchair_accessible, schedule, claimed_by} = req.body;
+
+  // add doc to db
+  try {
+    // geocode address to get lat and long
+    const { latitude, longitude } = await geocodeAddress(address);
+
+    // add doc to db
+    const meal = await TorontoMeal.create({name, address, latitude, longitude, contact, population, notes, service_dog_allowed, wheelchair_accessible, schedule, claimed_by})
+    res.status(200).json(meal)
+  } catch (error) {
+    res.status(400).json({error: error.message})
+
+  }
+}
+
+
 module.exports = {
   getMeals,
+  createMeal
 };

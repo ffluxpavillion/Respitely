@@ -1,6 +1,7 @@
 const TorontoMeal = require('../models/toronto-meal');
 const VancouverMeal = require('../models/vancouverMeal');
 const geocodeAddress = require('../helpers/geocode');
+const mongoose = require('mongoose');
 
 const validCities = ['toronto', 'vancouver'];
 const validDays = [
@@ -99,9 +100,12 @@ const getMeal = async (req, res) => {
   const id = req.params.id;
   const MealModel = city === 'toronto' ? TorontoMeal : VancouverMeal;
 
-  if (!validCities.includes(city)) {
-    // Validate city parameter
+  if (!validCities.includes(city)) { // Validate city parameter
     return res.status(400).json({ error: 'Invalid city parameter' });
+  }
+
+  if (!mongoose.Types.ObjectId.isValid(id)) { // Validate id type is mongoDB ObjectId
+    return res.status(404).json({ error: 'No such meal' });
   }
 
   try {

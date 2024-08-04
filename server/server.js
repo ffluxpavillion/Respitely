@@ -47,7 +47,7 @@ const showersRoutes = require('./routes/showers');
 // app.use(authRoutes);
 app.use('/shelters', shelterRoutes);
 // app.use('/meals', mealRoutes);
-app.use('/', mealRoutes, showersRoutes);
+app.use('/api', mealRoutes, showersRoutes);
 
 
 app.get('/', (req, res) => {

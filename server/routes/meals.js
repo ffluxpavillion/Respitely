@@ -10,7 +10,7 @@ router.get('/:city/meals', getMeals);
 router.get('/:city/meals/:id', getMeal);
 
 // POST a single meal
-router.post('/toronto/meals', createMeal);
+router.post('/:city/meals', createMeal);
 
 // DELETE a single meal
 router.delete('/:city/meals/:mealId', (req, res) => {

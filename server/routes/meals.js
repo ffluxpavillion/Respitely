@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { getMeals, getMeal, createMeal } = require('../controllers/meal-controller');
+const { getMeals, getMeal, createMeal, deleteMeal } = require('../controllers/meal-controller');
 
 // Routes
 
@@ -13,9 +13,7 @@ router.get('/:city/meals/:id', getMeal);
 router.post('/:city/meals', createMeal);
 
 // DELETE a single meal
-router.delete('/:city/meals/:mealId', (req, res) => {
-  res.json({ mssg: 'DELETE a meal' });
-})
+router.delete('/:city/meals/:id', deleteMeal);
 
 // UPDATE a single meal
 router.patch('/:city/meals/:mealId', (req, res) => {

@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { getMeals, getMeal, createMeal, deleteMeal } = require('../controllers/meal-controller');
+const { getMeals, getMeal, createMeal, deleteMeal, updateMeal } = require('../controllers/meal-controller');
 
 // Routes
 
@@ -16,8 +16,6 @@ router.post('/:city/meals', createMeal);
 router.delete('/:city/meals/:id', deleteMeal);
 
 // UPDATE a single meal
-router.patch('/:city/meals/:mealId', (req, res) => {
-  res.json({ mssg: 'UPDATE a meal' });
-})
+router.patch('/:city/meals/:id', updateMeal);
 
 module.exports = router;

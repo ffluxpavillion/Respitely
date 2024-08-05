@@ -1,5 +1,5 @@
 const TorontoMeal = require('../models/toronto-meal');
-const VancouverMeal = require('../models/vancouverMeal');
+const VancouverMeal = require('../models/vancouver-meal');
 const geocodeAddress = require('../helpers/geocode');
 const mongoose = require('mongoose');
 
@@ -95,7 +95,7 @@ const getMeals = async (req, res) => {
 };
 
 // ------------------------ (GET) SINGLE MEAL -- BY ID ------------------------
-const getMeal = async (req, res) => {
+const getMeal = async (req, res) => { // GET a single meal for a city by id -- /api/v1/:city/meals/:id
   const city = req.params.city.toLowerCase();
   const id = req.params.id;
   const MealModel = city === 'toronto' ? TorontoMeal : VancouverMeal;
@@ -126,9 +126,17 @@ const getMeal = async (req, res) => {
   }
 };
 
-// ------------------------ (POST) CREATE MEALS ------------------------
+// ------------------------ (POST) CREATE MEALS ------------------------ -- /api/v1/:city/meals
 
 const createMeal = async (req, res) => {
+  const { city }  = req.params;
+  const MealModel = city === 'toronto' ? TorontoMeal : VancouverMeal;
+
+  // Validate city and day parameters
+  if (!validCities.includes(city)) {
+    return res.status(400).json({ error: 'Invalid city parameter' });
+  }
+
   const { // destructure req.body
     name,
     address,
@@ -141,13 +149,12 @@ const createMeal = async (req, res) => {
     claimed_by,
   } = req.body;
 
-
   try {
     // geocode address to get lat and long
     const { latitude, longitude } = await geocodeAddress(address);
 
     // add doc to db
-    const meal = await TorontoMeal.create({ // create new meal
+    const meal = await MealModel.create({ // create new meal
       name,
       address,
       latitude,

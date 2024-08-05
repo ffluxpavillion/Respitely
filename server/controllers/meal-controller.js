@@ -95,9 +95,10 @@ const getMeals = async (req, res) => {
 };
 
 // ------------------------ (GET) SINGLE MEAL -- BY ID ------------------------
+
 const getMeal = async (req, res) => { // GET a single meal for a city by id -- /api/v1/:city/meals/:id
   const city = req.params.city.toLowerCase();
-  const id = req.params.id;
+  const id  = req.params.id;
   const MealModel = city === 'toronto' ? TorontoMeal : VancouverMeal;
 
   if (!validCities.includes(city)) { // Validate city parameter
@@ -173,8 +174,33 @@ const createMeal = async (req, res) => {
   }
 };
 
+// ------------------------ (DELETE) REMOVE MEALS ------------------------ -- /api/v1/:city/meals
+
+  const deleteMeal = async (req, res) => {
+    const city = req.params.city.toLowerCase();
+    const id  = req.params.id;
+    const MealModel = city === 'toronto' ? TorontoMeal : VancouverMeal;
+
+    if (!validCities.includes(city)) { // Validate city parameter
+      return res.status(400).json({ error: 'Invalid city parameter' });
+    }
+
+    if (!mongoose.Types.ObjectId.isValid(id)) { // Validate id type is mongoDB ObjectId
+      return res.status(404).json({ error: 'No such meal' });
+    }
+
+    const meal = await MealModel.findOneAndDelete({ _id: id });
+
+    if (!meal) {
+      return res.status(400).json({ error: 'No such meal' });
+    }
+
+    res.status(200).json(meal);
+  }
+
 module.exports = {
   getMeals,
   getMeal,
   createMeal,
+  deleteMeal,
 };

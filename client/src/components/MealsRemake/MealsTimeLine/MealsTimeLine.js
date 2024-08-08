@@ -54,33 +54,28 @@ const MealsTimeline = () => {
 
 
 
-  const processMeals = (data, today) => {
+  const processMeals = (data, today) => { // Filter to include schedules for today only and sort by start time
     let mealsForToday = [];
     const mealTypes = ['breakfast', 'lunch', 'dinner', 'snack'];
     const filteredData = data.filter((meal) => meal.schedule[today] && meal.schedule[today].meals);
     console.log('FILTERED DATA=====', filteredData);
 
-    filteredData.forEach((provider) => {
+    filteredData.forEach((provider) => { // For each provider
       const schedule = provider.schedule[today].meals;
-      // console.log('SCHEDULE=====', schedule);
 
-      mealTypes.forEach((mealType) => {
+      mealTypes.forEach((mealType) => { // Then, for each meal type, create an entry if it exists,
         if (schedule[mealType]) {
           const mealEntries = schedule[mealType];
-          // console.log('MEAL ENTRIES=====', mealEntries);
 
             const entry = mealEntries;
             const now = moment();
-            // const startTime = moment(mealEntries.start, ["HH.mm"]).format("h:mm a");
-            // const endTime = mealEntries.end ? moment(mealEntries.end, ["HH.mm"]).format("h:mm a") : moment(mealEntries.start, ["HH.mm"]).add(1, 'hour').format("h:mm a");
-            const startTime = moment(mealEntries.start, "h:mm a").toDate();
-            const endTime = moment(mealEntries.end, "h:mm a").toDate();
+            const startTime = moment(mealEntries.start, "h:mm a").toDate(); // convert 24-hour clock to 12 hour AM/PM
+            const endTime = moment(mealEntries.end, "h:mm a").toDate(); // convert 24-hour clock to 12 hour AM/PM
             const isCurrent = now.isBetween(startTime, endTime);
             const isEnded = now.isAfter(endTime);
             const isComingUp = now.isBefore(startTime) && moment(startTime).diff(now, 'hours') <= 2;
-            // console.log('ENTRY=====', provider.name, mealType, entry);
 
-            mealsForToday.push({
+            mealsForToday.push({ // and add the entry to the mealsForToday array
               typeOfMeal: mealType.charAt(0).toUpperCase() + mealType.slice(1),
               timeOfMeal: `${moment(startTime).format('h:mma')} - ${moment(endTime).format('h:mma')}`,
               providerOfMeal: provider.name,
@@ -100,8 +95,6 @@ const MealsTimeline = () => {
       });
     });
 
-    // console.log('MEALS FOR TODAY=====', mealsForToday);
-
     const sortedMeals = mealsForToday.sort((a, b) => a.startTime - b.startTime);
     setTimelineItems(sortedMeals);
 
@@ -109,7 +102,7 @@ const MealsTimeline = () => {
     const previousEventIndex = sortedMeals.findIndex((meal) => meal.isEnded) - 1;
     const nextEvents = sortedMeals.filter((meal) => meal.isComingUp);
 
-    console.log('SORTED MEALS=====', sortedMeals);
+    // console.log('SORTED MEALS=====', sortedMeals);
 
     setCurrentEvents(currentEvents);
     setPreviousEvent(
@@ -118,28 +111,11 @@ const MealsTimeline = () => {
     setNextEvents(nextEvents);
   };
 
-
-
-// data.forEach((item) => {
-  //   const startTime = moment(item.startTime, 'h:mm A');
-  //   const endTime = moment(item.endTime, 'h:mm A');
-  //   const currentTime = moment();
-
-  //   item.isCurrent = currentTime.isBetween(startTime, endTime);
-  //   item.isComingUp = currentTime.isBefore(startTime);
-  //   item.isEnded = currentTime.isAfter(endTime);
-  // });
-
-  const getDirectionsUrl = (providerOfMeal, addressOfMeal) => { // Get directions URL
+  const getDirectionsUrl = (providerOfMeal, addressOfMeal) => {
     return `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
       `${providerOfMeal} ${addressOfMeal}`
     )}&travelmode=walking`;
   };
-
-
-
-
-
 
   return (
     <>

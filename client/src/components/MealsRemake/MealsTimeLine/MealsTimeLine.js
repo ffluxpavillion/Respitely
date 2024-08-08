@@ -1,6 +1,5 @@
-import './MealsTimelineRemake.scss';
+// import './MealsTimeline.scss';
 import React, { useState, useEffect, useRef, useContext } from 'react';
-import mealList from '../../../data/TDIN_MealList.json';
 import moment from 'moment';
 import { Collapse } from 'antd';
 import { CaretRightOutlined } from '@ant-design/icons';
@@ -31,18 +30,20 @@ const MealsTimeline = () => {
   const timelineContainerRef = useRef(null);
   const currentEventRef = useRef(null);
   const [allDropinsToday, setAllDropinsToday] = useState([]);
+  const [data, setData] = useState([]);
 
 
-  useEffect(() => { // Fetch all drop-ins for today from the server
+  useEffect(() => { // Fetch all drop-ins, with only today's schedules from the server
     const today = moment().format('dddd').toLowerCase();
-
     const fetchDropins = async () => {
       try {
         const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/v1/toronto/meals?day=${today}`);
         const data = response.data;
-
-        console.log('TODAY=====', today);
+        setData(data);
         console.log('DROP-INS FROM SERVER=====', data);
+
+        processMeals(data, today);
+
       } catch (error) {
         console.error('Error fetching drop-ins:', error);
       }
@@ -53,6 +54,90 @@ const MealsTimeline = () => {
 
 
 
+  const processMeals = (data, today) => {
+    let mealsForToday = [];
+    const mealTypes = ['breakfast', 'lunch', 'dinner', 'snack'];
+    const filteredData = data.filter((meal) => meal.schedule[today] && meal.schedule[today].meals);
+    console.log('FILTERED DATA=====', filteredData);
+
+    filteredData.forEach((provider) => {
+      const schedule = provider.schedule[today].meals;
+      // console.log('SCHEDULE=====', schedule);
+
+      mealTypes.forEach((mealType) => {
+        if (schedule[mealType]) {
+          const mealEntries = schedule[mealType];
+          // console.log('MEAL ENTRIES=====', mealEntries);
+
+            const entry = mealEntries;
+            const now = moment();
+            // const startTime = moment(mealEntries.start, ["HH.mm"]).format("h:mm a");
+            // const endTime = mealEntries.end ? moment(mealEntries.end, ["HH.mm"]).format("h:mm a") : moment(mealEntries.start, ["HH.mm"]).add(1, 'hour').format("h:mm a");
+            const startTime = moment(mealEntries.start, "h:mm a").toDate();
+            const endTime = moment(mealEntries.end, "h:mm a").toDate();
+            const isCurrent = now.isBetween(startTime, endTime);
+            const isEnded = now.isAfter(endTime);
+            const isComingUp = now.isBefore(startTime) && moment(startTime).diff(now, 'hours') <= 2;
+            // console.log('ENTRY=====', provider.name, mealType, entry);
+
+            mealsForToday.push({
+              typeOfMeal: mealType.charAt(0).toUpperCase() + mealType.slice(1),
+              timeOfMeal: `${moment(startTime).format('h:mma')} - ${moment(endTime).format('h:mma')}`,
+              providerOfMeal: provider.name,
+              addressOfMeal: `${provider.address.street}, ${provider.address.city}, ${provider.address.province}, ${provider.address.postal_code}`,
+              startTime,
+              endTime,
+              isCurrent: isCurrent,
+              isComingUp: isComingUp,
+              isEnded: isEnded,
+              wheelchair_accessible: provider.wheelchair_accessible,
+              service_dog_allowed: provider.service_dog_allowed,
+              latitude: provider.latitude,
+              longitude: provider.longitude,
+              ...provider
+            });
+        }
+      });
+    });
+
+    // console.log('MEALS FOR TODAY=====', mealsForToday);
+
+    const sortedMeals = mealsForToday.sort((a, b) => a.startTime - b.startTime);
+    setTimelineItems(sortedMeals);
+
+    const currentEvents = sortedMeals.filter((meal) => meal.isCurrent);
+    const previousEventIndex = sortedMeals.findIndex((meal) => meal.isEnded) - 1;
+    const nextEvents = sortedMeals.filter((meal) => meal.isComingUp);
+
+    console.log('SORTED MEALS=====', sortedMeals);
+
+    setCurrentEvents(currentEvents);
+    setPreviousEvent(
+      previousEventIndex !== null && previousEventIndex >= 0 ? sortedMeals[previousEventIndex] : null
+    );
+    setNextEvents(nextEvents);
+  };
+
+
+
+// data.forEach((item) => {
+  //   const startTime = moment(item.startTime, 'h:mm A');
+  //   const endTime = moment(item.endTime, 'h:mm A');
+  //   const currentTime = moment();
+
+  //   item.isCurrent = currentTime.isBetween(startTime, endTime);
+  //   item.isComingUp = currentTime.isBefore(startTime);
+  //   item.isEnded = currentTime.isAfter(endTime);
+  // });
+
+  const getDirectionsUrl = (providerOfMeal, addressOfMeal) => { // Get directions URL
+    return `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
+      `${providerOfMeal} ${addressOfMeal}`
+    )}&travelmode=walking`;
+  };
+
+
+
 
 
 
@@ -60,199 +145,7 @@ const MealsTimeline = () => {
     <>
       <br />
       <article className='mealsTimeline-container'>
-        <div className='mealsTimeline-half'>
-          <h1 className='mealsTimeline-live-clock'>
-            <LiveClock />
-          </h1>
-          <br />
-          <div className='mealsTimeline-live-event-container'>
-            {previousEvent && (
-              <div className='previous-event-container'>
-                <h2 className='previous-event-header'>JUST ENDED</h2>
-                <div className='previous-event-content'>
-                  <h3>{previousEvent.typeOfMeal}</h3>
-                  <p>{previousEvent.timeOfMeal}</p>
-                  <p>{previousEvent.providerOfMeal}</p>
-                  <p>{previousEvent.addressOfMeal}</p>
-                </div>
-              </div>
-            )}
-            {currentEvents.length > 0 ? (
-              <div className='current-event-container'>
-                <h2 className='current-event-header'>IN PROGRESS</h2>
-                <p className='current-event-subheader'>
-                  Events happening right now
-                </p>
-                <br />
-                <Collapse
-                  className='mealsTimeline-ant-collapse'
-                  accordion
-                  expandIcon={({ isActive }) => (
-                    <CaretRightOutlined rotate={isActive ? 90 : 180} />
-                  )}
-                >
-                  {currentEvents.map((event, index) => (
-                    <Panel
-                      className='mealsTimeline-ant-collapse-header'
-                      header={
-                        <>
-                          <span className='collapse__title'>
-                            {event.typeOfMeal}{' '}
-                          </span>
-                          <span className='collapse__distance'>
-                            {event.distance ? (
-                              `(${event.distance} km)`
-                            ) : (
-                              <HoverPopover
-                                content='To calculate distance, please enable Location Services and refresh the page.'
-                                title='Location Services Disabled'
-                                buttonText={
-                                  <FontAwesomeIcon
-                                    icon={faCircleExclamation}
-                                    size='lg'
-                                  />
-                                }
-                                contentClassName='popover-alert-content'
-                                buttonClassName='popover-alert-button'
-                              ></HoverPopover>
-                            )}
-                          </span>
-                        </>
-                      }
-                      key={index}
-                    >
-                      <div className='current-ant-collapse-inner'>
-                        <p className='mealsTimeline__in-progress-time'>
-                          {event.timeOfMeal}
-                        </p>
-                        <p className='mealsTimeline__in-progress-provider'>
-                        <FontAwesomeIcon icon={faHandHoldingHeart} size='1x' />
-                          <p className='MTL-collapse-live-text'>
-                            {event.providerOfMeal}
-                          </p>
-                        </p>
-                        <p className='mealsTimeline__in-progress-address'>
-                        <FontAwesomeIcon icon={faLocationDot} size='lg' />
-                          <p className='MTL-collapse-live-text'>
-                            {event.addressOfMeal}
-                          </p>
-                        </p>
-                        <button
-                          className='directions-button'
-                          onClick={() =>
-                            window.open(
-                              getDirectionsUrl(
-                                event.providerOfMeal,
-                                event.addressOfMeal
-                              )
-                            )
-                          }
-                        >
-                          Get Directions
-                        </button>
-                      </div>
-                    </Panel>
-                  ))}
-                </Collapse>
-              </div>
-            ) : (
-              <div className='current-event-container'>
-                <h2 className='current-event-header'></h2>
-                <p className='current-event-subheader'>
-                  Sorry, looks like nothing is scheduled right now. <br />
-                  Please refer to the timeline or check back later.
-                </p>
-              </div>
-            )}
-            {nextEvents.length > 0 ? (
-              <div className='next-event-container'>
-                <h2 className='next-event-header'>UP NEXT</h2>
-                <p className='next-event-subheader'>
-                  Events starting in the next 2 hours.
-                </p>
-                <br />
-                <Collapse
-                  className='mealsTimeline-ant-collapse'
-                  accordion
-                  expandIcon={({ isActive }) => (
-                    <CaretRightOutlined rotate={isActive ? 90 : 180} />
-                  )}
-                >
-                  {nextEvents.map((event, index) => (
-                    <Panel
-                      className='mealsTimeline-ant-collapse-header'
-                      header={
-                        <>
-                          <span className='collapse__title'>
-                            {event.typeOfMeal}{' '}
-                          </span>
-                          <span className='collapse__distance'>
-                            {event.distance ? (
-                              `(${event.distance} km)`
-                            ) : (
-                              <HoverPopover
-                                content='To calculate distance, please enable Location Services and refresh the page.'
-                                title='Location Services Disabled'
-                                buttonText={
-                                  <FontAwesomeIcon
-                                    icon={faCircleExclamation}
-                                    size='lg'
-                                  />
-                                }
-                                contentClassName='popover-alert-content'
-                                buttonClassName='popover-alert-button'
-                              ></HoverPopover>
-                            )}
-                          </span>
-                        </>
-                      }
-                      key={index}
-                    >
-                      <div className='current-ant-collapse-inner'>
-                        <p className='mealsTimeline__up-next-time'>
-                          {event.timeOfMeal}
-                        </p>
-                        <p className='mealsTimeline__up-next-provider'>
-                        <FontAwesomeIcon icon={faHandHoldingHeart} size='1x' />
-                          <p className='MTL-collapse-live-text'>
-                            {event.providerOfMeal}
-                          </p>
-                        </p>
-                        <p className='mealsTimeline__up-next-address'>
-                        <FontAwesomeIcon icon={faLocationDot} size='lg' />
-                          <p className='MTL-collapse-live-text'>
-                            {event.addressOfMeal}
-                          </p>
-                        </p>
-                        <button
-                          className='directions-button'
-                          onClick={() =>
-                            window.open(
-                              getDirectionsUrl(
-                                event.providerOfMeal,
-                                event.addressOfMeal
-                              )
-                            )
-                          }
-                        >
-                          Get Directions
-                        </button>
-                      </div>
-                    </Panel>
-                  ))}
-                </Collapse>
-              </div>
-            ) : (
-              <div className='next-event-container'>
-                <h2 className='next-event-header'></h2>
-                <p className='next-event-subheader'>
-                  No upcoming events in the next 2 hours.
-                </p>
-              </div>
-            )}
-          </div>
-        </div>
-        <br />
+
 
         <div className='timeline-container' ref={timelineContainerRef}>
           <div className='timeline-wrapper'>
@@ -290,7 +183,7 @@ const MealsTimeline = () => {
                   }
                 >
                   <div className='timeline-item-time'>
-                    { item.isEnded ? 'Finish' : moment(item.startTime).format('h:mma')}
+                    { item.isEnded ? '' : moment(item.startTime).format('h:mma')}
                   </div>
                   <hr className='timeline-divider' />
                   <div className='timeline-item-content'>

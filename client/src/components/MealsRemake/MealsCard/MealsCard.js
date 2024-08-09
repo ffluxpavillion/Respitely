@@ -1,16 +1,128 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import moment from 'moment';
+import axios from 'axios';
+import * as turf from '@turf/turf';
+import { useGeolocation } from '../../../hooks/useGeolocation';
+
 import './MealsCard.scss';
-import DropInMealsToday from '../../DropInMealsToday/DropInMealsToday';
 import MealsTimeline from '../MealsTimeLine/MealsTimeLine';
 import MealsBanner from '../../MealsBanner/MealsBanner';
 import { HashLink as Link } from 'react-router-hash-link';
 import ComingSoon from '../../ComingSoon/ComingSoon';
 import { Collapse, Space, Radio } from 'antd';
+import MealsInProgress from '../MealsInProgress/MealsInProgress';
+import MealsUpNext from '../MealsUpNext/MealsUpNext';
 
 
 export default function MealsCard() {
-  const [view, setView] = useState('live');
+  const [view, setView] = useState('timeline');
   const [liveView, setLiveView] = useState('');
+  const [timelineItems, setTimelineItems] = useState([]);
+  const [currentEvents, setCurrentEvents] = useState([]);
+  const [previousEvent, setPreviousEvent] = useState(null);
+  const [nextEvents, setNextEvents] = useState([]);
+  const [data, setData] = useState([]);
+  const { locationInfo } = useGeolocation();
+
+
+  useEffect(() => { // Fetch all drop-ins, with only today's schedules from the server
+    const today = moment().format('dddd').toLowerCase();
+    const fetchDropins = async () => {
+      try {
+        const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/v1/toronto/meals?day=${today}`);
+        const data = response.data;
+        setData(data);
+        // console.log('DROP-INS FROM SERVER=====', data);
+        processMeals(data, today);
+
+      } catch (error) {
+        console.error('Error fetching drop-ins:', error);
+      }
+    };
+
+    fetchDropins();
+  }, []);
+
+  const processMeals = (data, today) => { // Filter to include schedules for today only and sort by start time
+    let mealsForToday = [];
+    const mealTypes = ['breakfast', 'lunch', 'dinner', 'morning_snack', 'afternoon_snack', 'evening_snack', 'night_snack'];
+    const filteredData = data.filter((meal) => meal.schedule[today] && meal.schedule[today].meals);
+    console.log('FILTERED DATA=====', filteredData);
+
+    filteredData.forEach((provider) => { // For each provider
+      const schedule = provider.schedule[today].meals;
+
+      mealTypes.forEach((mealType) => { // Then, for each meal type, create an entry if it exists,
+        if (schedule[mealType]) {
+          const mealEntries = schedule[mealType];
+
+            const entry = mealEntries;
+            const now = moment();
+            const startTime = moment(mealEntries.start, "h:mm a").toDate(); // convert 24-hour clock to 12 hour AM/PM
+            const endTime = moment(mealEntries.end, "h:mm a").toDate(); // convert 24-hour clock to 12 hour AM/PM
+            const isCurrent = now.isBetween(startTime, endTime);
+            const isEnded = now.isAfter(endTime);
+            const isComingUp = now.isBefore(startTime) && moment(startTime).diff(now, 'hours') <= 2;
+
+            mealsForToday.push({ // and add the entry to the mealsForToday array
+              typeOfMeal: mealType.charAt(0).toUpperCase() + mealType.slice(1),
+              timeOfMeal: `${moment(startTime).format('h:mma')} - ${moment(endTime).format('h:mma')}`,
+              providerOfMeal: provider.name,
+              addressOfMeal: `${provider.address.street}, ${provider.address.city}, ${provider.address.province}, ${provider.address.postal_code}`,
+              startTime,
+              endTime: mealType.endTime ? mealType.endTime : moment(startTime).add(1, 'hours').toDate(),
+              isCurrent: isCurrent,
+              isComingUp: isComingUp,
+              isEnded: isEnded,
+              wheelchair_accessible: provider.wheelchair_accessible,
+              service_dog_allowed: provider.service_dog_allowed,
+              latitude: provider.latitude,
+              longitude: provider.longitude,
+              ...provider
+            });
+        }
+      });
+    });
+
+    const sortedMeals = mealsForToday.sort((a, b) => a.startTime - b.startTime);
+    setTimelineItems(sortedMeals);
+
+    const currentEvents = sortedMeals.filter((meal) => meal.isCurrent);
+    const previousEventIndex = sortedMeals.findIndex((meal) => meal.isEnded) - 1;
+    const nextEvents = sortedMeals.filter((meal) => meal.isComingUp);
+
+    // console.log('SORTED MEALS=====', sortedMeals);
+
+    setCurrentEvents(currentEvents);
+    setPreviousEvent(
+      previousEventIndex !== null && previousEventIndex >= 0 ? sortedMeals[previousEventIndex] : null
+    );
+    setNextEvents(nextEvents);
+  };
+
+  useEffect(() => { // Calculate distance between user and events
+    if (locationInfo) {
+      const userLocation = turf.point([
+        locationInfo.longitude,
+        locationInfo.latitude,
+      ]);
+      console.log('UserLocation========', userLocation);
+
+      const addDistanceToEvents = (events) => {
+        return events.map((event) => {
+          const eventLocation = turf.point([event.longitude, event.latitude]);
+          const distance = turf
+            .distance(userLocation, eventLocation, { units: 'kilometers' })
+            .toFixed(1);
+          return { ...event, distance };
+        });
+      };
+
+      setCurrentEvents((prevEvents) => addDistanceToEvents(prevEvents));
+      setNextEvents((prevEvents) => addDistanceToEvents(prevEvents));
+    }
+  }, [locationInfo]);
+
 
   const scrollToTop = (el) => {
     // need to fix this
@@ -22,13 +134,18 @@ export default function MealsCard() {
     setView(view === 'live' ? 'timeline' : 'live');
 
   };
+
   const toggleLiveView = () => {
     setLiveView(liveView === 'inProgress' ? 'upNext' : 'inProgress');
   };
 
+  const getDirectionsUrl = (providerOfMeal, addressOfMeal) => {
+    return `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
+      `${providerOfMeal} ${addressOfMeal}`
+    )}&travelmode=walking`;
+  };
+
   console.log('VIEWSTATE=====', view)
-
-
 
   return (
     <>
@@ -85,15 +202,17 @@ export default function MealsCard() {
           )} */}
 
           {view === 'timeline' && (
-            <MealsTimeline />
+            <MealsTimeline timelineItems={timelineItems} getDirectionsUrl={getDirectionsUrl} />
           )}
 
           {view === 'live' && liveView === 'upNext' &&  (
-            <span> UPNEXTTTT</span>
+            <MealsUpNext nextEvents={nextEvents} getDirectionsUrl={getDirectionsUrl}  />
           )}
 
           {view === 'live' && liveView === 'inProgress' &&  (
-            <span> INPROGRESSSS</span>
+
+            <MealsInProgress currentEvents={currentEvents} getDirectionsUrl={getDirectionsUrl}  />
+
           )}
 
 

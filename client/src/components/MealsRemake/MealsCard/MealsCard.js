@@ -16,7 +16,7 @@ import MealsUpNext from '../MealsUpNext/MealsUpNext';
 
 export default function MealsCard() {
   const [view, setView] = useState('timeline');
-  const [liveView, setLiveView] = useState('');
+  const [liveView, setLiveView] = useState('inProgress');
   const [timelineItems, setTimelineItems] = useState([]);
   const [currentEvents, setCurrentEvents] = useState([]);
   const [previousEvent, setPreviousEvent] = useState(null);
@@ -135,7 +135,8 @@ export default function MealsCard() {
 
   };
 
-  const toggleLiveView = () => {
+  const toggleLiveView = (value) => {
+    setLiveView(value)
     setLiveView(liveView === 'inProgress' ? 'upNext' : 'inProgress');
   };
 
@@ -144,7 +145,6 @@ export default function MealsCard() {
       `${providerOfMeal} ${addressOfMeal}`
     )}&travelmode=walking`;
   };
-
   console.log('VIEWSTATE=====', view)
 
   return (
@@ -164,40 +164,37 @@ export default function MealsCard() {
               value={view}
               onChange={(e) => toggleView(e.target.value)}
             >
-              <Radio.Button className='toggle-view-button' value='live' onClick={toggleView}>
+              <Radio.Button className='main-toggle' value='live' onClick={toggleView}>
                 Live Updates
               </Radio.Button>
-              <Radio.Button className='toggle-view-button' value='timeline' onClick={toggleView}>
+              <Radio.Button className='main-toggle' value='timeline' onClick={toggleView}>
                 Daily Timeline
               </Radio.Button>
             </Radio.Group>
           </Space>
+          <br />
 
           {view === 'live' && (
+
             <div className='mealsTimeline2-live-toggle-view'>
-              <button
-                className='toggle-view-secondary-button'
-                onClick={toggleLiveView}
-              >
-                {'In Progress'}
-              </button>
-              <button
-                className='toggle-view-secondary-button'
-                onClick={toggleLiveView}
-              >
-                {'Up Next'}
-              </button>
+
+            <Radio.Group
+              className='ant-radio-group'
+              value={liveView}
+              onChange={(e) => toggleLiveView(e.target.value)}
+            >
+              <Radio.Button className='sub-toggle' value='inProgress' onClick={toggleLiveView}>
+                In Progress
+              </Radio.Button>
+              <Radio.Button className='sub-toggle' value='upNext' onClick={toggleLiveView}>
+                Up Next
+              </Radio.Button>
+            </Radio.Group>
             </div>
           )}
         </div>
 
-
-
-
-
-
-        <div className='meals-section__lower'>
-          {/* {view === 'live' &&  (
+        {/* {view === 'live' &&  (
             <DropInMealsToday liveView={liveView} />
           )} */}
 
@@ -214,6 +211,9 @@ export default function MealsCard() {
             <MealsInProgress currentEvents={currentEvents} getDirectionsUrl={getDirectionsUrl}  />
 
           )}
+
+        <div className='meals-section__lower'>
+
 
 
 

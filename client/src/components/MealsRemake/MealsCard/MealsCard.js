@@ -5,7 +5,7 @@ import * as turf from '@turf/turf';
 import { useGeolocation } from '../../../hooks/useGeolocation';
 
 import './MealsCard.scss';
-import MealsTimeline from '../MealsTimeLine/MealsTimeLine';
+import MealsTimeline from '../MealsTimeline/MealsTimeline';
 import MealsBanner from '../../MealsBanner/MealsBanner';
 import { HashLink as Link } from 'react-router-hash-link';
 import ComingSoon from '../../ComingSoon/ComingSoon';
@@ -56,30 +56,30 @@ export default function MealsCard() {
         if (schedule[mealType]) {
           const mealEntries = schedule[mealType];
 
-            const entry = mealEntries;
-            const now = moment();
-            const startTime = moment(mealEntries.start, "h:mm a").toDate(); // convert 24-hour clock to 12 hour AM/PM
-            const endTime = moment(mealEntries.end, "h:mm a").toDate(); // convert 24-hour clock to 12 hour AM/PM
-            const isCurrent = now.isBetween(startTime, endTime);
-            const isEnded = now.isAfter(endTime);
-            const isComingUp = now.isBefore(startTime) && moment(startTime).diff(now, 'hours') <= 2;
+          const now = moment();
+          const startTime = moment(mealEntries.start, "h:mm a").toDate(); // convert 24-hour clock to 12 hour AM/PM
+          const endTime = mealEntries.end ? moment(mealEntries.end, "h:mm a").toDate() : moment(startTime).add(1, 'hours').toDate(); // convert 24-hour clock to 12 hour AM/PM
 
-            mealsForToday.push({ // and add the entry to the mealsForToday array
-              typeOfMeal: mealType.charAt(0).toUpperCase() + mealType.slice(1),
-              timeOfMeal: `${moment(startTime).format('h:mma')} - ${moment(endTime).format('h:mma')}`,
-              providerOfMeal: provider.name,
-              addressOfMeal: `${provider.address.street}, ${provider.address.city}, ${provider.address.province}, ${provider.address.postal_code}`,
-              startTime,
-              endTime: mealType.endTime ? mealType.endTime : moment(startTime).add(1, 'hours').toDate(),
-              isCurrent: isCurrent,
-              isComingUp: isComingUp,
-              isEnded: isEnded,
-              wheelchair_accessible: provider.wheelchair_accessible,
-              service_dog_allowed: provider.service_dog_allowed,
-              latitude: provider.latitude,
-              longitude: provider.longitude,
-              ...provider
-            });
+          const isCurrent = now.isBetween(startTime, endTime);
+          const isEnded = now.isAfter(endTime);
+          const isComingUp = now.isBefore(startTime) && moment(startTime).diff(now, 'hours') <= 2;
+
+          mealsForToday.push({ // and add the entry to the mealsForToday array
+            typeOfMeal: mealType.split('_').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' '),
+            timeOfMeal: `${moment(startTime).format('h:mma')} - ${moment(endTime).format('h:mma')}`,
+            providerOfMeal: provider.name,
+            addressOfMeal: `${provider.address.street}, ${provider.address.city}, ${provider.address.province}, ${provider.address.postal_code}`,
+            startTime,
+            endTime,
+            isCurrent: isCurrent,
+            isComingUp: isComingUp,
+            isEnded: isEnded,
+            wheelchair_accessible: provider.wheelchair_accessible,
+            service_dog_allowed: provider.service_dog_allowed,
+            latitude: provider.latitude,
+            longitude: provider.longitude,
+            ...provider
+          });
         }
       });
     });
@@ -88,10 +88,10 @@ export default function MealsCard() {
     setTimelineItems(sortedMeals);
 
     const currentEvents = sortedMeals.filter((meal) => meal.isCurrent);
-    const previousEventIndex = sortedMeals.findIndex((meal) => meal.isEnded) - 1;
+    const previousEventIndex = sortedMeals.findIndex((meal) => meal.isEnded) - 1; // Find the index of the last event that ended
     const nextEvents = sortedMeals.filter((meal) => meal.isComingUp);
 
-    // console.log('SORTED MEALS=====', sortedMeals);
+    console.log('SORTED MEALS=====', sortedMeals);
 
     setCurrentEvents(currentEvents);
     setPreviousEvent(

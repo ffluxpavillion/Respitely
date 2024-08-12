@@ -1,7 +1,9 @@
 import './App.scss';
+import { Theme } from '@radix-ui/themes';
 import { Routes, Route, Navigate } from 'react-router-dom'; // react-router
 import { initGA } from './utils/analytics'; // google analytics
 import ApiKeyProvider from './contexts/ApiKeyContext'; // contexts
+import { DateTimeProvider } from './contexts/DateTimeContext'; // contexts
 import { useGeolocation } from './hooks/useGeolocation'; // hooks
 import { ParallaxProvider } from 'react-scroll-parallax';
 // components
@@ -30,7 +32,9 @@ export default function App() {
 
   return (
     // <UserContextProvider>
+    <Theme style={{ backgroundColor: '#0f0f0f' }}>
       <ApiKeyProvider>
+      <DateTimeProvider>
         <ParallaxProvider>
           <Header />
           <Toaster position='top-center' toastoptions={{ duration: 6000 }} />
@@ -50,7 +54,9 @@ export default function App() {
             <Route path='*' element={<Navigate to='/' />} />
           </Routes>
         </ParallaxProvider>
+      </DateTimeProvider>
       </ApiKeyProvider>
+    </Theme>
     // </UserContextProvider>
   );
 }

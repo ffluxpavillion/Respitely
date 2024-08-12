@@ -1,4 +1,4 @@
-// import './MealsTimeline.scss';
+import './MealsTimeline.scss';
 import React, { useState, useEffect, useRef, useContext } from 'react';
 import moment from 'moment';
 import { Collapse } from 'antd';
@@ -22,11 +22,18 @@ const { Panel } = Collapse;
 
 const MealsTimeline = ({ timelineItems, getDirectionsUrl }) => {
   const { locationInfo } = useGeolocation();
-  const [isTimelineVisible, setIsTimelineVisible] = useState(true); // State to control timeline visibility
   const timelineContainerRef = useRef(null);
   const currentEventRef = useRef(null);
   const [allDropinsToday, setAllDropinsToday] = useState([]);
   const [data, setData] = useState([]);
+  const [collapsedItems, setCollapsedItems] = useState({});
+
+  const toggleCollapse = (index) => {
+    setCollapsedItems((prevState) => ({
+      ...prevState,
+      [index]: !prevState[index],
+    }));
+  };
 
 
 
@@ -40,22 +47,14 @@ const MealsTimeline = ({ timelineItems, getDirectionsUrl }) => {
           <div className='timeline-wrapper'>
             <h1
               className='timeline-wrapper__header'
-              onClick={() => setIsTimelineVisible(!isTimelineVisible)}
             >
-              Timeline of Today's Events
-              {isTimelineVisible ? (
-                <CaretUpOutlined className='timeline-toggle-icon' />
-              ) : (
-                <CaretDownOutlined className='timeline-toggle-icon' />
-              )}
             </h1>
-            {isTimelineVisible &&
-              timelineItems.map((item, index) => (
+            {timelineItems.map((item, index) => (
                 <div
                   key={index}
                   className={`timeline-item ${
                     item.isEnded
-                      ? 'is-ended'
+                      ? `is-ended ${collapsedItems[index] ? '' : 'collapsed'}`
                       : item.isCurrent
                       ? 'happening-now'
                       : item.isComingUp
@@ -70,6 +69,7 @@ const MealsTimeline = ({ timelineItems, getDirectionsUrl }) => {
                       ? currentEventRef
                       : null
                   }
+                  onClick={() => toggleCollapse(index)}
                 >
                   <div className='timeline-item-time'>
                     { item.isEnded ? '' : moment(item.startTime).format('h:mma')}

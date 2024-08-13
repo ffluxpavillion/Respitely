@@ -5,6 +5,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router } from 'react-router-dom'; // react-router
 import Auth0ProviderWithNavigate from './auth/Auth0ProviderWithNavigate'; // auth0
+import '@radix-ui/themes/styles.css';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 

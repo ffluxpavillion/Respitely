@@ -5,13 +5,15 @@
 
 .liveClock-container {
   width: 100%;
+  display: flex;
+  flex-direction: column;
 
   @include mobile {
     line-height: 1.5rem;
   }
 
   @include tablet {
-    display: flex;
+
   }
 }
 

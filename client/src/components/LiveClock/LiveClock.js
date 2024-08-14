@@ -1,17 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import './LiveClock.scss';
-import moment from 'moment';
+import moment from 'moment-timezone';
 
 export default function LiveClock() {
   const [todaysDate, setTodaysDate] = useState(
-    moment().format('dddd MMMM Do YYYY, h:mm:ss a')
+    moment.tz('America/Toronto').format('dddd MMMM Do YYYY, h:mm:ss a')
   );
-  const [currentTime, setCurrentTime] = useState(moment().format('h:mm:ss a'));
+  const [currentTime, setCurrentTime] = useState(
+    moment.tz('America/Toronto').format('h:mm:ss a')
+  );
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setTodaysDate(moment().format('dddd MMMM Do YYYY'));
-      setCurrentTime(moment().format('hh:mm:ss a'));
+      setTodaysDate(moment.tz('America/Toronto').format('dddd MMMM Do YYYY'));
+      setCurrentTime(moment.tz('America/Toronto').format('hh:mm:ss a'));
     }, 1000);
 
     return () => {

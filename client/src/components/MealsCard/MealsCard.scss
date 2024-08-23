@@ -48,9 +48,14 @@
   flex-direction: column;
   align-self: center;
   border-radius: 30px;
+  width: 70%;
 
   @include mobile {
     width: -webkit-fill-available;
+  }
+
+  @include tablet {
+    width: 100%;
   }
 }
 
@@ -62,6 +67,8 @@
   font-weight: 800;
   border-radius: 10px;
   backdrop-filter: opacity(0.5);
+  display: flex;
+  justify-content: center;
 
   @include mobile {
     font-family: 'Toronto Subway';
@@ -89,13 +96,260 @@
   @include desktop {
     font-size: 3.4rem;
     text-align: center;
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding-top: 2.5rem;
+    padding-bottom: 0.5rem;
     text-wrap: nowrap;
   }
 }
 
+.mc-live-clock {
+  color: white;
+  text-align: center;
+  display: flex;
+  font-family: 'Toronto Subway';
+  letter-spacing: 1.3px;
+  line-height: 2.1rem;
+  place-self: center;
+  // width: 23rem;
+  width: 100%;
+  place-content: center;
+  // border-top: 1px solid white;
+  border-bottom: 1.5px solid white;
+  padding: 1.5rem 0;
+
+  @include tablet {
+    padding: 1.5rem 0;
+
+  }
+}
+
+
+.mc-tabs__container {
+  // display: flex;
+}
+
+.mc-tabs__list {
+  display: flex;
+  place-content: center;
+  // flex-direction: column;
+}
+
+.mc-tab {
+  width: 100%;
+
+  color: white;
+  border: none;
+  text-align: center;
+  align-content: center;
+  background-color: transparent;
+  border-bottom: 2px solid white;
+  color: white;
+  font-family: 'Ostrich Heavy';
+
+
+  &:hover {
+    // border: 5px solid rgb(230, 230, 239) !important;
+    // border: 2px solid #e6e6ef !important;
+
+    background-color: #d2d2d2;
+    color: black;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+
+  @include mobile {
+    // width: 45vw;
+    font-size: 1.1rem;
+  }
+
+  @include tablet {
+    // width: 20rem;
+    font-size: 1.1rem;
+  }
+
+  @include desktop {
+    // width: 30rem;
+    height: 3rem;
+    font-size: 1.75rem;
+    letter-spacing: 1.5px;
+  }
+}
+
+.middle-tab {
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+
+}
+
+.mc-tab-content {
+  display: flex;
+  place-content: center;
+}
+
+.mc-toggle-number {
+  font-family: 'Avenir Next';
+
+
+
+
+
+
+}
+
 .meals-section__lower {
+}
+
+.meals-section__map-link {
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  font-family: 'Toronto Subway';
+  padding: 0.5rem 3rem 0.5rem 5rem;
+  letter-spacing: 1.4px;
+  color: white;
+  // text-transform: uppercase;
+  width: fit-content;
+  transition: all 0.4s ease-in-out;
+  border: 1px solid white;
+  padding: 1rem 1.5rem;
+
+  @include mobile {
+    padding: 0.5rem 2rem 0.5rem 2rem;
+    text-wrap: balance;
+  }
+
+  &:hover {
+    text-decoration: underline;
+    transition: all 0.4s ease-in-out;
+    background-color: white;
+    color: black;
+  }
+}
+
+
+// ---------------- RADIO BUTTONS ------------------------
+
+// .radio-active {
+//   width: 100%
+// }
+
+// .radio-inactive {
+//   width: 50% !important;
+
+// }
+
+.mealsTimeline2-live-toggle-view {
+  width: 100%;
+  display: flex;
+  gap:4rem;
+  justify-content: center;
+}
+
+
+.main-toggle {
+  text-align: center;
+  align-content: center;
+  background-color: #0f0f0f;
+  color: white;
+  font-family: 'Ostrich Heavy';
+
+  &:hover {
+    // border: 5px solid rgb(230, 230, 239) !important;
+    border: 2px solid #e6e6ef !important;
+
+    color: #d2d2d2;
+    transition: all 0.2s ease-in-out;
+  }
+
+  @include mobile {
+    width: 45vw;
+    font-size: 1.1rem;
+  }
+
+  @include tablet {
+    width: 20rem;
+    font-size: 1.1rem;
+  }
+
+  @include desktop {
+    width: 30rem;
+    height: 3rem;
+    font-size: 1.5rem;
+  }
+}
+
+
+// .toggle-view-secondary-button
+.sub-toggle {
+  // margin: 1rem 0;
+  // padding: 1rem 1.5rem;
+  // background-color: #1890ff;
+  // color: white;
+  // border: none;
+  // cursor: pointer;
+  // border-radius: 4px;
+  // transition: background-color 0.3s ease;
+  cursor: pointer;
+  padding: 0.25rem;
+
+  background-color: #0f0f0f;
+  border: 1px solid #191919;
+  border-radius: 5px 0 5px 0;
+  font-family: 'Ostrich Heavy';
+  color: ghostwhite;
+  display: flex;
+  place-content: center;
+  align-items: center;
+
+  @include mobile {
+    width: 50%;
+    font-size: 1rem;
+    margin-left: 0.1rem;
+    margin-bottom: 2rem;
+  }
+
+  @include tablet {
+    width: 20rem;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  @include desktop {
+    width: 100%;
+    height: 3rem;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  &:hover {
+    border: 2px solid #e6e6ef !important;
+    color: #d2d2d2;
+    transition: all 0.2s ease-in-out;
+  }
+
+
+
+  // &:hover {
+  //   background-color: ghostwhite;
+  //   color: #0f0f0f;
+  //   transition: all 0.3s ease-in-out;
+  // }
+}
+
+.ant-radio-button-checked {
+  // border: 3px solid white !important;
+  // background: #0f0f0f !important;
+  background: white !important;
+
+}
+
+.ant-radio-button-wrapper {
+  border: none !important;
+}
+
+:where(.css-dev-only-do-not-override-mzwlov).ant-radio-button-wrapper:not(:first-child)::before {
+  background-color: transparent !important;
 }
 
 .meals-section__map-link {

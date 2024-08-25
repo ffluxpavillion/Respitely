@@ -3,8 +3,11 @@
 @use '../../partials/global' as *;
 @use '../../partials/variables' as *;
 
-.mealsTimeline-container {
-  width: 90vw;
+.mealsTimeline-container { // actual container for timeline
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
   scroll-behavior: smooth;
   place-self: center;
   -webkit-overflow-scrolling: touch; // Improves scrolling on iOS devices
@@ -14,16 +17,17 @@
   }
 
   @include mobile {
+    width: 90vw;
   }
 
   @include tablet {
+    // width: 80vw;
+    width: 100%;
+
   }
 
   @include desktop {
-    display: flex;
-    flex-direction: row-reverse;
-    // width: 100%;
-    justify-content: center;
+
   }
 }
 
@@ -71,12 +75,12 @@
 }
 
 .timeline-container {
-  height: 90vh;
+  height: 60vh;
   overflow-y: auto;
-  width: 100%;
+  // width: 100%;
   display: flex;
   justify-content: center;
-  margin: 1rem 0;
+  // margin: 1rem 0;
   color: white;
   overflow-x: auto;
   white-space: nowrap;
@@ -86,11 +90,11 @@
   }
 
   @include tablet {
-    padding: 1rem;
+
   }
 
   @include desktop {
-    padding: 1rem;
+
   }
 }
 
@@ -99,6 +103,8 @@
   overflow-x: auto;
   display: flex;
   flex-direction: column;
+  width: 100vw;
+
 
   @include mobile {
     width: 100%;
@@ -119,7 +125,7 @@
   text-align: center;
   font-size: 1.5rem;
   font-family: 'Toronto Subway Bold';
-  border-bottom: 1px solid white;
+  // border-bottom: 1px solid white;
   margin-bottom: 3rem;
   padding-bottom: 1rem;
 
@@ -133,62 +139,81 @@
   display: flex;
   align-items: center;
   width: 100%;
-  height: 14rem;
-  margin: 0.21rem 0;
+  // height: 14rem;
+  padding: 0rem 1.5rem;
   gap: 1rem;
-  transition: all 0.5s ease;
+  // transition: all 0.5s ease;
+  // animation: slideDown 0.5s ease;
   row-gap: 1rem;
+  filter: brightness(1);
+
+
+  &:hover {
+    // background-color: darken(#5271b3, 19%);
+    background-color: darken(#424445, 9%);
+    background-color: #222222aa;
+    // color: #0f0f0f;
+    border-radius: 10px;
+
+
+    // transition: all 0.5s ease;
+    // text-decoration-line: none;
+    filter: brightness(1);
+    cursor: pointer;
+    transition: all 0.35s ease;
+  }
+
 
   @include mobile {
-    gap: 0.2rem;
-    padding: 0 0.5rem;
+    // padding: 0 0.5rem;
   }
 
   @include tablet {
-    padding: 1rem;
+    gap: 2rem;
+    // padding: 1rem;
   }
 
   @include desktop {
+    gap: 1.75rem;
+
     // padding: 1rem;
   }
-  &:hover {
-    background-color: darken(#5271b3, 19%);
-    transition: all 0.5s ease;
-    text-decoration-line: none;
-    filter: brightness(1);
-  }
+
 }
 
 .timeline-divider {
   width: 5px;
-  height: 100%;
+  height: 90%;
   background-color: #6232c1;
   border: none;
 
   @include mobile {
-    margin: 7rem 1rem 7rem 1.5rem;
+    width: 3.5px;
+    // margin: 7rem 1rem 7rem 1.5rem;
   }
 
   @include tablet {
-    margin: 1rem;
+    // margin: 1rem;
   }
 
   @include desktop {
-    margin: 0.5rem;
+    // margin: 0.5rem;
   }
 }
 
 .timeline-item-time {
-  width: 13%;
+  // width: 13%;
+  width: 6.5rem;
   text-align: center;
-  margin-right: 1rem;
+  // margin-right: 1rem;
   font-weight: bold;
   color: white;
+  // letter-spacing: 0.5px;
 
   @include mobile {
-    margin: 0rem 0.7rem 0 0;
+    // margin: 0rem 0.7rem 0 0;
     font-size: 0.8rem;
-    width: 2rem;
+    width: 5rem;
   }
 }
 
@@ -202,16 +227,82 @@
   @include mobile {
     font-size: 0.9rem;
     line-height: 1.2rem;
+    margin: 1rem 0;
   }
 
   @include tablet {
-    padding: 1.5rem;
+    padding: 1.5rem 0;
   }
 
   @include desktop {
-    padding: 1.5rem;
+    padding: 1rem 0;
   }
 }
+
+// .timeline-item.is-ended.collapsed {
+//   // height: 40px;
+//   overflow: hidden;
+//   padding: 0.9rem 0;
+//   // background-color: #f5f5f5;
+
+//   cursor: pointer;
+//   // transition: all 1s ease;
+//   animation: slideUp 0.5s ease;
+
+
+//   &:hover {
+//     // background-color: darken(#5271b3, 19%);
+//     // background-color: darken(#ffffff, 89%);
+
+
+//     // transition: all 0.5s ease;
+//     // text-decoration-line: none;
+//     filter: brightness(1);
+//   }
+// }
+
+// .timeline-item.is-ended.not-collapsed {
+//   // height: 15rem;
+//   overflow: visible;
+//   padding: 0.9rem;
+//   // background-color: #f5f5f5;
+//   font-size: 0.85rem;
+//   cursor: pointer;
+//   // transition: all 1s ease;
+//   // animation: slideDown 0.5s ease;
+
+
+//   &:hover {
+//     // background-color: darken(#5271b3, 19%);
+//     // background-color: darken(#ffffff, 89%);
+
+
+//     // transition: all 0.5s ease;
+//     // text-decoration-line: none;
+//     filter: brightness(1);
+//   }
+// }
+
+.collapsed {
+  // overflow: hidden;
+  // padding: 1.4rem 0;
+  // margin: -0.2rem 0;
+
+}
+
+.collapse-hidden {
+  display: none;
+}
+
+.collapse-show {
+  display: flex;
+}
+
+.ended-hidden {
+  display: none;
+}
+
+
 
 // -------------------- DROP-IN MEALS TIMELINE ----------------------------
 
@@ -262,12 +353,28 @@
   }
 }
 
+.timeline-item-icon {
+  font-size: 0.95rem;
+}
+
+
 .mealsTimeline__meal-provider {
   font-family: 'Toronto Subway';
   font-size: 0.9rem;
   display: flex;
   margin-bottom: 0.3rem;
+  align-items: center;
+  text-wrap: pretty;
   // text-align: end;
+
+  @include mobile {
+    align-items: center;
+    text-wrap: pretty;
+  }
+
+  @include tablet {
+
+  }
 }
 
 .mealsTimeline__meal-address {
@@ -277,9 +384,12 @@
 
 .daily-timeline-text {
   margin-left: 0.6rem;
+  font-size: 1rem;
 
   @include mobile {
     margin-left: 0.5rem;
+    font-size: 0.8rem;
+
   }
 }
 
@@ -300,7 +410,7 @@
   flex-direction: row;
   justify-content: center;
   width: -webkit-fill-available;
-  width: 100%;
+  width: 95%;
   display: flex;
   gap: 0.5rem;
 
@@ -309,6 +419,7 @@
     color: #20242c;
     transform: translateY(-2px);
     transition: all 0.5s ease;
+
   }
 
   @include mobile {
@@ -572,35 +683,67 @@
   display: flex;
 }
 
-.MTL-collapse-live-text {
-  display: flex;
-  margin-left: 0.6rem;
-}
+// .MTL-collapse-live-text {
+//   display: flex;
+//   margin-left: 0.6rem;
+// }
 
 // -------------------- END ----------------------------
 // -------------------- MEALS TIMELINE  ----------------------------
 
+
+
+// EVENT ENDED TIME STRIKETHROUGH
+.time-isEnded {
+  color: red;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 0.25rem 0.5rem;
+  border-radius: 3px;
+  width: 5rem;
+}
+
 .is-ended {
   // EVENT ENDED LABEL -- TOP RIGHT
 
-  filter: brightness(0.7);
+  // filter: brightness(0.7);
   // height: 5rem;
   // height: 2.1rem;
   // contain: content;
+  color: #da3810e2;
+  font-style: italic;
+  font-size: 0.9rem;
+  font-weight: bold;
+  // background-color: rgba(255, 255, 255, 1);
+  // border: 1px solid rgba(255, 255, 255, 1);
+  padding: 0.25rem 0.5rem;
+  border-radius: 3px;
+  text-align: center;
+  margin: 1rem 0;
+  border: 1px solid #da3810e2;
+
+
   &::before {
-    content: 'Ended';
+    // content: 'Ended';
     position: absolute;
     color: red;
     font-size: 0.9em;
     font-weight: bold;
     background-color: rgba(255, 255, 255, 1);
+    // border: 1px solid rgba(255, 255, 255, 1);
+    border: 1px solid red;
+
+
     padding: 0.25rem 0.5rem;
     border-radius: 3px;
     text-align: center;
+    margin: 1rem 0;
+
 
     @include desktop {
-      width: 5rem;
-      left: 0.4rem;
+      // width: 5rem;
+      // left: 0.75rem;
+      // left: 1.4vw;
+      // width: 10rem;
     }
     @include tablet {
       // left: 0.5rem;
@@ -616,16 +759,6 @@
   }
 }
 
-// }
-
-// EVENT ENDED TIME STRIKETHROUGH
-.time-isEnded {
-  color: red;
-  background-color: rgba(255, 255, 255, 0.9);
-  padding: 0.25rem 0.5rem;
-  border-radius: 3px;
-  width: 5rem;
-}
 
 // EVENT ENDED LABEL -- TOP RIGHT
 .event-ended {
@@ -681,7 +814,7 @@
   text-align: center;
   font-size: 1.3rem;
   font-family: 'Toronto Subway Bold';
-  border-bottom: 1px solid white;
+  // border-bottom: 1px solid white;
   margin-bottom: 3rem;
   padding-bottom: 1rem;
   cursor: pointer;
@@ -697,3 +830,43 @@
 }
 
 // -------------------- END ----------------------------
+
+
+// @keyframes slideDown {
+//   0% {
+//     // opacity: 0;
+//     transform: translateY(-100%) translateY(-10px);
+//   }
+//   100% {
+//     // opacity: 1;
+//     transform: translateX(0px) translateY(0%);
+//   }
+// }
+
+// @keyframes slideUp {
+//   0% {
+//     opacity: 1;
+//   }
+//   100% {
+//     // opacity: 0;
+//     // transform: translateX(0px) translateY(10px);
+//   }
+// }
+
+@keyframes slideDown {
+  0% {
+    height: 1rem;
+  }
+  100% {
+    height: 14rem;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    height: 14rem;
+  }
+  100% {
+    height: 1rem;
+  }
+}

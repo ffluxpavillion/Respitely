@@ -1,4 +1,217 @@
-@use '../../../partials/abstracts' as *;
-@use '../../../partials/fonts' as *;
-@use '../../../partials/global' as *;
-@use '../../../partials/variables' as *;
+@use '../../partials/abstracts' as *;
+@use '../../partials/fonts' as *;
+@use '../../partials/global' as *;
+@use '../../partials/variables' as *;
+
+
+.current-event-container {
+  // event card containers
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: white;
+  text-align: center;
+  place-items: center;
+  place-content: center;
+  padding: 1rem;
+  // width: 100%;
+  height: 100%;
+  width: 70%;
+
+  @include mobile {
+    margin: 0rem;
+    padding: 0.6rem 0.5rem;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+  }
+
+  @include tablet {
+    align-content: baseline;
+    width: 100%;
+  }
+}
+
+.current-event-header {
+  // event card headers
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+
+  @include mobile {
+    font-size: 1rem;
+    place-self: center;
+    margin-bottom: 0.25rem;
+  }
+
+  @include tablet {
+    font-size: 1.3rem;
+  }
+
+  @include desktop {
+  }
+}
+
+.current-event-subheader {
+  font-family: 'Avenir Next';
+
+  @include mobile {
+    font-size: 0.9rem;
+  }
+}
+
+.current-event-container {
+  border: 2px solid #0f5630;
+  background-color: #0c4527;
+  color: white;
+  text-align: -webkit-center;
+  text-wrap: nowrap;
+}
+
+.mealsTimeline-ant-collapse {
+  color: white;
+  font-family: 'DT Black';
+  text-align: center;
+
+  @include mobile {
+    width: 95%;
+    padding: 0rem;
+  }
+
+  @include tablet {
+    width: 100%;
+  }
+}
+
+.mealsTimeline-ant-collapse-header {
+  color: white;
+  align-items: baseline;
+}
+
+.ant-collapse-item,
+.ant-collapse-header {
+  padding: 0.2rem !important;
+}
+
+.ant-collapse-header-text {
+  // ant dropdown header text
+  color: white;
+  font-family: 'DT Black';
+  text-align: left;
+  text-transform: uppercase;
+  align-items: center;
+  display: flex;
+
+  @include mobile {
+    font-size: 0.8rem;
+    letter-spacing: 1.6px;
+    align-self: end;
+  }
+
+  @include tablet {
+    font-size: 1rem;
+    padding: 0rem 0.25rem;
+  }
+
+  @include desktop {
+    font-size: 1.12rem;
+    padding: 0rem 0.25rem;
+  }
+}
+
+.ant-collapse-content,
+.ant-collapse-inner,
+.current-ant-collapse-inner,
+.ant-collapse-content-box {
+  background-color: transparent !important;
+}
+
+.collapse__title {
+  width: 100%;
+  text-align: center;
+  margin-left: 2rem;
+}
+
+.collapse__distance {
+  font-family: 'Avenir Next';
+  font-size: 0.8rem;
+  font-style: italic;
+  text-transform: lowercase;
+  justify-content: start;
+  position: absolute;
+  margin-left: 0.3rem;
+  margin-bottom: 0.3rem;
+  font-style: bold;
+  font-weight: 600;
+  font-family: 'League Spartan Regular';
+}
+
+.popover-alert-button {
+  background-color: transparent;
+  padding: 0.1rem 0.5rem;
+  box-shadow: none;
+  border-radius: 50px;
+  box-shadow: none !important;
+
+  &:hover {
+    background: #414a5a !important;
+    box-shadow: none !important;
+  }
+}
+
+.popover-alert-content {
+  line-height: 1rem;
+  padding-left: 1rem !important;
+  width: 15rem;
+  text-align: center;
+  filter: invert(0.09);
+  text-wrap: balance;
+}
+
+.ant-popover-inner {
+  box-shadow: none !important;
+}
+
+.ant-collapse-expand-icon {
+  // targets expand icon (arrow)
+
+  color: white;
+  order: 2;
+
+  @include mobile {
+    padding-inline-end: 0px !important;
+    padding-left: 0.5rem;
+  }
+}
+
+// -------------------- LIVE MEALS -- ANT COLLAPSE INNER ----------------------------
+
+.current-ant-collapse-inner {
+  background-color: #20242c;
+  color: white;
+  text-wrap: wrap;
+}
+
+.mealsTimeline__in-progress-time {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  font-family: 'Avenir Next';
+  font-weight: 600;
+}
+
+.mealsTimeline__in-progress-provider {
+  text-align: left;
+  display: flex;
+}
+
+.mealsTimeline__in-progress-address {
+  text-align: left;
+  display: flex;
+}
+
+
+.MTL-collapse-live-text {
+  display: flex;
+  margin-left: 0.6rem;
+}

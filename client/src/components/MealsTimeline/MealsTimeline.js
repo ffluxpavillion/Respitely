@@ -48,7 +48,7 @@ const MealsTimeline = ({ timelineItems, getDirectionsUrl }) => {
                   key={index}
                   className={`timeline-item ${
                     isEnded
-                      ? ` ${isCollapsed ? 'collapsed' : ''}`
+                      ? ` ${isCollapsed ? 'collapsed' : 'not-collapsed'}`
                       : item.isCurrent
                       ? 'happening-now'
                       : item.isComingUp
@@ -65,7 +65,7 @@ const MealsTimeline = ({ timelineItems, getDirectionsUrl }) => {
                     {isEnded
                       ? <span className='is-ended'>Ended</span>
                       : item.isCurrent
-                      ? <span className='happening-now'>'Now'</span>
+                      ? <span className='happening-now-text'>Now</span>
                       : moment(item.startTime).format('h:mma')}
                     {/* {!isEnded && moment(item.startTime).format('h:mma')} */}
                   </div>
@@ -112,7 +112,7 @@ const MealsTimeline = ({ timelineItems, getDirectionsUrl }) => {
                           </div>
                           {item.distance
                             ? `(${item.distance} km)`
-                            : '---no distance'}
+                            : ''}
                           <aside className='mealsTimeline-accessibility-div'>
                             <div className='mealsTimeline-accessibility-icon'>
                               {item.wheelchair_accessible && (

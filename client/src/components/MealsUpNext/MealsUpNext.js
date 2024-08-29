@@ -1,3 +1,4 @@
+import './MealsUpNext.scss';
 import { useState } from 'react';
 import { Collapse } from 'antd';
 import { CaretRightOutlined } from '@ant-design/icons';

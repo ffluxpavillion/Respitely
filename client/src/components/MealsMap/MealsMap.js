@@ -12,6 +12,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import { ApiKeyContext } from '../../contexts/ApiKeyContext';
 import mealList from '../../data/TDIN_MealList.json';
 import MealMarker from '../../assets/icons/SafeHavenTO_icon-meal-marker.png';
+import SelectedMealMarker from '../../assets/icons/SafeHavenTO_icon-meal.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRoute } from '@fortawesome/free-solid-svg-icons';
 import { Drawer, Button, Collapse } from 'antd';
@@ -25,6 +26,8 @@ import {
   faDog,
   faWheelchair,
 } from '@fortawesome/free-solid-svg-icons';
+import axios from 'axios';
+import moment from 'moment';
 
 export default function MealsMap() {
   const apiKey = useContext(ApiKeyContext); // API Key
@@ -33,18 +36,19 @@ export default function MealsMap() {
   const [drawerVisible, setDrawerVisible] = useState(false); // Manage the drawer visibility
   const [activeKey, setActiveKey] = useState(null);
   const [lastClickedMarker, setLastClickedMarker] = useState(null); // State to track the last selected marker for detecting double taps
-
+  const [dropIns, setDropIns] = useState([]);
+  const [selectedMarkerId, setSelectedMarkerId] = useState(null); // Track the ID of selected marker
   const [geoJsonLocations, setGeoJsonLocations] = useState({
     // GeoJSON representation for Mapbox
-    type: 'FeatureCollection',
-    features: allDropIns.map((dropIn) => ({
-      type: 'Feature',
-      properties: dropIn,
-      geometry: {
-        type: 'Point',
-        coordinates: [dropIn.longitude, dropIn.latitude],
-      },
-    })),
+    // type: 'FeatureCollection',
+    // features: allDropIns.map((dropIn) => ({
+    //   type: 'Feature',
+    //   properties: dropIn,
+    //   geometry: {
+    //     type: 'Point',
+    //     coordinates: [dropIn.longitude, dropIn.latitude],
+    //   },
+    // })),
   });
 
   const [viewState, setViewState] = useState({
@@ -61,19 +65,25 @@ export default function MealsMap() {
   const mapRef = useRef(); // Reference to the map instance
 
   useEffect(() => {
-    setViewState(DEFAULT_VIEW_STATE); // Reset the view state to the default
-    setSelectedPlace(null); // to deselect any currently selected marker on the map
+    const fetchDropins = async () => {
+      try {
+        const response = await axios.get(
+          `${process.env.REACT_APP_BACKEND_URL}/api/v1/toronto/meals`
+        );
+        const data = response.data;
+        setAllDropIns(data);
+      } catch (error) {
+        console.error('Error fetching drop-ins:', error);
+      }
+    };
+
+    fetchDropins();
   }, []);
 
   useEffect(() => {
-    // Load and store all drop-in locations in the state
-    const allDropIns = [];
-    Object.values(mealList.regions).forEach((region) => {
-      if (region.drop_in_centers && Array.isArray(region.drop_in_centers)) {
-        allDropIns.push(...region.drop_in_centers);
-      }
-    });
-    setAllDropIns(allDropIns);
+    setViewState(DEFAULT_VIEW_STATE); // Reset the view state to the default
+    setSelectedPlace(null); // to deselect any currently selected marker on the map
+    setSelectedMarkerId(null); // Also reset the selected marker ID
   }, []);
 
   useEffect(() => {
@@ -82,7 +92,7 @@ export default function MealsMap() {
       .map((dropIn) => ({
         type: 'Feature',
         properties: { ...dropIn }, // Copy all properties
-        name: dropIn.name,
+        // name: dropIn.name,
         geometry: {
           // Add the coordinates
           type: 'Point',
@@ -90,12 +100,32 @@ export default function MealsMap() {
         },
       }));
 
+    console.log('FEATURES', features);
+
     setGeoJsonLocations({
       // Update the GeoJSON representation
       type: 'FeatureCollection',
       features,
     });
   }, [allDropIns]);
+
+  const parseJSONFields = (data) => {
+    const parsedData = { ...data };
+
+    const fieldsToParse = ['address', 'contact', 'schedule'];
+
+    fieldsToParse.forEach((field) => {
+      if (typeof data[field] === 'string') {
+        try {
+          parsedData[field] = JSON.parse(data[field]);
+        } catch (error) {
+          console.error(`Error parsing ${field}:`, error);
+        }
+      }
+    });
+
+    return parsedData;
+  };
 
   const handleMapLoad = () => {
     const map = mapRef.current.getMap();
@@ -105,25 +135,13 @@ export default function MealsMap() {
       map.addImage('meal-marker', image);
     });
 
-    function handleMarkerInteraction(e) {
-      const thisLocation = e.features[0].properties;
-
-      // Check if the same marker was tapped again
-      if (lastClickedMarker === thisLocation.id) {
-        // Open the drawer if it's a second tap on the same marker
-        setDrawerVisible(true);
-      } else {
-        // Update the selected place and show popup only if a different marker is tapped
-        setSelectedPlace(thisLocation);
-        setDrawerVisible(false); // Ensure the drawer is not visible
-        setLastClickedMarker(thisLocation.id); // Update the last clicked marker
-      }
-    }
+    map.loadImage(SelectedMealMarker, (error, image) => {
+      if (error) throw error;
+      map.addImage('selected-meal-marker', image);
+    });
 
     function handleMouseEnter(e) {
       map.getCanvas().style.cursor = 'pointer';
-      const thisLocation = e.features[0].properties; // this is what triggers the hover card
-      setSelectedPlace(thisLocation);
     }
 
     function handleMouseLeave() {
@@ -138,14 +156,20 @@ export default function MealsMap() {
     map.on('touchstart', 'drop-in-markers', handleMouseEnter);
     map.on('touchend', 'drop-in-markers', handleMouseLeave);
 
-    // Click event for both touch and mouse
     map.on('click', 'drop-in-markers', (e) => {
       if (e.features.length > 0) {
-        handleMarkerInteraction(e);
-
         const thisLocation = e.features[0].properties;
-        setSelectedPlace(thisLocation);
+
+        // Use the refined helper function to parse JSON strings only if necessary
+        const parsedLocation = parseJSONFields(thisLocation);
+
+        // Set the selected marker ID
+        setSelectedMarkerId(thisLocation.id);
+
+        setSelectedPlace(parsedLocation);
         setDrawerVisible(true);
+        console.log('Raw thisLocation:', thisLocation);
+        console.log('Parsed thisLocation:', parsedLocation);
 
         // Prevent the map from zooming on marker click
         e.originalEvent.preventDefault();
@@ -154,27 +178,9 @@ export default function MealsMap() {
           center: e.features[0].geometry.coordinates,
           duration: 1000,
         });
+        console.log('E.FEATURES[0]', e.features[0]);
       }
     });
-  };
-
-  const handleMapClick = (e) => {
-    // Handle map click event
-    // const map = mapRef.current.getMap();
-    // const features = map.queryRenderedFeatures(e.point, {
-    //   layers: ['drop-in-markers'],
-    // }); // Query the map for features at the clicked point
-    // if (features.length > 0) {
-    //   // If a feature is clicked, store the entire feature and update the view state via force re-render
-    //   const feature = features[0];
-    //   setSelectedPlace(feature.properties);
-    //   map.easeTo({
-    //     center: feature.geometry.coordinates,
-    //     duration: 1000 // Smooth transition duration in milliseconds
-    //   });
-    // } else {
-    //   setSelectedPlace(null); // Hide the popup if no feature is clicked
-    // }
   };
 
   const handleShowDrawer = () => {
@@ -184,13 +190,11 @@ export default function MealsMap() {
   const handleCloseDrawer = () => {
     setDrawerVisible(false);
     setSelectedPlace(null);
+    setSelectedMarkerId(null); // Clear the selected marker ID when drawer is closed
   };
 
-  // console.logs for debugging
-  // console.log('SELECTEDPLACE======', selectedPlace)}
-  // console.log('SELECTEDPLACE.schedule======', selectedPlace.schedule)
-  // console.log('Type of schedule:', typeof selectedPlace.schedule)
-  // console.log('Content of schedule:', selectedPlace.schedule)
+  console.log('SELECTEDPLACE======', selectedPlace);
+
   return (
     <>
       <section
@@ -205,7 +209,6 @@ export default function MealsMap() {
             mapboxAccessToken={apiKey}
             style={{ width: '100%', height: '100%' }}
             mapStyle='mapbox://styles/mapbox/streets-v9'
-            // onClick={handleMapClick}
             onLoad={handleMapLoad}
             cooperativeGestures // requires CMD + scroll to zoom --helps prevent accidental zooming
             maxBounds={[
@@ -226,7 +229,12 @@ export default function MealsMap() {
                 className='drop-in-marker'
                 type='symbol'
                 layout={{
-                  'icon-image': 'meal-marker',
+                  'icon-image': [
+                    'case',
+                    ['==', ['get', 'id'], selectedMarkerId],
+                    'selected-meal-marker',
+                    'meal-marker',
+                  ],
                   'icon-size': [
                     'interpolate',
                     ['linear'],
@@ -242,55 +250,28 @@ export default function MealsMap() {
                 }}
               />
             </Source>
-            {/* {selectedPlace && (
-              <Popup
-                latitude={selectedPlace.latitude}
-                longitude={selectedPlace.longitude}
-                closeButton={false}
-                onClose={() => setSelectedPlace(null)}
-                onClick={() => {
-                  setDrawerVisible(true);
-                }}
-                anchor='bottom'
-                offset={[0, -20]}
-              >
-                <div className='popup__div mealsMap-popup__div'>
-                  <div className='popup__div-left'>
-                    <h4 className='popup__div-header'>
-                      {selectedPlace.name || 'LOCATION NAME'}
-                    </h4>
-                    <br />
-                  </div>
-                  <br />
-                  <div className='popup__div-right'>
-                    <p className='popup__div-subheader-2'>Address:</p>
-                    <p className='popup__div-text'>
-                      {selectedPlace.address}
-                      <br />
-                      {selectedPlace.city}
-                    </p>
-                  </div>
-                </div>
-                <div className='popup__button-container'>
-                  <Button
-                    onClick={handleShowDrawer}
-                    className='popup__button-view-details'
-                  >
-                    <p className='popup__button-directions-text'>Learn More</p>
-                  </Button>
-                </div>
-              </Popup>
-            )} */}
           </Map>
         )}
         <Drawer
           className='drawer'
-          title={selectedPlace ? selectedPlace.name : 'Details'}
+          title={
+            <>
+              <br />
+              <h1 className='drawer-header'>
+                {selectedPlace ? selectedPlace.name : 'Details'}
+              </h1>
+              <span className='drawer-subheader'>
+                {selectedPlace && selectedPlace.program_name
+                  ? selectedPlace.program_name
+                  : 'Drop-In Program'}
+              </span>
+            </>
+          }
           placement='left'
           closable={true}
           onClose={handleCloseDrawer}
           open={drawerVisible}
-          width={600}
+          width={window.innerWidth > '768' ? '458px' : '100%'}
           closeIcon={false}
         >
           {selectedPlace && (
@@ -309,40 +290,80 @@ export default function MealsMap() {
                   className='btn--Directions-anchor'
                   aria-label='Get Directions to Drop-In Location'
                 >
-                  <button className='popup__button-directions drawer-button'>
+                  <button className='drawer__button drawer-button'>
                     <span>
                       <FontAwesomeIcon icon={faRoute} size='lg' />
                     </span>
-                    <p className='popup__button-directions-text drawer-button-text'>
+                    <p className='drawer__button--text drawer-button-text'>
                       {' '}
-                      Get Directions
+                      Directions
+                    </p>
+                  </button>
+                </a>
+                <a
+                  href={selectedPlace.contact.phone.primary.number}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='btn--Directions-anchor'
+                  aria-label='Get Directions to Drop-In Location'
+                >
+                  <button className='drawer__button drawer-button'>
+                    <span>
+                      <FontAwesomeIcon icon={faPhone} size='lg' />
+                    </span>
+                    <p className='drawer__button--text drawer-button-text'>
+                      {' '}
+                      Call
+                    </p>
+                  </button>
+                </a>
+                <a
+                  href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
+                    selectedPlace.address +
+                      ', ' +
+                      selectedPlace.city +
+                      ', ' +
+                      selectedPlace.postal_code
+                  )}&travelmode=walking`}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='btn--Directions-anchor'
+                  aria-label='Get Directions to Drop-In Location'
+                >
+                  <button className='drawer__button drawer-button'>
+                    <span>
+                      <FontAwesomeIcon icon={faGlobe} size='lg' />
+                    </span>
+                    <p className='drawer__button--text drawer-button-text'>
+                      {' '}
+                      Website
                     </p>
                   </button>
                 </a>
               </div>
               <br />
-
+              <h2 className='drawer__details-header'>Details</h2>
               <p className='drawer__upper-text-left'>
                 <FontAwesomeIcon
                   className='drawer-icon'
                   icon={faMapMarkerAlt}
                 />{' '}
                 <span className='drawer__upper-text-right'>
-                  {selectedPlace.address} <br />
-                  {selectedPlace.city}, {selectedPlace.province}{' '}
-                  {selectedPlace.postal_code}
-                </span>{' '}
+                  {selectedPlace.address.street} <br />
+                  {selectedPlace.address.city}, {selectedPlace.address.province}{' '}
+                  {selectedPlace.address.postal_code}
+                </span>
               </p>
               <p className='drawer__upper-text-left'>
                 <FontAwesomeIcon className='drawer-icon' icon={faPhone} />{' '}
                 <span className='drawer__upper-text-right'>
                   <a
-                    href='tel:{selectedPlace.phone}'
+                    href='tel:{selectedPlace.contact.phone.primary.number}'
                     className='MealsMap-phone-link'
                     aria-label='Phone Number'
                   >
                     {' '}
-                    {selectedPlace.phone}{' '}
+                    {selectedPlace.contact.phone.primary.number}{' '}
                   </a>
                 </span>
               </p>
@@ -351,11 +372,11 @@ export default function MealsMap() {
                 <a
                   className='MealsMap-site-link'
                   target='_blank'
-                  href={selectedPlace.website}
+                  href={selectedPlace.contact.website}
                   aria-label='Website Link'
                 >
                   <span className='drawer__upper-text-right MealsMap-site-link'>
-                    {selectedPlace.website}
+                    {selectedPlace.contact.website}
                   </span>
                 </a>
               </p>
@@ -393,7 +414,12 @@ export default function MealsMap() {
                 size='small'
               >
                 <Collapse.Panel
-                  header={`Meal Schedule`}
+                  header={
+                    <>
+                      <span>Meal Schedule</span>
+                      {}
+                    </>
+                  }
                   key='1'
                   size='small'
                   className='mealsMap-collapse-panel'
@@ -401,49 +427,120 @@ export default function MealsMap() {
                   <div className='mealsMap__C1--DropIn-Schedule'>
                     {selectedPlace &&
                       selectedPlace.schedule &&
-                      Object.entries(JSON.parse(selectedPlace.schedule)).map(
-                        ([day, details]) => (
-                          <>
-                            <div
-                              className='mealsMap__C1--Weekday-Div'
-                              key={day}
-                            >
-                              {day && (
-                                <div className='mealsMap__C1--Day-Container'>
-                                  <p className='mealsMap__C1--Day'>{day}</p>
-                                </div>
-                              )}
-                              <div className='mealsMap__C1--Meal-Info-Container'>
-                                {details.breakfast && (
-                                  <p className='mealsMap__C1--Meal-Text'>
-                                    Breakfast: {details.breakfast}
-                                  </p>
-                                )}
-                                {details.lunch && (
-                                  <p className='mealsMap__C1--Meal-Text'>
-                                    Lunch: {details.lunch}
-                                  </p>
-                                )}
-                                {details.dinner && (
-                                  <p className='mealsMap__C1--Meal-Text'>
-                                    Dinner: {details.dinner}
-                                  </p>
-                                )}
-                                {details.snack && (
-                                  <p className='mealsMap__C1--Meal-Text'>
-                                    Snack: {details.snack}
-                                  </p>
-                                )}
+                      Object.entries(
+                        typeof selectedPlace.schedule === 'string'
+                          ? JSON.parse(selectedPlace.schedule) // Parse if it's a string
+                          : selectedPlace.schedule // Use directly if it's an object
+                      ).map(([day, details]) => (
+                        <>
+                          <div className='mealsMap__C1--Weekday-Div' key={day}>
+                            {day && (
+                              <div className='mealsMap__C1--Day-Container'>
+                                <p className='mealsMap__C1--Day'>{day}</p>
                               </div>
+                            )}
+                            <div className='mealsMap__C1--Meal-Info-Container'>
+                              {details.meals && details.meals.breakfast && (
+                                <span className='mealsMap__C1--Meal-Span'>
+                                  <p className='mealsMap__C1--Meal-Text'>
+                                    Breakfast:
+                                  </p>
+                                  {details.meals.breakfast.start && (
+                                    <p className='mealsMap__C1--Meal-Text'>{`${moment(
+                                      details.meals.breakfast.start,
+                                      'HH:mm'
+                                    ).format('h:mm A')}`}</p>
+                                  )}
+                                  {details.meals.breakfast.end && (
+                                    <p className='mealsMap__C1--Meal-Text'>
+                                      -{' '}
+                                      {`${moment(
+                                        details.meals.breakfast.end,
+                                        'HH:mm'
+                                      ).format('h:mm A')}`}
+                                    </p>
+                                  )}
+                                </span>
+                              )}
+                              {details.meals && details.meals.lunch && (
+                                <span className='mealsMap__C1--Meal-Span'>
+                                  <p className='mealsMap__C1--Meal-Text'>
+                                    Lunch:
+                                  </p>
+                                  {details.meals.lunch.start && (
+                                    <p className='mealsMap__C1--Meal-Text'>{`${moment(
+                                      details.meals.lunch.start,
+                                      'HH:mm'
+                                    ).format('h:mm A')}`}</p>
+                                  )}
+                                  {details.meals.lunch.end && (
+                                    <p className='mealsMap__C1--Meal-Text'>
+                                      -{' '}
+                                      {`${moment(
+                                        details.meals.lunch.end,
+                                        'HH:mm'
+                                      ).format('h:mm A')}`}
+                                    </p>
+                                  )}
+                                </span>
+                              )}
+                              {details.meals && details.meals.dinner && (
+                                <span className='mealsMap__C1--Meal-Span'>
+                                  <p className='mealsMap__C1--Meal-Text'>
+                                    Dinner:
+                                  </p>
+                                  {details.meals.dinner.start && (
+                                    <p className='mealsMap__C1--Meal-Text'>{`${moment(
+                                      details.meals.dinner.start,
+                                      'HH:mm'
+                                    ).format('h:mm A')}`}</p>
+                                  )}
+                                  {details.meals.dinner.end && (
+                                    <p className='mealsMap__C1--Meal-Text'>
+                                      -{' '}
+                                      {`${moment(
+                                        details.meals.dinner.end,
+                                        'HH:mm'
+                                      ).format('h:mm A')}`}
+                                    </p>
+                                  )}
+                                </span>
+                              )}
+                              {details.meals && details.meals.snack && (
+                                <span className='mealsMap__C1--Meal-Span'>
+                                  <p className='mealsMap__C1--Meal-Text'>
+                                    Snack:
+                                  </p>
+                                  {details.meals.snack.start && (
+                                    <p className='mealsMap__C1--Meal-Text'>{`${moment(
+                                      details.meals.snack.start,
+                                      'HH:mm'
+                                    ).format('h:mm A')}`}</p>
+                                  )}
+                                  {details.meals.snack.end && (
+                                    <p className='mealsMap__C1--Meal-Text'>
+                                      -{' '}
+                                      {`${moment(
+                                        details.meals.snack.end,
+                                        'HH:mm'
+                                      ).format('h:mm A')}`}
+                                    </p>
+                                  )}
+                                </span>
+                              )}
                             </div>
-                            <hr className='weekday-seperator' />
-                          </>
-                        )
-                      )}
+                          </div>
+                          <hr className='weekday-seperator' />
+                        </>
+                      ))}
                   </div>
                 </Collapse.Panel>
                 <Collapse.Panel
-                  header={`Hours of Operation`}
+                  header={
+                    <>
+                      <span>Hours of Operation</span>
+                    </>
+                  }
                   key='2'
                   size='small'
                   className='mealsMap-collapse-panel'
@@ -451,16 +548,74 @@ export default function MealsMap() {
                   <div>
                     {selectedPlace &&
                       selectedPlace.schedule &&
-                      Object.entries(JSON.parse(selectedPlace.schedule)).map(
-                        ([day, details]) => (
-                          <div className='mealsMap__C2--Weekday-Div' key={day}>
+                      Object.entries(
+                        typeof selectedPlace.schedule === 'string'
+                          ? JSON.parse(selectedPlace.schedule) // Parse if it's a string
+                          : selectedPlace.schedule // Use directly if it's an object
+                      ).map(([day, details]) => (
+                        <div className='mealsMap__C2--Weekday-Div' key={day}>
+                          <div className='mealsMap__C2--Day-Container'>
                             <p className='mealsMap__C2--Day'>{day}</p>
-                            <p className='mealsMap__C2--Hours'>
-                              {details.hours}
-                            </p>
                           </div>
-                        )
-                      )}
+
+                          <span className='mealsMap__C2--Hours-Container-Array'>
+                            {Array.isArray(details.hours) &&
+                              details.hours.map((hour, index) => (
+                                <p
+                                  className='mealsMap__C2--Hours-Text'
+                                  key={index}
+                                >
+                                  {hour.open === null
+                                    ? 'Closed'
+                                    : `${moment(hour.open, 'HH:mm').format(
+                                        'h:mm A'
+                                      )} - ${moment(hour.close, 'HH:mm').format(
+                                        'h:mm A'
+                                      )}`}
+                                </p>
+                              ))}
+
+                            {!Array.isArray(details.hours) && (
+                              <span className='mealsMap__C2--Hours-Container'>
+                                {details.hours.open !== '' &&
+                                details.hours.open !== 'closed' ? (
+                                  <p className='mealsMap__C2--Hours-Text'>
+                                    {moment(details.hours.open, 'HH:mm').format(
+                                      'h:mm A'
+                                    )}
+                                  </p>
+                                ) : details.hours.open === 'closed' ? (
+                                  <span className='hours-closed'>Closed</span>
+                                ) : details.hours.open === '' ? (
+                                  ''
+                                ) : (
+                                  ''
+                                )}
+
+                                {details.hours.open !== '' &&
+                                details.hours.open !== 'closed' ? (
+                                  <span className='hours-dash'>-</span>
+                                ) : (
+                                  ''
+                                )}
+                                <p className='mealsMap__C2--Hours-Text'>
+                                  {details.hours.close !== '' &&
+                                  details.hours.close !== 'closed'
+                                    ? `${moment(
+                                        details.hours.close,
+                                        'HH:mm'
+                                      ).format('h:mm A')}`
+                                    : details.hours.close === 'closed'
+                                    ? ''
+                                    : details.hours.close === ''
+                                    ? ''
+                                    : ''}
+                                </p>
+                              </span>
+                            )}
+                          </span>
+                        </div>
+                      ))}
                   </div>
                 </Collapse.Panel>
               </Collapse>

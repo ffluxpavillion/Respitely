@@ -36,7 +36,7 @@ export default function Login() {
     <>
       <section className='login-section'>
         <div className='login-upper'>
-          <h1 className='login-header'>LOGIN PAGE</h1>
+          <h1 className='login-header'>PROVIDER LOGIN PAGE</h1>
           <br />
           <p className='login-text'>
             Welcome to the Drop-In Service Provider Login Page.

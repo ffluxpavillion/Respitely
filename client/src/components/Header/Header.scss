@@ -8,6 +8,7 @@ html {
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
+  // background-color: transparent;
 }
 
 li {
@@ -43,12 +44,12 @@ li {
 
   @include tablet {
     padding: 1.75rem 1rem 0.5rem 1rem;
-    align-items: end;
   }
 
   @include desktop {
-    padding: 1.75rem 1.5rem 0.5rem 1.5rem;
-    align-items: end;
+    padding: 1.75rem 1rem 0.5rem 1rem;
+    justify-content: space-evenly;
+
   }
 }
 
@@ -70,8 +71,8 @@ li {
 .header-brand {
   display: inline;
   color: white;
-  opacity: 0;
-  animation: navFadeIn 3s ease-out 3s forwards;
+  opacity: 1;
+  // animation: navFadeIn 3s ease-out 3s forwards;
   font-family: 'Toronto Subway Bold';
   letter-spacing: 1.5px;
 
@@ -85,6 +86,8 @@ li {
 
   @include desktop {
     font-size: 2.8rem;
+    margin-left: 1rem;
+
   }
 }
 
@@ -137,25 +140,26 @@ li {
       // enables menu on desktop
       @include desktop {
         // transform: translateY(-100%);
-        transition: transform 0.3s ease-in-out;
+        // transition: transform 0.3s ease-in-out;
       }
     }
 
     &-li {
-      text-align: center;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      font-family: 'Toronto Subway';
-      padding: 0.5rem 2rem 0.5rem 5rem;
-      letter-spacing: 1.4px;
-      color: white;
-      text-transform: uppercase;
-      width: max-content;
-      transition: all 0.4s ease-in-out;
 
       @include mobile {
         font-size: 1.3rem;
+        text-align: center;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        font-family: 'Toronto Subway';
+        padding: 0.5rem 2rem 0.5rem 5rem;
+        letter-spacing: 1.4px;
+        color: white;
+        text-transform: uppercase;
+        width: max-content;
+        transition: all 0.4s ease-in-out;
+
 
         &:active {
           text-decoration: underline;
@@ -164,6 +168,18 @@ li {
 
       @include tablet {
         font-size: 1.4rem;
+        text-align: center;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        font-family: 'Toronto Subway';
+        padding: 0.5rem 2rem 0.5rem 5rem;
+        letter-spacing: 1.4px;
+        color: white;
+        text-transform: uppercase;
+        width: max-content;
+        transition: all 0.4s ease-in-out;
+
 
         &:active {
           transition: all 0.4s ease-in-out;
@@ -173,8 +189,20 @@ li {
       }
 
       @include desktop {
-        font-size: 1.7rem;
+        font-size: 1.25rem;
         // padding: 0.5rem 1rem 0.6rem 30rem;
+        text-align: center;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        font-family: 'Toronto Subway';
+        padding: 0.5rem 0.5rem 0.5rem 1rem;
+        letter-spacing: 1.4px;
+        color: white;
+        text-transform: uppercase;
+        width: max-content;
+        transition: all 0.4s ease-in-out;
+
 
         &:hover {
           text-decoration: underline;
@@ -200,7 +228,7 @@ li {
   padding-right: 3.5rem;
 
   @include mobile {
-    top: 5rem;
+    top: 4rem;
     gap: 1.9rem;
     padding-right: 2.4rem;
   }
@@ -274,10 +302,15 @@ li {
 
 // --------------- BURGER MENU STYLING ---------------
 .menu {
-  cursor: pointer;
+  // cursor: pointer;
   pointer-events: auto;
   overflow: hidden;
   top: -95%;
+
+  @include desktop {
+    width: 100%;
+    justify-items: center;
+  }
 }
 
 //--------------- BURGER MENU --OPEN/CLOSE ANIMATION ---------------
@@ -286,10 +319,10 @@ li {
 @media screen {
   .menu {
     display: block;
-    animation: navFadeIn 4s ease-out 3s forwards;
+    // animation: navFadeIn 4s ease-out 3s forwards;
     // padding-right: 2rem;
     // margin-top: 1.5rem;
-    opacity: 0;
+    opacity: 1;
     // margin: 0.8rem 1.5rem 1.5rem 1rem;
   }
 
@@ -391,7 +424,7 @@ li {
   }
 }
 
-// AboutUs Section --SafeHavenTO header underline
+// AboutUs Section --Respitely header underline
 #aboutUs {
 }
 
@@ -407,4 +440,33 @@ li {
   to {
     opacity: 1;
   }
+}
+
+// --------------- DESKTOP MENU ---------------
+
+.navbar__div-desktop {
+  width: 100%;
+
+}
+
+.navbar__ul-desktop {
+  display: flex;
+  align-items: center;
+  gap: 4vw;
+}
+
+.divider {
+  font-size: 1.25rem;
+  // padding: 0.5rem 1rem 0.6rem 30rem;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  font-family: 'Toronto Subway';
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
+  letter-spacing: 1.4px;
+  color: white;
+  text-transform: uppercase;
+  width: max-content;
+  transition: all 0.4s ease-in-out;
 }

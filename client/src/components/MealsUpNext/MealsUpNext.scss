@@ -26,11 +26,12 @@
 
 
   @include mobile {
-    margin: 0rem;
+    margin: 1rem;
     padding: 0.6rem 0.5rem;
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
+    width: 90%;
   }
 
   @include tablet {
@@ -73,6 +74,7 @@
   color: white;
   font-family: 'DT Black';
   text-align: center;
+  width: 100%;
 
   @include mobile {
     width: 95%;
@@ -131,6 +133,12 @@
   width: 100%;
   text-align: center;
   margin-left: 2rem;
+
+
+  @include mobile {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .collapse__distance {
@@ -145,6 +153,10 @@
   font-style: bold;
   font-weight: 600;
   font-family: 'League Spartan Regular';
+
+  @include mobile {
+    font-size: 0.6rem;
+  }
 }
 
 .popover-alert-button {

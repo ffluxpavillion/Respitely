@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "@auth0/auth0-react": "^2.2.4",
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
     "@fortawesome/free-brands-svg-icons": "^6.5.2",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",

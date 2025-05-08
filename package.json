@@ -14,7 +14,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.0"
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
 
   },
   "description": "A full-stack & responsive web application, designed to help those experiencing homelessness & food insecurity in identifying nearby shelters and community meals, based on their individual needs and the latest updates from locations around the city.",

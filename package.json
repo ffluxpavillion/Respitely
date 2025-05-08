@@ -1,5 +1,5 @@
 {
-  "name": "safehavento",
+  "name": "respitely",
   "version": "1.0.0",
   "scripts": {
     "postinstall": "cd client && npm install && npm run build",
@@ -15,7 +15,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.3.1"
   },
-  "description": "A full-stack & responsive web application, designed to help those experiencing homelessness in finding nearby shelters based on their individual needs and the latest updates from locations around the city.",
+  "description": "A full-stack & responsive web application, designed to help those experiencing homelessness & food insecurity in identifying nearby shelters and community meals, based on their individual needs and the latest updates from locations around the city.",
   "main": "index.js",
   "keywords": [],
   "author": "",

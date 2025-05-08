@@ -44,7 +44,7 @@
     padding: 2.5rem;
   }
   @include desktop {
-    padding: 20rem 10rem 1rem 10rem;
+    padding: 20rem 5rem 1rem 10rem;
   }
 }
 
@@ -100,7 +100,7 @@
   }
 
   @include desktop {
-    font-size: 6.5rem;
+    font-size: 4.5rem;
     line-height: 5.5rem;
     width: fit-content;
   }
@@ -124,7 +124,7 @@
   }
 
   @include desktop {
-    font-size: 8rem;
+    font-size: 5.5rem;
     letter-spacing: -1px;
   }
 }

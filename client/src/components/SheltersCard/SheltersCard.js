@@ -249,8 +249,8 @@ export default function SheltersCard() {
                       </h6>
                       <p className='shelter-item__availability mobile__shelter-item__availability'>
                         {record.CAPACITY_TYPE === 'Bed Based Capacity'
-                          ? `Available Beds: ${record.UNOCCUPIED_BEDS}`
-                          : `Available Rooms: ${record.UNOCCUPIED_ROOMS}`}
+                          ? `Unoccupied Beds: ${record.UNOCCUPIED_BEDS}`
+                          : `Unoccupied Rooms: ${record.UNOCCUPIED_ROOMS}`}
                         <br />
                         Last Updated: {calculateDaysAgo(
                           record.OCCUPANCY_DATE

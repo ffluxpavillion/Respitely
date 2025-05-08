@@ -43,7 +43,7 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  background-color: #212d40;
+  // background-color: #212d40;
 
   @include mobile {
   }
@@ -61,37 +61,54 @@
 
 .popup__div-upper {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 1.1rem;
+  margin-bottom: 1rem;
 }
 
 .popup__div-left {
-  width: 50%;
+  height: 50%;
   animation: fadeIn 0.5s ease-out forwards;
   align-self: center;
 }
+.drawer-shelter {
+  z-index: 1000;
+  background-color: blue;
+  width: 100%;
+}
 
 .popup__div-right {
-  width: 50%;
+  height: 50%;
   animation: fadeIn 0.5s ease-out forwards;
   height: auto;
 }
 
 .popup__div-header {
   color: white;
+  text-align: center;
+
 
   @include mobile {
     font-size: 1.1rem;
     text-align: center;
+    margin-bottom: 1rem;
+
   }
 
   @include tablet {
     font-size: 1.25rem;
+    margin-bottom: 1rem;
+
   }
 
   @include desktop {
     font-size: 1.25rem;
+    height: 2rem;
   }
+}
+
+.tempShelterMap {
+  z-index: 1000;
 }
 
 .popup__div-subheader-1 {
@@ -103,11 +120,11 @@
   font-weight: 600;
 
   @include mobile {
-    width: 10rem;
+    width: 15rem;
   }
 
   @include tablet {
-    width: 12rem;
+    width: max-content;
   }
 
   @include desktop {
@@ -172,10 +189,15 @@
 }
 
 .popup-availability {
-  color: #d66853;
-  font-size: 1.28rem;
+  // color: #d66853;
+  color: white;
+  font-size: 1.2rem;
   margin-left: 0.4rem;
   font-family: Avenir Next Bold;
+
+  @include mobile {
+    font-size: 1.1rem;
+  }
 }
 
 .popup__button-container {
@@ -255,7 +277,10 @@
   flex-direction: column;
   font-variant-caps: all-petite-caps;
   border-left: 20px solid #d66853;
-  background-color: #212d40 !important;
+  // background-color: #212d40 !important;
+  background-color: #2a27275e !important;
+
+
   align-self: center;
 
   @include mobile {
@@ -269,7 +294,7 @@
   }
 
   @include desktop {
-    padding: 1.5rem 2rem 1.5rem 2rem;
+    // padding: 1.5rem 2rem 1.5rem 2rem;
   }
 }
 

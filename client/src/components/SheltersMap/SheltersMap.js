@@ -14,6 +14,8 @@ import HeartMarker from '../../assets/icons/SafeHavenTO_icon-marker.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRoute } from '@fortawesome/free-solid-svg-icons';
 import { ApiKeyContext } from '../../contexts/ApiKeyContext';
+import { Drawer, Button, Collapse } from 'antd';
+
 
 export default function SheltersMap(props) {
   const apiKey = useContext(ApiKeyContext); // piece of state to store maps API key
@@ -186,7 +188,7 @@ export default function SheltersMap(props) {
           // Update the view state to center on the selected location
           ...prevViewState,
           longitude: longitude,
-          latitude: latitude + 0.005, // Offset the latitude slightly to prevent the popup from covering the marker
+          latitude: latitude + 0.007, // Offset the latitude slightly to prevent the popup from covering the marker
           zoom: 13,
         }));
 
@@ -263,32 +265,43 @@ export default function SheltersMap(props) {
                       {selectedPlace.properties.SHELTER_GROUP ||
                         'LOCATION NAME'}
                     </h4>
-                    <br />
-                    {selectedPlace.properties.CAPACITY_TYPE ===
-                    'Bed Based Capacity' ? (
-                      <p className='popup__div-subheader-1 '>
-                        Available Beds:{' '}
-                        <span className='popup-availability'>
-                          {selectedPlace.properties.UNOCCUPIED_BEDS}
-                        </span>
-                      </p>
-                    ) : (
-                      <p className='popup__div-subheader-1'>
-                        Available Rooms:{' '}
-                        <span className='popup-availability'>
-                          {selectedPlace.properties.UNOCCUPIED_ROOMS}
-                        </span>
-                      </p>
-                    )}
-                  </div>
-                  <div className='popup__div-right'>
-                    <p className='popup__div-subheader-2'>Address:</p>
+                    <div className='popup__div-right'>
+                    {/* <p className='popup__div-subheader-2'>Address:</p> */}
                     <p className='popup__div-text'>
                       {selectedPlace.properties.LOCATION_ADDRESS}
                       <br />
                       {selectedPlace.properties.LOCATION_CITY}
                     </p>
                   </div>
+                    {selectedPlace.properties.CAPACITY_TYPE ===
+                    'Bed Based Capacity' ? (
+                      <>
+                      <p className='popup__div-subheader-1 '>
+                        Snapshot:{' '}
+
+                        <span className='popup-availability'>
+                          {selectedPlace.properties.UNOCCUPIED_BEDS} Beds Unoccupied
+                        </span>
+                      </p>
+                      <p className='popup__div-subheader-1 '>
+                        As Of:
+                        <span className='popup-availability'>
+                        {selectedPlace.properties.OCCUPANCY_DATE}
+                        </span>
+                      </p>
+                      </>
+                    ) : (
+                      <>
+                      <p className='popup__div-subheader-1'>
+                        Latest Update:{' '}
+                        <span className='popup-availability'>
+                          {selectedPlace.properties.UNOCCUPIED_ROOMS} Rooms Unoccupied
+                        </span>
+                      </p>
+                      </>
+                    )}
+                  </div>
+
                 </div>
                 <div className='popup__div-lower'>
                   <div className='popup__button-container'>
@@ -311,7 +324,7 @@ export default function SheltersMap(props) {
                         </span>
                         <p className='popup__button-directions-text'>
                           {' '}
-                          Get Directions
+                          Directions
                         </p>
                       </button>
                     </a>

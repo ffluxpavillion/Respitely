@@ -4,7 +4,7 @@ const cors = require('cors');
 const corsOptions = {
   origin: process.env.CORS_ORIGIN,
   optionsSuccessStatus: 200,
-  // methods: ['GET', 'POST', 'PUT', 'DELETE']
+  methods: ['GET', 'POST', 'PATCH', 'DELETE']
 };
 
 module.exports = cors(corsOptions);

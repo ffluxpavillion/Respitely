@@ -14,17 +14,17 @@
   height: 50vh;
 
   @include mobile {
-    height: 30rem;
+    height: 33rem;
     padding: 1rem;
   }
 
   @include tablet {
-    height: 30rem;
+    height: 35rem;
     padding: 2rem;
   }
 
   @include desktop {
-    height: 30rem;
+    height: 40rem;
     padding: 2rem;
   }
 }

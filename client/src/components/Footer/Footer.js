@@ -75,9 +75,6 @@ export default function Footer() {
             </ul>
             <ul className='footer__list-ul'>
               <br />
-              <br />
-              <br />
-              <br />
 
               <li className='footer__list-li'>
                 <RouterLink

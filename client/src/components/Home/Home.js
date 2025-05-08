@@ -9,10 +9,9 @@ export default function Home() {
         <div className='home-header__container'>
           <div className='home-header__text'>
             <h1 className='home-header__line1'>
-              Find Food <span className='and-symbol'>&</span> Shelter In
-              Toronto.
+              Shelter Snapshots <span className='and-symbol'>&</span> Real-Time Meal Tracker
             </h1>
-            <h1 className='home-header__line2'>Today.</h1>
+            <h1 className='home-header__line2'>for Toronto & the GTA.</h1>
           </div>
         </div>
 

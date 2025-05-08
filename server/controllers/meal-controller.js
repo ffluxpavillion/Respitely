@@ -57,10 +57,19 @@ const getMeals = async (req, res) => {
         return {
           id: mealObj._id,
           name: mealObj.name,
-          address: mealObj.address,
+          program_name: mealObj.program_name,
+          address: {
+            street: mealObj.address.street,
+            city: mealObj.address.city,
+            province: mealObj.address.province,
+            postal_code: mealObj.address.postal_code,
+          },
           latitude: mealObj.latitude,
           longitude: mealObj.longitude,
-          contact: mealObj.contact,
+          contact: {
+            phone: mealObj.contact,
+            website: mealObj.website,
+          },
           population: mealObj.population,
           notes: mealObj.notes,
           service_dog_allowed: mealObj.service_dog_allowed,
@@ -72,26 +81,76 @@ const getMeals = async (req, res) => {
       });
 
       res.json(response);
-    } else { // Else, fetch provider info + ENTIRE drop-in meal schedule -- /api/v1/:city/meals
 
-      const meals = await MealModel.find({}).sort({ createdAt: -1 });
-      console.log(`${city} Meals fetched:`, meals.length);
-
-      if (!meals.length) {
-        return res
-          .status(404)
-          .json({ error: `No meal data found for ${city}` });
-      }
-
-      res.json(meals); // Return all meals
     }
-  } catch (err) {
-    console.error(
-      `Error fetching meals for ${city}${day ? ` on ${day}` : ''}:`,
-      err
-    );
-    res.status(500).json({ error: err.message });
+//     else { // Else, fetch provider info + ENTIRE drop-in meal schedule -- /api/v1/:city/meals
+
+//       const meals = await MealModel.find({}).sort({ createdAt: -1 });
+//       console.log(`${city} Meals fetched:`, meals.length);
+
+//       if (!meals.length) {
+//         return res
+//           .status(404)
+//           .json({ error: `No meal data found for ${city}` });
+//       }
+
+//       res.json(meals); // Return all meals
+//     }
+//   } catch (err) {
+//     console.error(
+//       `Error fetching meals for ${city}${day ? ` on ${day}` : ''}:`,
+//       err
+//     );
+//     res.status(500).json({ error: err.message });
+//   }
+// };
+else {
+  const meals = await MealModel.find({}).sort({ createdAt: -1 });
+  console.log(`${city} Meals fetched:`, meals.length);
+
+  if (!meals.length) {
+    return res.status(404).json({ error: `No meal data found for ${city}` });
   }
+
+  const response = meals.map((meal) => {
+    const mealObj = meal.toObject();
+
+    // Ensure proper JSON structure for nested objects
+    return {
+      id: mealObj._id,
+      name: mealObj.name,
+      program_name: mealObj.program_name,
+      address: {
+        street: mealObj.address.street,
+        city: mealObj.address.city,
+        province: mealObj.address.province,
+        postal_code: mealObj.address.postal_code,
+      },
+      latitude: mealObj.latitude,
+      longitude: mealObj.longitude,
+      contact: {
+        phone: mealObj.contact.phone,
+        website: mealObj.contact.website,
+      },
+      population: mealObj.population,
+      notes: mealObj.notes,
+      service_dog_allowed: mealObj.service_dog_allowed,
+      wheelchair_accessible: mealObj.wheelchair_accessible,
+      schedule: mealObj.schedule,
+      claimed_by: mealObj.claimed_by,
+      last_updated: mealObj.last_updated,
+    };
+  });
+
+  res.json(response);
+}
+} catch (err) {
+console.error(
+  `Error fetching meals for ${city}${day ? ` on ${day}` : ''}:`,
+  err
+);
+res.status(500).json({ error: err.message });
+}
 };
 
 // ------------------------ (GET) SINGLE MEAL -- BY ID ------------------------ -- /api/v1/:city/meals/:id

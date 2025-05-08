@@ -81,7 +81,11 @@ export default function MealsInProgress({ currentEvents, getDirectionsUrl }) {
                   <p className='mealsTimeline__in-progress-address'>
                   <FontAwesomeIcon icon={faLocationDot} size='lg' />
                     <p className='MTL-collapse-live-text'>
-                      {event.addressOfMeal}
+                      {event.address.street}
+                      <br />
+                      {event.address.city},{' '}{event.address.province}
+                      <br />
+                      {event.address.postal_code}
                     </p>
                   </p>
                   <button

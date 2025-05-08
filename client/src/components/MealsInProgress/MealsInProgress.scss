@@ -20,11 +20,12 @@
   width: 70%;
 
   @include mobile {
-    margin: 0rem;
+    margin: 1rem;
     padding: 0.6rem 0.5rem;
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
+    width: 90%;
   }
 
   @include tablet {
@@ -63,7 +64,7 @@
 
 .current-event-container {
   border: 2px solid #0f5630;
-  background-color: #0c4527;
+  background-color:#0c4527;
   color: white;
   text-align: -webkit-center;
   text-wrap: nowrap;

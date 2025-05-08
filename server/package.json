@@ -3,9 +3,13 @@
   "version": "1.0.0",
   "description": "A server that fetches and sorts data from the City of Toronto's Daily Shelter Occupancy API and serves it to the client.",
   "main": "server.js",
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "scripts": {
     "start": "NODE_ENV=production node server.js",
-    "dev": "NODE_ENV=development nodemon server.js"
+    "dev": "NODE_ENV=development nodemon server.js",
+    "build": "cd ../client && npm install --legacy-peer-deps && npm install @babel/plugin-proposal-private-property-in-object --save-dev && npm run build"
   },
   "keywords": [],
   "author": "",

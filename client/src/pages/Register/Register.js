@@ -39,7 +39,7 @@ export default function Register() {
       <section className='register-section'>
         <div className='register-upper'>
           <h1 className='register-header'>
-            DROP-IN SERVICE PROVIDER REGISTRATION PAGE
+            PROVIDER REGISTRATION PAGE
           </h1>
           <br />
           <p className='register-text'>

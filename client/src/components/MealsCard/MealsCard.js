@@ -14,7 +14,6 @@ import ComingSoon from '../ComingSoon/ComingSoon';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@radix-ui/react-tabs';
 // import { useDateTime } from '../../../contexts/DateTimeContext';
 
-
 export default function MealsCard() {
   const [view, setView] = useState('timeline');
   const [timelineItems, setTimelineItems] = useState([]);
@@ -154,6 +153,8 @@ export default function MealsCard() {
 
   // console.log('TimelineItems======', timelineItems)
   // console.log('CurrentEvents======', currentEvents)
+  const now = moment.tz('America/Toronto');
+  console.log('now', now);
   return (
     <>
       <MealsBanner />
@@ -163,7 +164,6 @@ export default function MealsCard() {
             Toronto Drop-In Meals Daily Tracker
           </h3>
 
-          <br />
           <br />
 
           <Tabs
@@ -219,14 +219,6 @@ export default function MealsCard() {
 
           <br />
         </div>
-
-               {/* <ComingSoon
-            title="New Drop-In Meals UI Coming Soon!"
-            message="A more intuitive solution is on the way -- this upcoming tool will provide essential info on drop-in meals, helping you locate services quickly and efficiently.  Sincerely grateful for the patience and support, stay safe."
-            height='100%'
-            width='80%'
-        /> */}
-
         <div className='meals-section__lower'></div>
         <Link
           to='/drop-in-map'

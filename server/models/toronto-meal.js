@@ -43,6 +43,7 @@ const contactSchema = new mongoose.Schema({ // contact information for meal prov
 
 const mealSchema = new mongoose.Schema({ // meal provider schema
   name: { type: String, required: true },
+  program_name: { type: String, default: 'drop-in' },
   address: addressSchema,
   latitude: { type: Number },
   longitude: { type: Number },
@@ -70,6 +71,7 @@ mealSchema.set('toJSON', { // Forcing mongoose to output JSON in specific order
     return {
       _id: ret._id,
       name: ret.name,
+      program_name: ret.program_name,
       address: ret.address,
       latitude: ret.latitude,
       longitude: ret.longitude,

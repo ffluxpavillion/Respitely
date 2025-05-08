@@ -76,7 +76,7 @@ export default function UserLoginMenu() {
             <Space>
               {isAuthenticated
                 ? `Welcome Back ${user.name}!`
-                : 'Drop-In Providers Signup / Login'}
+                : 'Provider Login'}
               <DownOutlined />
             </Space>
           </Button>
@@ -86,7 +86,7 @@ export default function UserLoginMenu() {
           <Space>
             {isAuthenticated
               ? `Welcome Back ${user.name}!`
-              : 'Drop-In Providers Signup / Login'}
+              : 'Provider Login'}
           </Space>
         </Button>
       )}

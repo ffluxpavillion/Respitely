@@ -13,7 +13,6 @@ const connectToDatabase = async () => {  // Connect to MongoDB
 
 module.exports = connectToDatabase;
 
-
 // const mongoose = require('mongoose');
 
 // const connections = {};

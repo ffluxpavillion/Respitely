@@ -35,7 +35,6 @@ const MealsTimeline = ({ timelineItems, getDirectionsUrl }) => {
 
   return (
     <>
-
       <article className='mealsTimeline-container'>
         <div className='timeline-container' ref={timelineContainerRef}>
           <div className='timeline-wrapper'>
@@ -62,11 +61,13 @@ const MealsTimeline = ({ timelineItems, getDirectionsUrl }) => {
                   onClick={() => toggleCollapse(index)}
                 >
                   <div className='timeline-item-time'>
-                    {isEnded
-                      ? <span className='is-ended'>Ended</span>
-                      : item.isCurrent
-                      ? <span className='happening-now-text'>Now</span>
-                      : moment(item.startTime).format('h:mma')}
+                    {isEnded ? (
+                      <span className='is-ended'>Ended</span>
+                    ) : item.isCurrent ? (
+                      <span className='happening-now-text'>Now</span>
+                    ) : (
+                      moment(item.startTime).format('h:mma')
+                    )}
                     {/* {!isEnded && moment(item.startTime).format('h:mma')} */}
                   </div>
                   <hr className='timeline-divider' />
@@ -110,9 +111,7 @@ const MealsTimeline = ({ timelineItems, getDirectionsUrl }) => {
                           <div className='mealsTimeline__meal-time'>
                             {item.timeOfMeal}
                           </div>
-                          {item.distance
-                            ? `(${item.distance} km)`
-                            : ''}
+                          {item.distance ? `(${item.distance} km)` : ''}
                           <aside className='mealsTimeline-accessibility-div'>
                             <div className='mealsTimeline-accessibility-icon'>
                               {item.wheelchair_accessible && (
@@ -146,7 +145,11 @@ const MealsTimeline = ({ timelineItems, getDirectionsUrl }) => {
                           <div className='mealsTimeline__meal-address'>
                             <FontAwesomeIcon icon={faLocationDot} size='lg' />
                             <p className='daily-timeline-text'>
-                              {item.addressOfMeal}
+                              {item.address.street}
+                              <br />
+                              {item.address.city}, {item.address.province}
+                              <br />
+                              {item.address.postal_code}
                             </p>
                           </div>
                           <button

@@ -94,6 +94,7 @@
   }
 
   @include desktop {
+    width: 100%;
 
   }
 }
@@ -148,24 +149,19 @@
   filter: brightness(1);
   box-shadow : 0 0 20px 0 transparent;
 
-  border: 5px solid transparent;
-
   &:hover {
-    // background-color: darken(#424445, 9%);
+    background-color: darken(#424445, 9%);
     // background-color: #122632;
-    background-color: #292929aa;
+    // background-color: transparent;
     border-radius: 0px;
     color: #ffffff;
     filter: brightness(1);
     cursor: pointer;
     transition: all 0.35s ease;
-
-    // border: 5px solid #919191aa;
-
   }
 
   @include mobile {
-    // padding: 0 0.5rem;
+    padding: 0;
   }
 
   @include tablet {
@@ -201,18 +197,23 @@
 }
 
 .timeline-item-time {
-  // width: 13%;
-  width: 6.5rem;
   text-align: center;
-  // margin-right: 1rem;
+  width: 35%;
   font-weight: bold;
   color: white;
-  // letter-spacing: 0.5px;
 
   @include mobile {
-    // margin: 0rem 0.7rem 0 0;
     font-size: 0.8rem;
-    width: 5rem;
+    width: 35%;
+  }
+
+  @include tablet {
+    width: 20%;
+
+  }
+
+  @include desktop {
+    width: 35%;
   }
 }
 
@@ -326,6 +327,7 @@
 .mealsTimeline__meal-type {
   font-family: 'DT Black';
   font-size: 1.3rem;
+  width: min-content;
 
   @include mobile {
     font-size: 1.15rem;
@@ -348,13 +350,7 @@
   display: flex;
   gap: 0.5rem;
   position: absolute;
-  // align-self: end;
-  // bottom: 8rem;
-  right: 3rem;
-
-  @include mobile {
-    right: 2rem;
-  }
+  right: 5%;
 }
 
 .mealsTimeline-accessibility-icon {
@@ -422,7 +418,7 @@
   flex-direction: row;
   justify-content: center;
   width: -webkit-fill-available;
-  width: 95%;
+  // width: 100%;
   gap: 0.5rem;
 
   &:hover {
@@ -435,6 +431,7 @@
 
   @include mobile {
     padding: 0.2rem 0.5rem;
+    width: 95%;
   }
 }
 

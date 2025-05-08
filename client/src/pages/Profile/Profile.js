@@ -19,7 +19,6 @@ export default function Profile() {
           <p>{user.email}</p>
         </div>
       )}
-      <AddMealForm />
       </div>
     </>
   );

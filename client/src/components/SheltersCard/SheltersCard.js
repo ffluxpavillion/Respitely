@@ -212,8 +212,7 @@ export default function SheltersCard() {
             <hr className='subheader__divider'></hr>
             <div className='subHeader__lower'>
               <span className='subheader__text'>
-                Results are auto-sorted by recently updated, with the most
-                availability.
+                Results are auto-sorted by recently updated, and highest daily snapshot of unoccupied spaces.
               </span>
             </div>
           </span>

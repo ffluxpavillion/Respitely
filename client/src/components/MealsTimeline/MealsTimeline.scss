@@ -327,10 +327,12 @@
 .mealsTimeline__meal-type {
   font-family: 'DT Black';
   font-size: 1.3rem;
-  width: min-content;
+  width: max-content;
+
 
   @include mobile {
     font-size: 1.15rem;
+    width: min-content;
   }
 }
 

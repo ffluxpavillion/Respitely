@@ -49,9 +49,10 @@ app.get('/api/maps-key', (req, res) => {
 });
 
 
-app.get('/', (req, res) => {
-  res.send('Welcome to the Respitely Server!');
-});
+// --- REMOVE THIS BLOCK IN PRODUCTION !!! ---
+// app.get('/', (req, res) => {
+//   res.send('Welcome to the Respitely Server!');
+// });
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/build'))); // Serve static files from the React app

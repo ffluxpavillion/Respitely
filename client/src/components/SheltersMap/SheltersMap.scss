@@ -276,11 +276,10 @@
   display: flex;
   flex-direction: column;
   font-variant-caps: all-petite-caps;
-  border-left: 20px solid #d66853;
+  // border-left: 20px solid #d66853;
   // background-color: #212d40 !important;
-  background-color: #2a27275e !important;
-
-
+  // background-color: #2a27275e !important;
+  background-color: rgb(39 39 42 / 56%) !important;
   align-self: center;
 
   @include mobile {

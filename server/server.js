@@ -33,15 +33,6 @@ app.use(express.urlencoded({ extended: false })); // allows server to handle for
 // Connect to MongoDB
 connectToDatabase();
 
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '../client/build'))); // Serve static files from the React app
-
-  // Serve React app for all non-API routes
-  app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
-  });
-}
-
 // Routes
 // const authRoutes = require('./routes/auth-routes');
 const shelterRoutes = require('./routes/shelters');
@@ -53,14 +44,23 @@ const showersRoutes = require('./routes/showers');
 app.use('/shelters', shelterRoutes);
 app.use('/api/v1', mealRoutes, showersRoutes);
 
+app.get('/api/maps-key', (req, res) => {
+  res.json({ key: process.env.REACT_APP_MAPBOX });
+});
+
 
 app.get('/', (req, res) => {
   res.send('Welcome to the Respitely Server!');
 });
 
-app.get('/api/maps-key', (req, res) => {
-  res.json({ key: process.env.REACT_APP_MAPBOX });
-});
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '../client/build'))); // Serve static files from the React app
+
+  // Serve React app for all non-API routes
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
+  });
+}
 
 app.use((req, res) => {
   res.send('This is not a valid route. Try <b>/shelters</b> or <b>/api/v1/:city/meals</b> or <b>/api/v1/:city/meals?day=:day</b> instead.');

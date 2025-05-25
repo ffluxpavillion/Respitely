@@ -240,24 +240,13 @@ export default function Header() {
 
               {/* <span className='divider'>||</span>
 
-              <h3 className='navbar__div-li coming-soon'>
-                (<p className='coming-soon-text'>Under Development</p>)
-              </h3>
-              <li onClick={handleClick}>
               <RouterLink className='routerLink' to='/register' aria-label='Link to About Us'>
               <h3 className='navbar__div-li coming-soon'>
-                <i className='navbar__div-li '>SIGNUP</i>
+                <i className='navbar__div-li '>Provider Signup</i>
               </h3>
-              </RouterLink>
-              </li>
-              <li onClick={handleClick}>
-              <RouterLink to='/login' aria-label='Link to About Us'>
-              <h3 className='navbar__div-li coming-soon'>
-                <i className='navbar__div-li'>LOGIN</i>
-              </h3>
-              </RouterLink>
-              </li>
-              <span className=''>{<UserLoginMenu />}</span> */}
+              </RouterLink> */}
+
+              {/* <span className=''>{<UserLoginMenu />}</span> */}
             </ul>
             </div>
           </nav>

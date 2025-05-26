@@ -38,6 +38,7 @@ connectToDatabase();
 const shelterRoutes = require('./routes/shelters');
 const mealRoutes = require('./routes/meals');
 const showersRoutes = require('./routes/showers');
+const providerRequest = require('./routes/provider-request');
 
 
 // app.use(authRoutes);

@@ -17,6 +17,7 @@ import SheltersCard from './components/SheltersCard/SheltersCard';
 import Homepage from './pages/Homepage/Homepage';
 import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
+import ProviderSignupForm from './pages/ProviderSignupForm/ProviderSignupForm';
 import axios from 'axios';
 import { Toaster } from 'react-hot-toast';
 import { UserContextProvider } from './contexts/userContext';
@@ -45,6 +46,7 @@ export default function App() {
             <Route path='/dashboard' element={<Dashboard />} />
             <Route path='/profile' element={<Profile />} />
             <Route path='/register' element={<Register />} />
+            <Route path='/provider-signup' element={<ProviderSignupForm />} />
             <Route path='/cookie-policy' element={<CookiePolicy />} />
             <Route path='/shelterscard-og' element={<SheltersCardOG />} />
             <Route path='/terms-of-use' element={<TermsOfUse />} />

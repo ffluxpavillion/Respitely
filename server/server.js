@@ -43,7 +43,7 @@ const providerRequest = require('./routes/provider-request');
 
 // app.use(authRoutes);
 app.use('/shelters', shelterRoutes);
-app.use('/api/v1', mealRoutes, showersRoutes);
+app.use('/api/v1', mealRoutes, showersRoutes, providerRequest);
 
 app.get('/api/maps-key', (req, res) => {
   res.json({ key: process.env.REACT_APP_MAPBOX });

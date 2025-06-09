@@ -17,7 +17,6 @@ export default function ProviderSignupForm() {
     phone: '',
     website: '',
     mealId: '',
-    proof: null,
     additionalMessage: '',
   });
 
@@ -25,14 +24,10 @@ export default function ProviderSignupForm() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    const formData = new FormData();
-    Object.entries(data).forEach(([key, value]) => {
-      formData.append(key, value);
-    });
-
     try {
-      const response = await axios.post((`${process.env.REACT_APP_BACKEND_URL}/api/v1/toronto/access-requests`), formData, {
-        headers: { 'Content-Type': 'multipart/form-data' },
+      const response = await axios.post((`${process.env.REACT_APP_BACKEND_URL}/api/v1/toronto/provider-requests`), data, {
+        headers: { 'Content-Type': 'application/json' },
+        params: { city: 'toronto'}
       });
 
       if (response.data.error) {
@@ -47,10 +42,10 @@ export default function ProviderSignupForm() {
           phone: '',
           website: '',
           mealId: '',
-          proof: null,
           additionalMessage: '',
         });
         navigate('/login');
+        console.log('Submitted data:', response.data)
       }
     } catch (error) {
       toast.error('Failed to submit access request. Please try again.');
@@ -143,19 +138,11 @@ export default function ProviderSignupForm() {
           {[...mealOptions]
             .sort((a, b) => a.name.localeCompare(b.name))
             .map((meal) => (
-              <option key={meal._id} value={meal._id}>
+              <option key={meal.id} value={meal.id}>
                 {meal.name} – {meal.address.street}
               </option>
           ))}
         </select>
-
-        {/* <label>Proof of Affiliation (PDF, DOC, JPG, PNG):</label>
-        <input
-          type='file'
-          className='register-input'
-          accept='.pdf,.doc,.docx,.jpg,.jpeg,.png'
-          onChange={(e) => setData({ ...data, proof: e.target.files[0] })}
-        /> */}
 
         <label>Additional Message (optional):</label>
         <textarea

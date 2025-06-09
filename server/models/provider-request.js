@@ -51,9 +51,5 @@ const ProviderRequestSchema = new mongoose.Schema({
   }
 });
 
-// const ProviderRequest = mongoose.createConnection(process.env.MONGODB_URI_TORONTO).model('provider_requests', ProviderRequestSchema);
-
-// module.exports = ProviderRequest;
-
 module.exports = mongoose.model('provider_requests', ProviderRequestSchema);
 

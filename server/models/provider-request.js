@@ -36,10 +36,6 @@ const ProviderRequestSchema = new mongoose.Schema({
     ref: 'Meal',
     required: false
   },
-  proof: {
-    type: String, // This will store the file path
-    required: false
-  },
   additionalMessage: {
     type: String,
     trim: true
@@ -55,6 +51,9 @@ const ProviderRequestSchema = new mongoose.Schema({
   }
 });
 
-const ProviderRequest = mongoose.createConnection(process.env.MONGODB_URI_TORONTO).model('provider_requests', ProviderRequestSchema);
+// const ProviderRequest = mongoose.createConnection(process.env.MONGODB_URI_TORONTO).model('provider_requests', ProviderRequestSchema);
 
-module.exports = ProviderRequest;
+// module.exports = ProviderRequest;
+
+module.exports = mongoose.model('provider_requests', ProviderRequestSchema);
+

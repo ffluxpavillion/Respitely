@@ -1,6 +1,4 @@
 const ProviderRequest = require('../models/provider-request');
-const mongoose = require('mongoose');
-
 
 const createProviderRequest = async (req, res) => {
   try {
@@ -15,13 +13,6 @@ const createProviderRequest = async (req, res) => {
       additionalMessage,
     } = req.body;
 
-    if (!req.file) {
-      return res.status(400).json({ error: 'Proof of affiliation file is required.' });
-    }
-
-    // Save file path (use multer for file upload??)
-    const proofPath = req.file.path;
-
     const newRequest = new ProviderRequest({
       firstName,
       lastName,
@@ -31,7 +22,6 @@ const createProviderRequest = async (req, res) => {
       website,
       mealId,
       additionalMessage,
-      proof: proofPath,
       status: 'pending',
     });
 

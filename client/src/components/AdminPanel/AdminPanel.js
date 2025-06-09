@@ -12,6 +12,23 @@ const AdminPanel = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [internalNotes, setInternalNotes] = useState('');
   const [processingId, setProcessingId] = useState(null);
+  const [meals, setMeals] = useState({}); // Map mealId -> mealName
+
+  const fetchMeals = async () => {
+    try {
+      const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/v1/toronto/meals`);
+      const mealsData = response.data;
+      const mealMap = {};
+      mealsData.forEach(meal => {
+        const id = meal._id || meal.id;
+        mealMap[id] = meal.name;
+      });
+      setMeals(mealMap);
+    } catch (error) {
+      console.error('Error fetching meals:', error);
+    }
+  };
+
 
   const fetchRequests = async () => {
     try {
@@ -40,6 +57,7 @@ const AdminPanel = () => {
 
   useEffect(() => {
     fetchRequests();
+    fetchMeals();
   }, []);
 
   const handleStatusUpdate = async (id, status) => {
@@ -102,7 +120,7 @@ const AdminPanel = () => {
       title: 'Meal Service',
       dataIndex: 'mealId',
       key: 'mealId',
-      render: (mealId) => mealId || 'Other'
+      render: (mealId) => meals[mealId] || 'Other'
     },
     {
       title: 'Status',
@@ -188,39 +206,40 @@ const AdminPanel = () => {
           <div className="request-details">
             <div className="details-grid">
               <div className="detail-item">
-                <label>Name:</label>
+                <label>Name: </label>
                 <span>{selectedRequest.name}</span>
               </div>
               <div className="detail-item">
-                <label>Organization:</label>
+                <label>Organization: </label>
                 <span>{selectedRequest.orgName}</span>
               </div>
               <div className="detail-item">
-                <label>Email:</label>
+                <label>Email: </label>
                 <span>{selectedRequest.email}</span>
               </div>
               <div className="detail-item">
-                <label>Phone:</label>
+                <label>Phone: </label>
                 <span>{selectedRequest.phone}</span>
               </div>
               <div className="detail-item">
-                <label>Website:</label>
+                <label>Website: </label>
                 <span>{selectedRequest.website || 'Not provided'}</span>
               </div>
               <div className="detail-item">
-                <label>Meal Service:</label>
-                <span>{selectedRequest.mealId || 'Other'}</span>
+                <label>Meal Service: </label>
+                <span>{meals[selectedRequest.mealId] || 'Other'}</span>
               </div>
               <div className="detail-item">
-                <label>Message:</label>
+                <label>Message: </label>
                 <span>{selectedRequest.additionalMessage || 'No message provided'}</span>
               </div>
               <div className="detail-item">
-                <label>Proof of Affiliation:</label>
+                <label>Proof of Affiliation: </label>
                 <a href={selectedRequest.proofOfAffiliation} target="_blank" rel="noopener noreferrer">
                   View Document
                 </a>
               </div>
+              <br />
             </div>
 
             <div className="action-section">
@@ -230,6 +249,8 @@ const AdminPanel = () => {
                 onChange={(e) => setInternalNotes(e.target.value)}
                 rows={4}
               />
+              <br />
+              <br />
 
               <div className="action-buttons">
                 {selectedRequest.status === 'pending' && (

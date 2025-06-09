@@ -25,6 +25,8 @@ import Dashboard from './pages/Dashboard/Dashboard';
 import { GeocodedLocationsProvider } from './contexts/GeocodedDataContext'; // TODO - Need to fix before enabling
 import ShelterMap from './components/ShelterMap/ShelterMap'; // Import SheltersMap component
 import Profile from './pages/Profile/Profile';
+import AdminPanel from './components/AdminPanel/AdminPanel';
+
 
 export default function App() {
   const { locationInfo, locationError } = useGeolocation();
@@ -52,6 +54,8 @@ export default function App() {
             <Route path='/terms-of-use' element={<TermsOfUse />} />
             <Route path='/drop-in-map' element={<MealsMap />} />
             <Route path='/shelter-map' element={<ShelterMap />} />
+            <Route path='/admin-panel' element={<AdminPanel />} />
+
 
             <Route path='*' element={<Navigate to='/' />} />
           </Routes>
